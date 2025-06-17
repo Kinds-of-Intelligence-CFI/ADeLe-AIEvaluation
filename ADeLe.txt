@@ -1,0 +1,1 @@
+https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0
