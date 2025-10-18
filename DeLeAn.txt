@@ -1,1 +1,1 @@
-https://github.com/adgomant/delean-batch-manager
+https://github.com/adgomant/delean-batch-manager provides a unified framework to generate demand profiles for new benchmarks. However, if you're interested in using the demands from ADeLe v1.0 only, simply use the data in: https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0

@@ -8,7 +8,11 @@ This repository offers the following elements:
 
 - ./rubrics contains the list of rubrics (in txt format) used in ADeLe v1.0, described in section 10 of the [original paper](https://arxiv.org/abs/2503.06378).
 
+- ./demand_profiles has the script to reproduce the demand profiles 
+
 - ./generating_scc has the script to reproduce the computation of both subjective characteristics curves (SCCs) and ability scores.
+
+- ./predictive_power has the script to generate the predictive power results of the RF assessor
 
 - ADeLe.txt links the ADELE v1.0 battery.
 
