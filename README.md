@@ -8,12 +8,10 @@ This repository offers the following elements used for the quantitative analyses
 
 - ./rubrics contains the list of rubrics (in txt format) used in ADeLe v1.0, described in section 10 of the [original paper](https://arxiv.org/abs/2503.06378).
 
-- ./demand_profiles has the script to reproduce the demand profiles.
+- ./demand_profiles has the script to reproduce the demand profiles. 
 
 - ./generating_scc has the script to reproduce the computation of both subjective characteristics curves (SCCs) and ability scores.
 
 - ./predictive_power has the script to generate the predictive power results of the RF assessor.
 
-- DeLeAn.txt links an official toolkit for reproducing and extending the DeLeAn pipeline (i.e. annotate demand levels for task instances). It includes a high-level Python API and a comprehensive CLI interface for managing large-scale annotation jobs using the OpenAI Batch API, along with utilities for customizing, reusing and potentially expanding demand-level rubrics. Whether you're contributing to ADeLe or building your own evaluation workflows, this package offers the core infrastructure to make demand-level annotations accessible and reproducible.
-
-The expected run time should be less than a few minutes (e.g., for a modern CPU using Python 3.12) for any of the items above except for using DeLeAn to get demand annotations, which depends on the speed of the source of the LLM-judge used (e.g. using Batch API could take a few hours).
+- DeLeAn.txt links an official toolkit for reproducing and extending the DeLeAn pipeline (i.e. annotate demand levels for task instances). It includes a high-level Python API and a comprehensive CLI interface for managing large-scale annotation jobs using the OpenAI Batch API (the user can replace this with any external LLM APIs; we used OpenAI's for our paper), along with utilities for customizing, reusing and potentially expanding demand-level rubrics. Whether you're contributing to ADeLe or building your own evaluation workflows, this package offers the core infrastructure to make demand-level annotations accessible and reproducible.
