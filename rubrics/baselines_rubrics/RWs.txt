@@ -1,0 +1,11 @@
+This rubric evaluates whether a task requires analyzing large amounts of content to extract key information and present concise summaries. This may be objective summarization (e.g., extracting measurable data trends) or subjective summarization (e.g., condensing viewpoints or interpretations).
+
+Level 0 None. The task does not require summarizing, condensing, or extracting key information from larger content. No analysis of extensive material is needed to present concise overviews. Examples: 
+* "What is the capital of France?" 
+* "Calculate 15 + 27" 
+* "Translate 'hello' into Spanish" 
+
+Level 1 Present. The task requires analyzing large amounts of content to extract key information and present concise summaries. This includes condensing lengthy documents, extracting main arguments, identifying key trends from data, or providing overviews of complex topics. Examples: 
+* "Summarise the author's main arguments in the web pages" 
+* "Calculate price trends from this quarterly sales dataset" 
+* "Provide a brief overview of the key findings from this 50-page research report"

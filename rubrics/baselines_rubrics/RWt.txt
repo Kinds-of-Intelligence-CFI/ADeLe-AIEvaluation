@@ -1,0 +1,11 @@
+This rubric evaluates whether a task requires providing clear, actionable instructions to , diagnose, fix, or implement solutions in technical systems (software, hardware, code, configuration). problems. This capability requires problem-solving or instruction within  technical domains and expects a procedural or step-by-step response.
+
+Level 0 None. The task does not require technical problem-solving, troubleshooting, or providing step-by-step technical instructions. No diagnosis of technical issues or technical guidance is needed. Examples: 
+* "Write a poem about nature" 
+* "What are the benefits of exercise?" 
+* “Explain what cloud computing is”
+
+Level 1 Present. The task requires providing clear technical instructions, diagnosing technical issues, or suggesting step-by-step solutions for software and hardware problems. This includes coding assistance, system troubleshooting, and technical guidance. Examples:
+* "Write optimized code to handle a leaderboard"
+* "Debug this Python script that's throwing an error" 
+* "How do I set up a database connection in Node.js?"

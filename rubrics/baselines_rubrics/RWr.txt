@@ -1,0 +1,11 @@
+This rubric evaluates whether a task requires identifying issues, evaluating systems or processes, and recommending improvements or solutions. This capability can involve both objective evaluation (e.g., verifying correctness) and subjective assessment (e.g., evaluating quality, tone, or effectiveness).
+
+Level 0 None. The task does not require evaluating, reviewing, or providing feedback on existing work, systems, or processes. No assessment of quality, correctness, or improvement suggestions is needed. Examples: 
+* "Generate a list of vacation destinations" 
+* "What is machine learning?"
+* “Write a business proposal”
+
+Level 1 Present. The task requires identifying issues, evaluating systems or processes, and recommending improvements or solutions. This includes proofreading, quality assessment, performance evaluation, and providing constructive feedback. Examples: 
+* "Correct math homework answers"
+* "Review my email for tone and clarity and suggest improvements" 
+* "Analyze this business proposal and identify potential weaknesses"

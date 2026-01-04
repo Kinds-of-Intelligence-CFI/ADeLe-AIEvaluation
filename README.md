@@ -10,8 +10,8 @@ This repository offers the following elements used for the quantitative analyses
 
 - ./demand_profiles has the script to reproduce the demand profiles. 
 
-- ./generating_scc has the script to reproduce the computation of both subjective characteristics curves (SCCs) and ability scores.
+- ./ability_profiles has the script to reproduce the computation of both subjective characteristics curves (SCCs) and ability profiles.
 
-- ./predictive_power has the script to generate the predictive power results of the RF assessor.
+- ./predictive_power has the script to generate the predictive power results of the RF demand-based assessor.
 
-- DeLeAn.txt links an official toolkit for reproducing and extending the DeLeAn pipeline (i.e. annotate demand levels for task instances). It includes a high-level Python API and a comprehensive CLI interface for managing large-scale annotation jobs using the OpenAI Batch API (the user can replace this with any external LLM APIs; we used OpenAI's for our paper), along with utilities for customizing, reusing and potentially expanding demand-level rubrics. Whether you're contributing to ADeLe or building your own evaluation workflows, this package offers the core infrastructure to make demand-level annotations accessible and reproducible.
+- DeLeAn describes a toolkit for reproducing and extending the DeLeAn pipeline (i.e. annotate demand levels for task instances). It includes a high-level Python API and a comprehensive CLI interface for managing large-scale annotation jobs using the OpenAI Batch API (the user can replace this with any external LLM APIs; we used OpenAI's for our paper), along with utilities for customizing, reusing and potentially expanding demand-level rubrics. Whether you're contributing to ADeLe or building your own evaluation workflows, this package offers the core infrastructure to make demand-level annotations accessible and reproducible.

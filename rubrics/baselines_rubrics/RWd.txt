@@ -1,0 +1,11 @@
+This rubric evaluates whether a task requires efficiently managing, logging, and maintaining accurate records of transactions, interactions, or documentation. This capability focuses on organizing and formatting information systematically.
+
+Level 0 None. The task does not require organizing, structuring, formatting, or managing data or information systematically. No record-keeping or systematic data organization is needed. Examples: 
+* "Tell me a joke" 
+* "What is the meaning of democracy?" 
+* "Generate creative story ideas" 
+
+Level 1 Present. The task requires efficiently managing, logging, and maintaining accurate records of transactions, interactions, or documentation. This includes formatting data, organizing information systematically, and converting between different structural formats. Examples: 
+* "Change academic reference list from Chicago to APA style" 
+* "Organize this customer feedback data into categories" 
+* "Convert this unstructured text into a formatted table" 
