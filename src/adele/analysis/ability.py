@@ -29,13 +29,8 @@ _trapz = getattr(np, "trapezoid", None) or np.trapz
 
 logger = logging.getLogger(__name__)
 
-# Canonical demand ordering
-DEMAND_ORDER = [
-    "AS", "CEc", "CEe", "CL", "MCr",
-    "MCt", "MCu", "MS", "QLl", "QLq",
-    "SNs", "KNa", "KNc", "KNf", "KNn",
-    "KNs", "AT", "VO",
-]
+# Import canonical ordering
+from adele.analysis.constants import DEMAND_ORDER
 
 
 # ============================================================================
@@ -477,6 +472,7 @@ def plot_ability_profile(
     if save_path:
         fig.savefig(save_path, dpi=dpi, bbox_inches="tight")
         logger.info("Saved ability profile to %s", save_path)
+        plt.close(fig)
 
     return fig
 
@@ -551,5 +547,6 @@ def plot_multi_model_ability(
     if save_path:
         fig.savefig(save_path, dpi=dpi, bbox_inches="tight")
         logger.info("Saved multi-model ability profile to %s", save_path)
+        plt.close(fig)
 
     return fig

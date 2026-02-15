@@ -2,11 +2,12 @@
 Tests for the annotation module (prompts, parsing, backend detection).
 """
 
+import json
 import pytest
 import numpy as np
 from adele.annotation.prompts import build_annotation_prompt, build_batch_request
 from adele.annotation.parsing import extract_demand_level, parse_batch_output
-from adele.annotation.annotator import _is_openai_model
+from adele.annotation.annotator import _is_openai_model, annotate
 
 
 class TestBuildAnnotationPrompt:
@@ -108,6 +109,36 @@ class TestExtractDemandLevel:
         level, ok = extract_demand_level(response)
         assert not ok
 
+    def test_structured_pattern_no_paragraphs(self):
+        """Should extract via 'is: SCORE' even without paragraph breaks."""
+        response = (
+            "The task requires moderate reasoning. "
+            "The level of *Reasoning* demanded by the given TASK INSTANCE is: 4"
+        )
+        level, ok = extract_demand_level(response)
+        assert ok
+        assert level == 4.0
+
+    def test_structured_pattern_preferred_over_fallback(self):
+        """The structured 'is: SCORE' should win over stray numbers."""
+        response = (
+            "Step 1: analyse 3 aspects. Step 2: review 5 items.\n\n"
+            "The level of *Knowledge* demanded is: 2"
+        )
+        level, ok = extract_demand_level(response)
+        assert ok
+        assert level == 2.0
+
+    def test_truncated_response_with_conclusion(self):
+        """A truncated response that still contains 'is: SCORE' should work."""
+        response = (
+            "Very long reasoning that was truncated... "
+            "the level is: 3 and I would have continued but"
+        )
+        level, ok = extract_demand_level(response)
+        assert ok
+        assert level == 3.0
+
 
 class TestBackendDetection:
     """Tests for auto-detecting the annotation backend."""
@@ -128,3 +159,194 @@ class TestBackendDetection:
     ])
     def test_non_openai_models_detected(self, model):
         assert _is_openai_model(model) is False
+
+
+class TestParallelAnnotation:
+    """Tests for parallel execution in _annotate_direct."""
+
+    def test_runs_in_parallel(self, monkeypatch, tmp_path):
+        """Verify actual concurrency via a high-water-mark counter."""
+        import threading
+        from adele.annotation.annotator import _annotate_direct
+        from adele.rubrics.catalog import RubricsCatalog
+        import pandas as pd
+
+        data = pd.DataFrame({
+            "prompt": ["p1", "p2", "p3", "p4", "p5"],
+            "custom_id": ["1", "2", "3", "4", "5"]
+        })
+        catalog = RubricsCatalog()
+        demands = ["AS"]
+
+        # Track peak concurrency with a thread-safe counter
+        lock = threading.Lock()
+        active = 0
+        peak = 0
+
+        def mock_completion(**kwargs):
+            import time
+            nonlocal active, peak
+            with lock:
+                active += 1
+                if active > peak:
+                    peak = active
+            time.sleep(0.05)  # hold the slot briefly
+            with lock:
+                active -= 1
+            class MockResponse:
+                class Choice:
+                    class Message:
+                        content = "Reasoning... The level is: 3"
+                    message = Message()
+                choices = [Choice()]
+            return MockResponse()
+
+        monkeypatch.setattr("litellm.completion", mock_completion)
+
+        _annotate_direct(
+            data=data,
+            catalog=catalog,
+            demands=demands,
+            model="mock-model",
+            max_completion_tokens=10,
+            output_path=tmp_path,
+            max_concurrent=5,
+        )
+
+        # If truly parallel, peak concurrency should exceed 1
+        assert peak >= 2, f"Peak concurrency was {peak}, expected >= 2"
+
+
+class TestParseBatchOutput:
+    """Tests for parsing OpenAI Batch API JSONL output."""
+
+    def _write_jsonl(self, path, items):
+        with open(path, "w") as f:
+            for item in items:
+                f.write(json.dumps(item) + "\n")
+
+    def _make_batch_item(self, custom_id, content, finish_reason="stop"):
+        return {
+            "custom_id": custom_id,
+            "response": {
+                "body": {
+                    "choices": [{
+                        "finish_reason": finish_reason,
+                        "message": {"content": content},
+                    }]
+                }
+            },
+        }
+
+    def test_parses_valid_output(self, tmp_path):
+        output_file = tmp_path / "output.jsonl"
+        self._write_jsonl(output_file, [
+            self._make_batch_item(
+                "q1__AS",
+                "Reasoning...\n\nThe level is: 3",
+            ),
+            self._make_batch_item(
+                "q2__MCr",
+                "Analysis...\n\nThe level is: 1",
+            ),
+        ])
+
+        df = parse_batch_output(str(output_file))
+        assert len(df) == 2
+        assert df.iloc[0]["custom_id"] == "q1"
+        assert df.iloc[0]["demand"] == "AS"
+        assert df.iloc[0]["level"] == 3.0
+        assert df.iloc[1]["custom_id"] == "q2"
+        assert df.iloc[1]["demand"] == "MCr"
+        assert df.iloc[1]["level"] == 1.0
+
+    def test_truncated_response_still_extracted(self, tmp_path):
+        """finish_reason='length' but response contains a valid score."""
+        output_file = tmp_path / "output.jsonl"
+        self._write_jsonl(output_file, [
+            self._make_batch_item(
+                "q3__KNa",
+                "Long reasoning... the level is: 4 and I would",
+                finish_reason="length",
+            ),
+        ])
+
+        df = parse_batch_output(str(output_file))
+        assert len(df) == 1
+        assert df.iloc[0]["level"] == 4.0
+
+    def test_error_response_returns_nan(self, tmp_path):
+        output_file = tmp_path / "output.jsonl"
+        self._write_jsonl(output_file, [
+            {"custom_id": "q4__VO", "response": {"body": {}}},
+        ])
+
+        df = parse_batch_output(str(output_file))
+        assert len(df) == 1
+        assert np.isnan(df.iloc[0]["level"])
+
+
+class TestAnnotateOrchestration:
+    """Tests for the main annotate() function with mocked backend."""
+
+    def test_annotate_direct_end_to_end(self, monkeypatch, tmp_path):
+        """Full orchestration: rubric loading → prompt → mock LLM → parsing."""
+        import pandas as pd
+
+        data = pd.DataFrame({
+            "prompt": ["What is 2+2?", "Translate hello"],
+            "custom_id": ["q1", "q2"],
+        })
+
+        def mock_completion(**kwargs):
+            class MockResponse:
+                class Choice:
+                    class Message:
+                        content = (
+                            "Reasoning about the task...\n\n"
+                            "The level of *demand* demanded by "
+                            "the given TASK INSTANCE is: 2"
+                        )
+                    message = Message()
+                choices = [Choice()]
+            return MockResponse()
+
+        monkeypatch.setattr("litellm.completion", mock_completion)
+
+        result = annotate(
+            data=data,
+            demands=["AS"],
+            model="mock/model",
+            backend="direct",
+            output_dir=str(tmp_path),
+            max_concurrent=2,
+            format="wide",
+        )
+
+        # Should return a wide-format DataFrame
+        assert "custom_id" in result.columns
+        assert "AS" in result.columns
+        assert len(result) == 2
+        # All levels should be 2.0 (from mock)
+        assert (result["AS"] == 2.0).all()
+
+    def test_annotate_rejects_missing_columns(self, tmp_path):
+        import pandas as pd
+        data = pd.DataFrame({"text": ["no prompt column"]})
+        with pytest.raises(ValueError, match="prompt"):
+            annotate(data=data, demands=["AS"], model="x",
+                     output_dir=str(tmp_path))
+
+    def test_annotate_rejects_bad_rubric(self, tmp_path):
+        import pandas as pd
+        data = pd.DataFrame({"prompt": ["q"], "custom_id": ["1"]})
+        with pytest.raises(ValueError, match="NONEXISTENT"):
+            annotate(data=data, demands=["NONEXISTENT"], model="x",
+                     output_dir=str(tmp_path))
+
+    def test_annotate_rejects_bad_backend(self, tmp_path):
+        import pandas as pd
+        data = pd.DataFrame({"prompt": ["q"], "custom_id": ["1"]})
+        with pytest.raises(ValueError, match="bad_backend"):
+            annotate(data=data, demands=["AS"], model="x",
+                     backend="bad_backend", output_dir=str(tmp_path))

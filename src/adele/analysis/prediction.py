@@ -45,7 +45,7 @@ def compute_predictive_power(
         - ``roc_auc``:  Mean CV ROC-AUC.
         - ``feature_importances``: Dict of demand → importance score.
     """
-    from adele.analysis.ability import DEMAND_ORDER
+    from adele.analysis.constants import DEMAND_ORDER
 
     if demands is None:
         demands = [d for d in DEMAND_ORDER if d in annotations.columns]
@@ -140,5 +140,6 @@ def plot_feature_importances(
     if save_path:
         fig.savefig(save_path, dpi=dpi, bbox_inches="tight")
         logger.info("Saved feature importance plot to %s", save_path)
+        plt.close(fig)
 
     return fig

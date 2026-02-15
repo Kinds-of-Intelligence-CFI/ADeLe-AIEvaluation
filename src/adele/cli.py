@@ -192,5 +192,6 @@ def profile(annotations_csv, title, output, color):
         annotations_csv,
         base_color=color,
         save_path=output,
+        title=title,
     )
     click.echo(f"Demand profile saved!")

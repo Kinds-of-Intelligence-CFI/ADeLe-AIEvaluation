@@ -35,7 +35,15 @@ def extract_demand_level(response: str) -> tuple[float, bool]:
     if not response or not response.strip():
         return float("nan"), False
 
-    # Split into paragraphs; conclusion should be in the last one
+    # First try: look for the structured conclusion pattern
+    # "the level of *X* demanded by the given TASK INSTANCE is: SCORE"
+    structured = re.findall(r'is:\s*(\d)', response)
+    if structured:
+        level = float(structured[-1])
+        if 0 <= level <= 5:
+            return level, True
+
+    # Fallback: split into paragraphs; conclusion should be in the last one
     *_, conclusion = response.split("\n\n")
 
     try:
@@ -108,8 +116,8 @@ def parse_batch_output(
                 finish_reason = "error"
                 response_text = ""
 
-            # Extract level
-            if finish_reason == "stop":
+            # Extract level — try even for "length" truncated responses
+            if finish_reason in ("stop", "length"):
                 level, ok = extract_demand_level(response_text)
             else:
                 level = float("nan")

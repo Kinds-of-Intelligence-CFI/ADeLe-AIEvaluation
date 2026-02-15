@@ -18,13 +18,8 @@ from matplotlib.patches import Rectangle
 
 logger = logging.getLogger(__name__)
 
-# Canonical demand dimension ordering (as in the ADeLe paper)
-DEMAND_ORDER = [
-    "AS", "CEc", "CEe", "CL", "MCr",
-    "MCt", "MCu", "MS", "QLl", "QLq",
-    "SNs", "KNa", "KNc", "KNf", "KNn",
-    "KNs", "AT", "VO",
-]
+# Import canonical ordering
+from adele.analysis.constants import DEMAND_ORDER
 
 
 def compute_demand_profile(
@@ -177,6 +172,7 @@ def plot_demand_profile(
     if save_path:
         fig.savefig(save_path, dpi=dpi, bbox_inches="tight")
         logger.info("Saved demand profile plot to %s", save_path)
+        plt.close(fig)
 
     return fig
 
@@ -184,6 +180,7 @@ def plot_demand_profile(
 def plot_from_csv(
     csv_path: str,
     *,
+    title: Optional[str] = None,
     base_color: str = "#30638e",
     save_path: Optional[str] = None,
 ) -> plt.Figure:
@@ -194,6 +191,7 @@ def plot_from_csv(
 
     Args:
         csv_path:   Path to the annotation CSV.
+        title:      Optional plot title. If None, inferred from filename.
         base_color: Base color for the gradient.
         save_path:  If provided, save the figure (default: same name as CSV
                     with ``.png`` extension).
@@ -203,7 +201,8 @@ def plot_from_csv(
     """
     df = pd.read_csv(csv_path)
 
-    title = Path(csv_path).stem.replace("_", " ").title()
+    if title is None:
+        title = Path(csv_path).stem.replace("_", " ").title()
 
     if save_path is None:
         save_path = str(Path(csv_path).with_suffix(".png"))

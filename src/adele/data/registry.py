@@ -37,6 +37,7 @@ class BenchmarkConfig:
     prompt_column: str = "question"
     id_column: Optional[str] = None
     target_column: Optional[str] = "answer"
+    choices_column: Optional[str] = None
     prompt_template: Optional[str] = None
     description: str = ""
 
@@ -62,6 +63,7 @@ _register(BenchmarkConfig(
     prompt_column="question",
     id_column="question_id",
     target_column="answer",
+    choices_column="options",
     prompt_template="{question}\n\nChoices:\n{options}",
     description="Massive Multitask Language Understanding — Pro edition",
 ))

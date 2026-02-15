@@ -202,51 +202,71 @@ def _annotate_direct(
     output_path: Path,
     max_concurrent: int = 10,
 ) -> pd.DataFrame:
-    """Annotate using direct API calls via litellm.
+    """Annotate using direct API calls via litellm (parallelized).
 
     Works with any model provider (OpenAI, Google, Anthropic, etc.).
     """
     import litellm
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     from adele.annotation.parsing import extract_demand_level
 
+    # Flatten the workload: (row_data, demand_acronym) tuples
+    work_items = []
+    for acronym in demands:
+        rubric = catalog[acronym]
+        for _, row in data.iterrows():
+            work_items.append({
+                "row": row,
+                "acronym": acronym,
+                "rubric": rubric,
+            })
+
     results = []
-    total = len(data) * len(demands)
+    total = len(work_items)
 
-    with tqdm(total=total, desc="Annotating", unit="req") as pbar:
-        for acronym in demands:
-            rubric = catalog[acronym]
+    def _process_item(item):
+        row = item["row"]
+        acronym = item["acronym"]
+        rubric = item["rubric"]
 
-            for _, row in data.iterrows():
-                prompt = build_annotation_prompt(
-                    demand_name=rubric.full_name,
-                    rubric_content=rubric.content,
-                    task_instance=row["prompt"],
-                )
+        prompt = build_annotation_prompt(
+            demand_name=rubric.full_name,
+            rubric_content=rubric.content,
+            task_instance=row["prompt"],
+        )
 
-                try:
-                    response = litellm.completion(
-                        model=model,
-                        messages=[{"role": "user", "content": prompt}],
-                        max_tokens=max_completion_tokens,
-                    )
-                    content = response.choices[0].message.content or ""
-                except Exception as exc:
-                    logger.warning(
-                        "Request failed for %s × %s: %s",
-                        row["custom_id"], acronym, exc,
-                    )
-                    content = ""
+        try:
+            response = litellm.completion(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=max_completion_tokens,
+                temperature=0.0,
+            )
+            content = response.choices[0].message.content or ""
+        except Exception as exc:
+            logger.warning(
+                "Request failed for %s × %s: %s",
+                row["custom_id"], acronym, exc,
+            )
+            content = ""
 
-                level, ok = extract_demand_level(content)
+        level, ok = extract_demand_level(content)
+        return {
+            "custom_id": row["custom_id"],
+            "demand": acronym,
+            "level": level,
+            "valid": ok,
+            "response": content,
+        }
 
-                results.append({
-                    "custom_id": row["custom_id"],
-                    "demand": acronym,
-                    "level": level,
-                    "valid": ok,
-                    "response": content,
-                })
+    logger.info("Starting %d parallel requests (max_concurrent=%d)", total, max_concurrent)
 
+    with ThreadPoolExecutor(max_workers=max_concurrent) as executor:
+        futures = {executor.submit(_process_item, item): item for item in work_items}
+        
+        with tqdm(total=total, desc="Annotating", unit="req") as pbar:
+            for future in as_completed(futures):
+                results.append(future.result())
                 pbar.update(1)
 
     # Save raw responses

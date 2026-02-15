@@ -44,8 +44,8 @@ def build_annotation_prompt(
         f"The following rubric describes six distinct levels of "
         f"*{demand_name}* required by different tasks:\n"
         f"{rubric_content}\n\n"
-        f'TASK INSTANCE: {task_instance}"\n\n'
-        f'{instruction}"\n\n'
+        f'TASK INSTANCE: {task_instance}\n\n'
+        f'{instruction}\n\n'
         f"CHAIN-OF-THOUGHTS REASONING STEPS to score the level of "
         f"*{demand_name}* demanded by the given TASK INSTANCE above:"
     )
@@ -82,6 +82,7 @@ def build_batch_request(
         "body": {
             "model": model,
             "max_completion_tokens": max_completion_tokens,
+            "temperature": 0,
             "messages": [
                 {"role": "user", "content": prompt}
             ],

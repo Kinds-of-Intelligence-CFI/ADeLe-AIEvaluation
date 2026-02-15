@@ -159,7 +159,8 @@ def evaluate_model(
             if sample.scores:
                 # Get the first scorer's value
                 for scorer_name, score_obj in sample.scores.items():
-                    if score_obj.value == "C" or score_obj.value == 1:
+                    val = score_obj.value
+                    if val in ("C", "correct", 1, 1.0, True):
                         correct = 1
                     break
 

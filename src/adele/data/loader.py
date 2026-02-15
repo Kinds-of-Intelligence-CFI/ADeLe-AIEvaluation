@@ -48,39 +48,12 @@ def load_benchmark(
     prompt_column: Optional[str] = None,
     id_column: Optional[str] = None,
     target_column: Optional[str] = None,
+    choices_column: Optional[str] = None,
     prompt_template: Optional[str] = None,
     max_samples: Optional[int] = None,
     hf_token: Optional[str] = None,
 ) -> pd.DataFrame:
-    """Load a benchmark dataset and format it for ADeLe annotation.
-
-    The function first checks the built-in registry for a known benchmark
-    matching ``name_or_hf_id``. If found, it uses the pre-configured
-    column mappings. Otherwise, it treats the string as a raw HuggingFace
-    dataset ID and requires explicit column mappings.
-
-    Args:
-        name_or_hf_id: Either a registered benchmark name (e.g. "mmlu-pro")
-            or a HuggingFace dataset identifier (e.g. "cais/mmlu").
-        hf_subset:     Optional HF config / subset name. Overrides registry.
-        split:         Dataset split to load (default from registry or "test").
-        prompt_column: Column containing the task prompt. Overrides registry.
-        id_column:     Column for unique IDs. None → auto-generate.
-        target_column: Column containing ground-truth answer.
-        prompt_template: f-string template with ``{column}`` placeholders
-            to compose the prompt from multiple columns.
-        max_samples:   Maximum number of samples to load (for quick tests).
-        hf_token:      HuggingFace API token for private datasets.
-
-    Returns:
-        A pandas DataFrame with at least these columns:
-        - ``prompt``:     The formatted task text.
-        - ``custom_id``:  A unique identifier per instance.
-        - ``target``:     Ground-truth answer (if available).
-
-    Raises:
-        ValueError: If column mappings are insufficient to produce prompts.
-    """
+    """Load a benchmark dataset and format it for ADeLe annotation."""
     # 1. Try the registry first
     cfg = get_benchmark(name_or_hf_id)
 
@@ -91,6 +64,7 @@ def load_benchmark(
         prompt_column = prompt_column or cfg.prompt_column
         id_column = id_column or cfg.id_column
         target_column = target_column or cfg.target_column
+        choices_column = choices_column or cfg.choices_column
         prompt_template = prompt_template or cfg.prompt_template
         logger.info(
             "Using registered benchmark '%s' → %s", cfg.name, hf_id
@@ -127,6 +101,7 @@ def load_benchmark(
         prompt_column=prompt_column,
         id_column=id_column,
         target_column=target_column,
+        choices_column=choices_column,
         prompt_template=prompt_template,
         benchmark_name=cfg.name if cfg else hf_id,
     )
@@ -141,18 +116,9 @@ def load_from_file(
     prompt_column: str = "prompt",
     id_column: Optional[str] = "custom_id",
     target_column: Optional[str] = None,
+    choices_column: Optional[str] = None,
 ) -> pd.DataFrame:
-    """Load benchmark data from a local CSV, JSONL, or Parquet file.
-
-    Args:
-        path: Path to the file.
-        prompt_column: Column containing the prompt text.
-        id_column: Column for unique IDs. None → auto-generate.
-        target_column: Column containing ground truth.
-
-    Returns:
-        DataFrame with ``prompt``, ``custom_id``, and optionally ``target``.
-    """
+    """Load benchmark data from a local CSV, JSONL, or Parquet file."""
     path_lower = str(path).lower()
     if path_lower.endswith(".csv"):
         df = pd.read_csv(path)
@@ -168,6 +134,7 @@ def load_from_file(
         prompt_column=prompt_column,
         id_column=id_column,
         target_column=target_column,
+        choices_column=choices_column,
         benchmark_name="local",
     )
 
@@ -182,18 +149,15 @@ def _build_output(
     prompt_column: str,
     id_column: Optional[str],
     target_column: Optional[str],
+    choices_column: Optional[str] = None,
     prompt_template: Optional[str] = None,
     benchmark_name: str = "benchmark",
 ) -> pd.DataFrame:
-    """Build a standardised output DataFrame from raw data.
-
-    Returns DataFrame with columns: prompt, custom_id, [target].
-    """
+    """Build a standardised output DataFrame from raw data."""
     result = pd.DataFrame()
 
     # -- Prompt --
     if prompt_template:
-        # Format each row using the template
         result["prompt"] = df.apply(
             lambda row: _format_template(prompt_template, row), axis=1
         )
@@ -217,6 +181,10 @@ def _build_output(
     # -- Target --
     if target_column and target_column in df.columns:
         result["target"] = df[target_column].astype(str)
+
+    # -- Choices --
+    if choices_column and choices_column in df.columns:
+        result["choices"] = df[choices_column]
 
     return result.reset_index(drop=True)
 

@@ -43,12 +43,10 @@ dependencies = [
     # Data
     "datasets>=2.14",          # HuggingFace datasets
     "pandas>=2.0",
-    "polars>=0.20",
 
     # Annotation (multi-provider)
     "openai>=1.30",
     "litellm>=1.30",            # unified LLM API (OpenAI, Gemini, Claude, ...)
-    "tiktoken>=0.7",
     "tenacity>=8.2",
     "tqdm>=4.65",
 
@@ -59,7 +57,6 @@ dependencies = [
 
     # Visualization
     "matplotlib>=3.7",
-    "seaborn>=0.13",
 
     # Evaluation
     "inspect-ai>=0.3",

@@ -270,12 +270,14 @@ We train a **Random Forest** classifier to predict *model correctness* solely fr
 ## 📂 Project Structure
 
 - **`adele.data`** — Loads benchmarks from HuggingFace (`load_benchmark`) and standardizes their varying column names into a uniform schema: `prompt` (question text), `target` (correct answer), and `custom_id` (unique instance identifier). Ships with 21 pre-configured benchmarks (e.g. MMLU-Pro, GSM8K, ARC) so their column mappings don't need to be specified manually.
-- **`adele.annotation`** — Orchestrates the OpenAI Batch API.
+- **`adele.annotation`** — Multi-provider annotation with dual backends.
     - `prompts.py`: Builds Chain-of-Thought prompts using 18 bundled rubrics.
-    - `annotator.py`: Manages the batch lifecycle (upload → poll → download).
-    - `parsing.py`: Extracts scores (0-5) from judge responses.
-- **`adele.evaluation`** — Wraps Inspect AI to run models and extract correctness.
+    - `annotator.py`: Orchestrates annotation via two backends:
+        - **Batch** (OpenAI only): Uses the OpenAI Batch API for 50% cost savings.
+        - **Direct** (any provider): Parallel calls via litellm (OpenAI, Gemini, Claude, etc.).
+    - `parsing.py`: Extracts demand scores (0-5) from LLM judge responses.
+- **`adele.evaluation`** — Wraps Inspect AI to run models and extract per-instance correctness.
 - **`adele.analysis`** — Profiling and visualization.
-    - `demand.py`: Generates polar heatmaps (matplotlib).
-    - `ability.py`: Computes Ability Scores (AUC) and Spearman correlations.
-    - `prediction.py`: Random Forest analysis of capability matching.
+    - `demand.py`: Generates demand profile polar heatmaps (matplotlib).
+    - `ability.py`: Computes ability scores (AUC) and Spearman correlations.
+    - `prediction.py`: Random Forest analysis of predictive power.
