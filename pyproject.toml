@@ -1,0 +1,115 @@
+# ============================================================================
+# BUILD SYSTEM
+# ============================================================================
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# ============================================================================
+# PROJECT METADATA
+# ============================================================================
+[project]
+name = "adele"
+version = "0.1.0"
+description = "ADeLe (Annotated Demand Levels) — A unified Python toolkit for AI evaluation with explanatory and predictive power."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Kinds of Intelligence Team at CFI"},
+]
+keywords = [
+    "ai-evaluation", "demand-levels", "ability-profiles",
+    "benchmarks", "explainability", "predictive-power",
+    "inspect-ai", "huggingface",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.11"
+
+# ============================================================================
+# DEPENDENCIES
+# ============================================================================
+dependencies = [
+    # Core
+    "click>=8.1",
+    "python-dotenv>=1.0",
+
+    # Data
+    "datasets>=2.14",          # HuggingFace datasets
+    "pandas>=2.0",
+    "polars>=0.20",
+
+    # Annotation (multi-provider)
+    "openai>=1.30",
+    "litellm>=1.30",            # unified LLM API (OpenAI, Gemini, Claude, ...)
+    "tiktoken>=0.7",
+    "tenacity>=8.2",
+    "tqdm>=4.65",
+
+    # Analysis
+    "scikit-learn>=1.3",
+    "numpy>=1.24",
+    "scipy>=1.11",
+
+    # Visualization
+    "matplotlib>=3.7",
+    "seaborn>=0.13",
+
+    # Evaluation
+    "inspect-ai>=0.3",
+]
+
+# ============================================================================
+# CLI ENTRY POINT
+# ============================================================================
+[project.scripts]
+adele = "adele.cli:main"
+
+# ============================================================================
+# URLS
+# ============================================================================
+[project.urls]
+Homepage = "https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation"
+Documentation = "https://kinds-of-intelligence-cfi.github.io/ADELE/"
+Repository = "https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation.git"
+"Bug Tracker" = "https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/issues"
+
+# ============================================================================
+# BUILD CONFIGURATION (Hatchling)
+# ============================================================================
+[tool.hatch.build.targets.wheel]
+packages = ["src/adele"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "README.md",
+    "LICENSE",
+]
+
+# Include rubric data files in the wheel
+[tool.hatch.build.targets.wheel.force-include]
+"src/adele/rubrics/data" = "adele/rubrics/data"
+
+# ============================================================================
+# OPTIONAL DEPENDENCIES
+# ============================================================================
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+# ============================================================================
+# PYTEST CONFIGURATION
+# ============================================================================
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

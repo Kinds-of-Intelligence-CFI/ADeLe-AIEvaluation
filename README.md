@@ -1,17 +1,281 @@
-# General Scales Unlock AI Evaluation with Explanatory and Predictive Power
+# ADeLe-AIEvaluation
 
-This repository is part of a [collaborative platform](https://kinds-of-intelligence-cfi.github.io/ADELE/) initiated by researchers at the [Leverhulme Centre for the Future of Intelligence](https://www.lcfi.ac.uk) (University of Cambridge) and the [Center for Information Technology Policy](https://citp.princeton.edu) (Princeton University), aimed at continuously supporting and extending ADeLe (Annotated-Demand-Levels) v1.0, a novel methodology for AI Evaluation that unlocks both explanatory and predictive power introduced in the paper [“General Scales Unlock AI Evaluation with Explanatory and Predictive Power”](https://arxiv.org/abs/2503.06378).
+## 🚀 Unified AI Evaluation with Explanatory & Predictive Power
 
-In a nutshell, ADeLe annotate the levels of cognitive capabilities and knowledge that a problem requires and evaluates a model’s capabilities comprehensively and robustly by considering these levels. More concretely, by comparing what a task requires with what a model can do, ADeLe generates ability profiles that not only can reliably predict model performance (at instance-level) but also explains why a model is likely to succeed or fail—linking outcomes to specific strengths or limitations of the model with respect to what levels of demands a problem requires. The paper's [takeaways are on X](https://x.com/lexin_zhou/status/1899271596264825308) and a more accessible [Microsoft Research Blog](https://www.microsoft.com/en-us/research/blog/predicting-and-explaining-ai-model-performance-a-new-approach-to-evaluation/) summarizes it for the general audience. The ADELE v.1.0 battery (dataset) is on [HuggingFace](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0).
+**ADeLe** (Artificial Demands and Levels) is a comprehensive toolkit for evaluating AI systems not just on *performance* (correctness), but on *capability matching*. It breaks down benchmarks into 18 cognitive demand dimensions (e.g., Reasoning, Knowledge, Memory) and assesses how well a model's capabilities align with these demands.
 
-This repository offers the following elements used for the quantitative analyses:
+This package provides a unified, end-to-end pipeline:
+1.  **Load** any benchmark (HuggingFace or local).
+2.  **Annotate** its demand profile using LLM judges (via OpenAI Batch API).
+3.  **Evaluate** models on the benchmark (via Inspect AI).
+4.  **Profile** the results (Demand-Ability matching, Predictive Power).
 
-- ./rubrics contains the list of rubrics (in txt format) used in ADeLe v1.0, described in section 10 of the [original paper](https://arxiv.org/abs/2503.06378).
+---
 
-- ./demand_profiles has the script to reproduce the demand profiles. 
+## 📦 Installation
 
-- ./ability_profiles has the script to reproduce the computation of both subjective characteristics curves (SCCs) and ability profiles.
+```bash
+git clone https://github.com/your-org/ADeLe-AIEvaluation.git
+cd ADeLe-AIEvaluation
+pip install -e .
+```
 
-- ./predictive_power has the script to generate the predictive power results of the RF demand-based assessor.
+---
 
-- DeLeAn describes a toolkit for reproducing and extending the DeLeAn pipeline (i.e. annotate demand levels for task instances). It includes a high-level Python API and a comprehensive CLI interface for managing large-scale annotation jobs using the OpenAI Batch API (the user can replace this with any external LLM APIs; we used OpenAI's for our paper), along with utilities for customizing, reusing and potentially expanding demand-level rubrics. Whether you're contributing to ADeLe or building your own evaluation workflows, this package offers the core infrastructure to make demand-level annotations accessible and reproducible.
+## 🔑 API Keys
+
+Set the API key(s) for whichever provider(s) you plan to use:
+
+```bash
+export OPENAI_API_KEY="sk-..."          # OpenAI (GPT, o-series)
+export GOOGLE_API_KEY="AI..."           # Google (Gemini)
+export ANTHROPIC_API_KEY="sk-ant-..."   # Anthropic (Claude)
+```
+
+> **Two annotation backends:**
+> ADeLe automatically picks the best backend based on your model:
+> - **Batch** (OpenAI models only) — uses the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch) for 50% cost reduction and higher rate limits. Auto-selected when using `gpt-*` or `o1`/`o3` models.
+> - **Direct** (any model) — calls the model via [litellm](https://github.com/BerriAI/litellm), which supports OpenAI, Gemini, Claude, and 100+ other providers. Auto-selected for non-OpenAI models. You can force either backend with `--backend batch` or `--backend direct`.
+
+---
+
+## 🛠️ Usage
+
+### 1. Annotate a Benchmark (Demand Profile)
+
+The `annotate` command scores demand levels for each instance using an LLM judge.
+
+```bash
+# Using OpenAI (auto-selects Batch API for cost savings)
+adele annotate mmlu-pro --model gpt-4o --output-dir ./results/mmlu
+
+# Using Gemini (auto-selects direct mode via litellm)
+adele annotate mmlu-pro --model gemini/gemini-2.0-flash --output-dir ./results/mmlu
+
+# Using Claude
+adele annotate mmlu-pro --model claude-sonnet-4-20250514 --output-dir ./results/mmlu
+
+# Force direct mode even for OpenAI (useful for testing)
+adele annotate mmlu-pro --model gpt-4o --backend direct --max-samples 5
+```
+
+**Output:** `annotations_wide.csv` — one row per instance, one column per demand (AS, CEc, CL, ..., VO), values 0–5.
+
+### 2. Evaluate a Model
+
+The `evaluate` command wraps [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) to run your model on the benchmark and record per-instance correctness.
+
+```bash
+adele evaluate openai/gpt-4o mmlu-pro --output-dir ./results/mmlu
+```
+
+**Output:** `evaluation_results.csv` with `custom_id`, `model_answer`, and `correct` (0/1).
+
+### 3. Generate Profiles (Visualization)
+
+```bash
+adele profile ./results/mmlu/annotations_wide.csv --title "MMLU-Pro Demands"
+```
+
+---
+
+## 🤖 Evaluating Model Families
+
+ADeLe supports **any model** that Inspect AI supports. Here are the three major families:
+
+### OpenAI (GPT, o-series)
+
+```bash
+export OPENAI_API_KEY="sk-..."
+
+adele evaluate openai/gpt-4o mmlu-pro
+adele evaluate openai/gpt-4o-mini mmlu-pro
+adele evaluate openai/o1 mmlu-pro
+adele evaluate openai/o3-mini mmlu-pro
+```
+
+### Google Gemini
+
+```bash
+export GOOGLE_API_KEY="AI..."
+
+adele evaluate google/gemini-2.0-flash mmlu-pro
+adele evaluate google/gemini-2.5-pro-preview-05-06 mmlu-pro
+```
+
+### Anthropic Claude
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+adele evaluate anthropic/claude-sonnet-4-20250514 mmlu-pro
+adele evaluate anthropic/claude-3-5-haiku-20241022 mmlu-pro
+```
+
+### Python API (all providers)
+
+```python
+from adele.data import load_benchmark
+from adele.evaluation import evaluate_model
+
+data = load_benchmark("mmlu-pro", max_samples=100)
+
+# Evaluate any model — just change the model string:
+gpt_results   = evaluate_model("openai/gpt-4o", data, task_type="multiple-choice")
+gem_results   = evaluate_model("google/gemini-2.0-flash", data, task_type="multiple-choice")
+claude_results = evaluate_model("anthropic/claude-sonnet-4-20250514", data, task_type="multiple-choice")
+```
+
+---
+
+## 📊 Custom HuggingFace Benchmarks
+
+HuggingFace datasets do **not** follow a standard structure — column names, splits, and prompt formats vary widely. ADeLe handles this with **column mapping**.
+
+### Pre-registered benchmarks (21 built-in)
+
+Run `adele benchmarks list` to see all 21 pre-configured benchmarks. These "just work" because we've already defined the correct column mappings:
+
+```bash
+adele annotate mmlu-pro       # knows to use column "question", split "test"
+adele annotate gsm8k          # knows to use column "question", split "test"
+```
+
+### Arbitrary HuggingFace datasets
+
+For datasets **not** in the registry, you must tell ADeLe which columns to use, because datasets differ:
+
+| Dataset | Question column | Answer column | Split |
+|---------|----------------|---------------|-------|
+| `openai/gsm8k` | `question` | `answer` | `test` |
+| `TIGER-Lab/MMLU-Pro` | `question` | `answer` | `test` |
+| `lighteval/MATH` | `problem` | `solution` | `test` |
+| `cais/mmlu` | `question` | `answer` | `test` |
+
+```python
+from adele.data import load_benchmark
+
+# If the dataset has standard "question"/"answer" columns, this may work as-is:
+data = load_benchmark("some-org/some-dataset")
+
+# If the columns have non-standard names, specify mappings:
+data = load_benchmark(
+    "some-org/custom-benchmark",
+    split="validation",              # which split to load
+    prompt_column="input_text",      # which column contains the task text
+    target_column="gold_label",      # which column contains the correct answer
+    id_column="uid",                 # which column to use as instance ID (optional)
+    prompt_template="Question: {input_text}\nAnswer:",  # wrap into a prompt format
+    max_samples=500,                 # limit for testing
+)
+```
+
+The `prompt_template` argument is useful when the raw column text needs formatting. Use `{column_name}` placeholders — they will be filled from the dataset row.
+
+Once loaded, annotate directly:
+
+```python
+from adele.annotation import annotate
+
+# Annotate all 18 demand dimensions using Gemini as the judge
+results = annotate(data=data, model="gemini/gemini-2.0-flash", output_dir="./results")
+
+# Or annotate only specific dimensions
+results = annotate(data=data, demands=["AS", "MCr", "KNa"], model="gpt-4o")
+```
+
+Or from the CLI, pass the HuggingFace ID directly with column mappings:
+
+```bash
+adele annotate "lighteval/MATH" --split test --model gpt-4o -o ./results/math
+```
+
+### Local files (CSV, JSONL, Parquet)
+
+```python
+from adele.data.loader import load_from_file
+
+data = load_from_file("./my_data.csv", prompt_column="question", target_column="answer")
+```
+
+---
+
+## ➕ Adding Custom Demand Dimensions
+
+To add a new rubric (demand dimension), **no code changes are needed**. Just create a `.txt` file:
+
+```
+# Emotional Intelligence
+This criterion assesses the level of emotional intelligence required...
+
+Level 0: No emotional understanding is needed.
+Examples: "What is 2+2?"...
+
+Level 1: Basic emotional recognition is needed.
+Examples: "Is this person happy?"...
+
+...
+
+Level 5: Complex multi-agent emotional dynamics with hidden motivations.
+Examples: ...
+```
+
+Then either:
+- **Bundle it**: place in `src/adele/rubrics/data/EQ.txt` and reinstall.
+- **Use a custom folder**: `adele annotate mmlu-pro --rubrics ./my_rubrics/`
+
+The file name (without `.txt`) becomes the dimension acronym. The `# Header` line becomes the full name. Levels 0–5 and Example sections are required for validation.
+
+---
+
+## 🧠 Core Concepts
+
+### 1. Demand Profile (The "Problem Space")
+A **Demand Profile** visualizes what a benchmark *asks* of a model. It scores 18 dimensions (0-5 scale):
+- **Reasoning**: `AS` (Attention), `CEc` (Causal Comprehension), `QLq` (Quant. Reasoning)...
+- **Knowledge**: `KNa` (Academic), `KNf` (Factual), `KNs` (Specialized)...
+- **Metacognition**: `MCr` (Reflection), `MCu` (Uncertainty)...
+
+### 2. Ability Profile (The "Solution Space")
+An **Ability Profile** visualizes what a model *is capable of*. It is computed by fitting an **`AbilityModel`** on (demand_profile, correctness) data.
+
+**Current model** (`LogisticAbilityModel`): fits an independent logistic regression per demand dimension. Each instance's success probability depends only on the demand level in the dimension being scored (the "max-demand" assumption).
+
+**Planned** (`BayesianAbilityModel`): a joint model that takes the *full* demand profile (all 18 dimensions) of each instance and models P(correct | profile), capturing how demands interact. To use a custom model:
+
+```python
+from adele.analysis import AbilityModel, compute_ability_scores
+
+class BayesianAbilityModel(AbilityModel):
+    def fit(self, demand_profiles, correctness, demands, **kw):
+        # demand_profiles: DataFrame (N instances × D demands, values 0–5)
+        # correctness: 1-D array of 0/1
+        # Fit P(correct | full profile) jointly here
+        ...
+    @property
+    def ability_scores(self) -> dict:
+        # Return {demand: marginal_ability_score} from posterior
+        ...
+
+scores = compute_ability_scores(model_data, annotations, model_class=BayesianAbilityModel)
+```
+
+### 3. Predictive Power
+We train a **Random Forest** classifier to predict *model correctness* solely from the *demand levels* of the task.
+- High accuracy → The demand profile explains the model's failure modes.
+- Feature Importance → Identifies which specific demands cause the model to fail.
+
+---
+
+## 📂 Project Structure
+
+- **`adele.data`** — Loads benchmarks from HuggingFace (`load_benchmark`) and standardizes their varying column names into a uniform schema: `prompt` (question text), `target` (correct answer), and `custom_id` (unique instance identifier). Ships with 21 pre-configured benchmarks (e.g. MMLU-Pro, GSM8K, ARC) so their column mappings don't need to be specified manually.
+- **`adele.annotation`** — Orchestrates the OpenAI Batch API.
+    - `prompts.py`: Builds Chain-of-Thought prompts using 18 bundled rubrics.
+    - `annotator.py`: Manages the batch lifecycle (upload → poll → download).
+    - `parsing.py`: Extracts scores (0-5) from judge responses.
+- **`adele.evaluation`** — Wraps Inspect AI to run models and extract correctness.
+- **`adele.analysis`** — Profiling and visualization.
+    - `demand.py`: Generates polar heatmaps (matplotlib).
+    - `ability.py`: Computes Ability Scores (AUC) and Spearman correlations.
+    - `prediction.py`: Random Forest analysis of capability matching.
