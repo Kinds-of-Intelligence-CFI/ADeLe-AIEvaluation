@@ -239,26 +239,27 @@ A **Demand Profile** visualizes what a benchmark *asks* of a model. It scores 18
 ### 2. Ability Profile (The "Solution Space")
 An **Ability Profile** visualizes what a model *is capable of*. It is computed by fitting an **`AbilityModel`** on (demand_profile, correctness) data.
 
-**Current model** (`LogisticAbilityModel`): fits an independent logistic regression per demand dimension. Each instance's success probability depends only on the demand level in the dimension being scored (the "max-demand" assumption).
+The default implementation (`LogisticAbilityModel`) fits an independent logistic regression per demand dimension. Each instance's success probability depends only on the demand level in the dimension being scored (the "max-demand" assumption).
 
-**Planned** (`BayesianAbilityModel`): a joint model that takes the *full* demand profile (all 18 dimensions) of each instance and models P(correct | profile), capturing how demands interact. To use a custom model:
+You can implement custom ability models by subclassing `AbilityModel`:
 
 ```python
 from adele.analysis import AbilityModel, compute_ability_scores
 
-class BayesianAbilityModel(AbilityModel):
+class CustomAbilityModel(AbilityModel):
     def fit(self, demand_profiles, correctness, demands, **kw):
         # demand_profiles: DataFrame (N instances × D demands, values 0–5)
         # correctness: 1-D array of 0/1
-        # Fit P(correct | full profile) jointly here
+        # Implement your model here
         ...
     @property
     def ability_scores(self) -> dict:
-        # Return {demand: marginal_ability_score} from posterior
+        # Return {demand: ability_score} from your model
         ...
 
-scores = compute_ability_scores(model_data, annotations, model_class=BayesianAbilityModel)
+scores = compute_ability_scores(model_data, annotations, model_class=CustomAbilityModel)
 ```
+
 
 ### 3. Predictive Power
 We train a **Random Forest** classifier to predict *model correctness* solely from the *demand levels* of the task.
