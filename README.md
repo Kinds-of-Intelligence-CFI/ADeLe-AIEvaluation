@@ -111,6 +111,7 @@ export ANTHROPIC_API_KEY="sk-ant-..."
 
 adele evaluate anthropic/claude-sonnet-4-20250514 mmlu-pro
 adele evaluate anthropic/claude-3-5-haiku-20241022 mmlu-pro
+```
 
 ### OpenRouter (DeepSeek, Llama 3, etc.)
 
@@ -120,7 +121,6 @@ export OPENROUTER_API_KEY="sk-or-..."
 # Use the 'openrouter/' prefix
 adele evaluate openrouter/deepseek/deepseek-r1 mmlu-pro
 adele evaluate openrouter/meta-llama/llama-3.1-405b-instruct mmlu-pro
-```
 ```
 
 ### Python API (all providers)
