@@ -6,7 +6,7 @@
 
 This package provides a unified, end-to-end pipeline:
 1.  **Load** any benchmark (HuggingFace or local).
-2.  **Annotate** its demand profile using LLM judges (via OpenAI Batch API).
+2.  **Annotate** its demand profile using LLM judges (via OpenAI Batch API or direct API calls).
 3.  **Evaluate** models on the benchmark (via Inspect AI).
 4.  **Profile** the results (Demand-Ability matching, Predictive Power).
 
