@@ -123,6 +123,9 @@ def plot_feature_importances(
         matplotlib Figure.
     """
     import matplotlib.pyplot as plt
+    import scienceplots
+
+    plt.style.use('science')
 
     sorted_items = sorted(importances.items(), key=lambda x: x[1], reverse=True)
     demands = [x[0] for x in sorted_items]

@@ -57,6 +57,7 @@ dependencies = [
 
     # Visualization
     "matplotlib>=3.7",
+    "scienceplots>=2.2",
 
     # Evaluation
     "inspect-ai>=0.3",

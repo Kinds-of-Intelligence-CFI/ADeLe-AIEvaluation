@@ -13,6 +13,9 @@ import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
+import scienceplots
+
+plt.style.use('science')
 import matplotlib.colors as mcolors
 from matplotlib.patches import Rectangle
 

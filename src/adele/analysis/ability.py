@@ -21,6 +21,9 @@ import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
+import scienceplots
+
+plt.style.use('science')
 from scipy.stats import spearmanr
 from sklearn.linear_model import LogisticRegression
 
