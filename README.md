@@ -30,6 +30,7 @@ Set the API key(s) for whichever provider(s) you plan to use:
 export OPENAI_API_KEY="sk-..."          # OpenAI (GPT, o-series)
 export GOOGLE_API_KEY="AI..."           # Google (Gemini)
 export ANTHROPIC_API_KEY="sk-ant-..."   # Anthropic (Claude)
+export OPENROUTER_API_KEY="sk-or-..."     # OpenRouter (DeepSeek, Llama 3, etc.)
 ```
 
 > **Two annotation backends:**
@@ -110,6 +111,16 @@ export ANTHROPIC_API_KEY="sk-ant-..."
 
 adele evaluate anthropic/claude-sonnet-4-20250514 mmlu-pro
 adele evaluate anthropic/claude-3-5-haiku-20241022 mmlu-pro
+
+### OpenRouter (DeepSeek, Llama 3, etc.)
+
+```bash
+export OPENROUTER_API_KEY="sk-or-..."
+
+# Use the 'openrouter/' prefix
+adele evaluate openrouter/deepseek/deepseek-r1 mmlu-pro
+adele evaluate openrouter/meta-llama/llama-3.1-405b-instruct mmlu-pro
+```
 ```
 
 ### Python API (all providers)
