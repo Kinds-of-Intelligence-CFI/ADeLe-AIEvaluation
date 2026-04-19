@@ -1,3 +1,7 @@
+This rubric defines a scale that evaluates tasks based on how unlikely they appear in various sources (internet, textbooks, tests) and how unlikely the specific instance is to have been
+previously encountered and memorized. The scale ranges from exactly identical instances that are widely known to completely novel task formulations, focusing on the uniqueness
+of both the task type and the specific instance rather than its difficulty or complexity.
+
 Level 0: None. The task is a staple one. Exactly the same instance of the task appears many times on the Internet, textbooks or common psychological or achievement tests, and the solution is generally well-known and memorized. Examples:
 * "What is 2 + 2?"
 * "Name the capital of France."
