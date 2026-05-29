@@ -20,6 +20,15 @@ cd ADeLe-AIEvaluation
 pip install -e .
 ```
 
+Dependencies are split by workflow so you only install what you need:
+
+```bash
+pip install -e ".[eval]"      # run models on benchmarks / the ADeLe battery (Inspect AI)
+pip install -e ".[annotate]"  # demand-level annotation (OpenAI / litellm)
+pip install -e ".[analysis]"  # demand & ability profiles, predictive power
+pip install -e ".[all]"       # everything
+```
+
 ---
 
 ## 🔑 API Keys
@@ -71,6 +80,33 @@ adele evaluate openai/gpt-4o mmlu-pro --output-dir ./results/mmlu
 ```
 
 **Output:** `evaluation_results.csv` with `custom_id`, `model_answer`, and `correct` (0/1).
+
+#### Run the ADeLe v1.0 battery directly (Inspect task)
+
+The pre-annotated [ADeLe v1.0 battery](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) is registered as an Inspect task, so any model can be evaluated on it with one command (needs `pip install -e ".[eval]"` and `HF_TOKEN` for the gated dataset):
+
+```bash
+# Multiple-choice subset — deterministic, no judge:
+inspect eval adele/adele_battery --model openai/gpt-4o -T answer_format=MC -T limit=50
+
+# Open-ended subset — graded by a judge model:
+inspect eval adele/adele_battery --model openai/gpt-4o \
+    -T answer_format=Open-ended -T judge_model=openai/gpt-4o
+```
+
+Task params (`-T`): `answer_format` (`MC` | `Open-ended`), `benchmark`, `limit`, `judge_model`, `csv_path`.
+
+Scoring is faithful to the v1.0 verification conventions: **MC** by option-letter match, **Open-ended** by a model-graded judge (the judge model is recorded in the result version). The 18 demand levels ride through into the Inspect log via `Sample.metadata`, so a run joins straight back to the demand annotations (by `custom_id`) for ability profiling.
+
+From Python:
+
+```python
+from adele.data import load_battery
+from adele.evaluation import evaluate_model
+
+battery = load_battery(answer_format="MC", max_samples=50)   # DataFrame
+results = evaluate_model("openai/gpt-4o", battery)           # custom_id, correct, model_answer
+```
 
 ### 3. Generate Profiles (Visualization)
 
