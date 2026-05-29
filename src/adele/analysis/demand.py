@@ -11,11 +11,9 @@ from typing import Optional, List
 
 import numpy as np
 import pandas as pd
-import matplotlib
 import matplotlib.pyplot as plt
 import scienceplots  # noqa: F401  (registers the 'science' style)
 import matplotlib.colors as mcolors
-from matplotlib.patches import Rectangle
 
 logger = logging.getLogger(__name__)
 

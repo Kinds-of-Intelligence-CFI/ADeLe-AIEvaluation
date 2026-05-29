@@ -20,7 +20,10 @@ Faithful to ``predictive_power_stats_rf-assessor.ipynb``:
 """
 
 import logging
-from typing import Dict, List, Optional, Sequence, Tuple
+from typing import TYPE_CHECKING, Dict, List, Optional, Sequence, Tuple
+
+if TYPE_CHECKING:
+    from matplotlib.figure import Figure
 
 import numpy as np
 import pandas as pd
@@ -326,7 +329,7 @@ def plot_feature_importances(
     figsize: tuple = (10, 6),
     dpi: int = 150,
     save_path: Optional[str] = None,
-) -> "plt.Figure":
+) -> "Figure":
     """Plot feature importances as a horizontal bar chart.
 
     Args:

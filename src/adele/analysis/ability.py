@@ -403,8 +403,10 @@ def compute_ability_scores(
             **model_kwargs,
         )
         return ability_model.ability_scores
-    except Exception as exc:
-        logger.error("AbilityModel.fit() failed: %s", exc)
+    except Exception:
+        # Log the full traceback so an all-zero result is debuggable rather than
+        # silently passed off as a real (flat) ability profile.
+        logger.error("AbilityModel.fit() failed; returning zero scores", exc_info=True)
         return {d: 0.0 for d in available_demands}
 
 

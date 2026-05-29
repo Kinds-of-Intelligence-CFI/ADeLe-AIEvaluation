@@ -88,9 +88,12 @@ def benchmarks_list():
               help="Annotation backend. Auto-detected if not set.")
 @click.option("--split", "-s", default=None, help="Dataset split (default: test).")
 @click.option("--max-samples", "-n", type=int, default=None, help="Max samples to annotate.")
+@click.option("--max-completion-tokens", type=int, default=1000, help="Max tokens per annotation response.")
+@click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
 @click.option("--output-dir", "-o", default="./adele_annotations", help="Output directory.")
 @click.option("--format", "fmt", type=click.Choice(["wide", "long"]), default="wide")
-def annotate(dataset, demands, model, backend, split, max_samples, output_dir, fmt):
+def annotate(dataset, demands, model, backend, split, max_samples,
+             max_completion_tokens, hf_token, output_dir, fmt):
     """Annotate demand levels for a benchmark dataset.
 
     DATASET can be a registered benchmark name (e.g. 'mmlu-pro') or a
@@ -105,6 +108,8 @@ def annotate(dataset, demands, model, backend, split, max_samples, output_dir, f
         kwargs["split"] = split
     if max_samples:
         kwargs["max_samples"] = max_samples
+    if hf_token:
+        kwargs["hf_token"] = hf_token
 
     data = load_benchmark(dataset, **kwargs)
     click.echo(f"Loaded {len(data)} instances.")
@@ -118,6 +123,7 @@ def annotate(dataset, demands, model, backend, split, max_samples, output_dir, f
         demands=demand_list,
         model=model,
         backend=backend,
+        max_completion_tokens=max_completion_tokens,
         output_dir=output_dir,
         format=fmt,
     )
@@ -135,8 +141,9 @@ def annotate(dataset, demands, model, backend, split, max_samples, output_dir, f
 @click.option("--max-samples", "-n", type=int, default=None, help="Max samples.")
 @click.option("--task-type", type=click.Choice(["open-ended", "multiple-choice"]),
               default="open-ended")
+@click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
 @click.option("--output-dir", "-o", default="./adele_results", help="Output directory.")
-def evaluate(model_id, dataset, split, max_samples, task_type, output_dir):
+def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_dir):
     """Evaluate a model on a benchmark using Inspect AI.
 
     MODEL_ID is the model identifier (e.g. 'openai/gpt-4o').
@@ -152,16 +159,18 @@ def evaluate(model_id, dataset, split, max_samples, task_type, output_dir):
         kwargs["split"] = split
     if max_samples:
         kwargs["max_samples"] = max_samples
+    if hf_token:
+        kwargs["hf_token"] = hf_token
 
     data = load_benchmark(dataset, **kwargs)
     click.echo(f"Loaded {len(data)} instances.")
 
     click.echo(f"Evaluating {model_id}...")
+    # max_samples already applied at load time, so no need to re-pass it.
     results = evaluate_model(
         model=model_id,
         data=data,
         task_type=task_type,
-        max_samples=max_samples,
     )
 
     os.makedirs(output_dir, exist_ok=True)
@@ -188,10 +197,10 @@ def profile(annotations_csv, title, output, color):
     from adele.analysis.demand import plot_from_csv
 
     click.echo(f"Generating demand profile from {annotations_csv}...")
-    fig = plot_from_csv(
+    plot_from_csv(
         annotations_csv,
         base_color=color,
         save_path=output,
         title=title,
     )
-    click.echo(f"Demand profile saved!")
+    click.echo("Demand profile saved!")

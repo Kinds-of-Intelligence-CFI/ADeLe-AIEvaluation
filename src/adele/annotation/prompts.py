@@ -7,6 +7,12 @@ each (task_instance, rubric) pair.
 """
 
 
+def is_reasoning_model(model: str) -> bool:
+    """True for OpenAI reasoning models (o1/o3/o4…), which only accept the
+    default temperature (so callers must omit a custom temperature)."""
+    return model.split("/", 1)[-1].startswith(("o1", "o3", "o4"))
+
+
 def build_annotation_prompt(
     demand_name: str,
     rubric_content: str,
@@ -84,8 +90,7 @@ def build_batch_request(
     }
     # Reasoning models (o1/o3/o4…) only accept the default temperature; sending
     # temperature=0 makes the batch request fail. Set it only for other models.
-    bare = model.split("/", 1)[-1]
-    if not bare.startswith(("o1", "o3", "o4")):
+    if not is_reasoning_model(model):
         body["temperature"] = 0
 
     return {

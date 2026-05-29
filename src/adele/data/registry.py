@@ -9,8 +9,8 @@ columns ready for demand annotation.
 Users can register additional benchmarks at runtime.
 """
 
-from dataclasses import dataclass, field
-from typing import Callable, Dict, List, Optional
+from dataclasses import dataclass
+from typing import Dict, List, Optional
 
 
 @dataclass

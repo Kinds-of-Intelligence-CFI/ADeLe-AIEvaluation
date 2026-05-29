@@ -9,9 +9,8 @@ import re
 import json
 import logging
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 
-import numpy as np
 import pandas as pd
 
 logger = logging.getLogger(__name__)

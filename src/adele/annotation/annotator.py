@@ -39,8 +39,12 @@ from tenacity import retry, retry_if_exception_type, wait_exponential, stop_afte
 from tqdm import tqdm
 
 from adele.rubrics.catalog import RubricsCatalog
-from adele.annotation.prompts import build_annotation_prompt, build_batch_request
-from adele.annotation.parsing import parse_batch_output, parse_multiple_outputs, to_wide_format
+from adele.annotation.prompts import (
+    build_annotation_prompt,
+    build_batch_request,
+    is_reasoning_model,
+)
+from adele.annotation.parsing import parse_multiple_outputs, to_wide_format
 
 logger = logging.getLogger(__name__)
 
@@ -80,6 +84,7 @@ def annotate(
     output_dir: str = "./adele_annotations",
     poll_interval: int = 60,
     max_concurrent: int = 10,
+    batch_chunk_size: int = 50000,
     format: str = "wide",
 ) -> pd.DataFrame:
     """Annotate demand levels for a benchmark dataset.
@@ -114,6 +119,9 @@ def annotate(
         output_dir:     Directory to save batch input/output files.
         poll_interval:  Seconds between status checks (batch mode only).
         max_concurrent: Max concurrent requests (direct mode only).
+        batch_chunk_size: Max requests per batch job (batch mode only); each
+                        demand is split into chunks of this size to stay under
+                        the OpenAI Batch API's 50,000-request limit.
         format:         Output format: ``"wide"`` (one row per instance)
                         or ``"long"`` (one row per instance×demand).
 
@@ -162,6 +170,7 @@ def annotate(
             api_key=api_key,
             output_path=output_path,
             poll_interval=poll_interval,
+            chunk_size=batch_chunk_size,
         )
     elif backend == "direct":
         result_df = _annotate_direct(
@@ -259,7 +268,7 @@ def _annotate_direct(
             max_tokens=max_completion_tokens,
         )
         # Reasoning models (o1/o3/o4…) reject a non-default temperature.
-        if not model.split("/", 1)[-1].startswith(("o1", "o3", "o4")):
+        if not is_reasoning_model(model):
             completion_kwargs["temperature"] = 0.0
 
         try:
@@ -313,6 +322,7 @@ def _annotate_batch(
     api_key: Optional[str],
     output_path: Path,
     poll_interval: int,
+    chunk_size: int = 50000,
 ) -> pd.DataFrame:
     """Annotate using the OpenAI Batch API (50% cheaper, higher limits)."""
     # Strip "openai/" prefix if present
@@ -320,7 +330,7 @@ def _annotate_batch(
 
     client = openai.OpenAI(api_key=api_key)
 
-    # Step 1: Build batch input files (one per demand)
+    # Step 1: Build batch input files (one per demand × chunk)
     input_files = _create_input_files(
         data=data,
         catalog=catalog,
@@ -328,6 +338,7 @@ def _annotate_batch(
         model=bare_model,
         max_completion_tokens=max_completion_tokens,
         output_dir=output_path,
+        chunk_size=chunk_size,
     )
 
     # Step 2: Upload and launch batch jobs
@@ -350,32 +361,44 @@ def _create_input_files(
     model: str,
     max_completion_tokens: int,
     output_dir: Path,
+    chunk_size: int = 50000,
 ) -> dict[str, Path]:
-    """Create batch input JSONL files, one per demand."""
+    """Create batch input JSONL files, one per (demand, chunk).
+
+    The OpenAI Batch API caps a single job at 50,000 requests, so each demand's
+    requests are split into chunks of at most ``chunk_size`` rows. The chunk's
+    demand is recovered from each request's ``custom_id`` at parse time, so the
+    extra files are transparent downstream.
+    """
     input_files = {}
+    n = len(data)
 
     for acronym in demands:
         rubric = catalog[acronym]
-        file_path = output_dir / f"input_{acronym}.jsonl"
+        for ci, start in enumerate(range(0, n, chunk_size)):
+            chunk = data.iloc[start:start + chunk_size]
+            # Keep the single-chunk filename identical to the old behavior.
+            label = acronym if n <= chunk_size else f"{acronym}_{ci}"
+            file_path = output_dir / f"input_{label}.jsonl"
 
-        with open(file_path, "w", encoding="utf-8") as f:
-            for _, row in data.iterrows():
-                prompt = build_annotation_prompt(
-                    demand_name=rubric.full_name,
-                    rubric_content=rubric.content,
-                    task_instance=row["prompt"],
-                )
-                request = build_batch_request(
-                    custom_id=row["custom_id"],
-                    demand_acronym=acronym,
-                    prompt=prompt,
-                    model=model,
-                    max_completion_tokens=max_completion_tokens,
-                )
-                f.write(json.dumps(request) + "\n")
+            with open(file_path, "w", encoding="utf-8") as f:
+                for _, row in chunk.iterrows():
+                    prompt = build_annotation_prompt(
+                        demand_name=rubric.full_name,
+                        rubric_content=rubric.content,
+                        task_instance=row["prompt"],
+                    )
+                    request = build_batch_request(
+                        custom_id=row["custom_id"],
+                        demand_acronym=acronym,
+                        prompt=prompt,
+                        model=model,
+                        max_completion_tokens=max_completion_tokens,
+                    )
+                    f.write(json.dumps(request) + "\n")
 
-        logger.info("Created input file: %s (%d requests)", file_path.name, len(data))
-        input_files[acronym] = file_path
+            logger.info("Created input file: %s (%d requests)", file_path.name, len(chunk))
+            input_files[label] = file_path
 
     return input_files
 

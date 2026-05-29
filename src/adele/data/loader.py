@@ -33,9 +33,7 @@ from typing import Optional
 import pandas as pd
 
 from adele.data.registry import (
-    BenchmarkConfig,
     get_benchmark,
-    register_benchmark,
 )
 
 logger = logging.getLogger(__name__)

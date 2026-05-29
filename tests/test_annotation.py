@@ -270,6 +270,41 @@ class TestParallelAnnotation:
         assert peak >= 2, f"Peak concurrency was {peak}, expected >= 2"
 
 
+class TestBatchChunking:
+    """_create_input_files splits each demand into <=chunk_size-row jobs."""
+
+    def _data(self, n):
+        import pandas as pd
+        return pd.DataFrame({
+            "custom_id": [f"q{i}" for i in range(n)],
+            "prompt": [f"Question {i}" for i in range(n)],
+        })
+
+    def test_splits_large_demand_into_chunks(self, tmp_path):
+        from adele.annotation.annotator import _create_input_files
+        from adele.rubrics.catalog import RubricsCatalog
+        files = _create_input_files(
+            data=self._data(5), catalog=RubricsCatalog(), demands=["AS", "MCr"],
+            model="gpt-4o", max_completion_tokens=10, output_dir=tmp_path, chunk_size=2,
+        )
+        # 5 rows / chunk 2 = 3 chunks per demand × 2 demands
+        assert len(files) == 6
+        for path in files.values():
+            assert sum(1 for line in open(path) if line.strip()) <= 2
+        # total requests preserved per demand
+        as_lines = sum(sum(1 for _ in open(p)) for k, p in files.items() if k.startswith("AS"))
+        assert as_lines == 5
+
+    def test_single_chunk_keeps_plain_filename(self, tmp_path):
+        from adele.annotation.annotator import _create_input_files
+        from adele.rubrics.catalog import RubricsCatalog
+        files = _create_input_files(
+            data=self._data(3), catalog=RubricsCatalog(), demands=["AS"],
+            model="gpt-4o", max_completion_tokens=10, output_dir=tmp_path, chunk_size=50000,
+        )
+        assert set(files) == {"AS"}  # no chunk suffix when it fits in one job
+
+
 class TestToWideFormat:
     """Pivot from long to wide demand columns."""
 
