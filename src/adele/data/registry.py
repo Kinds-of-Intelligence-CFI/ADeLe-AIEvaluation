@@ -148,9 +148,10 @@ _register(BenchmarkConfig(
     name="truthquest",
     hf_dataset_id="mainlp/TruthQuest",  # was alessandrobessi/TruthQuest (wrong)
     split="test",
-    prompt_column="question",
-    target_column="answer",
-    description="Knights-and-knaves suppositional reasoning — column names unverified",
+    prompt_column="Problem",       # list of statements (joined by the loader)
+    target_column="Solutions",     # structured (list of {name: is_knight})
+    description="TruthQuest — suppositional reasoning. Gated; 12 subsets "
+                "(E/I/S × n=3..6, no default config); Solutions is structured",
     verified=False,
 ))
 
@@ -171,9 +172,10 @@ _register(BenchmarkConfig(
     hf_dataset_id="tonytan48/TempReason",  # was sxiong/TRAM (different/nonexistent)
     split="test",
     prompt_column="question",
-    target_column="answer",
-    description="TempReason (L2/L3) — event temporal reasoning (TimeBench); "
-                "columns unverified",
+    target_column="text_answers",
+    description="TempReason (L2/L3) — event temporal reasoning (TimeBench). "
+                "Upstream load is broken (schema mismatch in train_l2.json); "
+                "needs a fixed config before it will load",
     verified=False,
 ))
 
@@ -182,21 +184,17 @@ _register(BenchmarkConfig(
     hf_dataset_id="hugosousa/TimeQA",  # was hotpotqa/hotpot_qa (wrong dataset)
     split="test",
     prompt_column="question",
-    target_column="answer",
-    description="TimeQA (explicit/implicit) — event temporal reasoning "
-                "(TimeBench); columns unverified",
-    verified=False,
+    target_column="targets",
+    description="TimeQA (explicit/implicit) — event temporal reasoning (TimeBench)",
 ))
 
 _register(BenchmarkConfig(
     name="timedial",
     hf_dataset_id="google-research-datasets/time_dial",  # was google/TimeDial
     split="test",
-    prompt_column="context",
+    prompt_column="conversation",  # list of dialogue turns (joined by the loader)
     target_column="correct1",
-    description="TimeDial — temporal commonsense in dialogues (TimeBench); "
-                "script-based, columns unverified",
-    verified=False,
+    description="TimeDial — temporal commonsense in dialogues (TimeBench)",
 ))
 
 _register(BenchmarkConfig(

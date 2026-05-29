@@ -75,16 +75,22 @@ def build_batch_request(
     Returns:
         A dict ready to be serialised as one JSONL line.
     """
+    body = {
+        "model": model,
+        "max_completion_tokens": max_completion_tokens,
+        "messages": [
+            {"role": "user", "content": prompt}
+        ],
+    }
+    # Reasoning models (o1/o3/o4…) only accept the default temperature; sending
+    # temperature=0 makes the batch request fail. Set it only for other models.
+    bare = model.split("/", 1)[-1]
+    if not bare.startswith(("o1", "o3", "o4")):
+        body["temperature"] = 0
+
     return {
         "custom_id": f"{custom_id}__{demand_acronym}",
         "method": "POST",
         "url": "/v1/chat/completions",
-        "body": {
-            "model": model,
-            "max_completion_tokens": max_completion_tokens,
-            "temperature": 0,
-            "messages": [
-                {"role": "user", "content": prompt}
-            ],
-        },
+        "body": body,
     }

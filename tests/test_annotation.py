@@ -69,6 +69,16 @@ class TestBuildBatchRequest:
         req = build_batch_request("item_42", "MCr", "prompt", "gpt-4o", 1000)
         assert req["custom_id"] == "item_42__MCr"
 
+    def test_temperature_set_for_chat_models(self):
+        req = build_batch_request("q1", "AS", "p", "gpt-4o", 500)
+        assert req["body"]["temperature"] == 0
+
+    def test_temperature_omitted_for_reasoning_models(self):
+        # o1/o3/o4 reject a non-default temperature; it must not be sent.
+        for model in ("o1", "o3-mini", "openai/o1-mini", "o4-mini"):
+            req = build_batch_request("q1", "AS", "p", model, 500)
+            assert "temperature" not in req["body"], model
+
 
 class TestExtractDemandLevel:
     """Tests for demand level extraction from LLM responses."""

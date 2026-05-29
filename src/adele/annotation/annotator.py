@@ -235,13 +235,17 @@ def _annotate_direct(
             task_instance=row["prompt"],
         )
 
+        completion_kwargs = dict(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=max_completion_tokens,
+        )
+        # Reasoning models (o1/o3/o4…) reject a non-default temperature.
+        if not model.split("/", 1)[-1].startswith(("o1", "o3", "o4")):
+            completion_kwargs["temperature"] = 0.0
+
         try:
-            response = litellm.completion(
-                model=model,
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=max_completion_tokens,
-                temperature=0.0,
-            )
+            response = litellm.completion(**completion_kwargs)
             content = response.choices[0].message.content or ""
         except Exception as exc:
             logger.warning(
