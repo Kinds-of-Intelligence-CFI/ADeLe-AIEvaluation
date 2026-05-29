@@ -26,7 +26,7 @@ class TestRubricsCatalog:
         assert rubric is not None
         assert isinstance(rubric, Rubric)
         assert rubric.acronym == "AS"
-        assert rubric.full_name == "Attention and Search"
+        assert rubric.full_name == "Attention and Scan"
         assert len(rubric.content) > 100
 
     def test_get_missing_returns_none(self):
