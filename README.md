@@ -96,19 +96,25 @@ inspect eval adele/adele_battery --model openai/gpt-4o \
 
 Task params (`-T`): `answer_format` (`MC` | `Open-ended`), `benchmark`, `limit`, `judge_model`, `csv_path`.
 
-Scoring is faithful to the v1.0 verification conventions: **MC** by option-letter match, **Open-ended** by a model-graded judge (the judge model is recorded in the result version). The 18 demand levels ride through into the Inspect log via `Sample.metadata`, so a run joins straight back to the demand annotations (by `custom_id`) for ability profiling.
+Scoring is faithful to the v1.0 verification conventions: **MC** by option-letter match, **Open-ended** by a model-graded judge (recorded in the result version). The 18 demand levels travel into the log via `Sample.metadata`. Explore a run with `inspect view`.
 
-From Python:
+**Get the model's capability profile.** Both paths above produce per-instance correctness; join it to the demands (by `custom_id`) and fit the ability profile:
 
 ```python
 from adele.data import load_battery
-from adele.evaluation import evaluate_model
+from adele.evaluation import evaluate_model, results_from_log
+from adele.analysis import compute_ability_scores, plot_ability_profile
 
-battery = load_battery(answer_format="MC", max_samples=50)   # DataFrame
-results = evaluate_model("openai/gpt-4o", battery)           # custom_id, correct, model_answer
+battery = load_battery(answer_format="MC", max_samples=50)
+results = evaluate_model("openai/gpt-4o", battery)        # scripted run, or read a CLI run:
+# results = results_from_log("logs/2026-..._adele_battery.eval")
+scores  = compute_ability_scores(results, battery)        # {dimension: ability 0–1}
+plot_ability_profile(scores, title="gpt-4o")              # capability radar
 ```
 
 ### 3. Generate Profiles (Visualization)
+
+A benchmark's **demand** profile (what it requires) — distinct from a model's ability profile above:
 
 ```bash
 adele profile ./results/mmlu/annotations_wide.csv --title "MMLU-Pro Demands"
