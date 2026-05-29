@@ -6,7 +6,11 @@ import json
 import pytest
 import numpy as np
 from adele.annotation.prompts import build_annotation_prompt, build_batch_request
-from adele.annotation.parsing import extract_demand_level, parse_batch_output
+from adele.annotation.parsing import (
+    extract_demand_level,
+    parse_batch_output,
+    unguessability_from_choices,
+)
 from adele.annotation.annotator import _is_openai_model, annotate
 
 
@@ -154,6 +158,31 @@ class TestExtractDemandLevel:
         level, ok = extract_demand_level(response)
         assert ok
         assert level == 3.0
+
+
+class TestUnguessabilityFromChoices:
+    """The UG_choice_num (answer-format) -> 0-100 unguessability mapping."""
+
+    def test_open_ended_is_max(self):
+        assert unguessability_from_choices("open") == 100.0
+        assert unguessability_from_choices("Open-ended") == 100.0
+
+    def test_four_choices_matches_threshold(self):
+        # 4 choices -> 75, which is exactly the analysis ug_threshold default.
+        assert unguessability_from_choices(4) == 75.0
+
+    def test_two_choices(self):
+        assert unguessability_from_choices("2") == 50.0
+
+    def test_single_choice_is_zero(self):
+        assert unguessability_from_choices(1) == 0.0
+
+    def test_many_choices(self):
+        assert unguessability_from_choices(12) == pytest.approx(100 * 11 / 12)
+
+    def test_unparseable_is_nan(self):
+        assert np.isnan(unguessability_from_choices("garbage"))
+        assert np.isnan(unguessability_from_choices(None))
 
 
 class TestBackendDetection:

@@ -12,6 +12,7 @@ from adele.annotation.parsing import (
     parse_batch_output,
     parse_multiple_outputs,
     to_wide_format,
+    unguessability_from_choices,
 )
 
 __all__ = [
@@ -22,4 +23,5 @@ __all__ = [
     "parse_batch_output",
     "parse_multiple_outputs",
     "to_wide_format",
+    "unguessability_from_choices",
 ]

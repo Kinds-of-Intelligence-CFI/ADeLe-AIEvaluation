@@ -2,7 +2,10 @@
 Rubrics management for demand-level annotation.
 
 Provides the RubricsCatalog class for loading, listing, and accessing
-demand-level rubrics. Ships with the 19 bundled DeLeAn v1.0 rubrics.
+demand-level rubrics. Ships with the 18 DeLeAn v1.0 demand rubrics. (A 19th
+file, UG_choice_num.txt, is an answer-format classifier rather than a 0–5
+demand rubric, so it does not pass validation and is not loaded as a demand;
+see adele.annotation.unguessability_from_choices for the UG score.)
 
 Usage:
     from adele.rubrics.catalog import RubricsCatalog
@@ -24,7 +27,8 @@ from dataclasses import dataclass
 logger = logging.getLogger(__name__)
 
 # ============================================================================
-# Built-in acronym → full name mapping for the 19 DeLeAn v1.0 rubrics.
+# Built-in acronym → full name mapping. 18 are 0–5 demand rubrics; UG_choice_num
+# is the answer-format/unguessability classifier (not loaded as a demand rubric).
 # The bundled rubrics in ADeLe-AIEvaluation don't contain a '# Name' header,
 # so we provide this mapping explicitly.
 # ============================================================================

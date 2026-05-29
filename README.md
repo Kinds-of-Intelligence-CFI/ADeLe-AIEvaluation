@@ -187,7 +187,7 @@ HuggingFace datasets do **not** follow a standard structure — column names, sp
 
 ### Pre-registered benchmarks (21 built-in)
 
-Run `adele benchmarks list` to see all 21 pre-configured benchmarks. These "just work" because we've already defined the correct column mappings:
+Run `adele benchmarks list` to see all 21 pre-configured benchmarks — most have verified HuggingFace mappings and "just work"; a few are flagged as unverified (their source/columns couldn't be confirmed) and will warn on load. Verified entries already have the correct column mappings:
 
 ```bash
 adele annotate mmlu-pro       # knows to use column "question", split "test"

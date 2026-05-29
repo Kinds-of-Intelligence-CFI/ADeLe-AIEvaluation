@@ -69,6 +69,44 @@ def extract_demand_level(response: str) -> tuple[float, bool]:
         return float("nan"), False
 
 
+def unguessability_from_choices(value) -> float:
+    """Convert an answer-format classification into the battery's UG score.
+
+    The ``UG_choice_num`` rubric classifies a question's answer format as the
+    number of choices (an integer ``n``) or ``"open"`` for open-ended. The
+    ADeLe battery's ``UG`` column is an unguessability score on 0–100; the
+    analysis modules filter on ``ug_threshold=75``. This maps one to the other:
+
+        n choices  -> (1 - 1/n) * 100   (e.g. 4 choices -> 75, 2 -> 50)
+        "open"     -> 100               (nothing to guess from)
+        n <= 1     -> 0
+
+    NOTE: the formula is inferred from the threshold convention (75 ≈ 4
+    choices); confirm against the paper if exact battery values are required.
+    Returns NaN for unparseable input.
+    """
+    if value is None:
+        return float("nan")
+    if isinstance(value, str):
+        v = value.strip().lower()
+        if v in ("open", "open-ended", "openended"):
+            return 100.0
+        try:
+            n = float(v)
+        except ValueError:
+            return float("nan")
+    else:
+        try:
+            n = float(value)
+        except (TypeError, ValueError):
+            return float("nan")
+    if n != n:  # NaN
+        return float("nan")
+    if n <= 1:
+        return 0.0
+    return (1.0 - 1.0 / n) * 100.0
+
+
 def parse_batch_output(
     output_file: str | Path,
     *,
