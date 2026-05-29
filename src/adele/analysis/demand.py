@@ -13,9 +13,7 @@ import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
-import scienceplots
-
-plt.style.use('science')
+import scienceplots  # noqa: F401  (registers the 'science' style)
 import matplotlib.colors as mcolors
 from matplotlib.patches import Rectangle
 
@@ -23,6 +21,22 @@ logger = logging.getLogger(__name__)
 
 # Import canonical ordering
 from adele.analysis.constants import DEMAND_ORDER
+
+
+def _use_science_style() -> None:
+    """Apply the 'science' plot style.
+
+    Called inside the plotting function rather than at import time, so that
+    importing this module for the numeric API does not require a TeX install.
+    The 'science' style renders text with LaTeX; if the TeX toolchain
+    (``latex``/``dvipng``) is not on PATH we keep the style but disable
+    ``text.usetex`` so plots still render (without TeX fonts).
+    """
+    import shutil
+
+    plt.style.use("science")
+    if not (shutil.which("latex") and shutil.which("dvipng")):
+        plt.rcParams["text.usetex"] = False
 
 
 def compute_demand_profile(
@@ -95,6 +109,7 @@ def plot_demand_profile(
     Returns:
         The matplotlib Figure object.
     """
+    _use_science_style()
     # Determine input format
     if "count" in profile_or_annotations.columns:
         profile = profile_or_annotations

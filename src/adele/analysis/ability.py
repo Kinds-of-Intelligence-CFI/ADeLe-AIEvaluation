@@ -21,11 +21,25 @@ import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
-import scienceplots
-
-plt.style.use('science')
+import scienceplots  # noqa: F401  (registers the 'science' style)
 from scipy.stats import spearmanr
 from sklearn.linear_model import LogisticRegression
+
+
+def _use_science_style() -> None:
+    """Apply the 'science' plot style.
+
+    Called inside the plotting functions rather than at import time, so that
+    importing this module for the numeric API does not require a TeX install.
+    The 'science' style renders text with LaTeX; if the TeX toolchain
+    (``latex``/``dvipng``) is not on PATH we keep the style but disable
+    ``text.usetex`` so plots still render (without TeX fonts).
+    """
+    import shutil
+
+    plt.style.use("science")
+    if not (shutil.which("latex") and shutil.which("dvipng")):
+        plt.rcParams["text.usetex"] = False
 
 # NumPy 2.0 renamed trapz → trapezoid
 _trapz = getattr(np, "trapezoid", None) or np.trapz
@@ -143,6 +157,12 @@ class LogisticAbilityModel(AbilityModel):
     It fits each demand dimension **independently**: for each demand, a
     logistic regression predicts P(correct) ~ demand_level. The ability
     score is the area under that logistic curve, normalised to [0, 1].
+
+    Note on scale: the notebook reports the *un-normalised* integral
+    ``trapz(p, x)`` over the [0, 100] grid (a ~0–8 scale). This model divides
+    by the grid width (``grid_max - grid_min``) to put scores on [0, 1]. The
+    transform is monotonic, so rankings and profile shapes are identical, but
+    the absolute numbers differ from the notebook's CSVs/figures by that factor.
 
     This approach assumes that the success probability depends only on
     the single demand with the highest level. A future Bayesian model
@@ -439,6 +459,7 @@ def plot_ability_profile(
     Returns:
         matplotlib Figure.
     """
+    _use_science_style()
     # Order demands
     demands = [d for d in DEMAND_ORDER if d in ability_scores]
     if not demands:
@@ -502,6 +523,7 @@ def plot_multi_model_ability(
     Returns:
         matplotlib Figure.
     """
+    _use_science_style()
     # Collect all demands
     all_demands = set()
     for scores in model_scores.values():

@@ -11,7 +11,7 @@ Usage:
     catalog = RubricsCatalog("./my_rubrics/")  # loads custom rubrics
 
     rubric = catalog.get("AS")
-    print(rubric.full_name)   # "Attention and Search"
+    print(rubric.full_name)   # "Attention and Scan"
     print(rubric.content)     # full rubric text
 """
 
@@ -57,7 +57,7 @@ class Rubric:
 
     Attributes:
         acronym:   Short identifier (e.g. "AS", "MCr").
-        full_name: Human-readable name (e.g. "Attention and Search").
+        full_name: Human-readable name (e.g. "Attention and Scan").
         content:   Full rubric text with level descriptions and examples.
         file_path: Absolute path to the source .txt file.
     """

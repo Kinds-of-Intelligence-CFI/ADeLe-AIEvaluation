@@ -33,7 +33,7 @@ class TestRubricsCLI:
         result = runner.invoke(main, ["rubrics", "list"])
         assert result.exit_code == 0
         assert "AS" in result.output
-        assert "Attention and Search" in result.output
+        assert "Attention and Scan" in result.output
         assert "18 rubrics loaded" in result.output
 
 

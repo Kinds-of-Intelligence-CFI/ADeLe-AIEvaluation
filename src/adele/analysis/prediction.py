@@ -11,7 +11,7 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import roc_auc_score, accuracy_score, classification_report
 
 logger = logging.getLogger(__name__)
@@ -22,8 +22,10 @@ def compute_predictive_power(
     annotations: pd.DataFrame,
     *,
     demands: Optional[List[str]] = None,
-    n_folds: int = 5,
+    n_folds: int = 10,
     n_estimators: int = 100,
+    min_samples_split: int = 50,
+    criterion: str = "entropy",
     random_state: int = 42,
 ) -> Dict[str, float]:
     """Assess how well demand levels predict model correctness.
@@ -31,12 +33,19 @@ def compute_predictive_power(
     Trains a Random Forest classifier to predict correctness from
     demand levels and reports cross-validated performance.
 
+    Defaults reproduce the predictive-power notebook
+    (``predictive_power_stats_rf-assessor.ipynb``): 10-fold ``KFold``,
+    ``min_samples_split=50``, ``criterion="entropy"``. Changing these
+    changes the reported numbers, so keep them to compare against the paper.
+
     Args:
         model_data:    DataFrame with ``custom_id`` and ``correct``.
         annotations:   Wide-format annotations with demand columns.
         demands:       List of demand dimensions to use as features.
         n_folds:       Number of cross-validation folds.
         n_estimators:  Number of trees in the Random Forest.
+        min_samples_split: Min samples to split a node (notebook used 50).
+        criterion:     Split criterion (notebook used "entropy").
         random_state:  Random seed.
 
     Returns:
@@ -65,15 +74,17 @@ def compute_predictive_power(
             "feature_importances": {d: 0.0 for d in demands},
         }
 
-    # Random Forest
+    # Random Forest (hyperparameters match the predictive-power notebook).
     clf = RandomForestClassifier(
         n_estimators=n_estimators,
+        min_samples_split=min_samples_split,
+        criterion=criterion,
         random_state=random_state,
         n_jobs=-1,
     )
 
-    # Cross-validated scores
-    cv = StratifiedKFold(n_splits=n_folds, shuffle=True, random_state=random_state)
+    # Cross-validated scores (10-fold KFold, as in the notebook).
+    cv = KFold(n_splits=n_folds, shuffle=True, random_state=random_state)
 
     acc_scores = cross_val_score(clf, X, y, cv=cv, scoring="accuracy")
     try:

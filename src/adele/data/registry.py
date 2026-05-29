@@ -43,8 +43,15 @@ class BenchmarkConfig:
 
 
 # ============================================================================
-# Built-in registry of ADeLe v1.0 battery benchmarks.
-# These are the 20 benchmarks evaluated in the ADeLe paper.
+# Built-in registry of source benchmarks used by the ADeLe v1.0 battery.
+#
+# WARNING: these are convenience pointers for the *annotation* path only (they
+# are not needed to run the pre-annotated battery, which loads from HuggingFace
+# via adele.data.load_battery). Several HuggingFace IDs/subsets/splits below are
+# best-effort and have NOT all been verified to resolve — notably the AGIEval-
+# derived exams (sat, lsat, gre-gmat, civil-service, etc.), which the paper
+# sources from AGIEval rather than standalone `cais/*` datasets. Verify or
+# override the id/split/columns before relying on a given entry.
 # ============================================================================
 
 _REGISTRY: Dict[str, BenchmarkConfig] = {}
@@ -177,7 +184,7 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Mental arithmetic QA",
+    description="Time-sensitive multi-hop temporal-reasoning QA",
 ))
 
 # Standardised test benchmarks

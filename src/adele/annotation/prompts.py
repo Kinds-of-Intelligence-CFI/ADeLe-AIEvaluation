@@ -20,7 +20,7 @@ def build_annotation_prompt(
 
     Args:
         demand_name:    Human-readable name of the demand
-                        (e.g. "Attention and Search").
+                        (e.g. "Attention and Scan").
         rubric_content: Full rubric text with level descriptions.
         task_instance:  The benchmark question / task to annotate.
 

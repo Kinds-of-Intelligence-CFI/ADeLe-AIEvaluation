@@ -15,11 +15,11 @@ class TestBuildAnnotationPrompt:
 
     def test_contains_demand_name(self):
         prompt = build_annotation_prompt(
-            demand_name="Attention and Search",
+            demand_name="Attention and Scan",
             rubric_content="Level 0: No attention needed.",
             task_instance="What is 2+2?",
         )
-        assert "Attention and Search" in prompt
+        assert "Attention and Scan" in prompt
 
     def test_contains_rubric_content(self):
         rubric = "Level 0: No attention needed. Level 5: Maximum attention."
@@ -106,6 +106,12 @@ class TestExtractDemandLevel:
 
     def test_out_of_range(self):
         response = "Reasoning...\n\nThe level is: 7"
+        level, ok = extract_demand_level(response)
+        assert not ok
+
+    def test_multi_digit_out_of_range(self):
+        """A multi-digit 'is: 12' must be rejected, not truncated to '1'."""
+        response = "Reasoning...\n\nThe level is: 12"
         level, ok = extract_demand_level(response)
         assert not ok
 

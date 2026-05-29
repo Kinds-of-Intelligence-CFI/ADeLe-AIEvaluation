@@ -37,7 +37,9 @@ def extract_demand_level(response: str) -> tuple[float, bool]:
 
     # First try: look for the structured conclusion pattern
     # "the level of *X* demanded by the given TASK INSTANCE is: SCORE"
-    structured = re.findall(r'is:\s*(\d)', response)
+    # Match the full number (\d+) so a stray multi-digit value like "is: 12"
+    # is rejected as out-of-range rather than silently truncated to "1".
+    structured = re.findall(r'is:\s*(\d+)', response)
     if structured:
         level = float(structured[-1])
         if 0 <= level <= 5:
