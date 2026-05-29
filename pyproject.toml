@@ -69,6 +69,11 @@ dependencies = [
 [project.scripts]
 adele = "adele.cli:main"
 
+# Register with Inspect so `inspect eval adele/adele_battery` resolves the task
+# after `pip install`. See https://inspect.aisi.org.uk/extensions.html
+[project.entry-points.inspect_ai]
+adele = "adele.evaluation"
+
 # ============================================================================
 # URLS
 # ============================================================================
