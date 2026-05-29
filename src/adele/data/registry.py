@@ -49,11 +49,15 @@ class BenchmarkConfig:
 # ============================================================================
 # Built-in registry of the source benchmarks behind the ADeLe v1.0 battery.
 #
-# Grounded in the paper (arXiv:2503.06378v2): the battery draws on 20
-# benchmarks, several of which are *umbrella* sources — LiveBench (categories
-# reasoning / language / data analysis) and AGIEval (SAT, LSAT, LogiQA = China
-# civil-service exam, AQuA-RAT ≈ GRE/GMAT). The registry lists them at category
-# granularity, so it has a few more than 20 entries.
+# Grounded in the paper's Table 11 (arXiv:2503.06378v2). The battery draws on
+# 20 benchmarks, several of which are *umbrella* sources:
+#   - AGIEval [187]: SAT (SAT-En/Math), LSAT (AR/LR/RC), LogiQA-en (= China
+#     civil-service exam), AQuA-RAT (= GRE & GMAT).
+#   - LiveBench [179]: categories reasoning, language, data analysis (+ math).
+#   - TimeBench [27]: Date Arithmetic, MCTACO, MenatQA, TempReason, TimeDial,
+#     TimeQA (the temporal-reasoning cluster).
+# The registry lists them at category/sub-benchmark granularity, so it has a
+# few more than 20 entries.
 #
 # These are convenience pointers for the *annotation* path only — they are NOT
 # needed to run the pre-annotated battery (use adele.data.load_battery, which
@@ -159,7 +163,7 @@ _register(BenchmarkConfig(
     prompt_column="sentence",
     target_column="label",
     prompt_template="{sentence}\n\nQuestion: {question}\nAnswer: {answer}",
-    description="Multiple-Choice TemporAl COmmonsense QA",
+    description="MCTACO — multiple-choice temporal commonsense QA (TimeBench)",
 ))
 
 _register(BenchmarkConfig(
@@ -168,7 +172,8 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Temporal reasoning benchmark — column names unverified",
+    description="TempReason (L2/L3) — event temporal reasoning (TimeBench); "
+                "columns unverified",
     verified=False,
 ))
 
@@ -178,7 +183,8 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Time-sensitive QA — column names unverified",
+    description="TimeQA (explicit/implicit) — event temporal reasoning "
+                "(TimeBench); columns unverified",
     verified=False,
 ))
 
@@ -188,7 +194,8 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="context",
     target_column="correct1",
-    description="Temporal commonsense in dialogues — script-based, columns unverified",
+    description="TimeDial — temporal commonsense in dialogues (TimeBench); "
+                "script-based, columns unverified",
     verified=False,
 ))
 
@@ -198,8 +205,8 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Time-sensitive multi-hop QA — GitHub-only "
-                "(weiyifan1023/MenatQA); no standalone public HF dataset",
+    description="MenatQA (counterfactual/order/scope) — event temporal "
+                "reasoning (TimeBench); GitHub-only (weiyifan1023/MenatQA)",
     verified=False,
 ))
 
@@ -213,7 +220,7 @@ _register(BenchmarkConfig(
     prompt_column="question",
     target_column="label",
     choices_column="options",
-    description="SAT (English) — AGIEval",
+    description="SAT — AGIEval SAT-En (battery also uses SAT-Math)",
 ))
 
 _register(BenchmarkConfig(
@@ -224,7 +231,7 @@ _register(BenchmarkConfig(
     prompt_column="question",
     target_column="label",
     choices_column="options",
-    description="LSAT (logical reasoning) — AGIEval",
+    description="LSAT — AGIEval LSAT-LR (battery also uses LSAT-AR, LSAT-RC)",
 ))
 
 _register(BenchmarkConfig(
@@ -235,8 +242,7 @@ _register(BenchmarkConfig(
     prompt_column="question",
     target_column="label",
     choices_column="options",
-    description="AGIEval AQuA-RAT (GRE/GMAT-style algebra) — mapping unconfirmed",
-    verified=False,
+    description="GRE & GMAT — AGIEval AQuA-RAT (Table 11)",
 ))
 
 _register(BenchmarkConfig(
@@ -263,13 +269,12 @@ _register(BenchmarkConfig(
 
 _register(BenchmarkConfig(
     name="date-arithmetic",
-    hf_dataset_id="lukaemon/bbh",
-    hf_subset="date_understanding",
+    hf_dataset_id="zchuz/TimeBench",  # GitHub source; no confirmed standalone HF dataset
     split="test",
-    prompt_column="input",
-    target_column="target",
-    description="Date arithmetic — source unconfirmed (best-guess BBH "
-                "date_understanding; not in AGIEval/LiveBench)",
+    prompt_column="question",
+    target_column="answer",
+    description="TimeBench — Date Arithmetic (symbolic temporal reasoning, "
+                "Table 11); GitHub zchuz/TimeBench, no public HF dataset",
     verified=False,
 ))
 
