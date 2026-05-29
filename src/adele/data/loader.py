@@ -69,6 +69,12 @@ def load_benchmark(
         logger.info(
             "Using registered benchmark '%s' → %s", cfg.name, hf_id
         )
+        if not cfg.verified:
+            logger.warning(
+                "Benchmark '%s' is UNVERIFIED (%s). Confirm/override the "
+                "HF id, split, and columns before relying on results.",
+                cfg.name, cfg.description,
+            )
     else:
         hf_id = name_or_hf_id
         split = split or "test"
@@ -162,7 +168,9 @@ def _build_output(
             lambda row: _format_template(prompt_template, row), axis=1
         )
     elif prompt_column in df.columns:
-        result["prompt"] = df[prompt_column].astype(str)
+        # Some datasets store the prompt as a list (e.g. LiveBench's `turns`);
+        # join those into plain text rather than stringifying the list.
+        result["prompt"] = df[prompt_column].map(_prompt_to_text)
     else:
         available = ", ".join(df.columns[:10])
         raise ValueError(
@@ -187,6 +195,15 @@ def _build_output(
         result["choices"] = df[choices_column]
 
     return result.reset_index(drop=True)
+
+
+def _prompt_to_text(value) -> str:
+    """Coerce a prompt cell to text, joining list/array values with newlines."""
+    if isinstance(value, (list, tuple)):
+        return "\n".join(str(v) for v in value)
+    if hasattr(value, "tolist") and not isinstance(value, (str, bytes)):
+        return "\n".join(str(v) for v in value.tolist())
+    return str(value)
 
 
 def _format_template(template: str, row: pd.Series) -> str:

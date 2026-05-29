@@ -29,6 +29,9 @@ class BenchmarkConfig:
                          formats multiple columns into a single prompt.
                          Use ``{column_name}`` placeholders.
         description:    Short description of the benchmark.
+        verified:       True if the HF id/subset/split/columns have been
+                         confirmed against the Hub. False marks entries whose
+                         source could not be confirmed (load_benchmark warns).
     """
     name: str
     hf_dataset_id: str
@@ -40,18 +43,23 @@ class BenchmarkConfig:
     choices_column: Optional[str] = None
     prompt_template: Optional[str] = None
     description: str = ""
+    verified: bool = True
 
 
 # ============================================================================
-# Built-in registry of source benchmarks used by the ADeLe v1.0 battery.
+# Built-in registry of the source benchmarks behind the ADeLe v1.0 battery.
 #
-# WARNING: these are convenience pointers for the *annotation* path only (they
-# are not needed to run the pre-annotated battery, which loads from HuggingFace
-# via adele.data.load_battery). Several HuggingFace IDs/subsets/splits below are
-# best-effort and have NOT all been verified to resolve — notably the AGIEval-
-# derived exams (sat, lsat, gre-gmat, civil-service, etc.), which the paper
-# sources from AGIEval rather than standalone `cais/*` datasets. Verify or
-# override the id/split/columns before relying on a given entry.
+# Grounded in the paper (arXiv:2503.06378v2): the battery draws on 20
+# benchmarks, several of which are *umbrella* sources — LiveBench (categories
+# reasoning / language / data analysis) and AGIEval (SAT, LSAT, LogiQA = China
+# civil-service exam, AQuA-RAT ≈ GRE/GMAT). The registry lists them at category
+# granularity, so it has a few more than 20 entries.
+#
+# These are convenience pointers for the *annotation* path only — they are NOT
+# needed to run the pre-annotated battery (use adele.data.load_battery, which
+# loads the gated CSV from HuggingFace). IDs were corrected against the Hub;
+# entries still marked ``verified=False`` could not be confirmed to a public
+# dataset (or their exact columns/splits are unverified) and will warn on load.
 # ============================================================================
 
 _REGISTRY: Dict[str, BenchmarkConfig] = {}
@@ -61,7 +69,7 @@ def _register(cfg: BenchmarkConfig):
     _REGISTRY[cfg.name.lower()] = cfg
 
 
-# -- ADeLe v1.0 Battery benchmarks --
+# -- Standalone benchmarks --
 
 _register(BenchmarkConfig(
     name="mmlu-pro",
@@ -87,11 +95,11 @@ _register(BenchmarkConfig(
 
 _register(BenchmarkConfig(
     name="math",
-    hf_dataset_id="lighteval/MATH",
+    hf_dataset_id="DigitalLearningGmbH/MATH-lighteval",  # lighteval/MATH was taken down
     split="test",
     prompt_column="problem",
     target_column="solution",
-    description="Competition mathematics problems",
+    description="Competition mathematics problems (MATH)",
 ))
 
 _register(BenchmarkConfig(
@@ -106,7 +114,7 @@ _register(BenchmarkConfig(
 _register(BenchmarkConfig(
     name="scibench",
     hf_dataset_id="xw27/scibench",
-    split="test",
+    split="train",  # only a train split is published
     prompt_column="problem_text",
     target_column="answer_number",
     description="Science benchmark (physics, chemistry, math)",
@@ -117,7 +125,7 @@ _register(BenchmarkConfig(
     hf_dataset_id="ncbi/MedCalc-Bench",
     split="test",
     prompt_column="Question",
-    target_column="Answer",
+    target_column="Ground Truth Answer",  # not "Answer"
     description="Medical calculation benchmark",
 ))
 
@@ -127,55 +135,61 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="input",
     target_column="output",
-    description="Chemistry language model benchmark",
+    description="Chemistry LLM benchmark — GitHub-only (ChemFoundationModels/"
+                "ChemLLMBench); no confirmed public HF mirror at this id",
+    verified=False,
 ))
 
 _register(BenchmarkConfig(
     name="truthquest",
-    hf_dataset_id="alessandrobessi/TruthQuest",
+    hf_dataset_id="mainlp/TruthQuest",  # was alessandrobessi/TruthQuest (wrong)
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Truthfulness and factuality benchmark",
+    description="Knights-and-knaves suppositional reasoning — column names unverified",
+    verified=False,
 ))
 
-# Temporal reasoning benchmarks
+# -- Temporal reasoning benchmarks --
+
 _register(BenchmarkConfig(
     name="mctaco",
-    hf_dataset_id="domenicrosati/MC-TACO",
+    hf_dataset_id="CogComp/mc_taco",  # was domenicrosati/MC-TACO
     split="test",
     prompt_column="sentence",
     target_column="label",
     prompt_template="{sentence}\n\nQuestion: {question}\nAnswer: {answer}",
-    description="Multiple Choice Temporal common-sense QA",
+    description="Multiple-Choice TemporAl COmmonsense QA",
 ))
 
 _register(BenchmarkConfig(
     name="tempreason",
-    hf_dataset_id="sxiong/TRAM",
+    hf_dataset_id="tonytan48/TempReason",  # was sxiong/TRAM (different/nonexistent)
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Temporal reasoning benchmark",
+    description="Temporal reasoning benchmark — column names unverified",
+    verified=False,
 ))
 
 _register(BenchmarkConfig(
     name="timeqa",
-    hf_dataset_id="hotpotqa/hotpot_qa",
-    hf_subset="fullwiki",
-    split="validation",
+    hf_dataset_id="hugosousa/TimeQA",  # was hotpotqa/hotpot_qa (wrong dataset)
+    split="test",
     prompt_column="question",
     target_column="answer",
-    description="Time-sensitive QA",
+    description="Time-sensitive QA — column names unverified",
+    verified=False,
 ))
 
 _register(BenchmarkConfig(
     name="timedial",
-    hf_dataset_id="google/TimeDial",
+    hf_dataset_id="google-research-datasets/time_dial",  # was google/TimeDial
     split="test",
     prompt_column="context",
     target_column="correct1",
-    description="Temporal commonsense in dialogues",
+    description="Temporal commonsense in dialogues — script-based, columns unverified",
+    verified=False,
 ))
 
 _register(BenchmarkConfig(
@@ -184,81 +198,97 @@ _register(BenchmarkConfig(
     split="test",
     prompt_column="question",
     target_column="answer",
-    description="Time-sensitive multi-hop temporal-reasoning QA",
+    description="Time-sensitive multi-hop QA — GitHub-only "
+                "(weiyifan1023/MenatQA); no standalone public HF dataset",
+    verified=False,
 ))
 
-# Standardised test benchmarks
+# -- AGIEval exams (lighteval/agi_eval_en: question/options/label, split=train) --
+
 _register(BenchmarkConfig(
     name="sat",
-    hf_dataset_id="cais/sat",
-    split="test",
+    hf_dataset_id="lighteval/agi_eval_en",
+    hf_subset="sat-en",
+    split="train",
     prompt_column="question",
-    target_column="answer",
-    description="SAT exam questions",
+    target_column="label",
+    choices_column="options",
+    description="SAT (English) — AGIEval",
 ))
 
 _register(BenchmarkConfig(
     name="lsat",
-    hf_dataset_id="cais/lsat",
-    split="test",
+    hf_dataset_id="lighteval/agi_eval_en",
+    hf_subset="lsat-lr",
+    split="train",
     prompt_column="question",
-    target_column="answer",
-    description="LSAT exam questions",
+    target_column="label",
+    choices_column="options",
+    description="LSAT (logical reasoning) — AGIEval",
 ))
 
 _register(BenchmarkConfig(
     name="gre-gmat",
-    hf_dataset_id="cais/gre_gmat",
-    split="test",
+    hf_dataset_id="lighteval/agi_eval_en",
+    hf_subset="aqua_rat",
+    split="train",
     prompt_column="question",
-    target_column="answer",
-    description="GRE & GMAT exam questions",
-))
-
-# Specialised benchmarks
-_register(BenchmarkConfig(
-    name="data-analysis",
-    hf_dataset_id="cais/data_analysis",
-    split="test",
-    prompt_column="question",
-    target_column="answer",
-    description="Data analysis tasks",
-))
-
-_register(BenchmarkConfig(
-    name="date-arithmetic",
-    hf_dataset_id="cais/date_arithmetic",
-    split="test",
-    prompt_column="question",
-    target_column="answer",
-    description="Date arithmetic tasks",
-))
-
-_register(BenchmarkConfig(
-    name="reasoning",
-    hf_dataset_id="cais/reasoning",
-    split="test",
-    prompt_column="question",
-    target_column="answer",
-    description="General reasoning tasks",
-))
-
-_register(BenchmarkConfig(
-    name="language",
-    hf_dataset_id="cais/language",
-    split="test",
-    prompt_column="question",
-    target_column="answer",
-    description="Language understanding tasks",
+    target_column="label",
+    choices_column="options",
+    description="AGIEval AQuA-RAT (GRE/GMAT-style algebra) — mapping unconfirmed",
+    verified=False,
 ))
 
 _register(BenchmarkConfig(
     name="civil-service",
-    hf_dataset_id="cais/civil_service",
-    split="test",
+    hf_dataset_id="lighteval/agi_eval_en",
+    hf_subset="logiqa-en",
+    split="train",
     prompt_column="question",
-    target_column="answer",
-    description="Civil Service Examination questions",
+    target_column="label",
+    choices_column="options",
+    description="AGIEval LogiQA (sourced from the China civil-service exam)",
+))
+
+# -- LiveBench categories (livebench/*: prompt in `turns`, answer `ground_truth`) --
+
+_register(BenchmarkConfig(
+    name="data-analysis",
+    hf_dataset_id="livebench/data_analysis",
+    split="test",
+    prompt_column="turns",
+    target_column="ground_truth",
+    description="LiveBench — data analysis category",
+))
+
+_register(BenchmarkConfig(
+    name="date-arithmetic",
+    hf_dataset_id="lukaemon/bbh",
+    hf_subset="date_understanding",
+    split="test",
+    prompt_column="input",
+    target_column="target",
+    description="Date arithmetic — source unconfirmed (best-guess BBH "
+                "date_understanding; not in AGIEval/LiveBench)",
+    verified=False,
+))
+
+_register(BenchmarkConfig(
+    name="reasoning",
+    hf_dataset_id="livebench/reasoning",
+    split="test",
+    prompt_column="turns",
+    target_column="ground_truth",
+    description="LiveBench — reasoning category",
+))
+
+_register(BenchmarkConfig(
+    name="language",
+    hf_dataset_id="livebench/language",
+    split="test",
+    prompt_column="turns",
+    target_column="ground_truth",
+    description="LiveBench — language category",
 ))
 
 

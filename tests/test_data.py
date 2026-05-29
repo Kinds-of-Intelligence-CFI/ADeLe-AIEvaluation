@@ -70,6 +70,18 @@ class TestLoader:
         assert "choices" in out.columns
         assert out.iloc[0]["choices"] == ["A", "B", "C", "D"]
 
+    def test_list_valued_prompt_column_is_joined(self):
+        # LiveBench stores the prompt as a list (`turns`); it must become text.
+        from adele.data.loader import _build_output
+        import pandas as pd
+
+        df = pd.DataFrame({"turns": [["Solve this puzzle."]], "gt": ["42"]})
+        out = _build_output(
+            df, prompt_column="turns", id_column=None, target_column="gt",
+        )
+        assert out.iloc[0]["prompt"] == "Solve this puzzle."
+        assert not out.iloc[0]["prompt"].startswith("[")
+
 
 class TestLoadFromFile:
     """Tests for load_from_file."""
