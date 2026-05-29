@@ -431,6 +431,7 @@ def compute_spearman_correlations(
         demands = [d for d in DEMAND_ORDER if d in annotations.columns]
 
     merged = annotations.merge(model_data, on="custom_id", how="inner")
+    merged["correct"] = pd.to_numeric(merged["correct"], errors="coerce")
     correlations = {}
 
     for demand in demands:

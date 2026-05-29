@@ -41,9 +41,12 @@ def extract_demand_level(response: str) -> tuple[float, bool]:
     # is rejected as out-of-range rather than silently truncated to "1".
     structured = re.findall(r'is:\s*(\d+)', response)
     if structured:
+        # The model stated its score explicitly — treat it as authoritative.
+        # Don't fall through on an out-of-range value, or we might grab a
+        # different, unrelated in-range number from the text and fabricate a
+        # valid-looking score (e.g. "...criterion 3... the level is: 7").
         level = float(structured[-1])
-        if 0 <= level <= 5:
-            return level, True
+        return (level, True) if 0 <= level <= 5 else (float("nan"), False)
 
     # Fallback: split into paragraphs; conclusion should be in the last one
     *_, conclusion = response.split("\n\n")
@@ -136,8 +139,16 @@ def parse_batch_output(
     results = []
 
     with open(output_file, "r", encoding="utf-8") as f:
-        for line in f:
-            item = json.loads(line)
+        for line_no, line in enumerate(f, 1):
+            if not line.strip():
+                continue
+            try:
+                item = json.loads(line)
+            except json.JSONDecodeError as exc:
+                # Skip a single malformed line rather than dropping the whole file.
+                logger.warning("Skipping malformed line %d in %s: %s",
+                               line_no, output_file.name, exc)
+                continue
             raw_id = item["custom_id"]
 
             # Parse composite ID: instance_id__demand_acronym
@@ -145,7 +156,8 @@ def parse_batch_output(
                 instance_id, demand = raw_id.rsplit("__", 1)
             else:
                 instance_id = raw_id
-                demand = Path(output_file).parent.name.split("_")[0]
+                # Fall back to the demand encoded in the filename (output_<acr>.jsonl).
+                demand = output_file.stem.split("_", 1)[-1]
 
             # Extract response content
             try:
@@ -225,9 +237,15 @@ def to_wide_format(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         Wide-format DataFrame with columns: custom_id, AS, AT, CEc, ...
     """
-    return df.pivot_table(
+    # dropna=False keeps a demand column even if every value failed extraction
+    # (all-NaN), so the output has a stable, predictable set of demand columns
+    # instead of silently dropping a whole dimension.
+    wide = df.pivot_table(
         index="custom_id",
         columns="demand",
         values="level",
         aggfunc="first",
+        dropna=False,
     ).reset_index()
+    wide.columns.name = None
+    return wide

@@ -9,6 +9,7 @@ from adele.annotation.prompts import build_annotation_prompt, build_batch_reques
 from adele.annotation.parsing import (
     extract_demand_level,
     parse_batch_output,
+    to_wide_format,
     unguessability_from_choices,
 )
 from adele.annotation.annotator import _is_openai_model, annotate
@@ -128,6 +129,13 @@ class TestExtractDemandLevel:
         response = "Reasoning...\n\nThe level is: 12"
         level, ok = extract_demand_level(response)
         assert not ok
+
+    def test_structured_out_of_range_does_not_fabricate(self):
+        """An out-of-range structured score must not fall through and grab an
+        unrelated in-range number from the text."""
+        response = "Based on criterion 3 of the rubric, the level is: 7"
+        level, ok = extract_demand_level(response)
+        assert not ok  # must be NaN/False, NOT 3.0/True
 
     def test_structured_pattern_no_paragraphs(self):
         """Should extract via 'is: SCORE' even without paragraph breaks."""
@@ -260,6 +268,24 @@ class TestParallelAnnotation:
 
         # If truly parallel, peak concurrency should exceed 1
         assert peak >= 2, f"Peak concurrency was {peak}, expected >= 2"
+
+
+class TestToWideFormat:
+    """Pivot from long to wide demand columns."""
+
+    def test_keeps_all_nan_demand_column(self):
+        import pandas as pd
+        # CL failed extraction for every instance -> all NaN. It must still
+        # appear as a column rather than silently vanishing.
+        long = pd.DataFrame({
+            "custom_id": ["a", "b", "a", "b"],
+            "demand": ["AS", "AS", "CL", "CL"],
+            "level": [2.0, 3.0, float("nan"), float("nan")],
+        })
+        wide = to_wide_format(long)
+        assert "CL" in wide.columns
+        assert wide["CL"].isna().all()
+        assert wide.columns.name is None
 
 
 class TestParseBatchOutput:

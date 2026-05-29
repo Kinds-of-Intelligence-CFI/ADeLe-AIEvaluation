@@ -90,6 +90,7 @@ include = [
 eval = [
     "inspect-ai>=0.3",
     "huggingface_hub>=0.23",   # download the gated battery dataset
+    "datasets>=2.14",          # `adele evaluate <registered-benchmark>` loads via load_benchmark
 ]
 # Demand-level annotation of new benchmarks (multi-provider LLM judges).
 annotate = [

@@ -27,6 +27,7 @@ Usage:
 """
 
 import logging
+import os
 from typing import Optional
 
 import pandas as pd
@@ -92,7 +93,7 @@ def load_benchmark(
         hf_id,
         name=hf_subset,
         split=split,
-        token=hf_token,
+        token=hf_token or os.environ.get("HF_TOKEN"),  # gated datasets via env
     )
 
     if max_samples is not None:

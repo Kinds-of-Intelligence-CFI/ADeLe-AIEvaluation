@@ -178,6 +178,24 @@ def annotate(
             f"Unknown backend '{backend}'. Use 'batch' or 'direct'."
         )
 
+    # Surface silent partial failures: a batch job that failed/expired (or a
+    # provider error in every direct call) yields a result with whole demands
+    # missing or all-NaN, which otherwise looks like a successful run.
+    if "demand" in result_df.columns:
+        present = set(result_df["demand"].unique())
+        missing = [d for d in demands if d not in present]
+        if missing:
+            logger.warning(
+                "No annotations returned for %d/%d demands: %s "
+                "(batch jobs may have failed/expired, or all requests errored)",
+                len(missing), len(demands), missing,
+            )
+    if "level" in result_df.columns and result_df["level"].notna().sum() == 0:
+        logger.error(
+            "All %d annotation requests failed — 0 valid levels extracted. "
+            "Check the model name and API credentials.", len(result_df),
+        )
+
     if format == "wide":
         result_df = to_wide_format(result_df)
 

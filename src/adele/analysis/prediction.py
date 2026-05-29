@@ -240,7 +240,8 @@ def compute_predictive_power(
         return {
             "group_by": label, "n_instances": int(len(y)), "n_seeds": 0,
             "roc_auc": float("nan"), "roc_auc_std": float("nan"),
-            "accuracy": float(y.mean()), "accuracy_std": 0.0,
+            # majority-class accuracy (a constant predictor's score)
+            "accuracy": float(max(y.mean(), 1 - y.mean())), "accuracy_std": 0.0,
             "ece": float("nan"), "ece_std": float("nan"),
             "brier": float("nan"), "brier_std": float("nan"),
             "per_seed": {k: [] for k in metrics},

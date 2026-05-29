@@ -38,7 +38,7 @@ from inspect_ai import Task, eval as inspect_eval, task
 from inspect_ai.dataset import MemoryDataset, Sample
 from inspect_ai.log import EvalLog, read_eval_log
 from inspect_ai.model import Model
-from inspect_ai.scorer import CORRECT, choice, match
+from inspect_ai.scorer import CORRECT, NOANSWER, choice, match
 from inspect_ai.solver import Solver, generate, multiple_choice
 
 from adele.data.battery import DEMAND_COLS
@@ -196,7 +196,7 @@ def evaluate_model(
         log_dir:     directory for Inspect AI logs.
 
     Returns:
-        DataFrame with columns ``custom_id``, ``correct`` (1/0), ``model_answer``.
+        DataFrame with columns ``custom_id``, ``correct`` (1/0, or NaN if ungraded), ``model_answer``.
         Join to the battery (by ``custom_id``) for demand-based ability profiling.
     """
     if "target" not in data.columns:
@@ -243,7 +243,7 @@ def results_from_log(
         scorer_name: which scorer's value to read (default the dispatch scorer).
 
     Returns:
-        DataFrame with columns ``custom_id``, ``correct`` (1/0), ``model_answer``.
+        DataFrame with columns ``custom_id``, ``correct`` (1/0, or NaN if ungraded), ``model_answer``.
     """
     if isinstance(log, str):
         log = read_eval_log(log)
@@ -253,7 +253,15 @@ def results_from_log(
         score_obj = (sample.scores or {}).get(scorer_name)
         if score_obj is None and sample.scores:
             score_obj = next(iter(sample.scores.values()))
-        correct = 1 if (score_obj is not None and score_obj.value == CORRECT) else 0
+        value = score_obj.value if score_obj is not None else None
+        if value == CORRECT:
+            correct = 1
+        elif value == NOANSWER:
+            # Ungraded (e.g. an Open-ended sample run without a judge) — leave as
+            # NaN so the profilers drop it, rather than counting it as wrong.
+            correct = float("nan")
+        else:
+            correct = 0
 
         model_answer = ""
         for msg in reversed(sample.messages or []):
