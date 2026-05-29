@@ -243,3 +243,23 @@ class TestComputeAbilityScores:
         )
         # All should be 0 because everything gets filtered out
         assert all(s == 0.0 for s in scores.values())
+
+    def test_nan_feature_rows_are_dropped(self, synthetic_data):
+        """Rows with a NaN demand must be dropped up front (as the notebook
+        does), not leaked into the fits of the *other* dimensions."""
+        model_data, annotations, demands = synthetic_data
+        clean = compute_ability_scores(model_data, annotations, demands=demands)
+
+        # Append rows whose first demand is NaN; they must not change any score.
+        junk_ann = annotations.iloc[:8].copy()
+        junk_ann["custom_id"] = [f"junk{i}" for i in range(8)]
+        junk_ann[demands[0]] = np.nan
+        ann2 = pd.concat([annotations, junk_ann], ignore_index=True)
+        md2 = pd.concat([
+            model_data,
+            pd.DataFrame({"custom_id": [f"junk{i}" for i in range(8)], "correct": [1] * 8}),
+        ], ignore_index=True)
+
+        with_junk = compute_ability_scores(md2, ann2, demands=demands)
+        for d in demands:
+            assert with_junk[d] == pytest.approx(clean[d])

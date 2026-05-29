@@ -371,12 +371,25 @@ def compute_ability_scores(
 
     # Merge model results with annotations
     merged = annotations.merge(model_data, on="custom_id", how="inner")
+    available_demands = [d for d in demands if d in merged.columns]
+
+    # Drop rows with any NaN feature BEFORE filtering/fitting, as the notebook
+    # does (``nan_rows = X.isna().any(axis=1)`` over UG + the demand columns).
+    # Otherwise a failed annotation (NaN level) would silently shift the fitted
+    # curves — or be passed straight into LogisticRegression.
+    feat_cols = (["UG"] if "UG" in merged.columns else []) + available_demands
+    merged[feat_cols] = merged[feat_cols].apply(pd.to_numeric, errors="coerce")
+    merged["correct"] = pd.to_numeric(merged["correct"], errors="coerce")
+    before = len(merged)
+    merged = merged[~(merged[feat_cols].isna().any(axis=1) | merged["correct"].isna())]
+    if len(merged) < before:
+        logger.info("Dropped %d/%d rows with NaN features/correctness",
+                    before - len(merged), before)
 
     if "UG" in merged.columns:
         merged = merged[merged["UG"] >= ug_threshold].copy()
 
     # Extract the demand profile matrix and correctness vector
-    available_demands = [d for d in demands if d in merged.columns]
     demand_profiles = merged[available_demands].copy()
     correctness = merged["correct"].values.astype(float)
 
