@@ -1,12 +1,10 @@
 """
 Shared constants for the analysis sub-package.
+
+Re-exported from :mod:`adele.constants` (the single source of truth) so existing
+imports (``from adele.analysis.constants import DEMAND_ORDER``) keep working.
 """
 
-# Canonical demand dimension ordering (as in the ADeLe paper).
-# All modules should import DEMAND_ORDER from here.
-DEMAND_ORDER = [
-    "AS", "CEc", "CEe", "CL", "MCr",
-    "MCt", "MCu", "MS", "QLl", "QLq",
-    "SNs", "KNa", "KNc", "KNf", "KNn",
-    "KNs", "AT", "VO",
-]
+from adele.constants import DEMAND_ORDER
+
+__all__ = ["DEMAND_ORDER"]

@@ -35,32 +35,14 @@ requires-python = ">=3.11"
 # ============================================================================
 # DEPENDENCIES
 # ============================================================================
+# Core: enough for the CLI, dataframes, and loading data. Each workflow
+# (evaluate / annotate / profile) adds its own heavy deps via an extra below,
+# so e.g. `pip install adele[eval]` stays lightweight.
 dependencies = [
-    # Core
     "click>=8.1",
     "python-dotenv>=1.0",
-
-    # Data
-    "datasets>=2.14",          # HuggingFace datasets
     "pandas>=2.0",
-
-    # Annotation (multi-provider)
-    "openai>=1.30",
-    "litellm>=1.30",            # unified LLM API (OpenAI, Gemini, Claude, ...)
-    "tenacity>=8.2",
     "tqdm>=4.65",
-
-    # Analysis
-    "scikit-learn>=1.3",
-    "numpy>=1.24",
-    "scipy>=1.11",
-
-    # Visualization
-    "matplotlib>=3.7",
-    "scienceplots>=2.2",
-
-    # Evaluation
-    "inspect-ai>=0.3",
 ]
 
 # ============================================================================
@@ -104,7 +86,32 @@ include = [
 # OPTIONAL DEPENDENCIES
 # ============================================================================
 [project.optional-dependencies]
+# Run models on benchmarks / the ADeLe battery via Inspect AI.
+eval = [
+    "inspect-ai>=0.3",
+    "huggingface_hub>=0.23",   # download the gated battery dataset
+]
+# Demand-level annotation of new benchmarks (multi-provider LLM judges).
+annotate = [
+    "openai>=1.30",
+    "litellm>=1.30",           # unified LLM API (OpenAI, Gemini, Claude, ...)
+    "tenacity>=8.2",
+    "datasets>=2.14",          # load source benchmarks from HuggingFace
+]
+# Demand / ability profiling and predictive-power analysis.
+analysis = [
+    "scikit-learn>=1.3",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "matplotlib>=3.7",
+    "scienceplots>=2.2",
+]
+# Everything.
+all = [
+    "adele[eval,annotate,analysis]",
+]
 dev = [
+    "adele[all]",
     "pytest>=7.0",
     "pytest-cov>=4.0",
 ]

@@ -24,18 +24,15 @@ from typing import Optional
 
 import pandas as pd
 
+from adele.constants import DEMAND_ORDER
+
 logger = logging.getLogger(__name__)
 
 HF_REPO = "CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0"
 HF_FILE = "ADeLe_batterry_v1dot0.csv"  # upstream filename spelling
 
-# The 18 DeLeAn v1.0 demand dimensions (annotated 0-5). Mirrors
-# adele.analysis.constants.DEMAND_ORDER; kept local so the evaluation/data path
-# does not pull in the analysis (sklearn/matplotlib) dependencies.
-DEMAND_COLS = [
-    "AS", "CEc", "CEe", "CL", "MCr", "MCt", "MCu", "MS",
-    "QLl", "QLq", "SNs", "KNa", "KNc", "KNf", "KNn", "KNs", "AT", "VO",
-]
+# The 18 DeLeAn v1.0 demand dimensions (annotated 0-5), from the shared taxonomy.
+DEMAND_COLS = DEMAND_ORDER
 
 
 def _resolve_csv_path(csv_path: Optional[str], hf_token: Optional[str]) -> str:
