@@ -27,6 +27,9 @@ _LAZY = {
     "compute_spearman_correlations": "adele.analysis.ability",
     "plot_ability_profile": "adele.analysis.ability",
     "plot_multi_model_ability": "adele.analysis.ability",
+    "compute_predictive_power": "adele.analysis.prediction",
+    "compute_feature_importances": "adele.analysis.prediction",
+    "plot_feature_importances": "adele.analysis.prediction",
 }
 
 __all__ = ["DEMAND_ORDER", *_LAZY]

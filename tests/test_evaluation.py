@@ -1,10 +1,17 @@
 """Zero-cost tests for the Inspect evaluation path (mock models, no API key)."""
 
 import os
+from pathlib import Path
 
 import pytest
 from inspect_ai import eval as inspect_eval
-from inspect_ai.model import ModelOutput, get_model
+from inspect_ai.model import (
+    GenerateConfig,
+    ModelAPI,
+    ModelOutput,
+    get_model,
+    modelapi,
+)
 
 from adele.data import load_battery
 from adele.evaluation import (
@@ -15,7 +22,10 @@ from adele.evaluation import (
 )
 from adele.evaluation.scoring import choice_letter, final_segment
 
-CSV = os.environ.get("ADELE_BATTERY_CSV")
+# Use the real gated battery when ADELE_BATTERY_CSV is set; otherwise fall back
+# to the committed mini fixture so the end-to-end eval path is always exercised.
+_FIXTURE = Path(__file__).parent / "fixtures" / "mini_battery.csv"
+CSV = os.environ.get("ADELE_BATTERY_CSV") or str(_FIXTURE)
 needs_csv = pytest.mark.skipif(not CSV, reason="set ADELE_BATTERY_CSV to the battery CSV")
 
 
@@ -33,11 +43,42 @@ def test_choice_letter_completion_and_groundtruth():
 
 # --- battery loader + end-to-end with mock models ---
 
-def _fixed_model(content: str):
-    def gen(messages, tools, tool_choice, config):
-        return ModelOutput.from_content(model="mockllm/model", content=content)
+# Per-test reply functions, keyed by id, so the registered provider (which is
+# built by name with only string args) can look up the right closure.
+_REPLY_FNS = {}
 
-    return get_model("mockllm/model", custom_outputs=gen)
+
+@modelapi(name="scripted")
+def _scripted_provider():
+    return _ScriptedModel
+
+
+class _ScriptedModel(ModelAPI):
+    """Content-aware mock model: reply = ``fn(last_user_message_text)``.
+
+    The bundled ``mockllm`` only supports a fixed iterable of outputs (consumed
+    per call, order-dependent under concurrency), which can't express
+    gold-dependent answers. This reads the prompt and computes a reply instead.
+    """
+
+    def __init__(self, model_name, base_url=None, api_key=None,
+                 config=GenerateConfig(), **model_args):
+        super().__init__(model_name, base_url, api_key, [], config)
+        self._fn = _REPLY_FNS[model_name.split("/", 1)[-1]]
+
+    async def generate(self, input, tools, tool_choice, config):
+        text = input[-1].text
+        return ModelOutput.from_content(model="scripted", content=self._fn(text))
+
+
+def _model(fn):
+    key = f"m{len(_REPLY_FNS)}"
+    _REPLY_FNS[key] = fn
+    return get_model(f"scripted/{key}")
+
+
+def _fixed_model(content: str):
+    return _model(lambda _text: content)
 
 
 @needs_csv
@@ -54,13 +95,7 @@ def test_mc_eval_demands_in_metadata_and_correct():
     df = load_battery(answer_format="MC", max_samples=4, csv_path=CSV)
     gold = {str(r["prompt"]): choice_letter(str(r["target"])) for _, r in df.iterrows()}
 
-    def gen(messages, tools, tool_choice, config):
-        letter = gold.get(messages[-1].text, "A")
-        return ModelOutput.from_content(
-            model="mockllm/model", content=f"Thus, the correct answer is: {letter}"
-        )
-
-    model = get_model("mockllm/model", custom_outputs=gen)
+    model = _model(lambda text: f"Thus, the correct answer is: {gold.get(text, 'A')}")
     task = create_task(df, name="t")
     log = inspect_eval(tasks=[task], model=model, log_dir="/tmp/adele_eval_test")[0]
 
@@ -100,13 +135,7 @@ def test_results_from_log_bridges_native_run(tmp_path):
     df = load_battery(answer_format="MC", max_samples=3, csv_path=CSV)
     gold = {s.input: choice_letter(s.target) for s in create_task(df, name="t").dataset}
 
-    def gen(messages, tools, tool_choice, config):
-        letter = gold.get(messages[-1].text, "A")
-        return ModelOutput.from_content(
-            model="mockllm/model", content=f"Thus, the correct answer is: {letter}"
-        )
-
-    model = get_model("mockllm/model", custom_outputs=gen)
+    model = _model(lambda text: f"Thus, the correct answer is: {gold.get(text, 'A')}")
     inspect_eval(tasks=[adele_battery(csv_path=CSV, answer_format="MC", limit=3)],
                  model=model, log_dir=str(tmp_path))
 
