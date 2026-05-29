@@ -7,7 +7,12 @@ from inspect_ai import eval as inspect_eval
 from inspect_ai.model import ModelOutput, get_model
 
 from adele.data import load_battery
-from adele.evaluation import adele_battery, create_task, evaluate_model
+from adele.evaluation import (
+    adele_battery,
+    create_task,
+    evaluate_model,
+    results_from_log,
+)
 from adele.evaluation.scoring import choice_letter, final_segment
 
 CSV = os.environ.get("ADELE_BATTERY_CSV")
@@ -87,3 +92,25 @@ def test_open_ended_routes_to_mock_judge():
     log = inspect_eval(tasks=[task], model=answerer, log_dir="/tmp/adele_eval_test")[0]
     assert log.status == "success"
     assert all(s.scores["adele_scorer"].value != "N" for s in log.samples)  # not NOANSWER
+
+
+@needs_csv
+def test_results_from_log_bridges_native_run(tmp_path):
+    # Inspect-native path: run -> .eval log on disk -> results_from_log -> analysis frame.
+    df = load_battery(answer_format="MC", max_samples=3, csv_path=CSV)
+    gold = {s.input: choice_letter(s.target) for s in create_task(df, name="t").dataset}
+
+    def gen(messages, tools, tool_choice, config):
+        letter = gold.get(messages[-1].text, "A")
+        return ModelOutput.from_content(
+            model="mockllm/model", content=f"Thus, the correct answer is: {letter}"
+        )
+
+    model = get_model("mockllm/model", custom_outputs=gen)
+    inspect_eval(tasks=[adele_battery(csv_path=CSV, answer_format="MC", limit=3)],
+                 model=model, log_dir=str(tmp_path))
+
+    log_file = next(str(p) for p in tmp_path.glob("*.eval"))
+    out = results_from_log(log_file)              # read from disk, by path
+    assert list(out.columns) == ["custom_id", "correct", "model_answer"]
+    assert len(out) == 3 and out["correct"].sum() == 3

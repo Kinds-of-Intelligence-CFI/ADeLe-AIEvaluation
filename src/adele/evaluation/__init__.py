@@ -13,12 +13,14 @@ from adele.evaluation.runner import (
     create_task,
     dataframe_to_samples,
     evaluate_model,
+    results_from_log,
 )
 from adele.evaluation.scoring import adele_mc_scorer, adele_scorer
 from adele.evaluation.version import result_version, version_hash
 
 __all__ = [
     "evaluate_model",
+    "results_from_log",
     "create_task",
     "dataframe_to_samples",
     "adele_battery",

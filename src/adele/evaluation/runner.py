@@ -36,6 +36,7 @@ import pandas as pd
 
 from inspect_ai import Task, eval as inspect_eval, task
 from inspect_ai.dataset import MemoryDataset, Sample
+from inspect_ai.log import EvalLog, read_eval_log
 from inspect_ai.model import Model
 from inspect_ai.scorer import CORRECT, choice, match
 from inspect_ai.solver import Solver, generate, multiple_choice
@@ -218,15 +219,41 @@ def evaluate_model(
         eval_kwargs["log_dir"] = log_dir
 
     results = inspect_eval(**eval_kwargs)
-    eval_log = results[0]
+    result_df = results_from_log(results[0])
+    n_correct = int(result_df["correct"].sum()) if len(result_df) else 0
+    logger.info(
+        "Evaluation complete: %d/%d correct (%.1f%%)",
+        n_correct, len(result_df), 100 * n_correct / max(1, len(result_df)),
+    )
+    return result_df
 
-    instance_results = []
-    for sample in eval_log.samples or []:
-        correct = 0
-        if sample.scores:
+
+def results_from_log(
+    log: "EvalLog | str", scorer_name: str = "adele_scorer"
+) -> pd.DataFrame:
+    """Turn an Inspect ``.eval`` log into the analysis frame.
+
+    Bridges the Inspect-native CLI path (``inspect eval adele/adele_battery``)
+    to the profilers: read the log written by Inspect and return the same
+    ``custom_id``/``correct``/``model_answer`` contract as :func:`evaluate_model`,
+    so it joins to the battery demands (by ``custom_id``) for ability profiling.
+
+    Args:
+        log:         path to a ``.eval`` file, or an already-read ``EvalLog``.
+        scorer_name: which scorer's value to read (default the dispatch scorer).
+
+    Returns:
+        DataFrame with columns ``custom_id``, ``correct`` (1/0), ``model_answer``.
+    """
+    if isinstance(log, str):
+        log = read_eval_log(log)
+
+    rows = []
+    for sample in log.samples or []:
+        score_obj = (sample.scores or {}).get(scorer_name)
+        if score_obj is None and sample.scores:
             score_obj = next(iter(sample.scores.values()))
-            if score_obj.value in (CORRECT, "correct", 1, 1.0, True):
-                correct = 1
+        correct = 1 if (score_obj is not None and score_obj.value == CORRECT) else 0
 
         model_answer = ""
         for msg in reversed(sample.messages or []):
@@ -234,14 +261,8 @@ def evaluate_model(
                 model_answer = msg.text if hasattr(msg, "text") else str(msg.content)
                 break
 
-        instance_results.append(
+        rows.append(
             {"custom_id": sample.id, "correct": correct, "model_answer": model_answer}
         )
 
-    result_df = pd.DataFrame(instance_results)
-    n_correct = int(result_df["correct"].sum()) if len(result_df) else 0
-    logger.info(
-        "Evaluation complete: %d/%d correct (%.1f%%)",
-        n_correct, len(result_df), 100 * n_correct / max(1, len(result_df)),
-    )
-    return result_df
+    return pd.DataFrame(rows)
