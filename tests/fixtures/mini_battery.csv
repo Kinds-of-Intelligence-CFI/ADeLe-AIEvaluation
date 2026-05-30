@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a669f175e1db8a02ef2f4b648fd6859682cafe3e0ba78d09700bf4a6b2ed28b
-size 1486
+source,benchmark,task,answer_format,instance_id,original_id,question,prompt,groundtruth,UG,AS,CEc,CEe,CL,MCr,MCt,MCu,MS,QLl,QLq,SNs,KNa,KNc,KNf,KNn,KNs,AT,VO,verification_final
+synthetic,synthbench,synthtask,MC,synth-mc-0,o0,Sample question 0,"Sample multiple-choice question #0. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",A.option A,75.0,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,1
+synthetic,synthbench,synthtask,MC,synth-mc-1,o1,Sample question 1,"Sample multiple-choice question #1. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",B.option B,75.0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1
+synthetic,synthbench,synthtask,MC,synth-mc-2,o2,Sample question 2,"Sample multiple-choice question #2. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",C.option C,75.0,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,1
+synthetic,synthbench,synthtask,MC,synth-mc-3,o3,Sample question 3,"Sample multiple-choice question #3. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",D.option D,75.0,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,1
+synthetic,synthbench,synthtask,MC,synth-mc-4,o4,Sample question 4,"Sample multiple-choice question #4. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",A.option A,75.0,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,1
+synthetic,synthbench,synthtask,MC,synth-mc-5,o5,Sample question 5,"Sample multiple-choice question #5. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",B.option B,75.0,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,1
+synthetic,synthbench,synthtask,MC,synth-mc-6,o6,Sample question 6,"Sample multiple-choice question #6. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",C.option C,75.0,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,1
+synthetic,synthbench,synthtask,MC,synth-mc-7,o7,Sample question 7,"Sample multiple-choice question #7. What is the answer?
+A. option A
+B. option B
+C. option C
+D. option D",D.option D,75.0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1
+synthetic,synthbench,synthtask,Open-ended,synth-oe-0,p0,Open question 0,Explain concept #0 in one sentence.,A correct one-sentence explanation of concept 0.,100.0,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,1
+synthetic,synthbench,synthtask,Open-ended,synth-oe-1,p1,Open question 1,Explain concept #1 in one sentence.,A correct one-sentence explanation of concept 1.,100.0,3,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,1
+synthetic,synthbench,synthtask,Open-ended,synth-oe-2,p2,Open question 2,Explain concept #2 in one sentence.,A correct one-sentence explanation of concept 2.,100.0,4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,1
+synthetic,synthbench,synthtask,Open-ended,synth-oe-3,p3,Open question 3,Explain concept #3 in one sentence.,A correct one-sentence explanation of concept 3.,100.0,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,2,3,4,1

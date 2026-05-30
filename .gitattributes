@@ -1,1 +1,5 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
+
+# The tiny synthetic test fixture is a plain CSV (not LFS) so the test suite
+# runs on a fresh clone without needing Git LFS / an LFS budget.
+tests/fixtures/mini_battery.csv !filter !diff !merge text
