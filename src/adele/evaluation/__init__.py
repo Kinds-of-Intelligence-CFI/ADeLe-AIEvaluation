@@ -16,7 +16,12 @@ from adele.evaluation.runner import (
     results_from_log,
 )
 from adele.evaluation.scoring import adele_mc_scorer, adele_scorer
-from adele.evaluation.version import result_version, version_hash
+from adele.evaluation.version import (
+    result_version,
+    rubrics_version,
+    scorer_suite_version,
+    version_hash,
+)
 
 __all__ = [
     "evaluate_model",
@@ -27,5 +32,7 @@ __all__ = [
     "adele_scorer",
     "adele_mc_scorer",
     "result_version",
+    "rubrics_version",
+    "scorer_suite_version",
     "version_hash",
 ]
