@@ -12,6 +12,3 @@ DEMAND_ORDER = [
     "SNs", "KNa", "KNc", "KNf", "KNn",
     "KNs", "AT", "VO",
 ]
-
-# Answer formats present in the ADeLe v1.0 battery.
-ANSWER_FORMATS = ("MC", "Open-ended")

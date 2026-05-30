@@ -266,6 +266,10 @@ def _annotate_direct(
             model=model,
             messages=[{"role": "user", "content": prompt}],
             max_tokens=max_completion_tokens,
+            # Retry transient provider errors (rate limits, timeouts) with
+            # litellm's built-in backoff, so a momentary blip doesn't turn into a
+            # silently-missing annotation. Mirrors the batch backend's retries.
+            num_retries=5,
         )
         # Reasoning models (o1/o3/o4…) reject a non-default temperature.
         if not is_reasoning_model(model):

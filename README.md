@@ -15,7 +15,7 @@ This package provides a unified, end-to-end pipeline:
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-org/ADeLe-AIEvaluation.git
+git clone https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation.git
 cd ADeLe-AIEvaluation
 pip install -e .
 ```

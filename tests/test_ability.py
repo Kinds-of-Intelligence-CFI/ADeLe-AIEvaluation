@@ -160,7 +160,8 @@ class TestLogisticAbilityModel:
 
         model = LogisticAbilityModel()
         model.fit(profiles, correct, ["AS"], level_diff=None)
-        assert model.ability_scores["AS"] == 0.0
+        # No instances -> not estimable -> NaN (a radar gap), not a fake 0.0.
+        assert np.isnan(model.ability_scores["AS"])
 
 
 # ---------------------------------------------------------------------------
@@ -241,8 +242,9 @@ class TestComputeAbilityScores:
         scores = compute_ability_scores(
             model_data, annotations, demands=demands, level_diff=None
         )
-        # All should be 0 because everything gets filtered out
-        assert all(s == 0.0 for s in scores.values())
+        # Everything gets filtered out (UG<75), so no dimension is estimable:
+        # each score is NaN (not estimable), not a fake 0.0.
+        assert all(np.isnan(s) for s in scores.values())
 
     def test_nan_feature_rows_are_dropped(self, synthetic_data):
         """Rows with a NaN demand must be dropped up front (as the notebook

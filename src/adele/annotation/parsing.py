@@ -83,9 +83,9 @@ def unguessability_from_choices(value) -> float:
         "open"     -> 100               (nothing to guess from)
         n <= 1     -> 0
 
-    NOTE: the formula is inferred from the threshold convention (75 ≈ 4
-    choices); confirm against the paper if exact battery values are required.
-    Returns NaN for unparseable input.
+    Confirmed against the ADeLe v1.0 battery: every value in its ``UG`` column
+    equals ``(1 - 1/n) * 100`` for ``n`` choices (75 = 4 choices, 80 = 5,
+    83.3 = 6, ... 100 = open-ended). Returns NaN for unparseable input.
     """
     if value is None:
         return float("nan")

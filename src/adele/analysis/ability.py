@@ -205,7 +205,11 @@ class LogisticAbilityModel(AbilityModel):
                 filtered_correct = correctness
 
             if len(filtered_profiles) == 0:
-                self._scores[demand] = 0.0
+                # No instances where this demand is the binding constraint, so
+                # there is no SCC to fit and no area to integrate. Record NaN
+                # ("not estimable"), as the notebook does — NOT 0.0, which would
+                # claim the model fails at every demand level in this dimension.
+                self._scores[demand] = float("nan")
                 continue
 
             X_feature = filtered_profiles[[demand]].values
@@ -226,6 +230,9 @@ class LogisticAbilityModel(AbilityModel):
                 logger.warning(
                     "Failed to compute ability for %s: %s", demand, exc
                 )
+                # Degenerate single-class fit (e.g. a model that is wrong on
+                # every instance — the y=0 anchor leaves only one class). That
+                # is a real ~zero ability, not "no data", so keep 0.0 (not NaN).
                 self._scores[demand] = 0.0
 
     @property

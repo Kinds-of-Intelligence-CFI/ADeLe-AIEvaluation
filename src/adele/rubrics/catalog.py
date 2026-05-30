@@ -141,22 +141,6 @@ class RubricsCatalog:
         """All loaded acronyms, sorted alphabetically."""
         return sorted(self._cache.keys())
 
-    def get_content_dict(self) -> Dict[str, str]:
-        """Return {acronym: content} for all loaded rubrics."""
-        return {a: r.content for a, r in self._cache.items()}
-
-    def get_rubrics_dict(self) -> Dict[str, dict]:
-        """Return {acronym: {full_name, content}} for all rubrics."""
-        return {
-            a: {"full_name": r.full_name, "content": r.content}
-            for a, r in self._cache.items()
-        }
-
-    def reload(self):
-        """Re-load all rubrics from the folder."""
-        self._cache.clear()
-        self._load()
-
     # ------------------------------------------------------------------
     # Internal
     # ------------------------------------------------------------------
