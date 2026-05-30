@@ -31,15 +31,19 @@ local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
 - [ ] **Revise rubrics** where agreement is weak; re-annotate.
 
 ## Rubric quality backlog (see review)
-- [ ] Consolidate **duplicate/competing definition paragraphs** per level in the
-      "ours" rubrics (Communication, Dexterity, Kinesthetic, Auditory — draft + polished
-      versions coexist in the source Doc).
+- [x] Keep **one polished definition per level**, ADeLe v1.0 style — done in the
+      `ours/` `.txt` files (the source's duplicate/competing paragraphs were dropped).
+- [x] Fix **typos/artefacts** — done in the conversions (still worth fixing upstream
+      in the source Doc so regenerations stay clean).
+- [x] **L4≈L5 differentiation** (#5) — active rubrics already distinguish the
+      L5-only factor; Dexterity examples de-duplicated.
+- [x] Preserve the dropped **factor tables + comments** for reference →
+      `data_v2/REFERENCE_ours.md` (droppable; not read by code).
 - [ ] Fix the `SPv` (Visual) **Level 0 has no examples** gap (`TODO(pablo)` in file).
 - [ ] Decide **`ECc` (self-control)**: capability vs propensity — its examples read
       partly behavioural (propensity-like). Methodological call.
 - [ ] Tighten **boundary overlap** between `MSe` (environmental), `MSc` (communication)
-      and mind-modelling so annotators don't double-count.
-- [ ] Source typos/artefacts (cleaned in our conversions; fix upstream in the Doc).
+      and mind-modelling so annotators don't double-count (add contrastive examples).
 
 ## Open decisions (team / Pablo)
 - [ ] **Code reconciliation** Doc↔Sheet (e.g. our `MSe/MSc/ECc` = Sheet `MSs/MSp/EXb`).
