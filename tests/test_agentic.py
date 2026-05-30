@@ -3,29 +3,44 @@
 import pandas as pd
 import pytest
 
+from pathlib import Path
+
 from adele.agentic import (
+    DATA_V2_DIR,
     active_demands,
     load_active_catalog,
     read_manifest,
     verify_manifest,
+    _DEFERRED_MULTIMODAL,
 )
 from adele.agentic.hal import human_label_template, run_judge
 from adele.agentic.validation import rubric_agreement
 from adele.rubrics.catalog import RubricsCatalog, validate_rubric
 
-EXPECTED_CODES = {
-    "PLp", "PLe", "MSe", "MSc", "ECc", "SNp", "SNk", "SPa", "SPv",
-    "MMe", "MMp", "MMs",
-}
+# The active set is the 8 text/tool-relevant agentic dimensions; the 4
+# sensory/motor rubrics live in the library but are deferred (see _DEFERRED_MULTIMODAL).
+EXPECTED_CODES = {"PLp", "PLe", "MSe", "MSc", "ECc", "MMe", "MMp", "MMs"}
 
 
 # ---------------------------------------------------------------------------
 # Rubric library
 # ---------------------------------------------------------------------------
 
-def test_active_catalog_loads_twelve():
+def test_active_catalog_is_the_text_relevant_eight():
     catalog = load_active_catalog()
     assert set(catalog.acronyms) == EXPECTED_CODES
+    # The deferred multimodal dims are excluded from the active set...
+    assert not (set(_DEFERRED_MULTIMODAL) & set(catalog.acronyms))
+
+
+def test_deferred_multimodal_rubrics_still_in_library():
+    # ...but their files remain available and valid for later embodied work.
+    catalog = RubricsCatalog(str(DATA_V2_DIR / "ours"))
+    for code in _DEFERRED_MULTIMODAL:
+        rubric = catalog.get(code)
+        assert rubric is not None, f"{code} missing from ours/"
+        ok, msg = validate_rubric(rubric.content)
+        assert ok, f"{code}: {msg}"
 
 
 def test_active_rubrics_pass_validation():

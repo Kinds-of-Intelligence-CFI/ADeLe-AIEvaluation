@@ -68,10 +68,14 @@ MANIFEST.tsv          # provenance + the single "active" selection (sha256-stamp
 ```
 
 Each file is v1.0-format (a definition paragraph, then `Level 0..5` with
-`Examples:`), with a `# Full Name` header line. The **active set** = ours for the 9
-non-memory dimensions + theirs for the 3 memory dimensions, composed by
-`load_active_catalog()` (no file duplication). `MANIFEST.tsv` records, per
-dimension, the source, the Doc heading, a version date and a content hash;
+`Examples:`), with a `# Full Name` header line. The **active set** = ours for the 5
+cognitive-agentic non-memory dimensions + theirs for the 3 memory dimensions (8
+total), composed by `load_active_catalog()` (no file duplication). The four
+sensory/motor rubrics (`SNp/SNk/SPa/SPv`) remain in `ours/` but are **inactive**:
+text/tool-based HAL tasks don't exercise vision, audio or dexterity, so annotating
+them would yield all-0 columns at extra cost. Re-activate via `_DEFERRED_MULTIMODAL`
+in `adele/agentic/__init__.py` for embodied/multimodal work. `MANIFEST.tsv` records,
+per active dimension, the source, the Doc heading, a version date and a content hash;
 `verify_manifest()` (and a test) flags any drift. Regenerate after editing a
 rubric: `python -c "from adele.agentic import build_manifest; build_manifest()"`.
 
@@ -95,10 +99,10 @@ is a team decision, not made here.
 | MSe | Environmental and situational understanding | ours | **MSs** (Sheet's `MSe` = emotion/empathy) |
 | MSc | Communication and social interaction | ours | **MSp** (critical social processes) |
 | ECc | Behavioral inhibition and self-control | ours | **EXb** |
-| SNp | Dexterity | ours | SNp (proprioception/dexterity) |
-| SNk | Kinesthetic processing and proprioception | ours | SNk |
-| SPa | Auditory processing | ours | SPa |
-| SPv | Visual processing | ours | SPv |
+| SNp | Dexterity | ours · *deferred* | SNp (proprioception/dexterity) |
+| SNk | Kinesthetic processing and proprioception | ours · *deferred* | SNk |
+| SPa | Auditory processing | ours · *deferred* | SPa |
+| SPv | Visual processing | ours · *deferred* | SPv |
 | MMe | Episodic memory | theirs | LMe |
 | MMp | Long-term procedural memory | theirs | LMp |
 | MMs | Working and short-term memory | theirs | EXe |

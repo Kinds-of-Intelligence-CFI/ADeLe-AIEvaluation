@@ -69,16 +69,21 @@ _DOCS = {
 
 # (code, source, source_heading-as-written-in-the-Doc), in active-set order.
 # Non-memory dims come from "ours"; memory dims from "theirs".
+#
+# The active set is the text/tool-relevant agentic dimensions — the ones HAL
+# benchmarks actually exercise. The four sensory/motor rubrics (Dexterity SNp,
+# Kinesthetic SNk, Auditory SPa, Visual SPv) stay in the library under
+# rubrics/data_v2/ours/ but are NOT active: text-based agent tasks would score
+# them all 0, so they add cost without signal. Re-activate them here for
+# embodied/multimodal work.
+_DEFERRED_MULTIMODAL = ("SNp", "SNk", "SPa", "SPv")
+
 _ACTIVE = [
     ("PLp", "ours", "Planning"),
     ("PLe", "ours", "Action control and execution"),
     ("MSe", "ours", "Environmental and situational understanding"),
     ("MSc", "ours", "Communication and social interaction"),
     ("ECc", "ours", "Behavioral inhibition and self-control"),
-    ("SNp", "ours", "Dexterity"),
-    ("SNk", "ours", "Kinesthetic processing and proprioception"),
-    ("SPa", "ours", "Auditory processing"),
-    ("SPv", "ours", "Visual processing"),
     ("MMe", "theirs", "Episodic Memory"),
     ("MMp", "theirs", "Procedural Memory"),
     ("MMs", "theirs", "Working Memory"),
