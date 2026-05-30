@@ -21,7 +21,7 @@ Usage:
 import re
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Iterable, List, Optional, Tuple
 from dataclasses import dataclass
 
 logger = logging.getLogger(__name__)
@@ -103,6 +103,22 @@ class RubricsCatalog:
         self._cache: Dict[str, Rubric] = {}
         self._load()
 
+    @classmethod
+    def from_paths(cls, paths: "Iterable[str | Path]") -> "RubricsCatalog":
+        """Build a catalog from an explicit list of rubric ``.txt`` files.
+
+        Unlike the folder constructor, this composes a catalog from files that
+        may live in different directories — e.g. selecting, per dimension, which
+        of several rubric source versions to use. Each file is parsed and
+        validated exactly as in the folder loader.
+        """
+        self = cls.__new__(cls)
+        self._folder = None
+        self._cache = {}
+        for p in paths:
+            self._add_file(Path(p))
+        return self
+
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
@@ -154,25 +170,27 @@ class RubricsCatalog:
             logger.error("Rubrics path is not a directory: %s", self._folder)
             return
 
-        count = 0
-        for fp in sorted(self._folder.glob("*.txt")):
-            try:
-                acronym, full_name, content = _parse_rubric_file(fp)
-                is_valid, msg = validate_rubric(content)
-                if not is_valid:
-                    logger.warning("Skipping invalid rubric %s: %s", fp.name, msg)
-                    continue
-                self._cache[acronym] = Rubric(
-                    acronym=acronym,
-                    full_name=full_name,
-                    content=content,
-                    file_path=str(fp.resolve()),
-                )
-                count += 1
-            except Exception as exc:
-                logger.warning("Error loading rubric %s: %s", fp.name, exc)
-
+        count = sum(self._add_file(fp) for fp in sorted(self._folder.glob("*.txt")))
         logger.info("Loaded %d rubrics from %s", count, self._folder)
+
+    def _add_file(self, fp: Path) -> bool:
+        """Parse, validate and cache one rubric file. Returns True if added."""
+        try:
+            acronym, full_name, content = _parse_rubric_file(fp)
+            is_valid, msg = validate_rubric(content)
+            if not is_valid:
+                logger.warning("Skipping invalid rubric %s: %s", fp.name, msg)
+                return False
+            self._cache[acronym] = Rubric(
+                acronym=acronym,
+                full_name=full_name,
+                content=content,
+                file_path=str(fp.resolve()),
+            )
+            return True
+        except Exception as exc:
+            logger.warning("Error loading rubric %s: %s", fp.name, exc)
+            return False
 
 
 # ============================================================================

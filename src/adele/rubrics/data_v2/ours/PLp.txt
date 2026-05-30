@@ -1,0 +1,42 @@
+# Planning
+
+This rubric assesses the ability to envision desired outcomes and devise a series of actions or strategies to achieve them: setting clear instrumental goals, anticipating challenges, allocating resources, dividing tasks into subtasks, sequencing actions, and, at higher levels, allocating work among collaborators. The difficulty of a planning task increases with a longer temporal horizon, a greater number of subtasks, the presence of other agents, the open-endedness of the goal, and the unpredictability of the environment.
+
+Level 0: No planning needed. Reactive or retrieval tasks that can be completed through a single cognitive operation (retrieval, recognition, straightforward mapping). No sequencing or subgoal generation is required; the environment is static and fully specified.
+Examples:
+* What year did Darwin publish "The Origin of Species": 1856, 1859, 1865 or 1866?
+* Implement accurate real-time translation of a conversation between English and Spanish.
+* Convert a temperature from Celsius to Fahrenheit.
+* Select the figure that fits the pattern from A to E.
+
+Level 1: Simple short-term planning. The task requires a very small number of steps (a horizon of about three or fewer). There is no need to divide the task into subtasks or to consider other agents; the goal is clearly specified and the environment is static and predictable.
+Examples:
+* Combine information from two sources to answer a simple question (e.g., compare the battery life of two smartphone models).
+* Draft a brief email summarising the key points from a meeting after reading the notes.
+* By what percentage did the number of history books published in Estonia fall from 1995 to 1996?
+
+Level 2: Intermediate-term planning with simple decomposition. The task requires planning with a slightly longer horizon (roughly 4–10 sequential actions) and involves a few well-defined, simple subtasks. The environment is static and fully observable with no other agents; the goal is clear, though it may include multiple criteria (e.g., cost, dates, quality).
+Examples:
+* Build a personal webpage using a template: choose a template, customise the layout, and deploy the site.
+* Plan a day-trip itinerary given preferences (museums, restaurants, location); identify opening hours and schedule visits.
+* Provide a detailed scientific review for a research paper.
+* Download a dataset, clean it, run a statistical analysis and produce a chart.
+
+Level 3: Medium-horizon planning with multi-agent coordination. The task involves a longer temporal horizon (up to about 50–100 actions or interactions) and several hierarchical subtasks requiring sequencing and dependency management. It may require coordinating with other agents whose goals are known. The environment is largely static and predictable, with minimal re-planning.
+Examples:
+* Playing chess at international-tournament level, where sub-plans (opening, mid-game, end-game) are sequenced and opponent moves are predictable within known strategies.
+* Organise a small academic workshop: invite speakers, arrange the schedule, manage registrations and communicate logistics.
+* Plan a didactic unit spanning nine sessions for a primary-school English-as-a-foreign-language class where the students are known beforehand.
+* Replicate a research paper by organising a literature review, implementing algorithms, running experiments and writing results.
+
+Level 4: Long-horizon, open-ended static planning. Broad or open-ended goals whose evaluation criteria may be qualitative (e.g., "organise a successful conference"); tasks may span months or years. Numerous interdependent subtasks make hierarchical decomposition essential, and the task requires coordinating with multiple agents whose goals are known but whose actions may be unpredictable. The environment is static or slowly evolving, with occasional re-planning.
+Examples:
+* Plan a large-scale training pipeline for an LLM: schedule data collection, pre-training, hyperparameter search, evaluation and release.
+* Design the legal strategy for a class-action lawsuit: coordinate legal research, evidence gathering, filings and negotiations with known parties.
+* Organise an international conference (e.g., ICML): secure venues, negotiate with sponsors, select papers, schedule sessions, coordinate volunteers and manage budgets.
+
+Level 5: Open-ended planning in dynamic, partially observable, multi-agent environments. The goal may be ambiguous, evolving or contested, and the horizon is arbitrary, potentially spanning years with ongoing feedback loops. Subtasks are complex and interdependent, and hierarchical decomposition must be revisited as conditions change. Multiple agents have diverse or partially unknown goals; the environment is dynamic and partially observable, so new information arrives, plans fail unexpectedly, and re-planning is frequent.
+Examples:
+* Create emergency-response protocols for large natural disasters: allocate resources and coordinate multiple teams (firefighters, medical, logistics, government) under rapidly changing conditions and incomplete information.
+* Plan a multi-year international scientific project, such as the ITER nuclear-fusion reactor, where goals may evolve and partners have different agendas.
+* Plan the development of an extreme-ultraviolet semiconductor fabrication plant, including procurement of specialised machinery, workforce training, supply-chain management and adaptation to market shifts.

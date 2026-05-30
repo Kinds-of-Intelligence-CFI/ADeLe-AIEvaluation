@@ -1,0 +1,44 @@
+# Auditory processing
+
+This rubric assesses the ability to extract, interpret and act upon spectral and temporal information from acoustic input. It encompasses sound detection, discrimination and localization, auditory scene analysis (source separation), and the semantic interpretation of speech and non-speech sounds, including resolving competing auditory streams (the "cocktail-party problem"). Difficulty increases with the resolution and fidelity of the signal and the fine spectral detail required, the speed of acoustic changes and rhythm complexity, the level of background noise and reverberation (signal-to-noise ratio), and the number of distinct auditory sources that must be tracked or separated.
+
+Level 0: None. The task does not require any auditory processing.
+Examples:
+* Reading a transcript of a conversation.
+* Identifying a song based on its metadata or title text.
+* Measuring the duration of a sound file by checking its file properties.
+
+Level 1: Very low. The task requires processing isolated, distinct sounds in optimal conditions (high signal-to-noise ratio). The signal is static or changes slowly with no clutter, requiring only basic detection or simple discrimination of familiar patterns.
+Examples:
+* Recognising the sound of a simple vowel (e.g., "a").
+* Identifying a loud alarm or siren in a silent room.
+* Following the beat of a simple, slow drum rhythm.
+* Distinguishing between a male and a female voice while reading a slow sentence.
+
+Level 2: Basic. The task requires processing moderately complex auditory patterns with minimal clutter, including recognising simple sequences, distinct words or basic environmental sounds where the target is clearly dominant.
+Examples:
+* Recognising a well-vocalised, complex but familiar word.
+* Humming back a simple three-note melody after hearing it.
+* Classifying notes as higher or lower in pitch than a reference.
+* Identifying the direction of a sound source (left vs. right) in a quiet environment.
+
+Level 3: Intermediate. The task demands integrating longer temporal sequences and separating a target sound from moderate background noise or a single competing source, tracking meaning or melody across varying intonation; or producing simple meaning-carrying sounds.
+Examples:
+* Accurately transcribing a news broadcast given by a fluent speaker.
+* Identifying the lyrics of a pop song with a clear vocal track.
+* Identifying a specific instrument (e.g., a trumpet) playing a solo within a small jazz quartet.
+* Detecting sarcasm or hesitation in a voicemail based on intonation.
+
+Level 4: Advanced. The task requires processing rapid, transient or complex signals in noisy, cluttered environments (low signal-to-noise ratio), tracking a specific target among multiple competing sources (polyphony / cocktail party) or identifying subtle cues in degraded audio; or accurately reproducing complex but familiar sounds.
+Examples:
+* Understanding a conversation in a noisy environment.
+* Transcribing a multi-person conversation, annotating who speaks when and important inflexions.
+* Following a single conversation at a loud, crowded party (the "cocktail-party effect").
+* Identifying a mechanical failure in a machine from subtle changes in its operating hum against factory noise.
+
+Level 5: Highly advanced. The task demands expert-level integration of highly complex, dense or severely degraded auditory scenes, separating many simultaneous streams, recognising highly abstract or unfamiliar patterns, or creatively generating complex auditory structures.
+Examples:
+* Transcribing the individual parts of a fugue or complex orchestral piece by ear (e.g., spotting a wrong note in the viola section during a fortissimo tutti).
+* Categorising specific ultrasonic vocalisations of mice or identifying individual bird species in a dense tropical-rainforest recording.
+* Composing a complex symphony or generating a novel soundscape that mimics a specific physical environment.
+* Learning to speak a language with distinct phonology to a native-level accent, including pitch-accent subtleties, and using it in noisy environments.

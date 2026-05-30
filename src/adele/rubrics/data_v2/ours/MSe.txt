@@ -1,0 +1,43 @@
+# Environmental and situational understanding
+
+This rubric assesses the ability to perceive and understand the external environment's dynamics, including other actors, and to anticipate the collective impact of events and actions on the system. It captures the ability to build and update internal representations of the external world, anticipate how events and actions change the state of the environment and of other actors, and use these representations to plan and adapt. Demand increases with the open-endedness and size of the state space, the unpredictability and stochasticity of the environment, the number and nature of other agents present, and the complexity of the environment's dynamics.
+
+Level 0: No environmental understanding needed. The task does not require any understanding of an external environment; it can be completed in a single, atomic conceptual action, with no other agents to consider.
+Examples:
+* Simple multiple-choice questions ("What year did Darwin publish On the Origin of Species?").
+* Translate a sentence between two languages.
+* Entity classification.
+
+Level 1: Static environment with clear rules. The task requires understanding a static, well-defined and fully observable environment with clear rules. No other agents are present and the environment does not change.
+Examples:
+* Beating Stockfish at chess.
+* Arithmetic problems.
+* Solving a Sudoku.
+
+Level 2: Open-ended but mostly predictable environment. The task requires modelling an open-ended yet largely predictable environment. There is no need to model other agents or complex dynamics to complete the task.
+Examples:
+* Theorem proving of the Poincaré conjecture.
+* Navigation tasks such as driving from JFK airport to the centre of Manhattan.
+* Writing the "Silo" novels.
+* Design a house.
+
+Level 3: Open-ended environment with other agents. The task involves an environment with other agents whose goals are known and stable. The environment itself does not change unpredictably, and the goals of the other agents do not change.
+Examples:
+* Playing strategy board games such as Monopoly or Diplomacy.
+* Participating in a cooperative board game like Pandemic, where all players share objectives and known roles.
+* Multi-party negotiation with fixed payoffs or structured debates.
+* Developing a long-term exercise routine tailored to a single person's fitness goals.
+
+Level 4: Open-ended environment with complex but predictable dynamics. The task requires modelling a complex, open-ended environment that evolves dynamically but according to learnable rules. It involves reasoning about the behaviour of multiple agents that may be cooperative or competitive, but whose goals are explicit. Environmental conditions are stable and the rules can be learned and improved over time.
+Examples:
+* Negotiate the settlement of a copyright-infringement legal case, where each party's objectives are clear but interactions are intricate.
+* Coordinate a team to carry out a research project.
+* Managing air-traffic control for an airport: coordinating many flights and pilots with known procedures but complex timing.
+
+Level 5: Open-ended environment with complex and unpredictable dynamics. The task requires continuous adaptation to a dynamic and fast-changing environment. Other agents' goals may be unknown, hidden or shifting, the environment is unpredictable, and the agent must continuously update its model of the environment and other agents in real time.
+Examples:
+* Lead a fast-growing startup in a quickly growing and competitive market.
+* Infiltrate or disrupt an adversarial organisation.
+* Commanding a large-scale emergency response during an unfolding natural disaster, such as a major earthquake with cascading aftershocks and infrastructure failures.
+* Coordinating humanitarian-aid distribution in a conflict zone, balancing unknown local actors and rapidly changing conditions.
+* Navigating a company's response to sudden regulatory changes while competing firms exploit the situation.

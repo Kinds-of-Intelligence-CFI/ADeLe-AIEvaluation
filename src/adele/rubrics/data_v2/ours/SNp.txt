@@ -1,0 +1,43 @@
+# Dexterity
+
+This rubric assesses the difficulty of physically manipulating objects through a controller or effector (e.g., hands, a robotic arm), encompassing sensorimotor coordination, real-time feedback integration and fine motor control. Difficulty increases with geometric or scale mismatch between object and controller, object deformability and dynamic shape changes, the speed and accuracy of movement required, the availability and latency of sensory feedback, the irreversibility of actions, surface friction, the number of sequential steps, and time pressure.
+
+Level 0: None. The task does not require any dexterity or object manipulation.
+Examples:
+* Digitally processing data.
+* Speaking Spanish fluently.
+* Playing chess.
+
+Level 1: Very low. The task requires only very basic manipulation of rigid, high-friction objects in stable conditions. Movements are simple and sequential and require low precision, with no feedback on the physical manipulation needed.
+Examples:
+* Grab a cube.
+* Switch a light on.
+* Insert a key into an easy-to-reach lock.
+* Open a drawer.
+
+Level 2: Low. The task requires coordinating multiple fingers or effectors, handling slightly deformable or moving objects, or moderate precision; or a single high-accuracy action with rigid objects. Accurate real-time sensory feedback is available.
+Examples:
+* Tying shoelaces (a basic knot).
+* Using chopsticks to pick up a solid piece of food.
+* Touch-typing on a keyboard at moderate speed.
+* Opening a standard jar or bottle.
+
+Level 3: Intermediate. The task requires high precision and handling objects that may be deformable, slippery or otherwise difficult to move accurately (e.g., owing to a variety of sizes or shapes), possibly with complex bimanual coordination. Feedback from sensors is still accurate and real-time, and there are no irreversible actions.
+Examples:
+* Fold a shirt.
+* Assemble Ikea furniture with large wooden panels and small screws.
+* Knitting a simple scarf or sewing a button.
+* Flipping a pancake or shaping dough.
+
+Level 4: Advanced. The task requires handling not just deformable and slippery objects but also performing potentially irreversible actions, or manipulating objects with very high accuracy, often under time pressure.
+Examples:
+* Performing a routine suture or drawing blood.
+* Moulding a complex vessel.
+* Repairing a high-voltage power line during a storm with limited visibility and heavy protective gear.
+
+Level 5: Highly advanced. The task is characterised not just by the deformability or slipperiness of the objects but also by high latency or inaccurate sensor data combined with stringent time constraints, demanding virtuoso fine motor control.
+Examples:
+* Playing the violin as a professional violinist.
+* Performing microsurgery (e.g., reattaching a retina) where tremors must be completely suppressed.
+* Performing close-up magic manipulation (e.g., coin rolling) that is invisible to the observer.
+* Sculpting a marble veil.

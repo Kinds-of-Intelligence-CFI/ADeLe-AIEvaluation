@@ -77,6 +77,7 @@ def annotate(
     *,
     demands: Optional[List[str]] = None,
     rubrics_folder: Optional[str] = None,
+    catalog: Optional[RubricsCatalog] = None,
     model: str = "gpt-4o",
     backend: Optional[str] = None,
     max_completion_tokens: int = 1000,
@@ -101,6 +102,9 @@ def annotate(
         demands:        List of rubric acronyms to annotate (e.g. ["AS", "MCr"]).
                         If None, annotates all available rubrics.
         rubrics_folder: Path to custom rubrics folder. None = bundled rubrics.
+        catalog:        Pre-built ``RubricsCatalog`` to use instead of loading
+                        ``rubrics_folder`` (e.g. a set composed across folders).
+                        Takes precedence over ``rubrics_folder`` when given.
         model:          Model to use for annotation. Supports any model that
                         litellm supports:
 
@@ -134,8 +138,10 @@ def annotate(
         if col not in data.columns:
             raise ValueError(f"Input data must have a '{col}' column.")
 
-    # Load rubrics
-    catalog = RubricsCatalog(rubrics_folder)
+    # Load rubrics. A pre-built catalog (e.g. a set composed across folders via
+    # RubricsCatalog.from_paths) takes precedence over a single folder path.
+    if catalog is None:
+        catalog = RubricsCatalog(rubrics_folder)
     if demands is None:
         demands = catalog.acronyms
     else:

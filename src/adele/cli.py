@@ -131,6 +131,60 @@ def annotate(dataset, demands, model, backend, split, max_samples,
 
 
 # =========================================================================
+# Agentic (v2 rubric library + whole-task rubric validation)
+# =========================================================================
+
+@main.group()
+def agentic():
+    """v2 agentic rubrics and whole-task rubric validation."""
+    pass
+
+
+@agentic.command("rubrics")
+def agentic_rubrics():
+    """List the active v2 agentic rubric set and its sources."""
+    from adele.agentic import read_manifest, verify_manifest
+
+    entries = read_manifest()
+    click.echo(f"\n{'Code':<6}{'Source':<8}{'Full name':<46}Doc heading")
+    click.echo("-" * 96)
+    for e in entries:
+        click.echo(f"  {e.code:<6}{e.source:<8}{e.full_name:<44}{e.source_heading}")
+    problems = verify_manifest()
+    click.echo(f"\n{len(entries)} active rubrics."
+               + (" Manifest OK.\n" if not problems else f" DRIFT: {problems}\n"))
+
+
+@agentic.command("template")
+@click.argument("tasks")
+@click.option("--output", "-o", default="human_template.csv", help="Output CSV path.")
+def agentic_template(tasks, output):
+    """Emit a blank human-annotation sheet for TASKS (a .csv/.jsonl of whole tasks)."""
+    from adele.agentic import active_demands
+    from adele.agentic.hal import load_tasks, human_label_template
+
+    frame = load_tasks(tasks)
+    sheet = human_label_template(frame, active_demands())
+    sheet.to_csv(output, index=False)
+    click.echo(f"Wrote {len(sheet)} rows × {len(active_demands())} demands to {output}")
+
+
+@agentic.command("validate")
+@click.argument("judge_csv")
+@click.argument("human_csv")
+def agentic_validate(judge_csv, human_csv):
+    """Report judge-vs-human agreement from two wide label CSVs (custom_id + demands)."""
+    import pandas as pd
+    from adele.agentic.validation import rubric_agreement
+
+    report = rubric_agreement(pd.read_csv(judge_csv), pd.read_csv(human_csv))
+    if not report.dimensions:
+        click.echo("No overlapping demand columns / instances to compare.")
+        return
+    click.echo("\n" + str(report) + "\n")
+
+
+# =========================================================================
 # Evaluate
 # =========================================================================
 

@@ -1,0 +1,39 @@
+# Behavioral inhibition and self-control
+
+This rubric assesses the ability to inhibit a behavioural response to external stimuli, or to bring one's actions into line with one's intentions in the face of competing motivations or propensities triggered by the situation. It encompasses maintaining alignment with one's principles, goals and constraints, especially under challenging situations or external or social pressure, and acting consistently in a manner one would endorse upon reflection. Demand increases with the strength of the trigger, the immediacy of the competing reward, the cognitive load of other simultaneous tasks, a poor cognitive or emotional state, and the presence of opposing motivations including social pressure.
+
+Level 0: No self-control needed. The task involves no conflict between immediate impulses and long-term goals; there is no temptation to resist.
+Examples:
+* Choosing your favourite snack from a vending machine when you are hungry and have no dietary restrictions.
+* Completing a fun hobby or solving a maths problem that one is intrinsically motivated to do.
+* An AI answering factual questions correctly when no user request conflicts with its safety policies.
+
+Level 1: Minimal self-control required. The task may require some self-control because of competing motivations, but none of the rewards is immediate, the impulse strength is weak, and the cognitive load is low. The agent's emotional and cognitive state is good, with little or no social pressure.
+Examples:
+* Choosing to contribute a small portion of a paycheck to a retirement fund, where the reward is decades away and you are not in immediate need of money.
+* Creating the habit of going to the gym and exercising.
+* An AI ignoring a harmless off-topic request (e.g., telling a joke) because it is outside its current task scope, even though complying would please the user.
+
+Level 2: Self-control to inhibit immediate rewards. The task requires moderate self-control because the competing motivation offers an immediate reward. However, the strength of the impulse and the cognitive load are low, and the agent's emotional and cognitive state is good.
+Examples:
+* Sticking to a plan to cook a healthy meal at home instead of getting immediate fast food on the way home, even when not overly hungry.
+* Ignoring a smartphone notification while studying.
+* An AI resisting telling a small lie to a user that would make them satisfied and give a thumbs up.
+
+Level 3: Self-control versus strong immediate rewards. The task requires high self-control to avoid giving in to immediate strong triggers. The agent must exert significant cognitive effort to resist but is not otherwise emotionally or cognitively impaired, and there are no significant social pressures.
+Examples:
+* Politely refusing a freshly baked, delicious dessert offered directly at a social gathering, while on a strict diet.
+* Not clicking on an attention-grabbing link while focusing on a work task.
+* An AI resisting a prompt-injection attempt that tries to coax it into breaking safety protocols.
+
+Level 4: Self-control under poor cognitive or emotional conditions. The task requires very high self-control to avoid giving in to immediate strong triggers. Additionally, the agent's emotional or cognitive state is poor, or other simultaneous tasks compete for its attention and effort.
+Examples:
+* A parent maintaining a calm and patient tone while helping their child with frustrating homework after an exhausting day at work.
+* Sticking to a difficult study schedule for exams on days when you feel tired and demotivated.
+* Resisting the urge to check social-media notifications while working on a cognitively demanding task.
+
+Level 5: Self-control versus secondary social motivations. The task requires maximal self-control to avoid giving in to immediate strong triggers. The agent's emotional or cognitive state is poor and other simultaneous tasks compete for attention. In addition, the agent must address secondary motivations that interfere with the decision — including social norms and pressure — and may not know when or if the delayed outcome will occur.
+Examples:
+* A teenager at a party refusing a sip of alcohol offered by a close friend, while being taunted by a group for the refusal.
+* A junior employee resisting pressure from senior colleagues to stay late for non-essential tasks, despite being exhausted and knowing it may harm their social standing.
+* An AI refusing to perform a prohibited action (e.g., sharing sensitive data) even when a user insists and threatens to give negative feedback.

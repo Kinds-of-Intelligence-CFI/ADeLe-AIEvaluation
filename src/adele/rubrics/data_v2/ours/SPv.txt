@@ -1,0 +1,42 @@
+# Visual processing
+
+This rubric assesses the ability to extract, interpret and act upon spatial and temporal information from visual input. It encompasses object recognition, spatial localization, motion detection, attention allocation, and the integration of visual feedback for real-time sensorimotor control. High visual detail and many objects do not inherently increase difficulty when elements are well-separated with clear features and good contrast; rather, difficulty arises from integration demands — determining which features belong together when objects overlap, identifying object boundaries in cluttered scenes, or resolving degraded and occluded input. Difficulty increases with the resolution and detail required, temporal dynamics (static vs. rapidly changing scenes), clutter and signal-to-noise ratio, and scene complexity.
+
+Level 0: None. The task does not require any visual processing.
+Examples:
+* TODO(pablo): the source Doc lists no Level 0 examples for Visual processing — add tasks with no visual input (e.g., answering a text-only question).
+
+Level 1: Very low. Tasks involve isolated, static or slowly changing elements in optimal viewing conditions with high contrast and clear features. Elements are well-separated with redundant visual cues, so simple feature binding, spatial synthesis and temporal binding suffice.
+Examples:
+* Reading printed text in good lighting (even with slight glare).
+* Identifying a familiar object (coffee cup, phone) isolated on a clear surface.
+* Following a single person walking across an open space.
+* Recognising a face in a well-lit, frontal photograph.
+
+Level 2: Basic. Tasks require processing moderately cluttered scenes with some occlusion, slightly degraded input or moving elements. Feature binding and spatial synthesis require modest effort, and temporal binding remains straightforward with predictable motion.
+Examples:
+* Classifying cats and dogs in images.
+* Reading moderately clear handwriting or text with slight glare.
+* Finding a specific item in a moderately cluttered drawer (e.g., locating keys among 10–15 objects).
+* Tracking 2–3 people simultaneously in an open area.
+
+Level 3: Intermediate. Tasks demand substantial integration across competing signals with moderate degradation, occlusion or fast dynamic motion. Predictive integration becomes important for handling incomplete information and resolving ambiguous boundaries in changing scenes.
+Examples:
+* Identifying subtle pneumonia infiltrates in chest X-rays by distinguishing them from overlapping vascular structures.
+* Driving in foggy conditions.
+* Spotting a camouflaged object (an animal blending with its background).
+* Following a basketball during gameplay among 5–6 players.
+
+Level 4: Advanced. Tasks require processing numerous fast-moving elements with frequent occlusion in degraded conditions. Substantial binding ambiguity is present, so determining which features belong together across space and time requires sophisticated integration as scenes rapidly evolve, usually amid multiple competing or conflicting signals.
+Examples:
+* Tracking multiple fast-moving, frequently occluded players in dense American-football gameplay.
+* Reading fragmented text across multiple torn document pieces while determining which fragments connect.
+* Reading severely degraded text (water-damaged documents, extreme low light).
+* Resolving extreme binding ambiguity in chaotic scenes (e.g., individual body configurations in a dense rugby scrum).
+
+Level 5: Highly advanced. Tasks demand expert integration of many rapidly changing signals in severely degraded conditions, resolving severe binding ambiguity in chaotic scenes through sophisticated predictive integration amid constant occlusion, poor visibility and highly ambiguous feature relationships.
+Examples:
+* Air-traffic controller visually tracking aircraft in poor weather with radar interference.
+* Processing highly degraded thermal or night-vision imagery to identify specific targets.
+* Real-time visual parsing of rapidly changing medical imaging (e.g., interpreting live ultrasound during an emergency procedure).
+* Identifying well-camouflaged animals in dense vegetation and poor light.

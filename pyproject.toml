@@ -105,9 +105,15 @@ analysis = [
     "matplotlib>=3.7",
     "scienceplots>=2.2",
 ]
+# Agentic evaluation: whole-task rubric validation (judge-vs-human agreement).
+# Reuses the analysis stack (scikit-learn/scipy); datasets feeds HAL task inputs.
+agentic = [
+    "adele[analysis]",
+    "datasets>=2.14",
+]
 # Everything.
 all = [
-    "adele[eval,annotate,analysis]",
+    "adele[eval,annotate,analysis,agentic]",
 ]
 dev = [
     "adele[all]",
