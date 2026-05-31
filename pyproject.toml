@@ -109,7 +109,8 @@ analysis = [
 # Reuses the analysis stack (scikit-learn/scipy); datasets feeds HAL task inputs.
 agentic = [
     "adele[analysis]",
-    "datasets>=2.14",
+    "datasets>=2.14",        # load HAL benchmark task inputs from HuggingFace
+    "huggingface_hub>=0.23",  # fetch τ-bench task files directly (hf_hub_download)
 ]
 # Everything.
 all = [

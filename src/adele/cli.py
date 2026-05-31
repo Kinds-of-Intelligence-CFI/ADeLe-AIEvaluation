@@ -169,6 +169,35 @@ def agentic_template(tasks, output):
     click.echo(f"Wrote {len(sheet)} rows × {len(active_demands())} demands to {output}")
 
 
+@agentic.command("pilot")
+@click.option("--benchmarks", "-b", multiple=True,
+              default=("swebench", "assistantbench", "usaco", "taubench"),
+              help="Benchmarks to sample (default: the 4-benchmark pilot set).")
+@click.option("--n-per", "-n", type=int, default=5, help="Tasks per benchmark.")
+@click.option("--seed", type=int, default=0, help="Random seed (reproducible).")
+@click.option("--output-dir", "-o", default="./pilot", help="Output directory.")
+def agentic_pilot(benchmarks, n_per, seed, output_dir):
+    """Sample whole tasks across benchmarks → tasks.csv + a blank human sheet.
+
+    Downloads task inputs (not rollouts) from HuggingFace; no LLM calls.
+    """
+    import os
+    from adele.agentic import active_demands
+    from adele.agentic.benchmarks import sample_pilot
+    from adele.agentic.hal import human_label_template
+
+    click.echo(f"Sampling {n_per} tasks each from: {', '.join(benchmarks)} (seed={seed})")
+    tasks = sample_pilot(list(benchmarks), n_per=n_per, seed=seed)
+    os.makedirs(output_dir, exist_ok=True)
+    tasks_path = os.path.join(output_dir, "tasks.csv")
+    template_path = os.path.join(output_dir, "human_template.csv")
+    tasks.to_csv(tasks_path, index=False)
+    human_label_template(tasks, active_demands()).to_csv(template_path, index=False)
+    click.echo(f"Wrote {len(tasks)} tasks to {tasks_path}")
+    click.echo(f"Blank annotation sheet ({len(active_demands())} demands) → {template_path}")
+    click.echo("\nPer benchmark:\n" + tasks["benchmark"].value_counts().to_string())
+
+
 @agentic.command("validate")
 @click.argument("judge_csv")
 @click.argument("human_csv")

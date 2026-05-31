@@ -19,16 +19,19 @@ local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
 `PLp PLe MSe MSc ECc` (ours) · `MMe MMp MMs` (theirs). Inactive: `SNp SNk SPa SPv`.
 
 ## Next steps
-- [ ] **Pick the first HAL benchmark** — τ-bench (airline/retail) recommended:
-      planning + social + tool-use, short tasks, clean verification. Confirm where
-      its task inputs are fetched from; wire `hal.load_tasks`.
-- [ ] **Sample tasks** (start ~30–50). Stratify later once judge levels exist
-      (high demand levels are sparse).
-- [ ] **Dry-run + cost-gate** the judge on a handful before any batch (token/$ estimate).
-- [ ] **Pablo annotates** the same sample via `agentic template` → fill levels.
-- [ ] **First agreement numbers** via `agentic validate judge.csv human.csv`;
+- [x] **Pilot benchmark set + sample** — 4 benchmarks (SWE-bench Verified,
+      AssistantBench, USACO, τ-bench), 5 tasks each → `pilot/tasks.csv` +
+      `pilot/human_template.csv`. Reproducible: `adele agentic pilot --seed 0`
+      (`benchmarks.py`; downloads task inputs only, no rollouts/LLM calls).
+- [ ] **Pablo annotates** `pilot/human_template.csv` (fill the 8 demand columns 0–5)
+      → save as e.g. `pilot/human_labels.csv`.
+- [ ] **Dry-run + cost-gate** the judge: `hal.run_judge(tasks, model=…)` on ~2–3
+      tasks first (token/$ estimate); then the 20.
+- [ ] **First agreement numbers**: `adele agentic validate judge.csv human_labels.csv`;
       read the per-level confusion to find ambiguous anchors.
 - [ ] **Revise rubrics** where agreement is weak; re-annotate.
+- [ ] Later: stratified/high-level oversample (random under-samples levels 4–5);
+      add GAIA/AppWorld; second annotator for a human–human ceiling.
 
 ## Rubric quality backlog (see review)
 - [x] Keep **one polished definition per level**, ADeLe v1.0 style — done in the

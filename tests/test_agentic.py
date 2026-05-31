@@ -125,6 +125,23 @@ def test_human_label_template_schema():
     assert sheet[["PLp", "MMe"]].isna().all().all()
 
 
+def test_sample_pilot_is_seeded_and_join_safe():
+    from adele.agentic.benchmarks import sample_pilot, _frame
+
+    fake = {
+        "a": lambda: _frame([f"p{i}" for i in range(20)], [f"s{i}" for i in range(20)], "a", "a"),
+        "b": lambda: _frame([f"q{i}" for i in range(20)], [f"t{i}" for i in range(20)], "b", "b"),
+    }
+    s1 = sample_pilot(["a", "b"], n_per=5, seed=0, loaders=fake)
+    s2 = sample_pilot(["a", "b"], n_per=5, seed=0, loaders=fake)
+
+    assert len(s1) == 10 and set(s1["benchmark"]) == {"a", "b"}
+    assert list(s1["custom_id"]) == list(s2["custom_id"])         # reproducible
+    assert not any("__" in cid for cid in s1["custom_id"])        # safe join key
+    with pytest.raises(ValueError):
+        sample_pilot(["nope"], loaders=fake)
+
+
 def test_run_judge_uses_active_catalog(monkeypatch, tmp_path):
     tasks = pd.DataFrame({
         "custom_id": ["t1", "t2"],
