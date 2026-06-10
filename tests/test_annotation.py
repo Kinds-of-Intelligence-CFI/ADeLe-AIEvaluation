@@ -198,7 +198,7 @@ class TestBackendDetection:
 
     @pytest.mark.parametrize("model", [
         "gpt-4o", "gpt-4o-mini", "openai/gpt-4o",
-        "o1", "o3-mini", "chatgpt-4o-latest",
+        "o1", "o3-mini", "o4-mini", "chatgpt-4o-latest",
     ])
     def test_openai_models_detected(self, model):
         assert _is_openai_model(model) is True
@@ -209,6 +209,10 @@ class TestBackendDetection:
         "anthropic/claude-3-5-haiku",
         "meta-llama/Llama-3-8B",
         "mistral/mistral-large",
+        # OpenAI-shaped names behind another provider must NOT use the
+        # OpenAI batch client (wrong client/credentials).
+        "azure/gpt-4o",
+        "openrouter/openai/gpt-4o",
     ])
     def test_non_openai_models_detected(self, model):
         assert _is_openai_model(model) is False

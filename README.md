@@ -46,7 +46,7 @@ export OPENROUTER_API_KEY="sk-or-..."     # OpenRouter (DeepSeek, Llama 3, etc.)
 
 > **Two annotation backends:**
 > ADeLe automatically picks the best backend based on your model:
-> - **Batch** (OpenAI models only) — uses the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch) for 50% cost reduction and higher rate limits. Auto-selected when using `gpt-*` or `o1`/`o3` models.
+> - **Batch** (OpenAI models only) — uses the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch) for 50% cost reduction and higher rate limits. Auto-selected when using `gpt-*` or `o1`/`o3`/`o4` models (with no provider prefix, or `openai/`).
 > - **Direct** (any model) — calls the model via [litellm](https://github.com/BerriAI/litellm), which supports OpenAI, Gemini, Claude, and 100+ other providers. Auto-selected for non-OpenAI models. You can force either backend with `--backend batch` or `--backend direct`.
 
 ---

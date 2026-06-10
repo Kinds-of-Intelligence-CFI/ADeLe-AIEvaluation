@@ -3,6 +3,8 @@
 import os
 from pathlib import Path
 
+import numpy as np
+import pandas as pd
 import pytest
 from inspect_ai import eval as inspect_eval
 from inspect_ai.model import (
@@ -17,6 +19,7 @@ from adele.data import load_battery
 from adele.evaluation import (
     adele_battery,
     create_task,
+    dataframe_to_samples,
     evaluate_model,
     results_from_log,
 )
@@ -39,6 +42,23 @@ def test_choice_letter_completion_and_groundtruth():
     assert choice_letter("Thus, the correct answer is: B") == "B"
     assert choice_letter("B.Rely on the authority of an expert.") == "B"
     assert choice_letter("no option here") is None
+
+
+def test_dataframe_to_samples_handles_list_valued_choices():
+    # Registry benchmarks with a choices_column (mmlu-pro, sat, ...) load
+    # choices as arrays/lists. Regression: pd.notna on a list-valued cell
+    # returned an array, raising "truth value ... is ambiguous".
+    df = pd.DataFrame({
+        "prompt": ["Q1?", "Q2?", "Q3?", "Q4?"],
+        "custom_id": ["a", "b", "c", "d"],
+        "target": ["A", "B", "C", "D"],
+        "choices": [np.array(["x", "y"]), ["u", "v"], "p, q", float("nan")],
+    })
+    samples = dataframe_to_samples(df)
+    assert samples[0].choices == ["x", "y"]   # numpy array (HF datasets)
+    assert samples[1].choices == ["u", "v"]   # plain list
+    assert samples[2].choices == ["p", "q"]   # comma-separated string (CSV)
+    assert samples[3].choices is None         # NaN -> no choices
 
 
 # --- battery loader + end-to-end with mock models ---

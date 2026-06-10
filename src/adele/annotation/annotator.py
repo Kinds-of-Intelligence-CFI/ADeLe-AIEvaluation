@@ -62,13 +62,16 @@ _retry_openai = retry(
 )
 
 # OpenAI model prefixes for auto-detecting batch eligibility
-_OPENAI_PREFIXES = ("gpt-", "o1", "o3", "chatgpt-", "ft:gpt-")
+_OPENAI_PREFIXES = ("gpt-", "o1", "o3", "o4", "chatgpt-", "ft:gpt-")
 
 
 def _is_openai_model(model: str) -> bool:
-    """Check if a model string refers to an OpenAI model."""
-    # Strip provider prefix if present
-    bare = model.split("/", 1)[-1] if "/" in model else model
+    """Check if a model string refers to an OpenAI model (batch-eligible)."""
+    # Any provider prefix must be OpenAI itself: "azure/gpt-4o" or
+    # "openrouter/openai/gpt-4o" must not route to the OpenAI batch client.
+    provider, _, bare = model.rpartition("/")
+    if provider and provider != "openai":
+        return False
     return any(bare.startswith(p) for p in _OPENAI_PREFIXES)
 
 
