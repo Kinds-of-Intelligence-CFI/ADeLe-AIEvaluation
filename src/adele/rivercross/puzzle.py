@@ -104,25 +104,20 @@ class PuzzleSpec:
         )
 
 
-def render_prompt(spec: PuzzleSpec) -> str:
-    """A natural-language statement of the puzzle for an agent or annotator."""
-    cargo = [it for it in spec.items if it != spec.ferryman]
+def describe_rules(spec: PuzzleSpec) -> str:
+    """The boat and constraint rules, without start/goal framing.
+
+    Shared by the full puzzle prompt and the per-state / per-transition framings
+    used by the annotation methods, so the rules read identically everywhere.
+    """
     lines: list[str] = []
     if spec.ferryman:
         cap = spec.boat_capacity
-        lines.append(
-            f"A {spec.ferryman} must ferry the following across a river from the "
-            f"left bank to the right bank: {', '.join(cargo)}."
-        )
         lines.append(
             f"The boat carries the {spec.ferryman} and at most {cap} "
             f"item{'s' if cap != 1 else ''} per crossing."
         )
     else:
-        lines.append(
-            "Move the following across a river from the left bank to the right "
-            f"bank: {', '.join(spec.items)}."
-        )
         lines.append(
             f"The boat holds at most {spec.boat_capacity} and needs at least one "
             "aboard to row."
@@ -137,8 +132,24 @@ def render_prompt(spec: PuzzleSpec) -> str:
             f"never outnumber the {'/'.join(sorted(spec.prey))} when any of the "
             "latter are present."
         )
-    lines.append("Find a sequence of crossings that gets everything to the right bank.")
     return " ".join(lines)
+
+
+def render_prompt(spec: PuzzleSpec) -> str:
+    """A natural-language statement of the puzzle for an agent or annotator."""
+    cargo = [it for it in spec.items if it != spec.ferryman]
+    if spec.ferryman:
+        intro = (
+            f"A {spec.ferryman} must ferry the following across a river from the "
+            f"left bank to the right bank: {', '.join(cargo)}."
+        )
+    else:
+        intro = (
+            "Move the following across a river from the left bank to the right "
+            f"bank: {', '.join(spec.items)}."
+        )
+    goal = "Find a sequence of crossings that gets everything to the right bank."
+    return " ".join([intro, describe_rules(spec), goal])
 
 
 def wolf_goat_cabbage() -> PuzzleSpec:
@@ -186,17 +197,53 @@ def conflict_graph_puzzle(
     )
 
 
+CONFLICT_TOPOLOGIES = ("chain", "star", "cycle", "complete")
+
+
+def _topology_edges(
+    cargo: tuple[str, ...], topology: str
+) -> tuple[tuple[str, str], ...]:
+    n = len(cargo)
+    if topology == "chain":
+        return tuple((cargo[i], cargo[i + 1]) for i in range(n - 1))
+    if topology == "star":
+        return tuple((cargo[0], cargo[i]) for i in range(1, n))
+    if topology == "cycle":
+        if n < 3:
+            return tuple((cargo[i], cargo[i + 1]) for i in range(n - 1))
+        return tuple((cargo[i], cargo[(i + 1) % n]) for i in range(n))
+    if topology == "complete":
+        return tuple(
+            (cargo[i], cargo[j]) for i in range(n) for j in range(i + 1, n)
+        )
+    raise ValueError(f"unknown topology {topology!r}; choose from {CONFLICT_TOPOLOGIES}")
+
+
+def conflict_topology_spec(
+    n_cargo: int,
+    topology: str = "chain",
+    boat_capacity: int = 1,
+    name: str | None = None,
+) -> PuzzleSpec:
+    """A wolf-goat-cabbage generalization whose conflict graph has a named shape.
+
+    ``chain`` (consecutive pairs conflict; ``n_cargo == 3, boat_capacity == 1``
+    reproduces wolf-goat-cabbage), ``star`` (one item conflicts with all others),
+    ``cycle``, or ``complete`` (every pair conflicts). Different shapes stress
+    different difficulty regimes at the same item count.
+    """
+    cargo = tuple(f"item{i + 1}" for i in range(n_cargo))
+    return conflict_graph_puzzle(
+        cargo=cargo,
+        conflicts=_topology_edges(cargo, topology),
+        boat_capacity=boat_capacity,
+        name=name or f"{topology}-{n_cargo}-boat-{boat_capacity}",
+    )
+
+
 def linear_conflict_spec(
     n_cargo: int, boat_capacity: int = 1, name: str | None = None
 ) -> PuzzleSpec:
-    """Wolf-goat-cabbage generalized to a chain of ``n_cargo`` items in which each
-    consecutive pair conflicts. ``n_cargo == 3, boat_capacity == 1`` reproduces
-    the structure of wolf-goat-cabbage (optimal length 7)."""
-    cargo = tuple(f"item{i + 1}" for i in range(n_cargo))
-    conflicts = tuple((cargo[i], cargo[i + 1]) for i in range(n_cargo - 1))
-    return conflict_graph_puzzle(
-        cargo=cargo,
-        conflicts=conflicts,
-        boat_capacity=boat_capacity,
-        name=name or f"chain-{n_cargo}-boat-{boat_capacity}",
-    )
+    """The ``chain`` topology (alias). ``n_cargo == 3, boat_capacity == 1``
+    reproduces wolf-goat-cabbage (optimal length 7)."""
+    return conflict_topology_spec(n_cargo, "chain", boat_capacity, name=name)

@@ -97,6 +97,13 @@ annotate = [
     "tenacity>=8.2",
     "datasets>=2.14",          # load source benchmarks from HuggingFace
 ]
+# Non-OpenAI model providers (Claude Haiku, Gemini Flash, ...) for the agent
+# (Inspect) and the demand judge (litellm). Needs the matching API keys in the
+# environment: ANTHROPIC_API_KEY, GEMINI_API_KEY / GOOGLE_API_KEY.
+models = [
+    "anthropic>=0.40",
+    "google-generativeai>=0.8",
+]
 # Demand / ability profiling and predictive-power analysis.
 analysis = [
     "scikit-learn>=1.3",
@@ -114,7 +121,7 @@ agentic = [
 ]
 # Everything.
 all = [
-    "adele[eval,annotate,analysis,agentic]",
+    "adele[eval,annotate,analysis,agentic,models]",
 ]
 dev = [
     "adele[all]",

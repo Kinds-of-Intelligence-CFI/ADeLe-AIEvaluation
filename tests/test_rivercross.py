@@ -3,10 +3,13 @@
 import math
 
 from adele.rivercross import (
+    CONFLICT_TOPOLOGIES,
     PuzzleSpec,
     conflict_graph_puzzle,
+    conflict_topology_spec,
     generate_family,
     generate_instances,
+    generate_mixed_family,
     goal_state,
     initial_state,
     linear_conflict_spec,
@@ -105,6 +108,35 @@ def test_generate_family_is_solvable_and_has_difficulty_gradient():
     assert bool(df["solvable"].all())  # solvable_only filtered the rest
     assert df["optimal_len"].nunique() > 1  # a real difficulty gradient
     assert df["n_states"].max() > df["n_states"].min()
+
+
+def test_all_topologies_build_and_chain_matches_wgc():
+    # The chain topology reproduces wolf-goat-cabbage at n=3, cap=1.
+    assert solve(conflict_topology_spec(3, "chain", 1)).optimal_len == 7
+    for topology in CONFLICT_TOPOLOGIES:
+        spec = conflict_topology_spec(4, topology, boat_capacity=2)
+        assert spec.name.startswith(topology)
+        solve(spec)  # builds and solves without error
+
+
+def test_topologies_differ_in_constraint_count():
+    # Same item count, different shapes -> different number of conflict edges.
+    counts = {
+        topology: len(conflict_topology_spec(5, topology).conflicts)
+        for topology in CONFLICT_TOPOLOGIES
+    }
+    assert counts["chain"] == 4  # n-1
+    assert counts["complete"] == 10  # n*(n-1)/2
+    assert counts["star"] == 4  # n-1 spokes
+    assert counts["cycle"] == 5  # n
+
+
+def test_generate_mixed_family_spans_topologies_and_is_solvable():
+    family = generate_mixed_family(range(4, 6), boat_capacities=(2, 3))
+    df = generate_instances(family)
+    assert bool(df["solvable"].all())  # solvable_only filtered the rest
+    prefixes = {name.split("-")[0] for name in df["custom_id"]}
+    assert len(prefixes) >= 3  # several distinct topologies present
 
 
 def test_spec_validation_rejects_unknown_ferryman():

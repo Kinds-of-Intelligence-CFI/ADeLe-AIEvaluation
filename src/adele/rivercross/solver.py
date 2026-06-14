@@ -20,7 +20,12 @@ from dataclasses import dataclass
 
 import pandas as pd
 
-from .puzzle import PuzzleSpec, linear_conflict_spec, render_prompt
+from .puzzle import (
+    CONFLICT_TOPOLOGIES,
+    PuzzleSpec,
+    conflict_topology_spec,
+    render_prompt,
+)
 
 State = tuple[frozenset[str], str]
 
@@ -131,20 +136,36 @@ def solve(spec: PuzzleSpec) -> Solution:
 def generate_family(
     n_cargo_values: range | tuple[int, ...],
     boat_capacities: tuple[int, ...] = (1,),
+    topology: str = "chain",
     solvable_only: bool = True,
 ) -> list[PuzzleSpec]:
-    """A parametrized family of conflict-chain puzzles (the natural wolf-goat-cabbage
-    generalization) swept over item count and boat capacity. With
-    ``solvable_only`` (default) only instances whose goal is reachable are kept,
-    so larger capacities can "unlock" otherwise-stuck item counts.
+    """A parametrized family of conflict-graph puzzles of one ``topology``
+    (the natural wolf-goat-cabbage generalization) swept over item count and boat
+    capacity. With ``solvable_only`` (default) only instances whose goal is
+    reachable are kept, so larger capacities can "unlock" otherwise-stuck shapes.
     """
     family: list[PuzzleSpec] = []
     for n_cargo in n_cargo_values:
         for capacity in boat_capacities:
-            spec = linear_conflict_spec(n_cargo, capacity)
+            spec = conflict_topology_spec(n_cargo, topology, capacity)
             if solvable_only and solve(spec).optimal_len is None:
                 continue
             family.append(spec)
+    return family
+
+
+def generate_mixed_family(
+    n_cargo_values: range | tuple[int, ...],
+    boat_capacities: tuple[int, ...] = (2, 3),
+    topologies: tuple[str, ...] = CONFLICT_TOPOLOGIES,
+    solvable_only: bool = True,
+) -> list[PuzzleSpec]:
+    """A family spanning several conflict-graph topologies at once."""
+    family: list[PuzzleSpec] = []
+    for topology in topologies:
+        family.extend(
+            generate_family(n_cargo_values, boat_capacities, topology, solvable_only)
+        )
     return family
 
 
