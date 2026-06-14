@@ -64,6 +64,45 @@ class PuzzleSpec:
                 return False
         return True
 
+    def legal_configuration(self, left_bank: frozenset[str]) -> bool:
+        """Whether the configuration given by ``left_bank`` is legal.
+
+        With a ferryman only the bank they are *not* on is checked (the attended
+        bank is always safe); without one, both banks are checked.
+        """
+        right_bank = frozenset(self.items) - left_bank
+        if self.ferryman is None:
+            banks = (left_bank, right_bank)
+        elif self.ferryman in left_bank:
+            banks = (right_bank,)
+        else:
+            banks = (left_bank,)
+        return all(self.legal_bank(bank) for bank in banks)
+
+    def to_dict(self) -> dict:
+        """JSON-serializable form, e.g. for ``Sample.metadata``."""
+        return {
+            "items": list(self.items),
+            "boat_capacity": self.boat_capacity,
+            "ferryman": self.ferryman,
+            "conflicts": [sorted(pair) for pair in self.conflicts],
+            "predators": sorted(self.predators),
+            "prey": sorted(self.prey),
+            "name": self.name,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "PuzzleSpec":
+        return cls(
+            items=tuple(data["items"]),
+            boat_capacity=data["boat_capacity"],
+            ferryman=data["ferryman"],
+            conflicts=frozenset(frozenset(pair) for pair in data["conflicts"]),
+            predators=frozenset(data["predators"]),
+            prey=frozenset(data["prey"]),
+            name=data["name"],
+        )
+
 
 def render_prompt(spec: PuzzleSpec) -> str:
     """A natural-language statement of the puzzle for an agent or annotator."""

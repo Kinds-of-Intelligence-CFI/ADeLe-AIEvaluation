@@ -33,18 +33,6 @@ def goal_state(spec: PuzzleSpec) -> State:
     return (frozenset(), "R")
 
 
-def _legal(spec: PuzzleSpec, left: frozenset[str]) -> bool:
-    """Whether a configuration (given by the left-bank set) violates no constraint."""
-    right = frozenset(spec.items) - left
-    if spec.ferryman is None:
-        banks = (left, right)
-    elif spec.ferryman in left:
-        banks = (right,)
-    else:
-        banks = (left,)
-    return all(spec.legal_bank(bank) for bank in banks)
-
-
 def neighbors(spec: PuzzleSpec, state: State) -> list[State]:
     """All legal states reachable from ``state`` in one crossing."""
     left, side = state
@@ -70,7 +58,7 @@ def neighbors(spec: PuzzleSpec, state: State) -> list[State]:
             new_left, new_side = left - load, "R"
         else:
             new_left, new_side = left | load, "L"
-        if _legal(spec, new_left):
+        if spec.legal_configuration(new_left):
             result.append((new_left, new_side))
     return result
 
