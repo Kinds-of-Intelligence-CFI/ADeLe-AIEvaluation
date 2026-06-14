@@ -32,6 +32,7 @@ Usage:
 import logging
 from typing import List, Optional, Union
 
+import numpy as np
 import pandas as pd
 
 from inspect_ai import Task, eval as inspect_eval, task
@@ -79,11 +80,15 @@ def dataframe_to_samples(df: pd.DataFrame) -> List[Sample]:
         if "target" in row and pd.notna(row.get("target")):
             sample_kwargs["target"] = str(row["target"])
 
-        if "choices" in row and pd.notna(row.get("choices")):
-            choices = row["choices"]
-            if isinstance(choices, str):
-                choices = [c.strip() for c in choices.split(",")]
-            sample_kwargs["choices"] = choices
+        # "choices" may be a comma-separated string (local CSV files) or a
+        # list/array (registry benchmarks with a choices_column). pd.notna on a
+        # list-valued cell returns an array, so check those types first.
+        choices = row["choices"] if "choices" in row else None
+        if isinstance(choices, (list, tuple, np.ndarray)):
+            if len(choices) > 0:
+                sample_kwargs["choices"] = [str(c) for c in choices]
+        elif pd.notna(choices):
+            sample_kwargs["choices"] = [c.strip() for c in str(choices).split(",")]
 
         metadata = {c: row[c] for c in _META_COLS if c in row and pd.notna(row.get(c))}
         if metadata:

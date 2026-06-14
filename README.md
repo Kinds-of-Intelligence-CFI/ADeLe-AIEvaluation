@@ -2,7 +2,9 @@
 
 ## 🚀 Unified AI Evaluation with Explanatory & Predictive Power
 
-**ADeLe** (Artificial Demands and Levels) is a comprehensive toolkit for evaluating AI systems not just on *performance* (correctness), but on *capability matching*. It breaks down benchmarks into 18 cognitive demand dimensions (e.g., Reasoning, Knowledge, Memory) and assesses how well a model's capabilities align with these demands.
+**ADeLe** (Annotated Demand Levels) is a comprehensive toolkit for evaluating AI systems not just on *performance* (correctness), but on *capability matching*. It breaks down benchmarks into 18 cognitive demand dimensions (e.g., Comprehension, Knowledge, Metacognition) and assesses how well a model's capabilities align with these demands.
+
+> **Mental model:** ADeLe annotates *how much* of each demand a task instance requires (level 0–5 per rubric), independently of the answer. Comparing a task's **demand profile** against a model's **ability profile** predicts and explains instance-level success or failure. The key invariant: **demands describe the task, not the response.**
 
 This package provides a unified, end-to-end pipeline:
 1.  **Load** any benchmark (HuggingFace or local).
@@ -44,8 +46,30 @@ export OPENROUTER_API_KEY="sk-or-..."     # OpenRouter (DeepSeek, Llama 3, etc.)
 
 > **Two annotation backends:**
 > ADeLe automatically picks the best backend based on your model:
-> - **Batch** (OpenAI models only) — uses the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch) for 50% cost reduction and higher rate limits. Auto-selected when using `gpt-*` or `o1`/`o3` models.
+> - **Batch** (OpenAI models only) — uses the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch) for 50% cost reduction and higher rate limits. Auto-selected when using `gpt-*` or `o1`/`o3`/`o4` models (with no provider prefix, or `openai/`).
 > - **Direct** (any model) — calls the model via [litellm](https://github.com/BerriAI/litellm), which supports OpenAI, Gemini, Claude, and 100+ other providers. Auto-selected for non-OpenAI models. You can force either backend with `--backend batch` or `--backend direct`.
+
+---
+
+## ⚡ Quickstart (no annotation cost)
+
+The fastest way to see ADeLe work: run a model on the **pre-annotated v1.0 battery** and plot its
+capability profile. This reuses the published demand annotations, so it costs only model inference —
+no LLM-judge annotation. Needs `pip install -e ".[eval,analysis]"` and `HF_TOKEN` for the gated dataset.
+
+```python
+from adele.data import load_battery
+from adele.evaluation import evaluate_model
+from adele.analysis import compute_ability_scores, plot_ability_profile
+
+battery = load_battery(answer_format="MC", max_samples=50)   # pre-annotated tasks
+results = evaluate_model("openai/gpt-4o", battery)           # run the model
+scores  = compute_ability_scores(results, battery)           # {dimension: ability 0–1}
+plot_ability_profile(scores, title="gpt-4o")                # capability radar
+```
+
+To annotate a *new* benchmark with your own demand profile (the paid LLM-judge path), see
+[§1 Annotate](#1-annotate-a-benchmark-demand-profile) below.
 
 ---
 
@@ -55,7 +79,12 @@ export OPENROUTER_API_KEY="sk-or-..."     # OpenRouter (DeepSeek, Llama 3, etc.)
 
 The `annotate` command scores demand levels for each instance using an LLM judge.
 
+> ⚠️ **Cost:** annotation makes one judge call **per instance × 18 dimensions**, so a full benchmark is thousands–millions of calls. Always start with `--max-samples` to estimate cost, then scale up.
+
 ```bash
+# Start small — 5 instances — to gauge output and cost before scaling:
+adele annotate mmlu-pro --model gpt-4o --max-samples 5 --output-dir ./results/mmlu
+
 # Using OpenAI (auto-selects Batch API for cost savings)
 adele annotate mmlu-pro --model gpt-4o --output-dir ./results/mmlu
 
@@ -284,10 +313,10 @@ The file name (without `.txt`) becomes the dimension acronym. The `# Header` lin
 ## 🧠 Core Concepts
 
 ### 1. Demand Profile (The "Problem Space")
-A **Demand Profile** visualizes what a benchmark *asks* of a model. It scores 18 dimensions (0-5 scale):
-- **Reasoning**: `AS` (Attention), `CEc` (Causal Comprehension), `QLq` (Quant. Reasoning)...
-- **Knowledge**: `KNa` (Academic), `KNf` (Factual), `KNs` (Specialized)...
-- **Metacognition**: `MCr` (Reflection), `MCu` (Uncertainty)...
+A **Demand Profile** visualizes what a benchmark *asks* of a model. It scores 18 dimensions (0–5 scale), grouped as in the paper (run `adele rubrics list` for the full names):
+- **Cognitive**: `AS` (Attention & Scan), `CEc` (Verbal Comprehension), `CEe` (Verbal Expression), `CL` (Conceptualisation/Learning), `MCr` (Identifying Relevant Information), `MCt` (Critical Thinking), `MCu` (Calibrating Knowns/Unknowns), `MS` (Mind Modelling), `QLl` (Logical Reasoning), `QLq` (Quantitative Reasoning), `SNs` (Spatio-physical Reasoning).
+- **Knowledge**: `KNa` (Applied Sciences), `KNc` (Customary/Everyday), `KNf` (Formal Sciences), `KNn` (Natural Sciences), `KNs` (Social Sciences & Humanities).
+- **Extraneous**: `AT` (Atypicality), `VO` (Volume). Plus `UG` (Unguessability), computed from the answer format rather than via an LLM rubric.
 
 ### 2. Ability Profile (The "Solution Space")
 An **Ability Profile** visualizes what a model *is capable of*. It is computed by fitting an **`AbilityModel`** on (demand_profile, correctness) data.
