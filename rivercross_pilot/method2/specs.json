@@ -1,0 +1,1347 @@
+{
+  "chain-3-boat-1": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 1,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-3-boat-1"
+  },
+  "chain-3-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-3-boat-2"
+  },
+  "chain-3-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-3-boat-3"
+  },
+  "chain-3-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-3-boat-4"
+  },
+  "chain-4-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-4-boat-2"
+  },
+  "chain-4-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-4-boat-3"
+  },
+  "chain-4-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-4-boat-4"
+  },
+  "chain-5-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item4",
+        "item5"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-5-boat-2"
+  },
+  "chain-5-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item4",
+        "item5"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-5-boat-3"
+  },
+  "chain-5-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item4",
+        "item5"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-5-boat-4"
+  },
+  "chain-6-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item5",
+        "item6"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-6-boat-3"
+  },
+  "chain-6-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item5",
+        "item6"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "chain-6-boat-4"
+  },
+  "star-3-boat-1": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 1,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-3-boat-1"
+  },
+  "star-3-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-3-boat-2"
+  },
+  "star-3-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-3-boat-3"
+  },
+  "star-3-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-3-boat-4"
+  },
+  "star-4-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-4-boat-2"
+  },
+  "star-4-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-4-boat-3"
+  },
+  "star-4-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-4-boat-4"
+  },
+  "star-5-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-5-boat-2"
+  },
+  "star-5-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-5-boat-3"
+  },
+  "star-5-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-5-boat-4"
+  },
+  "star-6-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ],
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item6"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-6-boat-2"
+  },
+  "star-6-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ],
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item6"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-6-boat-3"
+  },
+  "star-6-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item1",
+        "item3"
+      ],
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item1",
+        "item4"
+      ],
+      [
+        "item1",
+        "item6"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "star-6-boat-4"
+  },
+  "cycle-3-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-3-boat-2"
+  },
+  "cycle-3-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-3-boat-3"
+  },
+  "cycle-3-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-3-boat-4"
+  },
+  "cycle-4-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-4-boat-2"
+  },
+  "cycle-4-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-4-boat-3"
+  },
+  "cycle-4-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-4-boat-4"
+  },
+  "cycle-5-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-5-boat-3"
+  },
+  "cycle-5-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-5-boat-4"
+  },
+  "cycle-6-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item5",
+        "item6"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item6"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-6-boat-3"
+  },
+  "cycle-6-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5",
+      "item6"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item5",
+        "item6"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item6"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "cycle-6-boat-4"
+  },
+  "complete-3-boat-2": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 2,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "complete-3-boat-2"
+  },
+  "complete-3-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "complete-3-boat-3"
+  },
+  "complete-3-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item1",
+        "item3"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "complete-3-boat-4"
+  },
+  "complete-4-boat-3": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 3,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item2",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ],
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "complete-4-boat-3"
+  },
+  "complete-4-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item2",
+        "item4"
+      ],
+      [
+        "item1",
+        "item3"
+      ],
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "complete-4-boat-4"
+  },
+  "complete-5-boat-4": {
+    "items": [
+      "farmer",
+      "item1",
+      "item2",
+      "item3",
+      "item4",
+      "item5"
+    ],
+    "boat_capacity": 4,
+    "ferryman": "farmer",
+    "conflicts": [
+      [
+        "item1",
+        "item2"
+      ],
+      [
+        "item2",
+        "item3"
+      ],
+      [
+        "item2",
+        "item4"
+      ],
+      [
+        "item2",
+        "item5"
+      ],
+      [
+        "item1",
+        "item3"
+      ],
+      [
+        "item4",
+        "item5"
+      ],
+      [
+        "item3",
+        "item5"
+      ],
+      [
+        "item1",
+        "item5"
+      ],
+      [
+        "item3",
+        "item4"
+      ],
+      [
+        "item1",
+        "item4"
+      ]
+    ],
+    "predators": [],
+    "prey": [],
+    "name": "complete-5-boat-4"
+  },
+  "missionaries-cannibals-3": {
+    "items": [
+      "M1",
+      "M2",
+      "M3",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "boat_capacity": 2,
+    "ferryman": null,
+    "conflicts": [],
+    "predators": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "prey": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "name": "missionaries-cannibals-3"
+  },
+  "missionaries-cannibals-4": {
+    "items": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "boat_capacity": 3,
+    "ferryman": null,
+    "conflicts": [],
+    "predators": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "prey": [
+      "M1",
+      "M2",
+      "M3",
+      "M4"
+    ],
+    "name": "missionaries-cannibals-4"
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "chain-3-boat-1": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1",
+        "item3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item2",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item2"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ],
+  "star-4-boat-2": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item3",
+        "item4"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ],
+  "cycle-4-boat-2": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item2",
+        "item4"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ],
+  "complete-4-boat-3": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item4"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ],
+  "chain-5-boat-2": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5"
+      ],
+      "boat": "L"
+    }
+  ],
+  "missionaries-cannibals-3": [
+    {
+      "left": [
+        "C1",
+        "C2",
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1",
+        "M3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1",
+        "M2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C2",
+        "M1",
+        "M2"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1",
+        "C2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C2"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ]
+}

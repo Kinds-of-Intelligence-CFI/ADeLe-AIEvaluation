@@ -1,0 +1,319 @@
+{
+  "trajectory": [
+    {
+      "left": [
+        "C1",
+        "C2",
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1",
+        "M3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1",
+        "M2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C2",
+        "M1",
+        "M2"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1",
+        "C2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C1"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "C1",
+        "C2"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ],
+  "attempts": [
+    {
+      "load": [
+        "C1",
+        "C2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "M1",
+        "M2"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C1",
+        "C3"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "M1",
+        "M2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C2"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C3"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "M1"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "M2"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C1",
+        "M1"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "M1",
+        "M2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "M1",
+        "M3"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C2"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C3"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C2",
+        "C3"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "M1"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "M3"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C2",
+        "M1"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "M1",
+        "M2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C3",
+        "M3"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C3"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C1",
+        "C2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C3"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C3"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": false
+    },
+    {
+      "load": [
+        "C2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "C1",
+        "C2"
+      ],
+      "legal": true
+    }
+  ],
+  "consec_illegal": 0,
+  "status": "solved"
+}

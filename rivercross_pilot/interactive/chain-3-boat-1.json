@@ -1,0 +1,110 @@
+{
+  "trajectory": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1",
+        "item3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item3"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item2",
+        "item3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item2"
+      ],
+      "boat": "R"
+    },
+    {
+      "left": [
+        "farmer",
+        "item2"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [],
+      "boat": "R"
+    }
+  ],
+  "attempts": [
+    {
+      "load": [
+        "farmer",
+        "item2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "farmer"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "farmer",
+        "item1"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "farmer",
+        "item2"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "farmer",
+        "item3"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "farmer"
+      ],
+      "legal": true
+    },
+    {
+      "load": [
+        "farmer",
+        "item2"
+      ],
+      "legal": true
+    }
+  ],
+  "consec_illegal": 0,
+  "status": "solved"
+}
