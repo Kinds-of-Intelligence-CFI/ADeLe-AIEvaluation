@@ -4,9 +4,9 @@ This package extends ADeLe from static tasks toward agent rollouts. The first
 step is the **v2 agentic rubric library** and a harness to **validate** it
 against human judgement (see ``AGENTIC_METHODOLOGY.md``).
 
-The v2 rubrics are drafted across **two source documents** ("ours" and "theirs";
+The v2 rubrics are drafted across **two source documents** ("Paolo_Pablo" and "Marko";
 see ``MANIFEST.tsv``). Faithful per-source conversions live under
-``rubrics/data_v2/{ours,theirs}/``; ``MANIFEST.tsv`` records provenance and the
+``rubrics/data_v2/{Paolo_Pablo,Marko}/``; ``MANIFEST.tsv`` records provenance and the
 single **active selection** used for annotation. ``load_active_catalog()``
 composes that active set into a ``RubricsCatalog``.
 """
@@ -32,8 +32,8 @@ class ManifestEntry:
     """
     code: str
     full_name: str
-    source: str          # "ours" | "theirs"
-    rel_path: str        # path relative to DATA_V2_DIR, e.g. "ours/PLp.txt"
+    source: str          # "Paolo_Pablo" | "Marko"
+    rel_path: str        # path relative to DATA_V2_DIR, e.g. "Paolo_Pablo/PLp.txt"
     source_doc_id: str   # Google Doc id the rubric was converted from
     source_heading: str  # heading as written in that Doc
     version_date: str    # rubric version date if any, else "unknown"
@@ -63,30 +63,30 @@ def load_active_catalog() -> RubricsCatalog:
 # Source-document provenance, keyed by source tag. The per-dimension active
 # selection (which source each code is taken from) lives in _ACTIVE below.
 _DOCS = {
-    "ours":   {"doc_id": "1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk", "version_date": "2025-07-26"},
-    "theirs": {"doc_id": "1tyaEcWqyn8N5TDbgNYnsC7ZiLTtynHCGoNps8Ag_8y0", "version_date": "unknown"},
+    "Paolo_Pablo":   {"doc_id": "1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk", "version_date": "2025-07-26"},
+    "Marko": {"doc_id": "1tyaEcWqyn8N5TDbgNYnsC7ZiLTtynHCGoNps8Ag_8y0", "version_date": "unknown"},
 }
 
 # (code, source, source_heading-as-written-in-the-Doc), in active-set order.
-# Non-memory dims come from "ours"; memory dims from "theirs".
+# Non-memory dims come from "Paolo_Pablo"; memory dims from "Marko".
 #
 # The active set is the text/tool-relevant agentic dimensions — the ones HAL
 # benchmarks actually exercise. The four sensory/motor rubrics (Dexterity SNp,
 # Kinesthetic SNk, Auditory SPa, Visual SPv) stay in the library under
-# rubrics/data_v2/ours/ but are NOT active: text-based agent tasks would score
+# rubrics/data_v2/Paolo_Pablo/ but are NOT active: text-based agent tasks would score
 # them all 0, so they add cost without signal. Re-activate them here for
 # embodied/multimodal work.
 _DEFERRED_MULTIMODAL = ("SNp", "SNk", "SPa", "SPv")
 
 _ACTIVE = [
-    ("PLp", "ours", "Planning"),
-    ("PLe", "ours", "Action control and execution"),
-    ("MSe", "ours", "Environmental and situational understanding"),
-    ("MSc", "ours", "Communication and social interaction"),
-    ("ECc", "ours", "Behavioral inhibition and self-control"),
-    ("MMe", "theirs", "Episodic Memory"),
-    ("MMp", "theirs", "Procedural Memory"),
-    ("MMs", "theirs", "Working Memory"),
+    ("PLp", "Paolo_Pablo", "Planning"),
+    ("PLe", "Paolo_Pablo", "Action control and execution"),
+    ("MSe", "Paolo_Pablo", "Environmental and situational understanding"),
+    ("MSc", "Paolo_Pablo", "Communication and social interaction"),
+    ("ECc", "Paolo_Pablo", "Behavioral inhibition and self-control"),
+    ("MMe", "Marko", "Episodic Memory"),
+    ("MMp", "Marko", "Procedural Memory"),
+    ("MMs", "Marko", "Working Memory"),
 ]
 
 

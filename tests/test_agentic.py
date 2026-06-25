@@ -35,10 +35,10 @@ def test_active_catalog_is_the_text_relevant_eight():
 
 def test_deferred_multimodal_rubrics_still_in_library():
     # ...but their files remain available and valid for later embodied work.
-    catalog = RubricsCatalog(str(DATA_V2_DIR / "ours"))
+    catalog = RubricsCatalog(str(DATA_V2_DIR / "Paolo_Pablo"))
     for code in _DEFERRED_MULTIMODAL:
         rubric = catalog.get(code)
-        assert rubric is not None, f"{code} missing from ours/"
+        assert rubric is not None, f"{code} missing from Paolo_Pablo/"
         ok, msg = validate_rubric(rubric.content)
         assert ok, f"{code}: {msg}"
 
@@ -54,11 +54,11 @@ def test_manifest_has_no_drift():
     assert verify_manifest() == []
 
 
-def test_manifest_sources_split_memory_from_theirs():
+def test_manifest_sources_split_memory_from_Marko():
     by_code = {e.code: e for e in read_manifest()}
-    assert by_code["PLp"].source == "ours"
-    assert by_code["MMe"].source == "theirs"
-    assert {e.source for e in read_manifest()} == {"ours", "theirs"}
+    assert by_code["PLp"].source == "Paolo_Pablo"
+    assert by_code["MMe"].source == "Marko"
+    assert {e.source for e in read_manifest()} == {"Paolo_Pablo", "Marko"}
 
 
 def test_from_paths_composes_across_folders():

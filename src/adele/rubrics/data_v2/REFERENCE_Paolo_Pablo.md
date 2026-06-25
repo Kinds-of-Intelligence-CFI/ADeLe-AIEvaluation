@@ -1,6 +1,6 @@
-# Reference — factor tables & notes for the "ours" rubrics
+# Reference — factor tables & notes for the "Paolo_Pablo" rubrics
 
-Reference only. The rubric `.txt` files in `ours/` are the source of truth used by
+Reference only. The rubric `.txt` files in `Paolo_Pablo/` are the source of truth used by
 the judge (one polished definition per level, ADeLe v1.0 style). This file keeps the
 **difficulty-factor tables** and side notes that were dropped from those files, so
 they're available without opening the source Google Doc. **Droppable** — nothing in
