@@ -1,6 +1,6 @@
 # Action control and execution
 
-This rubric assesses the ability to implement plans to achieve specific goals. It encompasses the capacity to evaluate progress, decide when to revise a plan, when to start and finish a subtask, and how to implement a plan in practice. The demand of the task increases with the number of actions and the accuracy needed, the presence and definition of subtasks, the specificity of the plan, the speed of feedback loops and clarity of reward signals, the speed of change in the environment, and the open-endedness of the goals.
+This rubric assesses the ability to implement plans to achieve specific goals. It encompasses the capacity to evaluate progress, decide when to revise a plan, when to start and finish a subtask, and how to implement a plan in practice. The demand of the task increases with the number of actions and the accuracy needed, the presence and definition of subtasks, the specificity of the plan, the speed and clarity of the reward signal, the speed of change in the environment, and the open-endedness of the goals. Here a reward is the environment's signal that the task (or a subtask) has been accomplished — not the observation of the resulting state, nor whether a move was legal — and it is sparse when many actions pass before such a signal arrives.
 
 Level 0: Atomic action, no execution control. The task does not require any execution control, progress monitoring or plan adjustment, and can be completed in a single, atomic conceptual action.
 Examples:
@@ -8,32 +8,32 @@ Examples:
 * Do a Google search from google.com.
 * Select the figure that fits the pattern from A to E.
 
-Level 1: Simple instruction following. The task has detailed, step-by-step instructions with limited decision points. It requires a very small number of actions (up to about 10), checking for completion, and follows a well-defined, short-term plan with immediate feedback after each step. There are no subtasks or dynamic environmental changes to consider.
+Level 1: Simple instruction following. The task takes a few actions (from about two to ten) and gives a reward after essentially every action, so little monitoring is needed. It follows a well-defined, short-term plan with no subtasks, in a static environment.
 Examples:
 * Adding 56879 + 342543 manually, digit by digit.
 * Cooking a recipe with all ingredients available, following step-by-step instructions.
 * Resetting a password by following the prompts on a website.
 
-Level 2: Instruction following with well-defined subtasks. The task requires decomposing the plan into a few well-defined subtasks, executing a plan with up to about 10 actions, and verifying progress. The plan is clearly specified but each subtask may require a local decision. Feedback is plentiful, so errors are detected quickly; the goal is mostly clear and the environment is static.
+Level 2: Instruction following with monitoring. Either the task takes from about two to ten actions but the reward arrives only at the end or once per subtask, or it takes more than ten actions but with a reward after nearly every action. Either way the agent decomposes it into a few well-defined subtasks and verifies progress; the goal is clear and the environment is static.
 Examples:
 * Following a tutorial to implement a small transformer network.
 * Building a piece of furniture using instructions.
 * Verifying the correctness of a derivation of Bell's theorem proof.
 
-Level 3: Action control with a loosely defined plan. The task may require dozens of actions or tens of minutes and decomposition into clearly defined subtasks. Feedback is sparse — once every few tens of actions — so the agent must discover useful chunks of actions. The goal is well defined but there is no formal plan, and the environment is stable, so an agent's state persists once a subtask is finished.
+Level 3: Action control with a loosely defined plan. The task takes more than about ten actions (on the order of tens) and the reward is sparse — arriving only after roughly ten or more actions — so the agent must self-monitor and discover useful chunks of actions. The goal is precise and the environment is static, but there is no formal plan, so an agent's state persists once a subtask is finished.
 Examples:
 * Write and polish the introduction of a scientific paper.
 * Derive the conservation of momentum and energy from Einstein's general-relativity equations.
 * Design the claims in a patent based on its associated paper.
 * Summarise a long document and extract its main arguments.
 
-Level 4: Advanced action control with sparse feedback and open-ended goals. Tasks require long-term planning and periodic self-evaluation across hundreds to thousands of actions over hours to days. The task may be decomposed into many subtasks that are not clearly separated or defined. Goals may be high-level and success judged qualitatively; the agent must decide when to seek feedback, revise the plan and switch subtasks. Feedback is very sparse — reward only after major milestones — and the environment is open-ended but largely static.
+Level 4: Advanced action control with sparse reward and open-ended goals. The task spans hundreds to thousands of actions or has an open-ended, qualitatively judged goal; the reward arrives only after major milestones and the environment is static or slowly evolving. It decomposes into many subtasks that are not clearly separated, and the agent must decide when to self-evaluate, revise the plan and switch subtasks.
 Examples:
 * Develop a full research paper, including literature review, experimental design and data analysis.
 * Develop the plot, characters and world-building for a complex fictional work, such as "The Lord of the Rings".
 * Design a comprehensive marketing strategy for a new product.
 
-Level 5: Advanced action control in dynamic, uncertain environments. The task requires sophisticated control strategies, including hierarchical planning, exploration and handling non-stationary dynamics, over an unbounded horizon of weeks to months. It may decompose into numerous interacting subtasks with undefined boundaries; there is no detailed plan and goals are ambiguous or evolving, so the agent must generate and adapt plans continually. Feedback is extremely sparse and noisy, with long delays between actions and consequences, and the environment is dynamic and stochastic.
+Level 5: Advanced action control in dynamic, uncertain environments. The environment is dynamic or stochastic, or the goal is ambiguous or evolving; the horizon is unbounded (weeks to months) and the reward is extremely sparse, noisy and delayed. The agent must use hierarchical planning and exploration, continually generating and adapting plans across numerous interacting subtasks with undefined boundaries.
 Examples:
 * Coordinate the efforts to take a startup from $0 to $10M annual recurring revenue.
 * Coordinate and implement a large-scale research effort, such as the project that led to AlphaFold.
