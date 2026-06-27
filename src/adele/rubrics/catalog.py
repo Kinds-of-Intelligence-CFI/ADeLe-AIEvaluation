@@ -96,7 +96,7 @@ class RubricsCatalog:
                 If None, uses the bundled rubrics shipped with this package.
         """
         if rubrics_folder is None:
-            self._folder = Path(__file__).parent / "data"
+            self._folder = Path(__file__).parent / "data_v1"
         else:
             self._folder = Path(rubrics_folder)
 

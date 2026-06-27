@@ -26,7 +26,7 @@ SCORER_LABEL = "0.1.0"        # scoring-suite semantic version
 
 # Content sources for the fingerprints (resolve in both editable and installed
 # layouts: the rubric .txt files and scoring.py both ship inside the package).
-_RUBRICS_DATA_DIR = Path(__file__).resolve().parent.parent / "rubrics" / "data"
+_RUBRICS_DATA_DIR = Path(__file__).resolve().parent.parent / "rubrics" / "data_v1"
 _SCORING_MODULE = Path(__file__).resolve().parent / "scoring.py"
 
 
