@@ -2,7 +2,7 @@
 
 import math
 
-from adele.rivercross import (
+from rivercross import (
     CONFLICT_TOPOLOGIES,
     PuzzleSpec,
     conflict_graph_puzzle,

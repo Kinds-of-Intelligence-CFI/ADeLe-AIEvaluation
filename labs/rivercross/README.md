@@ -2,7 +2,7 @@
 
 Exploratory research scratch for calibrating ADeLe **v2 agentic demand rubrics** on a
 controlled, **solver-backed** testbed. This is a *lab* folder (not part of the package);
-the reusable, tested code lives in **`src/adele/rivercross/`**.
+the supporting library + its unit tests live alongside it under **`rivercross/`** and **`tests/`** (run with `pytest labs/rivercross`).
 
 ## Idea
 
@@ -62,6 +62,8 @@ state-visibility as reward), not rubric ambiguity.
 
 | path | what |
 | --- | --- |
+| `rivercross/` | the testbed library (importable as `rivercross`): `puzzle.py` (parametrized puzzle family), `solver.py` (exact BFS value oracle), `task.py` (Inspect task), `play.py`, `annotate_methods.py` (three annotation methods) |
+| `tests/`, `conftest.py` | unit tests for the library; `conftest.py` puts the lab on `sys.path`. Run with `pytest labs/rivercross` |
 | `method1b/` | **PLp** demand-to-go: `build_prompt.py` (dimension-agnostic prompt builder), `judge_frame_v2.csv` (43 leak-free states), `ground_truth.csv` (solver cost-to-go), `prompt_PLp.txt`, `labels_v10/` (prior-rubric baseline) + `labels_v11/` (revised search-size rubric × Haiku/Sonnet/Opus), `analyze_plp.py` |
 | `ple/` | **PLe** via captured trajectories: `build_ple_frames.py`, `frame_PLe_{1b,2}.csv`, `prompt_PLe_{1b,2}.txt`, `labels/1b` (final reward-partition rubric) + `labels/2` (per-transition, degenerate), `analyze_ple.py` |
 | `referee.py`, `ref.sh`, `specs.json`, `interactive/` | interactive solver-vs-agent harness (enforces rules, captures per-step reasoning); 6 captured trajectories |

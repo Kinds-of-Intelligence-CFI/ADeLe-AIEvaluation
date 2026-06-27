@@ -4,7 +4,7 @@ from inspect_ai import eval as inspect_eval
 from inspect_ai.model import GenerateConfig, ModelAPI, ModelOutput, get_model, modelapi
 from inspect_ai.scorer import CORRECT, INCORRECT
 
-from adele.rivercross import (
+from rivercross import (
     initial_state,
     goal_state,
     moves_from_trace,
@@ -14,7 +14,7 @@ from adele.rivercross import (
     solve,
     wolf_goat_cabbage,
 )
-from adele.rivercross.task import river_crossing, task_from_specs
+from rivercross.task import river_crossing, task_from_specs
 
 
 def _optimal_loads(spec):

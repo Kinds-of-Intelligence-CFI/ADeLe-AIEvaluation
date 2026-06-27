@@ -16,8 +16,8 @@ import re
 import sys
 from pathlib import Path
 
-sys.path.insert(0, "src")
-from adele.rivercross import PuzzleSpec, apply_move, goal_state, initial_state
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rivercross import PuzzleSpec, apply_move, goal_state, initial_state
 
 ROOT = Path(__file__).resolve().parent
 SPECS = json.load(open(ROOT / "specs.json"))

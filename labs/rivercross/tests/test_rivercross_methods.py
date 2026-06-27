@@ -3,7 +3,7 @@
 import math
 from types import SimpleNamespace
 
-from adele.rivercross import (
+from rivercross import (
     MODEL_PRESETS,
     estimate_cost,
     method_1a_frame,

@@ -18,12 +18,9 @@ from scipy.stats import spearmanr
 
 HERE = Path(__file__).resolve().parent
 PILOT = HERE.parent
-REPO = PILOT
-while REPO != REPO.parent and not (REPO / "src" / "adele").is_dir():
-    REPO = REPO.parent
 FIG = PILOT / "figures"
-sys.path.insert(0, str(REPO / "src"))
-from adele.rivercross import PuzzleSpec, solve  # noqa: E402
+sys.path.insert(0, str(PILOT))
+from rivercross import PuzzleSpec, solve  # noqa: E402
 
 MODELS = ["haiku", "sonnet", "opus"]
 COLORS = {"haiku": "#e07b39", "sonnet": "#3a7d44", "opus": "#3b5bdb"}

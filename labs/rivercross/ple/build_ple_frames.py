@@ -16,11 +16,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent      # ple/
 PILOT = HERE.parent
-REPO = PILOT
-while REPO != REPO.parent and not (REPO / "src" / "adele").is_dir():
-    REPO = REPO.parent
-sys.path.insert(0, str(REPO / "src"))
-from adele.rivercross import PuzzleSpec, describe_rules, goal_state  # noqa: E402
+sys.path.insert(0, str(PILOT))
+from rivercross import PuzzleSpec, describe_rules, goal_state  # noqa: E402
 
 SPECS = json.load(open(PILOT / "specs.json"))
 SESS = PILOT / "interactive"
