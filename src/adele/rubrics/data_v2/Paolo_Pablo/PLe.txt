@@ -1,4 +1,5 @@
 # Action control and execution
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to implement plans to achieve specific goals. It encompasses the capacity to evaluate progress, decide when to revise a plan, when to start and finish a subtask, and how to implement a plan in practice. The demand of the task increases with the number of actions and the accuracy needed, the presence and definition of subtasks, the specificity of the plan, the speed and clarity of the reward signal, the speed of change in the environment, and the open-endedness of the goals. Here a reward is the environment's signal that the task (or a subtask) has been accomplished — not the observation of the resulting state, nor whether a move was legal — and it is sparse when many actions pass before such a signal arrives.
 

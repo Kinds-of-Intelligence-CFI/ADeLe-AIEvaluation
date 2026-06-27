@@ -1,4 +1,5 @@
 # Communication and social interaction
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to actively regulate and manage social interactions based on an understanding of other agents' thoughts, beliefs, desires and emotions, as well as environmental dynamics and cultural norms. Unlike passive mind modelling, it requires active communication. Demand increases with the number of other agents, the presence of complex social dynamics (including power dynamics and conflicting interests), the strength of the emotional context, the stakes and consequences for participants, the difficulty of the communication strategy required, and the lack of shared knowledge or cultural context.
 

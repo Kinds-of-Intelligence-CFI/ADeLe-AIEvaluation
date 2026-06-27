@@ -1,4 +1,5 @@
 # Environmental and situational understanding
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to perceive and understand the external environment's dynamics, including other actors, and to anticipate the collective impact of events and actions on the system. It captures the ability to build and update internal representations of the external world, anticipate how events and actions change the state of the environment and of other actors, and use these representations to plan and adapt. Demand increases with the open-endedness and size of the state space, the unpredictability and stochasticity of the environment, the number and nature of other agents present, and the complexity of the environment's dynamics.
 

@@ -1,4 +1,5 @@
 # Visual processing
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to extract, interpret and act upon spatial and temporal information from visual input. It encompasses object recognition, spatial localization, motion detection, attention allocation, and the integration of visual feedback for real-time sensorimotor control. High visual detail and many objects do not inherently increase difficulty when elements are well-separated with clear features and good contrast; rather, difficulty arises from integration demands — determining which features belong together when objects overlap, identifying object boundaries in cluttered scenes, or resolving degraded and occluded input. Difficulty increases with the resolution and detail required, temporal dynamics (static vs. rapidly changing scenes), clutter and signal-to-noise ratio, and scene complexity.
 

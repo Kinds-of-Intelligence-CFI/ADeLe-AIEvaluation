@@ -82,7 +82,7 @@ def main() -> None:
     a = ap.parse_args()
 
     rubric_path = resolve_rubric(a.code)
-    rubric = rubric_path.read_text().strip()
+    rubric = "\n".join(l for l in rubric_path.read_text().splitlines() if not l.lstrip().startswith("#!")).strip()
     name = a.name or derive_name(rubric, a.code)
     frame = Path(a.frame) if Path(a.frame).exists() else HERE / a.frame
     with frame.open() as fh:

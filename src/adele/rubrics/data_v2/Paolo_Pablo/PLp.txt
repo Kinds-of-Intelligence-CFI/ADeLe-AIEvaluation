@@ -1,4 +1,5 @@
 # Planning
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to envision desired outcomes and devise a series of actions or strategies to achieve them: setting clear instrumental goals, anticipating challenges, allocating resources, dividing tasks into subtasks, sequencing actions, and, at higher levels, allocating work among collaborators. The demand of the planning dimension increases with the size of the search needed to find a successful plan — in both depth and breadth — and with how few of those plans lead to success, as well as the number of subtasks, the presence of other agents, the open-endedness of the goal, and the unpredictability of the environment.
 

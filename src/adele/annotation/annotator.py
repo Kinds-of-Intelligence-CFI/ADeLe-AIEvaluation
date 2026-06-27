@@ -38,7 +38,7 @@ import openai
 from tenacity import retry, retry_if_exception_type, wait_exponential, stop_after_attempt
 from tqdm import tqdm
 
-from adele.rubrics.catalog import RubricsCatalog
+from adele.rubrics.catalog import RubricsCatalog, warn_if_mixed_versions
 from adele.annotation.prompts import (
     build_annotation_prompt,
     build_batch_request,
@@ -145,6 +145,7 @@ def annotate(
     # RubricsCatalog.from_paths) takes precedence over a single folder path.
     if catalog is None:
         catalog = RubricsCatalog(rubrics_folder)
+    warn_if_mixed_versions(catalog)
     if demands is None:
         demands = catalog.acronyms
     else:

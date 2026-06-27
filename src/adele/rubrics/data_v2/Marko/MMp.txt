@@ -1,4 +1,5 @@
 # Long-term procedural memory
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Marko
 
 This rubric assesses procedural memory, the long-term retention of how to do things — sequences of actions, operations or stimulus-response associations that have become automatised through practice. Difficulty rises from items that need no procedure at all to those that demand intricate, hierarchical routines that adapt to cues, probabilistic patterns and potential contingencies.
 

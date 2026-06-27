@@ -1,4 +1,5 @@
 # Episodic memory
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Marko
 
 This rubric assesses episodic memory, the ability to retrieve information about specific past events or experiences that are no longer perceptually available. Tasks may involve recognising, recalling or reconstructing what happened, where and when, often after a delay beyond immediate working memory. Difficulty rises from recognising a single recently seen item with clear cues to freely recalling richly detailed, multi-component episodes across long retention intervals, with high interference, fine precision or shifting retrieval contexts.
 

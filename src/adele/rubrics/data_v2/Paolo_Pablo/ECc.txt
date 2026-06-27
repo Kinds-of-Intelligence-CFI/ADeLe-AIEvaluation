@@ -1,4 +1,5 @@
 # Behavioral inhibition and self-control
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to inhibit a behavioural response to external stimuli, or to bring one's actions into line with one's intentions in the face of competing motivations or propensities triggered by the situation. It encompasses maintaining alignment with one's principles, goals and constraints, especially under challenging situations or external or social pressure, and acting consistently in a manner one would endorse upon reflection. Demand increases with the strength of the trigger, the immediacy of the competing reward, the cognitive load of other simultaneous tasks, a poor cognitive or emotional state, and the presence of opposing motivations including social pressure.
 

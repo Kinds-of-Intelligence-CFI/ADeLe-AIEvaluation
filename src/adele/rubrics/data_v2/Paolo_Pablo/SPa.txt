@@ -1,4 +1,5 @@
 # Auditory processing
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to extract, interpret and act upon spectral and temporal information from acoustic input. It encompasses sound detection, discrimination and localization, auditory scene analysis (source separation), and the semantic interpretation of speech and non-speech sounds, including resolving competing auditory streams (the "cocktail-party problem"). Difficulty increases with the resolution and fidelity of the signal and the fine spectral detail required, the speed of acoustic changes and rhythm complexity, the level of background noise and reverberation (signal-to-noise ratio), and the number of distinct auditory sources that must be tracked or separated.
 

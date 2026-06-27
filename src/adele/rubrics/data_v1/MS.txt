@@ -1,3 +1,5 @@
+# Mind Modelling and Social Cognition
+
 This criterion assesses the level of cognitive demands associated with mind modelling of others and social cognition. The level of cognitive demands progresses from tasks that require no mind modelling (specifically, the ability to model the minds of other agents) or social cognition to those that require reasoning about how the beliefs, desires, intentions, and emotions of multiple other agents might interact to determine future behaviours.
 
 Level 0: None. The task does not require mind modelling or social cognition. It may not involve other agents, or if it does, perceiving or interacting with those agents is not necessary to complete the task. 

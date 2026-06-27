@@ -100,7 +100,7 @@ def build_manifest() -> None:
     rows = []
     for code, source, heading in _ACTIVE:
         rel_path = f"{source}/{code}.txt"
-        _, full_name, _ = _parse_rubric_file(DATA_V2_DIR / rel_path)
+        _, full_name, _, _ = _parse_rubric_file(DATA_V2_DIR / rel_path)
         rows.append(ManifestEntry(
             code=code, full_name=full_name, source=source, rel_path=rel_path,
             source_doc_id=_DOCS[source]["doc_id"], source_heading=heading,

@@ -1,3 +1,5 @@
+# Knowledge of Social Sciences
+
 The following rubric is designed to annotate the conceptual sophistication level of tasks based exclusively on the depth of knowledge or conceptual understanding required in the fields of social sciences and humanities (e.g., history, psychology, sociology, anthropology, literature, art, philosophy, linguistics). This does not include natural sciences (e.g., physics, chemistry, biology, astronomy, earth sciences, ecology) and formal sciences (e.g., mathematics, logic, computer science, statistics). It's important to note that this rubric focuses exclusively on the  domain-specific knowledge needed, not considering other cognitive demands such as reasoning or metacognition. This reflects purely the depth of social sciences and humanities knowledge required.
 
 Level 0. None: Tasks do not require any knowledge or understanding of social sciences or humanities. Examples:

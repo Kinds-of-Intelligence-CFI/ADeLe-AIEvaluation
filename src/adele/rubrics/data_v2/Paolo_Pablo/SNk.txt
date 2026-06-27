@@ -1,4 +1,5 @@
 # Kinesthetic processing and proprioception
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the ability to process, integrate and coordinate motor signals to execute goal-directed whole-body movements through an environment. It involves proprioception (sense of body position), vestibular balance, real-time feedback integration, motor planning, and the dynamic adjustment of trajectories in response to environmental perturbations. Difficulty increases with spatial complexity and dimensionality, external perturbations, the speed of environmental change, the latency or absence of sensory feedback, the irreversibility or risk of errors, and time pressure.
 
