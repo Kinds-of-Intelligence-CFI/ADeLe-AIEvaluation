@@ -303,7 +303,7 @@ Examples: ...
 ```
 
 Then either:
-- **Bundle it**: place in `src/adele/rubrics/data/EQ.txt` and reinstall.
+- **Bundle it**: place in `src/adele/rubrics/data_v1/EQ.txt` and reinstall.
 - **Use a custom folder**: `adele annotate mmlu-pro --rubrics ./my_rubrics/`
 
 The file name (without `.txt`) becomes the dimension acronym. The `# Header` line becomes the full name. Levels 0–5 and Example sections are required for validation.

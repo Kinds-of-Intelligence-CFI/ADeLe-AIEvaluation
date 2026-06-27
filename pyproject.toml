@@ -70,7 +70,7 @@ Repository = "https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation.gi
 # ============================================================================
 [tool.hatch.build.targets.wheel]
 packages = ["src/adele"]
-# The rubric .txt files under src/adele/rubrics/data are picked up automatically
+# The rubric .txt files under src/adele/rubrics/data_v1 are picked up automatically
 # (hatchling ships all files inside the package), so no force-include is needed.
 
 [tool.hatch.build.targets.sdist]
