@@ -48,8 +48,10 @@ local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
 - [ ] Tighten **boundary overlap** between `MSe` (environmental), `MSc` (communication)
       and mind-modelling so annotators don't double-count (add contrastive examples).
 - [ ] **PLp/PLe level-0 anchor does not transfer across model families** (GPT-5
-      cross-check, kept as a supplement in `labs/rivercross/cross_family/`,
-      original Claude-panel pipelines untouched): on every
+      cross-check via `labs/rivercross/analyze_cross_family.py`; reports in
+      `method1b/plp_cross_family.txt` + `ple/ple_cross_family.txt`, figures
+      `figures/*_cross_family.png`; original Claude-panel pipelines untouched):
+      on every
       state the Claude panel unanimously calls 0 (dist_to_goal=1 / near-terminal),
       GPT-5 assigns 1 (PLp) or 2 (PLe-1b); within-1 stays 100%/90% and the
       demand-to-go gradient replicates. Add a contrastive level-0 example ("a single
