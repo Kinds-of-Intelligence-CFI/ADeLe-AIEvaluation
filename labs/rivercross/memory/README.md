@@ -93,6 +93,8 @@ python labs/rivercross/memory/analyze_verbosity_control.py --labels sonnet:labs/
 
 **v4 result** (full output in `results/verbosity_control_v4.txt`): all three strong judges (Sonnet 5, Opus 4.8, GPT-5) label every verbose-low item 1 - identical to their frozen v3 low labels - while ranking the same-batch medium and high anchors above it (Mann-Whitney verbose-low < high, p<=0.0013 per judge), even though verbose-low has the highest token count of any group (mean 238 vs high 186). The token-counting explanation of the v3 signal is refuted for these judges; the verbosity caveat above is resolved for v3's headline claim. Judge annotation was run with `--max-tokens 16384` for Sonnet and `--max-tokens 32768` for GPT-5 (reasoning models return empty content at the old 4096 default).
 
+Haiku 4.5 retest on v4: it also labels every verbose-low item 1 (so it is not token-counting either) and orders verbose-low < medium < high within the batch. But the same six underlying traces got labels 2-4 in its v3 run (as standard low items): Haiku's label for an identical trace flips with batch framing. Its v3 judge-independence failure (delta tracking history_length and cost_to_go) still stands, so keep Haiku classified as a weak/noisy judge for this protocol - unstable calibration, not verbosity-counting, is its failure mode.
+
 ## Analysis
 
 After collecting MMs labels for both conditions, run:
