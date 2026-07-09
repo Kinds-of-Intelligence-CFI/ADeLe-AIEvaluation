@@ -83,7 +83,9 @@ def main() -> None:
         "ITEMS": items,
     })
 
-    out = args.out or HERE / "generated" / f"prompt_{code}_1b_state_visible.txt"
+    out = args.out or HERE / "generated" / f"prompt_{code}_{args.frame.stem}.txt"
+    if not out.is_absolute():
+        out = (Path.cwd() / out).resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(text, encoding="utf-8")
     print(
