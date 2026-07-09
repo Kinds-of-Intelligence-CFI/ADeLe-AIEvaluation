@@ -171,3 +171,6 @@ coverage/
 *.tar
 *.zip
 
+
+# Local API key files (never commit)
+local_*_key.txt
