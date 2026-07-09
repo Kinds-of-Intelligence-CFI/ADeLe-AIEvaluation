@@ -22,8 +22,9 @@ from scipy.stats import spearmanr
 HERE = Path(__file__).resolve().parent
 PILOT = HERE.parent
 FIG = PILOT / "figures"
-MODELS = ["haiku", "sonnet", "opus"]
-COLORS = {"haiku": "#e07b39", "sonnet": "#3a7d44", "opus": "#3b5bdb"}
+MODELS = ["haiku", "sonnet", "opus", "gpt", "gemini-flash"]
+COLORS = {"haiku": "#e07b39", "sonnet": "#3a7d44", "opus": "#3b5bdb",
+          "gpt": "#8e44ad", "gemini-flash": "#7f8c8d"}
 GT = pd.read_csv(HERE / "ground_truth.csv").set_index("custom_id")
 
 
@@ -65,9 +66,9 @@ def report(df, tag):
             exact = (df[a] == df[b]).mean() * 100
             w1 = (abs(df[a] - df[b]) <= 1).mean() * 100
             print(f"  {a:6s}-{b:6s}  exact={exact:3.0f}%  within1={w1:3.0f}%  QWK={qwk(df[a], df[b]):.2f}")
-    if len(present) == 3:
-        all3 = (df[present].nunique(axis=1) == 1).mean() * 100
-        print(f"all-3 identical: {all3:.0f}%")
+    if len(present) >= 3:
+        all_same = (df[present].nunique(axis=1) == 1).mean() * 100
+        print(f"all-{len(present)} identical: {all_same:.0f}%")
     print("vs solver remaining horizon (dist_to_goal):")
     for m in present:
         rho, _ = spearmanr(df[m], df["dist"])

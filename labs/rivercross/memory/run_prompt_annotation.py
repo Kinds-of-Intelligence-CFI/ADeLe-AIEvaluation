@@ -110,8 +110,15 @@ def main() -> None:
     raw_path.write_text(content, encoding='utf-8')
     df = parse_csv_response(content)
     df.to_csv(csv_path, index=False)
-    print(f'wrote raw response: {raw_path.relative_to(RIVERCROSS)}')
-    print(f'wrote parsed labels: {csv_path.relative_to(RIVERCROSS)} ({len(df)} rows)')
+    def display(path: Path) -> Path:
+        resolved = path.resolve()
+        try:
+            return resolved.relative_to(RIVERCROSS)
+        except ValueError:
+            return resolved
+
+    print(f'wrote raw response: {display(raw_path)}')
+    print(f'wrote parsed labels: {display(csv_path)} ({len(df)} rows)')
 
 if __name__ == '__main__':
     main()

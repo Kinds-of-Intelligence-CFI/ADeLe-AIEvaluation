@@ -47,6 +47,12 @@ local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
       partly behavioural (propensity-like). Methodological call.
 - [ ] Tighten **boundary overlap** between `MSe` (environmental), `MSc` (communication)
       and mind-modelling so annotators don't double-count (add contrastive examples).
+- [ ] **PLp/PLe level-0 anchor does not transfer across model families** (GPT-5
+      cross-check, `labs/rivercross/results/{plp,ple}_cross_family.txt`): on every
+      state the Claude panel unanimously calls 0 (dist_to_goal=1 / near-terminal),
+      GPT-5 assigns 1 (PLp) or 2 (PLe-1b); within-1 stays 100%/90% and the
+      demand-to-go gradient replicates. Add a contrastive level-0 example ("a single
+      forced or immediately obvious final move is 0") to both rubrics/prompts.
 
 ## Open decisions (team / Pablo)
 - [ ] **Code reconciliation** Doc↔Sheet (e.g. our `MSe/MSc/ECc` = Sheet `MSs/MSp/EXb`).
