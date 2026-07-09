@@ -14,12 +14,14 @@ from scipy.stats import spearmanr, wilcoxon
 HERE = Path(__file__).resolve().parent
 RIVERCROSS = HERE.parent
 DEFAULT_PAIRS = RIVERCROSS / "frames" / "ground_truth" / "1b_memory_contrast_pairs.csv"
+DEFAULT_HISTORY_FRAME = RIVERCROSS / "frames" / "1b_memory_contrast_history_only.csv"
 FEATURES = [
     "history_length",
     "object_location_updates",
     "num_reversals",
     "interference_count",
     "cost_to_go",
+    "history_prompt_tokens",
 ]
 
 
@@ -85,6 +87,54 @@ def load_judge_df(pairs: pd.DataFrame, judge: JudgeSpec, id_column: str, level_c
     return df
 
 
+def attach_prompt_tokens(pairs: pd.DataFrame, history_frame: Path) -> pd.DataFrame:
+    """Whitespace token count of each history-only prompt.
+
+    In the v3 design object mentions in the history scale with
+    object_location_updates, so a judge that merely counts history verbosity
+    is observationally similar to one that tracks state updates. Reporting
+    Spearman(delta, history_prompt_tokens) alongside the design features makes
+    that collinearity explicit instead of hiding it.
+    """
+    frame = pd.read_csv(history_frame)
+    tokens = frame.assign(
+        history_prompt_tokens=frame["prompt"].str.split().str.len()
+    )[["custom_id", "history_prompt_tokens"]]
+    return pairs.merge(
+        tokens, left_on="custom_id_history_only", right_on="custom_id", how="left"
+    ).drop(columns=["custom_id"])
+
+
+def summarize_cells(df: pd.DataFrame, judge: str) -> None:
+    """Aggregate replicate pairs into design cells before testing.
+
+    The -01/-02 replicates share identical feature vectors, so pair-level
+    p-values overstate the evidence (pseudo-replication). Cell-level stats on
+    the ~9 unique design cells are the honest unit of analysis.
+    """
+    cell_key = df["pair_id"].str.rsplit("-", n=1).str[0]
+    cells = (
+        df.assign(cell=cell_key)
+        .groupby("cell", sort=False)
+        .agg(
+            n=("mms_delta", "size"),
+            mms_delta=("mms_delta", "mean"),
+            object_location_updates=("object_location_updates", "mean"),
+            history_length=("history_length", "mean"),
+        )
+    )
+    print(f"Per-cell (replicates averaged, n_cells={len(cells)}):")
+    print(cells.to_string(float_format=lambda v: f"{v:.2f}"))
+    try:
+        stat, p = wilcoxon(cells["mms_delta"], alternative="greater")
+        print(f"cell_wilcoxon_delta_gt_zero: statistic={stat:.3f}, p={p:.4g}")
+    except ValueError as exc:
+        print(f"cell_wilcoxon_delta_gt_zero: unavailable ({exc})")
+    if cells["mms_delta"].nunique() >= 2:
+        rho, p = spearmanr(cells["mms_delta"], cells["object_location_updates"])
+        print(f"cell_spearman(delta, object_location_updates): rho={rho:.3f}, p={p:.4g}")
+
+
 def quadratic_weighted_kappa(a: np.ndarray, b: np.ndarray) -> float:
     a = np.asarray(a, dtype=int)
     b = np.asarray(b, dtype=int)
@@ -139,6 +189,14 @@ def summarize_judge(df: pd.DataFrame, judge: str) -> None:
     print("Regression: mms_delta ~ object_location_updates + history_length + cost_to_go")
     for name, value in beta.items():
         print(f"  {name}: beta={value:.3f}")
+    if df["history_prompt_tokens"].notna().all():
+        beta_tokens = standardized_regression(
+            df, "mms_delta", ["object_location_updates", "history_prompt_tokens"]
+        )
+        print("Regression: mms_delta ~ object_location_updates + history_prompt_tokens")
+        for name, value in beta_tokens.items():
+            print(f"  {name}: beta={value:.3f}")
+    summarize_cells(df, judge)
 
 
 def summarize_cross_judge(all_df: pd.DataFrame) -> None:
@@ -171,12 +229,17 @@ def summarize_cross_judge(all_df: pd.DataFrame) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pairs", type=Path, default=DEFAULT_PAIRS)
+    ap.add_argument("--history-frame", type=Path, default=DEFAULT_HISTORY_FRAME)
     ap.add_argument("--judge", action="append", type=parse_judge, required=True)
     ap.add_argument("--id-column", default="custom_id")
     ap.add_argument("--level-column", default="level")
     args = ap.parse_args()
 
     pairs = pd.read_csv(args.pairs)
+    if args.history_frame.exists():
+        pairs = attach_prompt_tokens(pairs, args.history_frame)
+    else:
+        pairs["history_prompt_tokens"] = np.nan
     dfs = [load_judge_df(pairs, judge, args.id_column, args.level_column) for judge in args.judge]
     for df in dfs:
         summarize_judge(df, df["judge"].iloc[0])
