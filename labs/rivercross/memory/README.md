@@ -95,6 +95,50 @@ python labs/rivercross/memory/analyze_verbosity_control.py --labels sonnet:labs/
 
 Haiku 4.5 retest on v4: it also labels every verbose-low item 1 (so it is not token-counting either) and orders verbose-low < medium < high within the batch. But the same six underlying traces got labels 2-4 in its v3 run (as standard low items): Haiku's label for an identical trace flips with batch framing. Its v3 judge-independence failure (delta tracking history_length and cost_to_go) still stands, so keep Haiku classified as a weak/noisy judge for this protocol - unstable calibration, not verbosity-counting, is its failure mode.
 
+## Protocols v5 (real-1b rollouts) and v6 (widened contrast)
+
+Both pre-registered in `PREREGISTRATION_v5_v6.md` (committed before any label
+collection): fixed judge panel Sonnet 5 / Opus 4.8 / GPT-5, shared v5 prompt
+template, gates fixed in advance. Canonical numbers:
+`results/real1b_v5.txt` and `results/wide_contrast_v6.txt`.
+
+**v5 - MMs on the 43 real method-1b rollout states (the same states as the
+PLp/PLe v11 labels). All gates pass for all three judges.** Baseline floor:
+mean state-visible MMs 0.000 everywhere. Signal: paired Wilcoxon p=1.1e-13;
+Spearman(delta, object_location_updates) = 0.68 / 0.77 / 0.68. Difficulty
+independence (testable here because cost_to_go spans 1-7): Spearman(delta,
+cost_to_go) = 0.18 / 0.15 / 0.17 and beta(updates) > |beta(cost_to_go)| in
+the pre-registered regression for every judge. Cross-judge: within-1 = 1.000
+on all pairs, QWK 0.78-0.97. Pre-registered caveat applies: on real traces
+the memory features are collinear (Sonnet's and GPT's deltas track
+num_reversals at rho ~1.0, and for Opus history_length outweighs updates in
+the regression), so the factorial decoupling evidence lives in v6, not in
+the v5 regression decomposition. Exploratory cross-dimension check: MMs
+delta is uncorrelated with the PLp v11 levels on the same states (rho -0.03
+to -0.05) while tracking update complexity (0.68-0.77); PLe is constant
+(level 2) on the matched states, so that correlation is undefined. MMs is
+measuring something PLp/PLe do not.
+
+**v6 - widened contrast (22 pairs, history lengths 3/7/10, cost_to_go 1-8,
+update-matched reversal cells). Gates pass, with two flags.** Baseline
+0.000 everywhere; cost independence clean (Spearman(delta, cost_to_go)
+-0.11 / -0.05 / -0.06, beta(updates) ~0.7-0.8 vs beta(cost) ~0.1-0.2); the
+verbosity diagnostic is again negative (token beta -0.24 to -0.27 next to
+updates beta ~1.0). Monotonicity: strict low < medium < high in every
+history bucket for Sonnet (L10: 2 -> 4 -> 5); Opus and GPT tie at L10
+(medium = high = 4). Decoupling cells: reversal-cell delta > no-reversal
+delta for every judge (3.0 vs 1.5-2.0), with the pre-registered caveat that
+updates were matched only approximately (5 vs 3). Cross-judge QWK
+0.91-0.95. Flags: (1) the top of the scale saturates at 4 for two judges;
+(2) the level-5 anchor was exercised by Sonnet only (2 items) - the 4/5
+boundary is currently judge-dependent and needs either a sharper level-5
+anchor or harder items before levels 4-5 can be treated as calibrated.
+
+Human templates with annotator/date fields for the full v3 set, v5, and v6
+are in `human_template_v3_full.csv` / `human_template_v5_real1b.csv` /
+`human_template_v6_wide.csv` (`build_human_template.py`); a human pass over
+v5 is required before external claims (see the pre-registration).
+
 ## Analysis
 
 After collecting MMs labels for both conditions, run:
