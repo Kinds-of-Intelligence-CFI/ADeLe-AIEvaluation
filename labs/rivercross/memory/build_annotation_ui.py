@@ -11,6 +11,9 @@ with the pair data embedded. Design choices for clean annotation:
 - Progress persists in the browser's localStorage, so annotation can be
   interrupted and resumed.
 - delta_direction_ok is computed automatically from the two manual levels.
+- The full scoring guide - the decision rule and focus list from the v5
+  prompt template plus the complete MMs rubric - is embedded at the bottom
+  of the page, read from the same source files the judges saw.
 
 Usage:
   python build_annotation_ui.py --template human_template_v5_real1b.csv
@@ -22,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import random
 from pathlib import Path
@@ -29,7 +33,27 @@ from pathlib import Path
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+RIVERCROSS = HERE.parent
+REPO = RIVERCROSS.parents[1]
+TEMPLATE_V5 = RIVERCROSS / "prompts" / "templates" / "memory_state_tracking_annotation_v5.txt"
+RUBRIC_MMS = REPO / "src" / "adele" / "rubrics" / "data_v2" / "Marko" / "MMs.txt"
 SEED = 7
+
+
+def scoring_guidance() -> str:
+    """The judge-facing instructions from the v5 template, minus the task
+    framing line and the OUTPUT section."""
+    text = TEMPLATE_V5.read_text(encoding="utf-8")
+    body = text.split("===", 1)[0].strip().splitlines()
+    return "\n".join(body[1:]).strip()
+
+
+def full_rubric() -> str:
+    lines = [
+        line for line in RUBRIC_MMS.read_text(encoding="utf-8").splitlines()
+        if not line.lstrip().startswith(("#!", "# "))
+    ]
+    return "\n".join(lines).strip()
 
 PAGE = """<!DOCTYPE html>
 <html lang="en">
@@ -69,6 +93,11 @@ PAGE = """<!DOCTYPE html>
   #map i.cur { outline:2px solid var(--accent); }
   details { margin:10px 0; font-size:13px; color:var(--muted); }
   details pre { white-space:pre-wrap; }
+  .guide { background:#fff; border:1px solid var(--line); border-radius:8px;
+           padding:14px 18px; margin:26px 0 40px; }
+  .guide h2 { font-size:14px; margin:14px 0 6px; }
+  .guide h2:first-child { margin-top:0; }
+  .guide pre { white-space:pre-wrap; font-size:13px; line-height:1.55; margin:0; }
 </style>
 </head>
 <body>
@@ -95,6 +124,12 @@ PAGE = """<!DOCTYPE html>
   <button id="reset">clear all</button>
 </nav>
 <div id="map"></div>
+<div class="guide">
+  <h2>How to score (same instructions the model judges received)</h2>
+  <pre>__GUIDANCE__</pre>
+  <h2>Full MMs rubric - Working and short-term memory</h2>
+  <pre>__RUBRIC__</pre>
+</div>
 </main>
 <script>
 const DATA = __DATA__;          // shuffled presentation order
@@ -205,16 +240,18 @@ def main() -> None:
 
     out = args.out or HERE / "annotation_ui" / f"annotate_{name}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    html = (
+    page = (
         PAGE
         .replace("__NAME__", name)
         .replace("__ANCHORS__", ANCHORS)
+        .replace("__GUIDANCE__", html.escape(scoring_guidance()))
+        .replace("__RUBRIC__", html.escape(full_rubric()))
         .replace("__DATA__", json.dumps(shuffled, ensure_ascii=False))
         .replace("__COLUMNS__", json.dumps(list(df.columns)))
         .replace("__ORIG_IDS__", json.dumps([r["pair_id"] for r in items]))
         .replace("__EXPORT__", f"human_labels_{name}.csv")
     )
-    out.write_text(html, encoding="utf-8")
+    out.write_text(page, encoding="utf-8")
     print(f"wrote {out} ({len(items)} items, presentation seed={SEED})")
 
 
