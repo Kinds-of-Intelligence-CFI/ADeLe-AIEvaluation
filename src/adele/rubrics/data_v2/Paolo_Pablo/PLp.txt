@@ -1,43 +1,41 @@
 # Planning
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-25 single-driver redesign
 
-This rubric assesses the ability to envision desired outcomes and devise a series of actions or strategies to achieve them: setting clear instrumental goals, anticipating challenges, allocating resources, dividing tasks into subtasks, sequencing actions, and, at higher levels, allocating work among collaborators. The demand of the planning dimension increases with the size of the search needed to find a successful plan — in both depth and breadth — and with how few of those plans lead to success, as well as the number of subtasks, the presence of other agents, the open-endedness of the goal, and the unpredictability of the environment.
+This criterion assesses the level of cognitive demands associated with planning: envisioning a desired outcome and devising a sequence of actions or strategies to achieve it, including setting instrumental goals, dividing the task into subtasks, and sequencing actions. It concerns what is required to find a workable plan, not to carry it out: how long execution takes is assessed by Volume (VO), sustained execution of an existing plan by Action Control and Execution (PLe), reasoning about other agents' beliefs and intentions by Mind Modelling (MS), and inferring hidden or changing features of the environment by Environmental and Situational Understanding (MSe); such features raise the planning demand only insofar as they make a workable plan harder to find. Demand is a property of the task, not of any particular solver's behaviour; when in doubt between two levels, assign the lower unless the higher level's requirement is clearly met.
 
-Level 0: No planning needed. Reactive or retrieval tasks that can be completed through a single cognitive operation (retrieval, recognition, straightforward mapping): about one step, a single essentially-forced action, with success guaranteed. No sequencing or subgoal generation is required; the environment is static and fully specified.
+Level 0: None. This demand level is characterized by the plan being given: the task is completed by a single action or retrieval, or by following a sequence of steps that is explicitly provided, so there are no decisions about what to do or in what order. Critically, this holds regardless of how long or laborious the execution is.
 Examples:
 * What year did Darwin publish "The Origin of Species": 1856, 1859, 1865 or 1866?
-* Implement accurate real-time translation of a conversation between English and Spanish.
 * Convert a temperature from Celsius to Fahrenheit.
-* Select the figure that fits the pattern from A to E.
+* Implement accurate real-time translation of a conversation between English and Spanish.
+* Execute a 200-step laboratory protocol exactly as written, in the given order. (The plan already exists; carrying it out is execution, not planning.)
 
-Level 1: Simple short-term planning. The task requires a very small number of steps (a horizon of about three or fewer), with only about one to three possible actions at each step and most action-sequences leading to success, so little or no search is needed. There is no need to divide the task into subtasks or to consider other agents; the goal is clearly specified and the environment is static and predictable.
+Level 1: Very low. This demand level is characterized by the plan being retrieved: a single standard, well-established routine covers the whole task directly, and where choices of order exist, any reasonable order succeeds. Critically, no decomposition into subtasks is needed.
 Examples:
 * Combine information from two sources to answer a simple question (e.g., compare the battery life of two smartphone models).
 * Draft a brief email summarising the key points from a meeting after reading the notes.
-* By what percentage did the number of history books published in Estonia fall from 1995 to 1996?
+* Decide the order in which to run three independent errands across town.
 
-Level 2: Intermediate-term planning with simple decomposition. The task requires a modest but non-trivial search to find a valid plan: roughly 4–10 sequential actions (depth), up to about ten possible actions at each step, and only a fraction of action-sequences — very roughly 10–20% — leading to success, so some look-ahead is needed. It involves a few well-defined, simple subtasks. The environment is static and fully observable with no other agents; the goal is clear, though it may include multiple criteria (e.g., cost, dates, quality).
+Level 2: Low. This demand level is characterized by the plan being assembled: no single routine covers the whole task, so it must be divided into a few well-defined subtasks — but each subtask is covered by a standard step, and the steps do not constrain one another, so a sensible choice at one step never needs to be revised because of a later one. Critically, a task remains at this level however many steps it involves, so long as the steps stay independent.
 Examples:
-* Build a personal webpage using a template: choose a template, customise the layout, and deploy the site.
 * Plan a day-trip itinerary given preferences (museums, restaurants, location); identify opening hours and schedule visits.
-* Provide a detailed scientific review for a research paper.
-* Download a dataset, clean it, run a statistical analysis and produce a chart.
+* Build a personal webpage using a template: choose a template, customise the layout, and deploy the site.
+* Plan a small data analysis: download the dataset, clean it, run a statistical analysis and produce a chart — a standard pipeline whose stages do not constrain each other.
 
-Level 3: Medium-horizon or large-search planning, with or without multi-agent coordination. The task involves a large search to find a valid plan — for example a longer temporal horizon (up to about 50–100 actions or interactions), and/or many possible actions at each step (on the order of tens) of which only a small fraction of action-sequences (well under 10%) lead to success, so that substantial look-ahead and backtracking are required — together with several hierarchical subtasks requiring sequencing and dependency management. It may also require coordinating with other agents whose goals are known. The environment is largely static and predictable, with minimal re-planning. This level can be reached by a static, single-agent task whose search space is correspondingly large, even with no other agents.
+Level 3: Intermediate. This demand level is characterized by the plan being searched for: established methods exist for tasks of this kind and the subtasks can be listed at the outset, but decisions interact, so an option that looks good locally can be wrong because of its consequences several steps later, and alternatives must be compared by looking ahead before committing. Critically, this level can be reached by a static, fully observable, single-agent task.
 Examples:
-* Playing chess at international-tournament level, where sub-plans (opening, mid-game, end-game) are sequenced and opponent moves are predictable within known strategies.
-* Organise a small academic workshop: invite speakers, arrange the schedule, manage registrations and communicate logistics.
-* Plan a didactic unit spanning nine sessions for a primary-school English-as-a-foreign-language class where the students are known beforehand.
-* Replicate a research paper by organising a literature review, implementing algorithms, running experiments and writing results.
+* Plan a multi-city international trip where flight dates, visa processing times and bookings constrain one another. (Contrast the day-trip at Level 2, whose choices are independent.)
+* Find a strong plan in a club-level chess middlegame, where a natural-looking move can fail to a consequence several moves deep. (Nothing is hidden, and the opponent's replies are explored as branches of the same search rather than by modelling a mind.)
+* Solve a competition-programming problem of medium contest difficulty.
 
-Level 4: Long-horizon, open-ended static planning. Broad or open-ended goals whose evaluation criteria may be qualitative (e.g., "organise a successful conference"); tasks may span months or years. Numerous interdependent subtasks make hierarchical decomposition essential — or the action space is very large and successful paths very sparse, so that extensive exploration and frequent re-planning are unavoidable — and the task requires coordinating with multiple agents whose goals are known but whose actions may be unpredictable. The environment is static or slowly evolving, with occasional re-planning.
+Level 4: High. This demand level is characterized by the structure of the plan having to be constructed: no established procedure or template supplies the decomposition into subtasks, so the decomposition itself must be discovered — the choices are strongly interdependent, and most approaches that appear viable fail for reasons that only become evident when explored.
 Examples:
-* Plan a large-scale training pipeline for an LLM: schedule data collection, pre-training, hyperparameter search, evaluation and release.
-* Design the legal strategy for a class-action lawsuit: coordinate legal research, evidence gathering, filings and negotiations with known parties.
-* Organise an international conference (e.g., ICML): secure venues, negotiate with sponsors, select papers, schedule sessions, coordinate volunteers and manage budgets.
+* Design the complete plan for replicating a complex research paper — what to implement, in what order, and how each stage is validated — where the right decomposition must be discovered rather than copied.
+* Solve a competition-programming problem at the hardest contest tier, where finding any correct approach is the principal difficulty.
+* Plan a mountaineering expedition on a difficult unfamiliar route, where acclimatisation, weather windows, logistics and fallback options must be jointly worked out.
 
-Level 5: Open-ended planning in dynamic, partially observable, multi-agent environments. The goal may be ambiguous, evolving or contested; the horizon is arbitrary, potentially spanning years with ongoing feedback loops; the action space is vast or unbounded and successful paths are extremely sparse and shifting. Subtasks are complex and interdependent, and hierarchical decomposition must be revisited as conditions change. Multiple agents have diverse or partially unknown goals; the environment is dynamic and partially observable, so new information arrives, plans fail unexpectedly, and re-planning is frequent.
+Level 5: Very high. This demand level is characterized by the plan being invented: no established procedure exists for the task at all, the space of candidate plans is vast, and workable plans are so rare that finding one constitutes a novel discovery. The decomposition into subgoals must be created from scratch, with whole families of candidate approaches generated, evaluated and discarded.
 Examples:
-* Create emergency-response protocols for large natural disasters: allocate resources and coordinate multiple teams (firefighters, medical, logistics, government) under rapidly changing conditions and incomplete information.
-* Plan a multi-year international scientific project, such as the ITER nuclear-fusion reactor, where goals may evolve and partners have different agendas.
-* Plan the development of an extreme-ultraviolet semiconductor fabrication plant, including procurement of specialised machinery, workforce training, supply-chain management and adaptation to market shifts.
+* Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails.
+* Devise the proof strategy for a hard open research problem, where the division into lemmas must itself be discovered.
+* Plan a research agenda for attacking an unsolved scientific problem, where the division into sub-questions must itself be discovered.
