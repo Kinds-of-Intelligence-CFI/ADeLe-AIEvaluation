@@ -3,3 +3,7 @@
 # The tiny synthetic test fixture is a plain CSV (not LFS) so the test suite
 # runs on a fresh clone without needing Git LFS / an LFS budget.
 tests/fixtures/mini_battery.csv !filter !diff !merge text
+
+# The rubric-QA label files are small and human-readable; keeping them plain
+# means they diff in review and cost no LFS budget.
+labs/rubric-qa/*.csv !filter !diff !merge text
