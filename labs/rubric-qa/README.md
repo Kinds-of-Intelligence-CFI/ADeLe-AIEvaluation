@@ -561,3 +561,63 @@ haiku's 3 against sonnet/opus's 4 is the known L3/L4 offset first
 diagnosed by the gate-walk in round 3: haiku reads "established methods
 exist for tasks of this kind" at the class level. The 3-judge median
 absorbs it, as designed.
+
+## Round 17: NEGATIVE RESULT — our PLp underperforms on the rivercross
+## solver-backed oracle (labs/rivercross)
+
+`labs/rivercross/` was already in the repo and this work did not use it. It is a
+controlled testbed with something none of our batteries have: an **exact BFS solver as
+a value oracle**, so every judged state carries a true remaining cost-to-go. It also
+already reports a rubric-revision result for PLp.
+
+We ran OUR current PLp rubric on their 43 leak-free states, substituted into their own
+prompt scaffold (dimension-agnostic, leak-free, demand-to-go), judged by haiku, and
+correlated against the solver's cost-to-go.
+
+| arm | Spearman vs cost-to-go | SD | label distribution |
+|---|---|---|---|
+| their v10 (prior wording), haiku | +0.374 | 0.42 | {1:33, 2:10} |
+| their v11 (search-size rubric), haiku | **+0.826** | 0.78 | {0:12, 1:17, 2:14} |
+| their v11, sonnet / opus | +0.855 / +0.894 | 0.87 / 0.79 | spans 0–3 |
+| **OUR re-keyed PLp, haiku** | **+0.497** | **0.53** | **{1:39, 2:1, 3:3}** |
+
+**Our rubric is much worse than theirs on this testbed, and only modestly better than
+the wording we replaced.** 39 of 43 states collapse to Level 1.
+
+Diagnosis — two causes, both real:
+
+1. **Our bottom rung is keyed on PROVISION, not on absence of search.** L0 is "the plan
+   is given". In these frames 12 states are one crossing from the goal: no plan is
+   *given*, yet essentially no planning remains. Their v11 puts those at 0; our ladder
+   has no natural home for them, so they pile into L1. Our L0 does say "completed by a
+   single action", but every L0 example is a task *type* (a lookup, a conversion, a
+   provided protocol) rather than a task *nearly finished*, so a judge does not read it
+   that way.
+2. **Our L1 gate is knowledge-based and swallows a whole puzzle family.** "A single
+   standard, well-established routine covers the whole task" is true of river-crossing
+   as a genre, so haiku applied it everywhere — ignoring the conjoined condition that
+   "any reasonable order succeeds", which is plainly false when most orders strand a
+   forbidden pair. A knowledge gate discriminates well ACROSS heterogeneous families and
+   poorly WITHIN one homogeneous family, where the variation is in search size.
+
+Scope of the problem: this is the **demand-to-go** framing — scoring the demand still
+required from a mid-trajectory state. That is the framing rivercross calls its workhorse
+(method 1b) **and the framing of the HAL cp25/cp50/cp75 frames we used in round 9**, so
+this affects those results too. Our rubric was designed and validated for whole-task
+annotation, and it has not been calibrated for demand-to-go.
+
+This does not invalidate the whole-task results (rounds 1–16 stand), but it does mean
+the claim "PLp is validated" must be qualified by framing until this is fixed.
+
+Not patched here: the fix interacts with a methodology question — whether one rubric
+should serve both framings, or whether demand-to-go needs its own calibration — which
+is a decision for the team, not a wording tweak. Options and evidence in the response
+to this round.
+
+Convergence worth noting: rivercross independently reached several of our conclusions —
+key PLp on search size; PLe's disagreement was caused by one ambiguous word, *feedback*,
+fixed with an operational definition of reward ("the environment's success signal — not
+observation, not legality"), which is nearly our own wording; levels should be a
+mutually-exclusive logical partition; and the weakest judge lags for capability reasons
+on dimensions whose annotation is itself a reasoning task. Two independent efforts
+reaching the same fixes is evidence those fixes are right.
