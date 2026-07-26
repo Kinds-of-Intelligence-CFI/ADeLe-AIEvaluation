@@ -1,40 +1,40 @@
 # Action control and execution
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-25 single-driver redesign
 
-This rubric assesses the ability to implement plans to achieve specific goals. It encompasses the capacity to evaluate progress, decide when to revise a plan, when to start and finish a subtask, and how to implement a plan in practice. The demand of the task increases with the number of actions and the accuracy needed, the presence and definition of subtasks, the specificity of the plan, the speed and clarity of the reward signal, the speed of change in the environment, and the open-endedness of the goals. Here a reward is the environment's signal that the task (or a subtask) has been accomplished — not the observation of the resulting state, nor whether a move was legal — and it is sparse when many actions pass before such a signal arrives.
+This criterion assesses the level of cognitive demands associated with action control and execution: carrying out a plan, monitoring progress, detecting deviations and recovering from them. It concerns keeping execution on track, not finding the plan: devising or revising the plan itself is assessed by Planning (PLp), how long execution takes by Volume (VO), reasoning about other agents by Mind Modelling (MS), inferring hidden or changing features of the environment by Environmental and Situational Understanding (MSe), and holding interim results in mind by the memory dimensions; such features raise the execution demand only insofar as they make deviations harder to detect or to recover from. Feedback here means information from the environment sufficient to establish, without further work, that an action or subtask has succeeded; merely being able to observe the new state does not count if establishing success still requires the agent's own verification. Feedback is sparse when many actions pass before it arrives. Demand is a property of the task, not of any particular solver's behaviour; when in doubt between two levels, assign the lower unless the higher level's requirement is clearly met.
 
-Level 0: Atomic action, no execution control. The task does not require any execution control, progress monitoring or plan adjustment, and can be completed in a single, atomic conceptual action.
+Level 0: None. This demand level is characterized by execution being a single atomic action: no monitoring, sequencing or recovery is involved, and the action succeeds or fails at once.
 Examples:
 * Evaluate the possibility of achieving checkmate in chess in a single move.
 * Do a Google search from google.com.
 * Select the figure that fits the pattern from A to E.
 
-Level 1: Simple instruction following. The task takes a few actions (from about two to ten) and gives a reward after essentially every action, so little monitoring is needed. It follows a well-defined, short-term plan with no subtasks, in a static environment.
+Level 1: Very low. This demand level is characterized by execution being checked by the environment at every step: feedback arrives after essentially every action — each action's success or failure is signalled immediately, or invalid actions are simply not accepted — so an error is caught and corrected on the spot and no self-monitoring is needed. Critically, a task remains at this level however many steps it involves, so long as every step is immediately checked.
 Examples:
-* Adding 56879 + 342543 manually, digit by digit.
-* Cooking a recipe with all ingredients available, following step-by-step instructions.
-* Resetting a password by following the prompts on a website.
+* Reset a password by following the prompts on a website.
+* Navigate to an address following turn-by-turn directions, where any wrong turn is immediately flagged and rerouted.
+* Cook from a recipe in which each step's outcome makes success immediately apparent before moving on.
 
-Level 2: Instruction following with monitoring. Either the task takes from about two to ten actions but the reward arrives only at the end or once per subtask, or it takes more than ten actions but with a reward after nearly every action. Either way the agent decomposes it into a few well-defined subtasks and verifies progress; the goal is clear and the environment is static.
+Level 2: Low. This demand level is characterized by execution being checked at checkpoints: feedback arrives roughly once every two to ten actions, at natural checkpoints such as the completion of a subtask, or at the end of a short task. Between checkpoints the agent must keep track of what has been done and verify its own steps, but an error discovered at a checkpoint is cheap to localise and redo. Critically, what the subtasks are is given or obvious; deciding the decomposition belongs to Planning.
 Examples:
-* Following a tutorial to implement a small transformer network.
-* Building a piece of furniture using instructions.
-* Verifying the correctness of a derivation of Bell's theorem proof.
+* Build a piece of furniture from instructions, where each completed stage visibly fits or does not.
+* Follow a tutorial to implement a small transformer network, running the code at each milestone.
+* Complete a long structured application form that validates each section on submission.
 
-Level 3: Action control with a loosely defined plan. The task takes more than about ten actions (on the order of tens) and the reward is sparse — arriving only after roughly ten or more actions — so the agent must self-monitor and discover useful chunks of actions. The goal is precise and the environment is static, but there is no formal plan, so an agent's state persists once a subtask is finished.
+Level 3: Intermediate. This demand level is characterized by execution being self-checked: stretches of tens of actions — or the whole task — pass without any feedback, so the agent must set its own criteria for being on track, monitor progress against them, and decide when each part is finished. Critically, a task remains at this level as long as an error, once noticed, can be fixed where it occurred without redoing the work that followed.
 Examples:
 * Write and polish the introduction of a scientific paper.
-* Derive the conservation of momentum and energy from Einstein's general-relativity equations.
-* Design the claims in a patent based on its associated paper.
-* Summarise a long document and extract its main arguments.
+* Summarise a long document and extract its main arguments. (A weak paragraph is fixed in place; nothing downstream depends on it.)
+* Design the claims of a patent based on its associated paper.
 
-Level 4: Advanced action control with sparse reward and open-ended goals. The task spans hundreds to thousands of actions or has an open-ended, qualitatively judged goal; the reward arrives only after major milestones and the environment is static or slowly evolving. It decomposes into many subtasks that are not clearly separated, and the agent must decide when to self-evaluate, revise the plan and switch subtasks.
+Level 4: High. This demand level is characterized by execution having to be safeguarded against propagation: feedback is equally sparse, but an undetected error silently corrupts the work that follows, so monitoring must be proactive — the agent must anticipate where slips would matter, insert its own checks, and, when an error is found, trace its consequences and rework everything that depends on it.
 Examples:
-* Develop a full research paper, including literature review, experimental design and data analysis.
-* Develop the plot, characters and world-building for a complex fictional work, such as "The Lord of the Rings".
-* Design a comprehensive marketing strategy for a new product.
+* Carry out a long mathematical derivation by hand, where an early sign error silently invalidates everything after it. (Contrast the summary at Level 3: there an error is fixed in place; here it forces rework of all that followed.)
+* Extend a large codebase that has no test suite, where a subtle early bug only surfaces much later in dependent components.
+* Translate a long legal contract, where a mistranslated defined term early on corrupts every later clause that uses it.
 
-Level 5: Advanced action control in dynamic, uncertain environments. The environment is dynamic or stochastic, or the goal is ambiguous or evolving; the horizon is unbounded (weeks to months) and the reward is extremely sparse, noisy and delayed. The agent must use hierarchical planning and exploration, continually generating and adapting plans across numerous interacting subtasks with undefined boundaries.
+Level 5: Very high. This demand level is characterized by execution having to be safeguarded before every commitment: in addition to sparse feedback and silent propagation, some actions are irreversible, so errors cannot be corrected even when found — they must be prevented, and each consequential step verified before it is taken.
 Examples:
-* Coordinate the efforts to take a startup from $0 to $10M annual recurring revenue.
-* Coordinate and implement a large-scale research effort, such as the project that led to AlphaFold.
+* Migrate a live production database without a rollback mechanism, where a wrong step corrupts data irrecoverably.
+* Carry out a multi-step synthesis of a scarce compound, where a failed step destroys the material.
+* Conduct an archaeological excavation, where each removal destroys context that can never be re-examined.
