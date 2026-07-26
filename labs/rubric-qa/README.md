@@ -1,4 +1,46 @@
-# rubric-qa: inter-judge pilot for the re-keyed PLp rubric
+# rubric-qa — validation record for the agentic rubric re-key
+
+The complete empirical record behind the re-keyed v2 agentic demand rubrics (`PLp`,
+`PLe`, `PLs`, `MSc`). Every design decision on branch `rubrics/v2-improved` was tested
+before it was kept, and this is where those tests and their results live. Narrative
+summary for readers who do not want the detail: `docs/agentic-rubric-redesign.md`.
+
+## How to read it
+
+This file is a lab notebook: one section per round, in chronological order, each saying
+what was tested, what happened, and what changed as a result — **including the rounds
+where a designed test failed and a rubric had to be patched**. Those are the most
+informative entries and are deliberately kept rather than tidied away.
+
+Label files, one row per judge x task x seed:
+
+| file | rows | contents |
+|---|---|---|
+| `plp_v2redesign_pilot_labels.csv` | 72 | PLp, new rubric — 8 pilot tasks x 3 judges x 3 seeds |
+| `plp_oldrubric_pilot_labels.csv` | 72 | PLp, **old** rubric, identical setup — the paired baseline |
+| `ple_v2redesign_pilot_labels.csv` | 63 | PLe — designed ladder plus traps |
+| `pls_redesign_pilot_labels.csv` | 72 | PLs — designed ladder plus deduction traps |
+| `hal_cp50_rekey_labels.csv` | 72 | PLp and PLe on 12 HAL trace frames, old and new side by side |
+| `pilot_crossdim_labels.csv` | 30 | all four dimensions on 3 real pilot tasks, with the pre-registered value |
+
+Pre-registrations — expectations written down *before* the judges ran, so that
+"do the models annotate as we would" is measured rather than rationalised:
+`prereg_expected.json` (round 14), `prereg_final.json` (round 16).
+
+## Conventions
+
+- Judges are always haiku / sonnet / opus, prompted through the repo's own
+  `build_annotation_prompt`, and always write their reasoning before any score.
+- A **designed** level (or **cap**) means the item was written to land at a known level.
+  A **trap** is an item built to pull a rubric toward a neighbouring dimension — it
+  passes only if the rubric refuses the pull.
+- Krippendorff alpha is always reported **with the level distribution beside it**, never
+  alone: see round 14 for why (alpha collapses under range restriction even when raw
+  agreement is high).
+
+---
+
+## Round 1: inter-judge pilot of the re-keyed PLp rubric
 
 First empirical check of the single-driver PLp rubric (commit "rubrics(v2):
 re-key PLp on a single demand driver"). 8 tasks from pilot/tasks.csv, 3 judges
