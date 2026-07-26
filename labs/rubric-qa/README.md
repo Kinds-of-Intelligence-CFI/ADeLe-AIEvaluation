@@ -165,3 +165,32 @@ PLp/PLe separation, both directions, on this battery (medians):
   ple-migration PLe 5 (PLp low: known procedure)
 The old rubric pair could not produce a single high-low cell in either
 direction (HAL separation 0.00); the re-keyed pair produces them in both.
+
+## Round 7: executive-scope + transcription/construction patch - verification
+
+Commit "PLe/PLp: full executive scope..." verified on the three moved cells
+(3 judges, 2-3 seeds):
+
+- chess-trap (cap <=1): 1,1 / 1,1 / 1,1 - now unanimous, the L0/L1 wobble
+  gone. Cap holds for the third consecutive rubric version.
+- usaco-0004: 3,3,3 / 2,3,3 / 1,1,3 - median 3 (round 5: 0-4 chaos,
+  round 6: over-shot to 1). The judges' 3 is the faithful reading of the
+  ladder: a program is a constructed deliverable, sample I/O is an
+  END-check not a per-subtask checkpoint, so tens of actions pass without
+  feedback -> self-checked L3, errors fixed in place. (The round-6 note
+  predicted 2; that assumed samples act as mid-course checkpoints - the
+  rubric's own density bands say otherwise. The judges are right.)
+  Residual: opus split 1,1,3 - whether a SHORT program is transcription
+  or construction stays a judgment call at the boundary; range is now
+  1-3 instead of 0-4.
+- tau-0007: 2 / 1,1 / 2,2 - stays in the designed 1-2 band, now partly
+  for the multi-strand reason (judges cite tracking the timed
+  side-request and upgrade-before-cancel ordering).
+
+Battery-wide PLp/PLe profile after all patches (medians):
+  chess      PLp ~3 / PLe 1     usaco-0004 PLp 3 / PLe 3
+  usaco-0011 PLp 4 / PLe 3      tau-0007   PLp 2 / PLe 1-2
+  ledger     PLe 4 / PLp low    migration  PLe 5 / PLp low
+Coinciding values on some tasks (usaco-0004) are expected - independence
+means the dimensions CAN diverge, not that they must; chess and the
+designed items show divergence in both directions.
