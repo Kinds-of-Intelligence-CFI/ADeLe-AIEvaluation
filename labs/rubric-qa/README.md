@@ -496,3 +496,26 @@ agreement is already high and alpha over-penalises). Evidence that the
 ladders do resolve where real tasks live comes from round 1: PLp over 8
 pilot tasks spanned levels 1-4 with SD 0.85-1.15. Always report alpha with
 the level distribution beside it.
+
+## Round 16: final validation on the hardest real pilot task
+
+usaco-0011 (USACO 2025 US Open, Platinum) annotated on all four
+dimensions, expectations pre-registered (prereg_final.json).
+
+  dimension  judges              median  pre-registered
+  PLp        3 haiku, 4 sonnet, 4 opus   4       4  EXACT
+  PLe        3 opus                      3       3  EXACT
+  PLs        0 opus                      0       0  EXACT
+  MSc        0 haiku                     0       0  EXACT
+
+Profile 4 / 3 / 0 / 0 on a real benchmark task: high planning demand,
+moderate execution demand, no situational or social demand at all. This
+is the discriminant-validity claim demonstrated on a real task rather
+than a designed one - under the OLD rubrics the same task would score
+high on PLp, PLe and MSe together, because all three were keyed on
+horizon and complexity.
+
+haiku's 3 against sonnet/opus's 4 is the known L3/L4 offset first
+diagnosed by the gate-walk in round 3: haiku reads "established methods
+exist for tasks of this kind" at the class level. The 3-judge median
+absorbs it, as designed.
