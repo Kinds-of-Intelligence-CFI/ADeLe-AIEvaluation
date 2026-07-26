@@ -34,3 +34,35 @@ opus builds, not the exact API snapshots used for the old HAL labels; judge
 output kept to a short justification rather than full printed CoT. Next steps:
 old-rubric arm on the same 8 tasks for a paired comparison, then re-annotation
 of the HAL traces for the PLp/PLe separation test.
+
+## Round 2: gate-walk protocol (diagnosis)
+
+Re-ran the 5 USACO tasks with a "gate-walk" instruction: judges answer six
+boundary questions in order, with task evidence, before any score is stated.
+All three judges agree on gates 0-2 everywhere; the whole divergence is the
+L3/L4 gate phrase "established methods exist for tasks of this kind".
+haiku reads "kind" at class level (all of competitive programming -> ceiling
+L3); sonnet reads it at instance level (no template for this exact objective
+-> floor L4); opus resolves it by sketching a plan and checking whether the
+outline falls out of recognizing the problem type.
+
+## Round 3: L3/L4 patch + verification
+
+Commit "PLp: sharpen the L3/L4 gate" makes opus's test explicit in the rubric
+text. Verification on the divergent cells (2 seeds, original protocol):
+sonnet on Bronze moved 4,4,4 -> 3,4; sonnet on Silver and haiku on the
+Platinums unchanged; opus stable. Conclusion: the patch helps at the margin
+but the L3/L4 boundary for competition programming remains partly
+judge-capability-relative - whether "recognizing the type yields a plan
+outline" depends on whether the judge itself can sketch the plan. Text alone
+will not close the gap.
+
+What does close it, on this data: the cross-judge MEDIAN. Median of
+(haiku, sonnet, opus) equals opus's calibrated answer on every USACO task in
+every round (3,3,4,4,4), because haiku and sonnet err in opposite directions.
+Recommendation: keep the 3-judge median as the operational label; treat
+per-judge offsets as a calibration property to monitor, not a rubric bug to
+chase further. A protocol-level option for the team (touches shared
+annotation code, not this branch): add the sketch test to the judge
+instruction - "before deciding between Levels 3 and 4, attempt to write the
+plan outline; if you can, it is Level 3".
