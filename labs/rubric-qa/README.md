@@ -359,3 +359,48 @@ the tier; the two L5 anchors no longer share the "where the division into
 X must itself be discovered" frame - near-duplicate phrasing between
 adjacent anchors is itself a defect), PLe x2, PLs x2, and all MSc examples
 written to this standard from the start.
+
+## Round 13: consolidation pass over all four re-keyed rubrics
+
+Revision of PLp, PLe, PLs and MSc together, stressed against the artifact,
+the old v2 texts, and v1's form; validated with HAIKU as the primary judge,
+since the requirement is that a weak model can annotate accurately.
+
+Structural audit: all four now carry levels 0-5 with v1's intensity names
+(None / Very low / Low / Intermediate / High / Very high), 3-4 anchors per
+level, one preamble paragraph. Preamble lengths 173-227 words against v1's
+range (MS 66, CEe 217) except PLe at 375, accepted: PLe carries four
+definitional clauses no other rubric needs (action, feedback,
+transcription-vs-construction, budgets/branches), each traceable to a
+measured failure, and its tail was compressed again this round.
+
+Changes made:
+1. v1's scale-framing sentence was MISSING from all four and is now added
+   ("The level of cognitive demands progresses from ... to ..."). This is a
+   v1 hallmark (present in MS.txt and CEe.txt) and orients a weak judge
+   before it reads any level.
+2. PLp L4's contest-programming anchor no longer refers to "the hardest
+   contest tier" - a property a judge cannot read off a task statement -
+   and instead describes what makes it hard, parallel to the L3 anchor.
+3. PLs L2's inventory anchor states the Volume contrast explicitly;
+   PLe L0 replaces the dated "Google search from google.com".
+4. MSc L3's doctor anchor made imperative for consistency with every other
+   anchor in the set.
+
+Cross-dimension weak-model sentinel (10 cells, haiku only): 8/10 exact,
+both misses off-by-one at the MSc L3/L4 boundary on items that were
+themselves ambiguous about resistance. Correct on: PLp 3 (chess), PLp 0
+(300-step protocol - length is VO), PLe 1 (chess write-down), PLe 4
+(charity ledger), PLs 0 (Sudoku), PLs 3 (intermittent web errors), PLs 4
+(air-traffic control), MSc 1 (opinion essay).
+Continuity note: air-traffic control was an L4 anchor in the OLD MSe too,
+but for the wrong reason ("many flights, known procedures"); it is L4 here
+because the state changes continuously and every change is visible.
+
+Fix from the two misses - MSc L4 gains an anti-inflation clause: "being
+displeased by the message is not itself resistance: what marks this level
+is that the other party is holding out for a different outcome, not merely
+that they dislike the one proposed." Post-fix: tau-0007 2 (haiku and
+sonnet; was 3), vet 3 with haiku quoting the new clause verbatim
+("distress is not resistance"), landlord still 4 - the clause does not
+over-correct genuine resistance.
