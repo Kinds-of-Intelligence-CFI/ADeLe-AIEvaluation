@@ -22,16 +22,16 @@ Examples:
 * Build a personal webpage using a template: choose a template, customise the layout, and deploy the site.
 * Plan a small data analysis: download the dataset, clean it, run a statistical analysis and produce a chart — a standard pipeline whose stages do not constrain each other.
 
-Level 3: Intermediate. This demand level is characterized by the plan being searched for: established methods exist for tasks of this kind and the subtasks can be listed at the outset, but decisions interact, so an option that looks good locally can be wrong because of its consequences several steps later, and alternatives must be compared by looking ahead before committing. Critically, this level can be reached by a static, fully observable, single-agent task.
+Level 3: Intermediate. This demand level is characterized by the plan being searched for: established methods exist for tasks of this kind and the subtasks can be listed at the outset, but decisions interact, so an option that looks good locally can be wrong because of its consequences several steps later, and alternatives must be compared by looking ahead before committing. Recognizing what kind of task it is already supplies the outline of a workable plan; the work is choosing and adapting among known options. Critically, this level can be reached by a static, fully observable, single-agent task.
 Examples:
 * Plan a multi-city international trip where flight dates, visa processing times and bookings constrain one another. (Contrast the day-trip at Level 2, whose choices are independent.)
 * Find a strong plan in a club-level chess middlegame, where a natural-looking move can fail to a consequence several moves deep. (Nothing is hidden, and the opponent's replies are explored as branches of the same search rather than by modelling a mind.)
-* Solve a competition-programming problem of medium contest difficulty.
+* Solve a competition-programming problem of medium contest difficulty, where recognizing the type of problem points to the standard techniques that solve it.
 
-Level 4: High. This demand level is characterized by the structure of the plan having to be constructed: no established procedure or template supplies the decomposition into subtasks, so the decomposition itself must be discovered — the choices are strongly interdependent, and most approaches that appear viable fail for reasons that only become evident when explored.
+Level 4: High. This demand level is characterized by the structure of the plan having to be constructed: no established procedure or template supplies the decomposition into subtasks, so the decomposition itself must be discovered — the choices are strongly interdependent, and most approaches that appear viable fail for reasons that only become evident when explored. Critically, recognizing what kind of task it is does not by itself yield a plan: a task-specific insight must be found before the subtasks can even be laid out.
 Examples:
 * Design the complete plan for replicating a complex research paper — what to implement, in what order, and how each stage is validated — where the right decomposition must be discovered rather than copied.
-* Solve a competition-programming problem at the hardest contest tier, where finding any correct approach is the principal difficulty.
+* Solve a competition-programming problem at the hardest contest tier, where knowing the standard toolkit does not by itself yield a plan and finding any correct approach is the principal difficulty.
 * Plan a mountaineering expedition on a difficult unfamiliar route, where acclimatisation, weather windows, logistics and fallback options must be jointly worked out.
 
 Level 5: Very high. This demand level is characterized by the plan being invented: no established procedure exists for the task at all, the space of candidate plans is vast, and workable plans are so rare that finding one constitutes a novel discovery. The decomposition into subgoals must be created from scratch, with whole families of candidate approaches generated, evaluated and discarded.
