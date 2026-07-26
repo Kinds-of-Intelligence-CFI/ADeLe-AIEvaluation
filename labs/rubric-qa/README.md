@@ -194,3 +194,20 @@ Battery-wide PLp/PLe profile after all patches (medians):
 Coinciding values on some tasks (usaco-0004) are expected - independence
 means the dimensions CAN diverge, not that they must; chess and the
 designed items show divergence in both directions.
+
+## Round 8: red-team of the frozen PLp/PLe (old rubrics as the lens)
+
+Attack: coverage regression vs the old v2 texts + structural attacks.
+Fixed: PLp preamble restores "allocating limited resources among them"
+(resource-coupled planning was graded correctly by the coupling gates but
+not named, inviting mis-routing). Deliberately NOT fixed, with reasons:
+preamble length (real usability cost, but every clause maps to a measured
+failure, alpha held with the long text, and the level-text "Critically"
+gates degrade gracefully - rewording validated text without a new failure
+signal is overfitting); per-step accuracy excluded from PLe on purpose
+(error likelihood is the step's own demand; error DETECTABILITY is
+PLe's); goal open-endedness remains unowned in the v2 agentic block
+(team-level taxonomy question, not a PLp bolt-on); conversational
+feedback L1/L2 off-by-one (tie-break + median absorb it). Verified clean:
+environment change mid-execution, loosely-specified plans, no VO leak in
+the construction clause.
