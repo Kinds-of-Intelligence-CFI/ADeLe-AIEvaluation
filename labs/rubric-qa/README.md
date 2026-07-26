@@ -66,3 +66,33 @@ chase further. A protocol-level option for the team (touches shared
 annotation code, not this branch): add the sketch test to the judge
 instruction - "before deciding between Levels 3 and 4, attempt to write the
 plan outline; if you can, it is Level 3".
+
+## Round 4: paired baseline - OLD v2 rubric, same 8 tasks, same protocol
+
+Labels in plp_oldrubric_pilot_labels.csv. Head-to-head (72 vs 72 annotations):
+
+| metric                        | old rubric      | new rubric      |
+|-------------------------------|-----------------|-----------------|
+| Krippendorff alpha            | 0.611           | 0.861           |
+| levels used (any judge)       | 1-3             | 1-4             |
+| per-judge SD                  | 0.40-0.69       | 0.85-1.15       |
+| USACO medians B,S,G,P,P       | 3,2,2,2,3       | 3,3,4,4,4       |
+| monotone in division          | NO (inverted)   | YES             |
+| Spearman vs division          | 0.15            | 0.66            |
+| trap violations (cap 2)       | 0/18            | 1/18            |
+| Platinum vs tau-bench sep.    | NONE (both 2)   | 2 levels        |
+
+The old rubric reproduces the measured HAL failure on this battery: scores
+compress into 2-3, Bronze is rated HARDER than two Platinums, and a Platinum
+problem gets the same PLp as a tau-bench flight change. The judges' stated
+reasons are the borrowed drivers: "no multi-agent coordination -> below
+Level 3", "roughly 4-10 steps -> Level 2", "static and single-agent ->
+modest planning". Under the old rubric the judges also disagree in a
+DIFFERENT direction than under the new one (old: haiku above sonnet/opus;
+new: sonnet above haiku/opus), i.e. old-rubric agreement is not just lower,
+it is unstable in sign.
+
+Verdict: on every metric except trap compliance (both fine), the re-keyed
+rubric dominates the old one on this battery. Remaining known issue is the
+haiku/sonnet L3/L4 offset under the new rubric, mitigated by the 3-judge
+median (see Round 3).
