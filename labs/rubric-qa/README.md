@@ -261,3 +261,15 @@ Reading, honestly:
 New-rubric label deltas move in sensible directions per frame: nearly-done
 frames drop toward 0-1, mid-investigation frames rise to 3-4, and PLp/PLe
 now move independently on 5 of 12 frames (old: 0 of 12).
+
+## Round 10: preamble compression - sentinel verification
+
+Commit "PLp/PLe: compress preambles losslessly" (PLe 481->384 words, PLp
+194->179) re-checked on six sentinel cells with known expected values:
+chess-trap PLe 1,1,0 (cap <=1 holds, 3 judges); ple-ledger PLe 4 (opus);
+tau-0007 PLe 2 (sonnet); usaco-0004 PLp 3 (sonnet). All within expected
+bands - no behavioural drift detected from the compression. The feedback
+definition now names the success-signal reading explicitly ("the task's
+success signal, not... an interlocutor's acknowledgement"), resolving the
+conversational-feedback ambiguity by definition. Judges: haiku/sonnet/
+opus subagents only (never the orchestrating model).
