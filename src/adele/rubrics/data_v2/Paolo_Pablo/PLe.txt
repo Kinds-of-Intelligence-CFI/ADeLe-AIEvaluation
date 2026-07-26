@@ -24,9 +24,9 @@ Examples:
 
 Level 3: Intermediate. This demand level is characterized by execution being self-checked: stretches of tens of actions — or the whole task — pass without any feedback, so the agent must set its own criteria for being on track, monitor progress against them, and decide when each part is finished, which open subtask to advance next, and whether the current approach is still on course. Critically, a task remains at this level as long as an error, once noticed, can be fixed where it occurred without redoing the work that followed.
 Examples:
-* Write and polish the introduction of a scientific paper.
+* Write and polish the introduction of a scientific paper, judging for yourself when each paragraph is finished.
 * Summarise a long document and extract its main arguments. (A weak paragraph is fixed in place; nothing downstream depends on it.)
-* Design the claims of a patent based on its associated paper.
+* Draft the claims of a patent from the paper it is based on, with no examiner feedback until the whole set is filed.
 
 Level 4: High. This demand level is characterized by execution having to be safeguarded against propagation: feedback is equally sparse, but an undetected error silently corrupts the work that follows, so monitoring must be proactive — the agent must anticipate where slips would matter, insert its own checks, and, when an error is found, trace its consequences and rework everything that depends on it — or recognise that the approach itself must change before more work is built on it.
 Examples:

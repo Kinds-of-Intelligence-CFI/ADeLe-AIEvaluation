@@ -307,3 +307,55 @@ Verdict: the accumulated design pattern (single driver, verb spine,
 categorical gates, designed-in traps, protocol in the prompt) produced a
 rubric that passed its adversarial battery on the first attempt, with no
 patch round needed. PLs is frozen alongside PLp and PLe.
+
+## Round 12: MSc re-key + example concreteness pass
+
+MSc re-keyed on ONE driver: how far the other party's stance must be moved,
+how much it resists, and how much the moves must be adapted to what they do
+in return. Spine: no stance to move (0) -> no steering needed (1) ->
+steering a cooperative exchange (2) -> moving an open stance (3) ->
+overcoming resistance (4) -> reconciling conflicting stances (5).
+
+Battery (3 designed traps + ladder): msc-mstrap (read a poker opponent, no
+interaction -> MS not MSc), msc-ceetrap (persuasive newspaper column),
+msc-cafe (1), msc-history (2), tau-0007 (<=2), msc-vet (3, the STAKES
+trap), msc-headcount (4), msc-water (5).
+
+Ladder held first try: history 2, vet 3, headcount 4, water 5, mstrap 0.
+The stakes demotion is confirmed working: a grave, emotionally heavy
+conversation with a trusting, non-opposing family scores 3, not 4 - judges
+cite the absence of opposition explicitly. Under the old rubric this was
+L4 by definition ("health, jobs, finances or safety"), which graded
+consequences rather than communicative demand.
+
+THE ROUND'S FINDING - the CEe trap failed 3/3 (all judges gave 3 vs
+designed <=1), and they were faithful to the text: the preamble said
+"steering an interaction, not composing its messages", but L3-L5 never
+REQUIRED an exchange, so one-shot persuasive composition slid into L3
+("brought there by argument, framing or compromise" describes an op-ed
+exactly). Same class of defect as PLe's action-definition gap: the
+distinguishing structural feature was named in the preamble but not
+enforced at any gate.
+
+Fix (commit "MSc: require an exchange"): interactivity is now a gate.
+Preamble adds "where no exchange takes place - a message is composed and
+sent, with no opportunity to adapt to any response - the demand here is
+minimal, however persuasive or delicate the message must be"; L1 widens
+from "scripted exchange" to "communication that needs no steering"
+(scripted OR one-way); the column becomes an L1 contrast anchor; L3 now
+requires the stance to be moved "in exchange with them... adjusted to what
+they say back".
+
+Verification: ceetrap 1,1,1 (was 3,3,3). Held-out generalisation test - a
+eulogy for a colleague's funeral, never mentioned in the rubric - also
+scores 1, so judges applied the gate rather than matching the anchor. No
+drift: vet still 3, tau still 2.
+
+Example concreteness pass (all four PL/MSc rubrics), criteria taken from
+v1: anchors name a specific situation the reader can picture, at instance
+rather than class level, with the distinguishing detail stated. Edits:
+PLp x4 (contest-programming anchors now describe the technique rather than
+the tier; the two L5 anchors no longer share the "where the division into
+X must itself be discovered" frame - near-duplicate phrasing between
+adjacent anchors is itself a defect), PLe x2, PLs x2, and all MSc examples
+written to this standard from the start.
