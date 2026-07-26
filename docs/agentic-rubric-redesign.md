@@ -264,6 +264,15 @@ shared-pipeline change.
 
 ## 7. Limitations and open questions
 
+0. **`labs/rivercross/` is the strongest validation asset in the repo and this work
+   only reached it late.** It carries an exact BFS solver as a value oracle. PLp was
+   found to compress badly in the demand-to-go framing, fixed (Level 0 extended from
+   "plan provided" to "no search left"; Level 1's knowledge gate stopped from
+   swallowing a whole puzzle family), and now matches the purpose-built search-size
+   rubric on that oracle with a capable judge (Spearman 0.857 vs 0.855). PLe has an
+   equivalent rivercross calibration that this work has **not** yet been checked
+   against — that is the most valuable outstanding test. See rubric-qa rounds 17-18.
+
 1. **Separation on real traces is still unproven** — the HAL set is one benchmark family. The
    decisive test is a mixed-family trace run (SWE + tau frames together); the tau traces are
    already in `labs/hal-traces/tau`.
