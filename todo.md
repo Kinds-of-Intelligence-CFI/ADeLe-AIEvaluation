@@ -1,10 +1,11 @@
 # Agentic evaluation — progress & to-do
 
 Tracker for the `adele.agentic` workstream. Methodology in `AGENTIC_METHODOLOGY.md`;
-local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
+local branch `agentic`; `origin` is the CFI repo.
 
 ## Done
-- [x] v2 agentic rubric library, v1.0 format, two-source (`rubrics/data_v2/{ours,theirs}/`).
+- [x] v2 agentic rubric library, v1.0 format, two-source
+      (`rubrics/data_v2/{Paolo_Pablo,Marko}/`).
 - [x] `MANIFEST.tsv` provenance + active selection; `from_paths` / `load_active_catalog`
       / `verify_manifest`; drift-checked by tests.
 - [x] Validation harness — `validation.rubric_agreement` (quadratic-weighted κ,
@@ -13,10 +14,15 @@ local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
 - [x] Methodology + Doc↔Sheet reconciliation notes.
 - [x] Multimodal/robotics rubrics (`SNp SNk SPa SPv`) deferred — out of the active
       set, kept in the library (`_DEFERRED_MULTIMODAL`).
-- [x] Tests green (full suite 143 + 11 agentic); private snapshot pushed.
+- [x] Tests green (full suite 143 + 11 agentic).
+- [x] **Agentic rubric re-key** — `PLp`/`PLe`/`PLs`/`MSc` each re-keyed on a single
+      driver with explicit routing; `MSe`→`PLs` re-filed; `ECc` removed. ~700 judge
+      annotations over 16 rounds on branch `rubrics/v2-improved`; labels in
+      `labs/rubric-qa/`, write-up in `docs/agentic-rubric-redesign.md`.
 
-## Active rubric set (8, text/tool-relevant)
-`PLp PLe MSe MSc ECc` (ours) · `MMe MMp MMs` (theirs). Inactive: `SNp SNk SPa SPv`.
+## Active rubric set (7, text/tool-relevant)
+`PLp PLe PLs MSc` (Paolo_Pablo) · `MMe MMp MMs` (Marko). Inactive: `SNp SNk SPa SPv`.
+`MSe` was renamed `PLs` and re-filed to the PL family; `ECc` was removed (propensity).
 
 ## Next steps
 - [x] **Pilot benchmark set + sample** — 4 benchmarks (SWE-bench Verified,
@@ -35,27 +41,33 @@ local branch `agentic`; private staging snapshot `PabloAMC/ADeLe-AIEvaluation`.
 
 ## Rubric quality backlog (see review)
 - [x] Keep **one polished definition per level**, ADeLe v1.0 style — done in the
-      `ours/` `.txt` files (the source's duplicate/competing paragraphs were dropped).
+      `Paolo_Pablo/` `.txt` files (the source's duplicate/competing paragraphs were dropped).
 - [x] Fix **typos/artefacts** — done in the conversions (still worth fixing upstream
       in the source Doc so regenerations stay clean).
 - [x] **L4≈L5 differentiation** (#5) — active rubrics already distinguish the
       L5-only factor; Dexterity examples de-duplicated.
 - [x] Preserve the dropped **factor tables + comments** for reference →
-      `data_v2/REFERENCE_ours.md` (droppable; not read by code).
+      `data_v2/REFERENCE_Paolo_Pablo.md` (droppable; not read by code).
 - [ ] Fix the `SPv` (Visual) **Level 0 has no examples** gap (`TODO(pablo)` in file).
-- [ ] Decide **`ECc` (self-control)**: capability vs propensity — its examples read
-      partly behavioural (propensity-like). Methodological call.
-- [ ] Tighten **boundary overlap** between `MSe` (environmental), `MSc` (communication)
-      and mind-modelling so annotators don't double-count (add contrastive examples).
+- [x] Decide **`ECc` (self-control)**: resolved — removed from the demand set as a
+      propensity, not an ability. See `docs/agentic-rubric-redesign.md` §5.
+- [x] Tighten **boundary overlap** between `PLs` (situational), `MSc` (communication)
+      and mind-modelling — done via single-driver re-keys, explicit routing sentences and
+      contrastive anchors; validated over 16 rounds. See `docs/agentic-rubric-redesign.md`.
 
 ## Open decisions (team / Pablo)
-- [ ] **Code reconciliation** Doc↔Sheet (e.g. our `MSe/MSc/ECc` = Sheet `MSs/MSp/EXb`).
-- [ ] **Memory taxonomy**: theirs adds **Semantic** + **Prospective** (no code yet) —
-      add codes? fold Prospective into `MMs`? treat Semantic as v1 `KN*`?
+- [ ] **Code reconciliation** Doc↔Sheet (historically our `MSe/MSc/ECc` = Sheet
+      `MSs/MSp/EXb`; `MSe` is now `PLs` and `ECc` is withdrawn, so the mapping needs
+      restating before it is used).
+- [ ] **Memory taxonomy**: Marko's set adds **Semantic** + **Prospective** (no code yet) —
+      add codes? fold Prospective into `MMs`? treat Semantic as v1 `KN*`? A proposed
+      decomposition and a minimal-pair test for Prospective are in
+      `docs/agentic-open-questions.md` §2b (prior: retention → `MMe`, cue-noticing → `PLe`,
+      so probably no new code needed).
 - [ ] **Second human annotator** to get a human–human ceiling (current single-annotator
       pass is rubric-debugging, not full validation).
-- [ ] **PR path**: push `agentic` to `origin` (CFI) directly when ready — the private
-      snapshot omits LFS battery data and has rewritten history (CFI LFS budget exhausted).
+- [ ] **PR path**: push to `origin` (CFI) directly when ready. Note the CFI LFS budget
+      is exhausted, so avoid re-pushing battery data.
 
 ## Deferred / later phases (gated)
 - [ ] Residual demand-to-go (rung 2) and per-transition demand (rung 3) + the typed
