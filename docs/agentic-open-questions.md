@@ -67,6 +67,13 @@ validity** — do the labels predict solver success better together than any sub
 
 ## 2. Two demands that no dimension currently owns
 
+> **Scope: no change to v1 is proposed, here or anywhere in this work.** Naming a dimension as
+> the owner of a demand is not the same as editing that dimension. PLp already names Volume (VO)
+> as the owner of execution length and `VO.txt` was never touched; the same applies to every v1
+> code referenced below. If one of these routings turned out not to be covered by the v1 text,
+> that would be a question for the v1 owners and explicitly outside this branch — it would not
+> be a reason to edit v1 from here.
+
 The team's standard for *removing* a dimension is predictive validity rather than a
 double-dissociation gate. The symmetric standard should govern *additions*: **a
 phenomenon earns a dimension only if labelling it improves prediction of solver success
@@ -103,7 +110,8 @@ default: route to metacognition, do not create a code.
 *Minimal pairs:* the same deliverable specified two ways — "write a 500-word summary
 covering points A, B and C" versus "write something useful about this document".
 
-*Owner:* whoever owns the MC block; not the agentic stream.
+*Owner:* whoever owns the MC block; not the agentic stream. Note this is the rarer case in agentic
+benchmarks — every task in the current pilot has a requester — so it can reasonably be left open.
 
 ### 2b. Prospective memory
 
@@ -114,7 +122,10 @@ and the taxonomy should follow that split rather than invent a third thing:
 - **retrospective component** — holding the content of the intention → memory dimensions
   (MMe), Marko's stream;
 - **prospective component** — noticing the cue while occupied with something else →
-  **PLe** (deciding what to advance and when) plus v1 **AS** (attention under load).
+  **PLe**, whose Level 3 already asks which open subtask to advance next.
+
+Both halves are covered by rubrics that already exist, so the expected outcome of the minimal-pair
+test is that MMe and PLe labels move and nothing needs writing at all.
 
 *Prior:* it decomposes; no new code needed. But the memory half is Marko's call, so the
 proposal should go to him with the pair data rather than being settled here.
