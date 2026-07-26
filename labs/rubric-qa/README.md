@@ -273,3 +273,37 @@ definition now names the success-signal reading explicitly ("the task's
 success signal, not... an interlocutor's acknowledgement"), resolving the
 conversational-feedback ambiguity by definition. Judges: haiku/sonnet/
 opus subagents only (never the orchestrating model).
+
+## Round 11: PLs (renamed from MSe) - first evaluation, separated prompt
+
+First round run with the judging protocol moved into the shared
+annotation prompt (task-not-solver + tie-break-lower stripped from rubric
+text). Battery: two deduction traps (Sudoku with printed grid, chess
+position - designed 0), usaco-0004 (fully specified statement, cap 1),
+ab-0011 (gather from sources, 1-2), tau-0007 (queryable systems, cap 2),
+and designed items at L3 (static segfault debugging), L4 (food-truck
+lunch rush, visibly changing), L5 (intermittent radio interference,
+unsignalled change). 3 judges x 3 seeds = 72 annotations.
+
+Results (pls_redesign_pilot_labels.csv):
+- alpha = 0.986 - the highest of any round. Designed-band compliance
+  71/72 (one sonnet seed gave the L5 item a 4).
+- Deduction traps: 27/27 at exactly 0, including USACO - judges quote
+  the Critically-clause and route the difficulty to Planning explicitly.
+  The trap PLe fell into in round 5 (and needed two patches to fix) was
+  designed in here from the start and held on first contact.
+- Every judge used all six levels; within-judge seed agreement 6-8/8.
+- Cross-rubric profiles now three-dimensional and divergent: chess
+  PLp3/PLe1/PLs0; usaco PLp3/PLe3/PLs0; tau PLp2/PLe1-2/PLs2; debug-type
+  tasks get their demand assigned to PLs instead of leaking into PLp/PLe.
+
+Red-team concerns pre-registered for this round and their outcomes:
+L2/L3 gate (gathered vs inferred) - ab-0011 split 1/2, never 3: held.
+L4/L5 gate (observable-when-looked-for vs unsignalled) - one off-by-one
+seed: held. VO trap (tau many-lookups) - all 2s: held. MS routing was
+not exercised by this battery (no social item) - open for the MSc round.
+
+Verdict: the accumulated design pattern (single driver, verb spine,
+categorical gates, designed-in traps, protocol in the prompt) produced a
+rubric that passed its adversarial battery on the first attempt, with no
+patch round needed. PLs is frozen alongside PLp and PLe.
