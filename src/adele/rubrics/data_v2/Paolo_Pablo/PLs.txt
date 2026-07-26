@@ -7,13 +7,13 @@ Level 0: None. This demand level is characterized by the task-relevant state bei
 Examples:
 * Solve a Sudoku from a printed grid. (The whole state is given; filling the grid is deduction and planning.)
 * Find the winning plan in a chess position shown on the board. (Nothing is hidden; the demand is Planning.)
-* Answer a fully specified word problem.
+* Answer a word problem that states every quantity it needs: two trains leave stations 300 km apart at given speeds, and you must say when they meet.
 
 Level 1: Very low. This demand level is characterized by the task-relevant state being read off: one or a few facts must be established, and each is directly observable — a single look, query or measurement returns it.
 Examples:
 * Check a museum's opening hours before planning a visit.
 * Read the current contents of a file before editing it.
-* Measure a room before ordering a carpet.
+* Measure the floor of a room with a tape before ordering a carpet for it.
 
 Level 2: Low. This demand level is characterized by the task-relevant state being gathered: many facts must be assembled from multiple places, but each is directly observable once looked at, and the world stays put — once established, a fact stays true for the rest of the task. Critically, a task remains at this level however many observations it takes, so long as each is direct.
 Examples:
