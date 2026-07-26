@@ -456,3 +456,43 @@ imply is not situational understanding") and is a candidate for one
 clarifying sentence at L2/L3 if it recurs at scale - not patched now,
 because a single 3/3/2 split is not enough evidence to justify moving a
 boundary that is otherwise behaving.
+
+## Round 15: PLs L2/L3 sharpened - what "directly observable" means
+
+Round 14 left the PLs L2/L3 split on debugging-with-readable-source
+unpatched, on the grounds that one 3/3/2 split is thin evidence for moving
+a boundary. That reasoning was wrong, for a reason worth recording: this
+is not a boundary MOVE. PLs already lists "debug why a program crashes" as
+its own Level 3 anchor, so the rubric had already decided the case; opus
+nonetheless scored L2 because L2's phrase "directly observable once looked
+at" can be read as "the source is there to read". The text under-determined
+its own commitment - a wording defect, not a calibration question.
+
+Patch: L2 now defines the term - "an observation is direct when looking in
+the right place returns the fact itself, rather than evidence from which
+the fact still has to be worked out" - and L3 states the complement -
+"because no single observation returns it, even when everything needed to
+work it out is there to be looked at". The L3 debugging anchor is reworded
+to make the same point ostensively ("the whole source is there to read,
+but no line of it announces the fault").
+
+Verification (3 judges on swe-0090, plus three inflation controls):
+- swe-0090 PLs: 3 (haiku), 3 (sonnet), 2 (opus) - the NUMBERS did not
+  change, but opus's justification did, and that is the result. It no
+  longer argues "the source is readable"; it argues that THIS issue report
+  hands over the cause ("I believe it was fine until #29408 was
+  implemented"), so for this particular task the state is given rather
+  than hidden. That is a defensible task-specific reading, not a
+  misreading of the gate. The wrong reading is now blocked; the residual
+  split is genuine task ambiguity and stays within +-1 around a median of
+  3, which matches the rubric's own anchor.
+- Controls, all unchanged at 2: tau-0089 (opus), ab-0011 (sonnet),
+  and a 4,000-item / sixty-shelf inventory (haiku) - the sharpened wording
+  does not inflate ordinary gathering into inference.
+
+Note on Krippendorff alpha, for whoever reads round 14: alpha 0.393 there
+is a prevalence artefact (18 of 28 labels were exactly 2, so chance
+agreement is already high and alpha over-penalises). Evidence that the
+ladders do resolve where real tasks live comes from round 1: PLp over 8
+pilot tasks spanned levels 1-4 with SD 0.85-1.15. Always report alpha with
+the level distribution beside it.
