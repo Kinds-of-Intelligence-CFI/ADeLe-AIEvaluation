@@ -139,3 +139,29 @@ dimensions; (2) replace the L4 derivation anchor (internal work) with an
 environmental one — the ledger reconciliation item itself is ideal; the
 codebase and contract anchors already qualify. Not applied yet - this
 changes what the dimension measures, so it needs sign-off.
+
+## Round 6: plan-step action definition - verification of the failed cells
+
+Commit "PLe: define an action as the carrying-out of one plan step" adds the
+intentional action definition (separately instructable + separately
+wrong-and-redoable; tokens fail both tests), swaps the L4 derivation anchor
+for the validated ledger item, and adds the chess contrast anchor at L1.
+Re-run of the two failed cells, same protocol:
+
+- chess-trap (designed <=1): was 4,3,4 / 4,4,4 / 4,3,4 -> now 1,1,1 / 0,1,1 /
+  0,1,0. All 9 seeds within the cap. Judges now route the search to Planning
+  explicitly.
+- usaco-0004: was 4,4,4 / 3,1,0 (unstable) / 3,3,3 -> now 3,3,0 / 1,1,1 /
+  1,1,1. Median 3 -> 1. sonnet's seed instability collapsed. Reading: the
+  task-as-posed delivers one program; iterative local testing is solver
+  strategy, not task structure, so low PLe follows from the task-not-solver
+  principle. Flagged as a construct call worth team awareness: CP problems
+  are now high-PLp / low-PLe by design.
+
+PLp/PLe separation, both directions, on this battery (medians):
+  usaco-0004  PLp 3 / PLe 1     chess       PLp ~3 / PLe 1
+  usaco-0011  PLp 4 / PLe 3     tau-0007    PLp 2 / PLe 2
+  ple-ledger  PLe 4 (PLp low: known procedure)
+  ple-migration PLe 5 (PLp low: known procedure)
+The old rubric pair could not produce a single high-low cell in either
+direction (HAL separation 0.00); the re-keyed pair produces them in both.
