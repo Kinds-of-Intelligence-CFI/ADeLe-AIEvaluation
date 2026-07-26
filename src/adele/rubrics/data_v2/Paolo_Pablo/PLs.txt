@@ -15,15 +15,15 @@ Examples:
 * Read the current contents of a file before editing it.
 * Measure the floor of a room with a tape before ordering a carpet for it.
 
-Level 2: Low. This demand level is characterized by the task-relevant state being gathered: many facts must be assembled from multiple places, but each is directly observable once looked at, and the world stays put — once established, a fact stays true for the rest of the task. Critically, a task remains at this level however many observations it takes, so long as each is direct.
+Level 2: Low. This demand level is characterized by the task-relevant state being gathered: many facts must be assembled from multiple places, but each is directly observable once looked at, and the world stays put — once established, a fact stays true for the rest of the task. Critically, a task remains at this level however many observations it takes, so long as each is direct: an observation is direct when looking in the right place returns the fact itself, rather than evidence from which the fact still has to be worked out.
 Examples:
 * Explore an unfamiliar codebase to establish where a behaviour is implemented, each file being directly readable.
 * Look up a customer's account, orders and reservations across several systems before making a change.
 * Take a complete inventory of a storeroom, however many shelves it holds — each item is simply there to be counted.
 
-Level 3: Intermediate. This demand level is characterized by the task-relevant state being inferred: some of what matters is not directly observable and must be established from indirect evidence — probing, testing, comparing symptoms against hypotheses about the hidden state. The situation itself is stable while this is done. Critically, the difficulty is hiddenness, not change: conclusions, once established, do not go stale.
+Level 3: Intermediate. This demand level is characterized by the task-relevant state being inferred: some of what matters is not directly observable and must be established from indirect evidence — probing, testing, comparing symptoms against hypotheses about the hidden state — because no single observation returns it, even when everything needed to work it out is there to be looked at. The situation itself is stable while this is done. Critically, the difficulty is hiddenness, not change: conclusions, once established, do not go stale.
 Examples:
-* Debug why a program crashes: the fault is never seen directly, only its symptoms, and experiments must be devised to expose it.
+* Debug why a program crashes: the whole source is there to read, but no line of it announces the fault — only its symptoms are visible, and experiments must be devised to expose it.
 * Locate a fault in an electrical circuit using a multimeter.
 * Work out why a houseplant is dying from its appearance and conditions.
 
