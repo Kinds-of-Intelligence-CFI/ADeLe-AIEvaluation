@@ -96,3 +96,46 @@ Verdict: on every metric except trap compliance (both fine), the re-keyed
 rubric dominates the old one on this battery. Remaining known issue is the
 haiku/sonnet L3/L4 offset under the new rubric, mitigated by the 3-judge
 median (see Round 3).
+
+## Round 5: PLe re-key pilot (63 annotations, new PLe rubric)
+
+Battery: usaco-0004/0011 and tau-0007 (separation profile vs their PLp
+labels), ple-wizard (designed L1: per-step-validated setup wizard),
+ple-ledger (designed L4: year-end reconciliation, silent propagation),
+ple-migration (designed L5: no-rollback live migration), chess-trap
+(designed PLe<=1: find a winning chess line and write it down — plan-hard,
+execution-easy). ab-0011 was built but not run (wizard covers the floor).
+
+Results (ple_v2redesign_pilot_labels.csv):
+- Designed ladder: PERFECT. wizard 9/9 at L1, ledger 9/9 at L4, migration
+  9/9 at L5; alpha = 1.0 on those three. Where the feedback/propagation/
+  irreversibility structure is explicit in the task, all three judges read
+  the gates identically.
+- Overall alpha 0.797; every judge used 5-6 levels, SD 1.25-1.58.
+- Separation vs PLp so far: usaco-0011 PLp 4 / PLe 3; tau PLp 2 / PLe 2;
+  usaco-0004 PLp 3 / PLe 3 (no separation).
+
+THE ROUND'S REAL FINDING - the chess trap failed, unanimously (4,3,4 /
+4,4,4 / 4,3,4 against a designed cap of 1), and the judges were being
+FAITHFUL to the rubric as written: they cited the Level 4 "long
+mathematical derivation by hand" anchor and argued that calculating chess
+variations is a chain of dependent internal steps whose early errors
+silently invalidate the rest. They are right that it is; the rubric never
+says whether "actions" include internal reasoning steps. If they do, every
+hard reasoning task scores high on BOTH PLp (finding the plan) and PLe
+(carrying out the reasoning) and the collinearity we are trying to remove
+comes back through the side door — visible already in haiku's 4,4,4 on
+usaco-0004 ("algorithm design errors propagate") and sonnet's 3,1,0 seed
+instability there (each seed picked a different notion of what the
+"actions" of a competitive-programming task are).
+
+Construct decision needed (Pablo/team): does PLe measure ENVIRONMENTAL
+execution (steps that read/write the world outside the agent) or also
+COGNITIVE execution (carrying out a long internal derivation)? The
+PLp/PLe-separation goal argues for environmental-only. Proposed fix if so:
+(1) a preamble clause defining actions as interactions with the
+environment, with internal reasoning routed to the reasoning/planning
+dimensions; (2) replace the L4 derivation anchor (internal work) with an
+environmental one — the ledger reconciliation item itself is ideal; the
+codebase and contract anchors already qualify. Not applied yet - this
+changes what the dimension measures, so it needs sign-off.
