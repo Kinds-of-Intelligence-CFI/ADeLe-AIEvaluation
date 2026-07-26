@@ -1,0 +1,40 @@
+# Situational and environmental understanding
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-26 single-driver redesign (renamed from MSe)
+
+This criterion assesses the level of cognitive demands associated with situational and environmental understanding: establishing and maintaining an accurate picture of the task-relevant state of the world. It concerns how the facts of the situation come to be known, not what is done with them: deducing the consequences of known facts is assessed by reasoning and Planning (PLp), monitoring one's own work by Action Control and Execution (PLe) — here the object is the world, there the agent's own progress — retaining what has been observed by the memory dimensions, knowledge that could be retrieved outside the task by the knowledge dimensions, and hidden state consisting of another agent's beliefs or intentions by Mind Modelling (MS): this dimension owns the non-mental environment. Demand rises with how hidden the state is and whether it changes, not with how much of it there is.
+
+Level 0: None. This demand level is characterized by the task-relevant state being given: everything the task depends on is stated or shown at the outset, so nothing about the situation needs to be observed or established. Critically, this holds however much reasoning the given state supports — deducing what known facts imply is not situational understanding.
+Examples:
+* Solve a Sudoku from a printed grid. (The whole state is given; filling the grid is deduction and planning.)
+* Find the winning plan in a chess position shown on the board. (Nothing is hidden; the demand is Planning.)
+* Answer a fully specified word problem.
+
+Level 1: Very low. This demand level is characterized by the task-relevant state being read off: one or a few facts must be established, and each is directly observable — a single look, query or measurement returns it.
+Examples:
+* Check a museum's opening hours before planning a visit.
+* Read the current contents of a file before editing it.
+* Measure a room before ordering a carpet.
+
+Level 2: Low. This demand level is characterized by the task-relevant state being gathered: many facts must be assembled from multiple places, but each is directly observable once looked at, and the world stays put — once established, a fact stays true for the rest of the task. Critically, a task remains at this level however many observations it takes, so long as each is direct.
+Examples:
+* Explore an unfamiliar codebase to establish where a behaviour is implemented, each file being directly readable.
+* Look up a customer's account, orders and reservations across several systems before making a change.
+* Take a complete inventory of a storeroom.
+
+Level 3: Intermediate. This demand level is characterized by the task-relevant state being inferred: some of what matters is not directly observable and must be established from indirect evidence — probing, testing, comparing symptoms against hypotheses about the hidden state. The situation itself is stable while this is done. Critically, the difficulty is hiddenness, not change: conclusions, once established, do not go stale.
+Examples:
+* Debug why a program crashes: the fault is never seen directly, only its symptoms, and experiments must be devised to expose it.
+* Locate a fault in an electrical circuit using a multimeter.
+* Work out why a houseplant is dying from its appearance and conditions.
+
+Level 4: High. This demand level is characterized by the task-relevant state being tracked: the situation changes while the task is under way, so observations go stale and the picture must be maintained — deciding what to re-check and when — but each change is observable when looked for.
+Examples:
+* Drive through dense city traffic, where the situation changes continuously but every change is visible as it happens. (Other drivers' visible motion is tracked state; reasoning about their intentions is Mind Modelling.)
+* Monitor a staged software rollout across services, where dashboards show each service's changing state.
+* Cook several dishes at once, each evolving visibly toward done or ruined.
+
+Level 5: Very high. This demand level is characterized by the task-relevant state being anticipated: the situation changes in ways that are not signalled and cannot be observed as they happen, so the picture must be projected forward from a model of how the state evolves, and re-anchored against reality whenever observation is possible.
+Examples:
+* Diagnose an intermittent fault that appears and disappears under conditions that cannot be observed directly, such as a race condition.
+* Navigate at sea by dead reckoning in fog, where position evolves unobserved under wind and current.
+* Fight a building fire that spreads unseen behind walls and ceilings, revealing itself only intermittently.
