@@ -404,3 +404,55 @@ that they dislike the one proposed." Post-fix: tau-0007 2 (haiku and
 sonnet; was 3), vet 3 with haiku quoting the new clause verbatim
 ("distress is not resistance"), landlord still 4 - the clause does not
 over-correct genuine resistance.
+
+## Round 14: cross-dimension validation on real pilot tasks, against
+## PRE-REGISTERED expectations
+
+Corpus: whole tasks from pilot/tasks.csv, one per benchmark family
+(swe-0090 SWE-bench, tau-0089 tau-bench retail, ab-0011 AssistantBench),
+each annotated on all four re-keyed dimensions by haiku, sonnet and opus,
+using the current rubric texts and the shared prompt. HAL trace
+checkpoints were deliberately NOT used: round 9 showed checkpoint-relative
+framing ("demand still required from this point") adds a disagreement
+source orthogonal to rubric quality. Judges were required to write
+numbered reasoning steps BEFORE stating any score.
+
+Expected labels for all 12 task x dimension cells were written to
+prereg_expected.json BEFORE any judge ran, so "do the models annotate as
+we would" is measured rather than rationalised.
+
+Result vs pre-registration: 9/12 EXACT, 12/12 within +-1.
+Inter-judge: 62% of judge pairs exact, 92% within +-1, 3/8 full cells
+unanimous, one cell with a 2-level spread.
+
+Krippendorff alpha on these cells is 0.393 - far below rounds 11-13
+(0.86-0.99) - and this is a RANGE-RESTRICTION artefact, not a regression:
+real pilot tasks all land between 0 and 3 (SD 0.67, 18 of 28 labels are
+exactly 2), so expected disagreement is tiny and alpha punishes any
+deviation. The designed batteries spanned 0-5 and alpha was high there.
+Two lessons: (i) report alpha only alongside the level distribution;
+(ii) THE BATTERY IS THE PROBLEM, as the original audit suspected - these
+benchmark families genuinely do not exercise the top of any scale, so
+high-demand validation needs designed items or harder benchmarks.
+
+Judge tendencies: haiku sits +0.25 above the cell median on average,
+sonnet and opus -0.12 - haiku's mild inflation is consistent with earlier
+rounds and is absorbed by the 3-judge median.
+
+Cases where the judges were arguably RIGHT and the pre-registration wrong:
+tau-0089 PLe - sonnet and opus scored 1, noting every tau-bench tool call
+returns an immediate success/error signal, so the environment checks each
+step; the pre-registered 2 assumed checkpoint-level feedback. Their
+reading follows the rubric more exactly than mine did.
+
+The one recurring rubric-level ambiguity: PLs L2/L3 on debugging tasks
+where the source IS readable. swe-0090 split 3/3/2 - haiku and sonnet
+treat "why does the check reject a working lookup" as hidden state to be
+inferred from symptoms; opus treats the source as directly readable, so
+gathered (L2), with the mechanism following by deduction. Both readings
+are defensible under the current text. This is the same boundary that the
+PLs L0 clause addresses for fully-given state ("deducing what known facts
+imply is not situational understanding") and is a candidate for one
+clarifying sentence at L2/L3 if it recurs at scale - not patched now,
+because a single 3/3/2 split is not enough evidence to justify moving a
+boundary that is otherwise behaving.
