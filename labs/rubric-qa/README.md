@@ -211,3 +211,53 @@ PLe's); goal open-endedness remains unowned in the v2 agentic block
 feedback L1/L2 off-by-one (tie-break + median absorb it). Verified clean:
 environment change mid-execution, loosely-specified plans, no VO leak in
 the construction clause.
+
+## Round 9: HAL trace re-annotation (12 cp50 frames, old vs new, 72+72 labels)
+
+Subsample: the mid-trajectory (cp50) checkpoint of every HAL trajectory,
+re-annotated for PLp and PLe with the frozen rubrics, 3 judges, 1 seed
+(matching the old label design). Paired stats on the same 12 frames:
+
+| judge  | arm | separation | rho   | mean(PLe-PLp) | SD(diff) |
+|--------|-----|-----------|-------|---------------|----------|
+| haiku  | old | 0.00      | +0.68 | +0.92         | 0.49     |
+| sonnet | old | 0.00      | +0.82 | +0.92         | 0.28     |
+| opus   | old | 0.00      | +0.84 | +1.08         | 0.28     |
+| haiku  | new | 0.00      | -0.03 | +1.25         | 1.01     |
+| sonnet | new | 0.08      | +0.75 | +0.17         | 0.69     |
+| opus   | new | 0.00      | +0.71 | +0.42         | 0.64     |
+
+Reading, honestly:
+1. The OLD failure signature replicates exactly on the subsample:
+   separation 0.00 with a near-constant +0.9..+1.1 offset and SD(diff)
+   ~0.3 - two ladders keyed on the same driver, different intercepts.
+2. The NEW rubrics ELIMINATE the constant-offset signature for sonnet and
+   opus: mean diff drops to +0.2..+0.4 and SD(diff) more than doubles -
+   the PLp/PLe difference is now task-dependent, which is what two
+   genuinely distinct, correlated demands look like. rho ~0.7 with
+   variable diff is not collinearity; it is real co-variation.
+3. Separation stays ~0 on THIS battery - and that is the battery, not the
+   rubric: all 12 frames are SWE-bench bug-fix checkpoints, a family in
+   which plan-finding and execution demand genuinely rise together. The
+   original audit flagged exactly this ("one benchmark family, battery
+   sampling not excluded"). On the heterogeneous pilot battery (rounds
+   5-7) the same rubrics separate in both directions. Operational
+   conclusion: the separation test needs a mixed-family trace set - the
+   tau traces in labs/hal-traces/tau are the natural complement.
+4. haiku-specific failure on traces: its new-rubric PLe pins at 4 (11/12
+   frames) - it reads every mid-repair codebase frame as the L4
+   "extend a large codebase without a test suite" anchor, while sonnet/
+   opus credit the repo's test suite as checkpoint feedback and land at
+   2-3. Frame-level ambiguity (does the agent have test access?) that the
+   frame text does not settle; the 3-judge median absorbs it (median PLe
+   3 on most frames). Candidate fix if it persists: state in the L4
+   anchor that an available test suite makes errors checkpointed, not
+   propagating.
+5. Checkpoint-relative annotation ("demand still required from this
+   point") adds a second noise source the pilot battery did not have:
+   judges disagree about how much work REMAINS (e.g. whether the patch in
+   the trace excerpt is already complete), independent of the rubric.
+
+New-rubric label deltas move in sensible directions per frame: nearly-done
+frames drop toward 0-1, mid-investigation frames rise to 3-4, and PLp/PLe
+now move independently on 5 of 12 frames (old: 0 of 12).
