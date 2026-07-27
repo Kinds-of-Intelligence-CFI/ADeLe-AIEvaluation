@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:638303b753018e72fa87b383732f2ef3dd8a96077dbc9e0f47eb48083b10b6f1
-size 1351
+custom_id,level
+opus41:django__django-11999#cp25,3
+opus41:django__django-11999#cp50,2
+opus41:django__django-11999#cp75,2
+opus41:django__django-11951#cp25,3
+opus41:django__django-11951#cp50,2
+opus41:django__django-11951#cp75,2
+opus41:django__django-12193#cp25,3
+opus41:django__django-12193#cp50,3
+opus41:django__django-12193#cp75,3
+opus41:sphinx-doc__sphinx-9367#cp25,3
+opus41:sphinx-doc__sphinx-9367#cp50,2
+opus41:sphinx-doc__sphinx-9367#cp75,2
+opus41:sphinx-doc__sphinx-8056#cp25,3
+opus41:sphinx-doc__sphinx-8056#cp50,2
+opus41:sphinx-doc__sphinx-8056#cp75,2
+opus41:sphinx-doc__sphinx-7748#cp25,4
+opus41:sphinx-doc__sphinx-7748#cp50,3
+opus41:sphinx-doc__sphinx-7748#cp75,2
+opus41:sphinx-doc__sphinx-10673#cp25,3
+opus41:sphinx-doc__sphinx-10673#cp50,3
+opus41:sphinx-doc__sphinx-10673#cp75,3
+opus41:sphinx-doc__sphinx-8551#cp25,3
+opus41:sphinx-doc__sphinx-8551#cp50,3
+opus41:sphinx-doc__sphinx-8551#cp75,3
+o3mini:django__django-11999#cp25,3
+o3mini:django__django-11999#cp50,3
+o3mini:django__django-11999#cp75,3
+o3mini:sphinx-doc__sphinx-9367#cp25,2
+o3mini:sphinx-doc__sphinx-9367#cp50,3
+o3mini:sphinx-doc__sphinx-9367#cp75,3
+o3mini:sphinx-doc__sphinx-8056#cp25,2
+o3mini:sphinx-doc__sphinx-8056#cp50,3
+o3mini:sphinx-doc__sphinx-8056#cp75,3
+o3mini:sphinx-doc__sphinx-7748#cp25,2
+o3mini:sphinx-doc__sphinx-7748#cp50,3
+o3mini:sphinx-doc__sphinx-7748#cp75,3

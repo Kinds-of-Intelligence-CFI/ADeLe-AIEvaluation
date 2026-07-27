@@ -1,15 +1,15 @@
-*.csv filter=lfs diff=lfs merge=lfs -text
+# Git LFS is scoped to the published v1.0 battery, and nothing else.
+#
+# Those 16 files are ~1.1 GB and are the paper's released data, so they belong in
+# LFS. Everything else tracked as CSV in this repo is something we generate --
+# label sets, trace frames, worksheets, pilot samples -- and comes to 1.2 MB in
+# total. Keeping that in LFS bought nothing and cost a great deal: on any machine
+# without git-lfs installed the clean filter never runs, so those files sit in the
+# working tree as real content while HEAD holds a pointer, and `git status` shows
+# 66 files permanently "modified". Plain text also means label changes diff in
+# review, which is the whole point of committing them.
+ADeLe_battery_data/**/*.csv filter=lfs diff=lfs merge=lfs -text
 
-# The tiny synthetic test fixture is a plain CSV (not LFS) so the test suite
-# runs on a fresh clone without needing Git LFS / an LFS budget.
-tests/fixtures/mini_battery.csv !filter !diff !merge text
-
-# The rubric-QA label files are small and human-readable; keeping them plain
-# means they diff in review and cost no LFS budget. The second pattern covers
-# subdirectories (r30/ and any later round folder) - a single-level glob does not,
-# and without it those files are LFS-tracked by attribute while being committed as
-# raw content on any machine without git-lfs installed, which is how the working
-# tree ends up showing dozens of "modified" label files that are really just
-# content-where-HEAD-holds-a-pointer.
-labs/rubric-qa/*.csv !filter !diff !merge text
-labs/rubric-qa/**/*.csv !filter !diff !merge text
+# The tiny synthetic test fixture is a plain CSV so the test suite runs on a
+# fresh clone without needing Git LFS / an LFS budget.
+tests/fixtures/mini_battery.csv text

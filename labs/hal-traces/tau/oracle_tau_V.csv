@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:019d566b7ca6e44ee6568a754cbbf3420bc2b4b53cd0183e63ac80e8c8ae487d
-size 913
+custom_id,V
+opus41tc:task36#cp25,1.0
+opus41tc:task36#cp50,1.0
+opus41tc:task36#cp75,1.0
+opus41tc:task37#cp25,1.0
+opus41tc:task37#cp50,1.0
+opus41tc:task37#cp75,1.0
+opus41tc:task30#cp25,0.0
+opus41tc:task30#cp50,0.0
+opus41tc:task30#cp75,0.5
+opus41tc:task28#cp25,0.0
+opus41tc:task28#cp50,0.0
+opus41tc:task28#cp75,0.0
+opus41tc:task46#cp25,0.0
+opus41tc:task46#cp50,0.0
+opus41tc:task46#cp75,0.0
+opus41tc:task45#cp25,0.0
+opus41tc:task45#cp50,0.0
+opus41tc:task45#cp75,0.0
+gemflash:task36#cp25,1.0
+gemflash:task36#cp50,1.0
+gemflash:task36#cp75,1.0
+gemflash:task37#cp25,1.0
+gemflash:task37#cp50,1.0
+gemflash:task37#cp75,1.0
+gemflash:task30#cp25,0.0
+gemflash:task30#cp50,0.0
+gemflash:task30#cp75,0.0
+gemflash:task28#cp25,0.0
+gemflash:task28#cp50,0.25
+gemflash:task28#cp75,0.6
+gemflash:task46#cp25,0.0
+gemflash:task46#cp50,0.0
+gemflash:task46#cp75,0.0
+gemflash:task45#cp25,0.0
+gemflash:task45#cp50,0.0
+gemflash:task45#cp75,0.0

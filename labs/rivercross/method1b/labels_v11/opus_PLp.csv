@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d9368d052816c581589a224d17792bd1baac4ee415c109d4f96436c8e6be6df
-size 4139
+custom_id,level,reason
+chain-3-boat-1#s2,2,"boat-cap1 multi-crossing shuttle; must avoid stranding forbidden pair, look-ahead needed"
+chain-3-boat-2#s1,1,"two safe crossings; remaining right items non-adjacent, almost any move succeeds"
+chain-3-boat-3#s0,0,single forced crossing carries the only stranded item; success guaranteed
+chain-3-boat-4#s0,0,single forced crossing carries the only stranded item; success guaranteed
+chain-4-boat-2#s1,1,"two crossings; left items carried together, right strand safe, minimal search"
+chain-4-boat-3#s1,1,"two crossings; right strand non-adjacent, carry both, little search"
+chain-4-boat-4#s0,0,"single forced crossing carries both stranded items; all present, guaranteed"
+chain-5-boat-2#s2,2,empty return strands forbidden 2-3; corrective shuttle and look-ahead required
+chain-5-boat-3#s1,1,"two crossings; right strand {1,3,5} non-adjacent, carry both safely"
+chain-5-boat-4#s1,1,"two crossings; right strand non-adjacent, carry both, little search"
+chain-6-boat-3#s1,1,"two crossings; right {2,4,6} non-adjacent, carry all three safely"
+chain-6-boat-4#s1,1,"two crossings; right strand non-adjacent, carry all, minimal search"
+star-3-boat-1#s2,2,"cap1 shuttle; center item1 strands with others, look-ahead and backtracking"
+star-3-boat-2#s1,1,"two crossings; right items not center-conflicting, fetch item1 safely"
+star-3-boat-3#s0,0,"single forced crossing carries center item; all present, guaranteed"
+star-3-boat-4#s0,0,"single forced crossing carries center item; all present, guaranteed"
+star-4-boat-2#s2,2,"center item1 must move last; wrong first move strands it, look-ahead"
+star-4-boat-3#s1,1,"two crossings; right strand only center-pairs, fetch item1 safely"
+star-4-boat-4#s0,0,"single forced crossing carries center item1; all present, guaranteed"
+star-5-boat-2#s2,2,"empty return strands center pairs; multi-crossing corrective plan, look-ahead"
+star-5-boat-3#s1,1,"two crossings; right strand only center-conflicts, fetch item1 safely"
+star-5-boat-4#s1,1,"two crossings; right strand non-conflicting, fetch item1, minimal search"
+star-6-boat-2#s2,2,"center conflicts with all; bring item1 last, wrong moves fail"
+star-6-boat-3#s2,2,"center conflicts with all; sequence non-center items first, look-ahead needed"
+star-6-boat-4#s1,1,"two crossings; right strand only center-pairs, fetch item1 safely"
+cycle-3-boat-2#s1,2,"all pairs forbidden; single-item moves strand, must carry both, look-ahead"
+cycle-3-boat-3#s0,0,"single forced crossing carries both items; all present, guaranteed"
+cycle-3-boat-4#s0,0,"single forced crossing carries both items; all present, guaranteed"
+cycle-4-boat-2#s1,1,"two crossings; right {2,4} non-adjacent diagonal, carry both safely"
+cycle-4-boat-3#s1,1,"two crossings; right strand non-adjacent, carry both, little search"
+cycle-4-boat-4#s0,0,"single forced crossing carries both stranded items; all present, guaranteed"
+cycle-5-boat-3#s1,2,empty return strands forbidden 1-5; corrective shuttle and look-ahead required
+cycle-5-boat-4#s1,2,empty return strands forbidden 1-5; corrective move and look-ahead needed
+cycle-6-boat-3#s1,1,"two crossings; right {2,4,6} non-adjacent, carry all three safely"
+cycle-6-boat-4#s1,1,"two crossings; right strand non-adjacent, carry all, minimal search"
+complete-3-boat-2#s1,2,"all pairs forbidden; naive moves strand, carry both, look-ahead needed"
+complete-3-boat-3#s0,0,"single forced crossing carries both items; all present, guaranteed"
+complete-3-boat-4#s0,0,"single forced crossing carries both items; all present, guaranteed"
+complete-4-boat-3#s1,2,"all pairs forbidden; must carry max each trip, naive moves fail"
+complete-4-boat-4#s0,0,"single forced crossing carries all three items; all present, guaranteed"
+complete-5-boat-4#s1,2,"all pairs forbidden; maximal capacity needed, almost all naive sequences fail"
+missionaries-cannibals-3#s2,2,"several crossings with outnumbering constraint; look-ahead and backtracking, bounded horizon"
+missionaries-cannibals-4#s2,2,"larger state space, outnumbering dead-ends; look-ahead and backtracking, horizon bounded"
