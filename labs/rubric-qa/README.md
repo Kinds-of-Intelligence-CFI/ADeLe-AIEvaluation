@@ -720,3 +720,36 @@ Remaining known weaknesses after this round: the weak-judge gap on PLp (haiku 0.
 sonnet 0.857); no human anchor; separation on real traces unproven pending a mixed-family
 battery; MSc has no external ground truth of any kind; and the rivercross-1b-refactor
 fork is unreviewed.
+
+## Round 21: language naturalised to v1 register — no degradation, small gain
+
+Two constructions were more stilted than v1 and were changed:
+
+1. **"This criterion assesses …" → "This rubric assesses …"**. A survey of all 19 v1
+   rubrics shows "rubric" is the house style (15 of 19: *This rubric assesses / evaluates /
+   defines*, *The following rubric is designed to*); only AS, MS and QLq say "criterion". We
+   had picked the minority form.
+2. **"This demand level is characterized by the plan being assembled: …" → "Tasks at this
+   level require the plan to be assembled: …"**, and for Level 0, "The task requires no
+   planning: the plan is given — …". No v1 rubric talks about *the demand level*; they talk
+   about *the task* ("Tasks at this level require …", "The task involves …", "Performance in
+   this task is improved by …"). The verb spine is preserved and now sits immediately after
+   "require", where it is at least as prominent as before.
+
+Regression, run on the naturalised text:
+
+| check | before | after |
+|---|---|---|
+| PLp vs solver oracle (sonnet, 43 states) | +0.857 | **+0.894** |
+| PLp label agreement before/after | — | 41/43 identical |
+| PLp Level 0 partition | exact (all true distance 1) | still exact |
+| PLe chess trap (plan-hard, execution-trivial) | ≤1 | 1 ✓ |
+| PLe ledger (silent propagation) | 4 | 4 ✓ |
+| PLs stable hidden fault | 3 | 3 ✓ |
+| MSc opinion column (the CEe trap) | 1 | 1 ✓ |
+| MSc grave-but-trusting diagnosis (the stakes trap) | 3 | 3 ✓ |
+
+No degradation anywhere; the oracle correlation improved from 0.857 to 0.894, which now
+exceeds rivercross's own v11 with the same judge (0.855) and matches their opus (0.894). The
+gain is within noise for n=43 and is not claimed as an effect — what matters is that
+naturalising the register cost nothing.
