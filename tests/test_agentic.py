@@ -19,7 +19,9 @@ from adele.rubrics.catalog import RubricsCatalog, validate_rubric
 
 # The active set is the 8 text/tool-relevant agentic dimensions; the 4
 # sensory/motor rubrics live in the library but are deferred (see _DEFERRED_MULTIMODAL).
-EXPECTED_CODES = {"PLp", "PLe", "MSe", "MSc", "ECc", "MMe", "MMp", "MMs"}
+# MSe was renamed PLs; ECc was dropped (propensity, not ability); MSm is v1's MS carried
+# into v2 under the code the four agentic rubrics route to.
+EXPECTED_CODES = {"PLp", "PLe", "PLs", "MSm", "MSc", "MMe", "MMp", "MMs"}
 
 
 # ---------------------------------------------------------------------------
@@ -54,11 +56,21 @@ def test_manifest_has_no_drift():
     assert verify_manifest() == []
 
 
+def test_MSm_text_is_v1_MS_unchanged():
+    """MSm renames the code, not the rubric. The text the judge sees must be
+    byte-identical to v1's MS — only the stripped '#!' metadata line differs."""
+    v1 = RubricsCatalog(str(DATA_V2_DIR.parent / "data_v1"))["MS"]
+    v2 = load_active_catalog()["MSm"]
+    assert v2.content == v1.content
+    assert v2.full_name == v1.full_name
+
+
 def test_manifest_sources_split_memory_from_Marko():
     by_code = {e.code: e for e in read_manifest()}
     assert by_code["PLp"].source == "Paolo_Pablo"
     assert by_code["MMe"].source == "Marko"
-    assert {e.source for e in read_manifest()} == {"Paolo_Pablo", "Marko"}
+    assert by_code["MSm"].source == "v1"
+    assert {e.source for e in read_manifest()} == {"Paolo_Pablo", "Marko", "v1"}
 
 
 def test_from_paths_composes_across_folders():
