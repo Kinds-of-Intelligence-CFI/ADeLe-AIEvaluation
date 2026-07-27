@@ -24,7 +24,7 @@ from typing import Optional
 
 import pandas as pd
 
-from adele.constants import DEMAND_ORDER
+from adele.constants import DEMAND_ORDER, LEGACY_DEMAND_ALIASES
 
 logger = logging.getLogger(__name__)
 
@@ -83,6 +83,9 @@ def load_battery(
 
     # Map to the toolkit's uniform schema (prompt/custom_id/target).
     df = df.rename(columns={"instance_id": "custom_id", "groundtruth": "target"})
+    # The released battery predates the MS -> MSm rename; map it on load so the
+    # published CSV keeps working untouched. See adele.constants.LEGACY_DEMAND_ALIASES.
+    df = df.rename(columns={k: v for k, v in LEGACY_DEMAND_ALIASES.items() if k in df.columns})
 
     keep = [
         "custom_id", "prompt", "target", "answer_format",

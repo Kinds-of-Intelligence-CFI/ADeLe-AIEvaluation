@@ -46,7 +46,7 @@ BUILTIN_RUBRIC_NAMES: Dict[str, str] = {
     "MCr": "Identifying Relevant Information",
     "MCt": "Critical Thinking Processes",
     "MCu": "Calibrating Knowns and Unknowns",
-    "MS":  "Mind Modelling and Social Cognition",
+    "MSm": "Mind Modelling and Social Cognition",
     "QLl": "Logical Reasoning",
     "QLq": "Quantitative Reasoning",
     "SNs": "Spatio-physical Reasoning",
@@ -116,17 +116,23 @@ class RubricsCatalog:
         self._load()
 
     @classmethod
-    def from_paths(cls, paths: "Iterable[str | Path]") -> "RubricsCatalog":
+    def from_paths(cls, paths: "Iterable[str | Path]",
+                   mixed_versions_ok: bool = False) -> "RubricsCatalog":
         """Build a catalog from an explicit list of rubric ``.txt`` files.
 
         Unlike the folder constructor, this composes a catalog from files that
         may live in different directories — e.g. selecting, per dimension, which
         of several rubric source versions to use. Each file is parsed and
         validated exactly as in the folder loader.
+
+        Set ``mixed_versions_ok`` when the composition deliberately spans rubric
+        versions, so :func:`warn_if_mixed_versions` stays quiet. The v2 agentic
+        set does this: ``MSm`` is v1's mind-modelling rubric, unchanged.
         """
         self = cls.__new__(cls)
         self._folder = None
         self._cache = {}
+        self._mixed_versions_ok = mixed_versions_ok
         for p in paths:
             self._add_file(Path(p))
         return self
@@ -286,6 +292,8 @@ def warn_if_mixed_versions(catalog: "RubricsCatalog") -> Optional[str]:
     run is almost always a mistake — the sets use different dimensions and the
     v2 set is unvalidated. Returns ``None`` when the catalog is single-version.
     """
+    if getattr(catalog, "_mixed_versions_ok", False):
+        return None
     versions = catalog.versions
     if len(versions) > 1:
         msg = (

@@ -2,7 +2,7 @@ code	full_name	source	rel_path	source_doc_id	source_heading	version_date	sha256
 PLp	Planning	Paolo_Pablo	Paolo_Pablo/PLp.txt	1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk	Planning	2025-07-26	46ef842596be2f5e5dc1af0c0c5a5fd153211d0a91492b92b5920999f841f0a2
 PLe	Action control and execution	Paolo_Pablo	Paolo_Pablo/PLe.txt	1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk	Action control and execution	2025-07-26	b8e15fbc3a2da1788691e70f44c25821e202f1c4abcfeb69576ebf20f1afc394
 PLs	Situational and environmental understanding	Paolo_Pablo	Paolo_Pablo/PLs.txt	1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk	Environmental and situational understanding	2025-07-26	7e9719028386ca0ccf3ae0cd6f2859342e59911036e1108ee93e729a35b48fa1
-MSm	Mind Modelling and Social Cognition	v1	v1/MSm.txt	arXiv:2503.06378 §10	Mind Modelling and Social Cognition	1.0	33f3a9f330918c3b47404855f4281b06eaaed5a48c7d29493b3cf8179e5a1767
+MSm	Mind Modelling and Social Cognition	v1	../data_v1/MSm.txt	arXiv:2503.06378 §10	Mind Modelling and Social Cognition	1.0	c8924937f9794949dea63cdd0278e16b0d1497d49b5e51a12b6123dba14c8f85
 MSc	Communication and social interaction	Paolo_Pablo	Paolo_Pablo/MSc.txt	1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk	Communication and social interaction	2025-07-26	691ee3ba9f17230c45adaba232bbbb4291fe3cc5ea0cc9d2353ef6ca4cd7596c
 MMe	Episodic memory	Marko	Marko/MMe.txt	1tyaEcWqyn8N5TDbgNYnsC7ZiLTtynHCGoNps8Ag_8y0	Episodic Memory	unknown	52c079ad0989c73be5af7b0336b8a0f1c95104beabf3eab7fcbc4a63d33f4aae
 MMp	Long-term procedural memory	Marko	Marko/MMp.txt	1tyaEcWqyn8N5TDbgNYnsC7ZiLTtynHCGoNps8Ag_8y0	Procedural Memory	unknown	bc545b2944ee63a5d8bf19d6a6b3258c85bbc062883486ed075fd8d6235dfb04

@@ -56,13 +56,33 @@ def test_manifest_has_no_drift():
     assert verify_manifest() == []
 
 
-def test_MSm_text_is_v1_MS_unchanged():
-    """MSm renames the code, not the rubric. The text the judge sees must be
-    byte-identical to v1's MS — only the stripped '#!' metadata line differs."""
-    v1 = RubricsCatalog(str(DATA_V2_DIR.parent / "data_v1"))["MS"]
-    v2 = load_active_catalog()["MSm"]
-    assert v2.content == v1.content
-    assert v2.full_name == v1.full_name
+def test_MSm_is_the_v1_file_itself_not_a_copy():
+    """MSm renames the code, not the rubric. The active v2 set must resolve to the
+    v1 file on disk, so the two cannot drift apart, and no MS.txt may remain."""
+    v1_dir = DATA_V2_DIR.parent / "data_v1"
+    assert (v1_dir / "MSm.txt").is_file()
+    assert not (v1_dir / "MS.txt").exists()
+    entry = {e.code: e for e in read_manifest()}["MSm"]
+    assert entry.path.resolve() == (v1_dir / "MSm.txt").resolve()
+    assert load_active_catalog()["MSm"].content == RubricsCatalog(str(v1_dir))["MSm"].content
+
+
+def test_MS_code_is_retired_but_aliased_for_published_data():
+    """DEMAND_ORDER carries the new code; the released battery's MS column maps to it."""
+    from adele.constants import DEMAND_ORDER, LEGACY_DEMAND_ALIASES
+    assert "MSm" in DEMAND_ORDER and "MS" not in DEMAND_ORDER
+    assert LEGACY_DEMAND_ALIASES["MS"] == "MSm"
+
+
+def test_active_catalog_mixes_versions_on_purpose_and_says_so():
+    """MSm is v1.0 text inside a v2-draft set. That is intended, so the guard must
+    stay quiet here — and must still fire on an undeclared mix."""
+    from adele.rubrics.catalog import warn_if_mixed_versions
+    active = load_active_catalog()
+    assert active.versions == {"v1.0", "v2-draft"}
+    assert warn_if_mixed_versions(active) is None
+    undeclared = RubricsCatalog.from_paths(e.path for e in read_manifest())
+    assert warn_if_mixed_versions(undeclared) is not None
 
 
 def test_manifest_sources_split_memory_from_Marko():
