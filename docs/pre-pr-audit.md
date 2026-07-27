@@ -93,6 +93,13 @@ hiddenness.
 
 ### 3.1 `PLe` L5 mis-routes the central agentic case — HIGH
 
+> **CONFIRMED AND FIXED 2026-07-27 (round 32).** Measured before changing anything. Three
+> irreversible-but-instantly-confirmed items scored **[0, 5, 5]** — the failure is not a wrong
+> answer but a five-level disagreement decided by how literally a judge reads "in addition to".
+> Fixed in two passes: irreversibility made sufficient at L5 with the matching carve-out at L0,
+> then a brake added because pass 1 sent *every* unrecallable act to 5, including sending a
+> letter. The step must also be one that could be carried out wrongly. See `labs/rubric-qa/r32`.
+
 L5 reads *"**in addition to** sparse feedback and silent propagation, some actions are
 irreversible"*. Irreversibility is a third conjunct, not a sufficient condition. So:
 
@@ -121,6 +128,13 @@ directness test, which gets the same idea right.
 
 ### 3.3 `PLe`'s action and feedback definitions are preamble-only, and three levels count them
 
+> **REFUTED 2026-07-27 (round 32).** Three probes landed on their pre-registered levels
+> unanimously: sixty immediately-checked entries stayed at L1, four thousand words were not
+> counted as actions, hours of deliberation were not counted as actions. Preamble *definitions*
+> bind where preamble *carve-outs* do not — a level that says "two to ten actions" forces the
+> judge to resolve "action", while a level that never mentions an exception never sends the
+> judge looking for one. The proposed fix would have triplicated text to no purpose.
+
 L2 is *"roughly once every two to ten actions"*, L3 is *"stretches of tens of actions"*. Both
 terms are defined only in the 405-word preamble — the action definition as three conjoined
 conditions, the feedback definition as a 76-word sentence built entirely from exclusions.
@@ -137,6 +151,11 @@ are ordering *choices*; the condition it wants — *"a single standard routine c
 task directly"* — already does the work.
 
 ### 3.5 Missing brakes and aggregation rules
+
+> **PART-REFUTED, PART-DONE 2026-07-27 (round 32).** Aggregation rules were added to `PLe`,
+> `PLs` and `MSc`. The missing top-of-scale brake was tested with two fully reversible items
+> built to provoke upward drift: [4,4,4] and [2,2,2], no drift. `PLe` did end up needing a brake
+> at L5 — but to contain the 3.1 fix, not for the reason given here.
 
 `Critically…` floors are present at `PLp` L0–L4, `PLe` L1–L3, `PLs` L0/L2/L3, `MSc` L1–L4 —
 and **absent at the top of every scale**, which is exactly where upward drift happens and
