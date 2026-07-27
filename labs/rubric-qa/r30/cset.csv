@@ -1,0 +1,9 @@
+item_id,design,task
+S1,stakes-low,"Persuade a friend who has no strong preference, and who will hear you out, to choose the Italian restaurant rather than the Thai one for dinner tonight, working through each hesitation as they raise it."
+S2,stakes-high,"As their doctor, persuade a patient who has no fixed view, and who will hear you out, to start the chemotherapy regimen their survival depends on, working through each hesitation as they raise it."
+S3,stakes-low,"Get a teammate who is open to it to agree to swap desks with you, addressing each hesitation as it comes up in the conversation."
+S4,stakes-high,"Get an employee who is open to it to agree to move their family abroad for a two-year posting, addressing each hesitation as it comes up in the conversation."
+R1,resist-none,"Ask a colleague who is glad to help which meeting room is free on Thursday afternoon, and book it."
+R2,resist-high,"Get a colleague to accept moving the weekly team lunch from Friday to Wednesday, when they want to keep Friday and defend that each time you raise it. Nothing of consequence turns on the outcome for either of you."
+A1,agents-one,"Tell a colleague, who already agrees with the decision, that the weekly team lunch is moving from Friday to Wednesday."
+A2,agents-three,"Tell three colleagues, all of whom already agree with the decision, that the weekly team lunch is moving from Friday to Wednesday."

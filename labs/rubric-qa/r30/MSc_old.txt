@@ -1,0 +1,43 @@
+# Communication and social interaction
+#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
+
+This rubric assesses the ability to actively regulate and manage social interactions based on an understanding of other agents' thoughts, beliefs, desires and emotions, as well as environmental dynamics and cultural norms. Unlike passive mind modelling, it requires active communication. Demand increases with the number of other agents, the presence of complex social dynamics (including power dynamics and conflicting interests), the strength of the emotional context, the stakes and consequences for participants, the difficulty of the communication strategy required, and the lack of shared knowledge or cultural context.
+
+Level 0: No social interaction. The task does not require any social understanding or interpersonal exchange. It can be completed using purely factual, logical or procedural reasoning, with no other agents to model and no social norms or cultural context to consider.
+Examples:
+* Solving a complex mathematical proof (e.g., working on the Riemann hypothesis).
+* Transcribing a recorded audio lecture into text.
+* Optimising a supply chain using a deterministic model.
+
+Level 1: Basic communication in familiar contexts. The task requires basic communication in low-stakes, dyadic exchanges with a shared cultural background, minimal or no emotional content, and well-established social scripts. Success depends on following conventional interaction patterns.
+Examples:
+* Ordering food by phone or at a café.
+* Asking a librarian for the location of a specific book.
+* Scheduling a haircut or dental appointment via chat.
+
+Level 2: Communication in unfamiliar or cross-cultural settings. The task requires communication in an unfamiliar cultural or knowledge context where implicit rules must be inferred and communication style adapted. Social dynamics remain basic, with no strong emotions or high stakes involved.
+Examples:
+* Bargaining in a foreign market with unfamiliar norms.
+* Explaining the rules of a complex board game (e.g., Twilight Imperium) to a group of first-time players from a different cultural background.
+* Participating in a first business meeting with partners from a high-context culture where implicit cues matter.
+
+Level 3: Communication under a strong emotional context. The task requires communication in situations where at least some participants display strong emotions (anger, excitement, disappointment) or where the context threatens self-esteem or group identity, requiring emotional regulation and sensitivity. The stakes and complexity of the social dynamics remain manageable.
+Examples:
+* Explaining to supporters why a political party or sports team suffered a loss.
+* Mediating a heated argument between two colleagues over the office thermostat.
+* Giving constructive but critical feedback to a friend or colleague about a minor performance issue.
+* Resolving a dispute about shared property (e.g., which roommate gets the larger bedroom).
+
+Level 4: High-stakes communication with moderate complexity. The task requires communication in high-stakes situations where participants' health, jobs, finances or safety are directly affected. Resolution typically involves executing complex but established professional protocols (e.g., delivering medical bad news, crisis response, business negotiation) under pressure. The emotional content may be strong, requiring careful word choice, delivery and empathy. Social dynamics are often dyadic, but the consequences of poor communication are significant.
+Examples:
+* A commander informing a family that a soldier died in service.
+* A manager informing an employee of termination or major performance issues.
+* A doctor delivering a serious diagnosis (e.g., cancer) and discussing options.
+* A teacher discussing serious behavioural concerns with a student's parents.
+
+Level 5: High-stakes and complex communication. The task requires complex communication in high-stakes situations with unpredictable dynamics, multiple parties with conflicting goals, power imbalances, cross-cultural considerations and significant emotional content. A defining characteristic is the presence of strategic dilemmas or hard trade-offs where standard protocols often fail; the agent must navigate zero-sum constraints or find a path between seemingly mutually exclusive options. Success requires sophisticated negotiation, cultural intelligence, emotional regulation and adaptability.
+Examples:
+* Negotiating the release of hostages held by a fundamentalist group known for violence and unpredictability.
+* Negotiating the custody of children in a divorce where the parties are very upset with each other.
+* Chairing a tense international climate summit to forge a binding agreement between nations with conflicting economic and political interests.
+* Conducting crisis communication for a public-health emergency across diverse communities with varying beliefs.

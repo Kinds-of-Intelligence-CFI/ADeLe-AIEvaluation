@@ -1,0 +1,82 @@
+arm,code,ex_id,true_level,example
+old,MSe,old-MSe-00,0,"Simple multiple-choice questions (""What year did Darwin publish On the Origin of Species?"")."
+old,MSe,old-MSe-01,0,Translate a sentence between two languages.
+old,MSe,old-MSe-02,0,Entity classification.
+old,MSe,old-MSe-03,1,Beating Stockfish at chess.
+old,MSe,old-MSe-04,1,Arithmetic problems.
+old,MSe,old-MSe-05,1,Solving a Sudoku.
+old,MSe,old-MSe-06,2,Theorem proving of the Poincaré conjecture.
+old,MSe,old-MSe-07,2,Navigation tasks such as driving from JFK airport to the centre of Manhattan.
+old,MSe,old-MSe-08,2,"Writing the ""Silo"" novels."
+old,MSe,old-MSe-09,2,Design a house.
+old,MSe,old-MSe-10,3,Playing strategy board games such as Monopoly or Diplomacy.
+old,MSe,old-MSe-11,3,"Participating in a cooperative board game like Pandemic, where all players share objectives and known roles."
+old,MSe,old-MSe-12,3,Multi-party negotiation with fixed payoffs or structured debates.
+old,MSe,old-MSe-13,3,Developing a long-term exercise routine tailored to a single person's fitness goals.
+old,MSe,old-MSe-14,4,"Negotiate the settlement of a copyright-infringement legal case, where each party's objectives are clear but interactions are intricate."
+old,MSe,old-MSe-15,4,Coordinate a team to carry out a research project.
+old,MSe,old-MSe-16,4,Managing air-traffic control for an airport: coordinating many flights and pilots with known procedures but complex timing.
+old,MSe,old-MSe-17,5,Lead a fast-growing startup in a quickly growing and competitive market.
+old,MSe,old-MSe-18,5,Infiltrate or disrupt an adversarial organisation.
+old,MSe,old-MSe-19,5,"Commanding a large-scale emergency response during an unfolding natural disaster, such as a major earthquake with cascading aftershocks and infrastructure failures."
+old,MSe,old-MSe-20,5,"Coordinating humanitarian-aid distribution in a conflict zone, balancing unknown local actors and rapidly changing conditions."
+old,MSe,old-MSe-21,5,Navigating a company's response to sudden regulatory changes while competing firms exploit the situation.
+old,MSc,old-MSc-00,0,"Solving a complex mathematical proof (e.g., working on the Riemann hypothesis)."
+old,MSc,old-MSc-01,0,Transcribing a recorded audio lecture into text.
+old,MSc,old-MSc-02,0,Optimising a supply chain using a deterministic model.
+old,MSc,old-MSc-03,1,Ordering food by phone or at a café.
+old,MSc,old-MSc-04,1,Asking a librarian for the location of a specific book.
+old,MSc,old-MSc-05,1,Scheduling a haircut or dental appointment via chat.
+old,MSc,old-MSc-06,2,Bargaining in a foreign market with unfamiliar norms.
+old,MSc,old-MSc-07,2,"Explaining the rules of a complex board game (e.g., Twilight Imperium) to a group of first-time players from a different cultural background."
+old,MSc,old-MSc-08,2,Participating in a first business meeting with partners from a high-context culture where implicit cues matter.
+old,MSc,old-MSc-09,3,Explaining to supporters why a political party or sports team suffered a loss.
+old,MSc,old-MSc-10,3,Mediating a heated argument between two colleagues over the office thermostat.
+old,MSc,old-MSc-11,3,Giving constructive but critical feedback to a friend or colleague about a minor performance issue.
+old,MSc,old-MSc-12,3,"Resolving a dispute about shared property (e.g., which roommate gets the larger bedroom)."
+old,MSc,old-MSc-13,4,A commander informing a family that a soldier died in service.
+old,MSc,old-MSc-14,4,A manager informing an employee of termination or major performance issues.
+old,MSc,old-MSc-15,4,"A doctor delivering a serious diagnosis (e.g., cancer) and discussing options."
+old,MSc,old-MSc-16,4,A teacher discussing serious behavioural concerns with a student's parents.
+old,MSc,old-MSc-17,5,Negotiating the release of hostages held by a fundamentalist group known for violence and unpredictability.
+old,MSc,old-MSc-18,5,Negotiating the custody of children in a divorce where the parties are very upset with each other.
+old,MSc,old-MSc-19,5,Chairing a tense international climate summit to forge a binding agreement between nations with conflicting economic and political interests.
+old,MSc,old-MSc-20,5,Conducting crisis communication for a public-health emergency across diverse communities with varying beliefs.
+new,PLs,new-PLs-00,0,Solve a Sudoku from a printed grid. (The whole state is given; filling the grid is deduction and planning.)
+new,PLs,new-PLs-01,0,Find the winning plan in a chess position shown on the board. (Nothing is hidden; the demand is Planning.)
+new,PLs,new-PLs-02,0,"Answer a word problem that states every quantity it needs: two trains leave stations 300 km apart at given speeds, and you must say when they meet."
+new,PLs,new-PLs-03,1,Check a museum's opening hours before planning a visit.
+new,PLs,new-PLs-04,1,Read the current contents of a file before editing it.
+new,PLs,new-PLs-05,1,Measure the floor of a room with a tape before ordering a carpet for it.
+new,PLs,new-PLs-06,2,"Explore an unfamiliar codebase to establish where a behaviour is implemented, each file being directly readable."
+new,PLs,new-PLs-07,2,"Look up a customer's account, orders and reservations across several systems before making a change."
+new,PLs,new-PLs-08,2,"Take a complete inventory of a storeroom, however many shelves it holds — each item is simply there to be counted."
+new,PLs,new-PLs-09,3,"Debug why a program you did not write crashes: the whole source is there to read, but no line of it announces the fault — only its symptoms are visible, and experiments must be devised to expose it. (Tracing a fault back through work the solver produced itself is not situational understanding, however long it stayed unnoticed.)"
+new,PLs,new-PLs-10,3,Locate a fault in an electrical circuit using a multimeter.
+new,PLs,new-PLs-11,3,Work out why a houseplant is dying from its appearance and conditions.
+new,PLs,new-PLs-12,4,"Drive through dense city traffic, where the situation changes continuously but every change is visible as it happens. (Other drivers' visible motion is tracked state; reasoning about their intentions is Mind Modelling (MSm).)"
+new,PLs,new-PLs-13,4,"Monitor a staged software rollout across services, where dashboards show each service's changing state."
+new,PLs,new-PLs-14,4,"Cook several dishes at once, each evolving visibly toward done or ruined."
+new,PLs,new-PLs-15,5,"Diagnose an intermittent fault that appears and disappears under conditions that cannot be observed directly, such as a race condition."
+new,PLs,new-PLs-16,5,"Navigate at sea by dead reckoning in fog, where position evolves unobserved under wind and current."
+new,PLs,new-PLs-17,5,"Fight a building fire that spreads unseen behind walls and ceilings, revealing itself only intermittently."
+new,MSc,new-MSc-00,0,Prove that there are infinitely many prime numbers.
+new,MSc,new-MSc-01,0,Transcribe a recorded lecture into text.
+new,MSc,new-MSc-02,0,Find the cheapest combination of flights for a fixed itinerary.
+new,MSc,new-MSc-03,1,Order a coffee and a sandwich at a café counter.
+new,MSc,new-MSc-04,1,Ask a librarian which shelf holds a book you can name.
+new,MSc,new-MSc-05,1,Message a dental practice to move an appointment from Tuesday to Thursday.
+new,MSc,new-MSc-06,1,"Write a newspaper column arguing for a national carbon tax. (However hard the argument is to make, it is composed and sent with no exchange to steer: choosing the words is Verbal Expression, judging what the readership already believes is Mind Modelling (MSm).)"
+new,MSc,new-MSc-07,2,"Take a patient's history in a clinic, where each answer determines which symptom to ask about next."
+new,MSc,new-MSc-08,2,"Interview a job candidate about a project on their CV, following up on what they actually say rather than reading out fixed questions."
+new,MSc,new-MSc-09,2,"Work out over a support chat which of several products a customer actually needs, each follow-up question depending on what they have just said."
+new,MSc,new-MSc-10,3,"Tell a colleague that the section they wrote for a shared report has to be rewritten before submission, when they are proud of it but will hear you out."
+new,MSc,new-MSc-11,3,"Tell a patient, as their doctor, that they have a serious illness, and bring them to accept a treatment they are at first reluctant to start, working through each concern as it is raised. (Grave and emotionally heavy, but they are not holding out for a different treatment — the work is finding the path to acceptance, not overcoming opposition.)"
+new,MSc,new-MSc-12,3,"Settle a dispute between two flatmates over the cleaning rota, where each arrived wanting a different split and both will accept whatever they come to see as fair."
+new,MSc,new-MSc-13,3,"Agree a price with a market trader who opens far above what you will pay, where both of you want the sale to happen and the work is finding the figure that suits you both."
+new,MSc,new-MSc-14,4,"Persuade a landlord to release you from a lease six months early, when they have no reason to agree and would rather keep collecting the rent."
+new,MSc,new-MSc-15,4,"Keep refusing a refund the policy does not allow to a customer who is shouting and demanding a manager, without conceding it and without the exchange breaking down."
+new,MSc,new-MSc-16,4,Talk a co-founder out of a launch date they have staked their reputation on and still believe in.
+new,MSc,new-MSc-17,5,"Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others."
+new,MSc,new-MSc-18,5,Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
+new,MSc,new-MSc-19,5,Settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.

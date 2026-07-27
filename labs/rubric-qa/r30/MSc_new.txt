@@ -1,0 +1,42 @@
+# Communication and social interaction
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-27 | validated: labs/rubric-qa rounds 12-21 (designed items only)
+
+This rubric assesses the level of cognitive demands associated with communication and social interaction: choosing and delivering the communicative moves that bring another agent's stance — what they understand, believe, want, or intend to do — to where the task requires it. It concerns steering an interaction, not composing its messages: inferring what others believe, intend or feel is assessed by Mind Modelling (MSm); the difficulty of expressing content well — vocabulary, genre, register, structure, and fitting an explanation to its audience — is assessed by Verbal Expression (CEe); and understanding the non-social environment by Situational and Environmental Understanding (PLs). Mastering one's own impulses and emotions during the exchange is not scored here, or anywhere in this set: it is a disposition of the solver rather than something the task requires. The demand rises with how far the other party's stance must be moved, how much it resists moving, and how much the moves must be adapted to what the other party does in return. Where no exchange takes place — a message is composed and sent, with no opportunity to adapt to any response — the demand here is minimal, however persuasive or delicate the message must be. The stakes of the situation and the number of people addressed do not by themselves raise the demand. Where a task shows features of more than one level, the demand is set by the highest it genuinely requires. The level of cognitive demands progresses from tasks with no one whose stance matters to those in which several parties with conflicting aims must be moved at once under strategic opposition.
+
+Level 0: None. The task requires no communication: there is no stance to move — the task is completed by factual, logical or procedural work, and no other party's understanding or disposition has to be shaped.
+Examples:
+* Prove that there are infinitely many prime numbers.
+* Transcribe a recorded lecture into text.
+* Find the cheapest combination of flights for a fixed itinerary.
+
+Level 1: Very low. Tasks at this level require communication that needs no steering: either a standard, familiar script covers the whole interaction — a request is made and met, a fact is asked for and given — or the message goes one way, composed and sent with no response to adapt to. Critically, nothing about what to say turns on what the other party does in return.
+Examples:
+* Order a coffee and a sandwich at a café counter.
+* Ask a librarian which shelf holds a book you can name.
+* Message a dental practice to move an appointment from Tuesday to Thursday.
+* Write a newspaper column arguing for a national carbon tax. (However hard the argument is to make, it is composed and sent with no exchange to steer: choosing the words is Verbal Expression, judging what the readership already believes is Mind Modelling (MSm).)
+
+Level 2: Low. Tasks at this level require steering a cooperative exchange: no fixed script covers it, because what to say or ask next depends on what the other party has just said, so the exchange must be guided turn by turn towards what the task needs. Critically, interests are aligned and the other party is trying to help: nothing has to be overcome, only elicited or arranged.
+Examples:
+* Take a patient's history in a clinic, where each answer determines which symptom to ask about next.
+* Interview a job candidate about a project on their CV, following up on what they actually say rather than reading out fixed questions.
+* Work out over a support chat which of several products a customer actually needs, each follow-up question depending on what they have just said.
+
+Level 3: Intermediate. Tasks at this level require an open stance to be moved: the other party does not yet hold the view, decision or acceptance that the task requires, and must be brought there in exchange with them, by argument, framing or compromise adjusted to what they say back. Critically, they are willing to be moved — the difficulty is finding the path, not overcoming opposition.
+Examples:
+* Tell a colleague that the section they wrote for a shared report has to be rewritten before submission, when they are proud of it but will hear you out.
+* Tell a patient, as their doctor, that they have a serious illness, and bring them to accept a treatment they are at first reluctant to start, working through each concern as it is raised. (Grave and emotionally heavy, but they are not holding out for a different treatment — the work is finding the path to acceptance, not overcoming opposition.)
+* Settle a dispute between two flatmates over the cleaning rota, where each arrived wanting a different split and both will accept whatever they come to see as fair.
+* Agree a price with a market trader who opens far above what you will pay, where both of you want the sale to happen and the work is finding the figure that suits you both.
+
+Level 4: High. Tasks at this level require resistance to be overcome: the other party holds a contrary position and defends it, or is set against the message, so each move must advance the aim and manage that resistance at once, adapting as they push back. Critically, being displeased by the message is not itself resistance: what marks this level is that the other party is holding out for a different outcome, not merely that they dislike the one proposed. The opposition is real, but it comes from a single counterpart or from one aligned side.
+Examples:
+* Persuade a landlord to release you from a lease six months early, when they have no reason to agree and would rather keep collecting the rent.
+* Keep refusing a refund the policy does not allow to a customer who is shouting and demanding a manager, without conceding it and without the exchange breaking down.
+* Talk a co-founder out of a launch date they have staked their reputation on and still believe in.
+
+Level 5: Very high. Tasks at this level require conflicting stances to be reconciled: several parties must be moved whose required positions are mutually exclusive, and each of them anticipates and counters the moves being made, so anything that shifts one works against another and a path must be found that shifts them all together. Critically, addressing many parties is not by itself this level: what marks it is that the positions the task requires of them cannot all be held at once.
+Examples:
+* Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others.
+* Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
+* Settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.
