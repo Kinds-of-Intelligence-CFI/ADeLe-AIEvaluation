@@ -753,3 +753,45 @@ No degradation anywhere; the oracle correlation improved from 0.857 to 0.894, wh
 exceeds rivercross's own v11 with the same judge (0.855) and matches their opus (0.894). The
 gain is within noise for n=43 and is not claimed as an effect — what matters is that
 naturalising the register cost nothing.
+
+## Round 22: final polish pass — five small fixes, three deliberate non-fixes
+
+A fresh end-to-end read of all four rubrics as a reviewer would encounter them.
+
+Fixed (sentinel-checked where load-bearing):
+1. **Metadata lines** were stale ("revised: 2026-07-25/26") and still said "DRAFT,
+   unvalidated" — no longer true after 21 rounds and an oracle validation, and the `#!`
+   line is text the judge reads: telling a judge its rubric is unvalidated is not
+   neutral. Now "DRAFT for team review", dated, with a pointer to the validation and
+   with MSc's weaker evidence base ("designed items only") flagged honestly rather
+   than papered over.
+2. **PLp mixed US/UK spelling within one file** ("recognising" at L1, "Recognizing" at
+   L3/L4); unified to UK, matching the rest of the set.
+3. **PLe L0's chess anchor** kept old-v2 phrasing ("Evaluate the possibility of
+   achieving checkmate in chess in a single move") — awkward, and domain-colliding with
+   L1's chess contrast anchor without being a deliberate pair. Now "Say whether
+   checkmate can be delivered in one move in a given chess position."
+4. **PLe's feedback sentence** nested three em-dash clauses; the inner one is now
+   parenthesised. No semantic change.
+5. **PLs preamble** said consequences are "assessed by reasoning and Planning (PLp)",
+   which reads as if "reasoning" were a dimension; now "by the reasoning dimensions and
+   by Planning (PLp)".
+
+Sentinels on the two load-bearing edits (3 and 4): the chess trap still scores 1, and a
+purpose-built legality probe (a referee that rejects illegal moves but accepting a move
+says nothing about progress) scores 3 with the judge explicitly citing
+"legality, not progress". Both clauses still bind after the rewording.
+
+Deliberately NOT changed, with reasons:
+- **No "Critically" clause at any Level 5.** Top levels have nothing above them to
+  protect against; adding floors there is text without constraint. (PLe L5's
+  budget/deadline sentence is a routing, not a floor.)
+- **No further anchors anywhere.** Every level holds 3-5; the remaining known gaps
+  (MSc external ground truth, weak-judge PLp) are not anchor problems.
+- **PLe's preamble stays long** (406 words). Position unchanged from round 13: every
+  clause maps to a measured failure, compression has been done twice, and further
+  cutting without a new failure signal is risk without payoff. Flagged for the team in
+  the report instead.
+
+With this pass the rubrics are, to our knowledge, out of known textual defects; what
+remains (report §6) requires new evidence, not new wording.
