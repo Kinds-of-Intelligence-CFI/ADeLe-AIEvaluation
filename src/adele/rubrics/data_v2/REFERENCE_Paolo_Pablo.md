@@ -1,13 +1,24 @@
 # Reference — factor tables & notes for the "Paolo_Pablo" rubrics
 
+> **HISTORICAL — this describes the rubrics as they were BEFORE the re-key, and no longer
+> describes any shipped rubric.** `PLp`, `PLe` and `PLs` are each now keyed on a single
+> driver; `MSe` became `PLs`; `ECc` was withdrawn. Do not read the tables below as current.
+>
+> They are kept deliberately, because they are the **exhibit for why the re-key happened**:
+> read across the `PLp`, `PLe` and `MSe` tables and the same four columns appear in all three
+> — temporal horizon, agent interactions, open-endedness, environment dynamics. Three
+> "abilities" sharing their difficulty factors cannot separate on any battery, which is
+> exactly the collinearity the taxonomy audit diagnosed and rounds 1–29 removed. Deleting
+> this file would destroy that evidence.
+
 Reference only. The rubric `.txt` files in `Paolo_Pablo/` are the source of truth used by
 the judge (one polished definition per level, ADeLe v1.0 style). This file keeps the
 **difficulty-factor tables** and side notes that were dropped from those files, so
 they're available without opening the source Google Doc. **Droppable** — nothing in
 the codebase reads it. (`≤` shown where the source had escaped `\<=`.)
 
-Covers the 5 active non-memory dimensions. The deferred sensory/motor dimensions
-(`SNp/SNk/SPa/SPv`) keep their tables in the source Doc.
+Covers the 5 non-memory dimensions **as they stood before the re-key**. The deferred
+sensory/motor dimensions (`SNp/SNk/SPa/SPv`) keep their tables in the source Doc.
 
 ---
 

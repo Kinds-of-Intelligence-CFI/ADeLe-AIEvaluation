@@ -1241,3 +1241,55 @@ fixes changed the score in the intended direction — never that the original sc
 The missing step is a single question, and it now belongs in the loop before any fix:
 **what does the current rubric actually score on this item?** A "defect" is only a defect once
 that number is on the table.
+
+## Round 30: the paired old-arm for `PLs` and `MSc` — pre-registered, NOT YET RUN
+
+The head-to-head against `origin/agentic` has only ever been run for `PLp` (round 4, against
+USACO division as an external criterion) and for the `PLp`/`PLe` pair on HAL traces (round 9).
+`PLs` and `MSc` were re-keyed with **no old arm at all**, so the claim "the re-key improves on
+what is on GitHub" is currently asymmetric across the four dimensions. This round closes that.
+
+Everything is committed in `r30/` and the harness is dry-run clean. **The annotation itself is
+deferred** — it costs roughly 1.7M judge tokens and that spend was not authorised in this pass.
+Nothing about the rubrics changes until it runs.
+
+### 30.1 Why the design is unusual
+
+No external criterion exists for these two dimensions — there is no USACO division for "how
+hidden is the state" or "how far must a stance be moved". Round 23.1 already established that
+criterion validity cannot be tested on the data we hold. So every metric is **symmetric**: each
+arm is held to its own claims, and no metric presupposes either rubric's theory of the construct.
+
+| set | items | what it decides |
+|---|---|---|
+| `N` | 16 real trace frames (8 SWE-bench cp50 + 8 tau-bench cp50), verbatim, designed by neither rubric | collinearity against the `PLp`/`PLe` reference pair; round 9's constant-offset signature; separation counts; whether `MSc` really is near-binary on real tasks |
+| `P` | all 81 examples the four rubrics carry | round 25's placement test, run on the **old** arm for the first time |
+| `C` | 8 designed minimal pairs | whether each `MSc` does what its own text says |
+
+The `C` set is the only designed part, and it is built so it cannot beg the question. Origin's
+`MSc` names **stakes** and **the number of agents** as drivers; this branch's `MSc` explicitly
+disclaims both and names **resistance**. So the four contrasts — stakes ×2, resistance ×1,
+agent-count ×1 — have each arm predicting movement where the other predicts none. Each arm is
+scored against **its own** prediction. A rubric fails when it contradicts its own text, which is
+a defect under either theory of what `MSc` ought to measure.
+
+### 30.2 What would falsify the claim
+
+`prereg_r30.json` registers this before any judge ran, including the failure conditions:
+
+- **H1** ρ(`MSe_old`, reference) − ρ(`PLs_new`, reference) ≥ 0.20. Fails below 0.10 or reversed.
+- **H2** SD(`MSe_old` − `PLp`) < SD(`PLs_new` − `PLp`) — round 9's signature: one ladder with a
+  constant offset versus two demands whose difference is task-dependent.
+- **H3** the new arm produces ≥ 3 of 16 frames with |`PLs` − `PLp`| ≥ 2; the old arm fewer.
+- **H6** the new arm places ≥ 85% of its examples clean and beats the old arm by ≥ 10 points.
+- **H7** each arm matches its own `C`-set predictions on ≥ 3 of 4 contrasts.
+
+A failure of H1–H3 falsifies the disentanglement claim **for `PLs` specifically**, and the
+pre-registration commits us to recording that as a negative result rather than patching it —
+the round-28 failure mode, stated as a rule before the fact rather than after.
+
+### 30.3 Dry run
+
+sonnet, 3 `N`-set frames, both arms, to prove the harness before spending on it. Both returned
+well-formed labels. `PLs_new` gave 2 / 3 / 1 where `MSe_old` gave 2 / 2 / 2 — the compression
+signature, but n = 3 and it is recorded as a smoke test, not as evidence.

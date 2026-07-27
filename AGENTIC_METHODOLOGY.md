@@ -92,13 +92,18 @@ follow `AGENTIC_EVALUATION_PLAN.md` §4. The live project Sheet ("Adele v2.0") u
 *different* codes, and is itself internally inconsistent — reconciling Doc ↔ Sheet
 is a team decision, not made here.
 
+Current as of 2026-07-27: `MSe` was renamed `PLs` and re-filed to the PL family, `ECc` was
+withdrawn from the demand set (propensity, not capability), and `MSm` was added as v1's `MS`
+carried into v2 under the code the four agentic rubrics route to.
+
 | Our code | Rubric (full name) | Source | Live Sheet code (approx.) |
 |---|---|---|---|
 | PLp | Planning | ours | PLp / PL |
 | PLe | Action control and execution | ours | PLe |
-| MSe | Environmental and situational understanding | ours | **MSs** (Sheet's `MSe` = emotion/empathy) |
+| PLs | Situational and environmental understanding | ours | **MSs** (Sheet's `MSe` = emotion/empathy) |
+| MSm | Mind Modelling and Social Cognition | v1 `MS`, renamed | — |
 | MSc | Communication and social interaction | ours | **MSp** (critical social processes) |
-| ECc | Behavioral inhibition and self-control | ours | **EXb** |
+| ~~ECc~~ | ~~Behavioral inhibition and self-control~~ | *withdrawn* | **EXb** |
 | SNp | Dexterity | ours · *deferred* | SNp (proprioception/dexterity) |
 | SNk | Kinesthetic processing and proprioception | ours · *deferred* | SNk |
 | SPa | Auditory processing | ours · *deferred* | SPa |
