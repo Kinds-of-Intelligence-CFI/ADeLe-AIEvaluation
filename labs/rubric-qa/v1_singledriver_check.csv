@@ -1,21 +1,3 @@
-v1_dim,operationalisation,custom_id,haiku,sonnet
-CL,vague magnitudes,swe-0090,3,2
-CL,vague magnitudes,swe-0254,3,2
-CL,vague magnitudes,swe-0283,3,2
-CL,vague magnitudes,swe-0445,2,2
-CL,vague magnitudes,swe-0461,3,3
-CL,vague magnitudes,ab-0011,0,1
-CL,vague magnitudes,ab-0020,0,1
-CL,vague magnitudes,ab-0024,0,1
-CL,vague magnitudes,ab-0017,0,1
-CL,vague magnitudes,ab-0002,0,1
-QLl,named constructs,swe-0090,2,3
-QLl,named constructs,swe-0254,1,3
-QLl,named constructs,swe-0283,2,3
-QLl,named constructs,swe-0445,1,1
-QLl,named constructs,swe-0461,3,3
-QLl,named constructs,ab-0011,0,1
-QLl,named constructs,ab-0020,1,2
-QLl,named constructs,ab-0024,0,1
-QLl,named constructs,ab-0017,1,2
-QLl,named constructs,ab-0002,0,1
+version https://git-lfs.github.com/spec/v1
+oid sha256:e0d3bf152e4e87df9f464e049d6ec37a7e9c12de3459fe3ccdb28abcb201c3b0
+size 709
