@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fff0f54f0d51f587015682a2a2bfeea1091833c850a5c11f2515336da041d9d
-size 703
+custom_id,instance,length,d_phi,cost_to_go_start,cost_to_go_end,min_phi_dip,n_optimal,n_lateral,n_backward,n_recovering,n_fatal,n_illegal,reaches_goal
+chain-5-boat-2#seg4-7,chain-5-boat-2,3,-1,3,4,1,1,0,2,0,0,1,False
+chain-5-boat-2#seg5-8,chain-5-boat-2,3,-1,2,3,2,1,0,2,0,0,4,False
+chain-5-boat-2#seg7-10,chain-5-boat-2,3,-1,4,5,1,1,0,2,0,0,4,False
+chain-5-boat-2#seg8-11,chain-5-boat-2,3,-1,3,4,2,1,0,2,0,0,1,True
+complete-4-boat-3#seg1-4,complete-4-boat-3,3,1,2,1,0,2,0,1,0,0,0,False
+complete-4-boat-3#seg3-6,complete-4-boat-3,3,1,2,1,0,2,0,1,0,0,0,False
+complete-4-boat-3#seg5-8,complete-4-boat-3,3,1,2,1,0,2,0,1,0,0,0,False
+cycle-4-boat-2#seg0-3,cycle-4-boat-2,3,1,3,2,0,2,0,1,0,0,0,False

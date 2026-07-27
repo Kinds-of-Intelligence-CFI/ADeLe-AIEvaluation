@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0a0ccbddbe7f863127a3f08c094faecdefdd04a9123238eb0bcdb6bbd1f5690
-size 2848
+custom_id,level,reason
+chain-3-boat-1#s2,1,Single item remaining; ≤3 crossings needed
+chain-3-boat-2#s1,1,Single item remaining; ≤3 crossings needed
+chain-3-boat-3#s0,1,Single item remaining; ≤3 crossings needed
+chain-3-boat-4#s0,1,Single item remaining; ≤3 crossings needed
+chain-4-boat-2#s1,1,Two items remaining; ≤3 crossings needed
+chain-4-boat-3#s1,1,Two items remaining; ≤3 crossings needed
+chain-4-boat-4#s0,1,Two items remaining; ≤3 crossings needed
+chain-5-boat-2#s2,1,Two items remaining; ≤3 crossings needed
+chain-5-boat-3#s1,1,Two items remaining; ≤3 crossings needed
+chain-5-boat-4#s1,1,Two items remaining; ≤3 crossings needed
+chain-6-boat-3#s1,2,Three items remaining; 4–10 crossings required
+chain-6-boat-4#s1,2,Three items remaining; 4–10 crossings required
+star-3-boat-1#s2,1,Single item remaining; ≤3 crossings needed
+star-3-boat-2#s1,1,Single item remaining; ≤3 crossings needed
+star-3-boat-3#s0,1,Single item remaining; ≤3 crossings needed
+star-3-boat-4#s0,1,Single item remaining; ≤3 crossings needed
+star-4-boat-2#s2,2,Three items remaining; 4–10 crossings required
+star-4-boat-3#s1,1,Single item remaining; ≤3 crossings needed
+star-4-boat-4#s0,1,Single item remaining; ≤3 crossings needed
+star-5-boat-2#s2,1,Two items remaining; ≤3 crossings needed
+star-5-boat-3#s1,1,Single item remaining; ≤3 crossings needed
+star-5-boat-4#s1,1,Single item remaining; ≤3 crossings needed
+star-6-boat-2#s2,2,Four items remaining; 4–10 crossings required
+star-6-boat-3#s2,2,Four items remaining; 4–10 crossings required
+star-6-boat-4#s1,1,Single item remaining; ≤3 crossings needed
+cycle-3-boat-2#s1,1,Single item remaining; ≤3 crossings needed
+cycle-3-boat-3#s0,1,Two items remaining; ≤3 crossings needed
+cycle-3-boat-4#s0,1,Two items remaining; ≤3 crossings needed
+cycle-4-boat-2#s1,1,Two items remaining; ≤3 crossings needed
+cycle-4-boat-3#s1,1,Two items remaining; ≤3 crossings needed
+cycle-4-boat-4#s0,1,Two items remaining; ≤3 crossings needed
+cycle-5-boat-3#s1,1,Two items remaining; ≤3 crossings needed
+cycle-5-boat-4#s1,1,Two items remaining; ≤3 crossings needed
+cycle-6-boat-3#s1,2,Three items remaining; 4–10 crossings required
+cycle-6-boat-4#s1,2,Three items remaining; 4–10 crossings required
+complete-3-boat-2#s1,1,Single item remaining; ≤3 crossings needed
+complete-3-boat-3#s0,1,Two items remaining; ≤3 crossings needed
+complete-3-boat-4#s0,1,Two items remaining; ≤3 crossings needed
+complete-4-boat-3#s1,1,Single item remaining; ≤3 crossings needed
+complete-4-boat-4#s0,2,Three items remaining; 4–10 crossings required
+complete-5-boat-4#s1,1,Single item remaining; ≤3 crossings needed
+missionaries-cannibals-3#s2,2,Four agents remaining; 4–10 crossings required
+missionaries-cannibals-4#s2,2,Six agents remaining; 4–10 crossings required

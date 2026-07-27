@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6393120d6c25e675f6f670ee0d98cd2b25717fab2ca96b166b02c92da832e08d
-size 2295
+custom_id,level,reason
+chain-3-boat-1#s2,2,horizon 4-10 single-agent static
+chain-3-boat-2#s1,1,horizon <=3 single-agent static
+chain-3-boat-3#s0,1,horizon <=3 single-agent static
+chain-3-boat-4#s0,1,horizon <=3 single-agent static
+chain-4-boat-2#s1,1,horizon <=3 single-agent static
+chain-4-boat-3#s1,1,horizon <=3 single-agent static
+chain-4-boat-4#s0,1,horizon <=3 single-agent static
+chain-5-boat-2#s2,2,horizon 4-10 single-agent static
+chain-5-boat-3#s1,1,horizon <=3 single-agent static
+chain-5-boat-4#s1,1,horizon <=3 single-agent static
+chain-6-boat-3#s1,1,horizon <=3 single-agent static
+chain-6-boat-4#s1,1,horizon <=3 single-agent static
+star-3-boat-1#s2,1,horizon <=3 single-agent static
+star-3-boat-2#s1,1,horizon <=3 single-agent static
+star-3-boat-3#s0,1,horizon <=3 single-agent static
+star-3-boat-4#s0,1,horizon <=3 single-agent static
+star-4-boat-2#s2,1,horizon <=3 single-agent static
+star-4-boat-3#s1,1,horizon <=3 single-agent static
+star-4-boat-4#s0,1,horizon <=3 single-agent static
+star-5-boat-2#s2,2,horizon 4-10 single-agent static
+star-5-boat-3#s1,1,horizon <=3 single-agent static
+star-5-boat-4#s1,1,horizon <=3 single-agent static
+star-6-boat-2#s2,2,horizon 4-10 single-agent static
+star-6-boat-3#s2,1,horizon <=3 single-agent static
+star-6-boat-4#s1,1,horizon <=3 single-agent static
+cycle-3-boat-2#s1,2,horizon 4-10 single-agent static
+cycle-3-boat-3#s0,1,horizon <=3 single-agent static
+cycle-3-boat-4#s0,1,horizon <=3 single-agent static
+cycle-4-boat-2#s1,1,horizon <=3 single-agent static
+cycle-4-boat-3#s1,1,horizon <=3 single-agent static
+cycle-4-boat-4#s0,1,horizon <=3 single-agent static
+cycle-5-boat-3#s1,2,horizon 4-10 single-agent static
+cycle-5-boat-4#s1,1,horizon <=3 single-agent static
+cycle-6-boat-3#s1,1,horizon <=3 single-agent static
+cycle-6-boat-4#s1,1,horizon <=3 single-agent static
+complete-3-boat-2#s1,2,horizon 4-10 single-agent static
+complete-3-boat-3#s0,1,horizon <=3 single-agent static
+complete-3-boat-4#s0,1,horizon <=3 single-agent static
+complete-4-boat-3#s1,2,horizon 4-10 single-agent static
+complete-4-boat-4#s0,1,horizon <=3 single-agent static
+complete-5-boat-4#s1,2,horizon 4-10 single-agent static
+missionaries-cannibals-3#s2,2,horizon 4-10 single-agent static
+missionaries-cannibals-4#s2,2,horizon 4-10 single-agent static
