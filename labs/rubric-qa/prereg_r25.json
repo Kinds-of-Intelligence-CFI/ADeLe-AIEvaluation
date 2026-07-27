@@ -1,0 +1,71 @@
+{
+ "round": 25,
+ "test": "example-placement: full rubric with Examples blocks removed, examples shuffled into a pool, judge must return each to its level",
+ "judges": [
+  "haiku",
+  "sonnet",
+  "opus"
+ ],
+ "reasoning_before_score": true,
+ "metric": "per-example count of judges (0-3) recovering the true level",
+ "thresholds": {
+  "clean": "3/3",
+  "soft": "2/3",
+  "defective": "<=1/3"
+ },
+ "masking": "explicit 'at Level N' cross-references inside example text rewritten to 'at the level below' so they do not leak the answer",
+ "predicted_defective": {
+  "PLp": [
+   [
+    "Decide the order in which to run three independent errands",
+    1,
+    2,
+    "three independent errands read as a decomposition into a few independent subtasks, which is L2's own condition"
+   ],
+   [
+    "Build a personal webpage using a template",
+    2,
+    1,
+    "using a template reads as a single retrieved routine"
+   ],
+   [
+    "Plan a mountaineering expedition",
+    4,
+    3,
+    "expedition planning has established procedures, so the decomposition is not obviously undiscoverable"
+   ]
+  ],
+  "PLe": [
+   [
+    "Type a query into a search engine and read the first result",
+    0,
+    1,
+    "two acts (type, read) read as a short checked sequence rather than one atomic action"
+   ]
+  ],
+  "PLs": [
+   [
+    "Explore an unfamiliar codebase to establish where a behaviour is implemented",
+    2,
+    3,
+    "locating where a behaviour lives reads as inference from evidence, colliding with the L3 debugging item"
+   ]
+  ],
+  "MSc": [
+   [
+    "Turn down a colleague's invitation to join their project",
+    2,
+    3,
+    "declining moves the other party off a position they hold, which is L3"
+   ],
+   [
+    "Agree a price with a market trader",
+    3,
+    4,
+    "haggling reads as opposed interests, which is L4"
+   ]
+  ]
+ },
+ "predicted_clean": "all Level 5 items in all four dimensions; PLe ledger (L4); PLs debug (L3); MSc shouting-customer refund (L4); PLp Darwin publication-year (L0)",
+ "decision_rule": "any example scoring <=1/3 is rewritten; 2/3 is reviewed and rewritten only if the two disagreeing judges land on the same wrong level"
+}

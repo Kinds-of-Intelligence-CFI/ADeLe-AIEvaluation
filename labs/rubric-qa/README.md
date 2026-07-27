@@ -935,3 +935,95 @@ it; changing it breaks comparability with those results and invalidates the labe
 responsible sequence is measure first, on a proper battery, and only then ask the v1 owners
 whether any finding is worth that price. Nothing here justifies touching v1, and this work
 proposes no change to it.
+
+## Round 25: the example-placement test — do the examples obviously belong to the levels they claim?
+
+A rubric's examples do most of the annotation work: a judge reaches for the example that
+resembles the task in front of it long before it parses a "Critically" clause. Rounds 1–24
+tested the *level descriptions*. This round tests the *examples*, and it found errors the
+earlier rounds could not.
+
+### 25.1 The test
+
+Strip every `Examples:` block out of a rubric, shuffle its examples into one pool, hand a
+judge the full level descriptions plus the pool, and ask it to put each example back on the
+level it illustrates — reasoning first, level second. An example that is "obviously the level
+it claims" is one a judge with the rubric in hand can return to its own level.
+
+Three judges (haiku, sonnet, opus), 77 examples across `PLp PLe PLs MSc`, 231 decisions per
+run. Explicit `at Level N` cross-references inside example text were rewritten to "at the
+level below" so they could not leak the answer. Pre-registration in `prereg_r25.json`;
+all 468 decisions across three runs in `example_placement_labels.csv`.
+
+Scoring: per example, how many of three judges recover the true level. 3/3 clean, 2/3 soft,
+≤1/3 defective. Pre-registered decision rule: rewrite at ≤1/3.
+
+### 25.2 Result: 75% clean before, 92% after
+
+| | PLp | PLe | PLs | MSc | all |
+|---|---|---|---|---|---|
+| before | 13/20 | 13/19 | 17/18 | 15/20 | **58/77 (75%)** |
+| after | 17/20 | 18/19 | 17/18 (untouched) | 19/20 | **71/77 (92%)** |
+
+`PLs` needed no example changes at all — 17/18 first time.
+
+### 25.3 Three examples were on the wrong level, and the judges were right
+
+The valuable failures were not vague examples but examples that *contradicted their own
+level description*. In each case the judges' reasoning derived the correct level from the
+rubric text, and the rubric was wrong.
+
+- **`PLe` L1, "Find the winning line in a chess position and write it down"** — 0/3, all three
+  said L0. The example's own parenthetical said "carrying it out is a single step", which is
+  L0's defining condition verbatim. Moved to L0.
+- **`MSc` L5, "Negotiate the release of hostages with a captor"** — 0/3, all three said L4.
+  L5 requires *several* parties with mutually exclusive positions; a captor is one
+  counterpart, which is L4's "the opposition comes from a single counterpart". Rewritten so
+  the captor, the police commander and the families each demand a different course.
+- **`PLp` L1, "Decide the order in which to run three independent errands"** — 0/3, all three
+  said L2. Three errands *are* a decomposition into a few independent subtasks, which is L2's
+  definition. Replaced.
+
+Two more were genuinely mis-levelled rather than merely ambiguous: `MSc` L3's
+doctor-delivering-a-diagnosis (3/3 said L2 — nothing was being moved, so the example was
+rewritten to include a treatment the patient is at first reluctant to start), and `PLp` L4's
+mountaineering expedition (expedition planning has established methods and the subtasks *can*
+be listed at the outset, i.e. L3 — replaced with a first ascent of an unclimbed face, where
+the decomposition itself is undiscovered).
+
+### 25.4 The L4/L5 boundary is the residual soft spot, and it is not an example defect
+
+Pooling the two `PLp` runs that share 18 items (6 votes each), four items fall short of
+unanimous, and three of them sit at the top of the ladder: the synthesis route (L5, 3/6),
+the multi-year research programme (L5, 4/6) and the ML-paper replication (L4, 4/6). The
+dissent is always downward and always by one level, and the losing reading is defensible —
+retrosynthesis *is* an established procedure, replication *is* an established activity. This
+is a property of where "no established procedure exists at all" stops being crisp, not of
+these three sentences. Recorded rather than patched; chasing it further would overfit the
+examples to this test.
+
+### 25.5 A cross-dimension note made one example *harder* to place
+
+Following the aim of making examples separate confusable dimensions, a note was added to
+`PLp` L5's synthesis route saying that carrying out such a synthesis is `PLe`. It had been
+3/3 before the note and fell to 3/6 after. The mirror-image note on the `PLe` L5 synthesis
+example cost nothing (18/19 for that run). So the note was kept on the `PLe` side and
+reverted on the `PLp` side.
+
+The general lesson: a contrast note helps when it names what the example is **not**, and
+hurts when it invites the judge to weigh a *different* dimension's difficulty while placing
+the item. Reported because it contradicts the intuition that more signposting is always
+better.
+
+### 25.6 Separating examples now in the set
+
+Twelve examples carry an explicit cross-dimension contrast, including two families of
+minimal pairs that differ only in which dimension owns the difficulty:
+
+- **chess**: `PLp` L0 (only one legal continuation) · `PLp` L3 (middlegame, look-ahead) ·
+  `PLe` L0 (find the line, write it down) · `PLs` L0 (position fully shown)
+- **chemical synthesis**: `PLp` L5 (devise the route) · `PLe` L5 (carry it out, no step
+  retriable)
+
+Both pairs hold the domain constant and move only the driver, which is what lets a judge see
+that the dimensions are asking different questions about the same task.
