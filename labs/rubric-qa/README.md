@@ -1027,3 +1027,87 @@ minimal pairs that differ only in which dimension owns the difficulty:
 
 Both pairs hold the domain constant and move only the driver, which is what lets a judge see
 that the dimensions are asking different questions about the same task.
+
+## Round 26: does the round-25 example surgery survive an adversarial battery?
+
+Round 25 changed fifteen examples across `PLp`, `PLe` and `MSc`. Every earlier validation —
+the rivercross solver oracle, the designed batteries, the trap batteries of rounds 5–21 —
+was run against the *old* examples, and examples drive judges harder than level text does.
+So the edits had to be treated as a possible regression, not an improvement to be assumed.
+
+### 26.1 The battery
+
+24 held-out designed items, none of them a rubric example, each scored on **all four**
+dimensions by haiku, sonnet and opus: 288 decisions. Pre-registration in `prereg_r26.json`,
+all 450 decisions across three rubric versions in `stress_battery_labels.csv`.
+
+- **8 trap-regression items** — held-out re-wordings of the traps that earlier rounds
+  established: deliberation-is-not-execution, legality-is-not-feedback, stakes-without-an-
+  exchange, volume-without-planning, deduction-without-observation, transcription.
+- **10 attractor probes** — each sits one level *above* a newly written round-25 example on
+  the same dimension. A new example is a new attractor, and the risk is that a vivid one
+  drags its neighbours. The unclimbed-face item at `PLp` L4 was the main worry: a very
+  extreme L4 anchor could raise the L4 bar and push genuine L4 tasks down to 3.
+- **6 sentinels** — analogues, never copies, of the levels the rubrics are meant to nail.
+
+### 26.2 Result: the surgery holds
+
+**23 of 24 items pass on their target dimension with 3/3 judges.** All eight traps hold. All
+six sentinels are exact. Every attractor probe holds: `PLp` L4 replication stays at 4 (it had
+wobbled to 3/3/4 during round 25's placement runs, so the vivid new L4 anchor did *not* raise
+the bar), standard-technique contest problems stay at 1, per-screw assembly stays at `PLe` 1,
+and two-party custody stays at `MSc` 5 despite the new three-party L5 example.
+
+The single miss is `N10` — converting a thousand temperature readings and producing monthly
+means — where opus scored `PLp` 0 against a pre-registered 1–2. The sharpened L0 conversion
+example ("a single computation; there is nothing to sequence or decide") is the likely pull.
+2/3, one judge, left as recorded rather than patched.
+
+### 26.3 A real defect the battery found: `PLs` was absorbing self-inflicted errors
+
+The off-target cells are where the battery earned its keep. `S06` — hand-typesetting a book
+where a style defined wrongly in an early chapter silently mis-formats every later chapter —
+was pre-registered `PLe` 4 and `PLs` ≤1. `PLe` came back 4/4/4. **`PLs` came back 3/3/4.**
+
+The judges' reasoning was explicit: sonnet placed it at "the Level 3 debugging pattern",
+opus at L4 because "the object that changes is the document (the environment), not merely
+the solver's progress". But the corruption was *caused by the solver's own earlier action*.
+`PLs`'s preamble already routes "monitoring one's own work" to `PLe` — and, for the fourth
+time in this project, **a distinction stated only in the preamble did not bind.**
+
+Two fixes, measured separately:
+
+| | `S06` (self-caused, delayed) | `P2` (self-caused, delayed) | `P1` (world-caused) | `P3` (world changes visibly) |
+|---|---|---|---|---|
+| baseline | 3 / 3 / 4 | — | — | — |
+| + clause bound at L3 and L4 | 3 / **0** / **0** | 3 / **0** / 2 | 3 / 3 / 4 ✓ | 4 / 4 / 4 ✓ |
+| + discriminator in the L3 example | 3 / **0** / **0** | **2** / **0** / **0** | 3 / 3 / 4 ✓ | 4 / 4 / 4 ✓ |
+
+Sonnet and opus now separate a fault the solver introduced from one the world introduced;
+haiku does not, and further edits would be chasing one judge. Recorded as a judge-capability
+limit rather than a rubric ambiguity, since both stronger judges follow the clause and the
+`P1`/`P2` minimal pair separates cleanly for them. `T08` (debugging code the solver did not
+write) held at 3/3/5 throughout, so the fix did not over-correct.
+
+### 26.4 An open question, not a defect: any exogenously changing world scores `PLs` 4
+
+`N05` — playing out a 40-move endgame against an opponent — came back `PLs` 4/4/4 against a
+pre-registered 0–1, and all three judges reasoned correctly from the rubric: the opponent
+alters the world between the solver's actions, and each change is visible when looked at,
+which is L4's condition verbatim. Against `PLs` L0's static chess position this is arguably
+an elegant pair: the same domain, moved only by whether the world changes.
+
+But it means **`PLs` ≥ 4 fires on essentially any interactive task**, which risks making the
+dimension read as "is this task dynamic" and re-introducing coupling with `PLe`. Not patched:
+a floor excluding fully displayed change would also drop the city-traffic and control-room
+anchors, and the right test is a battery that varies interactivity and hiddenness
+independently. Flagged for the team as the one substantive open question in the set.
+
+### 26.5 A note on pre-registration quality
+
+18 of the 96 cells fell outside their pre-registered set, and nearly all were **off-target
+dimensions where the pre-registration was a guess rather than a derivation** — e.g. `PLe` for
+"design the plan for replicating a paper", pre-registered 3–4 and scored 0/3/0 because
+designing is deliberation, which the rubric assigns to `PLp`. The judges were right and the
+pre-registration was wrong. Recorded because the honest denominator for "did the rubrics
+hold" is the target dimension (23/24), not the full cross-product (65/96).
