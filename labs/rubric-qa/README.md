@@ -1111,3 +1111,71 @@ dimensions where the pre-registration was a guess rather than a derivation** —
 designing is deliberation, which the rubric assigns to `PLp`. The judges were right and the
 pre-registration was wrong. Recorded because the honest denominator for "did the rubrics
 hold" is the target dimension (23/24), not the full cross-product (65/96).
+
+## Round 27: the seven predicted overlaps are co-occurrence, not construct confound
+
+The pre-PR audit (`docs/pre-pr-audit.md`) found that routing had only ever been tested
+against 5 of the 18 v1 dimensions, and predicted nine overlaps — two of them high severity.
+Its recommendation was to add a routing clause to each. This round measured them first,
+because a clause written without measurement is exactly what this project has repeatedly
+found does not bind.
+
+### 27.1 Design: dissociation, not correlation
+
+Correlation on a natural battery cannot tell overlap from co-occurrence: hard tasks are hard
+in several ways at once. So the battery is built to **vary the two constructs
+independently**. For each pair, three items:
+
+- **A** — designed high on ours, low on theirs
+- **B** — designed low on ours, high on theirs
+- **C** — the exact collision the audit named
+
+Plus five sentinels. 20 items, 7 dimensions, 160 decisions
+(`overlap_dissociation_labels.csv`). Our dimensions scored by sonnet and opus; the v1
+dimensions by opus. The measure is the **crossover**: `(A_ours − A_theirs) − (B_ours −
+B_theirs)`. If the constructs are one quantity wearing two names, the crossover is ~0.
+
+### 27.2 Result: every pair separates
+
+| pair | audit severity | A (ours/theirs) | B (ours/theirs) | C (collision) | crossover | ρ over all 20 |
+|---|---|---|---|---|---|---|
+| `PLp` × `MCr` | **high** | 3.0 / 0.0 | 1.0 / 3.0 | 4.0 / 4.0 | **5.0** | 0.63 |
+| `PLs` × `MCu` | **high** | 4.0 / 2.0 | 0.0 / 3.0 | 3.0 / 4.0 | **5.0** | **0.07** |
+| `PLp` × `AT` | medium | 3.0 / 2.0 | 1.0 / 3.0 | 5.0 / 4.0 | 3.0 | 0.49 |
+| `PLp` × `CL` | medium | 2.5 / 0.0 | 1.0 / 2.0 | 4.0 / 4.0 | 3.5 | 0.67 |
+| `PLp` × `QLl` | medium | 2.5 / 2.0 | 1.0 / 4.0 | 1.5 / 4.0 | 3.5 | 0.85 |
+
+**No routing clauses are needed.** The audit's central recommendation is not supported. Each
+pair has tasks that load heavily on one dimension and not at all on the other, which is what
+separability means; the C items load on both because those tasks genuinely make both demands,
+which is co-occurrence and is supposed to happen.
+
+The two the audit rated **high** are the two with the largest crossover, and `PLs` × `MCu` —
+called high severity — measures **ρ = 0.07**, essentially independent across the battery.
+
+### 27.3 The pair that deserved attention was ranked lowest
+
+`PLp` × `QLl`, rated medium, has the highest correlation at ρ = 0.85. But the crossover is
+3.5 and the direction is informative: item B5 (deduce a seating arrangement, standard method
+given) scores `PLp` 1 / `QLl` 4, and even the collision item C5 (schedule seven albums under
+five ordering constraints) scores `PLp` 1.5 / `QLl` 4.0. **`QLl` fires where `PLp` does not.**
+The high ρ comes from `QLl` scoring ≥1 on 17 of 20 items, not from `PLp` leaking into it.
+
+### 27.4 A v1 property worth recording: loose floors
+
+Zeros across the 20 items: `PLs` 14, `CL` 8, `MCr` 5, `QLl` 3, `PLp` 2, `MCu` 2, `AT` 2.
+
+Four of the five v1 dimensions tested score ≥1 on almost everything on this battery. A
+dimension with a loose floor correlates with anything that tracks overall difficulty, which
+inflates every ρ it appears in — so correlations *between* v1 dimensions and anything else
+should be read with that in mind. Stated neutrally: it is a property of the v1 scales on this
+battery, this work proposes no change to them, and `PLs`'s tight floor (14/20 zeros) is
+evidence the v2 gates are doing their job rather than evidence against v1.
+
+### 27.5 What the audit was actually worth
+
+Combined with §25's finding that four of five of its example-level claims were false against
+data already held, the pre-PR audit's value lay entirely in its **checkable facts** — that
+`MSm` does not exist, and that `PLe` L5 conjoins irreversibility with sparse feedback — and
+not in its severity judgments, which measurement inverted. Worth remembering the next time a
+confident structural read arrives without numbers attached.
