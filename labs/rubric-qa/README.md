@@ -881,3 +881,57 @@ exactly those tasks. This is reading-versus-moving, a functional dependency, **n
 shared driver, and per the original audit's decision rule an expected asymmetric
 correlation is reading (4), not a merge candidate. Recording it here so that whoever first
 computes an MSm/MSc correlation finds it predicted rather than alarming.
+
+## Round 24: is v1 multi-driver? No — and a hypothesis of ours failed its test
+
+Prompted by the worry that going single-driver puts v2 out of step with v1.
+
+### 24.1 v1 ladders are single-driver too
+
+Reading the level ladders (not the preambles) of VO, AS, CL, MCu, QLl, SNs, MS: **every one
+moves on a single quantity.** VO on elapsed time; AS on amount of attention; CL on depth of
+conceptualisation; MCu on metacognitive effort; QLl on logical complexity; SNs on spatial
+transformation complexity; MS on depth of mentalising. Preambles enumerate *facets* or
+*manifestations* of the ability, but the ladder never conjoins independent drivers.
+
+This matters for how the redesign should be described. **The old v2 agentic rubrics were the
+anomaly, not v1.** Their ladders genuinely conjoined horizon AND agent count AND
+open-endedness AND environment dynamics, which is what made them collinear. Going
+single-driver did not deviate from v1 — it brought v2 back into line with it. The report and
+PR should say this, because "we did something v1 doesn't do" is a natural reviewer objection
+and it is simply false.
+
+### 24.2 A hypothesis of ours failed: operationalisation quality did not predict agreement
+
+Having found v1 single-driver, we tested a follow-up: v1 dimensions differ in how well the
+single quantity is *operationalised*. Some use unanchored gradables ("minimal / some /
+moderate / substantial"), others name concrete constructs. Hypothesis: the anchored ones
+should show better inter-judge agreement, which would localise where v1 could be improved.
+
+A/B on 10 pilot tasks, haiku vs sonnet, CL (vague magnitudes) against QLl (named constructs
+— syllogisms, conditionals, biconditionals, nested structures):
+
+| v1 dim | style | exact | within ±1 | α |
+|---|---|---|---|---|
+| CL | vague magnitudes | 2/10 | 10/10 | 0.696 |
+| QLl | named constructs | 2/10 | 9/10 | 0.501 |
+
+**The hypothesis is not supported** — the vaguer rubric agreed slightly *better*, and exact
+agreement was 2/10 for both. Recorded as a failed prediction rather than dropped. Caveats
+that stop this being evidence in the other direction either: n=10, two judges, one seed,
+severe range restriction (all labels 0–3), and SWE-bench/AssistantBench tasks are not
+obviously well-suited to either dimension.
+
+What can be said: both v1 dimensions show low *exact* agreement on this set with most
+disagreement off-by-one, i.e. a judge-offset pattern rather than disorder. Whether v1's
+boundaries would benefit from sharpening is **open**, and this test does not settle it.
+
+### 24.3 Whether to act on it is a different question from whether it is true
+
+Even if a v1 dimension were shown to be improvable, the cost–benefit differs sharply from
+v2's. v2 agentic is an unpublished draft: rewriting it costs a re-validation we were doing
+anyway. v1 is published, has empirical results built on it, and existing label sets assume
+it; changing it breaks comparability with those results and invalidates the labels. The
+responsible sequence is measure first, on a proper battery, and only then ask the v1 owners
+whether any finding is worth that price. Nothing here justifies touching v1, and this work
+proposes no change to it.
