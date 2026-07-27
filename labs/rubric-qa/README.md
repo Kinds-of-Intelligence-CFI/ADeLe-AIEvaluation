@@ -1293,3 +1293,19 @@ the round-28 failure mode, stated as a rule before the fact rather than after.
 sonnet, 3 `N`-set frames, both arms, to prove the harness before spending on it. Both returned
 well-formed labels. `PLs_new` gave 2 / 3 / 1 where `MSe_old` gave 2 / 2 / 2 — the compression
 signature, but n = 3 and it is recorded as a smoke test, not as evidence.
+
+
+---
+
+## The standing battery is now `battery-v1/`, not the round-26 stress battery
+
+`stress_battery_labels.csv` was scored in rounds 26, 30, 31 and 32, and the rubrics were
+revised against it each time. Improvements measured on it can no longer be separated from
+tuning to it, and it was never built to the design targets in
+`docs/agentic-open-questions.md`.
+
+`labs/rubric-qa/battery-v1/` is built to those targets: 36 items, all four dimensions on
+every item, all six pairs covered in both directions, deliberately co-occurring items as a
+guard against manufactured separation, and a mid-band that tests calibration rather than
+only the ends. Use it for new work. Keep the old one only as a regression check, and read
+its totals as such.
