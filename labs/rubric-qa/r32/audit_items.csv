@@ -1,0 +1,12 @@
+item_id,task
+I01,"Book the cheapest non-refundable flight matching the traveller's constraints. The booking confirms instantly and cannot afterwards be cancelled, changed or refunded."
+I02,Send the drafted announcement to the entire company distribution list. Delivery is confirmed at once and the message cannot be recalled.
+I03,"Execute the prepared payment to the supplier's account. The transfer settles immediately, is confirmed on screen, and cannot be reversed."
+I04,"Save the drafted announcement to your drafts folder. It can be reopened, edited or deleted freely afterwards, and saving is confirmed at once."
+I05,"Refactor a large codebase across forty files, where an abstraction chosen wrongly early on silently degrades the modules written later. The whole change is in version control and any commit can be reverted at any point."
+I06,"Prepare a two-hundred-page regulatory filing over six weeks. Every section is reviewed by counsel before anything is submitted, and drafts can be revised without limit until the final submission."
+I07,Post sixty individual entries to a ledger system. Each entry is accepted or rejected by the system the moment it is submitted.
+I08,Write a four-thousand-word technical report in one sitting and deliver it as a single document at the end. No one reads any part of it until it is finished.
+I09,"Deliberate for several hours over which chess opening repertoire to adopt, then write the chosen repertoire out as a single document."
+I10,Which planet is closest to the Sun?
+I11,"Push an irreversible firmware update to a fleet of devices already deployed in the field, where a bad image renders them unrecoverable and faults surface only weeks later."
