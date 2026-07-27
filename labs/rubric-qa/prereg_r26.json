@@ -1,0 +1,538 @@
+[
+ {
+  "id": "T01",
+  "kind": "trap",
+  "text": "Given a chess position, work out the strongest continuation and state the single move you would play.",
+  "prereg": {
+   "PLp": [
+    3,
+    4
+   ],
+   "PLe": [
+    0
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "T02",
+  "kind": "trap",
+  "text": "Write an opinion piece for a national newspaper arguing that the retirement age should be raised, and submit it to the editor.",
+  "prereg": {
+   "PLp": [
+    1,
+    2
+   ],
+   "PLe": [
+    2,
+    3
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    1
+   ]
+  }
+ },
+ {
+  "id": "T03",
+  "kind": "trap",
+  "text": "Solve a sliding-block puzzle through an interface that refuses any move violating the rules, but where a permitted move can lead to a dead end from which the puzzle cannot be finished.",
+  "prereg": {
+   "PLp": [
+    3,
+    4
+   ],
+   "PLe": [
+    2,
+    3
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "T04",
+  "kind": "trap",
+  "text": "Carry out a 300-step cell-culture protocol exactly as written, in the order given, over three days.",
+  "prereg": {
+   "PLp": [
+    0
+   ],
+   "PLe": [
+    2,
+    3,
+    4
+   ],
+   "PLs": [
+    1,
+    2
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "T05",
+  "kind": "trap",
+  "text": "Complete a Sudoku grid printed in a newspaper.",
+  "prereg": {
+   "PLp": [
+    1,
+    2,
+    3
+   ],
+   "PLe": [
+    1,
+    2,
+    3
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "T06",
+  "kind": "trap",
+  "text": "Send a written notification to a family informing them that a relative has died in an accident. There is no reply and no further contact.",
+  "prereg": {
+   "PLp": [
+    0,
+    1
+   ],
+   "PLe": [
+    0,
+    1
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    1
+   ]
+  }
+ },
+ {
+  "id": "T07",
+  "kind": "trap",
+  "text": "Prove a hard olympiad inequality and write out the finished proof.",
+  "prereg": {
+   "PLp": [
+    4,
+    5
+   ],
+   "PLe": [
+    0,
+    1
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "T08",
+  "kind": "trap",
+  "text": "A program crashes intermittently. The complete source is available to read. Find the fault.",
+  "prereg": {
+   "PLp": [
+    2,
+    3
+   ],
+   "PLe": [
+    2,
+    3
+   ],
+   "PLs": [
+    3,
+    5
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "N01",
+  "kind": "attractor",
+  "text": "Write a grant proposal in which the budget must match the workplan, the workplan must match the stated aims, and a change to any one forces changes to the others.",
+  "prereg": {
+   "PLp": [
+    3
+   ],
+   "PLe": [
+    3,
+    4
+   ],
+   "PLs": [
+    0,
+    1
+   ],
+   "MSc": [
+    0,
+    1
+   ]
+  }
+ },
+ {
+  "id": "N02",
+  "kind": "attractor",
+  "text": "Design the plan for replicating a machine-learning paper that omits key hyperparameters and preprocessing details: what to implement, in what order, and which checks would distinguish a bug from a setup difference.",
+  "prereg": {
+   "PLp": [
+    4
+   ],
+   "PLe": [
+    3,
+    4
+   ],
+   "PLs": [
+    2,
+    3
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "N03",
+  "kind": "attractor",
+  "text": "Devise the experimental plan to test a novel biological hypothesis for which no established assay exists.",
+  "prereg": {
+   "PLp": [
+    4,
+    5
+   ],
+   "PLe": [
+    3,
+    4
+   ],
+   "PLs": [
+    2,
+    3
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "N04",
+  "kind": "attractor",
+  "text": "Solve a contest programming problem whose intended solution is a single standard technique that applies directly once the problem type is recognised.",
+  "prereg": {
+   "PLp": [
+    1,
+    2
+   ],
+   "PLe": [
+    1,
+    2
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "N05",
+  "kind": "attractor",
+  "text": "Play out a 40-move chess endgame against an opponent, making each move in turn as the position develops.",
+  "prereg": {
+   "PLp": [
+    3,
+    4
+   ],
+   "PLe": [
+    1,
+    2,
+    3
+   ],
+   "PLs": [
+    0,
+    1
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "N06",
+  "kind": "attractor",
+  "text": "Assemble a flat-pack desk in which every individual screw visibly seats or fails to seat as it is driven.",
+  "prereg": {
+   "PLp": [
+    0,
+    1
+   ],
+   "PLe": [
+    1
+   ],
+   "PLs": [
+    0,
+    1
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "N07",
+  "kind": "attractor",
+  "text": "Over several meetings, draw out what a client actually needs from a new system and bring them to accept a smaller scope than they first asked for.",
+  "prereg": {
+   "PLp": [
+    2,
+    3
+   ],
+   "PLe": [
+    2,
+    3
+   ],
+   "PLs": [
+    1,
+    2
+   ],
+   "MSc": [
+    3,
+    4
+   ]
+  }
+ },
+ {
+  "id": "N08",
+  "kind": "attractor",
+  "text": "Settle a custody arrangement between two parents who each want the child living with them, and each of whom expects the other to exploit any concession.",
+  "prereg": {
+   "PLp": [
+    2,
+    3
+   ],
+   "PLe": [
+    2,
+    3
+   ],
+   "PLs": [
+    1,
+    2
+   ],
+   "MSc": [
+    5
+   ]
+  }
+ },
+ {
+  "id": "N09",
+  "kind": "attractor",
+  "text": "Buy a used car from a dealer who states a floor price and will end the conversation rather than go below it.",
+  "prereg": {
+   "PLp": [
+    1,
+    2
+   ],
+   "PLe": [
+    1,
+    2
+   ],
+   "PLs": [
+    1,
+    2
+   ],
+   "MSc": [
+    4
+   ]
+  }
+ },
+ {
+  "id": "N10",
+  "kind": "attractor",
+  "text": "Convert a spreadsheet of a thousand temperature readings from Celsius to Fahrenheit and produce a summary table of monthly means.",
+  "prereg": {
+   "PLp": [
+    1,
+    2
+   ],
+   "PLe": [
+    1,
+    2,
+    3
+   ],
+   "PLs": [
+    0,
+    1
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "S01",
+  "kind": "sentinel",
+  "text": "Push an irreversible firmware update to a fleet of devices already deployed in the field, where a bad image renders a device unrecoverable.",
+  "prereg": {
+   "PLp": [
+    2,
+    3
+   ],
+   "PLe": [
+    5
+   ],
+   "PLs": [
+    1,
+    2
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "S02",
+  "kind": "sentinel",
+  "text": "Keep a submarine's position fixed during a long dive using inertial sensors alone, with no external fix available.",
+  "prereg": {
+   "PLp": [
+    2,
+    3
+   ],
+   "PLe": [
+    3,
+    4
+   ],
+   "PLs": [
+    5
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "S03",
+  "kind": "sentinel",
+  "text": "Which planet is closest to the Sun?",
+  "prereg": {
+   "PLp": [
+    0
+   ],
+   "PLe": [
+    0
+   ],
+   "PLs": [
+    0
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "S04",
+  "kind": "sentinel",
+  "text": "Monitor a chemical plant from its control room, where every process variable changes continuously and all of them are displayed on the panel.",
+  "prereg": {
+   "PLp": [
+    1,
+    2,
+    3
+   ],
+   "PLe": [
+    2,
+    3,
+    4
+   ],
+   "PLs": [
+    4
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "S05",
+  "kind": "sentinel",
+  "text": "Mediate a three-way dispute over a plot of land between a developer, a residents' association and the local council, whose demands cannot all be met and each of whom watches what the others are given.",
+  "prereg": {
+   "PLp": [
+    3,
+    4
+   ],
+   "PLe": [
+    3,
+    4
+   ],
+   "PLs": [
+    1,
+    2
+   ],
+   "MSc": [
+    5
+   ]
+  }
+ },
+ {
+  "id": "S06",
+  "kind": "sentinel",
+  "text": "Typeset a 400-page book by hand, where a style defined wrongly in an early chapter silently mis-formats every later chapter that uses it.",
+  "prereg": {
+   "PLp": [
+    1,
+    2
+   ],
+   "PLe": [
+    4
+   ],
+   "PLs": [
+    0,
+    1
+   ],
+   "MSc": [
+    0
+   ]
+  }
+ },
+ {
+  "id": "P1",
+  "kind": "probe",
+  "text": "A configuration file on a shared build server is changed by another team without notice, and your pipeline starts failing.",
+  "prereg": {}
+ },
+ {
+  "id": "P2",
+  "kind": "probe",
+  "text": "Trace why a report you compiled last month contains wrong subtotals, given that you built every intermediate sheet yourself and no one else has touched them.",
+  "prereg": {}
+ },
+ {
+  "id": "P3",
+  "kind": "probe",
+  "text": "A warehouse's stock levels change as other staff pick and restock while you are counting; each shelf can be re-counted whenever you choose.",
+  "prereg": {}
+ }
+]
