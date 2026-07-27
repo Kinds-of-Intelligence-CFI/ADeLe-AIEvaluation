@@ -56,14 +56,8 @@ def active_demands() -> List[str]:
 
 
 def load_active_catalog() -> RubricsCatalog:
-    """Compose the active v2 rubric set (per the manifest) into a catalog.
-
-    The set spans two rubric versions on purpose — ``MSm`` is v1's mind-modelling
-    rubric, renamed but textually unchanged — so the mixed-version guard is told
-    this composition is deliberate rather than an accidental v1/v2 mash-up.
-    """
-    return RubricsCatalog.from_paths(
-        (e.path for e in read_manifest()), mixed_versions_ok=True)
+    """Compose the active v2 rubric set (per the manifest) into a catalog."""
+    return RubricsCatalog.from_paths(e.path for e in read_manifest())
 
 
 # Source-document provenance, keyed by source tag. The per-dimension active
@@ -71,9 +65,9 @@ def load_active_catalog() -> RubricsCatalog:
 _DOCS = {
     "Paolo_Pablo":   {"doc_id": "1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk", "version_date": "2025-07-26"},
     "Marko": {"doc_id": "1tyaEcWqyn8N5TDbgNYnsC7ZiLTtynHCGoNps8Ag_8y0", "version_date": "unknown"},
-    # MSm is v1's mind-modelling rubric, renamed from MS. The active v2 set points at
-    # the v1 file itself rather than a copy, so the two cannot drift apart, and no
-    # rubric text was edited by the rename.
+    # MSm is v1's rubric plus one carve-out at L4/L5: a stance stated outright needs no
+    # modelling, so it does not double-count MSc. Nothing else was touched — see
+    # labs/rubric-qa/r31. data_v1/MSm.txt stays frozen for reproduction.
     "v1": {"doc_id": "arXiv:2503.06378 §10", "version_date": "1.0"},
 }
 
@@ -93,7 +87,7 @@ _ACTIVE = [
     ("PLp", "Paolo_Pablo", "Planning", "Paolo_Pablo/PLp.txt"),
     ("PLe", "Paolo_Pablo", "Action control and execution", "Paolo_Pablo/PLe.txt"),
     ("PLs", "Paolo_Pablo", "Environmental and situational understanding", "Paolo_Pablo/PLs.txt"),
-    ("MSm", "v1", "Mind Modelling and Social Cognition", "../data_v1/MSm.txt"),
+    ("MSm", "Paolo_Pablo", "Mind Modelling and Social Cognition", "Paolo_Pablo/MSm.txt"),
     ("MSc", "Paolo_Pablo", "Communication and social interaction", "Paolo_Pablo/MSc.txt"),
     ("MMe", "Marko", "Episodic Memory", "Marko/MMe.txt"),
     ("MMp", "Marko", "Procedural Memory", "Marko/MMp.txt"),
