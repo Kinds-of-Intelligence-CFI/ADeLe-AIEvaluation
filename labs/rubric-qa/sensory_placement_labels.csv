@@ -1,0 +1,130 @@
+dim,item_id,true_level,judge,assigned,example
+SPv,SPv-01,2,haiku,2,Reading moderately clear handwriting or text with slight glare.
+SPv,SPv-01,2,sonnet,2,Reading moderately clear handwriting or text with slight glare.
+SPv,SPv-01,2,opus,2,Reading moderately clear handwriting or text with slight glare.
+SPv,SPv-02,5,haiku,3,Identifying well-camouflaged animals in dense vegetation and poor light.
+SPv,SPv-02,5,sonnet,4,Identifying well-camouflaged animals in dense vegetation and poor light.
+SPv,SPv-02,5,opus,5,Identifying well-camouflaged animals in dense vegetation and poor light.
+SPv,SPv-03,3,haiku,3,Driving in foggy conditions.
+SPv,SPv-03,3,sonnet,3,Driving in foggy conditions.
+SPv,SPv-03,3,opus,3,Driving in foggy conditions.
+SPv,SPv-04,2,haiku,1,Classifying cats and dogs in images.
+SPv,SPv-04,2,sonnet,1,Classifying cats and dogs in images.
+SPv,SPv-04,2,opus,1,Classifying cats and dogs in images.
+SPv,SPv-05,2,haiku,2,Tracking 2–3 people simultaneously in an open area.
+SPv,SPv-05,2,sonnet,3,Tracking 2–3 people simultaneously in an open area.
+SPv,SPv-05,2,opus,2,Tracking 2–3 people simultaneously in an open area.
+SPv,SPv-06,5,haiku,4,"Real-time visual parsing of rapidly changing medical imaging (e.g., interpreting live ultrasound during an emergency procedure)."
+SPv,SPv-06,5,sonnet,5,"Real-time visual parsing of rapidly changing medical imaging (e.g., interpreting live ultrasound during an emergency procedure)."
+SPv,SPv-06,5,opus,5,"Real-time visual parsing of rapidly changing medical imaging (e.g., interpreting live ultrasound during an emergency procedure)."
+SPv,SPv-07,1,haiku,1,"Identifying a familiar object (coffee cup, phone) isolated on a clear surface."
+SPv,SPv-07,1,sonnet,1,"Identifying a familiar object (coffee cup, phone) isolated on a clear surface."
+SPv,SPv-07,1,opus,1,"Identifying a familiar object (coffee cup, phone) isolated on a clear surface."
+SPv,SPv-08,5,haiku,4,Air-traffic controller visually tracking aircraft in poor weather with radar interference.
+SPv,SPv-08,5,sonnet,5,Air-traffic controller visually tracking aircraft in poor weather with radar interference.
+SPv,SPv-08,5,opus,4,Air-traffic controller visually tracking aircraft in poor weather with radar interference.
+SPv,SPv-09,4,haiku,3,Reading fragmented text across multiple torn document pieces while determining which fragments connect.
+SPv,SPv-09,4,sonnet,3,Reading fragmented text across multiple torn document pieces while determining which fragments connect.
+SPv,SPv-09,4,opus,3,Reading fragmented text across multiple torn document pieces while determining which fragments connect.
+SPv,SPv-10,1,haiku,1,Following a single person walking across an open space.
+SPv,SPv-10,1,sonnet,2,Following a single person walking across an open space.
+SPv,SPv-10,1,opus,1,Following a single person walking across an open space.
+SPv,SPv-11,3,haiku,4,Following a basketball during gameplay among 5–6 players.
+SPv,SPv-11,3,sonnet,4,Following a basketball during gameplay among 5–6 players.
+SPv,SPv-11,3,opus,3,Following a basketball during gameplay among 5–6 players.
+SPv,SPv-12,2,haiku,2,"Finding a specific item in a moderately cluttered drawer (e.g., locating keys among 10–15 objects)."
+SPv,SPv-12,2,sonnet,2,"Finding a specific item in a moderately cluttered drawer (e.g., locating keys among 10–15 objects)."
+SPv,SPv-12,2,opus,2,"Finding a specific item in a moderately cluttered drawer (e.g., locating keys among 10–15 objects)."
+SPv,SPv-13,3,haiku,3,Spotting a camouflaged object (an animal blending with its background).
+SPv,SPv-13,3,sonnet,2,Spotting a camouflaged object (an animal blending with its background).
+SPv,SPv-13,3,opus,3,Spotting a camouflaged object (an animal blending with its background).
+SPv,SPv-14,1,haiku,1,"Recognising a face in a well-lit, frontal photograph."
+SPv,SPv-14,1,sonnet,1,"Recognising a face in a well-lit, frontal photograph."
+SPv,SPv-14,1,opus,1,"Recognising a face in a well-lit, frontal photograph."
+SPv,SPv-15,4,haiku,4,"Reading severely degraded text (water-damaged documents, extreme low light)."
+SPv,SPv-15,4,sonnet,4,"Reading severely degraded text (water-damaged documents, extreme low light)."
+SPv,SPv-15,4,opus,5,"Reading severely degraded text (water-damaged documents, extreme low light)."
+SPv,SPv-16,1,haiku,1,Reading printed text in good lighting (even with slight glare).
+SPv,SPv-16,1,sonnet,1,Reading printed text in good lighting (even with slight glare).
+SPv,SPv-16,1,opus,1,Reading printed text in good lighting (even with slight glare).
+SPv,SPv-17,4,haiku,5,"Resolving extreme binding ambiguity in chaotic scenes (e.g., individual body configurations in a dense rugby scrum)."
+SPv,SPv-17,4,sonnet,5,"Resolving extreme binding ambiguity in chaotic scenes (e.g., individual body configurations in a dense rugby scrum)."
+SPv,SPv-17,4,opus,5,"Resolving extreme binding ambiguity in chaotic scenes (e.g., individual body configurations in a dense rugby scrum)."
+SPv,SPv-18,5,haiku,4,Processing highly degraded thermal or night-vision imagery to identify specific targets.
+SPv,SPv-18,5,sonnet,4,Processing highly degraded thermal or night-vision imagery to identify specific targets.
+SPv,SPv-18,5,opus,4,Processing highly degraded thermal or night-vision imagery to identify specific targets.
+SPv,SPv-19,3,haiku,3,Identifying subtle pneumonia infiltrates in chest X-rays by distinguishing them from overlapping vascular structures.
+SPv,SPv-19,3,sonnet,3,Identifying subtle pneumonia infiltrates in chest X-rays by distinguishing them from overlapping vascular structures.
+SPv,SPv-19,3,opus,3,Identifying subtle pneumonia infiltrates in chest X-rays by distinguishing them from overlapping vascular structures.
+SPv,SPv-20,4,haiku,4,"Tracking multiple fast-moving, frequently occluded players in dense American-football gameplay."
+SPv,SPv-20,4,sonnet,4,"Tracking multiple fast-moving, frequently occluded players in dense American-football gameplay."
+SPv,SPv-20,4,opus,4,"Tracking multiple fast-moving, frequently occluded players in dense American-football gameplay."
+SPa,SPa-01,3,haiku,3,Accurately transcribing a news broadcast given by a fluent speaker.
+SPa,SPa-01,3,sonnet,3,Accurately transcribing a news broadcast given by a fluent speaker.
+SPa,SPa-01,3,opus,3,Accurately transcribing a news broadcast given by a fluent speaker.
+SPa,SPa-02,0,haiku,0,Identifying a song based on its metadata or title text.
+SPa,SPa-02,0,sonnet,0,Identifying a song based on its metadata or title text.
+SPa,SPa-02,0,opus,0,Identifying a song based on its metadata or title text.
+SPa,SPa-03,1,haiku,1,Distinguishing between a male and a female voice while reading a slow sentence.
+SPa,SPa-03,1,sonnet,1,Distinguishing between a male and a female voice while reading a slow sentence.
+SPa,SPa-03,1,opus,1,Distinguishing between a male and a female voice while reading a slow sentence.
+SPa,SPa-04,2,haiku,1,Classifying notes as higher or lower in pitch than a reference.
+SPa,SPa-04,2,sonnet,1,Classifying notes as higher or lower in pitch than a reference.
+SPa,SPa-04,2,opus,1,Classifying notes as higher or lower in pitch than a reference.
+SPa,SPa-05,1,haiku,1,Identifying a loud alarm or siren in a silent room.
+SPa,SPa-05,1,sonnet,1,Identifying a loud alarm or siren in a silent room.
+SPa,SPa-05,1,opus,1,Identifying a loud alarm or siren in a silent room.
+SPa,SPa-06,1,haiku,1,"Following the beat of a simple, slow drum rhythm."
+SPa,SPa-06,1,sonnet,2,"Following the beat of a simple, slow drum rhythm."
+SPa,SPa-06,1,opus,2,"Following the beat of a simple, slow drum rhythm."
+SPa,SPa-07,5,haiku,5,Composing a complex symphony or generating a novel soundscape that mimics a specific physical environment.
+SPa,SPa-07,5,sonnet,5,Composing a complex symphony or generating a novel soundscape that mimics a specific physical environment.
+SPa,SPa-07,5,opus,5,Composing a complex symphony or generating a novel soundscape that mimics a specific physical environment.
+SPa,SPa-08,5,haiku,5,"Learning to speak a language with distinct phonology to a native-level accent, including pitch-accent subtleties, and using it in noisy environments."
+SPa,SPa-08,5,sonnet,5,"Learning to speak a language with distinct phonology to a native-level accent, including pitch-accent subtleties, and using it in noisy environments."
+SPa,SPa-08,5,opus,4,"Learning to speak a language with distinct phonology to a native-level accent, including pitch-accent subtleties, and using it in noisy environments."
+SPa,SPa-09,5,haiku,5,Categorising specific ultrasonic vocalisations of mice or identifying individual bird species in a dense tropical-rainforest recording.
+SPa,SPa-09,5,sonnet,5,Categorising specific ultrasonic vocalisations of mice or identifying individual bird species in a dense tropical-rainforest recording.
+SPa,SPa-09,5,opus,5,Categorising specific ultrasonic vocalisations of mice or identifying individual bird species in a dense tropical-rainforest recording.
+SPa,SPa-10,3,haiku,4,Detecting sarcasm or hesitation in a voicemail based on intonation.
+SPa,SPa-10,3,sonnet,3,Detecting sarcasm or hesitation in a voicemail based on intonation.
+SPa,SPa-10,3,opus,3,Detecting sarcasm or hesitation in a voicemail based on intonation.
+SPa,SPa-11,4,haiku,4,Identifying a mechanical failure in a machine from subtle changes in its operating hum against factory noise.
+SPa,SPa-11,4,sonnet,4,Identifying a mechanical failure in a machine from subtle changes in its operating hum against factory noise.
+SPa,SPa-11,4,opus,4,Identifying a mechanical failure in a machine from subtle changes in its operating hum against factory noise.
+SPa,SPa-12,1,haiku,1,"Recognising the sound of a simple vowel (e.g., ""a"")."
+SPa,SPa-12,1,sonnet,1,"Recognising the sound of a simple vowel (e.g., ""a"")."
+SPa,SPa-12,1,opus,1,"Recognising the sound of a simple vowel (e.g., ""a"")."
+SPa,SPa-13,5,haiku,5,"Transcribing the individual parts of a fugue or complex orchestral piece by ear (e.g., spotting a wrong note in the viola section during a fortissimo tutti)."
+SPa,SPa-13,5,sonnet,5,"Transcribing the individual parts of a fugue or complex orchestral piece by ear (e.g., spotting a wrong note in the viola section during a fortissimo tutti)."
+SPa,SPa-13,5,opus,5,"Transcribing the individual parts of a fugue or complex orchestral piece by ear (e.g., spotting a wrong note in the viola section during a fortissimo tutti)."
+SPa,SPa-14,2,haiku,1,Identifying the direction of a sound source (left vs. right) in a quiet environment.
+SPa,SPa-14,2,sonnet,1,Identifying the direction of a sound source (left vs. right) in a quiet environment.
+SPa,SPa-14,2,opus,1,Identifying the direction of a sound source (left vs. right) in a quiet environment.
+SPa,SPa-15,0,haiku,0,Measuring the duration of a sound file by checking its file properties.
+SPa,SPa-15,0,sonnet,0,Measuring the duration of a sound file by checking its file properties.
+SPa,SPa-15,0,opus,0,Measuring the duration of a sound file by checking its file properties.
+SPa,SPa-16,4,haiku,4,"Transcribing a multi-person conversation, annotating who speaks when and important inflexions."
+SPa,SPa-16,4,sonnet,4,"Transcribing a multi-person conversation, annotating who speaks when and important inflexions."
+SPa,SPa-16,4,opus,4,"Transcribing a multi-person conversation, annotating who speaks when and important inflexions."
+SPa,SPa-17,3,haiku,2,"Identifying a specific instrument (e.g., a trumpet) playing a solo within a small jazz quartet."
+SPa,SPa-17,3,sonnet,4,"Identifying a specific instrument (e.g., a trumpet) playing a solo within a small jazz quartet."
+SPa,SPa-17,3,opus,4,"Identifying a specific instrument (e.g., a trumpet) playing a solo within a small jazz quartet."
+SPa,SPa-18,2,haiku,2,"Recognising a well-vocalised, complex but familiar word."
+SPa,SPa-18,2,sonnet,2,"Recognising a well-vocalised, complex but familiar word."
+SPa,SPa-18,2,opus,2,"Recognising a well-vocalised, complex but familiar word."
+SPa,SPa-19,0,haiku,0,Reading a transcript of a conversation.
+SPa,SPa-19,0,sonnet,0,Reading a transcript of a conversation.
+SPa,SPa-19,0,opus,0,Reading a transcript of a conversation.
+SPa,SPa-20,4,haiku,4,Understanding a conversation in a noisy environment.
+SPa,SPa-20,4,sonnet,3,Understanding a conversation in a noisy environment.
+SPa,SPa-20,4,opus,3,Understanding a conversation in a noisy environment.
+SPa,SPa-21,4,haiku,4,"Following a single conversation at a loud, crowded party (the ""cocktail-party effect"")."
+SPa,SPa-21,4,sonnet,4,"Following a single conversation at a loud, crowded party (the ""cocktail-party effect"")."
+SPa,SPa-21,4,opus,4,"Following a single conversation at a loud, crowded party (the ""cocktail-party effect"")."
+SPa,SPa-22,2,haiku,1,Humming back a simple three-note melody after hearing it.
+SPa,SPa-22,2,sonnet,3,Humming back a simple three-note melody after hearing it.
+SPa,SPa-22,2,opus,3,Humming back a simple three-note melody after hearing it.
+SPa,SPa-23,3,haiku,2,Identifying the lyrics of a pop song with a clear vocal track.
+SPa,SPa-23,3,sonnet,2,Identifying the lyrics of a pop song with a clear vocal track.
+SPa,SPa-23,3,opus,2,Identifying the lyrics of a pop song with a clear vocal track.

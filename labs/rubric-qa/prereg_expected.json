@@ -1,0 +1,19 @@
+{
+ "_note": "Expected demand levels written down BEFORE any judge was run, for round 14. Compared against judge medians in README round 14 and pilot_crossdim_labels.csv (column 'prereg').",
+ "swe-0090": {
+  "PLp": 2, "PLe": 2, "PLs": 2, "MSc": 0,
+  "why": "plan: locate the ordering check and allow the lookup - subtasks listable, standard debugging methods (2-3, tie-break 2). exec: patch is constructed but Django's own checks/tests give checkpoints (2). state: codebase must be explored, each file directly readable (2). social: none (0)."
+ },
+ "usaco-0002": {
+  "PLp": 3, "PLe": 3, "PLs": 0, "MSc": 0,
+  "why": "plan: recognising the problem type points at standard technique but i/j/k choices interact, needs look-ahead (3). exec: constructed program, samples are an end-check not per-subtask checkpoints (3). state: statement gives everything (0). social: none (0)."
+ },
+ "tau-0089": {
+  "PLp": 2, "PLe": 2, "PLs": 2, "MSc": 2,
+  "why": "plan: subtasks given and largely independent (2). exec: each tool call confirms, checkpoint-ish (2). state: account/orders looked up across systems, all directly observable (2). social: cooperative turn-by-turn steering, must elicit without revealing the address (2)."
+ },
+ "ab-0011": {
+  "PLp": 1, "PLe": 1, "PLs": 2, "MSc": 0,
+  "why": "plan: one standard routine applied three times, order irrelevant (1). exec: each lookup returns immediately (1). state: many facts gathered from sources, each directly observable (2). social: none (0)."
+ }
+}
