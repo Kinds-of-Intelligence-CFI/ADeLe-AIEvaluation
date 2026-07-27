@@ -621,3 +621,53 @@ observation, not legality"), which is nearly our own wording; levels should be a
 mutually-exclusive logical partition; and the weakest judge lags for capability reasons
 on dimensions whose annotation is itself a reasoning task. Two independent efforts
 reaching the same fixes is evidence those fixes are right.
+
+## Round 19: PLe checked against the rivercross calibration — one real
+## defect found and fixed
+
+Ran our PLe on rivercross's 49 captured-trajectory states (`ple/frame_PLe_1b.csv`),
+substituted into their own prompt scaffold, judged by sonnet (their reference judge:
+their sonnet and opus agree at QWK 1.00 there).
+
+**The defect.** Our first run put 41 of 49 states at Level 1, with the judge's reason
+given as "every move checked immediately; illegal ones rejected". That is the exact
+failure mode rivercross documented and fixed — reading *legality* as reward. We had
+already excluded observation from our feedback definition but not legality.
+
+Adding "not a check that an action was legal or well-formed" to the **preamble** changed
+nothing: the run came back at Level 1 again. The reason is worth recording, because it is
+the third time this pattern has bitten in this project: **PLe's Level 1 text itself said
+"or invalid actions are simply not accepted"**, so the preamble exclusion contradicted the
+level it governed, and the judge — correctly — followed the level. A distinction stated
+only in the preamble is not enforced.
+
+Fix applied at the level: an environment that refuses invalid actions counts as
+step-by-step checking *only where being accepted establishes that the step did what it was
+for*; where an action can be accepted and still be useless — a legal move that makes no
+progress — the refusal is not feedback and the task belongs higher.
+
+| arm | distribution | modal level |
+|---|---|---|
+| ours, before fix | {0:8, 1:41} | 1 — **wrong regime** |
+| ours, after fix | {0:8, 3:41} | 3 — "no feedback until goal" |
+| their final PLe rubric (sonnet) | {0:8, 2:40, 3:1} | 2 |
+
+After the fix our judge identifies the regime correctly: no informative signal until the
+goal, errors reversible, so self-checked. The eight states scored 0 are the *same eight*
+both rubrics single out.
+
+**Correlation with the solver oracle is ~0 for everyone, and that is the expected
+answer.** On the 26 states where the PLe frames overlap the method1b ground truth:
+ours −0.098, their haiku −0.185, their sonnet −0.228. PLe is not supposed to track
+remaining distance — rivercross themselves judge PLe by cross-model agreement, not by
+oracle correlation, and reserve the oracle test for PLp. Our design predicts this
+directly: horizon is routed to Volume, so within a fixed environment the error-detection
+regime is invariant and PLe is near-constant by construction. Distance-to-go is carried
+by VO and PLp, which is the anti-collinearity choice working as intended.
+
+Residual: two states we score 0 have true remaining distance 3 and 5 — sonnet judged that
+one crossing would finish when it would not. That is a solver error by the judge, the same
+capability effect seen for haiku on PLp, not a rubric defect (n=2).
+
+Net: PLe survives the rivercross check with one genuine wording fix, and the fix
+reproduces rivercross's own independently-derived conclusion about legality.
