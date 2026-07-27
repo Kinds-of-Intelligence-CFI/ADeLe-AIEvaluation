@@ -1,0 +1,40 @@
+# Mind Modelling
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-27 | derived: data_v1/MSm.txt, level ladder unchanged
+
+This rubric assesses the level of cognitive demands associated with mind modelling: inferring and reasoning about what other agents perceive, believe, want, intend and feel, and using that to anticipate what they will do. It concerns modelling other minds, not acting on them: choosing and delivering the moves that bring another party's stance where the task requires it is Communication and Social Interaction (MSc), and expressing content well is Verbal Expression (CEe). A task can demand a great deal of mind modelling with no interaction at all, and a great deal of interaction over a stance that is stated outright and needs no inference. Where a task shows features of more than one level, the demand is set by the highest it genuinely requires. The level of cognitive demands progresses from tasks that require no modelling of other minds to those that require combining models of several agents whose beliefs about one another interact to determine what they will do.
+
+Level 0: None. The task does not require modelling other minds. It may not involve other agents, or if it does, perceiving or interacting with those agents is not necessary to complete the task. 
+Examples:
+* Solving a Sudoku puzzle independently.
+* Operating a dishwasher according to its instruction manual.
+* Reading a book silently to yourself, even if others are present in the room.
+
+Level 1: Very low. Performance in this task is improved through the detection or recognition of other agents and by basic social learning (e.g., imitation). Critically, reasoning about observed behaviour or attributing mental states to others is not required for good performance in this task.
+Examples:
+* Mimicking someone's hand gestures during a conversation
+* Following another person's gaze to find where they left their keys.
+* Copying the sequence of buttons someone presses to operate a vending machine.
+
+Level 2: Low. This task requires some basic intuition about the behaviour of others, but only minimal levels of mental state attribution. Good performance might be based on developing accurate associations between other’s responses and the stimuli that caused them. Note, this reasoning need not be explicit. 
+Examples:
+* Recognizing that someone using a rock to crack open a coconut is trying to get to the food inside.
+* Identifying that someone's scrunched nose and turned head means they don't like the smell of spoiled milk.
+* Solving an abstract logic problem in which only minimal levels of mind modelling is needed (e.g. “Assume that there exist only two types of people: knights and knaves. Knights always tell the truth, while knaves always lie.\nYou are given the statements from 3 characters. Based on their statements, infer who is a knight and who is a knave.\nA: C is a liar.\nB: C is a truth-teller and A is a truth-teller.\nC: B is a truth-teller and A is a liar.”)
+
+Level 3: Intermediate. This task goes beyond simple state-behaviour associations and involves attributing cognitive or affective states (i.e., mentalising). That is, it involves inferring specific mental properties about others (‘they believe the moon landing was a hoax’, ‘they want a glass of water’). The task may not, however, require explicit reasoning about these mental states (i.e., full-blown theory of mind).
+Examples:
+* Telling a colleague about a mutual friend's new job, knowing they haven't heard the news yet and thus might be interested.
+* Finding a good hiding spot in hide-and-seek by visualizing where the seeker might look.
+* Recognizing that someone checking their watch repeatedly during a meeting probably wants to leave.
+
+Level 4: High. This task requires a full theory of mind to be solved effectively. It requires not only the attribution of mental states to others, but explicit reasoning about those states. It may also require the integration of social knowledge and heuristics about normal agentic behaviour to accurately predict future behaviour. Importantly, this task also requires a clear distinction between self- and other-related representations.
+Examples:
+* Developing an intuitive theory about an agent’s future behaviour such as understanding that Sally will look for her marble in the basket where she left it, even though Anne moved it to the box when Sally was away.
+* Distinguishing between one’s own emotional reaction to a friend’s story and what the friend is feeling.
+* Recognizing not to point out a spelling mistake in your manager's presentation based on their emotional state, personality, and the social context.
+
+Level 5: Very high. This task requires exceptional mind modelling. It goes beyond generating intuitive theories about another agent within a dyadic interaction, and instead requires the combination of multiple theories of mind corresponding to the intentions, emotions, and beliefs of a range of different agents. Expanding the scope of mind modelling to include multiple agents supports more sophisticated forms of collaborative action. Tasks at this level may require an understanding of the complex networks and hierarchies that form within social groups.
+Examples:
+* Comprehending the plot of a romance novel or the ‘social drama’ at a dinner party that requires modelling the mental states of multiple agents (e.g., ‘I heard that Jane told Steve that his girlfriend Abigail wanted to leave, but that he didn’t believe her, thinking Jane was just causing trouble because she had seen Abigail talking to her boyfriend Andrew…’)
+* Appreciating the behaviour of individuals within a work team in which one employee has misinterpreted another's actions as deliberately unhelpful, and working out how that misreading is propagating through the group's dynamics
+* Working out, from a chain of messages between four colleagues, who knows that the launch has slipped, who believes someone else has already raised it, and who is waiting on whom.
