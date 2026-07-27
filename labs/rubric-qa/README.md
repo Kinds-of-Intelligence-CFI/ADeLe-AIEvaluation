@@ -795,3 +795,89 @@ Deliberately NOT changed, with reasons:
 
 With this pass the rubrics are, to our knowledge, out of known textual defects; what
 remains (report §6) requires new evidence, not new wording.
+
+## Round 23: red-team of v2 against v1 — three findings, one of which is a
+## power analysis that closes a question we could not otherwise answer
+
+### 23.1 Criterion validity cannot be tested on the data we have (and never could)
+
+The strongest attack on this work is that we optimised *discriminant* validity —
+separation, agreement, oracle-tracking — and never tested *criterion* validity, i.e.
+whether the labels predict solver success. If the old multi-driver labels predicted
+success better despite being psychometrically uglier, the redesign would be in trouble.
+
+We checked whether the HAL trace set can answer this, using the OLD labels, which costs
+nothing. It cannot:
+
+- 60 frames, but only **12 trajectories** — the cp25/cp50/cp75 frames of one attempt share
+  one outcome, so the effective n is 12, not 60.
+- **o3mini succeeds on 0 of 20 frames.** With zero outcome variance in that agent, pooling
+  across agents is pure confounding: any demand difference between agents is read as a
+  success effect.
+- Pooled AUC for the old labels runs 0.32–0.48 — at or below chance, and in the *wrong
+  direction* (demand slightly higher on successes). Within opus41 alone (~8 trajectories)
+  old PLp gives AUC 0.657, right-direction but far too small to mean anything.
+
+Two consequences, and the second is the important one:
+
+1. Spending judge calls to produce new labels for this comparison would have been wasted;
+   we did not.
+2. **The old rubrics were never criterion-validated either.** So the attack is currently
+   unanswerable *in both directions* — this is not a case of replacing a criterion-validated
+   instrument with an unvalidated one. Both stand on the same (absent) evidence, and the
+   redesign is ahead on every axis anyone has actually measured.
+
+What would be needed: outcomes from many more trajectories, and agents with intermediate
+success rates (an agent at 0% or 100% contributes nothing). `pilot/tasks.csv` × several
+agents is the natural vehicle, but it requires running agents, which this validation
+deliberately never needed.
+
+### 23.2 Our style is closer to v1 than it looks — except in one respect that cannot change
+
+Asked whether the v2 rubrics could be rewritten in v1's flowing register, we checked what
+v1 actually does rather than trusting impressions:
+
+| device | v1 usage |
+|---|---|
+| `Critically, …` constraint flags | **present in v1** — MS.txt, 1 of 19 files |
+| negative constraints ("does not …") | 9 of 19 files |
+| contrastive phrasing ("rather than") | 9 of 19 files |
+| **naming another dimension by code** | **0 of 19 files** |
+
+So the "Critically" convention is inherited from v1, not invented here, though it is rare
+there; it could be dissolved into the "does not / rather than" phrasing that *is* v1 house
+style, at some risk to salience.
+
+The real deviation is the last row: **v1 never cross-references another dimension, and our
+routing sentences do so constantly.** That difference is not stylistic. Routing is the
+mechanism that fixes the collinearity — v1 could omit it because v1 was never built to be
+non-collinear. Removing the dimension names to match v1's register would revert the fix.
+Recommended position: keep the routing, and treat any register alignment as optional
+polish confined to the `Critically` flags.
+
+### 23.3 Cross-family level comparison was never valid, and we should say so
+
+v1 anchors levels implicitly on human populations ("graduate-level textbook section"),
+v2 on procedure coverage and structural gates, so v1-Level-4 and v2-Level-4 need not sit
+at the same difficulty altitude. This is real but **pre-existing and not introduced here**:
+v1 VO is defined by wall-clock bands and v1 CEe by expression sophistication, so VO-4 and
+CEe-4 were already incommensurable. A demand profile is a vector of per-dimension
+positions, not a set of comparable magnitudes, and ADeLe's method — fitting a success
+curve per dimension — never requires commensurability. The fix is therefore documentation,
+not re-anchoring: profiles must not be read across dimensions ("this task is 4 on CEe but
+only 2 on PLp" is not a statement about relative difficulty). A cheap optional measurement
+would quantify any systematic v1/v2 offset: annotate one task set on both families and
+compare level distributions.
+
+### 23.4 MSm/MSc are siblings, and their relationship should be expected, not discovered
+
+Correction from Pablo: v1's `MS` becomes `MSm` within an `MS` family that also contains
+`MSc`. All four rubrics now route to **MSm** rather than the family code. The two are
+siblings, and they stand in an *asymmetric dependency*: high MSc essentially requires high
+MSm (stances cannot be moved without being read), while high MSm without MSc is common
+(read a poker opponent you never speak to). Note that v1 MS's own Level 5 example is a
+multi-party negotiation — nearly our MSc Level 5 scenario — so the two will correlate on
+exactly those tasks. This is reading-versus-moving, a functional dependency, **not** a
+shared driver, and per the original audit's decision rule an expected asymmetric
+correlation is reading (4), not a merge candidate. Recording it here so that whoever first
+computes an MSm/MSc correlation finds it predicted rather than alarming.
