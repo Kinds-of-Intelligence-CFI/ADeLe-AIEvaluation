@@ -1,0 +1,17 @@
+{
+  "round": 31,
+  "question": "Do MSm and MSc separate, or does MSm ride along on tasks whose difficulty is steering?",
+  "why": "r30 put MSm/MSc at r=0.88, but only 8 of its 24 items load either dimension and almost all of those are multi-party negotiations that genuinely load both. The correlation is an artefact of an item set built to stress PLe and MSc. It cannot settle the question.",
+  "design": "10 items built to discriminate. A: inference hard, nobody to move. B: the other party's stance is stated outright, but must be moved. C: both. D: neither.",
+  "arms": {
+    "MSm_old": "data_v1/MSm.txt as committed",
+    "MSc_final": "the validated v2 MSc"
+  },
+  "hypotheses": {
+    "H1": "On the four A items, median MSm - MSc >= 3. Inference without an interlocutor is MSm's alone.",
+    "H2": "On the three B items, median MSc - MSm >= 2. If MSm instead scores high where the stance is handed to the solver, that IS the double-count, and it is localised and fixable.",
+    "H3": "D08 scores high on both. That is correct, not double-counting: the task really does require inferring hidden beliefs AND moving two parties.",
+    "H4": "D09/D10 score 0 on both."
+  },
+  "decision_rule": "H1 and H2 both hold -> the dimensions separate; the only defect is v1 MSm's L5 example, which is MSc L5's construct verbatim, and swapping it is a one-line fix needing no re-scoping. H2 fails -> MSm is genuinely riding on steering, and the fix belongs in MSm's level text, at the levels the B items land on."
+}

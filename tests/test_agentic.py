@@ -56,15 +56,46 @@ def test_manifest_has_no_drift():
     assert verify_manifest() == []
 
 
-def test_MSm_is_the_v1_file_itself_not_a_copy():
-    """MSm renames the code, not the rubric. The active v2 set must resolve to the
-    v1 file on disk, so the two cannot drift apart, and no MS.txt may remain."""
+def _levels(content):
+    """Split rubric text into {level_number: block}, examples included."""
+    import re
+    parts = re.split(r"(?m)^Level (\d):", content)
+    return {int(parts[i]): parts[i + 1].strip() for i in range(1, len(parts), 2)}
+
+
+def test_MSm_adds_only_the_MSc_carve_out_to_v1():
+    """MSm is v1's rubric plus one carve-out at L4/L5, so a stance stated outright is not
+    scored twice (labs/rubric-qa/r31). Everything else — title, preamble, levels 0-3 —
+    must be byte-identical to v1, and the v1 file itself must stay frozen."""
     v1_dir = DATA_V2_DIR.parent / "data_v1"
-    assert (v1_dir / "MSm.txt").is_file()
-    assert not (v1_dir / "MS.txt").exists()
-    entry = {e.code: e for e in read_manifest()}["MSm"]
-    assert entry.path.resolve() == (v1_dir / "MSm.txt").resolve()
-    assert load_active_catalog()["MSm"].content == RubricsCatalog(str(v1_dir))["MSm"].content
+    assert (v1_dir / "MSm.txt").is_file() and not (v1_dir / "MS.txt").exists()
+    v1 = RubricsCatalog(str(v1_dir))["MSm"]
+    v2 = load_active_catalog()["MSm"]
+    assert v1.full_name == v2.full_name
+    a, b = _levels(v1.content), _levels(v2.content)
+    for lvl in (0, 1, 2, 3):
+        assert a[lvl] == b[lvl], f"level {lvl} must not drift from v1"
+    # L4 and L5 differ from v1 by the carve-out sentences and by nothing else: strike those
+    # out of the v2 text and what is left must be v1's, character for character.
+    CARVE_4 = (" Critically, a stance the other party has stated outright, together with their "
+               "reasons, does not have to be modelled: where the task hands over what they "
+               "believe and want, the inferring has already been done, and moving them from "
+               "that stance is assessed by Communication and Social Interaction (MSc). What "
+               "places a task at this level is that the mental states driving behaviour must "
+               "be worked out, not merely acted upon.")
+    CARVE_5 = (" The same carve-out applies here: several parties whose positions are each "
+               "stated outright demand no more mind modelling than one, however hard they are "
+               "to reconcile.")
+    assert CARVE_4 in b[4] and CARVE_5 in b[5]
+    assert b[4].replace(CARVE_4, "") == a[4]
+    assert b[5].replace(CARVE_5, "") == a[5]
+
+
+def test_active_catalog_is_single_version():
+    """Every active rubric is a v2 draft, so nothing straddles two rubric versions."""
+    from adele.rubrics.catalog import warn_if_mixed_versions
+    assert load_active_catalog().versions == {"v2-draft"}
+    assert warn_if_mixed_versions(load_active_catalog()) is None
 
 
 def test_MS_code_is_retired_but_aliased_for_published_data():
@@ -74,23 +105,13 @@ def test_MS_code_is_retired_but_aliased_for_published_data():
     assert LEGACY_DEMAND_ALIASES["MS"] == "MSm"
 
 
-def test_active_catalog_mixes_versions_on_purpose_and_says_so():
-    """MSm is v1.0 text inside a v2-draft set. That is intended, so the guard must
-    stay quiet here — and must still fire on an undeclared mix."""
-    from adele.rubrics.catalog import warn_if_mixed_versions
-    active = load_active_catalog()
-    assert active.versions == {"v1.0", "v2-draft"}
-    assert warn_if_mixed_versions(active) is None
-    undeclared = RubricsCatalog.from_paths(e.path for e in read_manifest())
-    assert warn_if_mixed_versions(undeclared) is not None
-
-
 def test_manifest_sources_split_memory_from_Marko():
     by_code = {e.code: e for e in read_manifest()}
     assert by_code["PLp"].source == "Paolo_Pablo"
     assert by_code["MMe"].source == "Marko"
-    assert by_code["MSm"].source == "v1"
-    assert {e.source for e in read_manifest()} == {"Paolo_Pablo", "Marko", "v1"}
+    assert by_code["MSm"].source == "Paolo_Pablo"
+    # Every active rubric is a v2 draft now; nothing is carried over from v1 as-is.
+    assert {e.source for e in read_manifest()} == {"Paolo_Pablo", "Marko"}
 
 
 def test_from_paths_composes_across_folders():
