@@ -182,6 +182,12 @@ about a task showing features of two levels.
 
 ## 4. A design decision, not a defect: `MSc` is near-binary on real benchmarks
 
+> **REFUTED as a property of the rubric 2026-07-27 (validation battery v1).** Given three
+> mid-band social tasks built on purpose, `MSc` returned 2, 2 and 3 — exactly as registered. It
+> is near-binary on real benchmarks because those benchmarks contain almost no mid-band social
+> tasks, not because the rubric cannot score them. The design decision stands; the diagnosis
+> changes. See `labs/rubric-qa/battery-v1`.
+
 Every level ≥2 requires a live exchange, and the clause that enforces it is correctly bound
 at L1. But essentially every text benchmark item is one prompt in, one response out, so
 "write a message persuading your landlord…" is L1 however hard it is. The header already

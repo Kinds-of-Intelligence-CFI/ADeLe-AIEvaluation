@@ -1,0 +1,30 @@
+{
+  "name": "agentic validation battery v1",
+  "purpose": "Replace the round-26 stress battery as the standing instrument. That battery was scored four times over and the rubrics were revised against it, so improvements measured on it can no longer be distinguished from tuning to it. It was also never built to the design targets in docs/agentic-open-questions.md; this is.",
+  "design": {
+    "pure": "4 items per dimension scoring high on it and low on the other three. Each such item serves three pair-directions at once, so 16 items cover all six pairs in both directions rather than the 48 a pairwise design would need.",
+    "co_occurring": "6 items built to score high on TWO dimensions, one per pair. A battery of pure items alone would manufacture separation; these can only pass if the dimensions genuinely co-occur where the task makes them.",
+    "mid": "10 items in the 2-3 band so the battery tests calibration and not just the ends. MSc gets three of them deliberately: audit section 4 records that MSc looks near-binary on real benchmarks, and a battery of extremes could not detect that.",
+    "low": "4 items at 0 on everything."
+  },
+  "arms": [
+    "PLp",
+    "PLe",
+    "PLs",
+    "MSc"
+  ],
+  "judges": [
+    "haiku",
+    "sonnet",
+    "opus"
+  ],
+  "hypotheses": {
+    "H1_separation": "For each of the six pairs, in each direction, median(high dim) - median(low dim) >= 3 on at least 3 of the 4 items.",
+    "H2_co_occurrence": "Each of the 6 co-occurring items scores >= 4 on BOTH of its intended dimensions. This is the honesty check: failing it means the separation in H1 comes from the item set, not the rubrics.",
+    "H3_anchors": "L01-L04 score <= 1 on all four dimensions.",
+    "H4_calibration": "Mid-band items land within 1 of their registered level. MSc's three mid items are the near-binary test: if MSc returns 0 or 4-5 on them, audit section 4 is confirmed on designed items.",
+    "H5_distribution": "Report Krippendorff alpha WITH the level histogram beside it, per dimension, per the standing convention. No prediction: alpha rises mechanically with spread and is not on its own evidence either way."
+  },
+  "fix_rule": "ONE fix round at most, and only where 2 of 3 judges miss across 2 or more items sharing a single cause. Single-item misses are recorded, not fixed. Re-tuning until the battery passes would reproduce exactly the overfitting this battery exists to escape.",
+  "written_before_any_annotation": true
+}
