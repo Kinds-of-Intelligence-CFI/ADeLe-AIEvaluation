@@ -1179,3 +1179,65 @@ data already held, the pre-PR audit's value lay entirely in its **checkable fact
 `MSm` does not exist, and that `PLe` L5 conjoins irreversibility with sparse feedback — and
 not in its severity judgments, which measurement inverted. Worth remembering the next time a
 confident structural read arrives without numbers attached.
+
+## Round 29: two of round 28's "defects" did not exist, and one fix made the rubric worse
+
+Prompted by a challenge to a claim made in round 28 — that booking a non-refundable flight
+should score `PLe` 5. It should not, and checking it exposed a method failure in round 28
+itself.
+
+### 29.1 The instrument that was missing: a graded ladder
+
+Round 28 verified that its fix *landed* (the flight scored 5 afterwards) but never checked
+what the **unfixed** rubric scored. The audit asserted "it scores 1", and that assertion went
+untested. The right instrument is a ladder that varies only the amount of execution exposed
+to irreversibility:
+
+| item | pre-round-28 | round-28 |
+|---|---|---|
+| book a **refundable** flight from stated constraints | 1 | 1 |
+| book a **non-refundable** flight from stated constraints | **2** | **5** |
+| twenty non-refundable bookings over a week from one fixed budget | 5 | 5 |
+| migrate a live production database with no rollback | 5 | 5 |
+| conduct an archaeological excavation | 5 | 5 |
+| the eight round-26 traps | all correct | all correct |
+
+**The pre-round-28 rubric was already right.** It graded refundable → non-refundable →
+pervasive as 1 → 2 → 5, which is the correct shape: a single irreversible commitment adds one
+check before one step, and does not belong at the top of a scale whose other anchors are a
+production migration and an excavation. The audit's premise was false, and the round-28 fix
+turned a correct 2 into a 5. **Reverted.**
+
+### 29.2 The second "defect" also did not exist, and its fix is exactly neutral
+
+Round 28 claimed `PLp` L1's *"any reasonable order succeeds"* left rigid standard procedures
+with no level. Tested on titration, sample standard deviation, long division and a t-test,
+plus seven `PLp` anchors: the pre-round-28 and post-round-28 rubrics score **identically on
+all eleven items**, and the titration lands at 1 under both. There was no gap. The reworded
+clause is harmless and buys nothing.
+
+### 29.3 What round 28 was actually worth
+
+| change | measured effect |
+|---|---|
+| `PLe` L5 irreversibility made sufficient | **harmful** — broke a correct 2 into a 5. Reverted |
+| `PLe` L2 action-count clause | **no benefit**; caused a regression (transcription trap 0 → 3) that needed a second patch. Reverted |
+| `PLp` L1 ordering clause | **neutral** — 11/11 identical. Kept, prose is clearer |
+| `PLe` observation exclusion reworded | no measured change; removes a genuine self-contradiction with L1's own cooking anchor. Kept, **unmeasured** |
+| brakes at `PLp` L5, `PLs` L5, `MSc` L5 | **unmeasured**; the synthesis anchor still scores 5 with the `PLp` brake in place (one data point) |
+| aggregation rules for `PLe`, `PLs`, `MSc` | **unmeasured** |
+| "memory dimensions" → `MMs`, `MMe` | trivially correct |
+
+Net: round 28 was negative before these reverts and is neutral-at-best after them.
+
+### 29.4 The method failure, stated plainly
+
+Round 27 concluded that the audit's value lay in its checkable facts rather than its
+judgments, and that acting on a confident structural read without measuring is the error this
+project keeps rediscovering. Round 28 then did exactly that: it took two of the audit's
+claims about what the rubric *would* score, wrote fixes for them, and verified only that the
+fixes changed the score in the intended direction — never that the original score was wrong.
+
+The missing step is a single question, and it now belongs in the loop before any fix:
+**what does the current rubric actually score on this item?** A "defect" is only a defect once
+that number is on the table.
