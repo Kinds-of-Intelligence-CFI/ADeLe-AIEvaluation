@@ -11,7 +11,7 @@ Examples:
 * Implement accurate real-time translation of a conversation between English and Spanish. (Hard, but the difficulty is linguistic; no plan needs to be found.)
 * Execute a 200-step laboratory protocol exactly as written, in the given order. (The plan already exists; carrying it out is execution, not planning.)
 
-Level 1: Very low. Tasks at this level require the plan only to be retrieved: a single standard, well-established routine covers the whole task directly, so what to do follows from the routine rather than having to be worked out, and any reasonable order succeeds. Critically, recognising what kind of task it is does not by itself put a task here — the routine must determine the actions; where most orderings would fail, the plan has to be searched for rather than retrieved. No decomposition into subtasks is needed.
+Level 1: Very low. Tasks at this level require the plan only to be retrieved: a single standard, well-established routine covers the whole task directly, so what to do follows from the routine rather than having to be worked out. Critically, recognising what kind of task it is does not by itself put a task here — the routine must determine the actions, whether it fixes their order or leaves it free; where the order itself has to be worked out rather than following from the routine, the plan is being searched for rather than retrieved. No decomposition into subtasks is needed.
 Examples:
 * Answer a customer's question by finding the relevant section of the product manual and writing the reply. (One familiar routine runs from question to answer; the task is not divided into stages.)
 * Draft a brief email summarising the key points from a meeting after reading the notes.
@@ -35,7 +35,7 @@ Examples:
 * Solve a contest programming problem for which no standard technique applies: the key idea must be found first, and most approaches that look promising fail only once they are worked through.
 * Plan the first ascent of an unclimbed face for which no route description exists: which line to attempt, where camps can be placed at all, and what to carry all depend on one another, and candidate lines mostly turn out to be impassable only once they have been worked through.
 
-Level 5: Very high. Tasks at this level require the plan to be invented: no established procedure exists for the task at all, the space of candidate plans is vast, and workable plans are so rare that finding one constitutes a novel discovery. The decomposition into subgoals must be created from scratch, with whole families of candidate approaches generated, evaluated and discarded.
+Level 5: Very high. Tasks at this level require the plan to be invented: no established procedure exists for the task at all, the space of candidate plans is vast, and workable plans are so rare that finding one constitutes a novel discovery. The decomposition into subgoals must be created from scratch, with whole families of candidate approaches generated, evaluated and discarded. Critically, a task belongs here only where no established procedure exists for it at all: where the decomposition must be discovered but the kind of work is itself established, the task belongs at the level below.
 Examples:
 * Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails.
 * Devise the proof strategy for a long-standing open conjecture, where the lemmas to aim for must themselves be discovered and restructured as attempts collapse.
