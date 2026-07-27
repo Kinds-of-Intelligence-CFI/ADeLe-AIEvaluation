@@ -27,7 +27,7 @@ Examples:
 * Locate a fault in an electrical circuit using a multimeter.
 * Work out why a houseplant is dying from its appearance and conditions.
 
-Level 4: High. This demand level is characterized by the task-relevant state being tracked: the situation changes while the task is under way, so observations go stale and the picture must be maintained — deciding what to re-check and when — but each change is observable when looked for.
+Level 4: High. This demand level is characterized by the task-relevant state being tracked: the situation changes while the task is under way, so observations go stale and the picture must be maintained — deciding what to re-check and when — but each change is observable when looked for. What changes at this level is the world; keeping track of one's own progress through the task is assessed by Action Control and Execution.
 Examples:
 * Drive through dense city traffic, where the situation changes continuously but every change is visible as it happens. (Other drivers' visible motion is tracked state; reasoning about their intentions is Mind Modelling.)
 * Monitor a staged software rollout across services, where dashboards show each service's changing state.

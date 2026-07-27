@@ -671,3 +671,52 @@ capability effect seen for haiku on PLp, not a rubric defect (n=2).
 
 Net: PLe survives the rivercross check with one genuine wording fix, and the fix
 reproduces rivercross's own independently-derived conclusion about legality.
+
+## Round 20: systematic audit for the preamble-only failure mode, and
+## binding what it found
+
+Three of this project's failures had one shape: **a distinction stated in the preamble
+but not echoed at any level, which judges then ignore** (PLe's action definition, MSc's
+interactivity gate, PLe's legality clause). Rather than wait for a fourth, we audited all
+four rubrics mechanically for the pattern. Seven clauses were preamble-only:
+
+| rubric | clause | verdict |
+|---|---|---|
+| PLe | transcription vs construction | **bound at L3** |
+| PLe | conditional plans | **bound at L4** |
+| PLe | limited budgets, time pressure | **bound at L5** |
+| PLe | memory routing | **bound at L3** |
+| PLs | own-work vs world (the PLe boundary) | **bound at L4** |
+| PLp | resource allocation | left — an inclusion in the concept, not a discriminator |
+| MSc | self-control exclusion | left — excludes something no dimension scores |
+
+Two were deliberately left: neither can change a level, so binding them would add text
+without adding constraint. The other five were bound **at the level where the confusion
+would occur**, not by extending the preamble further, and each was given the
+anti-inflation half as well as the inclusion — e.g. L5 now says a deadline that still
+allows each step to be verified does **not** put a task there.
+
+Every binding was then tested, since untested clauses are exactly what caused the
+problem. Sonnet, one item per clause:
+
+| test | targets | designed | result |
+|---|---|---|---|
+| three final submissions, none graded until close | budgets → L5 | 5 | **5** ✓ |
+| 400 records before a 5 p.m. deadline, each validated on entry | deadline must NOT inflate | 1 | **1** ✓ |
+| router flowchart, each test immediate and unambiguous | conditional plan must NOT inflate | 1 | **1** ✓ |
+| PLs, partway through: fault already found and confirmed | demand-to-go | ≤1 | **0** ✓ |
+| MSc, partway through: terms agreed, only the date left | demand-to-go | ≤2 | **1** ✓ |
+
+5/5. The judge quoted the new clauses verbatim ("spending one of a strictly limited
+number of attempts", "the deadline still allows each entry to be verified").
+
+Notable: PLs and MSc handled the **demand-to-go** framing correctly without any change.
+The prediction going in was that PLs would show PLp's provision-vs-remaining bug — its L0
+is also keyed on state being "given" — but judges read "already established" as
+satisfying it. So the round-18 defect was specific to PLp's wording, not general to the
+family. Prediction wrong, recorded as such.
+
+Remaining known weaknesses after this round: the weak-judge gap on PLp (haiku 0.647 vs
+sonnet 0.857); no human anchor; separation on real traces unproven pending a mixed-family
+battery; MSc has no external ground truth of any kind; and the rivercross-1b-refactor
+fork is unreviewed.
