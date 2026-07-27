@@ -1,0 +1,33 @@
+{
+  "round": 33,
+  "question": "The pre-PR audit calls the collinearity hole its most consequential finding: routing was tested against 5 of 18 v1 dimensions, and two of the untested pairs collide at HIGH severity. Both claims are arguments from reading the rubrics. Neither was measured.",
+  "pairs": {
+    "PLp x MCr": "audit 2.1 \u2014 MCr's L4/L5 claim 'approaches' and 'multiple solution paths', which is PLp's quantity in MCr's published text. Audit says this CANNOT be fixed from the v2 side and needs a framework decision.",
+    "PLs x MCu": "audit 2.2 \u2014 four of MCu's L4/L5 examples score high because world state is hidden, which is what PLs scores. Audit says the residual correlation is STRUCTURAL."
+  },
+  "design": "For each pair, two items built to favour the v1 dimension, two to favour the v2 one, and the audit's own collision case. Plus two anchors. Each rubric scores all twelve, so the same items give both the separation and the collision.",
+  "arms": [
+    "PLp (v2)",
+    "MCr (v1)",
+    "PLs (v2)",
+    "MCu (v1)"
+  ],
+  "judges": [
+    "haiku",
+    "sonnet",
+    "opus"
+  ],
+  "hypotheses": {
+    "H1": "PLp/MCr separators separate: |median PLp - median MCr| >= 3 on C01-C04, in the direction each was built for.",
+    "H2": "C05 (the audit's collision item) scores >= 4 on BOTH.",
+    "H3": "PLs/MCu separators separate: |median PLs - median MCu| >= 3 on C06-C09.",
+    "H4": "C10 (differential diagnosis) scores >= 4 on BOTH."
+  },
+  "what_the_outcomes_mean": {
+    "separators separate AND collision items collide": "The overlap is ITEM-SPECIFIC, not structural. The dimensions are distinguishable and a routing clause can do real work. The audit's 'cannot be fixed from the v2 side' would be too pessimistic.",
+    "separators fail to separate": "The overlap IS structural, the audit is right, and this is a framework-level decision that must be stated as a limitation in the PR rather than patched.",
+    "collision items do not collide": "The audit read a collision into text that judges do not act on - the same result rounds 32 produced for two of three PLe claims."
+  },
+  "decision_rule": "No routing clause is written on the basis of a reading. A clause is only written where a separator FAILS, and it goes at the level that failed.",
+  "written_before_any_annotation": true
+}
