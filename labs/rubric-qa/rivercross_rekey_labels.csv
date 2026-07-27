@@ -1,0 +1,228 @@
+dim,custom_id,judge,arm,level
+PLp,chain-3-boat-1#s2,haiku,pre-patch (round 17),1
+PLp,chain-3-boat-1#s2,haiku,post-patch (round 18),1
+PLp,chain-3-boat-1#s2,sonnet,post-patch (round 18),3
+PLp,chain-3-boat-2#s1,haiku,pre-patch (round 17),1
+PLp,chain-3-boat-2#s1,haiku,post-patch (round 18),1
+PLp,chain-3-boat-2#s1,sonnet,post-patch (round 18),1
+PLp,chain-3-boat-3#s0,haiku,pre-patch (round 17),1
+PLp,chain-3-boat-3#s0,haiku,post-patch (round 18),0
+PLp,chain-3-boat-3#s0,sonnet,post-patch (round 18),0
+PLp,chain-3-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,chain-3-boat-4#s0,haiku,post-patch (round 18),0
+PLp,chain-3-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,chain-4-boat-2#s1,haiku,pre-patch (round 17),1
+PLp,chain-4-boat-2#s1,haiku,post-patch (round 18),0
+PLp,chain-4-boat-2#s1,sonnet,post-patch (round 18),1
+PLp,chain-4-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,chain-4-boat-3#s1,haiku,post-patch (round 18),0
+PLp,chain-4-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,chain-4-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,chain-4-boat-4#s0,haiku,post-patch (round 18),0
+PLp,chain-4-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,chain-5-boat-2#s2,haiku,pre-patch (round 17),3
+PLp,chain-5-boat-2#s2,haiku,post-patch (round 18),1
+PLp,chain-5-boat-2#s2,sonnet,post-patch (round 18),3
+PLp,chain-5-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,chain-5-boat-3#s1,haiku,post-patch (round 18),0
+PLp,chain-5-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,chain-5-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,chain-5-boat-4#s1,haiku,post-patch (round 18),0
+PLp,chain-5-boat-4#s1,sonnet,post-patch (round 18),1
+PLp,chain-6-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,chain-6-boat-3#s1,haiku,post-patch (round 18),0
+PLp,chain-6-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,chain-6-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,chain-6-boat-4#s1,haiku,post-patch (round 18),0
+PLp,chain-6-boat-4#s1,sonnet,post-patch (round 18),1
+PLp,star-3-boat-1#s2,haiku,pre-patch (round 17),1
+PLp,star-3-boat-1#s2,haiku,post-patch (round 18),0
+PLp,star-3-boat-1#s2,sonnet,post-patch (round 18),3
+PLp,star-3-boat-2#s1,haiku,pre-patch (round 17),1
+PLp,star-3-boat-2#s1,haiku,post-patch (round 18),0
+PLp,star-3-boat-2#s1,sonnet,post-patch (round 18),1
+PLp,star-3-boat-3#s0,haiku,pre-patch (round 17),1
+PLp,star-3-boat-3#s0,haiku,post-patch (round 18),0
+PLp,star-3-boat-3#s0,sonnet,post-patch (round 18),0
+PLp,star-3-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,star-3-boat-4#s0,haiku,post-patch (round 18),0
+PLp,star-3-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,star-4-boat-2#s2,haiku,pre-patch (round 17),2
+PLp,star-4-boat-2#s2,haiku,post-patch (round 18),2
+PLp,star-4-boat-2#s2,sonnet,post-patch (round 18),1
+PLp,star-4-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,star-4-boat-3#s1,haiku,post-patch (round 18),0
+PLp,star-4-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,star-4-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,star-4-boat-4#s0,haiku,post-patch (round 18),0
+PLp,star-4-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,star-5-boat-2#s2,haiku,pre-patch (round 17),1
+PLp,star-5-boat-2#s2,haiku,post-patch (round 18),0
+PLp,star-5-boat-2#s2,sonnet,post-patch (round 18),3
+PLp,star-5-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,star-5-boat-3#s1,haiku,post-patch (round 18),0
+PLp,star-5-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,star-5-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,star-5-boat-4#s1,haiku,post-patch (round 18),0
+PLp,star-5-boat-4#s1,sonnet,post-patch (round 18),1
+PLp,star-6-boat-2#s2,haiku,pre-patch (round 17),1
+PLp,star-6-boat-2#s2,haiku,post-patch (round 18),2
+PLp,star-6-boat-2#s2,sonnet,post-patch (round 18),3
+PLp,star-6-boat-3#s2,haiku,pre-patch (round 17),1
+PLp,star-6-boat-3#s2,haiku,post-patch (round 18),2
+PLp,star-6-boat-3#s2,sonnet,post-patch (round 18),1
+PLp,star-6-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,star-6-boat-4#s1,haiku,post-patch (round 18),0
+PLp,star-6-boat-4#s1,sonnet,post-patch (round 18),1
+PLp,cycle-3-boat-2#s1,haiku,pre-patch (round 17),1
+PLp,cycle-3-boat-2#s1,haiku,post-patch (round 18),0
+PLp,cycle-3-boat-2#s1,sonnet,post-patch (round 18),3
+PLp,cycle-3-boat-3#s0,haiku,pre-patch (round 17),1
+PLp,cycle-3-boat-3#s0,haiku,post-patch (round 18),0
+PLp,cycle-3-boat-3#s0,sonnet,post-patch (round 18),0
+PLp,cycle-3-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,cycle-3-boat-4#s0,haiku,post-patch (round 18),0
+PLp,cycle-3-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,cycle-4-boat-2#s1,haiku,pre-patch (round 17),1
+PLp,cycle-4-boat-2#s1,haiku,post-patch (round 18),0
+PLp,cycle-4-boat-2#s1,sonnet,post-patch (round 18),1
+PLp,cycle-4-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,cycle-4-boat-3#s1,haiku,post-patch (round 18),0
+PLp,cycle-4-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,cycle-4-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,cycle-4-boat-4#s0,haiku,post-patch (round 18),0
+PLp,cycle-4-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,cycle-5-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,cycle-5-boat-3#s1,haiku,post-patch (round 18),0
+PLp,cycle-5-boat-3#s1,sonnet,post-patch (round 18),3
+PLp,cycle-5-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,cycle-5-boat-4#s1,haiku,post-patch (round 18),0
+PLp,cycle-5-boat-4#s1,sonnet,post-patch (round 18),3
+PLp,cycle-6-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,cycle-6-boat-3#s1,haiku,post-patch (round 18),0
+PLp,cycle-6-boat-3#s1,sonnet,post-patch (round 18),1
+PLp,cycle-6-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,cycle-6-boat-4#s1,haiku,post-patch (round 18),0
+PLp,cycle-6-boat-4#s1,sonnet,post-patch (round 18),1
+PLp,complete-3-boat-2#s1,haiku,pre-patch (round 17),1
+PLp,complete-3-boat-2#s1,haiku,post-patch (round 18),0
+PLp,complete-3-boat-2#s1,sonnet,post-patch (round 18),3
+PLp,complete-3-boat-3#s0,haiku,pre-patch (round 17),1
+PLp,complete-3-boat-3#s0,haiku,post-patch (round 18),0
+PLp,complete-3-boat-3#s0,sonnet,post-patch (round 18),0
+PLp,complete-3-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,complete-3-boat-4#s0,haiku,post-patch (round 18),0
+PLp,complete-3-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,complete-4-boat-3#s1,haiku,pre-patch (round 17),1
+PLp,complete-4-boat-3#s1,haiku,post-patch (round 18),0
+PLp,complete-4-boat-3#s1,sonnet,post-patch (round 18),3
+PLp,complete-4-boat-4#s0,haiku,pre-patch (round 17),1
+PLp,complete-4-boat-4#s0,haiku,post-patch (round 18),0
+PLp,complete-4-boat-4#s0,sonnet,post-patch (round 18),0
+PLp,complete-5-boat-4#s1,haiku,pre-patch (round 17),1
+PLp,complete-5-boat-4#s1,haiku,post-patch (round 18),0
+PLp,complete-5-boat-4#s1,sonnet,post-patch (round 18),3
+PLp,missionaries-cannibals-3#s2,haiku,pre-patch (round 17),3
+PLp,missionaries-cannibals-3#s2,haiku,post-patch (round 18),3
+PLp,missionaries-cannibals-3#s2,sonnet,post-patch (round 18),3
+PLp,missionaries-cannibals-4#s2,haiku,pre-patch (round 17),3
+PLp,missionaries-cannibals-4#s2,haiku,post-patch (round 18),3
+PLp,missionaries-cannibals-4#s2,sonnet,post-patch (round 18),3
+PLe,chain-3-boat-1#s0,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-3-boat-1#s0,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-3-boat-1#s1,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-3-boat-1#s1,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-3-boat-1#s2,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-3-boat-1#s2,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-3-boat-1#s3,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-3-boat-1#s3,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-3-boat-1#s4,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-3-boat-1#s4,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-3-boat-1#s5,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-3-boat-1#s5,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-3-boat-1#s6,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,chain-3-boat-1#s6,sonnet,post-fix: legality excluded (round 19),0
+PLe,chain-5-boat-2#s0,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s0,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s1,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s1,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s2,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s2,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s3,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s3,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s4,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s4,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s5,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s5,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s6,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s6,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s7,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s7,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s8,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s8,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s9,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s9,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s10,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s10,sonnet,post-fix: legality excluded (round 19),3
+PLe,chain-5-boat-2#s11,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,chain-5-boat-2#s11,sonnet,post-fix: legality excluded (round 19),3
+PLe,complete-4-boat-3#s0,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,complete-4-boat-3#s0,sonnet,post-fix: legality excluded (round 19),3
+PLe,complete-4-boat-3#s1,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,complete-4-boat-3#s1,sonnet,post-fix: legality excluded (round 19),3
+PLe,complete-4-boat-3#s2,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,complete-4-boat-3#s2,sonnet,post-fix: legality excluded (round 19),0
+PLe,complete-4-boat-3#s3,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,complete-4-boat-3#s3,sonnet,post-fix: legality excluded (round 19),3
+PLe,complete-4-boat-3#s4,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,complete-4-boat-3#s4,sonnet,post-fix: legality excluded (round 19),0
+PLe,complete-4-boat-3#s5,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,complete-4-boat-3#s5,sonnet,post-fix: legality excluded (round 19),3
+PLe,complete-4-boat-3#s6,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,complete-4-boat-3#s6,sonnet,post-fix: legality excluded (round 19),0
+PLe,complete-4-boat-3#s7,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,complete-4-boat-3#s7,sonnet,post-fix: legality excluded (round 19),3
+PLe,complete-4-boat-3#s8,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,complete-4-boat-3#s8,sonnet,post-fix: legality excluded (round 19),0
+PLe,cycle-4-boat-2#s0,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,cycle-4-boat-2#s0,sonnet,post-fix: legality excluded (round 19),3
+PLe,cycle-4-boat-2#s1,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,cycle-4-boat-2#s1,sonnet,post-fix: legality excluded (round 19),3
+PLe,cycle-4-boat-2#s2,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,cycle-4-boat-2#s2,sonnet,post-fix: legality excluded (round 19),3
+PLe,cycle-4-boat-2#s3,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,cycle-4-boat-2#s3,sonnet,post-fix: legality excluded (round 19),3
+PLe,cycle-4-boat-2#s4,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,cycle-4-boat-2#s4,sonnet,post-fix: legality excluded (round 19),0
+PLe,star-4-boat-2#s0,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,star-4-boat-2#s0,sonnet,post-fix: legality excluded (round 19),3
+PLe,star-4-boat-2#s1,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,star-4-boat-2#s1,sonnet,post-fix: legality excluded (round 19),3
+PLe,star-4-boat-2#s2,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,star-4-boat-2#s2,sonnet,post-fix: legality excluded (round 19),3
+PLe,star-4-boat-2#s3,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,star-4-boat-2#s3,sonnet,post-fix: legality excluded (round 19),3
+PLe,star-4-boat-2#s4,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,star-4-boat-2#s4,sonnet,post-fix: legality excluded (round 19),0
+PLe,missionaries-cannibals-3#s0,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s0,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s1,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s1,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s2,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s2,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s3,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s3,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s4,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s4,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s5,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s5,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s6,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s6,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s7,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s7,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s8,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s8,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s9,sonnet,pre-fix: legality read as feedback (round 19),1
+PLe,missionaries-cannibals-3#s9,sonnet,post-fix: legality excluded (round 19),3
+PLe,missionaries-cannibals-3#s10,sonnet,pre-fix: legality read as feedback (round 19),0
+PLe,missionaries-cannibals-3#s10,sonnet,post-fix: legality excluded (round 19),0
