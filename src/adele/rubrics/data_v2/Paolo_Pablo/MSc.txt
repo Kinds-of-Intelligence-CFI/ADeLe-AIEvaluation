@@ -20,14 +20,14 @@ Level 2: Low. Tasks at this level require steering a cooperative exchange: no fi
 Examples:
 * Take a patient's history in a clinic, where each answer determines which symptom to ask about next.
 * Interview a job candidate about a project on their CV, following up on what they actually say rather than reading out fixed questions.
-* Turn down a colleague's invitation to join their project without giving offence, when you will keep working with them afterwards.
+* Work out over a support chat which of several products a customer actually needs, each follow-up question depending on what they have just said.
 
 Level 3: Intermediate. Tasks at this level require an open stance to be moved: the other party does not yet hold the view, decision or acceptance that the task requires, and must be brought there in exchange with them, by argument, framing or compromise adjusted to what they say back. Critically, they are willing to be moved — the difficulty is finding the path, not overcoming opposition.
 Examples:
 * Tell a colleague that the section they wrote for a shared report has to be rewritten before submission, when they are proud of it but will hear you out.
-* Tell a patient, as their doctor, that they have a serious illness, and work through the treatment options with them. (Grave and emotionally heavy, but the patient is not opposing the doctor and the protocol for such conversations is established.)
-* Settle a dispute between two flatmates over the cleaning rota when both of them want it settled.
-* Agree a price with a market trader when both of you want the sale to happen.
+* Tell a patient, as their doctor, that they have a serious illness, and bring them to accept a treatment they are at first reluctant to start, working through each concern as it is raised. (Grave and emotionally heavy, but they are not holding out for a different treatment — the work is finding the path to acceptance, not overcoming opposition.)
+* Settle a dispute between two flatmates over the cleaning rota, where each arrived wanting a different split and both will accept whatever they come to see as fair.
+* Agree a price with a market trader who opens far above what you will pay, where both of you want the sale to happen and the work is finding the figure that suits you both.
 
 Level 4: High. Tasks at this level require resistance to be overcome: the other party holds a contrary position and defends it, or is set against the message, so each move must advance the aim and manage that resistance at once, adapting as they push back. Critically, being displeased by the message is not itself resistance: what marks this level is that the other party is holding out for a different outcome, not merely that they dislike the one proposed. The opposition is real, but it comes from a single counterpart or from one aligned side.
 Examples:
@@ -37,6 +37,6 @@ Examples:
 
 Level 5: Very high. Tasks at this level require conflicting stances to be reconciled: several parties must be moved whose required positions are mutually exclusive, and each of them anticipates and counters the moves being made, so anything that shifts one works against another and a path must be found that shifts them all together.
 Examples:
-* Negotiate the release of hostages with a captor who reads every concession offered for signs of weakness.
+* Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others.
 * Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
 * Settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.

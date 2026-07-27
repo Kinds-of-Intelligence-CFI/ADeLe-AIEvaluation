@@ -49,6 +49,8 @@ local branch `agentic`; `origin` is the CFI repo.
 - [x] Preserve the dropped **factor tables + comments** for reference →
       `data_v2/REFERENCE_Paolo_Pablo.md` (droppable; not read by code).
 - [ ] Fix the `SPv` (Visual) **Level 0 has no examples** gap (`TODO(pablo)` in file).
+- [x] Example-placement test over the four agentic rubrics (round 25): 75% -> 92%
+      of examples recovered to their own level by 3/3 judges.
 - [x] Decide **`ECc` (self-control)**: resolved — removed from the demand set as a
       propensity, not an ability. See `docs/agentic-rubric-redesign.md` §5.
 - [x] Tighten **boundary overlap** between `PLs` (situational), `MSc` (communication)
@@ -75,3 +77,6 @@ local branch `agentic`; `origin` is the CFI repo.
 - [ ] Propensity rubrics (±3 range, ±5 personality) — different prompt/parser.
 - [ ] Bayesian measurement layout / learned value model.
 - [ ] Re-activate the 4 multimodal rubrics for embodied evaluation.
+      `SPv`/`SPa` planned on branch `multimodal` — see
+      `docs/multimodal-rubric-plan.md`. `SNk`/`SNp` stay deferred: no current
+      benchmark exercises them, so they cannot be validated even in principle.
