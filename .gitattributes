@@ -5,5 +5,11 @@
 tests/fixtures/mini_battery.csv !filter !diff !merge text
 
 # The rubric-QA label files are small and human-readable; keeping them plain
-# means they diff in review and cost no LFS budget.
+# means they diff in review and cost no LFS budget. The second pattern covers
+# subdirectories (r30/ and any later round folder) - a single-level glob does not,
+# and without it those files are LFS-tracked by attribute while being committed as
+# raw content on any machine without git-lfs installed, which is how the working
+# tree ends up showing dozens of "modified" label files that are really just
+# content-where-HEAD-holds-a-pointer.
 labs/rubric-qa/*.csv !filter !diff !merge text
+labs/rubric-qa/**/*.csv !filter !diff !merge text
