@@ -1,7 +1,25 @@
 # Proposal: rename v1 `MS` to `MSm`
 
-**Status:** proposal. Requires sign-off from the v1 owners. Nothing has been renamed.
+**Status:** **decided (Pablo, 2026-07-27) and implemented on the v2 side.** `MSm` now exists as
+an active v2 dimension: `rubrics/data_v2/v1/MSm.txt`, carrying v1 `MS`'s text unchanged. The four
+agentic rubrics' routing resolves, and the annotation pipeline has a rubric under the code.
+**v1 itself is untouched** — `data_v1/MS.txt`, `DEMAND_ORDER`, and the published `MS` label column
+all stay exactly as they are, so paper reproduction is unaffected. A test asserts the judged text
+of `MSm` is byte-identical to v1 `MS`.
+
 **Scope:** a rename only. **No change to the text of `MS` is proposed here.**
+
+**Two sub-decisions deliberately deferred**, because both are text changes and the standing rule is
+that no text changes without a measured reason to change it:
+
+1. **The header.** `MSm.txt` still reads `# Mind Modelling and Social Cognition`, so the judge
+   prompt still says *"Score the level of Mind Modelling and Social Cognition…"*. Shortening it to
+   "Mind Modelling" is what makes the `MSm` / `MSc` sibling split legible in the prompt itself, but
+   it changes what the judge reads and could move labels. Settle it with a paired annotation of one
+   battery under both headers, not by assertion.
+2. **Whether v1 should follow.** Renaming `data_v1/MS.txt` and the `MS` label column is a v1-owner
+   decision and would touch paper reproduction. The v2-side carry above makes it unnecessary for
+   the agentic PR to land.
 
 ## What
 

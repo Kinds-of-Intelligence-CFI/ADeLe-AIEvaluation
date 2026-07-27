@@ -65,10 +65,15 @@ def load_active_catalog() -> RubricsCatalog:
 _DOCS = {
     "Paolo_Pablo":   {"doc_id": "1xBrJVip8f-b3pLsE1xO1kijSbBvBRgGsUIRXlHDuerk", "version_date": "2025-07-26"},
     "Marko": {"doc_id": "1tyaEcWqyn8N5TDbgNYnsC7ZiLTtynHCGoNps8Ag_8y0", "version_date": "unknown"},
+    # MSm is v1's MS rubric carried into v2 under the new code; its judged text is
+    # unchanged (see tests/test_agentic.py::test_MSm_text_is_v1_MS_unchanged). v1 itself
+    # is untouched: data_v1/MS.txt and the published MS label column both stay as they are.
+    "v1": {"doc_id": "arXiv:2503.06378 §10", "version_date": "1.0"},
 }
 
-# (code, source, source_heading-as-written-in-the-Doc), in active-set order.
-# Non-memory dims come from "Paolo_Pablo"; memory dims from "Marko".
+# (code, source, source_heading-as-written-in-the-source, rel_path), in active-set order.
+# Non-memory dims come from "Paolo_Pablo"; memory dims from "Marko"; MSm is carried from v1.
+# ECc was removed from the agentic set (propensity, not ability) and MSe was renamed PLs.
 #
 # The active set is the text/tool-relevant agentic dimensions — the ones HAL
 # benchmarks actually exercise. The four sensory/motor rubrics (Dexterity SNp,
@@ -79,14 +84,14 @@ _DOCS = {
 _DEFERRED_MULTIMODAL = ("SNp", "SNk", "SPa", "SPv")
 
 _ACTIVE = [
-    ("PLp", "Paolo_Pablo", "Planning"),
-    ("PLe", "Paolo_Pablo", "Action control and execution"),
-    ("MSe", "Paolo_Pablo", "Environmental and situational understanding"),
-    ("MSc", "Paolo_Pablo", "Communication and social interaction"),
-    ("ECc", "Paolo_Pablo", "Behavioral inhibition and self-control"),
-    ("MMe", "Marko", "Episodic Memory"),
-    ("MMp", "Marko", "Procedural Memory"),
-    ("MMs", "Marko", "Working Memory"),
+    ("PLp", "Paolo_Pablo", "Planning", "Paolo_Pablo/PLp.txt"),
+    ("PLe", "Paolo_Pablo", "Action control and execution", "Paolo_Pablo/PLe.txt"),
+    ("PLs", "Paolo_Pablo", "Environmental and situational understanding", "Paolo_Pablo/PLs.txt"),
+    ("MSm", "v1", "Mind Modelling and Social Cognition", "v1/MSm.txt"),
+    ("MSc", "Paolo_Pablo", "Communication and social interaction", "Paolo_Pablo/MSc.txt"),
+    ("MMe", "Marko", "Episodic Memory", "Marko/MMe.txt"),
+    ("MMp", "Marko", "Procedural Memory", "Marko/MMp.txt"),
+    ("MMs", "Marko", "Working Memory", "Marko/MMs.txt"),
 ]
 
 
@@ -98,8 +103,7 @@ def build_manifest() -> None:
         python -c "from adele.agentic import build_manifest; build_manifest()"
     """
     rows = []
-    for code, source, heading in _ACTIVE:
-        rel_path = f"{source}/{code}.txt"
+    for code, source, heading, rel_path in _ACTIVE:
         _, full_name, _, _ = _parse_rubric_file(DATA_V2_DIR / rel_path)
         rows.append(ManifestEntry(
             code=code, full_name=full_name, source=source, rel_path=rel_path,
