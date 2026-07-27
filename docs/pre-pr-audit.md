@@ -15,6 +15,13 @@ measure-don't-assume discipline.
 
 ### 1.1 `MSm` does not exist
 
+> **RESOLVED 2026-07-27.** Decided by Pablo: change `MS` to `MSm`. `MSm` now exists as an
+> active v2 dimension — `rubrics/data_v2/v1/MSm.txt`, carrying v1 `MS`'s text unchanged — so
+> the routing resolves and the pipeline has a rubric under the code. v1 is untouched:
+> `data_v1/MS.txt`, `DEMAND_ORDER` and the published `MS` label column all stay as they are.
+> See `docs/proposal-MS-to-MSm.md` for the two sub-decisions deliberately left open.
+> The finding as originally written follows.
+
 All four rubrics route mind-reading demand to "Mind Modelling (MSm)". **There is no `MSm`
 file anywhere in the repository.** The shipped mind rubric is v1 `MS.txt` ("Mind Modelling
 and Social Cognition"); the v2 manifest contains `PLp PLe PLs MSc MMe MMp MMs` and no `MSm`.
@@ -172,11 +179,27 @@ errors. One claim in five survived contact with the data.
 
 ## 6. Accepted limitations to state in the PR rather than fix
 
-- **House style diverges measurably from v1.** Preambles: v1 median ~100 words, v2 176/187/248
-  and **405** (`PLe`). Level text: v1 ~30 words average, v2 65–94. `Critically` appears 0 times
-  in all of v1 and 3–5 times per v2 rubric; parenthetical dimension codes 0 times in v1 and 4
-  times per v2 rubric. Sentences over 45 words: 7/12/6/7. One compression pass would reduce
-  prompt load on weaker judges; it would not change any boundary.
+- **House style diverges from v1 — but less than this audit first claimed.** Two of the
+  numbers below were re-measured directly on 2026-07-27 and were **wrong**; they are corrected
+  here in place rather than quietly edited, because they were the basis for calling the
+  divergence "measurable" and they overstated it.
+
+  | claim as first written | re-measured |
+  |---|---|
+  | v1 level text ~30 words average | **64** (mean of per-rubric means; `MCr` 209, `CEe` 143, `CEc` 138, `AT` 139) — so v2's 69–94 sits *inside* v1's range, not above it |
+  | `Critically` appears 0 times in all of v1 | **1** — `MS.txt` L1. Round 23.2 had this right; §6 contradicted it |
+
+  What survives, and it is the real finding: **preamble mass**. v1's preambles run 47–217
+  words (median 93). Ours are `PLp` 187 and `PLs` 198 — inside that range — against `MSc` 268
+  and `PLe` **432**, which is twice v1's largest. Parenthetical dimension codes appear 0 times
+  in all 19 v1 files and 12 times across our 4, but those are load-bearing: they are the
+  mechanism that fixes the collinearity (round 23.2), and removing them reverts the fix.
+
+  So the compression pass, if it is run, should target `PLe`'s and `MSc`'s preambles and
+  nothing else — and it must be gated on the sentinel battery reproducing, since round 10
+  compressed `PLe` 481→384 with no drift and round 28 showed what an unverified "improvement"
+  costs.
+
 - **Examples are shorter than v1's**, not longer: v2 averages 19–26 words against v1's 16–57,
   with v1's closest analogues (`CL` 50, `MCr` 57, `QLl` 42) far richer. Round 25 pushed ours
   toward naming the discriminator tersely; defensible, but it is a divergence.
