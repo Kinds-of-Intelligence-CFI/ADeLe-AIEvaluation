@@ -49,6 +49,14 @@ collide at high severity.
 
 ### 2.1 `PLp` × `MCr` (Identifying Relevant Information) — HIGH
 
+> **MEASURED 2026-07-27 (round 33): real, but one item in five, not the whole quantity.**
+> `PLp` fires alone and decisively where the approach must be invented and nothing is hidden
+> (4 vs 0, twice). The collision case in this finding does collide (4 and 4). So the overlap is
+> confined to approach-discovery. Still not fixable from the v2 side — `MCr` claims "approaches"
+> explicitly — so the framework decision stands, with a measured scope. Caveat: the two
+> MCr-favouring probes were badly built (they supply a checklist, which `MCr`'s own text scores
+> low), so the MCr-alone direction remains untested. See `labs/rubric-qa/r33`.
+
 `MCr` L4 scores *"identifying crucial unstated information **or approaches** needed for
 solution while considering **multiple possible solution paths** and their implications"*;
 L5 adds *"crucial information about **solution approaches** and constraints is left unstated
@@ -64,6 +72,13 @@ clause on our side can disclaim the *information* half but not the *approach* ha
 framework-level decision.
 
 ### 2.2 `PLs` × `MCu` (Calibrating Knowns and Unknowns) — HIGH
+
+> **CONFIRMED 2026-07-27 (round 33), and structural as stated.** The overlap is asymmetric.
+> `MCu` fires alone cleanly where the world is observable and the judgement is about one's own
+> certainty (0 vs 3, 0 vs 4). `PLs` cannot fire alone: on pure exploration of hidden, shifting
+> state with no calibration asked for, `MCu` still scores 4 (4 vs 4, 5 vs 4). No `PLs` clause
+> stops `MCu` firing and `data_v1` is out of scope here, so this goes in the PR as a measured
+> limitation rather than a fix.
 
 Four of `MCu`'s L4/L5 examples — differential diagnosis, a dataset with unknown sampling
 bias, poker after the flop, crisis investing — score high *because the relevant world state
@@ -82,7 +97,7 @@ hiddenness.
 | `PLe` × `MCt` | both score self-verification with no external checker | extend the deliberation carve-out |
 | `PLp` × `CL` | "find the key insight" is scored by both | clause at `PLp` L4 |
 | `PLp` × `QLl` | both driven by how strongly decisions/constraints interact | clause at `PLp` L3 |
-| `MSc` × `MS` | `MS`'s own L5 example is a multi-stakeholder negotiation — the same item as `MSc` L5 | restate the routing inside `MSc` L5 |
+| ~~`MSc` × `MS`~~ **DONE (r31)** | confirmed by measurement, then fixed — but on the `MSm` side, not `MSc`'s. `MSc` scores 0 on every inference-only item and was never the one over-firing; `MSm` was scoring 4-5 on stances stated outright. Carve-out at `MSm` L4/L5. | ~~restate the routing inside `MSc` L5~~ — would have been the wrong side |
 
 **Clean against all four (9 of 18):** `CEe`, `VO`, `QLq`, `SNs`, `KNa`, `KNc`, `KNf`, `KNn`,
 `KNs`.

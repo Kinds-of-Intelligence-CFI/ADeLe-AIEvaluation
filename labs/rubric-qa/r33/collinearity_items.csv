@@ -1,0 +1,13 @@
+item_id,task
+C01,"From a forty-page supplier contract, extract the three clauses that together determine termination liability. The extraction procedure is given step by step: read each numbered section, check it against the supplied checklist of liability triggers, and copy out any clause that matches."
+C02,"A patient file contains two hundred pages of notes, imaging reports and letters, most of them irrelevant to the current complaint. Using the department's standard intake checklist, list the findings that bear on the complaint."
+C03,"Here is a complete and compactly stated combinatorial problem: every constraint, quantity and objective is listed explicitly on one page, and nothing is missing or hidden. No standard technique applies to it. Devise a method that solves it."
+C04,"You are given a short, fully specified puzzle: eight stated rules, no distractors, no missing information. Work out a sequence of moves that satisfies all eight at once. No known algorithm covers this rule set."
+C05,"Solve a contest programming problem for which no standard technique applies, and whose statement leaves the key structural property of the input to be discovered from the examples."
+C06,"You are given the complete recorded outcomes of one thousand tosses of a particular coin, with nothing hidden. State how confident anyone could be about the next toss, and justify the degree of confidence."
+C07,"Here is a published dataset together with its full sampling protocol, stated in complete detail. Say which conclusions it can and cannot support, and how sure one can be of each."
+C08,"Find the fire exit in an unfamiliar building whose layout you have not seen, where corridors are being closed off by staff as you move. Report the route you took."
+C09,Operate a valve network whose current settings are not displayed and change when other operators act. Bring the outflow to the stated target.
+C10,"Reach a differential diagnosis for a patient whose symptoms are consistent with several conditions, where the findings that would discriminate between them have not yet been ordered."
+C11,Alphabetise a list of two hundred surnames.
+C12,Convert a stated temperature from Celsius to Fahrenheit.
