@@ -1,0 +1,18 @@
+{
+  "round": 34,
+  "desideratum": "6 \u2014 examples should be representative AND strengthen disentanglement: high on one dimension, low on the others.",
+  "why_now": "Round 25 tested placement: does an example return to the level it illustrates, within its own rubric. It never asked whether an example that illustrates PLe L4 is LOW on PLp, PLs and MSc. The pre-PR audit caught one leak by reading \u2014 v1 MSm's L5 example was MSc L5's construct verbatim \u2014 which is evidence there may be others.",
+  "design": "Every example from all four rubrics pooled into one blind set, level cross-references rewritten so nothing signals a level, and the whole pool scored by each of the four rubrics. Each example is therefore scored on its own dimension and on three foreign ones.",
+  "judges": [
+    "haiku",
+    "sonnet",
+    "opus"
+  ],
+  "hypotheses": {
+    "H1_placement": "An example scores within 1 of its own level on its OWN dimension. This replicates round 25 and is the sanity check on the pool.",
+    "H2_no_leakage": "An example scores <= 1 on each of the three dimensions it does not belong to. A foreign score of 3+ is a leak: the example illustrates two constructs at once and weakens the separation it is supposed to strengthen.",
+    "H3_high_examples": "H2 restricted to examples at level 3-5, where leakage actually matters. Low examples are trivially low everywhere and should not be counted as evidence of disentanglement."
+  },
+  "fix_rule": "A leaking example is rewritten or moved, not deleted, and only where 2 of 3 judges agree it leaks. Rewrites are then re-measured on this same pool AND on battery-v1, because examples drive judges hard (round 25).",
+  "written_before_any_annotation": true
+}

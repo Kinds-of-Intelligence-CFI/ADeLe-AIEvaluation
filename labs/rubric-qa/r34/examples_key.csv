@@ -1,0 +1,78 @@
+ex_id,dim,level,task
+PLp-L0-00,PLp,0,"What year did Darwin publish ""The Origin of Species"": 1856, 1859, 1865 or 1866?."
+PLp-L0-01,PLp,0,Convert a temperature from Celsius to Fahrenheit. (A single computation; there is nothing to sequence or decide.).
+PLp-L0-02,PLp,0,Finish a puzzle from a position in which only one legal continuation remains.
+PLp-L0-03,PLp,0,"Implement accurate real-time translation of a conversation between English and Spanish. (Hard, but the difficulty is linguistic; no plan needs to be found.)."
+PLp-L0-04,PLp,0,"Execute a 200-step laboratory protocol exactly as written, in the given order. (The plan already exists; carrying it out is execution, not planning.)."
+PLp-L1-00,PLp,1,Answer a customer's question by finding the relevant section of the product manual and writing the reply. (One familiar routine runs from question to answer; the task is not divided into stages.).
+PLp-L1-01,PLp,1,Draft a brief email summarising the key points from a meeting after reading the notes.
+PLp-L1-02,PLp,1,"Write a covering letter for a job application, given the advertisement and the CV it responds to. (One well-established routine covers it end to end; nothing has to be divided into subtasks.)."
+PLp-L2-00,PLp,2,"Plan a day-trip itinerary given preferences (museums, restaurants, location); identify opening hours and schedule visits."
+PLp-L2-01,PLp,2,"Build a personal webpage using a template: choose a template, customise the layout, and deploy the site."
+PLp-L2-02,PLp,2,"Plan a small data analysis: download the dataset, clean it, run a statistical analysis and produce a chart — a standard pipeline whose stages do not constrain each other."
+PLp-L3-00,PLp,3,"Plan a multi-city international trip where flight dates, visa processing times and bookings constrain one another. (Contrast the day-trip at the level below, whose choices are independent.)."
+PLp-L3-01,PLp,3,"Find a strong plan in a club-level chess middlegame, where a natural-looking move can fail to a consequence several moves deep. (Nothing is hidden, and the opponent's replies are explored as branches of the same search rather than by modelling a mind.)."
+PLp-L3-02,PLp,3,"Solve a contest programming problem in which several standard techniques could apply and the data structure settled on early decides whether the later queries can be answered in time, so the options must be compared before committing."
+PLp-L4-00,PLp,4,"Design the plan for replicating a machine-learning paper that omits key details: what to implement, in what order, and which checks would show whether a discrepancy is a bug or a difference in setup."
+PLp-L4-01,PLp,4,"Solve a contest programming problem for which no standard technique applies: the key idea must be found first, and most approaches that look promising fail only once they are worked through."
+PLp-L4-02,PLp,4,"Plan the first ascent of an unclimbed face for which no route description exists: which line to attempt, where camps can be placed at all, and what to carry all depend on one another, and candidate lines mostly turn out to be impassable only once they have been worked through."
+PLp-L5-00,PLp,5,"Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails."
+PLp-L5-01,PLp,5,"Devise the proof strategy for a long-standing open conjecture, where the lemmas to aim for must themselves be discovered and restructured as attempts collapse."
+PLp-L5-02,PLp,5,"Plan a multi-year research programme against an unsolved scientific problem — which sub-questions to pose, which to abandon — where whole lines of attack die only once explored."
+PLe-L0-00,PLe,0,Say whether checkmate can be delivered in one move in a given chess position.
+PLe-L0-01,PLe,0,Look up a single fact with one search-engine query.
+PLe-L0-02,PLe,0,Select the figure that fits the pattern from A to E.
+PLe-L0-03,PLe,0,Find the winning line in a given chess position and write it down. (All the difficulty is in finding the plan; carrying it out is a single act of transcription.).
+PLe-L1-00,PLe,1,Reset a password by following the prompts on a website.
+PLe-L1-01,PLe,1,"Navigate to an address following turn-by-turn directions, where any wrong turn is immediately flagged and rerouted."
+PLe-L1-02,PLe,1,Cook from a recipe in which each step's outcome makes success immediately apparent before moving on.
+PLe-L2-00,PLe,2,"Assemble a flat-pack wardrobe, where nothing reveals whether a stage was done right until a whole sub-assembly is stood up and either fits together or does not."
+PLe-L2-01,PLe,2,"Follow a tutorial to implement a small transformer network, running the code at each milestone."
+PLe-L2-02,PLe,2,Complete a long structured application form that validates each section on submission.
+PLe-L3-00,PLe,3,"Write and polish the introduction of a scientific paper, judging for yourself when each paragraph is finished."
+PLe-L3-01,PLe,3,Summarise a long document and extract its main arguments. (A weak paragraph is fixed in place; nothing downstream depends on it.).
+PLe-L3-02,PLe,3,"Draft the claims of a patent from the paper it is based on, with no examiner feedback until the whole set is filed."
+PLe-L4-00,PLe,4,"Manually reconcile a year of a small business's ledger across twelve monthly statements, where a misposted entry in an early month silently unbalances every subsequent account until the final totals are compared. (Contrast the summary at the level below: there an error is fixed in place; here it forces rework of every month that followed.)."
+PLe-L4-01,PLe,4,"Extend a large codebase that has no test suite, where a subtle early bug only surfaces much later in dependent components."
+PLe-L4-02,PLe,4,"Translate a long legal contract, where a mistranslated defined term early on corrupts every later clause that uses it."
+PLe-L5-00,PLe,5,"Migrate a live production database without a rollback mechanism, where a wrong step corrupts data irrecoverably."
+PLe-L5-01,PLe,5,"Carry out a multi-step synthesis of a scarce compound, where a failed step destroys the material. (Contrast Planning, which assesses devising the route: here the route is known and the demand is that no step can be retried.)."
+PLe-L5-02,PLe,5,"Conduct an archaeological excavation, where each removal destroys context that can never be re-examined."
+PLs-L0-00,PLs,0,Solve a Sudoku from a printed grid. (The whole state is given; filling the grid is deduction and planning.).
+PLs-L0-01,PLs,0,Find the winning plan in a chess position shown on the board. (Nothing is hidden; the demand is Planning.).
+PLs-L0-02,PLs,0,"Answer a word problem that states every quantity it needs: two trains leave stations 300 km apart at given speeds, and you must say when they meet."
+PLs-L1-00,PLs,1,Check a museum's opening hours before planning a visit.
+PLs-L1-01,PLs,1,Read the current contents of a file before editing it.
+PLs-L1-02,PLs,1,Measure the floor of a room with a tape before ordering a carpet for it.
+PLs-L2-00,PLs,2,"Explore an unfamiliar codebase to establish where a behaviour is implemented, each file being directly readable."
+PLs-L2-01,PLs,2,"Look up a customer's account, orders and reservations across several systems before making a change."
+PLs-L2-02,PLs,2,"Take a complete inventory of a storeroom, however many shelves it holds — each item is simply there to be counted."
+PLs-L3-00,PLs,3,"Debug why a program you did not write crashes: the whole source is there to read, but no line of it announces the fault — only its symptoms are visible, and experiments must be devised to expose it. (Tracing a fault back through work the solver produced itself is not situational understanding, however long it stayed unnoticed.)."
+PLs-L3-01,PLs,3,Locate a fault in an electrical circuit using a multimeter.
+PLs-L3-02,PLs,3,Work out why a houseplant is dying from its appearance and conditions.
+PLs-L4-00,PLs,4,"Drive through dense city traffic, where the situation changes continuously but every change is visible as it happens. (Other drivers' visible motion is tracked state; reasoning about their intentions is Mind Modelling (MSm).)."
+PLs-L4-01,PLs,4,"Monitor a staged software rollout across services, where dashboards show each service's changing state."
+PLs-L4-02,PLs,4,"Cook several dishes at once, each evolving visibly toward done or ruined."
+PLs-L5-00,PLs,5,"Diagnose an intermittent fault that appears and disappears under conditions that cannot be observed directly, such as a race condition."
+PLs-L5-01,PLs,5,"Navigate at sea by dead reckoning in fog, where position evolves unobserved under wind and current."
+PLs-L5-02,PLs,5,"Fight a building fire that spreads unseen behind walls and ceilings, revealing itself only intermittently."
+MSc-L0-00,MSc,0,Prove that there are infinitely many prime numbers.
+MSc-L0-01,MSc,0,Transcribe a recorded lecture into text.
+MSc-L0-02,MSc,0,Find the cheapest combination of flights for a fixed itinerary.
+MSc-L1-00,MSc,1,Order a coffee and a sandwich at a café counter.
+MSc-L1-01,MSc,1,Ask a librarian which shelf holds a book you can name.
+MSc-L1-02,MSc,1,Message a dental practice to move an appointment from Tuesday to Thursday.
+MSc-L1-03,MSc,1,"Write a newspaper column arguing for a national carbon tax. (However hard the argument is to make, it is composed and sent with no exchange to steer: choosing the words is Verbal Expression, judging what the readership already believes is Mind Modelling (MSm).)."
+MSc-L2-00,MSc,2,"Take a patient's history in a clinic, where each answer determines which symptom to ask about next."
+MSc-L2-01,MSc,2,"Interview a job candidate about a project on their CV, following up on what they actually say rather than reading out fixed questions."
+MSc-L2-02,MSc,2,"Work out over a support chat which of several products a customer actually needs, each follow-up question depending on what they have just said."
+MSc-L3-00,MSc,3,"Tell a colleague that the section they wrote for a shared report has to be rewritten before submission, when they are proud of it but will hear you out."
+MSc-L3-01,MSc,3,"Tell a patient, as their doctor, that they have a serious illness, and bring them to accept a treatment they are at first reluctant to start, working through each concern as it is raised. (Grave and emotionally heavy, but they are not holding out for a different treatment — the work is finding the path to acceptance, not overcoming opposition.)."
+MSc-L3-02,MSc,3,"Settle a dispute between two flatmates over the cleaning rota, where each arrived wanting a different split and both will accept whatever they come to see as fair."
+MSc-L3-03,MSc,3,"Agree a price with a market trader who opens far above what you will pay, where both of you want the sale to happen and the work is finding the figure that suits you both."
+MSc-L4-00,MSc,4,"Persuade a landlord to release you from a lease six months early, when they have no reason to agree and would rather keep collecting the rent."
+MSc-L4-01,MSc,4,"Keep refusing a refund the policy does not allow to a customer who is shouting and demanding a manager, without conceding it and without the exchange breaking down."
+MSc-L4-02,MSc,4,Talk a co-founder out of a launch date they have staked their reputation on and still believe in.
+MSc-L5-00,MSc,5,"Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others."
+MSc-L5-01,MSc,5,Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
+MSc-L5-02,MSc,5,Settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.

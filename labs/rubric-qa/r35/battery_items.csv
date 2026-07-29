@@ -1,0 +1,37 @@
+item_id,task
+D01,Post sixty ledger entries. The system checks them in batches of ten and reports errors after each batch.
+D02,Book a journey with three connecting trains from a fixed published timetable. A handful of options exist and all of them are visible.
+D03,"A gauge is partly obscured by a pipe. Move to a position from which it can be read, and report the value."
+D04,"Over the course of one conversation, elicit from a willing colleague what they need from a new internal tool."
+D05,Write a five-thousand-word report in one sitting. Nobody reads any part of it until it is finished.
+D06,Plan a week of meals under stated dietary constraints and a fixed budget. All prices and constraints are given.
+D07,"Ask a colleague who is glad to help which meeting room is free, then book it, adapting if the first choice turns out to be taken."
+D08,"Over several meetings, draw out from a willing client what they actually need, and bring them to accept a smaller scope than the one they asked for."
+D09,"Check whether a shared document has been edited since yesterday. The change log is not displayed, but timestamps can be requested."
+D10,"Diagnose which of three services is failing. Logs are available but must be requested one at a time, and the failure is intermittent."
+E01,"Carry out a sixty-step calibration procedure, supplied to you in full, where nothing is checked until the very end and an error at any step invalidates every step after it."
+E02,"Transfer the stated sum to the stated account. The transfer settles instantly, is confirmed on screen, and cannot be reversed."
+E03,"Apply a supplied list of three hundred corrections to a manuscript in the given order. A correction applied to the wrong line silently shifts every later line reference, and nothing is checked until the end."
+E04,"Execute a supplied database migration script step by step against the live system. There is no rollback, and each step must be verified before it is committed."
+L01,Alphabetise a list of two hundred surnames.
+L02,Convert a stated temperature from Celsius to Fahrenheit.
+L03,Which planet is closest to the Sun?
+L04,Copy the text of a supplied paragraph into a new document.
+M01,"A colleague has said plainly that he will not swap shifts, and has given his reason in full. Bring him to swap."
+M02,"Two neighbours have each stated their position on where the boundary fence goes. The positions are incompatible, and each watches what the other is offered. Reach an agreement both will sign."
+M03,"A customer has stated that he wants the premium plan. Policy requires you to move him to the standard one, and he will argue. Bring him to accept it."
+M04,"A supplier has stated in writing that he will not deliver before March, with his reasons set out in full. Negotiate him to February."
+P01,"A delivery van must visit fourteen addresses and return to the depot. Every distance is given in a table, the roads never change, and nothing is hidden. Work out the shortest route and write it down."
+P02,"Twelve guests must be seated under nine interlocking constraints, all of them stated up front. Produce a seating plan that satisfies every constraint, and state the plan."
+P03,Prove a stated number-theoretic claim for which no standard technique applies and the proof strategy must be invented. Write out the finished proof.
+P04,"Given a fixed and fully known warehouse layout and a list of two hundred items to pick, devise the picking order that minimises walking distance. Report the order."
+S01,"Report the current stock level of one product in a warehouse whose inventory system is unavailable, and where staff are moving stock while you count."
+S02,"Report which of six machines on a factory floor is running. There is no display, and the machines are started and stopped by others while you observe."
+S03,You are put inside an unfamiliar building with no map and no signage. Report how many floors it has.
+S04,"Identify which of four network links is currently congested. Utilisation is not exposed anywhere, and traffic patterns shift from minute to minute."
+X01,"Decommission a legacy system for which no standard procedure exists, where each step, once taken, cannot be undone."
+X02,"Find a route through a cave system whose passages are unmapped and partly flooded, with water levels changing as you go."
+X03,"Devise a restructuring for which no template exists, and bring three directors holding incompatible positions to sign it."
+X04,"Operate a chemical reactor whose internal state cannot be measured directly and drifts, carrying out an irreversible sequence of additions."
+X05,"Conduct a live negotiation in which each concession, once voiced, cannot be retracted, against a counterpart holding out for a different outcome."
+X06,Mediate between two parties whose real positions are concealed and shift as they talk to each other outside the room.
