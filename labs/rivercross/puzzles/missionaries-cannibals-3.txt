@@ -1,5 +1,0 @@
-Move the following across a river from the left bank to the right bank: M1, M2, M3, C1, C2, C3. The boat holds at most 2 and needs at least one aboard to row. On an unattended bank, the C1/C2/C3 must never outnumber the M1/M2/M3 when any of the latter are present. Find a sequence of crossings that gets everything to the right bank.
-
-Present ONLY your solution as a numbered list, one crossing per line, naming the passengers in the boat on that trip using the exact item names. For example:
-1. <passenger>, <passenger>
-2. <passenger>

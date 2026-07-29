@@ -1,5 +1,8 @@
 # Pre-PR audit of the four agentic rubrics
 
+> The `labs/rubric-qa/...` paths cited below are on the `rubrics/v2-lab-record` branch, not in this PR. See `docs/lab-record.md`.
+
+
 Run after round 26, before opening the PR. Two independent passes with no memory of the
 26 rounds: a **construct-overlap audit** of all four v2 rubrics against all 18 v1 rubrics
 (72 pairs), and an **adversarial read** of the four rubrics on their own terms.
