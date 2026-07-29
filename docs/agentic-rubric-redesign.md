@@ -3,7 +3,8 @@
 > The `labs/rubric-qa/...` paths cited below are on the `rubrics/v2-lab-record` branch, not in this PR. See `docs/lab-record.md`.
 
 
-**Status:** complete and validated, not merged · branch `rubrics/v2-improved` (34 commits off `agentic`)
+**Status:** complete and validated, not merged · branch `rubrics/v2-improved`
+Evidence: 36 pre-registered rounds, preserved on `rubrics/v2-lab-record` (see `docs/lab-record.md`).
 
 ---
 
@@ -288,28 +289,29 @@ deserve to be their own field rather than prose buried in a paragraph.
 
 Ranked by where we would actually expect to find defects.
 
-1. **Weak-judge robustness on PLp.** haiku reaches 0.647 against the oracle where sonnet reaches
-   0.857 and rivercross's purpose-built rubric reaches 0.826. Their advantage is real and
-   understood: numeric depth/breadth anchors let a weak judge *estimate* rather than decide a
-   binary that requires solving the task first. Closing this means revisiting rule 4 of §2.1 —
-   a design decision, not a tweak.
-2. **MSc has no external ground truth of any kind.** It is validated only against items we
-   designed ourselves, which is the weakest evidence in the set. No benchmark in the pilot
-   exercises it above level 2.
-3. **No human anchor.** The two-phase worksheet exists in `labs/hal-traces/worksheet/`; ~15 items
-   would tell us whether judges track the intended construct or merely agree with each other.
-4. **Separation on real traces is unproven.** The HAL set is one benchmark family in which
-   planning and execution difficulty genuinely co-rise. `docs/agentic-open-questions.md` §1
-   specifies the mixed-family battery that would settle it, and why the current four families
-   structurally cannot.
-5. **Two demands are unowned:** open-ended goals with no requester (probably metacognition), and
-   prospective memory (probably decomposes into MMe + PLe). `docs/agentic-open-questions.md` §2
-   gives one minimal-pair experiment that settles both. **No v1 change is proposed for either.**
-6. **Provenance risk.** The rivercross validation in §3.5 ran against `labs/rivercross` as of
-   commit `2f42e9c`. A refactor of that lab is in flight on a fork
-   (`mingqianzhou123:rivercross-1b-refactor`), unreviewed here; if it changes the frames, prompt
-   scaffolds or ground truth, the numbers in §3.5 should be re-run — the harness is a single
-   call per dimension.
+1. **Criterion validity is untested, and it is the largest gap.** Every measurement here is
+   internal: does the rubric do what its text says, and do the dimensions separate on items
+   built to separate them. Nothing shows the labels predict solver success. The cognitive-ability
+   taxonomy is explicit that incremental prediction, not dissociation, should be the arbiter —
+   and that test needs solver outcomes joined to demand labels, which the current data cannot
+   supply. This is a data problem, not a rubric problem.
+2. **No human anchor.** Every judgement in 36 rounds is an LLM scoring items an LLM helped
+   design. The two-phase worksheet exists (`labs/hal-traces/worksheet/` on the record branch);
+   a few dozen human labels would be the strongest evidence in the project and cost only time.
+3. **Separation is proven on designed items, not on real traces.** `battery-v1` separates 11 of
+   12 directions at a gap of 3+, with deliberately co-occurring items as a guard against a
+   battery that manufactures its own result. But the 16 real HAL/tau frames have almost no
+   spread and could not settle it either way.
+4. **`PLs` is not robust for a weak judge.** haiku scores it 3–5 on socially-loaded items where
+   sonnet and opus score 0–1, reading a concealed human position as hidden world state. A
+   carve-out was written and bound at L3/L5 and **did not take** — the first in this project
+   that failed to. Left in place, since it is correct and harmless to the judges that already
+   got it right.
+5. **`MSc` has no external ground truth.** It is validated only against items we designed. No
+   benchmark in the pilot exercises it above level 2 — though `MSc` scoring 2, 2 and 3 on
+   purpose-built mid-band social tasks shows that is the benchmarks' gap, not the rubric's.
+6. **`PLs` × `MCu` overlaps structurally**, and cannot be fixed from this side. See
+   `docs/note-PLs-MCu-overlap.md`. Eleven further v1 dimensions remain untested against ours.
 
 ---
 
@@ -318,12 +320,14 @@ Ranked by where we would actually expect to find defects.
 | path | what |
 |---|---|
 | `src/adele/rubrics/data_v2/Paolo_Pablo/{PLp,PLe,PLs,MSc}.txt` | the rubrics |
+| `src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt` | v1's mind-modelling rubric plus one carve-out |
 | `src/adele/rubrics/data_v2/MANIFEST.tsv` | provenance and sha256; all rows verify |
-| `labs/rubric-qa/README.md` | round-by-round lab notebook, 20 rounds |
-| `labs/rubric-qa/*.csv`, `prereg_*.json` | every label, and the pre-registrations |
-| `docs/agentic-open-questions.md` | the two experiments that settle what is open |
+| `docs/taxonomy-provenance.md` | why these dimensions, against the cognitive-ability taxonomy |
+| `docs/note-PLs-MCu-overlap.md` | the one limitation that needs a decision from the v1 owners |
+| `docs/lab-record.md` | where the 36 rounds of evidence live, and which round answers what |
 | commit history | one decision per commit, with its failure, alternatives and verification |
 
-`data_v1` is untouched. Marko's memory triad is untouched — an early draft of our audit wrongly
-claimed it was collinear on the basis of shared example text; that claim was **retracted**, since
-shared Level 0 anchors are the null case and its matched-content contrasts are good design.
+`data_v1` is untouched apart from the `MS` → `MSm` rename, which changes no rubric text.
+Marko's memory triad is untouched — an early draft of our audit wrongly claimed it was
+collinear on the basis of shared example text; that claim was **retracted**, since shared
+Level 0 anchors are the null case and its matched-content contrasts are good design.
