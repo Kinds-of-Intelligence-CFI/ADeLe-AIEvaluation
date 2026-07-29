@@ -6,7 +6,7 @@ value that would falsify it, and the fact that criterion validity is not testabl
 | file | what it is |
 |---|---|
 | `prereg_r30.json` | pre-registration: arms, judges, hypotheses, decision rule |
-| `MSe_old.txt`, `MSc_old.txt` | the old arm, taken verbatim from `origin/agentic` |
+| the old arm | not stored here. Byte-identical to `origin/agentic:src/adele/rubrics/data_v2/Paolo_Pablo/{MSe,MSc}.txt` — fetch with `git show origin/agentic:src/adele/rubrics/data_v2/Paolo_Pablo/MSe.txt` |
 | `PLs_new.txt`, `MSc_new.txt` | the new arm, taken verbatim from this branch |
 | `nset.csv` | 16 real trace frames (8 SWE-bench HAL cp50 + 8 tau-bench airline cp50), verbatim from `labs/hal-traces` — designed by neither rubric |
 | `pset.csv` | all 81 examples the four rubrics carry, with the level each claims |
