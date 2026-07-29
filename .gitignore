@@ -171,3 +171,6 @@ coverage/
 *.tar
 *.zip
 
+
+# scratch: this mount cannot unlink, so removals are staged here
+_to_delete/
