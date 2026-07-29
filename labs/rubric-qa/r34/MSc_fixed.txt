@@ -39,6 +39,6 @@ Examples:
 
 Level 5: Very high. Tasks at this level require conflicting stances to be reconciled: several parties must be moved whose required positions are mutually exclusive, and each of them anticipates and counters the moves being made, so anything that shifts one works against another and a path must be found that shifts them all together. Critically, addressing many parties is not by itself this level: what marks it is that the positions the task requires of them cannot all be held at once.
 Examples:
-* Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others. The tactical plan for the operation is settled and not yours to make; what is in question is what to say, to whom, and in what order.
+* Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others.
 * Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
 * Settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.
