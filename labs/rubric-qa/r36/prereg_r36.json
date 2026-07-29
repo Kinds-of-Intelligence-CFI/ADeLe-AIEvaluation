@@ -1,0 +1,16 @@
+{
+  "round": 36,
+  "purpose": "Close the three fixable gaps in one pass, and regression-test the PLs carve-out.",
+  "changes": {
+    "PLs": "MSm carve-out bound at L3 and L5. Diagnosis: on 12 of 36 battery items PLs judges disagreed by 2+, and 8 of those are haiku scoring 3-5 where sonnet and opus both score 0-1, on items registered MSc>=4. The routing existed only in the boundaries paragraph, which r32 showed does not bind."
+  },
+  "hypotheses": {
+    "H1_primary_factor_PLp": "A1->A2 (search size up, everything else fixed) raises PLp by >=2. A1->A3 (volume up 40x, search still trivial) does NOT raise PLp.",
+    "H2_primary_factor_PLe": "B1->B2 (feedback removed) raises PLe by >=2. B1->B3 (ten times the steps, feedback unchanged) does NOT raise PLe.",
+    "H3_primary_factor_PLs": "C1->C2 raises PLs by >=3 while the amount of state falls from forty rooms to one. This is the sharp test of 'how hidden, not how much'.",
+    "H4_PLp_not_social": "D1 (one thing to offer, no search) scores PLp <=1 while D2 (dozens of splits, most unworkable) scores PLp >=3. If both fire, PLp is responding to sociality and needs the same carve-out PLe and PLs have; if only D2 fires, PLp is correct and the battery's registration of 0 was too strict.",
+    "H5_X06R": "The replacement co-occurrence item scores PLs >=4 AND MSc >=4, where the old X06 could not because its hidden state was entirely mental.",
+    "H6_no_regression": "battery-v1 separation stays at 10/12 or better and PLs's judge disagreement falls."
+  },
+  "written_before_any_annotation": true
+}

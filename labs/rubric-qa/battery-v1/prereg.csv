@@ -34,4 +34,4 @@ X02,co_PLp_PLs,4,2,4,0
 X03,co_PLp_MSc,4,1,0,5
 X04,co_PLe_PLs,2,5,4,0
 X05,co_PLe_MSc,1,4,0,4
-X06,co_PLs_MSc,1,1,4,5
+X06R,co_PLs_MSc,1,2,4,5
