@@ -1,7 +1,7 @@
 # Communication and social interaction
 #! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-27 | validated: labs/rubric-qa rounds 12-21 (designed items only)
 
-This rubric assesses the level of cognitive demands associated with communication and social interaction: choosing and delivering the communicative moves that bring another agent's stance — what they understand, believe, want, or intend to do — to where the task requires it. The demand rises with how far the other party's stance must be moved, how much it resists moving, and how much the moves must be adapted to what the other party does in return. The level of cognitive demands progresses from tasks with no one whose stance matters to those in which several parties with conflicting aims must be moved at once under strategic opposition. Where a task shows features of more than one level, the demand is set by the highest it genuinely requires.
+This rubric assesses the level of cognitive demands associated with communication and social interaction: choosing and delivering the communicative moves that bring another agent's stance — what they understand, believe, want, or intend to do — to where the task requires it. The demand rises with how far the other party's stance must be moved, how much it resists moving, and how much the moves must be adapted to what the other party does in return.
 
 Distinguishing communication from neighbouring dimensions. This dimension concerns steering an interaction, not composing its messages: inferring what others believe, intend or feel is Mind Modelling (MSm); expressing content well — vocabulary, genre, register, structure, fit to audience — is Verbal Expression (CEe); the non-social environment is Situational and Environmental Understanding (PLs). Mastering one's own impulses during the exchange is not scored here, or anywhere in this set: it is a disposition of the solver rather than a demand the task makes. The stakes of the situation and the number of people addressed do not by themselves raise the demand.
 
@@ -11,7 +11,7 @@ Examples:
 * Transcribe a recorded lecture into text.
 * Find the cheapest combination of flights for a fixed itinerary.
 
-Level 1: Very low. Tasks at this level require communication that needs no steering: either a standard, familiar script covers the whole interaction — a request is made and met, a fact is asked for and given — or the message goes one way, composed and sent with no response to adapt to. Critically, nothing about what to say turns on what the other party does in return.
+Level 1: Very low. Tasks at this level require communication that needs no steering: either a standard, familiar script covers the whole interaction — a request is made and met, a fact is asked for and given — or the message goes one way, composed and sent with no response to adapt to. Nothing about what to say turns on what the other party does in return.
 Examples:
 * Order a coffee and a sandwich at a café counter.
 * Ask a librarian which shelf holds a book you can name.
