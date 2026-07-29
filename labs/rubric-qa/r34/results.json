@@ -1,0 +1,216 @@
+{
+  "placement_within1": 1.0,
+  "leak_clean_rate": 0.7297297297297297,
+  "leaks": [
+    {
+      "ex": "PLe-L4-00",
+      "own": "PLe",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLe-L4-00",
+      "own": "PLe",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLs-L5-02",
+      "own": "PLs",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLs-L5-02",
+      "own": "PLs",
+      "foreign": "PLe",
+      "score": 4,
+      "level": 5
+    },
+    {
+      "ex": "PLs-L5-00",
+      "own": "PLs",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLs-L5-00",
+      "own": "PLs",
+      "foreign": "PLe",
+      "score": 4,
+      "level": 5
+    },
+    {
+      "ex": "MSc-L5-01",
+      "own": "MSc",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLs-L3-00",
+      "own": "PLs",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 3
+    },
+    {
+      "ex": "PLs-L3-00",
+      "own": "PLs",
+      "foreign": "PLe",
+      "score": 3,
+      "level": 3
+    },
+    {
+      "ex": "PLp-L5-02",
+      "own": "PLp",
+      "foreign": "PLe",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L5-02",
+      "own": "PLp",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L5-00",
+      "own": "PLp",
+      "foreign": "PLe",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L5-00",
+      "own": "PLp",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L4-01",
+      "own": "PLp",
+      "foreign": "PLe",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLe-L5-02",
+      "own": "PLe",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLe-L5-02",
+      "own": "PLe",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L3-00",
+      "own": "PLp",
+      "foreign": "PLe",
+      "score": 4,
+      "level": 3
+    },
+    {
+      "ex": "PLe-L5-00",
+      "own": "PLe",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "PLe-L4-01",
+      "own": "PLe",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLe-L4-01",
+      "own": "PLe",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLe-L3-02",
+      "own": "PLe",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 3
+    },
+    {
+      "ex": "PLs-L5-01",
+      "own": "PLs",
+      "foreign": "PLe",
+      "score": 4,
+      "level": 5
+    },
+    {
+      "ex": "MSc-L5-02",
+      "own": "MSc",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 5
+    },
+    {
+      "ex": "MSc-L5-00",
+      "own": "MSc",
+      "foreign": "PLp",
+      "score": 4,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L5-01",
+      "own": "PLp",
+      "foreign": "PLe",
+      "score": 4,
+      "level": 5
+    },
+    {
+      "ex": "PLp-L4-02",
+      "own": "PLp",
+      "foreign": "PLe",
+      "score": 4,
+      "level": 4
+    },
+    {
+      "ex": "PLp-L4-02",
+      "own": "PLp",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLp-L4-00",
+      "own": "PLp",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLe-L4-02",
+      "own": "PLe",
+      "foreign": "PLp",
+      "score": 3,
+      "level": 4
+    },
+    {
+      "ex": "PLe-L4-02",
+      "own": "PLe",
+      "foreign": "PLs",
+      "score": 3,
+      "level": 4
+    }
+  ]
+}

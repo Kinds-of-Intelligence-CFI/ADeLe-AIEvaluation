@@ -25,7 +25,7 @@ Examples:
 
 Level 3: Intermediate. Tasks at this level require the task-relevant state to be inferred: some of what matters is not directly observable and must be established from indirect evidence — probing, testing, comparing symptoms against hypotheses about the hidden state — because no single observation returns it, even when everything needed to work it out is there to be looked at. The situation itself is stable while this is done. Critically, the difficulty is hiddenness, not change: conclusions, once established, do not go stale. A fault the solver's own earlier work introduced is not hidden state of the world, however long it goes unnoticed and however much tracing it back takes; finding and repairing it is assessed by Action Control and Execution.
 Examples:
-* Debug why a program you did not write crashes: the whole source is there to read, but no line of it announces the fault — only its symptoms are visible, and experiments must be devised to expose it. (Tracing a fault back through work the solver produced itself is not situational understanding, however long it stayed unnoticed.)
+* Debug why a program you did not write crashes: the whole source is there to read, but no line of it announces the fault — only its symptoms are visible, and experiments must be devised to expose it. Once located, correcting the fault is a single edit. (Tracing a fault back through work the solver produced itself is not situational understanding, however long it stayed unnoticed.)
 * Locate a fault in an electrical circuit using a multimeter.
 * Work out why a houseplant is dying from its appearance and conditions.
 
@@ -37,6 +37,6 @@ Examples:
 
 Level 5: Very high. Tasks at this level require the task-relevant state to be anticipated: the situation changes in ways that are not signalled and cannot be observed as they happen, so the picture must be projected forward from a model of how the state evolves, and re-anchored against reality whenever observation is possible. Critically, a change that can be watched as it happens, however fast, belongs at the level below; what marks this level is that the change cannot be observed at the moment it occurs.
 Examples:
-* Diagnose an intermittent fault that appears and disappears under conditions that cannot be observed directly, such as a race condition.
-* Navigate at sea by dead reckoning in fog, where position evolves unobserved under wind and current.
-* Fight a building fire that spreads unseen behind walls and ceilings, revealing itself only intermittently.
+* Diagnose an intermittent fault that appears and disappears under conditions that cannot be observed directly, such as a race condition. Once the cause is known the fix is a one-line change.
+* Navigate at sea by dead reckoning in fog, where position evolves unobserved under wind and current. Holding a heading is trivial; the whole difficulty is knowing where you are.
+* Fight a building fire that spreads unseen behind walls and ceilings, revealing itself only intermittently. What is scored here is knowing where the fire has reached, not the work of putting it out.

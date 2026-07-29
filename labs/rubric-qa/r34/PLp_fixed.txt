@@ -27,7 +27,7 @@ Examples:
 
 Level 3: Intermediate. Tasks at this level require the plan to be searched for: established methods exist for tasks of this kind and the subtasks can be listed at the outset, but decisions interact, so an option that looks good locally can be wrong because of its consequences several steps later, and alternatives must be compared by looking ahead before committing. Recognising what kind of task it is already supplies the outline of a workable plan; the work is choosing and adapting among known options. Critically, this level can be reached by a static, fully observable, single-agent task.
 Examples:
-* Plan a multi-city international trip where flight dates, visa processing times and bookings constrain one another. Nothing is reserved: the deliverable is the itinerary. (Contrast the day-trip at Level 2, whose choices are independent.)
+* Plan a multi-city international trip where flight dates, visa processing times and bookings constrain one another. (Contrast the day-trip at Level 2, whose choices are independent.)
 * Find a strong plan in a club-level chess middlegame, where a natural-looking move can fail to a consequence several moves deep. (Nothing is hidden, and the opponent's replies are explored as branches of the same search rather than by modelling a mind.)
 * Solve a contest programming problem in which several standard techniques could apply and the data structure settled on early decides whether the later queries can be answered in time, so the options must be compared before committing.
 
@@ -35,10 +35,10 @@ Level 4: High. Tasks at this level require the structure of the plan to be const
 Examples:
 * Design the plan for replicating a machine-learning paper that omits key details: what to implement, in what order, and which checks would show whether a discrepancy is a bug or a difference in setup.
 * Solve a contest programming problem for which no standard technique applies: the key idea must be found first, and most approaches that look promising fail only once they are worked through.
-* Plan the first ascent of an unclimbed face for which no route description exists: which line to attempt, where camps can be placed at all, and what to carry all depend on one another, and candidate lines mostly turn out to be impassable only once they have been worked through. The deliverable is the route plan; the climb is not attempted here.
+* Plan the first ascent of an unclimbed face for which no route description exists: which line to attempt, where camps can be placed at all, and what to carry all depend on one another, and candidate lines mostly turn out to be impassable only once they have been worked through.
 
 Level 5: Very high. Tasks at this level require the plan to be invented: no established procedure exists for the task at all, the space of candidate plans is vast, and workable plans are so rare that finding one constitutes a novel discovery. The decomposition into subgoals must be created from scratch, with whole families of candidate approaches generated, evaluated and discarded. Critically, a task belongs here only where no established procedure exists for it at all: where the decomposition must be discovered but the kind of work is itself established, the task belongs at the level below.
 Examples:
-* Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails. The route is designed on paper; nothing is run at the bench.
-* Devise the proof strategy for a long-standing open conjecture, where the lemmas to aim for must themselves be discovered and restructured as attempts collapse. Writing the finished argument out is not the difficulty.
-* Plan a multi-year research programme against an unsolved scientific problem — which sub-questions to pose, which to abandon — where whole lines of attack die only once explored. The programme is written as a proposal, not carried out.
+* Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails.
+* Devise the proof strategy for a long-standing open conjecture, where the lemmas to aim for must themselves be discovered and restructured as attempts collapse.
+* Plan a multi-year research programme against an unsolved scientific problem — which sub-questions to pose, which to abandon — where whole lines of attack die only once explored.

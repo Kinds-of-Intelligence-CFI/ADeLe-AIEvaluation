@@ -88,3 +88,28 @@ Neither met the pre-registered fix rule (2 of 3 judges missing across 2+ items s
 cause), and the fix budget was one round, spent. Chasing them would have reproduced exactly
 the overfitting this battery exists to escape. They are recorded as measured, with the
 number, and the more likely explanation is my item calibration rather than the rubrics.
+
+---
+
+## Re-measured after the preamble restructure and the example fix (r34, r35)
+
+Separation held at **10/12** across both changes. Anchors clean. Co-occurrence 5/6.
+
+```
+  alpha        before      after
+  PLp          0.872   ->  0.929
+  PLe          0.920   ->  0.869
+  PLs          0.896   ->  0.718
+  MSc          0.990   ->  1.000
+```
+
+`PLs`'s drop is the honest cost of the change: its boundaries paragraph is applied much more
+aggressively by some judges than others, and sonnet in particular now zeroes items the others
+score 1-3.
+
+**X06 is a bad item and should be replaced.** It was registered `PLs` 4 / `MSc` 4 — "mediate
+between two parties whose real positions are concealed" — but its hiddenness is entirely
+mental, and our own routing assigns another agent's concealed beliefs to `MSm`, not `PLs`.
+`PLs` now scores it 0, correctly. It was never a `PLs` item. It is also the sole cause of the
+negative entries in both `PLs` rows. The battery needs a replacement co-occurrence item with
+genuinely non-mental hidden state plus a stance to move.
