@@ -1,45 +1,42 @@
 # Auditory processing
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | rewritten: 2026-07-29 | driver: distance from direct readout (docs/sensory-rubric-plan.md §2)
 
-This rubric assesses the ability to extract, interpret and act upon spectral and temporal information from acoustic input. It encompasses sound detection, discrimination and localization, auditory scene analysis (source separation), and the semantic interpretation of speech and non-speech sounds, including resolving competing auditory streams (the "cocktail-party problem"). Difficulty increases with the resolution and fidelity of the signal and the fine spectral detail required, the speed of acoustic changes and rhythm complexity, the level of background noise and reverberation (signal-to-noise ratio), and the number of distinct auditory sources that must be tracked or separated.
+This rubric assesses the level of cognitive demands associated with auditory processing: recovering the information a task needs from an auditory signal, in cases where the signal does not simply present it. The demand is set by how far the required information sits from a direct readout — carried plainly, mixed with other sound, partly destroyed, spread across recordings none of which suffices, or reachable only by reasoning backwards through how the sound was produced or propagated. The level of cognitive demands progresses from tasks carrying no auditory signal at all to those in which the content is not present in the recording in any form and can be recovered only from a model of how the sound came about. Where a task shows features of more than one level, the demand is set by the highest it genuinely requires.
 
-Level 0: None. The task does not require any auditory processing.
+Distinguishing auditory processing from neighbouring dimensions. This dimension scores getting the content out of the signal, not what is done with it afterwards. Choosing which of several sources to attend to is assessed by Attention and Scan (AS); separating one source from the others, once it is chosen, is assessed here. What the recovered content means — what a speaker intends, feels or implies — is assessed by Mind Modelling (MS) and by the language dimensions, however clear or unclear the audio was. How long listening must be sustained is Volume (VO). Producing sound or music is generation, not perception, and is scored nowhere here; so is acquiring an accent, which describes a solver rather than a task.
+
+Level 0: None. The task carries no auditory signal, or any sound it carries is incidental and nothing the task needs is heard from it.
 Examples:
-* Reading a transcript of a conversation.
-* Identifying a song based on its metadata or title text.
-* Measuring the duration of a sound file by checking its file properties.
+* Answer a question about a passage of supplied text.
+* Summarise a meeting supplied as a written transcript.
+* Decide which of two written arguments is better supported.
 
-Level 1: Very low. The task requires processing isolated, distinct sounds in optimal conditions (high signal-to-noise ratio). The signal is static or changes slowly with no clutter, requiring only basic detection or simple discrimination of familiar patterns.
+Level 1: Very low. Tasks at this level require the information to be heard as presented: it is clearly recorded, unmasked and at ordinary level, and no part of it has to be recovered. Critically, a long or fast recording is still at this level so long as what the task needs is plainly audible — duration is Volume (VO), not perceptual demand.
 Examples:
-* Recognising the sound of a simple vowel (e.g., "a").
-* Identifying a loud alarm or siren in a silent room.
-* Following the beat of a simple, slow drum rhythm.
-* Distinguishing between a male and a female voice while reading a slow sentence.
+* Transcribe a sentence spoken clearly by one speaker in a quiet room.
+* State which of two clearly played tones is the higher.
+* Count how many times a bell sounds in a clean recording.
 
-Level 2: Basic. The task requires processing moderately complex auditory patterns with minimal clutter, including recognising simple sequences, distinct words or basic environmental sounds where the target is clearly dominant.
+Level 2: Low. Tasks at this level require the information to be separated: the target sound is present and intact but overlaid with other sound that does not resemble it, so it must be pulled out of the mixture before it can be heard. Critically, which source to follow is given at this level; deciding which of several sources is the one worth attending to is Attention and Scan (AS). The test is overlay against absence: at this level the whole of the target sound is still present underneath the mixture; where part of it is missing — cut out, dropped or swallowed — the task is reconstruction and belongs higher.
 Examples:
-* Recognising a well-vocalised, complex but familiar word.
-* Humming back a simple three-note melody after hearing it.
-* Classifying notes as higher or lower in pitch than a reference.
-* Identifying the direction of a sound source (left vs. right) in a quiet environment.
+* Transcribe the named speaker at a dinner table where several people talk at once.
+* Follow the cello line in a recording in which the other instruments play different material.
+* Make out a platform announcement over the noise of a busy station.
 
-Level 3: Intermediate. The task demands integrating longer temporal sequences and separating a target sound from moderate background noise or a single competing source, tracking meaning or melody across varying intonation; or producing simple meaning-carrying sounds.
+Level 3: Intermediate. Tasks at this level require the information to be reconstructed: part of it is missing, clipped or masked, so what survives must be completed using regularities of the domain — how speech, music or a mechanism usually sounds. Critically, one recording is at this level however badly degraded it is; a single recording that still contains enough to complete the content does not belong higher.
 Examples:
-* Accurately transcribing a news broadcast given by a fluent speaker.
-* Identifying the lyrics of a pop song with a clear vocal track.
-* Identifying a specific instrument (e.g., a trumpet) playing a solo within a small jazz quartet.
-* Detecting sarcasm or hesitation in a voicemail based on intonation.
+* Transcribe a phone call in which bursts of dropout remove whole syllables that must be inferred from the words around them.
+* Identify a word spoken through a closing door.
+* Recover a sentence from a recording clipped so heavily that many consonants are lost.
 
-Level 4: Advanced. The task requires processing rapid, transient or complex signals in noisy, cluttered environments (low signal-to-noise ratio), tracking a specific target among multiple competing sources (polyphony / cocktail party) or identifying subtle cues in degraded audio; or accurately reproducing complex but familiar sounds.
+Level 4: High. Tasks at this level require the information to be combined: no single recording carries it, and several individually insufficient ones must be put together across space, time or modality, any one of them alone leaving the content undetermined. Critically, being given several recordings does not by itself place a task here — what marks this level is that no one of them suffices.
 Examples:
-* Understanding a conversation in a noisy environment.
-* Transcribing a multi-person conversation, annotating who speaks when and important inflexions.
-* Following a single conversation at a loud, crowded party (the "cocktail-party effect").
-* Identifying a mechanical failure in a machine from subtle changes in its operating hum against factory noise.
+* Fix where a sound came from using two microphones at separate points, neither of which alone determines the position.
+* Reconstruct one sentence from several partial recordings, each missing a different stretch of it.
+* Establish what was said by combining a poor audio track with a video of the speaker's mouth, neither being sufficient alone.
 
-Level 5: Highly advanced. The task demands expert-level integration of highly complex, dense or severely degraded auditory scenes, separating many simultaneous streams, recognising highly abstract or unfamiliar patterns, or creatively generating complex auditory structures.
+Level 5: Very high. Tasks at this level require the information to be inverted: no direct route to it exists, and recovery depends on knowing how the sound was produced or propagated and working backwards through that process — the acoustics of the space, the mechanism of the source, or the encoding itself. Critically, severity is not what places a task here; a very badly corrupted single recording is still reconstruction. What marks this level is that the content is not present in the recording in any form.
 Examples:
-* Transcribing the individual parts of a fugue or complex orchestral piece by ear (e.g., spotting a wrong note in the viola section during a fortissimo tutti).
-* Categorising specific ultrasonic vocalisations of mice or identifying individual bird species in a dense tropical-rainforest recording.
-* Composing a complex symphony or generating a novel soundscape that mimics a specific physical environment.
-* Learning to speak a language with distinct phonology to a native-level accent, including pitch-accent subtleties, and using it in noisy environments.
+* Infer the size and shape of a room from the reverberation in a recording made inside it.
+* Determine what material an object is made of, and roughly its size, from the sound it made when struck.
+* Establish where a microphone stood in a hall from how the same source reaches it by direct and reflected paths.
