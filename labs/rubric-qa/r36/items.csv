@@ -34,4 +34,15 @@ X02,"Find a route through a cave system whose passages are unmapped and partly f
 X03,"Devise a restructuring for which no template exists, and bring three directors holding incompatible positions to sign it."
 X04,"Operate a chemical reactor whose internal state cannot be measured directly and drifts, carrying out an irreversible sequence of additions."
 X05,"Conduct a live negotiation in which each concession, once voiced, cannot be retracted, against a counterpart holding out for a different outcome."
+X06,Mediate between two parties whose real positions are concealed and shift as they talk to each other outside the room.
+A1,"Choose which of three listed suppliers to order from. All prices and lead times are given, and any of the three choices works."
+A2,"Choose an ordering across forty suppliers whose discounts and lead times interlock, where most orderings breach a constraint and only a few work. All the figures are given."
+A3,Place one order with each of forty listed suppliers. Each order is independent of the others and any order of placing them works.
+B1,Carry out a forty-step assembly in which each step visibly succeeds or fails as you make it.
+B2,"Carry out a forty-step assembly in which nothing is checked until the end, and an error at any step invalidates every step after it."
+B3,Carry out a four-hundred-step assembly in which each step visibly succeeds or fails as you make it.
+C1,Report the temperature in each of forty rooms. Every thermostat is displayed on one dashboard in front of you.
+C2,Report the temperature in one room whose thermostat cannot be read from outside and which someone else keeps adjusting.
+D1,"A colleague has said plainly that he will not swap shifts. You have exactly one thing to offer in exchange, your Friday. Bring him to swap."
+D2,"Settle a custody arrangement where dozens of possible splits exist, most of them unacceptable to one parent or the other, and the workable ones have to be found."
 X06R,"Restore power to a district after a storm. Which lines are live is not shown anywhere and changes as crews work, while three depot managers each demand their own area first and each sees what the others are given."
