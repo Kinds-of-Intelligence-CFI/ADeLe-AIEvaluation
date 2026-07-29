@@ -174,3 +174,6 @@ coverage/
 
 # scratch: this mount cannot unlink, so removals are staged here
 _to_delete/
+
+# research record; lives on the rubrics/v2-lab-record branch
+labs/

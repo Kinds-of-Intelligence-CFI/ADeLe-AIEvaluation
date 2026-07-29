@@ -1,5 +1,8 @@
 # `PLs` × `MCu`: a measured overlap that cannot be fixed from the v2 side
 
+> The `labs/rubric-qa/...` paths cited below are on the `rubrics/v2-lab-record` branch, not in this PR. See `docs/lab-record.md`.
+
+
 *For discussion. Nothing in this note proposes a change to `data_v1`; it asks the v1 owners a
 question that only they can answer.*
 

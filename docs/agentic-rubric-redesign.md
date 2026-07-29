@@ -1,5 +1,8 @@
 # Re-keying the ADeLe v2 agentic demand rubrics
 
+> The `labs/rubric-qa/...` paths cited below are on the `rubrics/v2-lab-record` branch, not in this PR. See `docs/lab-record.md`.
+
+
 **Status:** complete and validated, not merged · branch `rubrics/v2-improved` (34 commits off `agentic`)
 
 ---
