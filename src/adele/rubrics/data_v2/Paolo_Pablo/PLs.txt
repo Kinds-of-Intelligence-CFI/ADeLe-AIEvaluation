@@ -1,5 +1,5 @@
 # Situational and environmental understanding
-#! ADeLe v2 (agentic) — DRAFT v5, unvalidated | source: Paolo_Pablo | rewritten: 2026-07-30 | driver: how hard it is to find out what is going on
+#! ADeLe v2 (agentic) — DRAFT v6, unvalidated | source: Paolo_Pablo | rewritten: 2026-07-30 | driver: how hard it is to find out what is going on
 
 This rubric assesses the level of cognitive demands associated with situational and environmental understanding: establishing the task-relevant state of the world. The demand is set by one question: how hard is it to find out what is going on? The scale ranges from tasks that state everything they depend on to tasks whose state cannot be found out in time and must be predicted. What raises the demand is the work standing between the solver and the fact: whether the fact is supplied, on display, recorded somewhere that must first be worked out, or nowhere recorded at all. A changing world is not by itself demanding. As long as looking again returns the current state, the task is easy, no matter how fast the world changes. Change raises the demand only when it outruns checking or inferring key facts.
 
@@ -11,14 +11,15 @@ Examples:
 * Find the winning plan in a chess position shown on the board.
 * Solve a programming-contest problem whose inputs arrive on stdin in the format the statement specifies.
 
-Level 1: Very low. Tasks at this level require the state to be read. The facts are on display or one query away, and the task says or makes obvious where each one is, so looking there returns it.
+Level 1: Very low. Tasks at this level require the state to be read. The facts are on display or one query away, and where to look is either given by the task or is general knowledge, so looking there returns it.
 Examples:
 * Check a museum's opening hours before planning a visit.
 * Read the current contents of a file before editing it.
 * Compare fifty products on price and delivery time, each listed on its own catalogue page. (Fifty easy looks; how much there is to establish is Volume.)
 * Update a customer's address using the one recorded on the recent order they point you to. (Their unwillingness to state it themselves is Communication and Social Interaction.)
+* Look up the rainfall recorded on each day of a past week in a public climate archive. (Knowing which archive holds it is general knowledge, and belongs to the knowledge dimensions.)
 
-Level 2: Low. Tasks at this level require the state to be located: the fact is recorded somewhere observable, but the route to it is not given, so where the evidence would live must be worked out before anything can be read.
+Level 2: Low. Tasks at this level require the state to be located: the fact is recorded somewhere observable, but where it lives is particular to the system, codebase or setting in front of you, so where the evidence would live must be worked out from that setting before anything can be read. Where the right place to look is general knowledge, retrievable outside the task, the task belongs below.
 Examples:
 * Establish where in an unfamiliar codebase a behaviour is implemented: every file is readable, but which one holds it must be worked out.
 * Establish when a change was deployed where nothing logs deployments, so what would carry the trace — an image tag, a file timestamp, a message in a channel — must be worked out first. (One fact, and the whole difficulty is knowing where to look.)
