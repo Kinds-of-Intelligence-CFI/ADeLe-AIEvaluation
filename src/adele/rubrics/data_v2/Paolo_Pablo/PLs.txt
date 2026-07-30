@@ -1,42 +1,43 @@
 # Situational and environmental understanding
-#! ADeLe v2 (agentic) — DRAFT v3, unvalidated | source: Paolo_Pablo | rewritten: 2026-07-29 | driver: how hard it is to find out what is going on
- 
-This rubric assesses the level of cognitive demands associated with situational and environmental understanding: establishing the task-relevant state of the world. The demand is set by one question: how hard is it to find out what is going on? The scale ranges from tasks that state everything they depend on to tasks whose state cannot be found out in time and must be predicted. A changing world is not by itself demanding. As long as looking again returns the current state, the task is easy, no matter how fast the world changes. Change raises the demand only when it outruns checking or inferring key facts.
- 
-This dimension covers how the facts come to be known, not what is done with them. Deducing what known facts imply is reasoning or Planning (PLp). Monitoring one's own work is Action Control and Execution (PLe): there the object is the task's own execution, here it is the world. Hidden state that is another agent's beliefs or intentions is Mind Modelling (MSm). Retaining what was observed belongs to the memory dimensions, and knowledge that could be retrieved outside the task to the knowledge dimensions. The amount of state, and the time spent observing, are Volume (VO). Sustained vigilance is Attention and Scan (AS).
- 
-Level 0: None. The task requires no situational understanding. Everything it depends on is supplied: stated or shown at the outset.
+#! ADeLe v2 (agentic) — DRAFT v5, unvalidated | source: Paolo_Pablo | rewritten: 2026-07-30 | driver: how hard it is to find out what is going on
+
+This rubric assesses the level of cognitive demands associated with situational and environmental understanding: establishing the task-relevant state of the world. The demand is set by one question: how hard is it to find out what is going on? The scale ranges from tasks that state everything they depend on to tasks whose state cannot be found out in time and must be predicted. What raises the demand is the work standing between the solver and the fact: whether the fact is supplied, on display, recorded somewhere that must first be worked out, or nowhere recorded at all. A changing world is not by itself demanding. As long as looking again returns the current state, the task is easy, no matter how fast the world changes. Change raises the demand only when it outruns checking or inferring key facts.
+
+This dimension covers how the facts come to be known, not what is done with them. Deducing what known facts imply is reasoning or Planning (PLp), and so is combining several looked-up facts into an answer. Monitoring one's own work is Action Control and Execution (PLe): there the object is the task's own execution, here it is the world. Hidden state that is another agent's beliefs or intentions is Mind Modelling (MSm), and a party's unwillingness to say what they know is Communication and Social Interaction (MSc). Retaining what was observed belongs to the memory dimensions, and knowledge that could be retrieved outside the task to the knowledge dimensions. How much there is to establish, and the time spent observing, are Volume (VO). Sustained vigilance is Attention and Scan (AS).
+
+Level 0: None. The task requires no situational understanding. Everything it depends on is supplied: stated or shown at the outset, or delivered as input in a specified format.
 Examples:
 * Solve a Sudoku from a printed grid. (The whole state is given; filling the grid is deduction.)
 * Find the winning plan in a chess position shown on the board.
-* Answer a word problem that states every quantity it needs.
- 
-Level 1: Very low. Tasks at this level require the state to be read. One or a few facts must be established, and a single look, query or measurement returns each one. Once established, a fact holds for the rest of the task.
+* Solve a programming-contest problem whose inputs arrive on stdin in the format the statement specifies.
+
+Level 1: Very low. Tasks at this level require the state to be read. The facts are on display or one query away, and the task says or makes obvious where each one is, so looking there returns it.
 Examples:
 * Check a museum's opening hours before planning a visit.
 * Read the current contents of a file before editing it.
-* Measure a room before ordering a carpet for it.
- 
-Level 2: Low. Tasks at this level require the state to be gathered. Many facts must be assembled from several places, and each is returned by a direct look once you look in the right place. A task stays at this level however many observations it takes, and however often the world changes, so long as looking again returns the current fact.
+* Compare fifty products on price and delivery time, each listed on its own catalogue page. (Fifty easy looks; how much there is to establish is Volume.)
+* Update a customer's address using the one recorded on the recent order they point you to. (Their unwillingness to state it themselves is Communication and Social Interaction.)
+
+Level 2: Low. Tasks at this level require the state to be located: the fact is recorded somewhere observable, but the route to it is not given, so where the evidence would live must be worked out before anything can be read.
 Examples:
-* Explore an unfamiliar codebase to establish where a behaviour is implemented, each file directly readable.
-* Look up a customer's account, orders and payment methods across several systems before making a change.
-* Drive through dense city traffic, where everything task-relevant is visible as it happens. (Sustained vigilance is Attention and Scan; other drivers' intentions are Mind Modelling.)
- 
-Level 3: Intermediate. Tasks at this level require the state to be inferred by test. Some key piece of data must be worked out from indirect evidence. However, each candidate explanation has a decisive probe, so hypotheses can be run down one at a time. A conclusion, once established, holds.
+* Establish where in an unfamiliar codebase a behaviour is implemented: every file is readable, but which one holds it must be worked out.
+* Establish when a change was deployed where nothing logs deployments, so what would carry the trace — an image tag, a file timestamp, a message in a channel — must be worked out first. (One fact, and the whole difficulty is knowing where to look.)
+* Determine which of several configuration files is the one actually in effect for a running service.
+
+Level 3: Intermediate. Tasks at this level require the state to be elicited: no observation states the fact, however much work finding the right observation would take, so the system must be made to produce evidence — run it, probe it, perturb it — and the fact inferred from how it responds. Each candidate explanation has a decisive probe, so hypotheses can be run down one at a time, and a conclusion, once established, holds.
 Examples:
-* Locate a fault in an electrical circuit with a multimeter, each suspect segment testable on its own.
+* Locate a fault in a circuit with a multimeter, each suspect segment testable on its own.
+* Debug a crash in code you did not write: the source says what each function does, but not what happened on this input, so the failure must be reproduced and narrowed until the step that produces it is exposed.
 * Work out why a houseplant is dying from its appearance and conditions.
-* Debug why a program you did not write crashes, where each suspected cause can be switched off or reproduced in isolation.
- 
-Level 4: High. Tasks at this level require the state to be inferred against entanglement. The evidence fits several explanations at once, or the candidate causes interact, so no ready probe settles any single hypothesis. Observations that discriminate between the rival accounts must be devised. Conclusions may change while they are being formed, because the situation shifts as it is investigated. Critically, what places a task here is that inspection and one-at-a-time testing are not enough.
+
+Level 4: High. Tasks at this level require the state to be inferred against entanglement: the evidence fits several explanations at once, or the candidate causes interact, so no ready probe settles any single hypothesis and observations that discriminate between the rival accounts must be devised. Conclusions may change while they are being formed, because the situation shifts as it is investigated.
 Examples:
 * Diagnose a production incident while traffic shifts and services degrade under investigation, so that measurements taken minutes apart describe different systems.
 * Locate a fault that only appears when several subsystems interact, so that any single-component test comes back clean.
 * Assess the state of a contested field situation from reports that are partial, aging and mutually inconsistent.
- 
-Level 5: Very high. Tasks at this level require the state to be projected without recourse. No observation can reach the state at the moment it must be used: access is severed, the change is unsignalled, or the evidence arrives too late. The state must be carried forward from a model of how the situation evolves, and the model itself cannot be checked before it is relied on. Critically, projection from a supplied and reliable model is routine and belongs lower. What places a task here is committing to a picture of the world that nothing available in time can confirm.
+
+Level 5: Very high. Tasks at this level require the state to be projected without recourse. No observation can reach the state at the moment it must be used: access is severed, the change is unsignalled, the evidence arrives too late, or looking disturbs the thing being looked at. The state must be carried forward from a model of how the situation evolves, and the model itself cannot be checked before it is relied on; where a reliable model is supplied, projecting with it is routine and belongs lower.
 Examples:
-* Diagnose a race condition that appears and disappears under timing conditions that cannot be observed directly.
+* Diagnose a race condition whose timing cannot be instrumented without changing it, so what happened must be argued from a model of the interleaving.
 * Navigate by dead reckoning in fog where the currents themselves are uncertain, so position must be projected from a model that only landfall can check.
 * Fight a building fire that spreads unseen behind walls, revealing itself only intermittently and after the fact.
