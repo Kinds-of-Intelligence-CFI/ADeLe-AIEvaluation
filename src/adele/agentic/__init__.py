@@ -86,7 +86,8 @@ _DEFERRED_MULTIMODAL = ("SNp", "SNk", "SPa", "SPv")
 _ACTIVE = [
     ("PLp", "Paolo_Pablo", "Planning", "Paolo_Pablo/PLp.txt"),
     ("PLe", "Paolo_Pablo", "Action control and execution", "Paolo_Pablo/PLe.txt"),
-    ("PLs", "Paolo_Pablo", "Environmental and situational understanding", "Paolo_Pablo/PLs.txt"),
+    # PLs removed 2026-08-16: dimension withdrawn from the catalogue (rubric file deleted);
+    # no surviving rubric references it.
     ("MSm", "Paolo_Pablo", "Mind Modelling and Social Cognition", "Paolo_Pablo/MSm.txt"),
     ("MSc", "Paolo_Pablo", "Communication and social interaction", "Paolo_Pablo/MSc.txt"),
     ("MMe", "Marko", "Episodic Memory", "Marko/MMe.txt"),

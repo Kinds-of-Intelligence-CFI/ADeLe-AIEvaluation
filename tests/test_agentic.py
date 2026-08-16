@@ -17,18 +17,18 @@ from adele.agentic.hal import human_label_template, run_judge
 from adele.agentic.validation import rubric_agreement
 from adele.rubrics.catalog import RubricsCatalog, validate_rubric
 
-# The active set is the 8 text/tool-relevant agentic dimensions; the 4
+# The active set is the 7 text/tool-relevant agentic dimensions; the 4
 # sensory/motor rubrics live in the library but are deferred (see _DEFERRED_MULTIMODAL).
-# MSe was renamed PLs; ECc was dropped (propensity, not ability); MSm is v1's MS carried
-# into v2 under the code the four agentic rubrics route to.
-EXPECTED_CODES = {"PLp", "PLe", "PLs", "MSm", "MSc", "MMe", "MMp", "MMs"}
+# MSe was renamed PLs and then withdrawn 2026-08-16 (rubric deleted from the catalogue);
+# ECc was dropped (propensity, not ability); MSm is v1's MS carried into v2.
+EXPECTED_CODES = {"PLp", "PLe", "MSm", "MSc", "MMe", "MMp", "MMs"}
 
 
 # ---------------------------------------------------------------------------
 # Rubric library
 # ---------------------------------------------------------------------------
 
-def test_active_catalog_is_the_text_relevant_eight():
+def test_active_catalog_is_the_text_relevant_seven():
     catalog = load_active_catalog()
     assert set(catalog.acronyms) == EXPECTED_CODES
     # The deferred multimodal dims are excluded from the active set...
@@ -80,7 +80,7 @@ def test_MSm_adds_only_the_MSc_carve_out_to_v1():
     CARVE_4 = (" Critically, a stance the other party has stated outright, together with their "
                "reasons, does not have to be modelled: where the task hands over what they "
                "believe and want, the inferring has already been done, and moving them from "
-               "that stance is assessed by Communication and Social Interaction (MSc). What "
+               "that stance is interaction work, not mind modelling. What "
                "places a task at this level is that the mental states driving behaviour must "
                "be worked out, not merely acted upon.")
     CARVE_5 = (" The same carve-out applies here: several parties whose positions are each "
