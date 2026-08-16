@@ -1,9 +1,9 @@
 # Communication and social interaction
-#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-07-30 | re-keyed to a single driver: how much of what to say is determined by the other party
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-08-16 | driver: how much of what to say is determined by the other party | differentiation section made catalogue-independent (no named sibling dimensions)
 
 This rubric assesses the level of cognitive demands associated with communication and social interaction: choosing and delivering the communicative moves that bring another agent's stance — what they understand, believe, want, or intend to do — to where the task requires it. The demand is set by one question: how much of what must be said is determined by the other party rather than by the speaker? The scale ranges from tasks in which no one's stance matters, through exchanges that a script or a one-way message covers, to those steered by what a helpful party has just said, by what a hesitant party still doubts, by what an opposed party is trying to do, and finally by what several parties in conflict will each make of the same move.
 
-Distinguishing communication from neighbouring dimensions. This dimension concerns steering an interaction, not composing its messages: inferring what others believe, intend or feel is Mind Modelling (MSm); expressing content well — vocabulary, genre, register, structure, fit to audience — is Verbal Expression (CEe); the non-social environment is Situational and Environmental Understanding (PLs). Mastering one's own impulses during the exchange is not scored here, or anywhere in this set: it is a disposition of the solver rather than a demand the task makes. The stakes of the situation and the number of people addressed do not by themselves raise the demand.
+What this dimension does not cover. This dimension concerns steering an interaction, not composing its messages or understanding its parties: how well content must be expressed — vocabulary, genre, register, structure, fit to audience — does not raise this demand, and inferring what others believe, intend or feel is understanding them rather than steering them, raising this demand only insofar as what is inferred must shape what is said next. Establishing the state of the non-social environment is not communication and makes no demand here. Mastering one's own impulses during the exchange is not scored either: it describes the solver rather than a demand the task makes. The stakes of the situation and the number of people addressed do not by themselves raise the demand.
 
 Level 0: None. The task requires no communication: there is no stance to move — the task is completed by factual, logical or procedural work, and no other party's understanding or disposition has to be shaped.
 Examples:
@@ -16,7 +16,7 @@ Examples:
 * Order a coffee and a sandwich at a café counter.
 * Ask a librarian which shelf holds a book you can name.
 * Message a dental practice to move an appointment from Tuesday to Thursday.
-* Write a newspaper column arguing for a national carbon tax. (However hard the argument is to make, it is composed and sent with no exchange to steer: choosing the words is Verbal Expression, judging what the readership already believes is Mind Modelling (MSm).)
+* Write a newspaper column arguing for a national carbon tax. (However hard the argument is to make, it is composed and sent with no exchange to steer: the difficulty lies in the writing and in judging what the readership already believes, not in steering an interaction.)
 
 Level 2: Low. Tasks at this level require a cooperative exchange to be guided: what to say or ask next is determined by what the other party has just said, so the exchange must be brought turn by turn to what the task needs. The other party is helping — their replies steer the exchange, but nothing they want stands against it, so the work is eliciting and arranging rather than winning anyone over.
 Examples:
