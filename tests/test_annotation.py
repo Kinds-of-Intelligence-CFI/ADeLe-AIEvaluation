@@ -460,3 +460,16 @@ class TestAnnotateOrchestration:
         with pytest.raises(ValueError, match="bad_backend"):
             annotate(data=data, demands=["AS"], model="x",
                      backend="bad_backend", output_dir=str(tmp_path))
+
+
+class TestParseBatchOutputEdgeCases:
+    def test_empty_output_file_yields_empty_frame_with_schema(self, tmp_path):
+        from adele.annotation.parsing import parse_batch_output
+
+        empty = tmp_path / "output_AS.jsonl"
+        empty.write_text("")
+        df = parse_batch_output(empty)
+        assert len(df) == 0
+        assert list(df.columns) == [
+            "custom_id", "demand", "level", "finish_reason", "response",
+        ]
