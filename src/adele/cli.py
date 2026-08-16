@@ -9,8 +9,29 @@ Usage:
     adele benchmarks list
 """
 
+import importlib
 import logging
 import click
+
+
+def _require(extra: str, *modules: str) -> None:
+    """Fail with an actionable message when an optional extra is missing.
+
+    Each workflow command imports heavy dependencies lazily; without this
+    guard a missing extra surfaces as a raw ``ModuleNotFoundError`` traceback.
+    """
+    missing = []
+    for m in modules:
+        try:
+            importlib.import_module(m)
+        except ImportError:
+            missing.append(m)
+    if missing:
+        raise click.ClickException(
+            f"this command needs the '{extra}' extra "
+            f"(missing: {', '.join(missing)}). Install it with:\n"
+            f'  pip install "adele[{extra}]"'
+        )
 
 
 @click.group()
@@ -22,6 +43,12 @@ def main(verbose):
     A unified toolkit for demand-level annotation, model evaluation,
     and ability profiling of AI systems.
     """
+    # Load API keys and tokens from a local .env, matching Inspect's own
+    # behaviour, so `adele annotate/evaluate` and `inspect eval` see the
+    # same environment.
+    from dotenv import load_dotenv
+    load_dotenv()
+
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -92,13 +119,16 @@ def benchmarks_list():
 @click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
 @click.option("--output-dir", "-o", default="./adele_annotations", help="Output directory.")
 @click.option("--format", "fmt", type=click.Choice(["wide", "long"]), default="wide")
+@click.option("--rubrics", "rubrics_folder", default=None,
+              help="Folder of custom rubric .txt files (default: bundled v1.0 rubrics).")
 def annotate(dataset, demands, model, backend, split, max_samples,
-             max_completion_tokens, hf_token, output_dir, fmt):
+             max_completion_tokens, hf_token, output_dir, fmt, rubrics_folder):
     """Annotate demand levels for a benchmark dataset.
 
     DATASET can be a registered benchmark name (e.g. 'mmlu-pro') or a
     HuggingFace dataset ID (e.g. 'cais/mmlu').
     """
+    _require("annotate", "litellm", "openai", "tenacity", "datasets")
     from adele.data import load_benchmark
     from adele.annotation import annotate as run_annotate
 
@@ -121,6 +151,7 @@ def annotate(dataset, demands, model, backend, split, max_samples,
     result = run_annotate(
         data=data,
         demands=demand_list,
+        rubrics_folder=rubrics_folder,
         model=model,
         backend=backend,
         max_completion_tokens=max_completion_tokens,
@@ -181,6 +212,7 @@ def agentic_pilot(benchmarks, n_per, seed, output_dir):
 
     Downloads task inputs (not rollouts) from HuggingFace; no LLM calls.
     """
+    _require("agentic", "datasets", "huggingface_hub")
     import os
     from adele.agentic import active_demands
     from adele.agentic.benchmarks import sample_pilot
@@ -203,6 +235,7 @@ def agentic_pilot(benchmarks, n_per, seed, output_dir):
 @click.argument("human_csv")
 def agentic_validate(judge_csv, human_csv):
     """Report judge-vs-human agreement from two wide label CSVs (custom_id + demands)."""
+    _require("agentic", "numpy", "scipy", "sklearn")
     import pandas as pd
     from adele.agentic.validation import rubric_agreement
 
@@ -222,8 +255,11 @@ def agentic_validate(judge_csv, human_csv):
 @click.argument("dataset")
 @click.option("--split", "-s", default=None, help="Dataset split.")
 @click.option("--max-samples", "-n", type=int, default=None, help="Max samples.")
-@click.option("--task-type", type=click.Choice(["open-ended", "multiple-choice"]),
-              default="open-ended")
+@click.option("--task-type", type=click.Choice(["auto", "open-ended", "multiple-choice"]),
+              default="auto",
+              help="Scoring mode. 'auto' (default) infers from the data: "
+                   "multiple-choice when the benchmark provides options, "
+                   "open-ended (exact match) otherwise.")
 @click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
 @click.option("--output-dir", "-o", default="./adele_results", help="Output directory.")
 def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_dir):
@@ -232,6 +268,7 @@ def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_
     MODEL_ID is the model identifier (e.g. 'openai/gpt-4o').
     DATASET is a benchmark name or HuggingFace dataset ID.
     """
+    _require("eval", "inspect_ai", "datasets")
     from adele.data import load_benchmark
     from adele.evaluation import evaluate_model
     import os
@@ -247,6 +284,13 @@ def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_
 
     data = load_benchmark(dataset, **kwargs)
     click.echo(f"Loaded {len(data)} instances.")
+
+    if task_type == "auto":
+        has_choices = "choices" in data.columns and data["choices"].notna().any()
+        task_type = "multiple-choice" if has_choices else "open-ended"
+        click.echo(f"Inferred task type: {task_type} "
+                   f"({'options present' if has_choices else 'no options column'}; "
+                   "override with --task-type).")
 
     click.echo(f"Evaluating {model_id}...")
     # max_samples already applied at load time, so no need to re-pass it.
@@ -277,6 +321,7 @@ def profile(annotations_csv, title, output, color):
     ANNOTATIONS_CSV should be a CSV file with a custom_id column and
     demand-level columns (AS, CEc, CEe, ...).
     """
+    _require("analysis", "numpy", "matplotlib", "scienceplots")
     from adele.analysis.demand import plot_from_csv
 
     click.echo(f"Generating demand profile from {annotations_csv}...")

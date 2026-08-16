@@ -3,6 +3,9 @@
 import pandas as pd
 import pytest
 
+pytest.importorskip("sklearn", reason="needs the [agentic] extra")
+pytest.importorskip("scipy", reason="needs the [agentic] extra")
+
 from pathlib import Path
 
 from adele.agentic import (

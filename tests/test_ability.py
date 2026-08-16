@@ -3,6 +3,8 @@ Tests for the ability profiling module.
 """
 
 import pytest
+
+pytest.importorskip("sklearn", reason="needs the [analysis] extra")
 import numpy as np
 import pandas as pd
 from typing import Dict, List

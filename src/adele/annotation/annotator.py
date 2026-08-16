@@ -170,6 +170,22 @@ def annotate(
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
+    # Record run provenance next to the outputs. The result frame itself only
+    # carries custom_id + demand columns, so without this sidecar two runs with
+    # different judge models are indistinguishable on disk.
+    from datetime import datetime, timezone
+    run_info = {
+        "model": model,
+        "backend": backend,
+        "demands": list(demands),
+        "rubric_versions": sorted(catalog.versions),
+        "n_instances": int(len(data)),
+        "format": format,
+        "started_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    (output_path / "run_info.json").write_text(json.dumps(run_info, indent=2))
+    logger.info("Run provenance written to %s", output_path / "run_info.json")
+
     if backend == "batch":
         result_df = _annotate_batch(
             data=data,
@@ -457,11 +473,24 @@ def _wait_for_completion(
     client: openai.OpenAI,
     jobs: dict[str, str],
     poll_interval: int = 60,
+    max_wait: float = 26 * 3600,
 ):
-    """Poll batch jobs until all are completed or failed."""
+    """Poll batch jobs until all are completed or failed.
+
+    ``max_wait`` bounds the total polling time (default 26h: the OpenAI Batch
+    API's own 24h completion window plus slack), so a job stuck in a
+    non-terminal state cannot hang the caller forever.
+    """
     pending = set(jobs.keys())
+    deadline = time.monotonic() + max_wait
 
     while pending:
+        if time.monotonic() > deadline:
+            raise TimeoutError(
+                f"Batch jobs still not terminal after {max_wait/3600:.0f}h: "
+                f"{sorted(pending)} (ids: {[jobs[a] for a in sorted(pending)]}). "
+                "Check them with the OpenAI dashboard or client.batches.retrieve()."
+            )
         for acronym in list(pending):
             status = _check_status(client, jobs[acronym])
 
