@@ -57,6 +57,16 @@ fails at). Their attribution in any resulting publication.
 **What we explicitly do NOT ask for:** eval logs, transcripts, prompts, completions, tokens,
 costs, API access, or anything requiring legal review of content sharing.
 
+**Fallback tier, if even per-sample flags cannot be shared.** The same script has an
+aggregate-only mode: we send our demand-annotation CSV alongside it, they run
+`... --aggregate annotations.csv`, and the output contains no sample ids at all — only, per
+(benchmark, model, dimension, demand level), the counts `n_samples, n_solved`. These are the
+sufficient statistics for fitting ability curves, so the collaboration still works; we lose
+instance-level diagnostics (calibration outliers, red-team candidates) and must re-ask
+whenever the rubrics are revised — which is why per-sample flags remain the primary ask and
+this is the fallback. (This mode is also the template for frontier labs with genuinely
+private evals: run locally, share only the envelope statistics.)
+
 ### Email draft
 
 > Subject: one script run → 300 KB of sample IDs + scores from your Inspect logs?
