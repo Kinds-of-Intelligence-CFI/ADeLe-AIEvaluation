@@ -89,11 +89,69 @@ def _load_taubench() -> pd.DataFrame:
     return _frame(prompts, source_ids, "taubench", "tau")
 
 
+def _pick_columns(df: pd.DataFrame, wanted: Dict[str, List[str]], where: str) -> Dict[str, str]:
+    """Resolve each wanted role ('id', 'prompt') to the first matching column.
+
+    Kept schema-defensive because several 2026 sources ship without stable,
+    documented column names; failing loudly with the observed columns beats a
+    silently wrong ingest.
+    """
+    picked = {}
+    for role, candidates in wanted.items():
+        col = next((c for c in candidates if c in df.columns), None)
+        if col is None:
+            raise ValueError(
+                f"{where}: no {role} column among candidates {candidates}; "
+                f"dataset has columns {list(df.columns)} — update the loader."
+            )
+        picked[role] = col
+    return picked
+
+
+def _load_terminal_bench() -> pd.DataFrame:
+    """Terminal-Bench 2.0 task instructions (harborframework/terminal-bench-2.0).
+
+    The tasks (not run logs) — one instruction per task; task ids join against
+    Terminal-Bench leaderboard results.
+    """
+    from datasets import load_dataset
+    ds = load_dataset("harborframework/terminal-bench-2.0", split="train").to_pandas()
+    cols = _pick_columns(ds, {
+        "id": ["task_id", "id", "name", "task_name"],
+        "prompt": ["instruction", "task", "prompt", "description", "task_description"],
+    }, "terminal-bench-2.0")
+    return _frame(ds[cols["prompt"]].astype(str).tolist(),
+                  ds[cols["id"]].astype(str).tolist(), "terminalbench", "tb")
+
+
+def _load_aime() -> pd.DataFrame:
+    """AIME 2025+2026 problem statements (MathArena problem sets).
+
+    Problem indices join against MathArena/aime_*_outputs per-instance results.
+    """
+    from datasets import load_dataset
+    frames = []
+    for year, repo in (("2025", "MathArena/aime_2025"), ("2026", "MathArena/aime_2026")):
+        ds = load_dataset(repo, split="train").to_pandas()
+        cols = _pick_columns(ds, {
+            "id": ["problem_idx", "id", "problem_id"],
+            "prompt": ["problem", "question", "problem_statement"],
+        }, repo)
+        frames.append(pd.DataFrame({
+            "prompt": ds[cols["prompt"]].astype(str),
+            "source_id": year + "/" + ds[cols["id"]].astype(str),
+        }))
+    both = pd.concat(frames, ignore_index=True)
+    return _frame(both["prompt"].tolist(), both["source_id"].tolist(), "aime", "aime")
+
+
 BENCH_LOADERS: Dict[str, Callable[[], pd.DataFrame]] = {
     "swebench": _load_swebench,
     "assistantbench": _load_assistantbench,
     "usaco": _load_usaco,
     "taubench": _load_taubench,
+    "terminalbench": _load_terminal_bench,
+    "aime": _load_aime,
 }
 
 

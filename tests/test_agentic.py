@@ -222,3 +222,17 @@ def test_run_judge_uses_active_catalog(monkeypatch, tmp_path):
     assert "custom_id" in result.columns
     assert set(active_demands()).issubset(set(result.columns))
     assert len(result) == 2
+
+
+def test_pick_columns_resolves_and_fails_loudly():
+    from adele.agentic.benchmarks import _pick_columns
+    df = pd.DataFrame({"task_id": ["t1"], "instruction": ["do x"]})
+    picked = _pick_columns(df, {"id": ["id", "task_id"], "prompt": ["instruction"]}, "tb")
+    assert picked == {"id": "task_id", "prompt": "instruction"}
+    with pytest.raises(ValueError, match="update the loader"):
+        _pick_columns(df, {"prompt": ["problem"]}, "x")
+
+
+def test_new_loaders_registered():
+    from adele.agentic.benchmarks import BENCH_LOADERS
+    assert {"terminalbench", "aime"} <= set(BENCH_LOADERS)

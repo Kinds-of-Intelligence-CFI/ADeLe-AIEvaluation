@@ -1,57 +1,100 @@
-# Requesting per-sample scores from partners (Epoch AI, Scale/Transluce)
+# Partner data requests: exactly what we send, what comes back
 
-Some publishers hold per-instance results we need but cannot bulk-share (bot-protected
-viewers, contamination worries, sheer log size). The ask below is designed to cost them
-minutes, not favors: they run one auditable script against their own logs and send back a
-CSV of a few hundred KB containing only IDs and scores — no prompts, no model outputs.
+Some publishers hold per-instance results we need but don't offer as downloads (bot-protected
+viewers, log size, contamination worries). The protocol below makes the ask cost them minutes:
+they run one auditable script against their own files and send back a small CSV of IDs and
+scores. We never receive logs, prompts, model outputs, or infrastructure access.
 
-## The mechanism
+## Epoch AI — the full exchange, spelled out
 
-`scripts/extract_scores_standalone.py` — single file, stdlib + inspect-ai only, ~40 lines of
-logic. It reads every `.eval` log under a directory and writes six columns per sample:
-`benchmark, model, sample_id, epoch, score, log_sha256_12`. It never accesses sample inputs,
-outputs, messages or metadata (auditable at a glance), and prints the output's SHA-256 so what
-they review is verifiably what they send. We ingest the CSV with
-`adele results ingest-scores scores.csv`.
+**What we SEND (one email, two attachments):**
 
-## Email draft — Epoch AI
+1. `scripts/extract_scores_standalone.py` — a single Python file, ~100 lines, stdlib +
+   inspect-ai only. They can audit it in one sitting: it reads every `.eval` file under a
+   directory they choose and writes six columns per scored sample — `benchmark, model,
+   sample_id, epoch, score, log_sha256_12`. It never touches sample inputs, outputs, messages
+   or metadata, and it prints the SHA-256 of the CSV it wrote, so what they review is
+   verifiably what they send.
+2. The request manifest (section below): which benchmarks and models we care about, so they
+   can point the script at the right log directories and ignore the rest.
 
-> Subject: 300 KB of sample IDs + scores from your Inspect logs?
+**What THEY do (10–20 minutes):**
+
+    python extract_scores_standalone.py /their/inspect/logs scores.csv
+    # open scores.csv, confirm it contains only IDs and letters/numbers, reply with it attached
+
+**What WE GET BACK:** one CSV, likely a few hundred KB, e.g.:
+
+    benchmark,model,sample_id,epoch,score,log_sha256_12
+    gpqa_diamond,claude-fable-5,recNXpiB...,1,C,9f2ac01b3d44
+    swe_bench_verified,gpt-5.6-sol,astropy__astropy-12907,1,I,77b0e3aa91c2
+
+`sample_id` is Inspect's dataset sample id, which for these benchmarks is the public instance
+identifier — so the rows join directly onto our demand annotations by (benchmark, instance_id)
+via `adele results ingest-scores scores.csv`. That single file gives us the per-question
+success matrix for every model Epoch has run — currently including Claude Fable 5, GPT-5.6
+and Kimi K3 — on the benchmarks below.
+
+**Request manifest (what to name in the email):**
+
+| Epoch benchmark | why we want it |
+|---|---|
+| GPQA Diamond | densest static anchor; joins HELM's 22-model cohort |
+| SWE-bench Verified | extends our 134-entry matrix to Epoch's harness + current models |
+| SimpleQA Verified | cheap wide coverage |
+| MirrorCode | only per-instance coding signal for Fable 5 / GPT-5.6 (their Aug 2026 update) |
+| OTIS Mock AIME | joins MathArena's math axis |
+| FrontierMath (public problems only) | whatever is shareable |
+
+Models: everything they have; the June–August 2026 generation (Fable 5, GPT-5.6*, Kimi K3,
+DeepSeek V4, Gemini 3.x) is the part we cannot get anywhere else.
+
+**What we OFFER in return:** the per-instance demand-level annotations (18 validated
+dimensions) for those same benchmark instances, plus the fitted ability profiles per model —
+an explanatory axis on top of their accuracy numbers (what *kind* of difficulty each model
+fails at). Their attribution in any resulting publication.
+
+**What we explicitly do NOT ask for:** eval logs, transcripts, prompts, completions, tokens,
+costs, API access, or anything requiring legal review of content sharing.
+
+### Email draft
+
+> Subject: one script run → 300 KB of sample IDs + scores from your Inspect logs?
 >
 > Hi — we build ADeLe (annotated demand levels; arXiv:2503.06378, Kinds of Intelligence
 > Centre, Cambridge). We annotate benchmark instances with cognitive-demand levels and fit
-> per-dimension ability curves; your Benchmarking Hub is the only continuously-updated
-> per-question record of current frontier models (we know the log viewer is deliberately
-> bot-protected, and why).
+> per-dimension ability curves; your hub is the only continuously updated per-question record
+> of the current model generation (we know the log viewer is bot-protected, and why).
 >
-> We don't need the logs. We need only (sample_id, model, score) per run — the attached
-> ~100-line script extracts exactly that from a directory of .eval files and nothing else
-> (it never touches inputs/outputs; it prints a checksum of what it writes). For GPQA
-> Diamond, SWE-bench Verified, SimpleQA Verified, MirrorCode and OTIS-AIME across the models
-> you've run, the output should be well under a megabyte.
+> We are not asking for logs. Attached is a ~100-line script (stdlib + inspect-ai) that reads
+> a directory of .eval files and writes only (benchmark, model, sample_id, epoch, score) —
+> no sample content of any kind — plus a checksum of its own output. Running it over your
+> GPQA Diamond, SWE-bench Verified, SimpleQA Verified, MirrorCode and OTIS-AIME logs and
+> replying with the CSV would take ~15 minutes and give us per-question joins for the models
+> nobody else has run (Fable 5, GPT-5.6, Kimi K3...).
 >
-> In return we're happy to share the demand annotations for those instances and the fitted
-> ability profiles — which give your accuracy numbers an explanatory axis (what kind of
-> difficulty each model fails at, not just how often).
+> In return: our per-instance demand annotations for those benchmarks and the fitted ability
+> profiles — an explanatory layer over your accuracy numbers — plus attribution.
 >
-> Would you run it, or alternatively allowlist a research token for the log endpoints?
+> If you'd rather grant a research token for the log endpoints instead, that works too.
 
-## Email draft — Scale / Transluce (SWE-bench Pro trajectories via Docent)
+## Scale / Transluce — SWE-bench Pro (smaller, secondary ask)
 
-> Subject: per-instance resolved flags for SWE-bench Pro entries
->
-> Hi — for a demand-level analysis of SWE-bench Pro (ADeLe, arXiv:2503.06378) we'd like
-> per-instance resolved/unresolved flags for the public leaderboard entries. The Docent
-> dashboards clearly contain them; we don't need trajectories or patches — just
-> (instance_id, model, resolved) per entry, or a Docent export/API pointer if that exists.
-> Happy to share the per-instance demand annotations of the SWE-bench Pro public set in
-> return.
+We want per-instance resolved/unresolved flags for the public SWE-bench Pro leaderboard
+entries (the Docent dashboards visibly contain them). Ask for `(instance_id, model, resolved)`
+per entry or a Docent export/API pointer; offer the demand annotations of the SWE-bench Pro
+public task set in return.
 
-## Notes
+## Sierra (tau2/tau3) — third
 
-- Sequence the Epoch ask first; their "use this data" page signals willingness, and one CSV
-  from them covers five benchmarks × the current generation in one step.
-- If a partner prefers, the same extraction can run inside their CI (the script is
-  deterministic; pin its git SHA in correspondence).
-- Everything received lands in `adele results ingest-scores` → the standard matrix; provenance
-  column `source` records which partner produced which rows.
+Every current-generation submission (Opus 5, Fable 5, GPT-5.6-sol, Qwen 3.8 Max) has
+`trajectories_available: true` with per-trial files on their S3. Ask for the per-task reward
+summaries only (not the trajectories) for those entries.
+
+## Bookkeeping
+
+- Sequence: Epoch first (one CSV covers five benchmarks × the current generation), Scale
+  second, Sierra third.
+- Pin the extractor's git SHA in correspondence so the run is reproducible.
+- Everything received is ingested with `adele results ingest-scores` and lands in the standard
+  matrix with `source` recording the partner.
