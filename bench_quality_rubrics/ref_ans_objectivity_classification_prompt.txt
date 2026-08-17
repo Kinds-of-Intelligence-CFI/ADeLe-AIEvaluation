@@ -1,3 +1,0 @@
-Given the query above, evaluate its objectivity. That is, assess whether this query can be answered objectively - would different qualified individuals arrive at the same answer regardless of their personal views or preferences? Please rate it using a Likert scale from 1 to 5, where 5 means surely objective while 1 means surely subjective.
-
-You may employ any reasoning strategy before providing your final answer. However, you must conclude your assessment with the statement: 'Thus, the objectivity of the given query is: X', where 'X' is the score you've determined.

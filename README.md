@@ -364,3 +364,15 @@ We train a **Random Forest** classifier to predict *model correctness* solely fr
     - `demand.py`: Generates demand profile polar heatmaps (matplotlib).
     - `ability.py`: Computes ability scores (AUC) and Spearman correlations.
     - `prediction.py`: Random Forest analysis of predictive power.
+
+---
+
+## 📄 Reproducing the paper
+
+Figures and tables of ["General Scales Unlock AI Evaluation with Explanatory and Predictive Power"](https://arxiv.org/pdf/2503.06378) are reproduced by the notebooks in three top-level folders (each notebook lists its own dependencies):
+
+- **`demand_profiles/`** — demand profile figures.
+- **`ability_profiles/`** — `scc_and_ability_profiles.ipynb` produces the ability profiles (Figures 7–8).
+- **`predictive_power/`** — the predictive-power analysis.
+
+Tested on macOS 14, Ubuntu 22.04 and Windows 11 with Python 3.11. Typical notebook runtime is 1–5 minutes on a laptop CPU; demand annotation itself depends on the LLM judge (the OpenAI Batch API can take hours). The battery data in `ADeLe_battery_data/` is stored with git-lfs (`git lfs pull`) and licensed CC-BY-SA 4.0; the code is MIT.

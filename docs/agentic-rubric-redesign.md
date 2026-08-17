@@ -32,10 +32,10 @@ demand, and re-filed one from the social family to the planning family. Every ch
 against LLM judges before being kept, across twenty evaluation rounds and roughly 800
 annotations, including a controlled testbed with an exact solver as ground truth.
 
-**Reading order.** This document is the whole account. `labs/rubric-qa/README.md` is the
-round-by-round lab notebook with the data. `docs/agentic-open-questions.md` specifies the two
-experiments that would settle what is still open. The commit messages on the branch record each
-decision, the alternatives rejected, and its verification.
+**Reading order.** This document is the whole account. `labs/rubric-qa/README.md` (in the lab
+record — see `docs/lab-record.md` for where it lives) is the round-by-round lab notebook with
+the data, including the experiments that would settle what is still open. The commit messages
+on the branch record each decision, the alternatives rejected, and its verification.
 
 ---
 
@@ -319,7 +319,7 @@ Ranked by where we would actually expect to find defects.
 
 | path | what |
 |---|---|
-| `src/adele/rubrics/data_v2/Paolo_Pablo/{PLp,PLe,PLs,MSc}.txt` | the rubrics |
+| `src/adele/rubrics/data_v2/Paolo_Pablo/{PLp,PLe,MSc}.txt` | the rubrics (PLs was withdrawn from the catalogue on 2026-08-16) |
 | `src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt` | v1's mind-modelling rubric plus one carve-out |
 | `src/adele/rubrics/data_v2/MANIFEST.tsv` | provenance and sha256; all rows verify |
 | `docs/taxonomy-provenance.md` | why these dimensions, against the cognitive-ability taxonomy |
