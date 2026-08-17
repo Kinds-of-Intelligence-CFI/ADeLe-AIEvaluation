@@ -33,17 +33,20 @@ for the [you] steps: ~30 minutes plus waiting.
     adele results join swebench.parquet aime25.parquet aime26.parquet arc.parquet \
         -o matrix.parquet          # prints the coverage report
 
-## 2. Fetch the instances we will annotate (10 min) [you]
+## 2. Freeze the instances we will annotate (10 min) [you]
 
-    python - <<'EOF'
-    from adele.agentic.benchmarks import BENCH_LOADERS
-    for name in ("swebench", "terminalbench", "aime", "usaco", "taubench", "assistantbench"):
-        df = BENCH_LOADERS[name]()
-        df.to_csv(f"instances_{name}.csv", index=False)
-        print(name, len(df), "instances")
-    EOF
-    # terminalbench + aime loaders are new and schema-defensive: if a dataset's
-    # column names differ they fail with the observed columns — paste me the error.
+    adele instances prepare -b swebench -b terminalbench -b aime -o ./instances
+    # Fetches task text, canonicalizes ids to match the results matrix,
+    # validates (dup ids / empty prompts hard-fail; long prompts warn),
+    # freezes per-benchmark parquet + a sha256 manifest (instances/INSTANCES.tsv),
+    # and prints the token/cost estimate BEFORE anything is spent.
+    # terminalbench + aime loaders are schema-defensive: if a dataset's column
+    # names differ they fail listing the observed columns — paste me the error.
+
+    adele instances check-join ./instances matrix.parquet
+    # MANDATORY before annotating: verifies the frozen instance ids actually
+    # join the success flags from step 1. A low match rate = canonicalization
+    # bug = annotation money that would not join. Fails loudly below 90%.
 
 ## 3. Send the partner asks (10 min) [you]
 
@@ -59,10 +62,16 @@ for the [you] steps: ~30 minutes plus waiting.
 
 ## 5. Annotation (me, after the gate)
 
+    adele agentic judge instances/instances_swe-bench-verified.parquet -m <judge> -n 30
+    # dry-run first; then the full runs. Interruption-safe: every completed call
+    # streams to raw_responses.jsonl and --resume (default) skips paid-for pairs
+    # on restart, so a crash at call 4,900 of 5,000 costs nothing.
+
     SWE-bench Verified (500) + Terminal-Bench (~100) + AIME (60) × the active seven
     agentic dimensions ≈ 5k judge calls; AIME doubles as the discriminant-validity control
     (agentic demands should floor there). Output: demand vectors keyed by
-    (benchmark, instance_id) — joinable onto matrix.parquet from step 1 by construction.
+    (benchmark, instance_id) — joinable onto matrix.parquet from step 1 by construction
+    (guaranteed by step 2's check-join).
 
 ## 6. First envelope (me)
 

@@ -236,3 +236,16 @@ def test_pick_columns_resolves_and_fails_loudly():
 def test_new_loaders_registered():
     from adele.agentic.benchmarks import BENCH_LOADERS
     assert {"terminalbench", "aime"} <= set(BENCH_LOADERS)
+
+
+def test_load_tasks_accepts_frozen_instance_files(tmp_path):
+    from adele.agentic.hal import load_tasks
+    f = tmp_path / "instances_swe.csv"
+    pd.DataFrame({
+        "benchmark": ["swe-bench-verified"],
+        "instance_id": ["astropy__astropy-12907"],
+        "prompt": ["fix the bug " * 5],
+    }).to_csv(f, index=False)
+    frame = load_tasks(str(f))
+    assert frame.loc[0, "custom_id"] == "astropy__astropy-12907"
+    assert frame.loc[0, "benchmark"] == "swe-bench-verified"
