@@ -183,3 +183,6 @@ labs/
 # strings and must never land in a public repo.
 instances/
 adele_annotations/
+
+# Local benchmark-data downloads (HF dumps etc.) — data, never source
+data/
