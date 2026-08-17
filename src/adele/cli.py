@@ -247,6 +247,86 @@ def agentic_validate(judge_csv, human_csv):
 
 
 # =========================================================================
+# Results (public per-instance success/failure matrix)
+# =========================================================================
+
+@main.group()
+def results():
+    """Fetch and join public per-instance model results."""
+    pass
+
+
+@results.command("fetch-swebench")
+@click.argument("experiments_dir")
+@click.option("--split", default="verified", help="Leaderboard split (default: verified).")
+@click.option("--output", "-o", default="swebench_results.parquet")
+def results_swebench(experiments_dir, split, output):
+    """Per-instance resolution flags from a SWE-bench/experiments checkout."""
+    from adele.results.sources import swebench
+
+    df = swebench.fetch(experiments_dir, split=split)
+    df.to_parquet(output)
+    click.echo(f"{len(df)} rows ({df['instance_id'].nunique()} instances × "
+               f"{df.groupby(['model', 'scaffold']).ngroups} model/scaffold pairs) → {output}")
+
+
+@results.command("fetch-matharena")
+@click.option("--dataset", default="MathArena/aime_2026_outputs", show_default=True)
+@click.option("--local-path", default=None, help="Local parquet copy (skips the Hub).")
+@click.option("--output", "-o", default="matharena_results.parquet")
+def results_matharena(dataset, local_path, output):
+    """Per-problem correctness from MathArena output dumps."""
+    _require("annotate", "datasets") if not local_path else None
+    from adele.results.sources import matharena
+
+    df = matharena.fetch(dataset, local_path=local_path)
+    df.to_parquet(output)
+    click.echo(f"{len(df)} rows → {output}")
+
+
+@results.command("fetch-arcprize")
+@click.argument("slugs", nargs=-1, required=True)
+@click.option("--benchmark", default="arc-agi-2", show_default=True)
+@click.option("--output", "-o", default="arcprize_results.parquet")
+def results_arcprize(slugs, benchmark, output):
+    """Scrape per-task results pages (e.g. anthropic-claude-opus-5)."""
+    from adele.results.sources import arcprize
+
+    df = arcprize.fetch(slugs, benchmark=benchmark)
+    df.to_parquet(output)
+    click.echo(f"{len(df)} rows from {len(slugs)} model pages → {output}")
+
+
+@results.command("ingest-scores")
+@click.argument("csv_path")
+@click.option("--scaffold", default="none", show_default=True)
+@click.option("--source", default="partner-extract", show_default=True)
+@click.option("--output", "-o", default="ingested_results.parquet")
+def results_ingest(csv_path, scaffold, source, output):
+    """Ingest a partner CSV made by scripts/extract_scores_standalone.py."""
+    from adele.results.sources import inspect_scores
+
+    df = inspect_scores.from_csv(csv_path, scaffold=scaffold, source=source)
+    df.to_parquet(output)
+    click.echo(f"{len(df)} rows → {output}")
+
+
+@results.command("join")
+@click.argument("parquets", nargs=-1, required=True)
+@click.option("--output", "-o", default="results_matrix.parquet")
+def results_join(parquets, output):
+    """Concatenate fetched frames and report coverage."""
+    import pandas as pd
+    from adele.results import concat_results
+    from adele.results.join import coverage_report
+
+    df = concat_results([pd.read_parquet(p) for p in parquets])
+    df.to_parquet(output)
+    click.echo(f"{len(df)} rows → {output}\n\nCoverage (instances per benchmark × model/scaffold):")
+    click.echo(coverage_report(df).to_string())
+
+
+# =========================================================================
 # Evaluate
 # =========================================================================
 
