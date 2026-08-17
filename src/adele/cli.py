@@ -14,6 +14,15 @@ import logging
 import click
 
 
+def _ensure_parent(path):
+    """Create the parent directory of an output path (data/ layout defaults)."""
+    import os
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    return path
+
+
 def _require(extra: str, *modules: str) -> None:
     """Fail with an actionable message when an optional extra is missing.
 
@@ -117,7 +126,7 @@ def benchmarks_list():
 @click.option("--max-samples", "-n", type=int, default=None, help="Max samples to annotate.")
 @click.option("--max-completion-tokens", type=int, default=1000, help="Max tokens per annotation response.")
 @click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
-@click.option("--output-dir", "-o", default="./adele_annotations", help="Output directory.")
+@click.option("--output-dir", "-o", default="data/annotations", help="Output directory.")
 @click.option("--format", "fmt", type=click.Choice(["wide", "long"]), default="wide")
 @click.option("--rubrics", "rubrics_folder", default=None,
               help="Folder of custom rubric .txt files (default: bundled v1.0 rubrics).")
@@ -240,8 +249,8 @@ def agentic_pilot(benchmarks, n_per, seed, output_dir):
                    "protocol forbids batching; batch also breaks '__' instance ids).")
 @click.option("--max-samples", "-n", type=int, default=None,
               help="Judge only the first N tasks (dry runs / cost control).")
-@click.option("--output", "-o", default="judge_labels.csv", show_default=True)
-@click.option("--output-dir", default="./adele_annotations", show_default=True,
+@click.option("--output", "-o", default="data/annotations/judge_labels.csv", show_default=True)
+@click.option("--output-dir", default="data/annotations", show_default=True,
               help="Working dir for raw responses + run_info.json provenance.")
 @click.option("--resume/--no-resume", default=True, show_default=True,
               help="Skip (task, demand) pairs already answered in output-dir — "
@@ -266,7 +275,7 @@ def agentic_judge(tasks, model, backend, max_samples, output, output_dir, resume
                f"= {n_calls} calls with {model}...")
     labels = run_judge(frame, model=model, backend=backend, output_dir=output_dir,
                        resume=resume)
-    labels.to_csv(output, index=False)
+    labels.to_csv(_ensure_parent(output), index=False)
     click.echo(f"Wrote {len(labels)} labelled tasks → {output} "
                f"(raw responses + provenance in {output_dir})")
 
@@ -301,7 +310,7 @@ def instances():
 @click.option("--benchmarks", "-b", multiple=True,
               default=("swebench", "terminalbench", "aime"),
               show_default=True, help="Instance loaders to run.")
-@click.option("--out-dir", "-o", default="./instances", show_default=True)
+@click.option("--out-dir", "-o", default="data/instances", show_default=True)
 @click.option("--n-dimensions", type=int, default=7, show_default=True,
               help="Planned demand dimensions (for the cost estimate).")
 @click.option("--sample", "-n", type=int, default=None,
@@ -351,13 +360,13 @@ def results():
 @results.command("fetch-swebench")
 @click.argument("experiments_dir")
 @click.option("--split", default="verified", help="Leaderboard split (default: verified).")
-@click.option("--output", "-o", default="swebench_results.parquet")
+@click.option("--output", "-o", default="data/results/swebench.parquet", show_default=True)
 def results_swebench(experiments_dir, split, output):
     """Per-instance resolution flags from a SWE-bench/experiments checkout."""
     from adele.results.sources import swebench
 
     df = swebench.fetch(experiments_dir, split=split)
-    df.to_parquet(output)
+    df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows ({df['instance_id'].nunique()} instances × "
                f"{df.groupby(['model', 'scaffold']).ngroups} model/scaffold pairs) → {output}")
 
@@ -365,27 +374,27 @@ def results_swebench(experiments_dir, split, output):
 @results.command("fetch-matharena")
 @click.option("--dataset", default="MathArena/aime_2026_outputs", show_default=True)
 @click.option("--local-path", default=None, help="Local parquet copy (skips the Hub).")
-@click.option("--output", "-o", default="matharena_results.parquet")
+@click.option("--output", "-o", default="data/results/matharena.parquet", show_default=True)
 def results_matharena(dataset, local_path, output):
     """Per-problem correctness from MathArena output dumps."""
     _require("annotate", "datasets") if not local_path else None
     from adele.results.sources import matharena
 
     df = matharena.fetch(dataset, local_path=local_path)
-    df.to_parquet(output)
+    df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows → {output}")
 
 
 @results.command("fetch-arcprize")
 @click.argument("slugs", nargs=-1, required=True)
 @click.option("--benchmark", default="arc-agi-2", show_default=True)
-@click.option("--output", "-o", default="arcprize_results.parquet")
+@click.option("--output", "-o", default="data/results/arcprize.parquet", show_default=True)
 def results_arcprize(slugs, benchmark, output):
     """Scrape per-task results pages (e.g. anthropic-claude-opus-5)."""
     from adele.results.sources import arcprize
 
     df = arcprize.fetch(slugs, benchmark=benchmark)
-    df.to_parquet(output)
+    df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows from {len(slugs)} model pages → {output}")
 
 
@@ -393,19 +402,19 @@ def results_arcprize(slugs, benchmark, output):
 @click.argument("csv_path")
 @click.option("--scaffold", default="none", show_default=True)
 @click.option("--source", default="partner-extract", show_default=True)
-@click.option("--output", "-o", default="ingested_results.parquet")
+@click.option("--output", "-o", default="data/results/ingested.parquet", show_default=True)
 def results_ingest(csv_path, scaffold, source, output):
     """Ingest a partner CSV made by scripts/extract_scores_standalone.py."""
     from adele.results.sources import inspect_scores
 
     df = inspect_scores.from_csv(csv_path, scaffold=scaffold, source=source)
-    df.to_parquet(output)
+    df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows → {output}")
 
 
 @results.command("join")
 @click.argument("parquets", nargs=-1, required=True)
-@click.option("--output", "-o", default="results_matrix.parquet")
+@click.option("--output", "-o", default="data/results/matrix.parquet", show_default=True)
 def results_join(parquets, output):
     """Concatenate fetched frames and report coverage."""
     import pandas as pd
@@ -413,7 +422,7 @@ def results_join(parquets, output):
     from adele.results.join import coverage_report
 
     df = concat_results([pd.read_parquet(p) for p in parquets])
-    df.to_parquet(output)
+    df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows → {output}\n\nCoverage (instances per benchmark × model/scaffold):")
     click.echo(coverage_report(df).to_string())
 
