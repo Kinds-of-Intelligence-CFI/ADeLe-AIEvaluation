@@ -230,6 +230,41 @@ def agentic_pilot(benchmarks, n_per, seed, output_dir):
     click.echo("\nPer benchmark:\n" + tasks["benchmark"].value_counts().to_string())
 
 
+@agentic.command("judge")
+@click.argument("tasks")
+@click.option("--model", "-m", default="gpt-5.2", show_default=True,
+              help="Judge model (litellm id). One call per task × demand; dry-run first.")
+@click.option("--backend", type=click.Choice(["batch", "direct"]), default=None,
+              help="Auto-detected from the model if not set.")
+@click.option("--max-samples", "-n", type=int, default=None,
+              help="Judge only the first N tasks (dry runs / cost control).")
+@click.option("--output", "-o", default="judge_labels.csv", show_default=True)
+@click.option("--output-dir", default="./adele_annotations", show_default=True,
+              help="Working dir for raw responses + run_info.json provenance.")
+def agentic_judge(tasks, model, backend, max_samples, output, output_dir):
+    """Annotate whole tasks on the active v2 rubric set with an LLM judge.
+
+    TASKS is a .csv/.jsonl with custom_id + prompt columns (e.g. the files the
+    instance loaders write, or pilot/tasks.csv). Output: wide CSV, one 0-5
+    column per active demand — the same schema as the human template, so
+    `adele agentic validate` can compare them directly.
+    """
+    _require("annotate", "litellm", "openai", "tenacity")
+    from adele.agentic import active_demands
+    from adele.agentic.hal import load_tasks, run_judge
+
+    frame = load_tasks(tasks)
+    if max_samples is not None:
+        frame = frame.head(max_samples)
+    n_calls = len(frame) * len(active_demands())
+    click.echo(f"Judging {len(frame)} tasks × {len(active_demands())} demands "
+               f"= {n_calls} calls with {model}...")
+    labels = run_judge(frame, model=model, backend=backend, output_dir=output_dir)
+    labels.to_csv(output, index=False)
+    click.echo(f"Wrote {len(labels)} labelled tasks → {output} "
+               f"(raw responses + provenance in {output_dir})")
+
+
 @agentic.command("validate")
 @click.argument("judge_csv")
 @click.argument("human_csv")
