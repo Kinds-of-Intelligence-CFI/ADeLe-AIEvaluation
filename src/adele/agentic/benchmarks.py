@@ -56,9 +56,16 @@ def _load_usaco() -> pd.DataFrame:
     return _frame(ds["description"].tolist(), ds["name"].tolist(), "usaco", "usaco")
 
 
-def _taubench_prompt(domain: str, instr: dict) -> str:
-    """Render a τ-bench user scenario into the task an agent must satisfy."""
-    parts = [f"[τ-bench: {domain}] A customer-service agent must assist a user."]
+def _taubench_prompt(domain: str, instr) -> str:
+    """Render a τ-bench user scenario into the task an agent must satisfy.
+
+    Handles both scenario shapes in the wild: a structured dict
+    (airline/retail/telecom) and a plain narrative string (banking_knowledge).
+    """
+    header = f"[τ-bench: {domain}] A customer-service agent must assist a user."
+    if isinstance(instr, str):
+        return header + "\n" + instr.strip()
+    parts = [header]
     for label, key in (
         ("Reason for the call", "reason_for_call"),
         ("Known information", "known_info"),
@@ -71,21 +78,47 @@ def _taubench_prompt(domain: str, instr: dict) -> str:
     return "\n".join(parts)
 
 
-def _load_taubench() -> pd.DataFrame:
-    from huggingface_hub import hf_hub_download
+TAU2_DOMAINS = ("airline", "retail", "telecom", "banking_knowledge")
+
+
+def _load_taubench(local_repo: Optional[str] = None,
+                   domains: tuple = TAU2_DOMAINS) -> pd.DataFrame:
+    """τ-bench user scenarios for all public domains.
+
+    Reads ``data/tau2/domains/<domain>/tasks.json`` from a local checkout of
+    sierra-research/tau2-bench when ``local_repo`` (or the TAU2_REPO env var)
+    is set — the repo carries ALL domains including banking_knowledge, which
+    the HF mirror lacks — else falls back to the HF mirror (airline/retail).
+    """
+    import os
+    local_repo = local_repo or os.environ.get("TAU2_REPO")
     prompts, source_ids = [], []
-    for domain in ("airline", "retail"):
-        path = hf_hub_download(
-            "HuggingFaceH4/tau2-bench-data",
-            f"domains/{domain}/tasks.json",
-            repo_type="dataset",
-        )
-        with open(path, encoding="utf-8") as f:
-            tasks = json.load(f)
-        for t in tasks:
-            instr = t.get("user_scenario", {}).get("instructions", {})
-            prompts.append(_taubench_prompt(domain, instr))
-            source_ids.append(f"{domain}/{t.get('id', '')}")
+    if local_repo:
+        base = os.path.join(local_repo, "data", "tau2", "domains")
+        for domain in domains:
+            path = os.path.join(base, domain, "tasks.json")
+            if not os.path.exists(path):
+                continue
+            with open(path, encoding="utf-8") as f:
+                tasks = json.load(f)
+            for t in tasks:
+                instr = t.get("user_scenario", {}).get("instructions", {})
+                prompts.append(_taubench_prompt(domain, instr))
+                source_ids.append(f"{domain}/{t.get('id', '')}")
+    else:
+        from huggingface_hub import hf_hub_download
+        for domain in ("airline", "retail"):
+            path = hf_hub_download(
+                "HuggingFaceH4/tau2-bench-data",
+                f"domains/{domain}/tasks.json",
+                repo_type="dataset",
+            )
+            with open(path, encoding="utf-8") as f:
+                tasks = json.load(f)
+            for t in tasks:
+                instr = t.get("user_scenario", {}).get("instructions", {})
+                prompts.append(_taubench_prompt(domain, instr))
+                source_ids.append(f"{domain}/{t.get('id', '')}")
     return _frame(prompts, source_ids, "taubench", "tau")
 
 

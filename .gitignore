@@ -177,3 +177,9 @@ _to_delete/
 
 # research record; lives on the rubrics/v2-lab-record branch
 labs/
+
+# Frozen benchmark instance data and annotation outputs: data artifacts, not
+# source — several benchmarks (Terminal-Bench) carry no-training-corpora canary
+# strings and must never land in a public repo.
+instances/
+adele_annotations/
