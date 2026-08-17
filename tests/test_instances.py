@@ -127,3 +127,24 @@ def test_check_join_flags_mismatched_canonicalization(tmp_path):
     report = check_join(tmp_path, res_path).set_index("benchmark")
     assert report.loc["aime-2025", "match_rate"] == 1.0
     assert report.loc["swe-bench-verified", "match_rate"] == 0.0
+
+
+# ------------------------------------------------------------ dedupe/propagate
+
+def test_unique_prompt_view_and_propagate():
+    from adele.instances import propagate_labels, unique_prompt_view
+    df = canonicalize("taubench", _loader_frame(
+        ["scenario A text long enough", "scenario A text long enough",
+         "scenario B text long enough"],
+        ["telecom/t1", "telecom/t2", "telecom/t3"], "taubench"))
+    view = unique_prompt_view(df)
+    assert len(view) == 2                       # 3 tasks -> 2 distinct prompts
+    assert view["n_duplicates"].sum() == 3
+    assert (view["instance_id"] == view["prompt_sha12"]).all()
+
+    labels = pd.DataFrame({"custom_id": view["prompt_sha12"], "PLp": [2, 4]})
+    full = propagate_labels(labels, df)
+    assert len(full) == 3
+    by = full.set_index("instance_id")["PLp"]
+    assert by["t1"] == by["t2"]                 # duplicates share the label
+    assert by["t3"] != by["t1"]

@@ -73,11 +73,14 @@ def canonicalize(loader_name: str, frame: pd.DataFrame) -> pd.DataFrame:
             f"adele.instances.CANONICALIZERS (known: {sorted(CANONICALIZERS)})"
         )
     pairs = frame.apply(fn, axis=1, result_type="expand")
-    return pd.DataFrame({
+    out = pd.DataFrame({
         "benchmark": pairs[0],
         "instance_id": pairs[1],
         "prompt": frame["prompt"].astype(str),
     })
+    out["prompt_sha12"] = out["prompt"].map(
+        lambda t: hashlib.sha256(t.encode()).hexdigest()[:12])
+    return out
 
 
 def validate_instances(df: pd.DataFrame, *, where: str = "") -> List[str]:
@@ -234,3 +237,43 @@ def check_join(instances_dir: str | Path, results_parquet: str | Path) -> pd.Dat
                 r["benchmark"], 100 * r["match_rate"],
             )
     return report
+
+
+def unique_prompt_view(df: pd.DataFrame) -> pd.DataFrame:
+    """One row per distinct prompt text — the frame to actually ANNOTATE.
+
+    Some benchmarks (τ³ telecom: 2,285 tasks, ~5 scenario texts) vary only in
+    hidden environment state, which task-text annotation cannot see; judging
+    each duplicate separately would multiply cost for identical output. The
+    returned frame uses ``prompt_sha12`` as ``instance_id`` (and custom_id);
+    expand judgements back over the full set with :func:`propagate_labels`.
+    """
+    view = (
+        df.sort_values(["benchmark", "instance_id"])
+        .groupby(["benchmark", "prompt_sha12"], as_index=False)
+        .agg(prompt=("prompt", "first"), n_duplicates=("instance_id", "size"),
+             example_instance_id=("instance_id", "first"))
+    )
+    view["instance_id"] = view["prompt_sha12"]
+    return view[["benchmark", "instance_id", "prompt", "n_duplicates",
+                 "example_instance_id", "prompt_sha12"]]
+
+
+def propagate_labels(labels: pd.DataFrame, instances: pd.DataFrame) -> pd.DataFrame:
+    """Expand unique-prompt judge labels back to every original instance.
+
+    Args:
+        labels: wide frame keyed by ``custom_id`` == ``prompt_sha12`` (the
+            output of judging :func:`unique_prompt_view`).
+        instances: the frozen full instance frame (with ``prompt_sha12``).
+    Returns: one row per original instance with the demand columns attached.
+    """
+    if "custom_id" in labels.columns and "prompt_sha12" not in labels.columns:
+        labels = labels.rename(columns={"custom_id": "prompt_sha12"})
+    out = instances.merge(labels, on="prompt_sha12", how="left",
+                          suffixes=("", "_label"))
+    missing = out[[c for c in labels.columns if c != "prompt_sha12"]].isna().all(axis=1)
+    if missing.any():
+        logger.warning("propagate_labels: %d instances have no matching judged prompt",
+                       int(missing.sum()))
+    return out.drop(columns=["prompt"], errors="ignore")

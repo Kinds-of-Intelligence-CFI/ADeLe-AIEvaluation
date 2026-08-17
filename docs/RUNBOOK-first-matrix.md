@@ -48,6 +48,16 @@ for the [you] steps: ~30 minutes plus waiting.
     # join the success flags from step 1. A low match rate = canonicalization
     # bug = annotation money that would not join. Fails loudly below 90%.
 
+### Already frozen for you (no network needed)
+
+    tau2: ALL FOUR domains (airline 50, retail 114, banking_knowledge 97, telecom 2,285)
+    were frozen from the sierra-research/tau2-bench repo directly — see
+    ADELE_v2/_incoming/instances/. Telecom's 2,285 tasks collapse to 5 distinct prompt
+    texts (variation is hidden environment state), so annotate_tau2_unique.csv holds the
+    266 unique prompts to judge; propagate_labels() expands results to all 2,546 tasks.
+    Note: instances/ and adele_annotations/ are gitignored — benchmark task text (canaried
+    in some cases) must not enter the public repo.
+
 ## 3. Send the partner asks (10 min) [you]
 
     See docs/partner-data-request.md — Epoch first (attach
