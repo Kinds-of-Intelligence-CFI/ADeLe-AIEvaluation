@@ -88,6 +88,7 @@ def annotate(
     output_dir: str = "./adele_annotations",
     poll_interval: int = 60,
     max_concurrent: int = 10,
+    resume: bool = True,
     batch_chunk_size: int = 50000,
     format: str = "wide",
 ) -> pd.DataFrame:
@@ -207,6 +208,7 @@ def annotate(
             max_completion_tokens=max_completion_tokens,
             output_path=output_path,
             max_concurrent=max_concurrent,
+            resume=resume,
         )
     else:
         raise ValueError(
@@ -254,28 +256,46 @@ def _annotate_direct(
     max_completion_tokens: int,
     output_path: Path,
     max_concurrent: int = 10,
+    resume: bool = True,
 ) -> pd.DataFrame:
     """Annotate using direct API calls via litellm (parallelized).
 
     Works with any model provider (OpenAI, Google, Anthropic, etc.).
     """
+    import threading
     import litellm
     from concurrent.futures import ThreadPoolExecutor, as_completed
     from adele.annotation.parsing import extract_demand_level
+
+    # Crash-safety + resume: raw_responses.jsonl is append-only and every
+    # completed call is flushed to it immediately, so an interrupted run keeps
+    # what was paid for. On restart (resume=True), valid prior annotations are
+    # reloaded and only the missing/invalid (custom_id, demand) pairs re-run.
+    raw_path = output_path / "raw_responses.jsonl"
+    prior_results, done = _load_prior_results(raw_path) if resume else ([], set())
+    if prior_results:
+        logger.info(
+            "resume: %d valid annotations already in %s — skipping those pairs",
+            len(prior_results), raw_path,
+        )
 
     # Flatten the workload: (row_data, demand_acronym) tuples
     work_items = []
     for acronym in demands:
         rubric = catalog[acronym]
         for _, row in data.iterrows():
+            if (str(row["custom_id"]), acronym) in done:
+                continue
             work_items.append({
                 "row": row,
                 "acronym": acronym,
                 "rubric": rubric,
             })
 
-    results = []
+    results = list(prior_results)
     total = len(work_items)
+    write_lock = threading.Lock()
+    raw_file = open(raw_path, "a")
 
     def _process_item(item):
         row = item["row"]
@@ -322,21 +342,46 @@ def _annotate_direct(
 
     logger.info("Starting %d parallel requests (max_concurrent=%d)", total, max_concurrent)
 
-    with ThreadPoolExecutor(max_workers=max_concurrent) as executor:
-        futures = {executor.submit(_process_item, item): item for item in work_items}
-        
-        with tqdm(total=total, desc="Annotating", unit="req") as pbar:
-            for future in as_completed(futures):
-                results.append(future.result())
-                pbar.update(1)
+    try:
+        with ThreadPoolExecutor(max_workers=max_concurrent) as executor:
+            futures = {executor.submit(_process_item, item): item for item in work_items}
 
-    # Save raw responses
-    raw_path = output_path / "raw_responses.jsonl"
-    with open(raw_path, "w") as f:
-        for r in results:
-            f.write(json.dumps(r, default=str) + "\n")
+            with tqdm(total=total, desc="Annotating", unit="req") as pbar:
+                for future in as_completed(futures):
+                    result = future.result()
+                    results.append(result)
+                    with write_lock:
+                        raw_file.write(json.dumps(result, default=str) + "\n")
+                        raw_file.flush()
+                    pbar.update(1)
+    finally:
+        raw_file.close()
 
     return pd.DataFrame(results)
+
+
+def _load_prior_results(raw_path: Path) -> tuple[list, set]:
+    """Read a (possibly partial) raw_responses.jsonl from an earlier run.
+
+    Returns the VALID annotations (latest wins per pair) and the set of
+    (custom_id, demand) pairs they cover; invalid/failed rows are not counted
+    as done, so a resumed run retries them.
+    """
+    if not raw_path.exists():
+        return [], set()
+    by_pair: dict = {}
+    with open(raw_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue  # torn tail line from a hard crash
+            if r.get("valid") and r.get("level") is not None:
+                by_pair[(str(r.get("custom_id")), r.get("demand"))] = r
+    return list(by_pair.values()), set(by_pair.keys())
 
 
 # ============================================================================

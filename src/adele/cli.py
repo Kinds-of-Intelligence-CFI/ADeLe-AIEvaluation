@@ -234,14 +234,19 @@ def agentic_pilot(benchmarks, n_per, seed, output_dir):
 @click.argument("tasks")
 @click.option("--model", "-m", default="gpt-5.2", show_default=True,
               help="Judge model (litellm id). One call per task × demand; dry-run first.")
-@click.option("--backend", type=click.Choice(["batch", "direct"]), default=None,
-              help="Auto-detected from the model if not set.")
+@click.option("--backend", type=click.Choice(["batch", "direct"]), default="direct",
+              show_default=True,
+              help="Judging uses direct one-call-per-item by design (the validation "
+                   "protocol forbids batching; batch also breaks '__' instance ids).")
 @click.option("--max-samples", "-n", type=int, default=None,
               help="Judge only the first N tasks (dry runs / cost control).")
 @click.option("--output", "-o", default="judge_labels.csv", show_default=True)
 @click.option("--output-dir", default="./adele_annotations", show_default=True,
               help="Working dir for raw responses + run_info.json provenance.")
-def agentic_judge(tasks, model, backend, max_samples, output, output_dir):
+@click.option("--resume/--no-resume", default=True, show_default=True,
+              help="Skip (task, demand) pairs already answered in output-dir — "
+                   "interrupted runs keep what was paid for.")
+def agentic_judge(tasks, model, backend, max_samples, output, output_dir, resume):
     """Annotate whole tasks on the active v2 rubric set with an LLM judge.
 
     TASKS is a .csv/.jsonl with custom_id + prompt columns (e.g. the files the
@@ -259,7 +264,8 @@ def agentic_judge(tasks, model, backend, max_samples, output, output_dir):
     n_calls = len(frame) * len(active_demands())
     click.echo(f"Judging {len(frame)} tasks × {len(active_demands())} demands "
                f"= {n_calls} calls with {model}...")
-    labels = run_judge(frame, model=model, backend=backend, output_dir=output_dir)
+    labels = run_judge(frame, model=model, backend=backend, output_dir=output_dir,
+                       resume=resume)
     labels.to_csv(output, index=False)
     click.echo(f"Wrote {len(labels)} labelled tasks → {output} "
                f"(raw responses + provenance in {output_dir})")
@@ -279,6 +285,57 @@ def agentic_validate(judge_csv, human_csv):
         click.echo("No overlapping demand columns / instances to compare.")
         return
     click.echo("\n" + str(report) + "\n")
+
+
+# =========================================================================
+# Instances (frozen annotation inputs)
+# =========================================================================
+
+@main.group()
+def instances():
+    """Prepare and verify frozen instance sets for annotation."""
+    pass
+
+
+@instances.command("prepare")
+@click.option("--benchmarks", "-b", multiple=True,
+              default=("swebench", "terminalbench", "aime"),
+              show_default=True, help="Instance loaders to run.")
+@click.option("--out-dir", "-o", default="./instances", show_default=True)
+@click.option("--n-dimensions", type=int, default=7, show_default=True,
+              help="Planned demand dimensions (for the cost estimate).")
+@click.option("--sample", "-n", type=int, default=None,
+              help="Per-benchmark random sample (seeded) instead of the full set.")
+@click.option("--seed", type=int, default=0, show_default=True)
+def instances_prepare(benchmarks, out_dir, n_dimensions, sample, seed):
+    """Fetch, canonicalize, validate and freeze instance sets + manifest."""
+    _require("annotate", "datasets")
+    from adele.instances import prepare
+
+    manifest = prepare(benchmarks, out_dir, n_dimensions=n_dimensions,
+                       sample=sample, seed=seed)
+    click.echo(manifest.to_string(index=False))
+    click.echo(f"\nFrozen {int(manifest['n_instances'].sum())} instances; "
+               f"~{manifest['est_tokens_in'].sum()/1e6:.1f}M input tokens for "
+               f"{n_dimensions} dimensions. Manifest: {out_dir}/INSTANCES.tsv")
+
+
+@instances.command("check-join")
+@click.argument("instances_dir")
+@click.argument("results_parquet")
+def instances_check_join(instances_dir, results_parquet):
+    """Verify instance ids join the results matrix BEFORE spending on judges."""
+    from adele.instances import check_join
+
+    report = check_join(instances_dir, results_parquet)
+    click.echo(report.to_string(index=False))
+    bad = report[(report["results_side_ids"] > 0) & (report["match_rate"] < 0.9)]
+    if len(bad):
+        raise click.ClickException(
+            f"low join rates for: {', '.join(bad['benchmark'])} — fix "
+            "canonicalization before annotating"
+        )
+    click.echo("\nAll join rates OK.")
 
 
 # =========================================================================

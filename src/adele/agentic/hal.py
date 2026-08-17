@@ -28,16 +28,23 @@ class HalTask:
 
 
 def load_tasks(path: str) -> pd.DataFrame:
-    """Load whole tasks from a ``.csv`` or ``.jsonl`` file.
+    """Load whole tasks from a ``.csv``, ``.jsonl`` or ``.parquet`` file.
 
-    Requires ``custom_id`` and ``prompt`` columns/keys; ``benchmark`` and
-    ``final_success`` are carried through if present.
+    Accepts either the pilot schema (``custom_id`` + ``prompt``) or a frozen
+    instance file from ``adele.instances.prepare`` (``benchmark`` +
+    ``instance_id`` + ``prompt``), in which case ``custom_id`` is the
+    instance_id verbatim — so judge output joins the results matrix directly.
+    ``benchmark`` and ``final_success`` are carried through if present.
     """
     p = Path(path)
     if p.suffix == ".jsonl":
         frame = pd.read_json(p, lines=True)
+    elif p.suffix == ".parquet":
+        frame = pd.read_parquet(p)
     else:
         frame = pd.read_csv(p)
+    if "custom_id" not in frame.columns and "instance_id" in frame.columns:
+        frame = frame.assign(custom_id=frame["instance_id"].astype(str))
     for col in ("custom_id", "prompt"):
         if col not in frame.columns:
             raise ValueError(f"Task file {path} must have a '{col}' column.")

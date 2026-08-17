@@ -473,3 +473,28 @@ class TestParseBatchOutputEdgeCases:
         assert list(df.columns) == [
             "custom_id", "demand", "level", "finish_reason", "response",
         ]
+
+
+class TestResume:
+    def test_load_prior_results_keeps_valid_latest_and_retries_invalid(self, tmp_path):
+        import json
+        from adele.annotation.annotator import _load_prior_results
+
+        raw = tmp_path / "raw_responses.jsonl"
+        lines = [
+            {"custom_id": "a", "demand": "PLp", "level": 2, "valid": True, "response": "r1"},
+            {"custom_id": "a", "demand": "PLp", "level": 3, "valid": True, "response": "r2"},
+            {"custom_id": "a", "demand": "PLe", "level": None, "valid": False, "response": ""},
+            {"custom_id": "b", "demand": "PLp", "level": 1, "valid": True, "response": "r3"},
+        ]
+        raw.write_text("\n".join(json.dumps(l) for l in lines) + '\n{"torn')
+        prior, done = _load_prior_results(raw)
+        assert done == {("a", "PLp"), ("b", "PLp")}      # invalid pair NOT done -> retried
+        by = {(r["custom_id"], r["demand"]): r for r in prior}
+        assert by[("a", "PLp")]["level"] == 3            # latest valid wins
+        assert len(prior) == 2
+
+    def test_load_prior_results_missing_file(self, tmp_path):
+        from adele.annotation.annotator import _load_prior_results
+        prior, done = _load_prior_results(tmp_path / "nope.jsonl")
+        assert prior == [] and done == set()
