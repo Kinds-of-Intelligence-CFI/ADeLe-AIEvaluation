@@ -1,3 +1,0 @@
-Given the query or question above, evaluate the ambiguity of this query, independently of the potential difficulty of answering the query. That is, assess whether the query has a single clear interpretation with all necessary details provided, or if it lacks critical information making it challenging to answer confidently. Please rate it using a Likert scale from 1 to 5, where 5 means surely unambiguous (very clear) while 1 means surely ambiguous (very unclear).
-
-You may employ any reasoning strategy before providing your final answer. However, you must conclude your assessment with the statement: 'Thus, the ambiguity of the given query is: X', where 'X' is the score you've determined.

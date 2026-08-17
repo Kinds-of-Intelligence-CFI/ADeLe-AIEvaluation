@@ -2,7 +2,7 @@
 
 This package extends ADeLe from static tasks toward agent rollouts. The first
 step is the **v2 agentic rubric library** and a harness to **validate** it
-against human judgement (see ``AGENTIC_METHODOLOGY.md``).
+against human judgement (see ``docs/agentic-rubric-redesign.md``).
 
 The v2 rubrics are drafted across **two source documents** ("Paolo_Pablo" and "Marko";
 see ``MANIFEST.tsv``). Faithful per-source conversions live under
