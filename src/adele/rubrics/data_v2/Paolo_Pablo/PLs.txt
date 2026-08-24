@@ -1,0 +1,42 @@
+# Simulating
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | drafted: 2026-08-20 as PLw "World Modelling", renamed PLs "Simulating" + 6 fixes from independent adversarial review same day | NOTE: code PLs was previously borne by a deleted dimension (Situational and Environmental Understanding) — historical PLs-coded labels are NOT comparable | driver: interacting change tracked at the precision the answer requires | NOT validated — pre-registration battery in labs/, labels pending
+
+This rubric assesses the level of cognitive demands associated with simulating: anticipating how a situation will unfold — taking a represented state of affairs and running it forward under its own dynamics, or under a stipulated change to it, until the answer the task asks for is determined. The situation may be physical, biological, mechanical, social or economic; what is simulated is what the world does, not what to do about it. The level of cognitive demands progresses from tasks whose outcome is given or follows at once to those whose outcome can only be reached by tracking several interacting processes at the precision the answer requires: change that runs on undisturbed can be projected roughly, but processes that influence one another must be propagated together, and the more finely the answer discriminates between ways the situation could go, the more tightly their interaction must be tracked.
+
+What this dimension does not cover. This dimension concerns anticipating what the world does, not deciding what to do about it: searching for or choosing among one's own actions is planning work and does not raise this demand — a candidate action enters here only as a stipulated change whose consequences must be traced. Nor is the demand raised by the calculation needed to evaluate change that nothing deflects, by how specialised the knowledge of the governing regularities is, by how hard the current state is to perceive, visualise or find out — propagation is scored from the situation as given — or by how turbulent the situation's inner workings are: such features raise this demand only insofar as more interacting change must be tracked, more finely, for the answer required. Where other agents figure in the situation, their described tendencies enter as processes to be propagated like any other; inferring what they believe or want in the first place does not raise this demand.
+
+Level 0: None. The task requires no simulating: nothing has to be run forward — the situation is static, the outcome is already stated, or the answer concerns the state of affairs as presented rather than how it unfolds.
+Examples:
+* What year did Darwin publish "The Origin of Species": 1856, 1859, 1865 or 1866?
+* Given a full account of a finished match, state which side won. (The outcome is in the account; nothing needs projecting.)
+* Check whether a completed Sudoku grid is valid. (The grid does not change; the work is checking, not anticipating.)
+
+Level 1: Very low. Tasks at this level require the outcome only to be read off a single step of change: one familiar process advances once, nothing deflects it, and the outcome follows at once — any rough projection lands on the same answer.
+Examples:
+* Predict what happens to a glass dropped onto a concrete floor.
+* Predict what happens when a lit match is touched to dry straw.
+* Predict the immediate reaction of a driver described as short-tempered when another car cuts into the queue in front of them. (The tendency is described; it advances a single step.)
+
+Level 2: Low. Tasks at this level require the outcome to be extrapolated: one process — or more than one, so long as they run on without affecting each other — must be carried forward over an extended course, but because nothing interacts, the course can be followed roughly or computed directly, and the answer never depends on tracking any interplay. Critically, a task remains at this level however long the horizon and however intricate the situation's inner churn, so long as the required answer is insensitive to them.
+Examples:
+* Predict whether a bathtub with the plug in and the tap left running will eventually overflow.
+* Predict whether the ice in a drink left in full summer sun will have melted by the end of the afternoon. (The melting involves intricate flows, but the asked-for answer survives any rough rollout.)
+* Compute exactly where a thrown ball will land, ignoring air resistance. (A single undeflected course; the exactness is calculation, and the simulating demand stays low.)
+
+Level 3: Intermediate. Tasks at this level require the outcome to be worked through an interaction: a few processes influence one another, and the interaction changes the answer — projecting each on its own, however carefully, gives the wrong result, so their coupling must be propagated together. The answer itself remains coarse: once the effect of the coupling is captured, loose tracking still lands on it.
+Examples:
+* Predict whether closing one lane of a busy road will lengthen overall travel times, where drivers reroute in response and the alternative roads congest in turn.
+* Predict whether a hillside's rabbit population will keep growing after foxes arrive, where more rabbits feed more foxes and more foxes thin the rabbits.
+* Predict whether a shop that raises its prices will take more money overall, where customers drift to a rival and the rival, filling up, lengthens its queues.
+
+Level 4: High. Tasks at this level require the outcome to be held through interlocking change: whether the interacting processes are few or many, the required answer is fine enough that dropping any one coupling, or tracking it loosely, flips the result, so the interplay must be propagated faithfully throughout — no single dominant process settles the answer by its rough course. A stipulated change to the situation belongs at the level its consequences demand: it places a task here only where those consequences must be traced through couplings at this fineness.
+Examples:
+* Predict which of the described crops on a smallholding will fail in a drought year, where the shared irrigation, the pests each crop harbours and the staggered planting dates all bear on one another.
+* Predict which populations in a described food web rise and which crash in the seasons after a named predator is removed, where the species are coupled tightly enough that leaving any link out changes which way several answers go.
+* A described contraption of tilting trays, rolling balls and counterweights is set off: state whether the final bell rings, where each stage's outcome sets up the next and a small shortfall at any stage changes what follows.
+
+Level 5: Very high. Tasks at this level require the outcome to be discriminated between diverging courses: small differences early in the course grow as the change plays out, so courses that begin close together end far apart, and the task demands saying which of them the situation actually takes — the faithful tracking of the level below must now be sustained the whole way, because the tolerance for a loose stretch shrinks the further forward the answer lies. Critically, divergence in the situation does not place a task here by itself: where a coarse answer would survive it, the task belongs at the level its own question demands.
+Examples:
+* From a described billiards break, state which pocket, if any, the ball nearest the cushion reaches once the collisions play out.
+* From described atmospheric conditions, state which of two neighbouring valleys a building storm will strike, several days of weather ahead. (Asked merely whether it will rain somewhere in the region that week, the same situation demands far less.)
+* Predict whether a described run on one bank spreads to a second bank or burns out, where each depositor's decision shifts the odds of the next and the town sits at the tipping point between the two courses.
