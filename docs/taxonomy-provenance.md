@@ -117,10 +117,38 @@ explicitly modality-general (physical, biological, mechanical, social or economi
 all propagate alike), where an intuitive-physics dimension would have been narrower. Whether
 that generality is right is an empirical question this project has not settled.
 
+## Scope: what `PLs` measures, and what its zeros mean
+
+The demand is scored on what a task asks for. Where a situation must be run forward only in
+order to settle what to do, that running belongs with the choice it serves, and the task
+scores low here however much foreseeing its solver would in fact do. This was not a design
+decision taken up front; it was measured in **r47**, which held three systems fixed and asked
+each of them two ways. A matplotlib limit-conditioning path scored 1 asked as "fix it" and 3
+asked as "what happens"; a pairing process scored 0 asked as "compute the maximum matching"
+and 4 asked as "how many remain unpaired at the fixed point". The clause was then written
+into the rubric and re-measured in r51, where the do-arm stayed at 0 and the predict-arm at 4.
+
+**Consequence for reading `PLs` numbers.** On the agentic pilot the dimension scores 0 on 12
+of 20 instances and never exceeds 1 (**r46**), because SWE-bench, AssistantBench, USACO and
+τ-bench ask an agent to fix code, look something up, devise an algorithm or serve a customer.
+None asks what a situation will do. Those zeros are a statement about instance coverage, not
+about the world models of the systems being evaluated, and they should never be quoted as the
+latter. Instances whose deliverable is a prediction reach 3 and 4 immediately.
+
+Whether the narrow scope is the right one is a construct decision the team has not taken. If
+instrumental simulation should be scored, the scope clause is the thing to revisit, and the
+cost is a re-key of the driver plus full re-validation rather than a patch.
+
 ## Evidence, and its limits
 
-- **r40** (19-item pre-registration battery): the fused driver survived all three of its
-  designed falsifiers. Precision does not act as an independent axis — exact-answer items with
+- **r51** (19 items, current v7.2 wording): 19/19 exact against sealed predictions, α 0.992.
+  All three fusion falsifiers held, the precision contrast separated by three levels on one
+  situation, the coupling-versus-chain boundary separated, and the planning, mind-modelling
+  and execution carves held. **r52**: family diagonal 8/9 with no off-diagonal leak. Note that
+  the chess co-load reported in r42 disappeared once the scope clause was explicit, moving 4
+  to 0, which is a behaviour change worth the team's attention rather than a tidy-up.
+- **r40** (the first battery run, superseded wording): the fused driver survived all three of
+  its designed falsifiers. Precision does not act as an independent axis — exact-answer items with
   no interaction stayed at 2 — and the precision contrast separated by three levels on one and
   the same situation (coarse question 2, fine question 5). Routing carves against planning,
   mind-modelling and execution all held. α 0.971.
