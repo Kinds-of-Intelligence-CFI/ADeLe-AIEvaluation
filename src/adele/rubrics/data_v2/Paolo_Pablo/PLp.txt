@@ -1,5 +1,5 @@
 # Planning
-#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-08-16 | validated: labs/rubric-qa rounds 1-21 (incl. solver oracle) | differentiation section made catalogue-independent (no named sibling dimensions); regression pending
+#! ADeLe v2 (agentic) — validated | version: v2-r43 | source: Paolo_Pablo | revised: 2026-08-22 | validated: labs/rubric-qa rounds 1-21 (incl. solver oracle) + r42 family discrimination (diagonal 3/3; PLp-high/PLs-low on seating, timetabling, approach-choice) + r43 (a drafted lookahead exclusion changed no score and was withdrawn under the stopping rule; the chess co-load with Simulating is a property of chess, not a text defect) | text unchanged since 2026-08-16
 
 This rubric assesses the level of cognitive demands associated with planning: envisioning a desired outcome and devising a sequence of actions or strategies to achieve it, including setting instrumental goals, dividing the task into subtasks, sequencing actions, and allocating limited resources among them. The level of cognitive demands progresses from tasks whose plan is given or retrieved ready-made to those for which no established procedure exists and a workable plan must be invented.
 
