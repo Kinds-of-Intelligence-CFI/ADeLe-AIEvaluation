@@ -1,5 +1,5 @@
 # Action control and execution
-#! ADeLe v2 (agentic) — v2-r44 voiced and styled to v1 (subject 'The task', guards marked Critically/Importantly/Note, no em-dashes or semicolons; no operative clause changed) | ADOPTED r44 (labs/rubric-qa/r39, r44) | version: v2-r44 | source: Paolo_Pablo | revised: 2026-08-22 | driver re-anchored to the availability and difficulty of progress/correctness checking; irreversibility and impact of failure removed as placement keys (v1 comparability: tasks formerly at L5 through irreversibility alone now score by their checking structure)
+#! ADeLe v2 (agentic) — v2-r44 voiced and styled to v1 (subject 'The task', guards marked Critically/Importantly/Note, no em-dashes or semicolons; no operative clause changed) | ADOPTED r44 (labs/rubric-qa/r39, r44) | version: v2-r44 | source: Paolo_Pablo | revised: 2026-08-22 | driver re-anchored to the availability and difficulty of progress/correctness checking; irreversibility and impact of failure removed as placement keys (v1 comparability: tasks formerly at L5 through irreversibility alone now score by their checking structure) | 2026-08-25 example pass: v1 carries concrete detail in about 45 per cent of its examples at a flat rate across all six levels, and the PL family did not, so quantities that decide an example were filled in. A benchmark-shaped Level 2 example was added carrying Pablo's own tau-bench labels. No cross-references or rationale glosses were present in this file. No operative clause changed.
 
 This rubric assesses the difficulty level of tasks requiring a plan to be carried out and kept on track. What sets this difficulty apart is how the agent can tell, while the work is under way, that it is going right. It ranges from tasks the environment checks at every step to those that offer no check at all. An action is the carrying-out of one plan step. It is the finest unit that could be separately instructed and done wrong, such as posting an entry, making a tool call or writing a section. Words and tokens are not actions. A check is information that establishes, without further work, whether an action or subtask has done what it was for. An observation from which success must still be worked out is not a check, and neither is an interlocutor's acknowledgement.
 
@@ -22,12 +22,13 @@ Level 2: Low. The task requires execution to be checked at checkpoints. The envi
 Examples:
 * Assemble a flat-pack wardrobe: nothing shows whether a stage was done right until a sub-assembly is stood up and either fits together or does not.
 * Follow a tutorial to implement a small transformer network, where each milestone will not run until the preceding stage is correct.
-* Complete a long structured application form that validates each section on submission.
+* Complete a 40-field application form that validates each section on submission.
+* Change a customer's order through a tool interface, where each call reports whether it succeeded and the order state can be read back after each change.
 
 Level 3: Intermediate. The task requires execution to be self-checked. The environment settles little or nothing along the way, but adequate checks are easy for the agent to apply whenever it chooses, such as re-reading a passage, running the code or comparing against the source. Here the checking is elected rather than forced, since nothing will tell the agent where it stands unless it decides to find out. Importantly, that a check runs on the environment's machinery does not matter, and neither does the task naming one. What places a task here is that the agent must decide when to check, what the result would have to show, and when each part is done.
 Examples:
 * Write and polish the introduction of a scientific paper, judging for yourself when each paragraph is finished.
-* Summarise a long document and extract its main arguments, checking passages against the source as you go.
+* Summarise a 60-page report and extract its main arguments, checking passages against the source as you go.
 * Draft the claims of a patent from the paper it is based on, with no examiner feedback before the whole set is filed.
 
 Level 4: High. The task requires execution to be checked by means the agent must construct. No ready-made check settles whether the work is right, and errors give no sign of themselves where they occur, so their symptoms surface far from their cause. Only verification the agent devises for itself, in the form of probes and intermediate tests placed where slips would matter, separates work that is on course from work that has silently gone wrong.
@@ -40,4 +41,4 @@ Level 5: Very high. The task requires execution to be held on course with no che
 Examples:
 * Land a robot on Mars from the control room. Light-delay means the entire descent sequence must be committed in advance: by the time the first sign of how the descent is going reaches anyone, the landing has already succeeded or failed.
 * Carry out a multi-step synthesis for which no intermediate assay exists, because testing the product at any stage would consume it. The route is given. Whether any step has worked cannot be known before the final yield.
-* Run a months-long fermentation in a sealed vessel that cannot be opened or sampled without spoiling the batch: temperature and timing must be held to the schedule with the state of the culture unknowable until the end.
+* Run a nine-month fermentation in a sealed vessel that cannot be opened or sampled without spoiling the batch: temperature and timing must be held to the schedule with the state of the culture unknowable until the end.
