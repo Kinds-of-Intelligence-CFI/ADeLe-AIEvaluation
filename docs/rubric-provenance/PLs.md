@@ -22,3 +22,19 @@ Moved out of the rubric's `#!` line on 2026-08-25. Rounds are in `labs/rubric-qa
 - v16, 2026-08-25: Level 4 now names sensitivity as its mark, at Pablo's suggestion after he found the 3/4 boundary hard to apply. r63 measured it: a 2-degree phase error on a cam scored 4, the coarse two-cafe item held at 3, and the fire item scored 4, matching Pablo's own label. THAT IS THE FIRST PLs AGREEMENT WITH A HUMAN LABEL ABOVE 2.
 - v17, 2026-08-25: r64 audited every numbered Level 3 and Level 4 example against a variant with those examples stripped. Three held (ring road 3, fox trough 4, fine billiards 4). The queueing example did not: fully specified arrivals made the answer survive a coarse run, which is what the new sensitivity mark excludes, so it scored 3 while sitting under Level 4. It has been rewritten to run near the service rate, where the answer is genuinely sensitive. This is the over-specification failure named in r63: the quantities that decide an answer can also hand over the rule linking them.
 - OPEN: Pablo's chess label of 2 is unmet on the plan phrasing; no human has labelled an item above 3 on PLp or PLe; the L4/L5 boundary on forecasting is bimodal and Pablo has named the item types that should fill 2, 3 and 4; desideratum 9 (criterion validity) is open as for the whole stream
+
+
+## Appended 2026-08-26: v16 through v19 and rounds r63 to r68
+
+- v16: Level 4 names sensitivity as its mark (Pablo's suggestion; measured r63, first PLs
+  agreement with a human label above 2 on the fire item).
+- v17: the mis-pitched queueing example rewritten to run near the service rate (r64).
+- v18: the instrumental-scope clause settles only whether tracing is scored; placement follows the
+  model it demands (r65; chess closed at 3 after Pablo's entanglement argument).
+- v19: L5 adequacy defined relative to the best achievable answer; the forecasting sentence
+  DELETED as a genre-naming clause; standing-rate clause added to the preamble (r66/r67 found the
+  old sentence over-firing on real ForecastBench items; r68 confirmed v19 harmless to the core
+  battery - no judgement cited the new clause on mechanism-carrying items).
+- Criterion-validity pilots r66/r67: raw Brier is a contaminated criterion (irreducible outcome
+  entropy); excess-over-naive doubles the correlation; the r66 join mixed resolution horizons and
+  is corrected in r67; the forecasting corpus is genuinely low-PLs under the severity doctrine.
