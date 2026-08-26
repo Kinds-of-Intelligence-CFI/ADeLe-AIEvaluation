@@ -13,3 +13,10 @@
   item-independence): full ladder recovered 0-5, search and fineness carves bind, 19/19 judge
   cells exact. Round record: labs/rubric-qa/r69.
 - OPEN: no human label at any level; anchors are designed items.
+
+
+## Appended 2026-08-26 (r70)
+
+ARC-AGI ratified by Pablo at Level 1 as a disentanglement anchor: a perfectly presented grid makes
+no extraction demand however hard the induction. Ladder items S2-S6 reviewed by argument at Pablo's
+delegation — reviewed anchors, not blind human labels. Level 2 resemblance-qualifier nit flagged.
