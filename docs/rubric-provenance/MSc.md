@@ -16,3 +16,12 @@ Moved out of the rubric's `#!` line on 2026-08-25. Rounds are in `labs/rubric-qa
 Pablo labelled the seven r61 items: 6 of 7 exact against the judge medians, the seventh within 1 on
 an item recorded as underspecified (whether the briefing fields responses). The anti-count carve is
 humanly confirmed. MSc's ladder now has a human anchor at every level 0-5.
+
+
+## Appended 2026-08-26: voice-pass regression measured (r75)
+
+The 2026-08-25 voice pass is no longer unmeasured: r75 re-ran the r61 design under the current
+text — 9/9 medians equal to r61, 26/27 cells exact, all three carves cited by name, haiku's
+head-counting miss on the briefing item replicated and absorbed by the median exactly as in r61.
+Caveat recorded in the round: r61's item texts were never persisted, so r75 used reconstructions
+from the r61 descriptions. MSc's only remaining gap is desideratum 9.
