@@ -9,3 +9,11 @@
   voicemail" read as composing one), which the generation carve correctly scores 0 - an item flaw,
   not a rubric defect. Round record: labs/rubric-qa/r69.
 - OPEN: no human label at any level; anchors are designed items.
+
+
+## Appended 2026-08-26 (r70)
+
+Ladder items A1-A5 reviewed by argument at Pablo's delegation — reviewed anchors, not blind human
+labels. The A5 coin-drop item tests the acquaintance-vs-inversion line in the carried doctrine and
+stands. Level 2 "does not resemble" clause contradicts the dinner-table example (speech masked by
+speech); flagged for Pablo, unfixed under the stopping rule.
