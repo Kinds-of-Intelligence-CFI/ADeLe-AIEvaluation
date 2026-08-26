@@ -1,5 +1,5 @@
 # Auditory processing
-#! ADeLe v2 (agentic) | version: v2-r69 | source: Paolo_Pablo | revised: 2026-08-26 | provenance: docs/rubric-provenance/SPa.md
+#! ADeLe v2 (agentic) | version: v2-r70 | source: Paolo_Pablo | revised: 2026-08-26 | provenance: docs/rubric-provenance/SPa.md
 
 This rubric assesses the difficulty level of tasks requiring information to be recovered from an auditory signal. What sets this difficulty apart is how much of what the task needs the sound itself carries, and how much must be supplied from beyond it. It ranges from tasks that carry no auditory signal, through sounds that present the content plainly, hold it under other sound, or carry only part of it, to sounds that do not carry the content at all and yield it only by reasoning back through how they were produced or propagated. Information is carried when it is physically present in the sound, whatever frequency range or temporal precision drawing it out would take. A sound carries more than is obvious from it. The direction it came from is written into how it differs across the points it reaches, the size and material of what made it into the ring and decay it leaves, and the shape of the space it crossed into the way it reverberates. Content of that kind is present, only hard to bring out, and sits at the level its recovery sets. A signal may reach several points at once. What is captured together, in fixed relation, is one signal, and what its parts jointly hold is carried by it, as the difference between two channels holds a direction. What the signal does not physically hold is not carried, and content of that kind reaches the top level only where it can be recovered by working back through how the sound was formed. This keeps the scale a property of the signal and the task rather than of the acuity brought to recovering it.
 
@@ -17,7 +17,7 @@ Examples:
 * State which of two clearly played tones is the higher.
 * Identify what an object is made of from the clean sound of it being struck, where the material's ring is plainly present.
 
-Level 2: Low. The task requires the information to be separated. The target sound is carried whole but overlaid with other sound that does not resemble it, so it must be pulled out of the mixture before it can be heard. The source to follow is given rather than chosen. Critically, the whole of the target sound is still present under the mixture. Where part of it is missing, cut out, dropped or swallowed, the task is reconstruction and belongs at the level above.
+Level 2: Low. The task requires the information to be separated. The target sound is carried whole but overlaid with other sound, so it must be pulled out of the mixture before it can be heard. The source to follow is given rather than chosen. Critically, the whole of the target sound is still present under the mixture. Where part of it is missing, cut out, dropped or swallowed, the task is reconstruction and belongs at the level above.
 Examples:
 * Transcribe the named speaker at a dinner table where several people talk at once.
 * Follow the cello line in a recording in which the other instruments play different material.

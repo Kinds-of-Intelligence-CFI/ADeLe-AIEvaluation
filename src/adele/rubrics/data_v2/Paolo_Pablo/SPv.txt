@@ -1,5 +1,5 @@
 # Visual processing
-#! ADeLe v2 (agentic) | version: v2-r69 | source: Paolo_Pablo | revised: 2026-08-26 | provenance: docs/rubric-provenance/SPv.md
+#! ADeLe v2 (agentic) | version: v2-r70 | source: Paolo_Pablo | revised: 2026-08-26 | provenance: docs/rubric-provenance/SPv.md
 
 This rubric assesses the difficulty level of tasks requiring information to be recovered from a visual signal. What sets this difficulty apart is how much of what the task needs the image itself carries, and how much must be supplied from beyond it. It ranges from tasks that carry no visual signal, through images that present the content plainly, hold it under interference, or carry only part of it, to images that do not carry the content at all and yield it only by reasoning back through how the image was formed. Information is carried when it is physically present in the image, however fine, faint or small it is, and however much magnification or spectral reach drawing it out would take. A pattern that is present but hard to resolve stays at the level its recovery sets, since the content is in the image and only has to be brought out. An image may hold several registered layers or channels captured together. These are one image, and what they jointly hold is carried by it. What the image does not physically hold is not carried, and content of that kind reaches the top level only where it can be recovered by working back through how the image was formed. This keeps the scale a property of the image and the task rather than of the acuity brought to reading it.
 
@@ -17,7 +17,7 @@ Examples:
 * State the colour of a car that fills most of a clear photograph.
 * Pick out which of ten sharply photographed coins is the largest, the answer plain in the single image.
 
-Level 2: Low. The task requires the information to be separated. The whole of it is carried, but interleaved with a background that does not resemble it, so it must be isolated before it can be read. What raises the demand is that something must be pulled apart, not that there is a lot of it, and not that the target is merely hard to locate. Critically, the whole of the target is still there, laid over or under something else. Where part of it is missing, the task is reconstruction and belongs at the level above.
+Level 2: Low. The task requires the information to be separated. The whole of it is carried, but interleaved with a background, so it must be isolated before it can be read. What raises the demand is that something must be pulled apart, not that there is a lot of it, and not that the target is merely hard to locate. Critically, the whole of the target is still there, laid over or under something else. Where part of it is missing, the task is reconstruction and belongs at the level above.
 Examples:
 * Read a line of handwriting written across a printed form, where the ink crosses the ruled boxes.
 * Read a subtitle rendered in white text over a pale, shifting background.
