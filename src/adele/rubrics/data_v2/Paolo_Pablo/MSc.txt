@@ -1,43 +1,44 @@
 # Communication and social interaction
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-08-16 | provenance: docs/rubric-provenance/MSc.md
 
-This rubric assesses the ability to actively regulate and manage social interactions based on an understanding of other agents' thoughts, beliefs, desires and emotions, as well as environmental dynamics and cultural norms. Unlike passive mind modelling, it requires active communication. Demand increases with the number of other agents, the presence of complex social dynamics (including power dynamics and conflicting interests), the strength of the emotional context, the stakes and consequences for participants, the difficulty of the communication strategy required, and the lack of shared knowledge or cultural context.
+This rubric assesses the difficulty level of tasks requiring an interaction to be steered. Steering covers choosing and delivering the communicative moves that bring another party's stance, meaning what they understand, believe, want or intend to do, to where the task requires it. What sets this difficulty apart is how much of what must be said is determined by the other party rather than by the speaker. It ranges from tasks in which no one's stance matters, through exchanges steered by what a helpful party has just said and by what a hesitant party still doubts, to those in which several parties in conflict each read what is said to the others.
 
-Level 0: No social interaction. The task does not require any social understanding or interpersonal exchange. It can be completed using purely factual, logical or procedural reasoning, with no other agents to model and no social norms or cultural context to consider.
+What this dimension does not cover. This dimension concerns steering an interaction rather than composing its messages or understanding its parties. How well content must be expressed, in vocabulary, genre, register, structure and fit to audience, does not raise this demand. Inferring what others believe, intend or feel is understanding them rather than steering them, and raises this demand only insofar as what is inferred must shape what is said next. Establishing the state of the non-social environment is not communication and makes no demand here. Note, mastering one's own impulses during the exchange is not scored either, since it describes the solver rather than a demand the task makes. The stakes of the situation and the number of people addressed do not by themselves raise the demand.
+
+Level 0: None. The task requires no communication. There is no stance to move, since the task is completed by factual, logical or procedural work and no other party's understanding or disposition has to be shaped.
 Examples:
-* Solving a complex mathematical proof (e.g., working on the Riemann hypothesis).
-* Transcribing a recorded audio lecture into text.
-* Optimising a supply chain using a deterministic model.
+* Prove that there are infinitely many prime numbers.
+* Transcribe a recorded lecture into text.
+* Find the cheapest combination of flights for a fixed itinerary.
 
-Level 1: Basic communication in familiar contexts. The task requires basic communication in low-stakes, dyadic exchanges with a shared cultural background, minimal or no emotional content, and well-established social scripts. Success depends on following conventional interaction patterns.
+Level 1: Very low. The task requires communication that needs no steering. Either a standard, familiar script covers the whole interaction, such as a request made and met or a fact asked for and given, or the message goes one way, composed and sent with no response to adapt to. Nothing about what to say turns on what the other party does in return.
 Examples:
-* Ordering food by phone or at a café.
-* Asking a librarian for the location of a specific book.
-* Scheduling a haircut or dental appointment via chat.
+* Order a coffee and a sandwich at a café counter.
+* Ask a librarian which shelf holds a book you can name.
+* Message a dental practice to move an appointment from Tuesday to Thursday.
+* Write an 1,100-word newspaper column arguing for a national carbon tax.
 
-Level 2: Communication in unfamiliar or cross-cultural settings. The task requires communication in an unfamiliar cultural or knowledge context where implicit rules must be inferred and communication style adapted. Social dynamics remain basic, with no strong emotions or high stakes involved.
+Level 2: Low. The task requires a cooperative exchange to be guided. What to say or ask next is determined by what the other party has just said, so the exchange must be brought turn by turn to what the task needs. The other party is helping. Their replies steer the exchange, but nothing they want stands against it, so the work is eliciting and arranging rather than winning anyone over.
 Examples:
-* Bargaining in a foreign market with unfamiliar norms.
-* Explaining the rules of a complex board game (e.g., Twilight Imperium) to a group of first-time players from a different cultural background.
-* Participating in a first business meeting with partners from a high-context culture where implicit cues matter.
+* Take a patient's history in a clinic, where each answer determines which symptom to ask about next.
+* Interview a job candidate about a project on their CV, following up on what they actually say rather than reading out fixed questions.
+* Work out over a support chat which of several products a customer actually needs, each follow-up question depending on what they have just said.
 
-Level 3: Communication under a strong emotional context. The task requires communication in situations where at least some participants display strong emotions (anger, excitement, disappointment) or where the context threatens self-esteem or group identity, requiring emotional regulation and sensitivity. The stakes and complexity of the social dynamics remain manageable.
+Level 3: Intermediate. The task requires an open stance to be won. The other party does not yet hold the view, decision or acceptance the task requires, and what to say is determined by their reasons. Each doubt, objection or concern they raise sets the next move, and the route to the stance runs through answering them. Importantly, the exchange steers by what they still doubt rather than by anything they are trying to do, since they would be content to be persuaded.
 Examples:
-* Explaining to supporters why a political party or sports team suffered a loss.
-* Mediating a heated argument between two colleagues over the office thermostat.
-* Giving constructive but critical feedback to a friend or colleague about a minor performance issue.
-* Resolving a dispute about shared property (e.g., which roommate gets the larger bedroom).
+* Tell a colleague that the section they wrote for a shared report has to be rewritten before submission, when they are proud of it but will hear you out.
+* Tell a patient, as their doctor, that they have a serious illness, and bring them to accept a treatment they are at first reluctant to start, working through each concern as it is raised.
+* Settle a dispute between two flatmates over the cleaning rota, where each arrived wanting a different split and both will accept whatever they come to see as fair.
+* Agree a price with a market trader who opens far above what you will pay, where both of you want the sale to happen and the work is finding the figure that suits you both.
 
-Level 4: High-stakes communication with moderate complexity. The task requires communication in high-stakes situations where participants' health, jobs, finances or safety are directly affected. Resolution typically involves executing complex but established professional protocols (e.g., delivering medical bad news, crisis response, business negotiation) under pressure. The emotional content may be strong, requiring careful word choice, delivery and empathy. Social dynamics are often dyadic, but the consequences of poor communication are significant.
+Level 4: High. The task requires a contested exchange to be steered. The other party is pursuing a different outcome, so what to say is determined not only by what they have said but by what they are trying to do. Each move must advance the aim and answer a counter-move at once, adapting as they push back. Note, a party that is merely pained or displeased by the message, while pursuing no outcome of its own, belongs below, and the opposition here comes from a single counterpart or from one aligned side.
 Examples:
-* A commander informing a family that a soldier died in service.
-* A manager informing an employee of termination or major performance issues.
-* A doctor delivering a serious diagnosis (e.g., cancer) and discussing options.
-* A teacher discussing serious behavioural concerns with a student's parents.
+* Persuade a landlord to release you from a lease six months early, when they have no reason to agree and would rather keep collecting the rent.
+* Keep refusing a refund the policy does not allow to a customer who is shouting and demanding a manager, without conceding it and without the exchange breaking down.
+* Talk a co-founder out of a launch date they have staked their reputation on and still believe in.
 
-Level 5: High-stakes and complex communication. The task requires complex communication in high-stakes situations with unpredictable dynamics, multiple parties with conflicting goals, power imbalances, cross-cultural considerations and significant emotional content. A defining characteristic is the presence of strategic dilemmas or hard trade-offs where standard protocols often fail; the agent must navigate zero-sum constraints or find a path between seemingly mutually exclusive options. Success requires sophisticated negotiation, cultural intelligence, emotional regulation and adaptability.
+Level 5: Very high. The task requires an exchange to be steered across parties in conflict. The positions the task requires of them cannot all be held at once, so what may be said to any one of them is determined by all of them. A move that shifts one party is read by the rest and works against another, and a path must be found that brings them along together. Critically, however many parties are addressed, a task whose required positions are compatible belongs below.
 Examples:
-* Negotiating the release of hostages held by a fundamentalist group known for violence and unpredictability.
-* Negotiating the custody of children in a divorce where the parties are very upset with each other.
-* Chairing a tense international climate summit to forge a binding agreement between nations with conflicting economic and political interests.
-* Conducting crisis communication for a public-health emergency across diverse communities with varying beliefs.
+* Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others. The tactical plan for the operation is settled and not yours to make. What is in question is what to say, to whom, and in what order.
+* Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
+* Settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.

@@ -55,7 +55,7 @@ export OPENROUTER_API_KEY="sk-or-..."     # OpenRouter (DeepSeek, Llama 3, etc.)
 
 The fastest way to see ADeLe work: run a model on the **pre-annotated v1.0 battery** and plot its
 capability profile. This reuses the published demand annotations, so it costs only model inference —
-no LLM-judge annotation. Needs `pip install -e ".[eval,analysis]"` and `HF_TOKEN` for the gated dataset.
+no LLM-judge annotation. Needs `pip install -e ".[eval,analysis]"` and access to the battery: either `HF_TOKEN` for the [gated dataset](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) (request access on that page first), or a local CSV via `csv_path=`/`ADELE_BATTERY_CSV` — the copy shipped in `ADeLe_battery_data/` works after `git lfs pull`.
 
 ```python
 from adele.data import load_battery
@@ -112,7 +112,7 @@ adele evaluate openai/gpt-4o mmlu-pro --output-dir ./results/mmlu
 
 #### Run the ADeLe v1.0 battery directly (Inspect task)
 
-The pre-annotated [ADeLe v1.0 battery](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) is registered as an Inspect task, so any model can be evaluated on it with one command (needs `pip install -e ".[eval]"` and `HF_TOKEN` for the gated dataset):
+The pre-annotated [ADeLe v1.0 battery](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) is registered as an Inspect task, so any model can be evaluated on it with one command (needs `pip install -e ".[eval]"` and battery access — gated `HF_TOKEN` after requesting access on the dataset page, or `-T csv_path=...` with a local copy; the in-repo copy needs `git lfs pull`):
 
 ```bash
 # Multiple-choice subset — deterministic, no judge:
@@ -123,7 +123,7 @@ inspect eval adele/adele_battery --model openai/gpt-4o \
     -T answer_format=Open-ended -T judge_model=openai/gpt-4o
 ```
 
-Task params (`-T`): `answer_format` (`MC` | `Open-ended`), `benchmark`, `limit`, `judge_model`, `csv_path`.
+Task params (`-T`): `answer_format` (`MC` | `Open-ended`), `benchmark`, `limit`, `judge_model`, `csv_path`. **Open-ended samples need `-T judge_model=...`** — without a judge they score NOANSWER and drag the reported accuracy down.
 
 Scoring is faithful to the v1.0 verification conventions: **MC** by option-letter match, **Open-ended** by a model-graded judge (recorded in the result version). The 18 demand levels travel into the log via `Sample.metadata`. Explore a run with `inspect view`.
 
@@ -314,7 +314,7 @@ The file name (without `.txt`) becomes the dimension acronym. The `# Header` lin
 
 ### 1. Demand Profile (The "Problem Space")
 A **Demand Profile** visualizes what a benchmark *asks* of a model. It scores 18 dimensions (0–5 scale), grouped as in the paper (run `adele rubrics list` for the full names):
-- **Cognitive**: `AS` (Attention & Scan), `CEc` (Verbal Comprehension), `CEe` (Verbal Expression), `CL` (Conceptualisation/Learning), `MCr` (Identifying Relevant Information), `MCt` (Critical Thinking), `MCu` (Calibrating Knowns/Unknowns), `MS` (Mind Modelling), `QLl` (Logical Reasoning), `QLq` (Quantitative Reasoning), `SNs` (Spatio-physical Reasoning).
+- **Cognitive**: `AS` (Attention & Scan), `CEc` (Verbal Comprehension), `CEe` (Verbal Expression), `CL` (Conceptualisation/Learning), `MCr` (Identifying Relevant Information), `MCt` (Critical Thinking), `MCu` (Calibrating Knowns/Unknowns), `MSm` (Mind Modelling), `QLl` (Logical Reasoning), `QLq` (Quantitative Reasoning), `SNs` (Spatio-physical Reasoning).
 - **Knowledge**: `KNa` (Applied Sciences), `KNc` (Customary/Everyday), `KNf` (Formal Sciences), `KNn` (Natural Sciences), `KNs` (Social Sciences & Humanities).
 - **Extraneous**: `AT` (Atypicality), `VO` (Volume). Plus `UG` (Unguessability), computed from the answer format rather than via an LLM rubric.
 

@@ -1,43 +1,42 @@
 # Visual processing
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
+#! ADeLe v2 (agentic) | version: v2-r70 | source: Paolo_Pablo | revised: 2026-08-26 | provenance: docs/rubric-provenance/SPv.md
 
-This rubric assesses the ability to extract, interpret and act upon spatial and temporal information from visual input. It encompasses object recognition, spatial localization, motion detection, attention allocation, and the integration of visual feedback for real-time sensorimotor control. High visual detail and many objects do not inherently increase difficulty when elements are well-separated with clear features and good contrast; rather, difficulty arises from integration demands — determining which features belong together when objects overlap, identifying object boundaries in cluttered scenes, or resolving degraded and occluded input. Difficulty increases with the resolution and detail required, temporal dynamics (static vs. rapidly changing scenes), clutter and signal-to-noise ratio, and scene complexity.
+This rubric assesses the difficulty level of tasks requiring information to be recovered from a visual signal. What sets this difficulty apart is how much of what the task needs the image itself carries, and how much must be supplied from beyond it. It ranges from tasks that carry no visual signal, through images that present the content plainly, hold it under interference, or carry only part of it, to images that do not carry the content at all and yield it only by reasoning back through how the image was formed. Information is carried when it is physically present in the image, however fine, faint or small it is, and however much magnification or spectral reach drawing it out would take. A pattern that is present but hard to resolve stays at the level its recovery sets, since the content is in the image and only has to be brought out. An image may hold several registered layers or channels captured together. These are one image, and what they jointly hold is carried by it. What the image does not physically hold is not carried, and content of that kind reaches the top level only where it can be recovered by working back through how the image was formed. This keeps the scale a property of the image and the task rather than of the acuity brought to reading it.
 
-Level 0: None. The task does not require any visual processing.
+What this dimension does not cover. This dimension concerns getting the content out of the signal rather than what is done with it afterwards. What the recovered content means, what it implies, or what knowledge interpreting it takes does not raise this demand. Nor is the demand raised by how hard a target is to locate among distractors, since search is not extraction, and a target merely hard to find but plainly legible once found makes no demand here. Rotating, projecting or otherwise transforming a shape that is already legible is not scored here, and neither is how long perception must be sustained. Producing images is generation rather than perception, and is not scored here. Note, a scene of many elements, all of them clear, carries no demand on this dimension.
+
+Level 0: None. The task carries no visual signal, or any image it carries is incidental and nothing the task needs is read from it.
 Examples:
-* TODO(pablo): the source Doc lists no Level 0 examples for Visual processing — add tasks with no visual input (e.g., answering a text-only question).
+* Answer a question about a passage of supplied text.
+* Compute a total from figures given in words.
+* Summarise a telephone conversation supplied as a written transcript.
 
-Level 1: Very low. Tasks involve isolated, static or slowly changing elements in optimal viewing conditions with high contrast and clear features. Elements are well-separated with redundant visual cues, so simple feature binding, spatial synthesis and temporal binding suffice.
+Level 1: Very low. The task requires the information to be read off as presented. The image carries it in full, in focus and at ordinary scale, and nothing has to be recovered. Note, a crowded image stays here so long as what the task needs is itself plainly shown, since the amount of other detail present is not itself perceptual demand.
 Examples:
-* Reading printed text in good lighting (even with slight glare).
-* Identifying a familiar object (coffee cup, phone) isolated on a clear surface.
-* Following a single person walking across an open space.
-* Recognising a face in a well-lit, frontal photograph.
+* Read the time from a clock face photographed straight on in good light.
+* State the colour of a car that fills most of a clear photograph.
+* Pick out which of ten sharply photographed coins is the largest, the answer plain in the single image.
 
-Level 2: Basic. Tasks require processing moderately cluttered scenes with some occlusion, slightly degraded input or moving elements. Feature binding and spatial synthesis require modest effort, and temporal binding remains straightforward with predictable motion.
+Level 2: Low. The task requires the information to be separated. The whole of it is carried, but interleaved with a background, so it must be isolated before it can be read. What raises the demand is that something must be pulled apart, not that there is a lot of it, and not that the target is merely hard to locate. Critically, the whole of the target is still there, laid over or under something else. Where part of it is missing, the task is reconstruction and belongs at the level above.
 Examples:
-* Classifying cats and dogs in images.
-* Reading moderately clear handwriting or text with slight glare.
-* Finding a specific item in a moderately cluttered drawer (e.g., locating keys among 10–15 objects).
-* Tracking 2–3 people simultaneously in an open area.
+* Read a line of handwriting written across a printed form, where the ink crosses the ruled boxes.
+* Read a subtitle rendered in white text over a pale, shifting background.
+* Transcribe a receipt photographed on a patterned tablecloth whose pattern shows through the paper. The receipt's place in the frame is given.
 
-Level 3: Intermediate. Tasks demand substantial integration across competing signals with moderate degradation, occlusion or fast dynamic motion. Predictive integration becomes important for handling incomplete information and resolving ambiguous boundaries in changing scenes.
+Level 3: Intermediate. The task requires the information to be reconstructed. The image carries only part of the content, the rest destroyed, occluded or masked, so what survives must be completed from the regularities of the domain, from how objects, surfaces or type usually behave. Critically, however badly the image is degraded, the task stays at this level so long as what survives carries enough to complete the content from within.
 Examples:
-* Identifying subtle pneumonia infiltrates in chest X-rays by distinguishing them from overlapping vascular structures.
-* Driving in foggy conditions.
-* Spotting a camouflaged object (an animal blending with its background).
-* Following a basketball during gameplay among 5–6 players.
+* Read a water-damaged page on which roughly a third of the characters are illegible and must be inferred from the words around them.
+* Identify a vehicle from one photograph in which a pillar hides most of its body.
+* Read a licence plate from a single frame blurred by motion.
 
-Level 4: Advanced. Tasks require processing numerous fast-moving elements with frequent occlusion in degraded conditions. Substantial binding ambiguity is present, so determining which features belong together across space and time requires sophisticated integration as scenes rapidly evolve, usually amid multiple competing or conflicting signals.
+Level 4: High. The task requires the information to be combined. No single image carries it, so several, captured separately from different viewpoints, times or channels, with their relation to one another not given, must first be brought into correspondence, each alone leaving the content undetermined. What raises the demand is that the correspondence between the images must itself be established before the content exists at all. Note, where they already stand in a fixed, known relation, they are one image and the task belongs below.
 Examples:
-* Tracking multiple fast-moving, frequently occluded players in dense American-football gameplay.
-* Reading fragmented text across multiple torn document pieces while determining which fragments connect.
-* Reading severely degraded text (water-damaged documents, extreme low light).
-* Resolving extreme binding ambiguity in chaotic scenes (e.g., individual body configurations in a dense rugby scrum).
+* Determine the shape of an object from a set of photographs, each showing only a partial silhouette against a bright background. Which object it is, once the shape is known, is not in question.
+* Read a document photographed in overlapping strips, each cut mid-line, where the lines must be rejoined across strips before anything can be read.
+* Establish which of two near-identical rooms a photograph was taken in, where the answer follows only from details that appear in different frames of a walkthrough and in none of them together.
 
-Level 5: Highly advanced. Tasks demand expert integration of many rapidly changing signals in severely degraded conditions, resolving severe binding ambiguity in chaotic scenes through sophisticated predictive integration amid constant occlusion, poor visibility and highly ambiguous feature relationships.
+Level 5: Very high. The task requires the information to be inverted. The image does not carry the content as content at all, and recovery depends on modelling how the image was formed and working back through it, through the optics, the capture, the encoding or the degradation itself. The content cannot be read off the image, because it is not present there. Only the trace of the image's formation is, and the content follows by inverting that formation.
 Examples:
-* Air-traffic controller visually tracking aircraft in poor weather with radar interference.
-* Processing highly degraded thermal or night-vision imagery to identify specific targets.
-* Real-time visual parsing of rapidly changing medical imaging (e.g., interpreting live ultrasound during an emergency procedure).
-* Identifying well-camouflaged animals in dense vegetation and poor light.
+* Recover the surface relief of an object from the way light falls across it in a single photograph.
+* Determine what was written on a missing page from the impressions it left on the sheet beneath.
+* Establish the layout of a room from a photograph of its reflection in a curved surface.

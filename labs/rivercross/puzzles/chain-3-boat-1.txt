@@ -1,5 +1,0 @@
-A farmer must ferry the following across a river from the left bank to the right bank: item1, item2, item3. The boat carries the farmer and at most 1 item per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Find a sequence of crossings that gets everything to the right bank.
-
-Present ONLY your solution as a numbered list, one crossing per line, naming the passengers in the boat on that trip using the exact item names. Include the farmer on every trip. For example:
-1. <passenger>, <passenger>
-2. <passenger>

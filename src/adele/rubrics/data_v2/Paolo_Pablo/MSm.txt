@@ -1,0 +1,43 @@
+# Mind Modelling and Social Cognition
+#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-08-20 | provenance: docs/rubric-provenance/MSm.md
+
+This rubric assesses the difficulty level of tasks requiring the minds of others to be modelled. Mind modelling covers inferring what other agents believe, want, intend and feel, and reasoning from those inferences to what they will do. It ranges from tasks in which no other agent need be considered to those in which the beliefs, desires, intentions and emotions of several agents interact and must be reasoned about together.
+
+What this dimension does not cover. This dimension concerns inferring and reasoning about what other agents believe, want, intend and feel, rather than acting on what is inferred. Choosing and delivering the moves that bring another party's stance where the task requires it is steering an interaction rather than modelling a mind, and does not raise this demand. Nor is the demand raised by how well content must be expressed, or by reasoning about a non-social environment. Note, a stance the other party has stated outright, together with their reasons, does not have to be modelled, since the inferring has already been done.
+
+Level 0: None. The task does not require mind modelling or social cognition. It may not involve other agents, or if it does, perceiving or interacting with those agents is not necessary to complete the task. 
+Examples:
+* Solving a Sudoku puzzle independently.
+* Operating a dishwasher according to its instruction manual.
+* Reading a book silently to yourself, even if others are present in the room.
+
+Level 1: Very low. Performance in this task is improved through the detection or recognition of other agents and by basic social learning (e.g., imitation). Critically, reasoning about observed behaviour or attributing mental states to others is not required for good performance in this task.
+Examples:
+* Mimicking someone's hand gestures during a conversation
+* Following another person's gaze to find where they left their keys.
+* Copying the sequence of buttons someone presses to operate a vending machine.
+
+Level 2: Low. This task requires some basic intuition about the behaviour of others, but only minimal levels of mental state attribution. Good performance might be based on developing accurate associations between other’s responses and the stimuli that caused them. Note, this reasoning need not be explicit. Note further, a puzzle whose characters are stipulated truth-tellers and liars involves no minds to model at all, since that is deduction over given rules, and it scores 0 here.
+Examples:
+* Recognizing that someone using a rock to crack open a coconut is trying to get to the food inside.
+* Identifying that someone's scrunched nose and turned head means they don't like the smell of spoiled milk.
+* Predicting that a dog which trembles and hides during thunderstorms will react the same way to fireworks.
+
+Level 3: Intermediate. This task goes beyond simple state-behaviour associations and involves attributing cognitive or affective states (i.e., mentalising). That is, it involves inferring specific mental properties about others (‘they believe the moon landing was a hoax’, ‘they want a glass of water’). The task may not, however, require explicit reasoning about these mental states (i.e., full-blown theory of mind).
+Examples:
+* Telling a colleague about a mutual friend's new job, knowing they haven't heard the news yet and thus might be interested.
+* Finding a good hiding spot in hide-and-seek by visualizing where the seeker might look.
+* Recognizing that someone checking their watch repeatedly during a meeting probably wants to leave.
+
+Level 4: High. This task requires a full theory of mind to be solved effectively. It requires not only the attribution of mental states to others, but explicit reasoning about those states. It may also require the integration of social knowledge and heuristics about normal agentic behaviour to accurately predict future behaviour. Importantly, this task also requires a clear distinction between self- and other-related representations. Critically, a stance the other party has stated outright, together with their reasons, does not have to be modelled: where the task hands over what they believe and want and gives no reason to doubt it, the inferring has already been done, and moving them from that stance is interaction work, not mind modelling. A statement whose sincerity the task itself puts in question hands nothing over. What places a task at this level is that the mental states driving behaviour must be worked out, not merely acted upon.
+Examples:
+* Developing an intuitive theory about an agent’s future behaviour such as understanding that Sally will look for her marble in the basket where she left it, even though Anne moved it to the box when Sally was away.
+* Distinguishing between one’s own emotional reaction to a friend’s story and what the friend is feeling.
+* Recognizing not to point out a spelling mistake in your manager's presentation based on their emotional state, personality, and the social context.
+
+Level 5: Very high. This task requires exceptional mind modelling and social cognition abilities. It goes beyond explicitly reasoning about the mental states of a single counterpart: the task withholds mental states that can be reached only through other mental states that must themselves be inferred, and the interlock runs to at least three attributions that constrain one another. The attributions combined may belong to different members of a group whose intentions, emotions and beliefs interact, which may require an understanding of the complex networks and hierarchies that form within social groups. They may instead be nested within one another in a single exchange, as when what one party wants another to believe about what they know must itself be worked out. A single belief about another's belief does not place a task here, and belongs at the level below. Critically, the number of minds involved does not place a task here by itself: attributions each of which can be settled from its own evidence demand no combination, however many parties are read, and several parties whose positions are each stated outright demand no more mind modelling than one, however hard they are to reconcile.
+Examples:
+* Comprehending the plot of a romance novel or the ‘social drama’ at a dinner party that requires modelling the mental states of multiple agents (e.g., ‘I heard that Jane told Steve that his girlfriend Abigail wanted to leave, but that he didn’t believe her, thinking Jane was just causing trouble because she had seen Abigail talking to her boyfriend Andrew…’)
+* Appreciating the behaviour of individuals within a work team and managing the situation in which one employee has misinterpreted another's actions as deliberately unhelpful, which has created tension that affects the whole group's dynamics
+* Leading a negotiation between multiple stakeholders where each party has different beliefs about others' intentions and bottom lines, and what any one party will concede can only be worked out through what they believe the others believe.
+* Working out, from a described exchange, whether a seller's "final offer" is a bluff, where the seller knows the buyer has an alternative and is choosing her words by what she wants the buyer to conclude about what she knows. Only two parties are involved, and what she knows, what she wants believed and what she thinks is already believed can each be settled only through the other two.

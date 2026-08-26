@@ -6,6 +6,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytest
+
+pytest.importorskip("inspect_ai", reason="needs the [eval] extra")
 from inspect_ai import eval as inspect_eval
 from inspect_ai.model import (
     GenerateConfig,
@@ -29,7 +31,6 @@ from adele.evaluation.scoring import choice_letter, final_segment
 # to the committed mini fixture so the end-to-end eval path is always exercised.
 _FIXTURE = Path(__file__).parent / "fixtures" / "mini_battery.csv"
 CSV = os.environ.get("ADELE_BATTERY_CSV") or str(_FIXTURE)
-needs_csv = pytest.mark.skipif(not CSV, reason="set ADELE_BATTERY_CSV to the battery CSV")
 
 
 # --- pure scorer logic (no data needed) ---
@@ -101,7 +102,6 @@ def _fixed_model(content: str):
     return _model(lambda _text: content)
 
 
-@needs_csv
 def test_load_battery_schema():
     df = load_battery(answer_format="MC", max_samples=5, csv_path=CSV)
     assert len(df) == 5
@@ -110,14 +110,13 @@ def test_load_battery_schema():
     assert (df["answer_format"] == "MC").all()
 
 
-@needs_csv
-def test_mc_eval_demands_in_metadata_and_correct():
+def test_mc_eval_demands_in_metadata_and_correct(tmp_path):
     df = load_battery(answer_format="MC", max_samples=4, csv_path=CSV)
     gold = {str(r["prompt"]): choice_letter(str(r["target"])) for _, r in df.iterrows()}
 
     model = _model(lambda text: f"Thus, the correct answer is: {gold.get(text, 'A')}")
     task = create_task(df, name="t")
-    log = inspect_eval(tasks=[task], model=model, log_dir="/tmp/adele_eval_test")[0]
+    log = inspect_eval(tasks=[task], model=model, log_dir=str(tmp_path))[0]
 
     assert log.status == "success"
     # demands rode through into the log
@@ -129,27 +128,24 @@ def test_mc_eval_demands_in_metadata_and_correct():
     assert all(s.scores["adele_scorer"].value == "C" for s in log.samples)
 
 
-@needs_csv
-def test_evaluate_model_returns_join_contract():
+def test_evaluate_model_returns_join_contract(tmp_path):
     df = load_battery(answer_format="MC", max_samples=3, csv_path=CSV)
     model = _fixed_model("Thus, the correct answer is: A")
-    out = evaluate_model(model, df, log_dir="/tmp/adele_eval_test")
+    out = evaluate_model(model, df, log_dir=str(tmp_path))
     assert list(out.columns) == ["custom_id", "correct", "model_answer"]
     assert len(out) == 3
 
 
-@needs_csv
-def test_open_ended_routes_to_mock_judge():
+def test_open_ended_routes_to_mock_judge(tmp_path):
     df = load_battery(answer_format="Open-ended", max_samples=2, csv_path=CSV)
     judge = _fixed_model("Looks right.\nGRADE: C")
     task = create_task(df, name="t", judge_model=judge)
     answerer = _fixed_model("Thus, the correct answer is: a response.")
-    log = inspect_eval(tasks=[task], model=answerer, log_dir="/tmp/adele_eval_test")[0]
+    log = inspect_eval(tasks=[task], model=answerer, log_dir=str(tmp_path))[0]
     assert log.status == "success"
     assert all(s.scores["adele_scorer"].value != "N" for s in log.samples)  # not NOANSWER
 
 
-@needs_csv
 def test_results_from_log_bridges_native_run(tmp_path):
     # Inspect-native path: run -> .eval log on disk -> results_from_log -> analysis frame.
     df = load_battery(answer_format="MC", max_samples=3, csv_path=CSV)

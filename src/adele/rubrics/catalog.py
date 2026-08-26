@@ -46,7 +46,7 @@ BUILTIN_RUBRIC_NAMES: Dict[str, str] = {
     "MCr": "Identifying Relevant Information",
     "MCt": "Critical Thinking Processes",
     "MCu": "Calibrating Knowns and Unknowns",
-    "MS":  "Mind Modelling and Social Cognition",
+    "MSm": "Mind Modelling and Social Cognition",
     "QLl": "Logical Reasoning",
     "QLq": "Quantitative Reasoning",
     "SNs": "Spatio-physical Reasoning",

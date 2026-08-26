@@ -1,5 +1,0 @@
-1. farmer, item1, item2
-2. farmer
-3. farmer, item3, item4
-4. farmer
-5. farmer, item5

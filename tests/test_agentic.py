@@ -3,6 +3,9 @@
 import pandas as pd
 import pytest
 
+pytest.importorskip("sklearn", reason="needs the [agentic] extra")
+pytest.importorskip("scipy", reason="needs the [agentic] extra")
+
 from pathlib import Path
 
 from adele.agentic import (
@@ -17,16 +20,18 @@ from adele.agentic.hal import human_label_template, run_judge
 from adele.agentic.validation import rubric_agreement
 from adele.rubrics.catalog import RubricsCatalog, validate_rubric
 
-# The active set is the 8 text/tool-relevant agentic dimensions; the 4
+# The active set is the 7 text/tool-relevant agentic dimensions; the 4
 # sensory/motor rubrics live in the library but are deferred (see _DEFERRED_MULTIMODAL).
-EXPECTED_CODES = {"PLp", "PLe", "MSe", "MSc", "ECc", "MMe", "MMp", "MMs"}
+# MSe was renamed PLs and then withdrawn 2026-08-16 (rubric deleted from the catalogue);
+# ECc was dropped (propensity, not ability); MSm is v1's MS carried into v2.
+EXPECTED_CODES = {"PLp", "PLe", "MSm", "MSc", "MMe", "MMp", "MMs"}
 
 
 # ---------------------------------------------------------------------------
 # Rubric library
 # ---------------------------------------------------------------------------
 
-def test_active_catalog_is_the_text_relevant_eight():
+def test_active_catalog_is_the_text_relevant_seven():
     catalog = load_active_catalog()
     assert set(catalog.acronyms) == EXPECTED_CODES
     # The deferred multimodal dims are excluded from the active set...
@@ -54,10 +59,61 @@ def test_manifest_has_no_drift():
     assert verify_manifest() == []
 
 
+def _levels(content):
+    """Split rubric text into {level_number: block}, examples included."""
+    import re
+    parts = re.split(r"(?m)^Level (\d):", content)
+    return {int(parts[i]): parts[i + 1].strip() for i in range(1, len(parts), 2)}
+
+
+def test_MSm_adds_only_the_MSc_carve_out_to_v1():
+    """MSm is v1's rubric plus one carve-out at L4/L5, so a stance stated outright is not
+    scored twice (labs/rubric-qa/r31). Everything else — title, preamble, levels 0-3 —
+    must be byte-identical to v1, and the v1 file itself must stay frozen."""
+    v1_dir = DATA_V2_DIR.parent / "data_v1"
+    assert (v1_dir / "MSm.txt").is_file() and not (v1_dir / "MS.txt").exists()
+    v1 = RubricsCatalog(str(v1_dir))["MSm"]
+    v2 = load_active_catalog()["MSm"]
+    assert v1.full_name == v2.full_name
+    a, b = _levels(v1.content), _levels(v2.content)
+    for lvl in (0, 1, 2, 3):
+        assert a[lvl] == b[lvl], f"level {lvl} must not drift from v1"
+    # L4 and L5 differ from v1 by the carve-out sentences and by nothing else: strike those
+    # out of the v2 text and what is left must be v1's, character for character.
+    CARVE_4 = (" Critically, a stance the other party has stated outright, together with their "
+               "reasons, does not have to be modelled: where the task hands over what they "
+               "believe and want, the inferring has already been done, and moving them from "
+               "that stance is interaction work, not mind modelling. What "
+               "places a task at this level is that the mental states driving behaviour must "
+               "be worked out, not merely acted upon.")
+    CARVE_5 = (" The same carve-out applies here: several parties whose positions are each "
+               "stated outright demand no more mind modelling than one, however hard they are "
+               "to reconcile.")
+    assert CARVE_4 in b[4] and CARVE_5 in b[5]
+    assert b[4].replace(CARVE_4, "") == a[4]
+    assert b[5].replace(CARVE_5, "") == a[5]
+
+
+def test_active_catalog_is_single_version():
+    """Every active rubric is a v2 draft, so nothing straddles two rubric versions."""
+    from adele.rubrics.catalog import warn_if_mixed_versions
+    assert load_active_catalog().versions == {"v2-draft"}
+    assert warn_if_mixed_versions(load_active_catalog()) is None
+
+
+def test_MS_code_is_retired_but_aliased_for_published_data():
+    """DEMAND_ORDER carries the new code; the released battery's MS column maps to it."""
+    from adele.constants import DEMAND_ORDER, LEGACY_DEMAND_ALIASES
+    assert "MSm" in DEMAND_ORDER and "MS" not in DEMAND_ORDER
+    assert LEGACY_DEMAND_ALIASES["MS"] == "MSm"
+
+
 def test_manifest_sources_split_memory_from_Marko():
     by_code = {e.code: e for e in read_manifest()}
     assert by_code["PLp"].source == "Paolo_Pablo"
     assert by_code["MMe"].source == "Marko"
+    assert by_code["MSm"].source == "Paolo_Pablo"
+    # Every active rubric is a v2 draft now; nothing is carried over from v1 as-is.
     assert {e.source for e in read_manifest()} == {"Paolo_Pablo", "Marko"}
 
 

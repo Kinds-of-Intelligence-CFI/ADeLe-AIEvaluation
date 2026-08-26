@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
+pytest.importorskip("sklearn", reason="needs the [analysis] extra")
+
 from adele.analysis.prediction import (
     compute_predictive_power,
     compute_feature_importances,

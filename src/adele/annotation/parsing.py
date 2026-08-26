@@ -185,7 +185,12 @@ def parse_batch_output(
                 "response": response_text,
             })
 
-    df = pd.DataFrame(results)
+    # Explicit columns so an empty (or all-malformed) output file yields an
+    # empty frame with the expected schema instead of a KeyError downstream.
+    df = pd.DataFrame(
+        results,
+        columns=["custom_id", "demand", "level", "finish_reason", "response"],
+    )
     n_success = df["level"].notna().sum()
     logger.info(
         "Parsed %d annotations from %s (%d successful, %d failed)",
