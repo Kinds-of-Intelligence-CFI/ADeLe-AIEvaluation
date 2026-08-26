@@ -20,3 +20,10 @@
 ARC-AGI ratified by Pablo at Level 1 as a disentanglement anchor: a perfectly presented grid makes
 no extraction demand however hard the induction. Ladder items S2-S6 reviewed by argument at Pablo's
 delegation — reviewed anchors, not blind human labels. Level 2 resemblance-qualifier nit flagged.
+
+
+## Appended 2026-08-26 (v2-r70)
+
+At Pablo's direction the Level 2 resemblance qualifier ("that does not resemble it") is deleted:
+read literally it excluded same-type masking from the level without placing it anywhere, against
+the examples' clear intent that all separation with the target whole is Level 2.

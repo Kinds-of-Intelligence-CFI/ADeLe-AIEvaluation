@@ -17,3 +17,9 @@ Ladder items A1-A5 reviewed by argument at Pablo's delegation — reviewed ancho
 labels. The A5 coin-drop item tests the acquaintance-vs-inversion line in the carried doctrine and
 stands. Level 2 "does not resemble" clause contradicts the dinner-table example (speech masked by
 speech); flagged for Pablo, unfixed under the stopping rule.
+
+
+## Appended 2026-08-26 (v2-r70)
+
+Same Level 2 fix as SPv, at Pablo's direction. The dinner-table example (speech masked by speech)
+now agrees with its level statement.
