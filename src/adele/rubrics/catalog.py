@@ -173,11 +173,21 @@ class RubricsCatalog:
     def versions(self) -> set:
         """The distinct rubric versions present in this catalog.
 
-        A catalog should normally hold a single version; more than one means
-        v1.0 and draft v2 rubrics have been composed together (see
-        :func:`warn_if_mixed_versions`).
+        Within one generation these may legitimately differ: the v2 agentic
+        rubrics carry a per-dimension revision (``v2-r43``, ``v2-r45``,
+        ``v2-draft``). What must not be mixed is *generations* — see
+        :attr:`generations` and :func:`warn_if_mixed_versions`.
         """
         return {r.version for r in self._cache.values()}
+
+    @property
+    def generations(self) -> set:
+        """The distinct rubric *generations* present in this catalog (``v1``, ``v2``).
+
+        A generation is the leading ``v<N>`` of the version string, so every
+        v2 revision — ``v2-draft``, ``v2-r43`` — collapses to ``v2``.
+        """
+        return {rubric_generation(r.version) for r in self._cache.values()}
 
     # ------------------------------------------------------------------
     # Internal
@@ -279,18 +289,33 @@ def _parse_rubric_file(file_path: Path) -> Tuple[str, str, str, str]:
     return acronym, full_name, content, version
 
 
+def rubric_generation(version: str) -> str:
+    """The generation of a rubric version string: ``v1.0`` -> ``v1``, ``v2-r43`` -> ``v2``.
+
+    Anything that does not start with ``v<N>`` is returned unchanged, so an
+    unrecognised label still compares unequal to a real generation rather than
+    being silently folded into one.
+    """
+    m = re.match(r"v\d+", version or "")
+    return m.group(0) if m else (version or "")
+
+
 def warn_if_mixed_versions(catalog: "RubricsCatalog") -> Optional[str]:
-    """Warn (and return the message) if a catalog mixes rubric versions.
+    """Warn (and return the message) if a catalog mixes rubric *generations*.
 
     Composing canonical v1.0 rubrics with draft v2 rubrics in one annotation
     run is almost always a mistake — the sets use different dimensions and the
-    v2 set is unvalidated. Returns ``None`` when the catalog is single-version.
+    v2 set is unvalidated. Revisions *within* a generation are fine and expected:
+    the v2 agentic rubrics are versioned per dimension, so one catalog routinely
+    holds ``v2-draft`` next to ``v2-r45``. Returns ``None`` when the catalog is
+    single-generation.
     """
-    versions = catalog.versions
-    if len(versions) > 1:
+    generations = catalog.generations
+    if len(generations) > 1:
         msg = (
-            f"Catalog mixes rubric versions {sorted(versions)}. v1.0 and draft "
-            "v2 rubrics should not be annotated together; state which set you mean."
+            f"Catalog mixes rubric generations {sorted(generations)} "
+            f"(versions {sorted(catalog.versions)}). v1.0 and draft v2 rubrics "
+            "should not be annotated together; state which set you mean."
         )
         logger.warning(msg)
         return msg
