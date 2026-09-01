@@ -66,39 +66,77 @@ def _levels(content):
     return {int(parts[i]): parts[i + 1].strip() for i in range(1, len(parts), 2)}
 
 
-def test_MSm_adds_only_the_MSc_carve_out_to_v1():
-    """MSm is v1's rubric plus one carve-out at L4/L5, so a stance stated outright is not
-    scored twice (labs/rubric-qa/r31). Everything else — title, preamble, levels 0-3 —
-    must be byte-identical to v1, and the v1 file itself must stay frozen."""
+def test_v1_MS_is_frozen_and_MSm_keeps_its_lower_levels():
+    """v1 stays frozen, and MSm's lower band is still v1's.
+
+    This test used to assert that MSm was v1's rubric plus one carve-out at L4/L5 and
+    byte-identical everywhere else. That is no longer what MSm is: Level 5 has been
+    re-keyed onto nested, interlocking attribution ("at least three attributions that
+    constrain one another") rather than v1's count of agents, with its examples
+    rewritten to match. Levels 0, 1 and 3 are still v1's, and that is what is checked
+    here — the upper band is now owned by the v2 rubric and is covered by its own
+    rounds in the lab record, not by a diff against v1.
+    """
     v1_dir = DATA_V2_DIR.parent / "data_v1"
     assert (v1_dir / "MSm.txt").is_file() and not (v1_dir / "MS.txt").exists()
     v1 = RubricsCatalog(str(v1_dir))["MSm"]
     v2 = load_active_catalog()["MSm"]
     assert v1.full_name == v2.full_name
     a, b = _levels(v1.content), _levels(v2.content)
-    for lvl in (0, 1, 2, 3):
+    for lvl in (0, 1, 3):
         assert a[lvl] == b[lvl], f"level {lvl} must not drift from v1"
-    # L4 and L5 differ from v1 by the carve-out sentences and by nothing else: strike those
-    # out of the v2 text and what is left must be v1's, character for character.
-    CARVE_4 = (" Critically, a stance the other party has stated outright, together with their "
-               "reasons, does not have to be modelled: where the task hands over what they "
-               "believe and want, the inferring has already been done, and moving them from "
-               "that stance is interaction work, not mind modelling. What "
-               "places a task at this level is that the mental states driving behaviour must "
-               "be worked out, not merely acted upon.")
-    CARVE_5 = (" The same carve-out applies here: several parties whose positions are each "
-               "stated outright demand no more mind modelling than one, however hard they are "
-               "to reconcile.")
-    assert CARVE_4 in b[4] and CARVE_5 in b[5]
-    assert b[4].replace(CARVE_4, "") == a[4]
-    assert b[5].replace(CARVE_5, "") == a[5]
 
 
-def test_active_catalog_is_single_version():
-    """Every active rubric is a v2 draft, so nothing straddles two rubric versions."""
+def test_MSm_keeps_the_carve_outs_that_stop_double_counting():
+    """Each carve-out names something that looks like mind modelling but is not, so
+    that MSm does not score what another dimension already scores:
+
+    * L2 — a puzzle whose characters are stipulated truth-tellers and liars is
+      deduction over given rules, so it scores 0 rather than 2. (v1's
+      knights-and-knaves example was removed from L2 for contradicting this.)
+    * L4 — a stance stated outright has already been inferred for you, so moving the
+      other party off it is interaction work, which MSc scores (labs/rubric-qa/r31).
+    * L5 — the number of minds does not place a task here by itself.
+
+    Matched on the load-bearing clause rather than the whole paragraph, so rewording
+    around a carve-out is free but deleting one fails.
+    """
+    b = _levels(load_active_catalog()["MSm"].content)
+    assert "deduction over given rules" in b[2] and "scores 0 here" in b[2]
+    assert "knights and knaves" not in b[2]
+    assert "is interaction work, not mind modelling" in b[4]
+    assert "the number of minds involved does not place a task here by itself" in b[5]
+
+
+def test_active_catalog_is_single_generation():
+    """Every active rubric is v2, so no annotation run straddles v1.0 and v2.
+
+    Revisions within v2 are expected: the agentic rubrics are versioned per
+    dimension (``v2-draft`` next to ``v2-r45``), because each one is re-keyed and
+    re-validated on its own schedule. What must never mix is *generations* — v1.0
+    and v2 use different dimensions, and composing them in one run is a mistake.
+    """
     from adele.rubrics.catalog import warn_if_mixed_versions
-    assert load_active_catalog().versions == {"v2-draft"}
-    assert warn_if_mixed_versions(load_active_catalog()) is None
+    catalog = load_active_catalog()
+    assert catalog.generations == {"v2"}
+    assert all(v.startswith("v2") for v in catalog.versions), sorted(catalog.versions)
+    assert warn_if_mixed_versions(catalog) is None
+
+
+def test_mixed_generations_are_still_caught():
+    """The guard must still fire on the case it exists for: v1.0 composed with v2."""
+    from adele.rubrics.catalog import RubricsCatalog, rubric_generation, warn_if_mixed_versions
+    assert rubric_generation("v1.0") == "v1"
+    assert rubric_generation("v2-r45") == rubric_generation("v2-draft") == "v2"
+
+    v1 = RubricsCatalog(str(DATA_V2_DIR.parent / "data_v1"))
+    mixed = load_active_catalog()
+    mixed._cache["__v1_probe__"] = v1["MSm"]          # a real v1.0 rubric
+    try:
+        assert mixed.generations == {"v1", "v2"}
+        assert warn_if_mixed_versions(mixed) is not None
+    finally:
+        del mixed._cache["__v1_probe__"]
 
 
 def test_MS_code_is_retired_but_aliased_for_published_data():
