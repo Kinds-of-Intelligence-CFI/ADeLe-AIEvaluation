@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, "rubrics/**"]
+    branches: [main, agentic-v2, "rubrics/**"]
   pull_request:
 
 jobs:
