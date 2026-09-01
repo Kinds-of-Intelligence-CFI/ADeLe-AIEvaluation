@@ -1,0 +1,19 @@
+custom_id,level,reason
+memc-L3-low-01__history_only,1,Only item2 moved once; subsequent farmer-only moves; no reversals.
+memc-L3-low-02__history_only,1,Only item2 moved once; subsequent farmer-only moves; no reversals.
+memc-L3-medium-01__history_only,2,Several items updated one-way across moves; no reversals to disentangle.
+memc-L3-medium-02__history_only,2,Several items updated one-way across moves; no reversals to disentangle.
+memc-L3-high-01__history_only,4,Four items moved right-left-right together; multiple reversals require tracking overwritten states.
+memc-L3-high-02__history_only,4,Four items moved right-left-right together; multiple reversals require tracking overwritten states.
+memc-L4-low-01__history_only,1,Only item2 moved once; many farmer-only toggles; no item reversals.
+memc-L4-low-02__history_only,1,Only item2 moved once; many farmer-only toggles; no item reversals.
+memc-L4-medium-01__history_only,2,Items 2–5 moved once right; subsequent farmer-only toggles; no reversals.
+memc-L4-medium-02__history_only,2,Items 2–4 moved once right; subsequent farmer-only toggles; no reversals.
+memc-L4-high-01__history_only,4,Four items moved right-left-right-left together; several reversals; heavy update tracking.
+memc-L4-high-02__history_only,4,Four items moved right-left-right-left together; several reversals; heavy update tracking.
+memc-L5-low-01__history_only,1,Only item2 moved once; repeated farmer-only crossings; no item reversals.
+memc-L5-low-02__history_only,1,Only item2 moved once; repeated farmer-only crossings; no item reversals.
+memc-L5-medium-01__history_only,2,Item1 then items 2–4 moved one-way; several updates; no reversals.
+memc-L5-medium-02__history_only,2,Item1 then items 2–4 moved one-way; several updates; no reversals.
+memc-L5-high-01__history_only,4,Four items moved back-and-forth repeatedly; multiple reversals and overwritten locations.
+memc-L5-high-02__history_only,4,Four items moved back-and-forth repeatedly; multiple reversals and overwritten locations.

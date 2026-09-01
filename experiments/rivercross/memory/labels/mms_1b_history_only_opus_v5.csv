@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2__history_only,2,Three moves; item2 and item3 moved one-way
+chain-3-boat-2#s1__history_only,1,Single move; two items updated one-way
+chain-3-boat-3#s0__history_only,2,Two moves; two items moved
+chain-3-boat-4#s0__history_only,2,Two moves; two items moved
+chain-4-boat-2#s1__history_only,1,Single move; two items updated one-way
+chain-4-boat-3#s1__history_only,1,Single move; two items updated one-way
+chain-4-boat-4#s0__history_only,2,Two moves; two items moved
+chain-5-boat-2#s2__history_only,3,item4 moved right then back; must disentangle reversed update.
+chain-5-boat-3#s1__history_only,2,Single move; three items updated one-way
+chain-5-boat-4#s1__history_only,2,Single move; three items updated one-way
+chain-6-boat-3#s1__history_only,2,Single move; three items updated one-way
+chain-6-boat-4#s1__history_only,2,Single move; three items updated one-way
+star-3-boat-1#s2__history_only,2,Three moves; item1 and item3 moved
+star-3-boat-2#s1__history_only,1,Single move; two items updated one-way
+star-3-boat-3#s0__history_only,2,Two moves; two items moved
+star-3-boat-4#s0__history_only,2,Two moves; two items moved
+star-4-boat-2#s2__history_only,3,item1 moved right then back; reversal must be disentangled.
+star-4-boat-3#s1__history_only,2,Single move; three items updated one-way
+star-4-boat-4#s0__history_only,2,Two moves; three items moved
+star-5-boat-2#s2__history_only,3,item1 moved right then back; reversal must be disentangled.
+star-5-boat-3#s1__history_only,3,item1 moved right then back among several updates; reversal disentangled.
+star-5-boat-4#s1__history_only,2,Single move; four items updated one-way
+star-6-boat-2#s2__history_only,3,item1 crossed then returned; reversal among multiple updates disentangled.
+star-6-boat-3#s2__history_only,3,item1 moved right then back; reversal must be disentangled.
+star-6-boat-4#s1__history_only,3,item1 moved right then back among multiple updates; reversal disentangled.
+cycle-3-boat-2#s1__history_only,1,Single move; two items updated one-way
+cycle-3-boat-3#s0__history_only,3,item1 moved right then back; reversal must be disentangled.
+cycle-3-boat-4#s0__history_only,3,item1 moved right then back; reversal must be disentangled.
+cycle-4-boat-2#s1__history_only,1,Single move; two items updated one-way
+cycle-4-boat-3#s1__history_only,1,Single move; two items updated one-way
+cycle-4-boat-4#s0__history_only,2,Two moves; two items moved
+cycle-5-boat-3#s1__history_only,2,Single move; three items updated one-way
+cycle-5-boat-4#s1__history_only,2,Single move; three items updated one-way
+cycle-6-boat-3#s1__history_only,2,Single move; three items updated one-way
+cycle-6-boat-4#s1__history_only,2,Single move; three items updated one-way
+complete-3-boat-2#s1__history_only,1,Single move; two items updated one-way
+complete-3-boat-3#s0__history_only,3,item1 moved right then back; reversal must be disentangled.
+complete-3-boat-4#s0__history_only,3,item1 moved right then back; reversal must be disentangled.
+complete-4-boat-3#s1__history_only,2,Single move; three items updated one-way
+complete-4-boat-4#s0__history_only,3,item1 and item2 moved then returned; reversals must be disentangled.
+complete-5-boat-4#s1__history_only,2,Single move; four items updated one-way
+missionaries-cannibals-3#s2__history_only,4,Four moves; multiple C reversals overwriting positions require careful disentangling.
+missionaries-cannibals-4#s2__history_only,4,Four moves; several people cross and return

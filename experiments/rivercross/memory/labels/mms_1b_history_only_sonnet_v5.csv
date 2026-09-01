@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2__history_only,2,Two items moved one-way to right bank
+chain-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing
+chain-3-boat-3#s0__history_only,2,Two items moved one-way
+chain-3-boat-4#s0__history_only,2,Two items moved one-way
+chain-4-boat-2#s1__history_only,2,Two items moved one-way to right bank
+chain-4-boat-3#s1__history_only,2,Two items moved one-way to right bank
+chain-4-boat-4#s0__history_only,2,Two items moved one-way
+chain-5-boat-2#s2__history_only,3,Item4 moved right then back left
+chain-5-boat-3#s1__history_only,2,Three items moved one-way
+chain-5-boat-4#s1__history_only,2,Three items moved one-way
+chain-6-boat-3#s1__history_only,2,Three items moved one-way
+chain-6-boat-4#s1__history_only,2,Three items moved one-way
+star-3-boat-1#s2__history_only,2,Two items moved one-way across separate crossings
+star-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing
+star-3-boat-3#s0__history_only,2,Two items moved one-way
+star-3-boat-4#s0__history_only,2,Two items moved one-way
+star-4-boat-2#s2__history_only,3,Item1 moved right then back left
+star-4-boat-3#s1__history_only,2,Three items moved one-way
+star-4-boat-4#s0__history_only,2,Three items moved one-way
+star-5-boat-2#s2__history_only,2,Three items moved one-way across separate crossings
+star-5-boat-3#s1__history_only,3,Item1 reversed back left while four other items stay right
+star-5-boat-4#s1__history_only,2,Four items moved one-way in single crossing
+star-6-boat-2#s2__history_only,3,Item1 moved right then left again
+star-6-boat-3#s2__history_only,3,Item1 moved right then reversed left
+star-6-boat-4#s1__history_only,3,Item1 reversed left while five other items stay right
+cycle-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing
+cycle-3-boat-3#s0__history_only,3,Item1 reversed back left while item3 stays right
+cycle-3-boat-4#s0__history_only,3,Item1 reversed back left while item3 stays right
+cycle-4-boat-2#s1__history_only,2,Two items moved one-way to right bank
+cycle-4-boat-3#s1__history_only,2,Two items moved one-way to right bank
+cycle-4-boat-4#s0__history_only,2,Two items moved one-way
+cycle-5-boat-3#s1__history_only,2,Three items moved one-way to right bank
+cycle-5-boat-4#s1__history_only,2,Three items moved one-way to right bank
+cycle-6-boat-3#s1__history_only,2,Three items moved one-way to right bank
+cycle-6-boat-4#s1__history_only,2,Three items moved one-way to right bank
+complete-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing
+complete-3-boat-3#s0__history_only,3,Item1 reversed back left while item3 stays right
+complete-3-boat-4#s0__history_only,3,Item1 reversed back left while item3 stays right
+complete-4-boat-3#s1__history_only,2,Three items moved one-way to right bank
+complete-4-boat-4#s0__history_only,3,Item1 and item2 reversed back left while item4 stays right
+complete-5-boat-4#s1__history_only,2,Four items moved one-way in single crossing
+missionaries-cannibals-3#s2__history_only,4,C1 and C3 both moved right then reversed left
+missionaries-cannibals-4#s2__history_only,4,C1
