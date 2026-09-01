@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2,1,one item left; cap1; one forced crossing
+chain-3-boat-2#s1,1,one item left; cap2; one forced crossing
+chain-3-boat-3#s0,0,all items fit (cap3); one crossing completes
+chain-3-boat-4#s0,0,all items fit (cap4); one crossing completes
+chain-4-boat-2#s1,2,two items left; cap2; 4-6 crossings; multiple safe states to explore
+chain-4-boat-3#s1,1,two items left; cap3; constraints allow most orderings; ~3 crossings
+chain-4-boat-4#s0,0,all items fit (cap4); one crossing
+chain-5-boat-2#s2,2,two items left; cap2; chain needs 6-8 crossings; moderate search
+chain-5-boat-3#s1,1,two items left; cap3; few items vs capacity; ~3-4 crossings
+chain-5-boat-4#s1,1,two items left; cap4; most fit; ~2-3 crossings
+chain-6-boat-3#s1,2,three items left; cap3; 5-7 crossings; search for valid sequence
+chain-6-boat-4#s1,1,three items left; cap4; all fit; one crossing
+star-3-boat-1#s2,1,one item left; cap1; central item1 conflicts two; one crossing
+star-3-boat-2#s1,1,one item left; cap2; one crossing
+star-3-boat-3#s0,0,farmer and central item only; one crossing
+star-3-boat-4#s0,0,farmer and central item only; one crossing
+star-4-boat-2#s2,2,cap2; central item1 conflicts three; ~5-6 crossings
+star-4-boat-3#s1,1,central item on left conflicts three; one crossing
+star-4-boat-4#s0,0,farmer and central item only; one crossing
+star-5-boat-2#s2,2,two items left; cap2; central conflicts four; 4-6 crossings
+star-5-boat-3#s1,1,central item on left conflicts four; one crossing
+star-5-boat-4#s1,1,central item on left conflicts four; one crossing
+star-6-boat-2#s2,2,four items on left; cap2; central constraints; 6-8 crossings with search
+star-6-boat-3#s2,2,four items on left; cap3; central conflicts five; 5-7 crossings
+star-6-boat-4#s1,1,central item on left conflicts five; one crossing
+cycle-3-boat-2#s1,1,one item left; cap2; cyclic but single item; one crossing
+cycle-3-boat-3#s0,0,one item each side; cap3; one crossing
+cycle-3-boat-4#s0,0,one item each side; cap4; one crossing
+cycle-4-boat-2#s1,2,two items left; cap2; cyclic graph; 4-6 crossings; moderate search
+cycle-4-boat-3#s1,1,two items left; cap3; cyclic but high capacity; ~3-4 crossings
+cycle-4-boat-4#s0,0,farmer and two items fit (cap4); one crossing
+cycle-5-boat-3#s1,2,two items left; cap3; five-cycle constraints; 4-6 crossings; search depth
+cycle-5-boat-4#s1,1,two items left; cap4; high capacity reduces friction; ~2-3 crossings
+cycle-6-boat-3#s1,2,three items left; cap3; six-node cycle; 5-7 crossings with search
+cycle-6-boat-4#s1,1,three items left; cap4; flexible orderings; ~2-3 crossings
+complete-3-boat-2#s1,1,one item left; cap2; all-pairs but single item; one crossing
+complete-3-boat-3#s0,0,items fit (cap3); one crossing
+complete-3-boat-4#s0,0,items fit (cap4); one crossing
+complete-4-boat-3#s1,2,one item left; cap3; complete graph; careful sequencing; 3-5 crossings
+complete-4-boat-4#s0,0,farmer and three items fit (cap4); one crossing
+complete-5-boat-4#s1,2,one item left; cap4; complete graph on five; 3-5 crossings; dependency search
+missionaries-cannibals-3#s2,2,three of each; cap2; ratio constraint; 4-6 crossings; state-space search
+missionaries-cannibals-4#s2,2,six on left; cap3; ratio constraint; 6-8 crossings; moderate search depth

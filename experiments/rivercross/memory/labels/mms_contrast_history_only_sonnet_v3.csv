@@ -1,0 +1,19 @@
+custom_id,level,reason
+memc-L3-low-01__history_only,1,Only item2 moved once; no reversal of any item location.
+memc-L3-low-02__history_only,1,Only item2 moved once; no reversal of any item location.
+memc-L3-medium-01__history_only,2,Four items moved one-way across two crossings
+memc-L3-medium-02__history_only,2,Four items moved one-way across two crossings
+memc-L3-high-01__history_only,3,Four items shipped right
+memc-L3-high-02__history_only,3,Four items shipped right
+memc-L4-low-01__history_only,1,Only item2 moved once; extra farmer-only moves add no location change.
+memc-L4-low-02__history_only,1,Only item2 moved once; extra farmer-only moves add no location change.
+memc-L4-medium-01__history_only,2,Four items moved one-way
+memc-L4-medium-02__history_only,2,Three items moved one-way
+memc-L4-high-01__history_only,4,Four items shuttled right-left-right-left: two reversal cycles to track.
+memc-L4-high-02__history_only,4,Four items shuttled right-left-right-left: two reversal cycles to track.
+memc-L5-low-01__history_only,1,Only item2 moved once; subsequent farmer-only crossings add no updates.
+memc-L5-low-02__history_only,1,Only item2 moved once; subsequent farmer-only crossings add no updates.
+memc-L5-medium-01__history_only,2,Item1 then three more items moved one-way
+memc-L5-medium-02__history_only,2,Item1 then three more items moved one-way
+memc-L5-high-01__history_only,4,Four items cycled right-left-right-left-right: multiple reversal states to reconstruct.
+memc-L5-high-02__history_only,4,Four items cycled right-left-right-left-right: multiple reversal states to reconstruct.

@@ -1,0 +1,19 @@
+custom_id,level,reason
+memc-L3-high-01__history_only,3,Four items moved right
+memc-L3-high-02__history_only,3,Four items moved right
+memc-L3-medium-01__history_only,2,Item1 moved once; items2-4 moved once together; one-way updates
+memc-L3-medium-02__history_only,2,Item1 moved once; items2-4 moved once together; one-way updates
+memc-L4-high-01__history_only,4,Four items alternated sides twice; several reversals to disentangle current placements.
+memc-L4-high-02__history_only,4,Four items alternated sides twice; several reversals to disentangle current placements.
+memc-L4-medium-01__history_only,2,Only initial batch move of items2-5; subsequent farmer-only crossings change nothing.
+memc-L4-medium-02__history_only,2,Only initial batch move of items2-4; subsequent farmer-only crossings change nothing.
+memc-L5-high-01__history_only,5,Four items alternated sides thrice; many reversals to reconstruct final locations.
+memc-L5-high-02__history_only,5,Four items alternated sides thrice; many reversals to reconstruct final locations.
+memc-L5-medium-01__history_only,2,Item1 then items2-4 moved once each; intervening farmer-only trips
+memc-L5-medium-02__history_only,2,Item1 then items2-4 moved once each; intervening farmer-only trips
+memv-L3-vlow-01__history_only,1,Only item2 moved once; later farmer-only trips add negligible hidden tracking.
+memv-L3-vlow-02__history_only,1,Only item2 moved once; later farmer-only trips add negligible hidden tracking.
+memv-L4-vlow-01__history_only,1,Only item2 moved once; multiple farmer-only crossings add minimal hidden tracking.
+memv-L4-vlow-02__history_only,1,Only item2 moved once; multiple farmer-only crossings add minimal hidden tracking.
+memv-L5-vlow-01__history_only,1,Only item2 moved once; many farmer-only crossings but no additional object updates.
+memv-L5-vlow-02__history_only,1,Only item2 moved once; many farmer-only crossings but no additional object updates.

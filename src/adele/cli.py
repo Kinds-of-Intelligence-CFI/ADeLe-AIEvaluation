@@ -215,7 +215,7 @@ def agentic_template(tasks, output):
               help="Benchmarks to sample (default: the 4-benchmark pilot set).")
 @click.option("--n-per", "-n", type=int, default=5, help="Tasks per benchmark.")
 @click.option("--seed", type=int, default=0, help="Random seed (reproducible).")
-@click.option("--output-dir", "-o", default="./pilot", help="Output directory.")
+@click.option("--output-dir", "-o", default="./experiments/benchmarks/pilot", help="Output directory.")
 def agentic_pilot(benchmarks, n_per, seed, output_dir):
     """Sample whole tasks across benchmarks → tasks.csv + a blank human sheet.
 
