@@ -1,0 +1,46 @@
+```csv
+custom_id,level,reason
+chain-3-boat-1#s2__history_only,3,Must reconstruct state after 3 sequential moves not shown directly
+chain-3-boat-2#s1__history_only,1,Single move applied to initial state, trivial one-step update
+chain-3-boat-3#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+chain-3-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+chain-4-boat-2#s1__history_only,1,Single move applied to initial state, trivial one-step update
+chain-4-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+chain-4-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+chain-5-boat-2#s2__history_only,3,Three sequential moves must be tracked to reconstruct current state
+chain-5-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+chain-5-boat-4#s1__history_only,1,Single move applied to initial state, trivial one-step update
+chain-6-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+chain-6-boat-4#s1__history_only,1,Single move applied to initial state, trivial one-step update
+star-3-boat-1#s2__history_only,3,Three sequential moves must be tracked to reconstruct current state
+star-3-boat-2#s1__history_only,1,Single move applied to initial state, trivial one-step update
+star-3-boat-3#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+star-3-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+star-4-boat-2#s2__history_only,2,Two sequential moves must be applied to reconstruct current state
+star-4-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+star-4-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+star-5-boat-2#s2__history_only,3,Three sequential moves must be tracked to reconstruct current state
+star-5-boat-3#s1__history_only,3,Three sequential moves must be tracked to reconstruct current state
+star-5-boat-4#s1__history_only,1,Single move applied to initial state, trivial one-step update
+star-6-boat-2#s2__history_only,4,Four sequential moves with return trips must be tracked to update state
+star-6-boat-3#s2__history_only,2,Two sequential moves must be applied to reconstruct current state
+star-6-boat-4#s1__history_only,3,Three sequential moves must be tracked to reconstruct current state
+cycle-3-boat-2#s1__history_only,1,Single move applied to initial state, trivial one-step update
+cycle-3-boat-3#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+cycle-3-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+cycle-4-boat-2#s1__history_only,1,Single move applied to initial state, trivial one-step update
+cycle-4-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+cycle-4-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+cycle-5-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+cycle-5-boat-4#s1__history_only,1,Single move applied to initial state, trivial one-step update
+cycle-6-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+cycle-6-boat-4#s1__history_only,1,Single move applied to initial state, trivial one-step update
+complete-3-boat-2#s1__history_only,1,Single move applied to initial state, trivial one-step update
+complete-3-boat-3#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+complete-3-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+complete-4-boat-3#s1__history_only,1,Single move applied to initial state, trivial one-step update
+complete-4-boat-4#s0__history_only,2,Two sequential moves must be applied to reconstruct current state
+complete-5-boat-4#s1__history_only,1,Single move applied to initial state, trivial one-step update
+missionaries-cannibals-3#s2__history_only,4,Four sequential moves with back-and-forth trips must be tracked to update state
+missionaries-cannibals-4#s2__history_only,4,Four sequential moves with back-and-forth trips must be tracked to update state
+```
