@@ -1,8 +1,13 @@
-# River-crossing — demand-rubric calibration lab
+# rivercross — the solver-backed calibration experiment
 
-Exploratory research scratch for calibrating ADeLe **v2 agentic demand rubrics** on a
-controlled, **solver-backed** testbed. This is a *lab* folder (not part of the package);
-the supporting library + its unit tests live alongside it under **`rivercross/`** and **`tests/`** (run with `pytest experiments/rivercross`).
+Calibrating the ADeLe **v2 agentic demand rubrics** on a controlled testbed whose
+**exact BFS solver supplies ground truth**. This is the internal-validity arm; see
+`docs/03-experiments.md` for how it divides from the benchmark arm.
+
+The testbed library now ships with the package as **`adele.testbeds.rivercross`**
+(`src/adele/testbeds/rivercross/`) and its unit tests run in CI from the repo's
+`tests/` (`pytest tests -k rivercross`). This directory holds the experiment
+record only: frames, prompts, preregistrations, labels, analyses and figures.
 
 ## Idea
 
@@ -62,8 +67,8 @@ state-visibility as reward), not rubric ambiguity.
 
 | path | what |
 | --- | --- |
-| `rivercross/` | the testbed library (importable as `rivercross`): `puzzle.py` (parametrized puzzle family), `solver.py` (exact BFS value oracle), `task.py` (Inspect task), `play.py`, `annotate_methods.py` (three annotation methods) |
-| `tests/`, `conftest.py` | unit tests for the library; `conftest.py` puts the lab on `sys.path`. Run with `pytest experiments/rivercross` |
+| *(library)* | moved to `src/adele/testbeds/rivercross/`: `puzzle.py` (parametrized puzzle family), `solver.py` (exact BFS value oracle), `task.py` (Inspect task), `play.py`, `annotate_methods.py` (three annotation methods). Import as `from adele.testbeds.rivercross import ...` |
+| *(tests)* | moved to the repo's `tests/`; run with `pytest tests -k rivercross` |
 | `method1b/` | **PLp** demand-to-go: `build_prompt.py` (dimension-agnostic prompt builder), `judge_frame_v2.csv` (43 leak-free states), `ground_truth.csv` (solver cost-to-go), `prompt_PLp.txt`, `labels_v10/` (prior-rubric baseline) + `labels_v11/` (revised search-size rubric × Haiku/Sonnet/Opus), `analyze_plp.py` |
 | `ple/` | **PLe** via captured trajectories: `build_ple_frames.py`, `frame_PLe_{1b,2}.csv`, `prompt_PLe_{1b,2}.txt`, `labels/1b` (final reward-partition rubric) + `labels/2` (per-transition, degenerate), `analyze_ple.py` |
 | `referee.py`, `ref.sh`, `specs.json`, `interactive/` | interactive solver-vs-agent harness (enforces rules, captures per-step reasoning); 6 captured trajectories |
@@ -74,7 +79,7 @@ state-visibility as reward), not rubric ambiguity.
 ## Reproduce
 
 ```bash
-source <project>/.venv-adele/bin/activate          # pandas, numpy, scipy, matplotlib
+pip install -e ".[analysis]"                       # pandas, numpy, scipy, matplotlib
 cd <repo root>
 python experiments/rivercross/method1b/build_prompt.py    # -> prompt_PLp.txt (PLp)
 python experiments/rivercross/ple/build_ple_frames.py      # -> frame_PLe_{1b,2}.csv
@@ -82,9 +87,15 @@ python experiments/rivercross/ple/build_ple_frames.py      # -> frame_PLe_{1b,2}
 python experiments/rivercross/ple/analyze_ple.py           # agreement table + figures
 ```
 
-Scripts locate the repo root by walking up to `src/adele`, so the lab can be moved freely.
+Scripts anchor on their own directory and walk up to `src/adele` for the repo root,
+so this tree can be moved without editing them.
 
 ## Settled rubrics
 
-The calibrated rubrics live in `src/adele/rubrics/data_v2/Paolo_Pablo/` (`PLp.txt`, `PLe.txt`).
-These are **v2-draft (exploratory)** dimensions — not the canonical v1.0 set.
+The rubrics live in `src/adele/rubrics/data_v2/Paolo_Pablo/` (`PLp.txt`, `PLe.txt`).
+
+**These `PLp`/`PLe` numbers predate the mid-2026 single-driver re-key.** The rubric
+text they were produced against no longer exists, so the labels under
+`method1b/labels_v11/` and `ple/labels/1b/` are stale and need re-running against
+the frozen rubric tag. The `MMs` results are unaffected — `Marko/MMs.txt` was not
+touched by the re-key. See `docs/02-rubrics.md`.

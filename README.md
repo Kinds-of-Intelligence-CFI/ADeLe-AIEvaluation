@@ -1,5 +1,24 @@
 # ADeLe-AIEvaluation
 
+## Working on the agentic extension? Start here
+
+This branch carries the **agentic** extension of ADeLe: demand annotation for
+tasks where a system acts over many steps. Read these three, in order:
+
+| | |
+|---|---|
+| [`docs/01-method.md`](docs/01-method.md) | what we annotate — demand-to-go — and which alternatives were tried and dropped |
+| [`docs/02-rubrics.md`](docs/02-rubrics.md) | the active dimension set, the one-driver principle, and what is still open |
+| [`docs/03-experiments.md`](docs/03-experiments.md) | the two experiments, what each claims, who owns what |
+
+Then: [`experiments/README.md`](experiments/README.md) for the shape every
+experiment folder follows and the three conventions we hold to.
+
+The rest of this file documents the v1 toolkit, which the agentic work builds on
+and does not change.
+
+---
+
 ## 🚀 Unified AI Evaluation with Explanatory & Predictive Power
 
 **ADeLe** (Annotated Demand Levels) is a comprehensive toolkit for evaluating AI systems not just on *performance* (correctness), but on *capability matching*. It breaks down benchmarks into 18 cognitive demand dimensions (e.g., Comprehension, Knowledge, Metacognition) and assesses how well a model's capabilities align with these demands.
