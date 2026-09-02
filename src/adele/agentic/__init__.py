@@ -86,8 +86,11 @@ _DEFERRED_MULTIMODAL = ("SNp", "SNk", "SPa", "SPv")
 _ACTIVE = [
     ("PLp", "Paolo_Pablo", "Planning", "Paolo_Pablo/PLp.txt"),
     ("PLe", "Paolo_Pablo", "Action control and execution", "Paolo_Pablo/PLe.txt"),
-    # PLs removed 2026-08-16: dimension withdrawn from the catalogue (rubric file deleted);
-    # no surviving rubric references it.
+    # PLs carries two different dimensions across the history: it was first
+    # "Situational and Environmental Understanding" (re-filed from MSe), withdrawn
+    # 2026-08-16, then re-introduced 2026-08-24 as "Simulating" at Jose's suggestion.
+    # Only the second is live; git history before 2026-08-24 shows the other.
+    ("PLs", "Paolo_Pablo", "Simulating", "Paolo_Pablo/PLs.txt"),
     ("MSm", "Paolo_Pablo", "Mind Modelling and Social Cognition", "Paolo_Pablo/MSm.txt"),
     ("MSc", "Paolo_Pablo", "Communication and social interaction", "Paolo_Pablo/MSc.txt"),
     ("MMe", "Marko", "Episodic Memory", "Marko/MMe.txt"),

@@ -1,5 +1,4 @@
 # Planning
-#! ADeLe v2 (agentic) — validated, voiced and styled to v1 (subject 'The task', guards marked Critically/Importantly/Note, no em-dashes or semicolons; no operative clause changed) | version: v2-r43 | source: Paolo_Pablo | revised: 2026-08-22 | provenance: docs/rubric-provenance/PLp.md
 
 This rubric assesses the difficulty level of tasks requiring a workable plan to be found. Planning covers envisioning a desired outcome and devising a sequence of actions to achieve it. It includes setting instrumental goals, dividing the task into subtasks, sequencing actions, and allocating limited resources among them. The difficulty ranges from tasks whose plan is given or retrieved ready-made to those for which no established procedure exists and a plan must be invented.
 

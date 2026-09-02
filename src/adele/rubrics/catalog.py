@@ -71,10 +71,11 @@ class Rubric:
         full_name: Human-readable name (e.g. "Attention and Scan").
         content:   Full rubric text with level descriptions and examples.
         file_path: Absolute path to the source .txt file.
-        version:   Rubric set the file declares (e.g. "v1.0", "v2-draft"),
-                   read from an optional ``#!`` metadata line. Defaults to
-                   "v1.0" when the file carries no such line, so a loaded
-                   rubric always says which set it belongs to.
+        version:   Rubric set this file belongs to ("v1.0", "v2"). Derived from
+                   the directory it lives in (``data_v1`` / ``data_v2``), which is
+                   where that fact actually lives; an optional ``#!`` metadata line
+                   may override it. A loaded rubric always says which set it is
+                   from, with or without an in-file marker.
     """
     acronym: str
     full_name: str
@@ -246,6 +247,23 @@ def _parse_meta_line(line: str) -> Dict[str, str]:
     return out
 
 
+def _version_from_location(file_path: Path) -> str:
+    """The rubric generation implied by the directory a rubric lives in.
+
+    Generation is a property of which set a rubric belongs to, not of a comment
+    inside it: ``rubrics/data_v1`` holds the published v1.0 set, ``rubrics/data_v2``
+    the agentic v2 set. Deriving it from the path means the v1-vs-v2 guard and the
+    version recorded in run metadata keep working with no in-file marker at all.
+    A ``#!`` line may still override this where one exists.
+    """
+    for part in file_path.resolve().parts:
+        if part == "data_v2":
+            return "v2"
+        if part == "data_v1":
+            return "v1.0"
+    return "v1.0"
+
+
 def _parse_rubric_file(file_path: Path) -> Tuple[str, str, str, str]:
     """Parse a rubric .txt file, supporting both ADeLe and delean formats.
 
@@ -277,7 +295,7 @@ def _parse_rubric_file(file_path: Path) -> Tuple[str, str, str, str]:
 
     # Pull out any '#!' metadata line(s) and strip them from the content, so
     # the flag is visible in the file but never sent to the judge.
-    version = "v1.0"
+    version = _version_from_location(file_path)
     kept_lines = []
     for ln in body_lines:
         if ln.lstrip().startswith("#!"):

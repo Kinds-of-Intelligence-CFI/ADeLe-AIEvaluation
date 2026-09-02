@@ -1,5 +1,4 @@
 # Action control and execution
-#! ADeLe v2 (agentic) | version: v2-r45 | source: Paolo_Pablo | revised: 2026-08-26 | provenance: docs/rubric-provenance/PLe.md
 
 This rubric assesses the difficulty level of tasks requiring a plan to be carried out and kept on track. What sets this difficulty apart is how the agent can tell, while the work is under way, that it is going right. It ranges from tasks the environment checks at every step to those that offer no check at all. An action is the carrying-out of one plan step. It is the finest unit that could be separately instructed and done wrong, such as posting an entry, making a tool call or writing a section. Words and tokens are not actions. A check is information that establishes, without further work, whether an action or subtask has done what it was for. An observation from which success must still be worked out is not a check, and neither is an interlocutor's acknowledgement.
 

@@ -1,5 +1,4 @@
 # Dexterity
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Paolo_Pablo
 
 This rubric assesses the difficulty of physically manipulating objects through a controller or effector (e.g., hands, a robotic arm), encompassing sensorimotor coordination, real-time feedback integration and fine motor control. Difficulty increases with geometric or scale mismatch between object and controller, object deformability and dynamic shape changes, the speed and accuracy of movement required, the availability and latency of sensory feedback, the irreversibility of actions, surface friction, the number of sequential steps, and time pressure.
 

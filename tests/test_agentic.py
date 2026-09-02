@@ -20,18 +20,20 @@ from adele.agentic.hal import human_label_template, run_judge
 from adele.agentic.validation import rubric_agreement
 from adele.rubrics.catalog import RubricsCatalog, validate_rubric
 
-# The active set is the 7 text/tool-relevant agentic dimensions; the 4
+# The active set is the 8 text/tool-relevant agentic dimensions; the 4
 # sensory/motor rubrics live in the library but are deferred (see _DEFERRED_MULTIMODAL).
-# MSe was renamed PLs and then withdrawn 2026-08-16 (rubric deleted from the catalogue);
 # ECc was dropped (propensity, not ability); MSm is v1's MS carried into v2.
-EXPECTED_CODES = {"PLp", "PLe", "MSm", "MSc", "MMe", "MMp", "MMs"}
+# PLs holds two different dimensions across the history: MSe was re-filed to PLs
+# ("Situational and Environmental Understanding") and withdrawn 2026-08-16, then PLs
+# was re-introduced 2026-08-24 as "Simulating". Only the second is live.
+EXPECTED_CODES = {"PLp", "PLe", "PLs", "MSm", "MSc", "MMe", "MMp", "MMs"}
 
 
 # ---------------------------------------------------------------------------
 # Rubric library
 # ---------------------------------------------------------------------------
 
-def test_active_catalog_is_the_text_relevant_seven():
+def test_active_catalog_is_the_text_relevant_eight():
     catalog = load_active_catalog()
     assert set(catalog.acronyms) == EXPECTED_CODES
     # The deferred multimodal dims are excluded from the active set...
@@ -108,19 +110,30 @@ def test_MSm_keeps_the_carve_outs_that_stop_double_counting():
     assert "the number of minds involved does not place a task here by itself" in b[5]
 
 
-def test_active_catalog_is_single_generation():
+def test_active_catalog_is_single_version():
     """Every active rubric is v2, so no annotation run straddles v1.0 and v2.
 
-    Revisions within v2 are expected: the agentic rubrics are versioned per
-    dimension (``v2-draft`` next to ``v2-r45``), because each one is re-keyed and
-    re-validated on its own schedule. What must never mix is *generations* — v1.0
-    and v2 use different dimensions, and composing them in one run is a mistake.
+    The per-dimension revision labels (v2-r43, v2-r45) were internal to the rubric
+    rounds and have been removed, along with the ``#!`` comment line that carried
+    them. A rubric's generation now comes from the directory it lives in, so this
+    holds with no in-file marker at all.
     """
     from adele.rubrics.catalog import warn_if_mixed_versions
     catalog = load_active_catalog()
+    assert catalog.versions == {"v2"}
     assert catalog.generations == {"v2"}
-    assert all(v.startswith("v2") for v in catalog.versions), sorted(catalog.versions)
     assert warn_if_mixed_versions(catalog) is None
+
+
+def test_rubric_files_carry_no_metadata_comment():
+    """The ``#!`` line is gone from the rubric files, not merely stripped on load.
+
+    It was only ever a comment, and the loader already kept it out of the prompt;
+    removing it means there is nothing to drift out of date with the rounds.
+    """
+    stray = [f.name for f in sorted(DATA_V2_DIR.rglob("*.txt"))
+             if any(ln.lstrip().startswith("#!") for ln in f.read_text(encoding="utf-8").splitlines())]
+    assert stray == [], stray
 
 
 def test_mixed_generations_are_still_caught():
