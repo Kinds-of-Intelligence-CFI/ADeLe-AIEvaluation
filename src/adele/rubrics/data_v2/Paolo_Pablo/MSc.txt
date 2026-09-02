@@ -1,5 +1,4 @@
 # Communication and social interaction
-#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-08-16 | provenance: docs/rubric-provenance/MSc.md
 
 This rubric assesses the difficulty level of tasks requiring an interaction to be steered. Steering covers choosing and delivering the communicative moves that bring another party's stance, meaning what they understand, believe, want or intend to do, to where the task requires it. What sets this difficulty apart is how much of what must be said is determined by the other party rather than by the speaker. It ranges from tasks in which no one's stance matters, through exchanges steered by what a helpful party has just said and by what a hesitant party still doubts, to those in which several parties in conflict each read what is said to the others.
 

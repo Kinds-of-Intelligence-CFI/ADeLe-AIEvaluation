@@ -1,5 +1,4 @@
 # Working and short-term memory
-#! ADeLe v2 (agentic) — DRAFT, unvalidated | version: v2-draft | source: Marko
 
 This rubric assesses working memory, the capacity to hold information temporarily and use it in reasoning or action. Tasks may require maintaining details that are no longer perceptually available, manipulating them or integrating them with new inputs. Difficulty rises from tasks that need no maintenance at all, through simple short-span retention, to those that demand continuous updating and the flexible transformation of multiple interdependent representations.
 

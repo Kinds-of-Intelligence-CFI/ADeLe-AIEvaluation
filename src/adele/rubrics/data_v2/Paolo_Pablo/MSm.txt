@@ -1,5 +1,4 @@
 # Mind Modelling and Social Cognition
-#! ADeLe v2 (agentic) — DRAFT for team review | version: v2-draft | source: Paolo_Pablo | revised: 2026-08-20 | provenance: docs/rubric-provenance/MSm.md
 
 This rubric assesses the difficulty level of tasks requiring the minds of others to be modelled. Mind modelling covers inferring what other agents believe, want, intend and feel, and reasoning from those inferences to what they will do. It ranges from tasks in which no other agent need be considered to those in which the beliefs, desires, intentions and emotions of several agents interact and must be reasoned about together.
 

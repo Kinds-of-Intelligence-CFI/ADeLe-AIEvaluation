@@ -8,10 +8,10 @@
   over time. Two authoring streams: `Paolo_Pablo/` (planning, execution,
   simulation, social) and `Marko/` (the memory triad).
 
-`MANIFEST.tsv` is the source of truth for which rubrics are **active**. It records,
-per dimension, the source document, the heading, a version date and a sha256 of
-the file. `verify_manifest()` and a test flag drift. Regenerate after editing a
-rubric:
+Which rubrics are **active** is defined by `_ACTIVE` in `adele/agentic/__init__.py`;
+`MANIFEST.tsv` is generated from it and records, per dimension, the source document,
+the heading, a version date and a sha256 of the file. `verify_manifest()` and a test
+flag drift. Regenerate after editing a rubric:
 
 ```bash
 python -c "from adele.agentic import build_manifest; build_manifest()"
@@ -23,18 +23,31 @@ python -c "from adele.agentic import build_manifest; build_manifest()"
 |---|---|---|
 | `PLp` | Planning | Paolo_Pablo |
 | `PLe` | Action control and execution | Paolo_Pablo |
+| `PLs` | Simulating | Paolo_Pablo |
 | `MSm` | Mind Modelling and Social Cognition | Paolo_Pablo |
 | `MSc` | Communication and social interaction | Paolo_Pablo |
 | `MMe` | Episodic memory | Marko |
 | `MMp` | Long-term procedural memory | Marko |
 | `MMs` | Working and short-term memory | Marko |
 
-Present in the tree but **not in the manifest**, so the loader cannot see them:
-`PLs` (Simulating), and the four sensory/motor rubrics `SNp SNk SPa SPv`. The
-sensory four are deliberately deferred — text and tool-based tasks do not exercise
-vision, audio or dexterity, so annotating them would buy all-zero columns at full
-cost. `PLs` is a live dimension whose manifest row has not been added yet; see
-*Open items* below.
+Present in the tree but deliberately **deferred**: the four sensory/motor rubrics
+`SNp SNk SPa SPv`. Text and tool-based tasks do not exercise vision, audio or
+dexterity, so annotating them would buy all-zero columns at full cost.
+
+**A warning about `PLs`.** The code has carried two different dimensions. It was
+first *Situational and Environmental Understanding*, re-filed there from `MSc`'s
+family; that was withdrawn on 2026-08-16 and the file deleted. `PLs` was then
+re-introduced on 2026-08-24 as *Simulating*, at Jose's suggestion. Only the second
+is live. Anything in git history or a lab record before 2026-08-24 that mentions
+`PLs` means the first one.
+
+**Rubric files carry no version marker.** They used to open with a `#!` comment
+line holding a per-dimension revision (`v2-r43`, `v2-r45`, `v2-draft`). Those were
+internal to the rubric-QA rounds and have been removed. A rubric's generation now
+comes from the directory it lives in — `data_v1` or `data_v2` — which is where that
+fact actually lives, so the v1-vs-v2 guard and the version recorded in run metadata
+work with no in-file marker. The `#!` line was never sent to a judge in any case;
+the loader stripped it before building the prompt.
 
 ## The one-driver principle
 
@@ -78,16 +91,11 @@ than a task demand; `MSe` was re-keyed and re-filed into the planning family; v1
 
 ## Open items
 
-- **`PLs` is not in `MANIFEST.tsv`.** The file is on the branch and the PL-family
-  close-out treats it as one of the five, but the loader will not return it.
-  Either the manifest needs regenerating or the omission is deliberate — unresolved.
-- **Three tests are red on the rubric branch** (`test_manifest_has_no_drift`,
-  `test_active_catalog_is_single_version`,
-  `test_MSm_adds_only_the_MSc_carve_out_to_v1`). They predate this branch: the
-  manifest was not regenerated after the late-August rubric edits.
 - **No frozen tag yet.** Both experiment arms must annotate against the same
   rubric text for their numbers to be comparable. The intent is a `rubric-v2.0`
   tag, with each annotation run recording the tag plus the sha256 of the rubric
-  text it actually read. Not yet cut.
+  text it actually read. Not yet cut. Cut it before any production annotation
+  spend — removing the `#!` lines changed every rubric's sha256, so a tag cut
+  earlier would already be stale.
 - **Memory taxonomy.** The Marko source has more memory types than our three-way
   split — Semantic and Prospective — with no codes assigned. Undecided.
