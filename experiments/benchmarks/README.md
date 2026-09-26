@@ -18,6 +18,7 @@ to a model not in the fit.
 | partner data requests | `docs/partner-data-request.md` |
 | pilot sample (4 benchmarks × 5 tasks) | `pilot/`, regenerate with `adele agentic pilot --seed 0` |
 | first real-benchmark run (SWE-bench Verified, 30 tasks × 25 rubrics) | `swebench-30/` |
+| planning rubrics on all solvable SWE-bench Verified tasks (Opus, medium effort) | `swebench-pl/` |
 
 ## Runtime data is not in the repo
 
