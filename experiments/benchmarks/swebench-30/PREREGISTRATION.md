@@ -1,6 +1,7 @@
 # swebench-30 — pre-registration
 
-Committed before any label of this run exists. Run id `swev30-r1`.
+Committed before any label of this run exists. Run id `swev30-r1`; `swev30-r2` after
+deviation 1 (below).
 
 **Question.** Do the ADeLe rubrics give usable, reproducible task-level demand labels on a
 real agentic benchmark, through the judging path we would use at scale? This is an
@@ -66,4 +67,12 @@ they are kept. The full run starts only after Pablo approves its measured cost.
 
 ### Deviations
 
-None yet.
+1. **Judge harness (2026-09-26, before any full-run label).** The `swev30-r1` dry run
+   (`labels/swev30-r1/RUNLOG.md`) showed two problems. A general-purpose subagent spends about
+   69k tokens per call on its own scaffolding, against about 2k for the prompt. And Opus 5.5 was
+   flagged by a safeguard on 2 of 3 attempts at one prompt, likely because the instruction asked
+   it to save its reasoning. From run `swev30-r2` on, the judges are the `adele-judge` subagent
+   defined in `adele-judge.md`: tools Read and Write only, and a short system prompt asking for
+   the written assessment the INSTRUCTION specifies. The per-call message carries only the two
+   file paths. Prompts, rubrics, sample, models, checks and predictions are unchanged. The six
+   `swev30-r1` dry-run labels are discarded: kept aside under `data/`, never analysed.

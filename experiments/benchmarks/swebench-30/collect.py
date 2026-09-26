@@ -7,7 +7,7 @@ level with adele's parser, and writes
   - labels/<run>/labels_long.csv       ids, judge, level, hashes (committed)
 then prints coverage per judge: expected, answered, parsed.
 
-    python experiments/benchmarks/swebench-30/collect.py [--run swev30-r1]
+    python experiments/benchmarks/swebench-30/collect.py [--run swev30-r2]
 """
 
 import argparse
@@ -25,7 +25,7 @@ ROOT = HERE.parents[2]
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--run", default="swev30-r1")
+    ap.add_argument("--run", default="swev30-r2")
     run_id = ap.parse_args().run
     data_dir = ROOT / "data/annotations" / run_id
     labels_dir = HERE / "labels" / run_id
