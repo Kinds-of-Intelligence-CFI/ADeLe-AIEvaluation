@@ -268,6 +268,51 @@ retail); `tau_fable5_banking.json` (172 MB, 388 simulations); `tb2_tasks/` (89 i
 `hkust-nlp/Toolathlon-Trajectories`, `Exgentic/agent-llm-traces-v2`, `Tevatron/browsecomp-plus-runs`,
 `livebench/*`, `nebius/SWE-rebench*` were read but not downloaded.
 
+---
+
+## 6. Quality audits, and which audited benchmarks have per-task data (added 2026-09-26)
+
+This adds a quality filter the survey above does not apply. Epoch's Benchmark Reviews (rubric
+v1) label a benchmark *Flawed* when at least 20% of an inspected sample has scoring errors, or
+when version drift, crippled elicitation or setup bias corrupt the results. BenchJack (arXiv
+2605.12673, 2026) tests whether an agent could reward-hack a benchmark's harness. Everything
+below was checked on 2026-09-26 by reading the cited pages (and, for SWE-rebench, the page
+source); no data was downloaded.
+
+**Failed an audit** (per-task data exists, but the flags are suspect): SWE-bench Verified (Epoch
+*Flawed*, 2026-09-03: OpenAI's audit of the 138 tasks o3 could not reliably solve found 59.4%
+with tests that reject correct fixes, a floor of 16.4% of all 500; contamination; BenchJack about
+100% hackable), SWE-bench Pro (*Flawed*; about 100% hackable), Terminal-Bench (4.0.0 *Flawed*:
+30 of 66 tasks with public defects, listed by name in the review; about 100% hackable), and
+MLE-bench (about 100% hackable). Hackable means an agent could fake success, not that published
+results were faked.
+
+**Epoch *Verified*** (4 of its 15 reviews) and their per-task data:
+
+| benchmark | per-task data | models | limits for ADeLe |
+|---|---|---|---|
+| ExploitBench v0.1 (41 V8 bugs; 2026-09-12) | per-bug × model grid on exploitbench.ai, graded on a 5-tier, 16-flag ladder; transcripts captured as "audit bundles", not public | 20 configurations incl. GPT-5.5, Claude Opus 4.7, Claude Mythos Preview, Gemini 3.1 Pro, Kimi K2.6, GLM 5.1 | grid viewable, not downloadable; task framing inside the public images `ghcr.io/exploitbench/v8-r1` |
+| PostTrainBench v1.1 (2026-09-09) | 1,338 trajectories with full traces and `metrics.json`, HF `aisa-group/PostTrainBench-Trajectories` (Apache-2.0) | Claude Code, Codex CLI, Gemini CLI and OpenCode configurations | 28 near-identical tasks (7 target evals × 4 base models), so little demand variance |
+| WeirdML v2 (2026-08-10) | per-task results per model (WeirdML site; `htihle/weirdml-time-horizons`) | many | only 23.5% of task texts are public |
+| SimpleQA Verified (2026-09-10) | no per-question agent data found | — | static QA; at most a control |
+
+**Patched after BenchJack:** OSWorld and WebArena went from highly hackable to 0% after three
+patch rounds. OSWorld-Verified trajectories are on HF (`xlangai/ubuntu_osworld_verified_trajs`,
+MIT, 15+ model variants); whether the zips carry per-task scores is not yet confirmed.
+
+**No public per-task results:** SWE-rebench (the site embeds only per-date-window aggregates and a
+problem list with PR links; ask Nebius), ITBench-AA (the HF release has the 40 public SRE tasks
+but no per-model results), GDPval (220 public tasks; no per-task model grades found), and Qwen's
+AgentWorldBench (no success labels).
+
+**Implication.** ExploitBench is the only benchmark found that is Epoch-*Verified*, covers the
+current generation and grades every task: the strongest candidate for the demand-predicts-success
+test, pending an export of its per-bug grid and a check that judges rate exploit tasks without
+tripping safety flags. PostTrainBench suits trace-level work. Everything else either failed an
+audit or lacks public per-task results.
+
+---
+
 ## Appendix — a first Opus pass on 14 SWE-bench Verified items (preliminary)
 
 Run before this survey was requested, kept here so it is not lost. One judge (Claude Opus via a
