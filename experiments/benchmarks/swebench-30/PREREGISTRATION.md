@@ -1,7 +1,7 @@
 # swebench-30 — pre-registration
 
 Committed before any label of this run exists. Run id `swev30-r1`; `swev30-r2` after
-deviation 1 (below).
+deviation 1 and `swev30-r3` after deviation 2 (below).
 
 **Question.** Do the ADeLe rubrics give usable, reproducible task-level demand labels on a
 real agentic benchmark, through the judging path we would use at scale? This is an
@@ -76,3 +76,16 @@ they are kept. The full run starts only after Pablo approves its measured cost.
    the written assessment the INSTRUCTION specifies. The per-call message carries only the two
    file paths. Prompts, rubrics, sample, models, checks and predictions are unchanged. The six
    `swev30-r1` dry-run labels are discarded: kept aside under `data/`, never analysed.
+2. **Judge context and effort (2026-09-26, before any full-run label).** The judges' transcripts
+   from the `swev30-r2` dry run (`labels/swev30-r2/RUNLOG.md`) showed two gaps, both also present
+   in r1. Claude Code gives every subagent the CLAUDE.md files of the session that launches it:
+   the operator's user-level file with an imported personal profile, the workspace file, and the
+   `ADELE_v2/CLAUDE.md` working guide once the judge reads a file below it. None gives rubric
+   levels or expected levels, but none is part of this protocol, and others could not reproduce
+   them. And the judges' reasoning effort was not set: it followed the launching session, `max`
+   in both dry runs. From run `swev30-r3` on, `adele-judge.md` sets `omitClaudeMd: true` (no
+   user, project or local CLAUDE.md files; Claude Code 2.1.271 or later) and `effort: max`. The
+   r3 dry run checks the transcripts for any CLAUDE.md that still loads; the documentation does
+   not say whether the nested guide does. Prompts, rubrics, sample, models, checks and
+   predictions are unchanged. The six `swev30-r2` dry-run labels are discarded: kept aside under
+   `data/`, never analysed.
