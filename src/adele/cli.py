@@ -311,8 +311,9 @@ def instances():
               default=("swebench", "terminalbench", "aime"),
               show_default=True, help="Instance loaders to run.")
 @click.option("--out-dir", "-o", default="data/instances", show_default=True)
-@click.option("--n-dimensions", type=int, default=7, show_default=True,
-              help="Planned demand dimensions (for the cost estimate).")
+@click.option("--n-dimensions", type=int, default=None,
+              help="Planned demand dimensions (for the cost estimate). "
+                   "Default: the size of the active v2 set.")
 @click.option("--sample", "-n", type=int, default=None,
               help="Per-benchmark random sample (seeded) instead of the full set.")
 @click.option("--seed", type=int, default=0, show_default=True)
@@ -321,6 +322,9 @@ def instances_prepare(benchmarks, out_dir, n_dimensions, sample, seed):
     _require("annotate", "datasets")
     from adele.instances import prepare
 
+    if n_dimensions is None:
+        from adele.agentic import active_demands
+        n_dimensions = len(active_demands())
     manifest = prepare(benchmarks, out_dir, n_dimensions=n_dimensions,
                        sample=sample, seed=seed)
     click.echo(manifest.to_string(index=False))
