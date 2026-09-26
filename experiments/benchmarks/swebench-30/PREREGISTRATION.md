@@ -1,7 +1,7 @@
 # swebench-30 — pre-registration
 
 Committed before any label of this run exists. Run id `swev30-r1`; `swev30-r2` after
-deviation 1 and `swev30-r3` after deviation 2 (below).
+deviation 1, `swev30-r3` after deviation 2 and `swev30-r4` after deviation 3 (below).
 
 **Question.** Do the ADeLe rubrics give usable, reproducible task-level demand labels on a
 real agentic benchmark, through the judging path we would use at scale? This is an
@@ -89,3 +89,13 @@ they are kept. The full run starts only after Pablo approves its measured cost.
    not say whether the nested guide does. Prompts, rubrics, sample, models, checks and
    predictions are unchanged. The six `swev30-r2` dry-run labels are discarded: kept aside under
    `data/`, never analysed.
+3. **Judge files outside `ADELE_v2/` (2026-09-26, before any full-run label).** The `swev30-r3`
+   dry run (`labels/swev30-r3/RUNLOG.md`) showed that `omitClaudeMd` removes the CLAUDE.md files a
+   judge loads at start, among them the operator's auto-memory index, which r1 and r2 judges also
+   received, but not the `ADELE_v2/CLAUDE.md` working guide: Claude Code attaches that one when the
+   judge reads a file below its folder. From run `swev30-r4` on, the judges read their prompts from
+   and write their answers to `judge-io/<run>/`, two levels above the repo, where no folder between
+   the judging session's folder and the files has a CLAUDE.md. `make_prompts.py` copies the prompts
+   there and `collect.py` reads the answers from there. A throwaway call in this layout carried no
+   CLAUDE.md at all. Prompts, rubrics, sample, models, checks and predictions are unchanged. The one
+   `swev30-r3` label is discarded: kept aside under `data/`, never analysed.

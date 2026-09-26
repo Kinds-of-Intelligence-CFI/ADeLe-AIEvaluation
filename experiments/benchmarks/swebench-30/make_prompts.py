@@ -6,16 +6,18 @@ as `adele agentic judge` would, for
     v2 MSm (v1's text plus one carve-out), plus the 7 other active v2 rubrics; and
   - the 14 pilot anchors x PLp, PLe, PLs (test-retest against the 2026-09-14 pilot).
 
-Prompts contain task text, so they go to the gitignored data/annotations/<run>/prompts/.
+Prompts contain task text, so they go to the gitignored data/annotations/<run>/prompts/,
+with a copy for the judges in JUDGE_IO, outside the repo.
 The index (hashes, no text) and run.json go to labels/<run>/ here, and are committed.
 Judges are the `adele-judge` subagent (adele-judge.md, installed under .claude/agents/),
-one prompt per call; see JUDGE_INSTRUCTION and PREREGISTRATION.md (deviations 1 and 2).
+one prompt per call; see JUDGE_INSTRUCTION and PREREGISTRATION.md (deviations 1 to 3).
 
     python experiments/benchmarks/swebench-30/make_prompts.py
 """
 
 import hashlib
 import json
+import os
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,7 +30,7 @@ from adele.rubrics.catalog import RubricsCatalog
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-RUN_ID = "swev30-r3"
+RUN_ID = "swev30-r4"
 ANCHOR_DIMS = ["PLp", "PLe", "PLs"]
 JUDGE_AGENT = HERE / "adele-judge.md"
 JUDGES = {
@@ -39,6 +41,10 @@ JUDGES = {
 # protocol itself is the agent's system prompt in adele-judge.md.
 JUDGE_INSTRUCTION = """Prompt file: {prompt_file}
 Response file: {response_file}"""
+# The judges read and write here, two levels above the repo: Claude Code attaches a folder's
+# CLAUDE.md to a subagent that reads a file below it, and omitClaudeMd does not stop that
+# (deviation 3). Judging sessions run in ROOT.parents[1], the folder that holds judge-io/.
+JUDGE_IO = ROOT.parents[1] / "judge-io" / RUN_ID
 
 
 def sha256_bytes(b: bytes) -> str:
@@ -63,9 +69,10 @@ def main() -> None:
     design += [(i, d) for i in sample.loc[sample["role"] == "anchor", "instance_id"] for d in ANCHOR_DIMS]
 
     data_dir = ROOT / "data/annotations" / RUN_ID
-    (data_dir / "prompts").mkdir(parents=True, exist_ok=True)
+    for d in (data_dir, JUDGE_IO):
+        (d / "prompts").mkdir(parents=True, exist_ok=True)
     for judge in JUDGES:
-        (data_dir / "responses" / judge).mkdir(parents=True, exist_ok=True)
+        (JUDGE_IO / "responses" / judge).mkdir(parents=True, exist_ok=True)
     labels_dir = HERE / "labels" / RUN_ID
     labels_dir.mkdir(parents=True, exist_ok=True)
 
@@ -74,8 +81,8 @@ def main() -> None:
         r = rubrics[dim]
         prompt = build_annotation_prompt(demand_name=r.full_name, rubric_content=r.content,
                                          task_instance=text[iid])
-        path = data_dir / "prompts" / f"{iid}@{dim}.txt"
-        path.write_text(prompt, encoding="utf-8")
+        for d in (data_dir, JUDGE_IO):
+            (d / "prompts" / f"{iid}@{dim}.txt").write_text(prompt, encoding="utf-8")
         index.append({
             "instance_id": iid, "demand": dim, "family": "v2" if dim in v2 else "v1",
             "rubric_sha256": sha256_bytes(Path(r.file_path).read_bytes()),
@@ -122,12 +129,14 @@ def main() -> None:
                         "sha256": sha256_bytes(JUDGE_AGENT.read_bytes())},
         "judge_instruction": JUDGE_INSTRUCTION,
         "judge_instruction_sha256": sha256_bytes(JUDGE_INSTRUCTION.encode("utf-8")),
+        "judge_io": os.path.relpath(JUDGE_IO, ROOT),
         "sampling": "harness defaults; temperature and snapshot cannot be pinned for subagents",
         "unguessability": "UG = 100 for every task (open-ended); computed, not judged",
     }
     (labels_dir / "run.json").write_text(json.dumps(run, indent=2) + "\n")
     (data_dir / "run.json").write_text(json.dumps(run, indent=2) + "\n")
-    print(f"{len(design)} prompts → {data_dir / 'prompts'}; index + run.json → {labels_dir}")
+    print(f"{len(design)} prompts → {data_dir / 'prompts'} and {JUDGE_IO / 'prompts'}; "
+          f"index + run.json → {labels_dir}")
 
 
 if __name__ == "__main__":
