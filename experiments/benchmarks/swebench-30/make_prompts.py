@@ -8,7 +8,8 @@ as `adele agentic judge` would, for
 
 Prompts contain task text, so they go to the gitignored data/annotations/<run>/prompts/.
 The index (hashes, no text) and run.json go to labels/<run>/ here, and are committed.
-Judges answer one prompt per call; see JUDGE_INSTRUCTION and PREREGISTRATION.md.
+Judges are the `adele-judge` subagent (adele-judge.md, installed under .claude/agents/),
+one prompt per call; see JUDGE_INSTRUCTION and PREREGISTRATION.md (deviation 1).
 
     python experiments/benchmarks/swebench-30/make_prompts.py
 """
@@ -27,19 +28,17 @@ from adele.rubrics.catalog import RubricsCatalog
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-RUN_ID = "swev30-r1"
+RUN_ID = "swev30-r2"
 ANCHOR_DIMS = ["PLp", "PLe", "PLs"]
+JUDGE_AGENT = HERE / "adele-judge.md"
 JUDGES = {
-    "sonnet": "Claude Code subagent (general-purpose), model alias 'sonnet'",
-    "opus": "Claude Code subagent (general-purpose), model alias 'opus'",
+    "sonnet": "Claude Code subagent 'adele-judge' (tools: Read, Write), model alias 'sonnet'",
+    "opus": "Claude Code subagent 'adele-judge' (tools: Read, Write), model alias 'opus'",
 }
-# Sent verbatim to each judge subagent, one (task, dimension) per call.
-JUDGE_INSTRUCTION = """You are an annotation judge in a research study. Your entire job:
-1. Use the Read tool once to read the file {prompt_file}
-2. That file contains a rubric, a TASK INSTANCE and an INSTRUCTION. Follow the INSTRUCTION in the file exactly: reason step by step, then end with the concluding sentence it specifies, giving an integer score from 0 to 5.
-3. Use the Write tool once to save your complete answer (your reasoning and the concluding sentence, nothing else) to {response_file}
-Rules: do not open, list or search any other file or directory, do not run commands, and do not use the web. Rely only on the file's contents and your own knowledge.
-When finished, reply with exactly: DONE <score>"""
+# Sent verbatim to each judge subagent, one (task, dimension) per call; the judging
+# protocol itself is the agent's system prompt in adele-judge.md.
+JUDGE_INSTRUCTION = """Prompt file: {prompt_file}
+Response file: {response_file}"""
 
 
 def sha256_bytes(b: bytes) -> str:
@@ -119,6 +118,8 @@ def main() -> None:
             "note": "shared agentic-v2 prompt for all 25 rubrics, incl. the 'demand is a property "
                     "of the task; when in doubt assign the lower' sentence (not on main)",
         },
+        "judge_agent": {"file": str(JUDGE_AGENT.relative_to(ROOT)),
+                        "sha256": sha256_bytes(JUDGE_AGENT.read_bytes())},
         "judge_instruction": JUDGE_INSTRUCTION,
         "judge_instruction_sha256": sha256_bytes(JUDGE_INSTRUCTION.encode("utf-8")),
         "sampling": "harness defaults; temperature and snapshot cannot be pinned for subagents",
