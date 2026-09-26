@@ -95,6 +95,23 @@ def test_swebench_fetch_from_fixture_tree(tmp_path):
     assert set(df["scaffold"]) == {"myscaffold", "other"}
 
 
+def test_swebench_cli_official_ids_keep_never_solved_tasks(tmp_path):
+    from click.testing import CliRunner
+    from adele.cli import main
+
+    entry = tmp_path / "evaluation" / "verified" / "20260101_myscaffold_claude-opus-5" / "results"
+    entry.mkdir(parents=True)
+    (entry / "results.json").write_text(json.dumps({"resolved": ["repo__repo-1"]}))
+    ids = tmp_path / "ids.txt"
+    ids.write_text("repo__repo-1\nrepo__repo-9\n")           # repo-9: nobody solved it
+    out = tmp_path / "flags.parquet"
+    result = CliRunner().invoke(main, ["results", "fetch-swebench", str(tmp_path),
+                                       "--instance-ids", str(ids), "-o", str(out)])
+    assert result.exit_code == 0, result.output
+    df = pd.read_parquet(out).set_index("instance_id")["success"]
+    assert df.loc["repo__repo-9"] == 0.0 and df.loc["repo__repo-1"] == 1.0
+
+
 def test_swebench_entry_name_split():
     assert swebench.split_entry_name("20251215_livesweagent_claude-opus-4-5") == (
         "livesweagent", "claude-opus-4-5")
