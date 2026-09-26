@@ -1,0 +1,14 @@
+{
+  "round": "sensory-2",
+  "test": "example placement, the same protocol as agentic round 25 and sensory round 1b: strip the Examples blocks, shuffle the examples into a pool behind opaque ids, and ask a judge holding the full level text to return each one to the level it illustrates.",
+  "baseline": "the untouched drafts scored 22/43 = 51% clean (3/3 judges). SPv 8/20, SPa 14/23. The four agentic rubrics scored 75% before their examples were repaired and 92% after.",
+  "gate": "the plan's kill criterion: a rewrite that does not reach 85% clean is not ready to test against stimuli.",
+  "what_changed": "both rubrics re-keyed to one driver - how far the required information sits from a direct readout: presented, separated, reconstructed, combined, inverted. Every flagged defect removed: the four-conjunct preambles, the empty Level 0, the glare and camouflage shared anchors, L5-as-L4-with-intensifiers, the five AS clutter-search examples, the human role naming the solver, the MS sarcasm leak, the symphony generation leak, and the accent propensity. Preambles restructured into definition plus boundaries, an aggregation rule added, and a Critically floor at every level 1-5.",
+  "hypotheses": {
+    "H1": "clean placement (3/3 judges) >= 85% overall, against 51% for the drafts.",
+    "H2": "the 1/2 boundary holds: no level-2 example falls to level 1 by 3/3. This was the boundary that collapsed in both modalities at round 1b.",
+    "H3": "the 4/5 boundary holds: no level-5 example is placed at 4, and no level-4 example at 5, by 3/3. At round 1b SPv's L4 and L5 were literally exchanged, unanimously."
+  },
+  "note": "placement measures internal consistency, not correctness. A rubric can be perfectly self-consistent about the wrong construct - round 1b's symphony item made that point. A high score here is a gate to stimulus testing, not validation.",
+  "written_before_any_annotation": true
+}

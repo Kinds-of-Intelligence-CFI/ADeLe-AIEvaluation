@@ -1,0 +1,1622 @@
+[
+ {
+  "tag": "B00Q00",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.00025059090909090913,
+  "pub": 0.08497962962962963,
+  "naive": 0.009328867251569785
+ },
+ {
+  "tag": "B00Q01",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.00028000000000000003,
+  "pub": 0.0587134693877551,
+  "naive": 0.25
+ },
+ {
+  "tag": "B00Q02",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0012678000000000001,
+  "pub": 0.1406,
+  "naive": 0.017209742013873135
+ },
+ {
+  "tag": "B00Q03",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.007325520833333334,
+  "pub": 0.12785294117647059,
+  "naive": 0.00030625000000000004
+ },
+ {
+  "tag": "B00Q04",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0,
+  "pub": 0.35835729,
+  "naive": 0.5798822499999999
+ },
+ {
+  "tag": "B00Q05",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.3538625,
+  "pub": 0.30584782608695654,
+  "naive": 0.27040000000000003
+ },
+ {
+  "tag": "B00Q06",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.015801838235294116,
+  "pub": 0.1341220588235294,
+  "naive": 0.07022500000000001
+ },
+ {
+  "tag": "B00Q07",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.07249333333333333,
+  "pub": 0.28195717647058827,
+  "naive": 0.29702500000000004
+ },
+ {
+  "tag": "B00Q08",
+  "src": "polymarket",
+  "market": true,
+  "pls": 1,
+  "qlq": 1,
+  "supers": 0.0006826412500000001,
+  "pub": 0.0884951088888889,
+  "naive": 0.0006502500000000001
+ },
+ {
+  "tag": "B00Q09",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.03509478846153847,
+  "pub": 0.27981666666666666,
+  "naive": 0.093025
+ },
+ {
+  "tag": "B00Q10",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.53102,
+  "pub": 0.5282835365853659,
+  "naive": 0.8556250000000001
+ },
+ {
+  "tag": "B00Q11",
+  "src": "polymarket",
+  "market": true,
+  "pls": 1,
+  "qlq": 2,
+  "supers": 4.347826086956522e-06,
+  "pub": 0.08599660869565218,
+  "naive": 0.00012099999999999999
+ },
+ {
+  "tag": "B01Q00",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 6.250000000000011e-06,
+  "pub": 0.11393061224489796,
+  "naive": 0.003599999999999993
+ },
+ {
+  "tag": "B01Q01",
+  "src": "polymarket",
+  "market": true,
+  "pls": 1,
+  "qlq": 1,
+  "supers": 8.928571785714286e-07,
+  "pub": 0.09699148936170213,
+  "naive": 4.225000000000001e-05
+ },
+ {
+  "tag": "B01Q02",
+  "src": "polymarket",
+  "market": true,
+  "pls": 1,
+  "qlq": 1,
+  "supers": 0.0,
+  "pub": 0.04221951243902439,
+  "naive": 6.4e-05
+ },
+ {
+  "tag": "B01Q03",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 2.708e-05,
+  "pub": 0.2023005918367347,
+  "naive": 0.007225000000000001
+ },
+ {
+  "tag": "B01Q04",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0002786470588235299,
+  "pub": 0.23434146341463416,
+  "naive": 0.0024999999999999935
+ },
+ {
+  "tag": "B01Q05",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.19542142857142858,
+  "pub": 0.3380727272727273,
+  "naive": 0.10890000000000001
+ },
+ {
+  "tag": "B01Q06",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.012346153846153847,
+  "pub": 0.2011153846153846,
+  "naive": 0.0004622500000000001
+ },
+ {
+  "tag": "B01Q07",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.00016720363636363637,
+  "pub": 0.1227538085106383,
+  "naive": 2.5e-05
+ },
+ {
+  "tag": "B01Q08",
+  "src": "polymarket",
+  "market": true,
+  "pls": 5,
+  "qlq": 2,
+  "supers": 0.049727272727272724,
+  "pub": 0.2961153846153846,
+  "naive": 0.4624000000000001
+ },
+ {
+  "tag": "B01Q09",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.02202857142857143,
+  "pub": 0.20155136363636364,
+  "naive": 0.0010890000000000001
+ },
+ {
+  "tag": "B01Q10",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.00025281666666666664,
+  "pub": 0.119018,
+  "naive": 0.0004
+ },
+ {
+  "tag": "B01Q11",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.09795172413793103,
+  "pub": 0.2720150943396227,
+  "naive": 0.17222500000000002
+ },
+ {
+  "tag": "B02Q00",
+  "src": "polymarket",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 5.05e-10,
+  "pub": 0.107125,
+  "naive": 0.0001
+ },
+ {
+  "tag": "B02Q01",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.33700909090909087,
+  "pub": 0.37466902127659574,
+  "naive": 0.33923152072124035
+ },
+ {
+  "tag": "B02Q02",
+  "src": "infer",
+  "market": true,
+  "pls": 3,
+  "qlq": 1,
+  "supers": 0.0008200769230769233,
+  "pub": 0.09451764705882354,
+  "naive": 0.0003459600000000001
+ },
+ {
+  "tag": "B02Q03",
+  "src": "infer",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0012240500000000002,
+  "pub": 0.1368744680851064,
+  "naive": 0.00100489
+ },
+ {
+  "tag": "B02Q04",
+  "src": "infer",
+  "market": true,
+  "pls": 3,
+  "qlq": 2,
+  "supers": 0.002306203125,
+  "pub": 0.0811530612244898,
+  "naive": 0.00011664000000000001
+ },
+ {
+  "tag": "B02Q05",
+  "src": "infer",
+  "market": true,
+  "pls": 4,
+  "qlq": 2,
+  "supers": 0.15226190681102952,
+  "pub": 0.26245447096153846,
+  "naive": 0.25573249000000003
+ },
+ {
+  "tag": "B02Q06",
+  "src": "infer",
+  "market": true,
+  "pls": 3,
+  "qlq": 1,
+  "supers": 0.0002379375,
+  "pub": 0.1872,
+  "naive": 0.00040401
+ },
+ {
+  "tag": "B02Q07",
+  "src": "infer",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.3122842105263158,
+  "pub": 0.411570251875,
+  "naive": 0.5695720900000001
+ },
+ {
+  "tag": "B02Q08",
+  "src": "infer",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.10313781818181818,
+  "pub": 0.18499375,
+  "naive": 0.05363855999999996
+ },
+ {
+  "tag": "B02Q09",
+  "src": "infer",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.30751666666666666,
+  "pub": 0.39461521739130434,
+  "naive": 0.37075921
+ },
+ {
+  "tag": "B02Q10",
+  "src": "infer",
+  "market": true,
+  "pls": 3,
+  "qlq": 1,
+  "supers": 0.0274,
+  "pub": 0.04824042553191489,
+  "naive": 0.0008410000000000015
+ },
+ {
+  "tag": "B02Q11",
+  "src": "infer",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0006667037185185185,
+  "pub": 0.08353035714285714,
+  "naive": 3.7210000000000005e-05
+ },
+ {
+  "tag": "B03Q00",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 9.11764705882353e-06,
+  "pub": 0.118344,
+  "naive": 0.0004
+ },
+ {
+  "tag": "B03Q01",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.012030769230769232,
+  "pub": 0.25290222222222225,
+  "naive": 0.0841
+ },
+ {
+  "tag": "B03Q02",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.00012307769230769232,
+  "pub": 0.14783529411764706,
+  "naive": 0.0001
+ },
+ {
+  "tag": "B03Q03",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 1.3999999999999998e-07,
+  "pub": 0.08019938261217391,
+  "naive": 0.25
+ },
+ {
+  "tag": "B03Q04",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0773545,
+  "pub": 0.17454892083333334,
+  "naive": 0.25
+ },
+ {
+  "tag": "B03Q05",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 1.4545454545454546e-05,
+  "pub": 0.03849838367346939,
+  "naive": 0.25
+ },
+ {
+  "tag": "B03Q06",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.0024668,
+  "pub": 0.09921571111627907,
+  "naive": 0.25
+ },
+ {
+  "tag": "B03Q07",
+  "src": "metaculus",
+  "market": true,
+  "pls": 3,
+  "qlq": 1,
+  "supers": 0.004413333333333334,
+  "pub": 0.161084,
+  "naive": 0.04409999999999999
+ },
+ {
+  "tag": "B03Q08",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0008866111111111112,
+  "pub": 0.19343478260869565,
+  "naive": 0.009801
+ },
+ {
+  "tag": "B03Q09",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0,
+  "pub": 0.056362,
+  "naive": 0.0001
+ },
+ {
+  "tag": "B03Q10",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0,
+  "pub": 0.06684194181818182,
+  "naive": 0.25
+ },
+ {
+  "tag": "B03Q11",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.20475000000000002,
+  "pub": 0.33261407407407406,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q00",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0013775625000000003,
+  "pub": 0.040302,
+  "naive": 0.022735625769294814
+ },
+ {
+  "tag": "B04Q01",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 4.045454545454545e-05,
+  "pub": 0.05573714693877551,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q02",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0,
+  "pub": 0.07509443703703704,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q03",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.157408,
+  "pub": 0.21009127272727274,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q04",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0009300000000000002,
+  "pub": 0.06166603773584906,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q05",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0437325,
+  "pub": 0.18560000000000001,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q06",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.00030781041666666666,
+  "pub": 0.08523673469387755,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q07",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.00021911111111111114,
+  "pub": 0.22422184210526316,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q08",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.000813203125,
+  "pub": 0.19722153110047846,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q09",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 1.5e-05,
+  "pub": 0.11472375102040816,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q10",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.07965333333333334,
+  "pub": 0.2892853136363636,
+  "naive": 0.25
+ },
+ {
+  "tag": "B04Q11",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.0022354857142857145,
+  "pub": 0.23089215862222223,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q00",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.8916313124999999,
+  "pub": 0.7998674418604651,
+  "naive": 0.875686410194025
+ },
+ {
+  "tag": "B05Q01",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.390045,
+  "pub": 0.43544755555555553,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q02",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 0,
+  "supers": 1.0857142857142858e-06,
+  "pub": 0.06570290909090909,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q03",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 5.142928571428571e-05,
+  "pub": 0.07917271489361702,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q04",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.031279999999999995,
+  "pub": 0.36523163636363637,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q05",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 0,
+  "supers": 0.017848076923076918,
+  "pub": 0.21006481481481482,
+  "naive": 0.258064
+ },
+ {
+  "tag": "B05Q06",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.31108,
+  "pub": 0.22223695652173914,
+  "naive": 0.27040000000000003
+ },
+ {
+  "tag": "B05Q07",
+  "src": "metaculus",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.05437058823529412,
+  "pub": 0.10173725490196078,
+  "naive": 0.03999999999999998
+ },
+ {
+  "tag": "B05Q08",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.08934857142857143,
+  "pub": 0.35736117647058824,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q09",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.00027340000000000003,
+  "pub": 0.13277155294117648,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q10",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.10179666666666667,
+  "pub": 0.25915781666666665,
+  "naive": 0.25
+ },
+ {
+  "tag": "B05Q11",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.0005926,
+  "pub": 0.1439680701754386,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q00",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 2.747272727272727e-05,
+  "pub": 0.047046029787234045,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q01",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 9e-06,
+  "pub": 0.09316907500001355,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q02",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 2.3640909090909092e-05,
+  "pub": 0.06327924761904762,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q03",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.23399999999999999,
+  "pub": 0.3616396,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q04",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.195036,
+  "pub": 0.3485040608695652,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q05",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.251188,
+  "pub": 0.44091757060869563,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q06",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.29340571428571427,
+  "pub": 0.3369270373877551,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q07",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.235561471,
+  "pub": 0.32837063061538463,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q08",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.26222,
+  "pub": 0.3334958490566038,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q09",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.21349142857142855,
+  "pub": 0.3015140425531915,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q10",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.26614211320000003,
+  "pub": 0.2600823529411765,
+  "naive": 0.25
+ },
+ {
+  "tag": "B06Q11",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.2777233333333333,
+  "pub": 0.35652086525,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q00",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.33239599999999997,
+  "pub": 0.40965583333333333,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q01",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.2608025,
+  "pub": 0.24304536585365855,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q02",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.247592,
+  "pub": 0.4154514,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q03",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.28871742714285714,
+  "pub": 0.3011272340425532,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q04",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0036,
+  "pub": 0.12362051757142857,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q05",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.18863214285714286,
+  "pub": 0.36821294666666665,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q06",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.16831714285714286,
+  "pub": 0.21176312224561403,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q07",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.07794545454545454,
+  "pub": 0.16581327552173913,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q08",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.11710000000000001,
+  "pub": 0.20974192307692308,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q09",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0051625,
+  "pub": 0.11651126982142858,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q10",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.19821388888888888,
+  "pub": 0.26727340862244897,
+  "naive": 0.25
+ },
+ {
+  "tag": "B07Q11",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.31225600000000003,
+  "pub": 0.30531251489361705,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q00",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.22573605,
+  "pub": 0.434531429787234,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q01",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.23463,
+  "pub": 0.3125477551020408,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q02",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.00944,
+  "pub": 0.1590923076923077,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q03",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.00013692857142857143,
+  "pub": 0.07561000000000001,
+  "naive": 0.0019491996050466753
+ },
+ {
+  "tag": "B08Q04",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.31392054,
+  "pub": 0.29718600564000003,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q05",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.26130857142857145,
+  "pub": 0.3214387755102041,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q06",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.08747428571428571,
+  "pub": 0.16022292363636365,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q07",
+  "src": "manifold",
+  "market": true,
+  "pls": 3,
+  "qlq": 2,
+  "supers": 0.6038382857142858,
+  "pub": 0.307798,
+  "naive": 0.12539090761411928
+ },
+ {
+  "tag": "B08Q08",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.32057,
+  "pub": 0.3835934782608696,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q09",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.245975,
+  "pub": 0.32714781523076925,
+  "naive": 0.25
+ },
+ {
+  "tag": "B08Q10",
+  "src": "manifold",
+  "market": true,
+  "pls": 1,
+  "qlq": 1,
+  "supers": 0.0023015625000000002,
+  "pub": 0.11827096869565218,
+  "naive": 0.01769525565315616
+ },
+ {
+  "tag": "B08Q11",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.248164,
+  "pub": 0.3028767857142857,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q00",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.20134342,
+  "pub": 0.32182618181818184,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q01",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0801491724137931,
+  "pub": 0.25844901960784317,
+  "naive": 0.2335843353896795
+ },
+ {
+  "tag": "B09Q02",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.006529066666666667,
+  "pub": 0.073372,
+  "naive": 0.01095559275115721
+ },
+ {
+  "tag": "B09Q03",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.2089625,
+  "pub": 0.25636196239362236,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q04",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.29231999999999997,
+  "pub": 0.40834615384615386,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q05",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.19289,
+  "pub": 0.2643891666666667,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q06",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.21692333333333333,
+  "pub": 0.33442951376470587,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q07",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.001446666666666667,
+  "pub": 0.3784169722222222,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q08",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.24692,
+  "pub": 0.42597960784313726,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q09",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.24415913514285714,
+  "pub": 0.47749004138095236,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q10",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.25559,
+  "pub": 0.29435916675555557,
+  "naive": 0.25
+ },
+ {
+  "tag": "B09Q11",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.17121333333333333,
+  "pub": 0.3499260830188679,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q00",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.231464,
+  "pub": 0.3142513043478261,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q01",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.011461363636363636,
+  "pub": 0.05074580788461538,
+  "naive": 0.05926184145387973
+ },
+ {
+  "tag": "B10Q02",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.25260571428571427,
+  "pub": 0.3084955102040816,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q03",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.018899266666666664,
+  "pub": 0.04372941176470588,
+  "naive": 0.014531473982746181
+ },
+ {
+  "tag": "B10Q04",
+  "src": "fred",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.22682666666666668,
+  "pub": 0.2814152222222222,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q05",
+  "src": "yfinance",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.26435142857142857,
+  "pub": 0.36594708444444446,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q06",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.15399000000000002,
+  "pub": 0.23452,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q07",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.00015140000000000002,
+  "pub": 0.08982851063829787,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q08",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 2.077142857142857e-05,
+  "pub": 0.07659852091304348,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q09",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.12389333333333333,
+  "pub": 0.425412213740458,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q10",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.00044564615384615387,
+  "pub": 0.07610836363636364,
+  "naive": 0.25
+ },
+ {
+  "tag": "B10Q11",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 1,
+  "qlq": 0,
+  "supers": 9.777777777777778e-05,
+  "pub": 0.054305769230769234,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q00",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.037491111111111114,
+  "pub": 0.14940333333333333,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q01",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.0670925,
+  "pub": 0.18134244897959184,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q02",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.0006320285714285714,
+  "pub": 0.13283303214285716,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q03",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 1,
+  "qlq": 0,
+  "supers": 1.6666666666666667e-06,
+  "pub": 0.03717142857142857,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q04",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.2168,
+  "pub": 0.22293771172000001,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q05",
+  "src": "wikipedia",
+  "market": false,
+  "pls": 1,
+  "qlq": 0,
+  "supers": 8.571428571428573e-06,
+  "pub": 0.04427422040816326,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q06",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.0008235333333333335,
+  "pub": 0.2551003740740741,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q07",
+  "src": "acled",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.0010400666666666666,
+  "pub": 0.1401572,
+  "naive": 0.25
+ },
+ {
+  "tag": "B11Q08",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.23175576923076924,
+  "pub": 0.2072448979591837,
+  "naive": 0.05342523560032596
+ },
+ {
+  "tag": "B11Q09",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.55049375,
+  "pub": 0.5497581818181818,
+  "naive": 0.6535481129670146
+ },
+ {
+  "tag": "B11Q10",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 1,
+  "supers": 0.0059450000000000015,
+  "pub": 0.1530690909090909,
+  "naive": 0.0035238077792516054
+ },
+ {
+  "tag": "B11Q11",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.12480453333333333,
+  "pub": 0.24732716981132077,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q00",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.1463125,
+  "pub": 0.2339598107142857,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q01",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.09173142857142857,
+  "pub": 0.3163120930232558,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q02",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.1810745,
+  "pub": 0.20908533333333335,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q03",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.13136857142857142,
+  "pub": 0.2658662327272727,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q04",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.12902666666666668,
+  "pub": 0.21001285714285714,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q05",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.1647975,
+  "pub": 0.21478867924528303,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q06",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.15429714285714285,
+  "pub": 0.2590688603773585,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q07",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.135678125,
+  "pub": 0.19507363,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q08",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.177785,
+  "pub": 0.24001965263157896,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q09",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.1206676,
+  "pub": 0.3279508695652174,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q10",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.18215666666666666,
+  "pub": 0.24164360000000001,
+  "naive": 0.25
+ },
+ {
+  "tag": "B12Q11",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.07184857142857143,
+  "pub": 0.2862101209333333,
+  "naive": 0.25
+ },
+ {
+  "tag": "B13Q00",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.08349454545454546,
+  "pub": 0.26686048780487803,
+  "naive": 0.25
+ },
+ {
+  "tag": "B13Q01",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.15173777777777778,
+  "pub": 0.26725375,
+  "naive": 0.25
+ },
+ {
+  "tag": "B13Q02",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.1340142,
+  "pub": 0.22382,
+  "naive": 0.25
+ },
+ {
+  "tag": "B13Q03",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.2962708333333333,
+  "pub": 0.32670817307692307,
+  "naive": 0.25
+ },
+ {
+  "tag": "B13Q04",
+  "src": "dbnomics",
+  "market": false,
+  "pls": 2,
+  "qlq": 3,
+  "supers": 0.1716475,
+  "pub": 0.1799090909090909,
+  "naive": 0.25
+ },
+ {
+  "tag": "B13Q05",
+  "src": "manifold",
+  "market": true,
+  "pls": 2,
+  "qlq": 2,
+  "supers": 0.00041308333333333334,
+  "pub": 0.11764089444444445,
+  "naive": 0.007139012063306964
+ }
+]
