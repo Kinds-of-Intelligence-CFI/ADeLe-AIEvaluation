@@ -9,10 +9,14 @@ Two arms, deliberately different in kind. Neither substitutes for the other.
 | ground truth | an exact BFS solver: true cost-to-go for every state | none; per-instance success flags for many models |
 | scale | tens of states, fully controlled | thousands of instances, real agents |
 
-The link between them is that both annotate through the same rubrics, the same
-dimension-agnostic prompt, and the same demand-to-go framing (`01-method.md`).
-For their numbers to be comparable they must run against the same frozen rubric
-text — see *Open items* in `02-rubrics.md`.
+The intended link between them is that both annotate through the same rubrics,
+the same dimension-agnostic prompt, and the same demand-to-go framing
+(`01-method.md`). As of 2026-09-26 only the rubrics are shared: rivercross sends
+many states per call through the templates in `experiments/rivercross/prompts/`
+(CSV output, demand-to-go), while the benchmarks arm sends one whole task per call
+through `build_annotation_prompt` (`adele agentic judge`). For their numbers to be
+comparable they must run against the same frozen rubric text, prompt protocol and
+framing — see *Open items* in `02-rubrics.md`.
 
 ---
 

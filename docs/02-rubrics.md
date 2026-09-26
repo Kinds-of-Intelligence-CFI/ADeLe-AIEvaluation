@@ -86,8 +86,8 @@ than a task demand; `MSe` was re-keyed and re-filed into the planning family; v1
 - **`rubric-provenance/`** — a per-dimension changelog. Start here when you want
   to know why one rubric says what it says.
 - **`PL-family-close-out.md`** — what is settled for the PL family and what is not.
-- **`lab-record.md`** — the 36 pre-registered QA rounds live on a separate branch;
-  this file says where and what is worth reading there.
+- **`lab-record.md`** — the QA rounds (r1–r76) live on a separate branch; this
+  file says where and what is worth reading there.
 
 ## Open items
 

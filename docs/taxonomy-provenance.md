@@ -139,6 +139,16 @@ Whether the narrow scope is the right one is a construct decision the team has n
 instrumental simulation should be scored, the scope clause is the thing to revisit, and the
 cost is a re-key of the driver plus full re-validation rather than a patch.
 
+> **Correction (2026-09-26).** The narrow scope described in this section was later reversed.
+> The current rubric scores the tracing of a candidate action's consequences as simulating,
+> "whether the task asks for the outcome directly or for the action that turns on it", and
+> places it by the model the tracing demands rather than by the size of the search (the
+> reversal was measured in r59; the placement rule was settled in v18, r65). Agentic-benchmark
+> instances still read low, with medians of 0–2 across the pilots, now mainly through the
+> executability clause: where the solver can run the system, or has a model of it to run, the
+> demand stays low. The warning above stands: low `PLs` on such tasks describes the task
+> format, not the systems' world models. See `rubric-provenance/PLs.md`.
+
 ## Evidence, and its limits
 
 - **r51** (19 items, current v7.2 wording): 19/19 exact against sealed predictions, α 0.992.

@@ -1,7 +1,8 @@
 # Runbook: from public data to the first demand-annotated results matrix
 
 Everything below is scripted; the steps marked **[you]** need your machine (network / email /
-judgement), the rest is already committed on branch `benchmark-results`. Total hands-on time
+judgement), the rest is already committed (it landed on `benchmark-results`, since merged into
+`agentic-v2`). Total hands-on time
 for the [you] steps: ~30 minutes plus waiting.
 
 **Data layout** (all local, gitignored): `data/downloads/` raw HF dumps · `data/instances/`
@@ -10,7 +11,7 @@ judge outputs. Tracked `ADeLe_battery_data/` is the *published* battery release,
 
 ## 0. Publish + sanity (5 min) [you]
 
-    git push -u origin benchmark-results
+    # (benchmark-results is pushed and merged into agentic-v2; work from there)
     pip install -e ".[dev]" && pytest            # first clean-install run of the full suite
     # CI comes alive on the push; expect green.
 
@@ -81,7 +82,7 @@ judge outputs. Tracked `ADeLe_battery_data/` is the *published* battery release,
     # streams to raw_responses.jsonl and --resume (default) skips paid-for pairs
     # on restart, so a crash at call 4,900 of 5,000 costs nothing.
 
-    SWE-bench Verified (500) + Terminal-Bench (~100) + AIME (60) × the active seven
+    SWE-bench Verified (500) + Terminal-Bench (~100) + AIME (60) × the eight active
     agentic dimensions ≈ 5k judge calls; AIME doubles as the discriminant-validity control
     (agentic demands should floor there). Output: demand vectors keyed by
     (benchmark, instance_id) — joinable onto data/results/matrix.parquet from step 1 by construction
@@ -95,8 +96,10 @@ judge outputs. Tracked `ADeLe_battery_data/` is the *published* battery release,
 
 ## Known gaps (tracked, not blocking)
 
-- Terminal-Bench 2.1 per-trial results live in Harbor Hub's JS app — needs API discovery in
-  a browser session before a fetcher can be written; TB2.0's bulk HF dump works meanwhile.
+- Terminal-Bench per-trial results (the `tbench-2.1-k5` jobs: 76 submissions × 89 tasks × 5
+  trials) are in the HF repo `harborframework/terminal-bench-2-leaderboard`, not only in Harbor
+  Hub's JS app (verified 2026-09-14, `docs/per-instance-results-survey.md` §2.3). No fetcher
+  reads them yet; submissions closed 2026-05-14.
 - HLE/BrowseComp have no public per-instance data at any generation; only worth revisiting
   if we run models ourselves.
 - GAIA instance text requires one gated-accept click on HF (`gaia-benchmark/GAIA`).

@@ -2,6 +2,13 @@
 
 > The `labs/rubric-qa/...` paths cited below are on the `rubrics/v2-lab-record` branch, not in this PR. See `docs/lab-record.md`.
 
+> **Historical account (late July 2026).** Two dimensions changed after it was written. `PLs`
+> below is *Situational and environmental understanding*, withdrawn on 2026-08-16; the live
+> `PLs` is *Simulating* (re-introduced 2026-08-24). `PLe` was re-anchored in r38–r39 on how
+> progress and correctness can be checked, so its driver and the top two rungs of its spine in
+> §2.2 are superseded. Current texts: `src/adele/rubrics/data_v2/`; per-dimension history:
+> `docs/rubric-provenance/`.
+
 
 **Status:** complete and validated, not merged · branch `rubrics/v2-improved`
 Evidence: 36 pre-registered rounds, preserved on `rubrics/v2-lab-record` (see `docs/lab-record.md`).
