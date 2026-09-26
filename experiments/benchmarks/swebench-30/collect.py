@@ -1,13 +1,14 @@
 """Parse judge responses of a swebench-30 run into labels.
 
-Reads data/annotations/<run>/responses/<judge>/<instance>@<dim>.txt, extracts the
-level with adele's parser, and writes
+Reads the judges' answers, <judge_io>/responses/<judge>/<instance>@<dim>.txt with judge_io
+from run.json (data/annotations/<run>/responses/ before swev30-r4), extracts the level with
+adele's parser, and writes
   - data/annotations/<run>/raw.jsonl   full responses, i.e. the judges' reasons
                                        (gitignored: they quote task text)
   - labels/<run>/labels_long.csv       ids, judge, level, hashes (committed)
 then prints coverage per judge: expected, answered, parsed.
 
-    python experiments/benchmarks/swebench-30/collect.py [--run swev30-r3]
+    python experiments/benchmarks/swebench-30/collect.py [--run swev30-r4]
 """
 
 import argparse
@@ -25,17 +26,19 @@ ROOT = HERE.parents[2]
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--run", default="swev30-r3")
+    ap.add_argument("--run", default="swev30-r4")
     run_id = ap.parse_args().run
     data_dir = ROOT / "data/annotations" / run_id
     labels_dir = HERE / "labels" / run_id
     index = pd.read_csv(labels_dir / "prompts_index.csv", dtype={"instance_id": str})
-    judges = json.loads((labels_dir / "run.json").read_text())["design"]["judges"]
+    run = json.loads((labels_dir / "run.json").read_text())
+    judges = run["design"]["judges"]
+    answers = (ROOT / run["judge_io"] if "judge_io" in run else data_dir) / "responses"
 
     rows = []
     for judge in judges:
         for rec in index.itertuples(index=False):
-            path = data_dir / "responses" / judge / f"{rec.instance_id}@{rec.demand}.txt"
+            path = answers / judge / f"{rec.instance_id}@{rec.demand}.txt"
             if not path.exists():
                 continue
             response = path.read_text(encoding="utf-8")

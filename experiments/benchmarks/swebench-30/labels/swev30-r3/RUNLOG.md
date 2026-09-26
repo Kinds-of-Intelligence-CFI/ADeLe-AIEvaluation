@@ -34,4 +34,5 @@ files exist). One throwaway call, with a copy of the same prompt placed outside 
 (`~/Developer/ADELE/judge-io-test/`, since removed), carried no CLAUDE.md of any kind: final
 context 10.6k tokens, against 18.0k with the guide. Its answer is not a label.
 
-Status: the remaining five r3 calls wait for Pablo's decision on the nested guide.
+Status: superseded by deviation 3 (run `swev30-r4`). The one label is discarded: kept aside under
+`data/`, never analysed.
