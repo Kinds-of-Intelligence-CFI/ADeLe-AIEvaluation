@@ -196,7 +196,14 @@ def prepare(
                 "file": path.name,
             })
     manifest = pd.DataFrame(manifest_rows)
-    manifest.to_csv(out / MANIFEST_NAME, sep="\t", index=False)
+    # Freezing one benchmark must not erase the provenance of the others frozen
+    # into the same directory: replace only the rows re-frozen by this call.
+    on_disk = manifest
+    if (out / MANIFEST_NAME).exists():
+        prior = pd.read_csv(out / MANIFEST_NAME, sep="\t")
+        prior = prior[~prior["benchmark"].isin(manifest["benchmark"])]
+        on_disk = pd.concat([prior, manifest], ignore_index=True)
+    on_disk.sort_values("benchmark").to_csv(out / MANIFEST_NAME, sep="\t", index=False)
     logger.info("froze %d benchmarks (%d instances, ~%.1fM input tokens for %d dims) → %s",
                 len(manifest), manifest["n_instances"].sum(),
                 manifest["est_tokens_in"].sum() / 1e6, n_dimensions, out)
