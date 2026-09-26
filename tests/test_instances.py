@@ -111,6 +111,18 @@ def test_prepare_freezes_files_and_manifest(tmp_path):
             == manifest2.set_index("benchmark").loc["aime-2025", "sha256"])
 
 
+def test_prepare_keeps_other_benchmarks_in_manifest(tmp_path):
+    prepare(["aime"], tmp_path, loaders=_fake_loaders(), fmt="csv")
+    first = pd.read_csv(tmp_path / "INSTANCES.tsv", sep="\t").set_index("benchmark")
+    manifest = prepare(["swebench"], tmp_path, loaders=_fake_loaders(), fmt="csv")
+    on_disk = pd.read_csv(tmp_path / "INSTANCES.tsv", sep="\t").set_index("benchmark")
+    assert list(manifest["benchmark"]) == ["swe-bench-verified"]   # return: this call only
+    assert set(on_disk.index) == {"aime-2025", "swe-bench-verified"}
+    assert on_disk.loc["aime-2025", "sha256"] == first.loc["aime-2025", "sha256"]
+    prepare(["aime"], tmp_path, loaders=_fake_loaders(), fmt="csv")     # re-freeze: no duplicates
+    assert len(pd.read_csv(tmp_path / "INSTANCES.tsv", sep="\t")) == 2
+
+
 def test_check_join_flags_mismatched_canonicalization(tmp_path):
     prepare(["aime", "swebench"], tmp_path, loaders=_fake_loaders(), fmt="csv")
     results = pd.DataFrame({
