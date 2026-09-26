@@ -364,12 +364,31 @@ def results():
 @results.command("fetch-swebench")
 @click.argument("experiments_dir")
 @click.option("--split", default="verified", help="Leaderboard split (default: verified).")
+@click.option("--instance-ids", type=click.Path(exists=True, dir_okay=False), default=None,
+              help="Official instance list: a .parquet/.csv with an instance_id column "
+                   "(e.g. the frozen instances file) or one id per line. Without it the "
+                   "universe is the union of ids some entry resolved, so tasks no entry "
+                   "solved are silently missing from the matrix.")
 @click.option("--output", "-o", default="data/results/swebench.parquet", show_default=True)
-def results_swebench(experiments_dir, split, output):
+def results_swebench(experiments_dir, split, instance_ids, output):
     """Per-instance resolution flags from a SWE-bench/experiments checkout."""
     from adele.results.sources import swebench
 
-    df = swebench.fetch(experiments_dir, split=split)
+    ids = None
+    if instance_ids is not None:
+        import os
+        import pandas as pd
+        suffix = os.path.splitext(instance_ids)[1]
+        if suffix in (".parquet", ".csv"):
+            frame = (pd.read_parquet(instance_ids) if suffix == ".parquet"
+                     else pd.read_csv(instance_ids, dtype={"instance_id": str}))
+            ids = frame["instance_id"].astype(str).tolist()
+        else:
+            with open(instance_ids) as f:
+                ids = [line.strip() for line in f if line.strip()]
+    else:
+        click.echo("note: no --instance-ids; tasks that no entry resolved will be missing")
+    df = swebench.fetch(experiments_dir, split=split, instance_ids=ids)
     df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows ({df['instance_id'].nunique()} instances × "
                f"{df.groupby(['model', 'scaffold']).ngroups} model/scaffold pairs) → {output}")
