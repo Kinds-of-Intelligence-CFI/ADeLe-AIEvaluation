@@ -1,0 +1,19 @@
+item_id,example
+X01,"Reconstruct one sentence from several partial recordings, each missing a different stretch of it."
+X02,Transcribe the named speaker at a dinner table where several people talk at once.
+X03,Establish where a microphone stood in a hall from how the same source reaches it by direct and reflected paths.
+X04,Identify a word spoken through a closing door.
+X05,Transcribe a sentence spoken clearly by one speaker in a quiet room.
+X06,"Establish what was said by combining a poor audio track with a video of the speaker's mouth, neither being sufficient alone."
+X07,Follow the cello line in a recording in which the other instruments play different material.
+X08,Answer a question about a passage of supplied text.
+X09,Recover a sentence from a recording clipped so heavily that many consonants are lost.
+X10,State which of two clearly played tones is the higher.
+X11,Infer the size and shape of a room from the reverberation in a recording made inside it.
+X12,Make out a platform announcement over the noise of a busy station.
+X13,Summarise a meeting supplied as a written transcript.
+X14,"Fix where a sound came from using two microphones at separate points, neither of which alone determines the position."
+X15,Count how many times a bell sounds in a clean recording.
+X16,"Determine what material an object is made of, and roughly its size, from the sound it made when struck."
+X17,Transcribe a phone call in which bursts of dropout remove whole syllables that must be inferred from the words around them.
+X18,Decide which of two written arguments is better supported.

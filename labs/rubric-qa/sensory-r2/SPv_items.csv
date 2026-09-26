@@ -1,0 +1,19 @@
+item_id,example
+X01,"Read a document photographed in overlapping strips, each cut mid-line, where the lines must be rejoined across strips before anything can be read."
+X02,"Read a line of handwriting written across a printed form, where the ink crosses the ruled boxes."
+X03,Establish the layout of a room from a photograph of its reflection in a curved surface.
+X04,Identify a vehicle from one photograph in which a pillar hides most of its body.
+X05,Read the time from a clock face photographed straight on in good light.
+X06,"Establish which of two near-identical rooms a photograph was taken in, where the answer follows only from details that appear in different frames of a walkthrough and in none of them together."
+X07,"Read a subtitle rendered in white text over a pale, shifting background."
+X08,Answer a question about a passage of supplied text.
+X09,Read a licence plate from a single frame blurred by motion.
+X10,State the colour of a car that fills most of a clear photograph.
+X11,Recover the surface relief of an object from the way light falls across it in a single photograph.
+X12,Transcribe a receipt photographed on a patterned tablecloth whose pattern shows through the paper. Where the receipt lies in the frame is given.
+X13,Compute a total from figures given in words.
+X14,"Determine the shape of an object from a set of photographs, each showing only a partial silhouette against a bright background. Which object it is, once the shape is known, is not in question."
+X15,Read the number on a road sign photographed from directly in front of it in daylight.
+X16,Determine what was written on a missing page from the impressions it left on the sheet beneath.
+X17,Read a water-damaged page on which roughly a third of the characters are illegible and must be inferred from the words around them.
+X18,Summarise a telephone conversation supplied as a written transcript.

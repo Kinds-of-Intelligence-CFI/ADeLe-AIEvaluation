@@ -1,0 +1,13 @@
+item_id,example
+U01,Transcribe a sentence spoken clearly by one speaker in a quiet room.
+U02,Transcribe a phone call in which bursts of dropout remove whole syllables that must be inferred from the words around them.
+U03,Identify a word spoken through a closing door.
+U04,Count how many times a bell sounds in a clean recording.
+U05,Establish where a microphone stood in a hall from how the same source reaches it by direct and reflected paths.
+U06,Transcribe the named speaker at a dinner table where several people talk at once.
+U07,"Reconstruct one sentence from several partial recordings, each missing a different stretch of it."
+U08,State which of two clearly played tones is the higher.
+U09,Recover a sentence from a recording clipped so heavily that many consonants are lost.
+U10,Answer a question about a passage of supplied text.
+U11,Follow the cello line in a recording in which the other instruments play different material.
+U12,"Establish what was said by combining a poor audio track with a video of the speaker's mouth, neither being sufficient alone."

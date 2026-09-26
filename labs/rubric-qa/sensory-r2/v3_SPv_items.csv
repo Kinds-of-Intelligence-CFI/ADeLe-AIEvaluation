@@ -1,0 +1,13 @@
+item_id,example
+U01,Read the time from a clock face photographed straight on in good light.
+U02,Read a water-damaged page on which roughly a third of the characters are illegible and must be inferred from the words around them.
+U03,Identify a vehicle from one photograph in which a pillar hides most of its body.
+U04,Read the number on a road sign photographed from directly in front of it in daylight.
+U05,Establish the layout of a room from a photograph of its reflection in a curved surface.
+U06,"Read a line of handwriting written across a printed form, where the ink crosses the ruled boxes."
+U07,"Read a document photographed in overlapping strips, each cut mid-line, where the lines must be rejoined across strips before anything can be read."
+U08,State the colour of a car that fills most of a clear photograph.
+U09,Read a licence plate from a single frame blurred by motion.
+U10,Answer a question about a passage of supplied text.
+U11,"Read a subtitle rendered in white text over a pale, shifting background."
+U12,"Establish which of two near-identical rooms a photograph was taken in, where the answer follows only from details that appear in different frames of a walkthrough and in none of them together."
