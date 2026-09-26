@@ -39,6 +39,5 @@ prompt, rubric, builder, agent and instruction hashes were re-checked before the
 - No plan-usage reading was taken before the run, so its share of the subscription's usage
   limits is not measured.
 
-Status: labels kept, as the protocol is unchanged; they would be discarded if the injected
-context is removed (deviation 2). The full run waits for Pablo's decision on that and his
-approval of the cost.
+Status: superseded by deviation 2 (run `swev30-r3`). The six labels are discarded: kept aside
+under `data/`, never analysed.

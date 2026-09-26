@@ -9,7 +9,7 @@ as `adele agentic judge` would, for
 Prompts contain task text, so they go to the gitignored data/annotations/<run>/prompts/.
 The index (hashes, no text) and run.json go to labels/<run>/ here, and are committed.
 Judges are the `adele-judge` subagent (adele-judge.md, installed under .claude/agents/),
-one prompt per call; see JUDGE_INSTRUCTION and PREREGISTRATION.md (deviation 1).
+one prompt per call; see JUDGE_INSTRUCTION and PREREGISTRATION.md (deviations 1 and 2).
 
     python experiments/benchmarks/swebench-30/make_prompts.py
 """
@@ -28,12 +28,12 @@ from adele.rubrics.catalog import RubricsCatalog
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-RUN_ID = "swev30-r2"
+RUN_ID = "swev30-r3"
 ANCHOR_DIMS = ["PLp", "PLe", "PLs"]
 JUDGE_AGENT = HERE / "adele-judge.md"
 JUDGES = {
-    "sonnet": "Claude Code subagent 'adele-judge' (tools: Read, Write), model alias 'sonnet'",
-    "opus": "Claude Code subagent 'adele-judge' (tools: Read, Write), model alias 'opus'",
+    "sonnet": "Claude Code subagent 'adele-judge' (tools: Read, Write; omitClaudeMd; effort max), model alias 'sonnet'",
+    "opus": "Claude Code subagent 'adele-judge' (tools: Read, Write; omitClaudeMd; effort max), model alias 'opus'",
 }
 # Sent verbatim to each judge subagent, one (task, dimension) per call; the judging
 # protocol itself is the agent's system prompt in adele-judge.md.
