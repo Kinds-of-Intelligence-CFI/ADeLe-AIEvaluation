@@ -269,10 +269,11 @@ def _annotate_direct(
 
     # Crash-safety + resume: raw_responses.jsonl is append-only and every
     # completed call is flushed to it immediately, so an interrupted run keeps
-    # what was paid for. On restart (resume=True), valid prior annotations are
-    # reloaded and only the missing/invalid (custom_id, demand) pairs re-run.
+    # what was paid for. On restart (resume=True), valid prior annotations by
+    # the SAME judge model are reloaded and only the missing/invalid
+    # (custom_id, demand) pairs re-run; another judge's rows are never reused.
     raw_path = output_path / "raw_responses.jsonl"
-    prior_results, done = _load_prior_results(raw_path) if resume else ([], set())
+    prior_results, done = _load_prior_results(raw_path, model) if resume else ([], set())
     if prior_results:
         logger.info(
             "resume: %d valid annotations already in %s — skipping those pairs",
@@ -335,6 +336,7 @@ def _annotate_direct(
         return {
             "custom_id": row["custom_id"],
             "demand": acronym,
+            "model": model,
             "level": level,
             "valid": ok,
             "response": content,
@@ -360,12 +362,15 @@ def _annotate_direct(
     return pd.DataFrame(results)
 
 
-def _load_prior_results(raw_path: Path) -> tuple[list, set]:
+def _load_prior_results(raw_path: Path, model: Optional[str] = None) -> tuple[list, set]:
     """Read a (possibly partial) raw_responses.jsonl from an earlier run.
 
     Returns the VALID annotations (latest wins per pair) and the set of
     (custom_id, demand) pairs they cover; invalid/failed rows are not counted
-    as done, so a resumed run retries them.
+    as done, so a resumed run retries them. With ``model``, only rows written
+    by that judge count: a second judge sharing the output dir must not
+    inherit the first judge's labels (rows without a ``model`` field are
+    re-judged rather than attributed to the wrong judge).
     """
     if not raw_path.exists():
         return [], set()
@@ -379,6 +384,8 @@ def _load_prior_results(raw_path: Path) -> tuple[list, set]:
                 r = json.loads(line)
             except json.JSONDecodeError:
                 continue  # torn tail line from a hard crash
+            if model is not None and r.get("model") != model:
+                continue
             if r.get("valid") and r.get("level") is not None:
                 by_pair[(str(r.get("custom_id")), r.get("demand"))] = r
     return list(by_pair.values()), set(by_pair.keys())

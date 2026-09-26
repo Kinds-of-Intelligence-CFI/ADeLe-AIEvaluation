@@ -498,3 +498,49 @@ class TestResume:
         from adele.annotation.annotator import _load_prior_results
         prior, done = _load_prior_results(tmp_path / "nope.jsonl")
         assert prior == [] and done == set()
+
+    def test_load_prior_results_only_reuses_same_model(self, tmp_path):
+        import json
+        from adele.annotation.annotator import _load_prior_results
+
+        raw = tmp_path / "raw_responses.jsonl"
+        lines = [
+            {"custom_id": "a", "demand": "PLp", "model": "judge/a", "level": 2, "valid": True},
+            {"custom_id": "b", "demand": "PLp", "model": "judge/b", "level": 4, "valid": True},
+            {"custom_id": "c", "demand": "PLp", "level": 1, "valid": True},  # no model recorded
+        ]
+        raw.write_text("\n".join(json.dumps(l) for l in lines) + "\n")
+        prior, done = _load_prior_results(raw, "judge/a")
+        assert done == {("a", "PLp")}                    # b is another judge's; c is unattributed
+        assert [r["level"] for r in prior] == [2]
+
+    def test_second_judge_in_same_dir_is_not_skipped(self, monkeypatch, tmp_path):
+        """Two judges sharing an output dir (the CLI default) each get their own labels."""
+        import pandas as pd
+
+        data = pd.DataFrame({"prompt": ["What is 2+2?"], "custom_id": ["q1"]})
+        calls = []
+
+        def mock_completion(**kwargs):
+            calls.append(kwargs["model"])
+            level = 2 if kwargs["model"] == "judge/a" else 4
+
+            class MockResponse:
+                class Choice:
+                    class Message:
+                        content = f"Reasoning...\n\nThe level is: {level}"
+                    message = Message()
+                choices = [Choice()]
+            return MockResponse()
+
+        monkeypatch.setattr("litellm.completion", mock_completion)
+        kw = dict(data=data, demands=["AS"], backend="direct",
+                  output_dir=str(tmp_path), format="wide")
+        first = annotate(model="judge/a", **kw)
+        second = annotate(model="judge/b", **kw)
+        again = annotate(model="judge/a", **kw)          # resume: nothing re-paid
+
+        assert first["AS"].tolist() == [2.0]
+        assert second["AS"].tolist() == [4.0]            # was 2.0: judge/a's label reused
+        assert again["AS"].tolist() == [2.0]
+        assert calls == ["judge/a", "judge/b"]
