@@ -5,11 +5,11 @@ This PR ships the rubrics, the loader and the tests. It does **not** ship the la
 and round write-ups — because that is a research notebook, not something a reviewer should
 have to page through to assess the change.
 
-**The record is preserved on the branch `rubrics/v2-lab-record`**, at the same commit as this
-PR's head. (Note: as of 2026-08-16 that branch has not yet been pushed to origin — the record
-currently lives as the untracked `labs/` directory on the maintainer's machine. Push the branch
-before merging this PR, or the citations below will not resolve for reviewers.) Every
-`labs/rubric-qa/...` path cited in the docs and commit messages resolves there, unchanged:
+**The record is preserved on the branch `rubrics/v2-lab-record`.** It was cut at this PR's
+head (rounds up to r36); rounds r37–r76, `sensory-r2` and the tau re-key sheet were added on
+2026-09-26 in commit `7159671`, before which they existed only as untracked files. The branch
+is on origin since 2026-09-26. Every `labs/rubric-qa/...` path cited in the docs and commit
+messages resolves there, unchanged:
 
 ```
 git show rubrics/v2-lab-record:labs/rubric-qa/README.md          # the 36-round record

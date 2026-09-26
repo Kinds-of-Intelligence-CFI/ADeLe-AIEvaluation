@@ -21,8 +21,8 @@ experiment folder follows.
   when you want to know why one rubric says what it says.
 - [`taxonomy-provenance.md`](taxonomy-provenance.md) — where each dimension code
   comes from.
-- [`lab-record.md`](lab-record.md) — the 36 pre-registered QA rounds live on a
-  separate branch; this says where, and what is worth reading there.
+- [`lab-record.md`](lab-record.md) — the QA rounds (r1–r76) live on a separate
+  branch; this says where, and what is worth reading there.
 
 **The PL family, in detail**
 

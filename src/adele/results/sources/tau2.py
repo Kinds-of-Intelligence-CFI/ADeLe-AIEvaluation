@@ -2,11 +2,15 @@
 
 The public leaderboard submissions
 (``web/leaderboard/public/submissions/*/submission.json`` in
-https://github.com/sierra-research/tau2-bench) carry pass@1..4 per domain;
-per-task trajectories are uploaded to the maintainers' S3 after review and are
-not publicly indexed. This fetcher therefore returns an AGGREGATE frame — kept
-deliberately outside the instance-level schema so it cannot be joined by
-mistake. Ask Sierra for trajectory files if instance-level tau2 is needed.
+https://github.com/sierra-research/tau2-bench) carry pass@1..4 per domain.
+This fetcher returns that AGGREGATE frame — kept deliberately outside the
+instance-level schema so it cannot be joined by mistake.
+
+Instance-level tau2 results are public too, but not read here: the S3 bucket
+``sierra-tau-bench-public`` holds per-submission trajectory files
+(``submissions/<model>_<org>_<date>/trajectories/``) whose ``simulations[]``
+carry ``task_id``, ``trial`` and ``reward_info.reward`` (verified 2026-09-14;
+see ``docs/per-instance-results-survey.md`` §2.1). No fetcher reads them yet.
 
 Schema verified against the repo (65 submissions incl. claude-fable-5, 2026-08).
 """
