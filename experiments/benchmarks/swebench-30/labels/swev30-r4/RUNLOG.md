@@ -34,3 +34,31 @@ The same levels as in the discarded r2 dry run.
   concurrent calls.
 
 Status: labels kept, as the protocol is unchanged. The full run awaits Pablo's approval.
+
+## 2026-09-26 — full run, Opus pass
+
+Approved by Pablo after the dry run above.
+
+- **Workflow canary, discarded.** 40 Opus cells were first run through a Claude Code Workflow
+  script. The workflow harness wraps each agent's task in two framing messages, one of them a
+  verbatim relay of the operator's chat message that launched the run, so those judges did not
+  receive the pre-registered two-line message. Their 40 answers are set aside under
+  `data/annotations/swev30-r4/responses_discarded_canary/`, never analysed.
+- **Harness used instead.** A relay subagent, `judge-dispatcher` (`judge-dispatcher.md`: Sonnet,
+  low effort, no CLAUDE.md, Agent tool only), launched from the main session, sends each cell to
+  `adele-judge` through the Agent tool with the exact two-line message, three at a time; four
+  relays run at once. Workflow agents cannot serve as relays: the workflow harness withholds the
+  Agent tool from them. In a first 6-cell test, the relay also started a general-purpose helper
+  to read the six answer files. Its instructions were then tightened, and no relay started any
+  agent other than `adele-judge` afterwards (checked in every relay's transcript).
+- **Protocol check** over all 784 Opus judge transcripts of the pass (783 cells and one
+  duplicate): exact two-line message, `claude-opus-5-5`, effort `max`, no CLAUDE.md of any kind,
+  no file opened or written other than the cell's prompt and answer. The attachments are the
+  dry run's.
+- **One accidental duplicate.** A relay sent `django__django-15499@KNa` twice; the first call
+  returned no error. The second answer overwrote the first. By a fixed rule, the first completed
+  attempt is the label: it was restored from its transcript, and the second is kept under
+  `judge-io/swev30-r4/responses_duplicate/`. Both gave the same level.
+- **Coverage.** Opus 792/792 answered and parsed (parse rate 100%); no retries needed.
+- **Cost.** Mean final-request context 14.6k tokens (5.7k–55.9k), mean 82 s per call (max
+  455 s); 16 relays of 42–50 cells, 29–50 min each; the pass ran from 12:44 to 15:25.
