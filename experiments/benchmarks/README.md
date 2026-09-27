@@ -17,6 +17,7 @@ to a model not in the fit.
 | judge | CLI `adele agentic judge` |
 | partner data requests | `docs/partner-data-request.md` |
 | pilot sample (4 benchmarks × 5 tasks) | `pilot/`, regenerate with `adele agentic pilot --seed 0` |
+| results of every study, and the run registry | `RESULTS.md`, `runs.csv` |
 | first real-benchmark run (SWE-bench Verified, 30 tasks × 25 rubrics) | `swebench-30/` |
 | planning rubrics on all solvable SWE-bench Verified tasks (Opus, medium effort) | `swebench-pl/` |
 
@@ -33,8 +34,28 @@ in a public repository.
 `ADeLe_battery_data/` at the repo root is a different thing: the *published*
 battery release, tracked and LFS-backed.
 
-## Status
+## Results
 
-The pipeline is built; the tau2 instance sets are frozen. Production annotation
-has not started — the runbook gates it behind a rubric regression check, which is
-where the frozen rubric tag should be pinned.
+`RESULTS.md` indexes every study's results and `runs.csv` lists every pinned run;
+`python experiments/benchmarks/report.py` rebuilds both from committed files.
+
+Every study folder has the same files: `README.md` (what, why, how to reproduce,
+one status line), `PREREGISTRATION.md` (question, design, predictions, deviations),
+a run log, `labels/<run>/` (`run.json` with the pinned hashes, `prompts_index.csv`,
+`labels_long.csv`), `analysis/` scripts writing frozen outputs to `results/`, and
+`RESULTS.md`, the write-up to share. `RESULTS.md` keeps a fixed layout, which
+`report.py` reads:
+
+1. `**Question.**`, `**Answer.**` (answer first) and `**Status.**` paragraphs;
+2. `## Design`;
+3. `## Pre-registered results`, every check and prediction with its outcome,
+   failures included;
+4. `## Exploratory results`, if any, labelled as not pre-registered;
+5. `## Deviations and caveats`;
+6. `## Reproduce`, with the commit holding the numbers.
+
+Closing a run: collect the labels, run the analysis, write or update `RESULTS.md`,
+run `report.py`, commit, then push after scanning the diff for secrets, canary
+strings and benchmark text. Only committed numbers go into a write-up; a study's
+`RESULTS.md` is written only after its predictions are locked. Judges' reasoning
+and task text stay in the gitignored `data/` tree.
