@@ -12,12 +12,13 @@ to a model not in the fit.
 | | |
 |---|---|
 | procedure, step by step | `docs/runbook-benchmarks.md` |
-| success-matrix loaders | `src/adele/results/` (SWE-bench, MathArena, ARC Prize, tau2, Inspect) |
+| success-matrix loaders | `src/adele/results/` (SWE-bench, MathArena, ARC Prize, tau2, Harbor Hub for Terminal-Bench 4.0, Inspect) |
 | instance freezing | `src/adele/instances.py`, CLI `adele instances prepare` |
 | judge | CLI `adele agentic judge` |
 | partner data requests | `docs/partner-data-request.md` |
 | pilot sample (4 benchmarks × 5 tasks) | `pilot/`, regenerate with `adele agentic pilot --seed 0` |
 | results of every study, and the run registry | `RESULTS.md`, `runs.csv` |
+| every benchmark's per-task results under one set of rules (coverage, verifiably solvable tasks, model registry) | `panel/` |
 | first real-benchmark run (SWE-bench Verified, 30 tasks × 25 rubrics) | `swebench-30/` |
 | planning rubrics on all solvable SWE-bench Verified tasks (Opus, medium effort) | `swebench-pl/` |
 
