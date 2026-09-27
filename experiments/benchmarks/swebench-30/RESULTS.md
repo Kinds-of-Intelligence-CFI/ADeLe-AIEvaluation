@@ -82,6 +82,38 @@ for both judges (KNa, KNc, KNs, MMe, MSc, MSm), and five more put at least 27 of
 level for both (CEe, KNn, PLe, PLs, SNs), so on this benchmark only about half the rubrics
 separate tasks.
 
+## Exploratory results (not pre-registered)
+
+A review of where Sonnet and Opus disagree, added after the pre-registered analysis ran:
+`results/exploratory.json` (`analysis/exploratory.py`) and the judges' written reasoning.
+
+- **The disagreements are offsets at one boundary, not noise.** On the rubrics that vary, one
+  judge is usually a level above the other on the same tasks. Sonnet is higher on AT (20 tasks,
+  mostly 3 against 2), KNf (14, 4 against 3), PLp (13), VO (10, 3 against 2) and MCt (8). Opus
+  is higher on QLl (18, mostly 3 against 2) and AS (17). Rank agreement is moderate (Spearman
+  0.3–0.7), and each judge is consistent with itself: exact agreement 0.81–0.86 with its own
+  pilot labels on the anchor cells.
+- **Where the rubric text leaves room.** Both judges apply the rule to take the lower level
+  when in doubt; they differ on what a level requires for a small code fix:
+  - AT: Sonnet rates the specific issue as rare (3), Opus the task type, an issue in a standard
+    benchmark, as common (2);
+  - KNf: Sonnet counts routine use of object-oriented programming as undergraduate formal
+    knowledge (4), Opus wants that knowledge needed in depth (3);
+  - QLl: Opus counts a multi-premise deduction as level 3, Sonnet looks for the negations and
+    quantifiers the level-3 description mentions (2);
+  - PLp: Sonnet splits a small fix into subtasks (2), Opus treats one short routine with a
+    given strategy as level 1;
+  - AS: Sonnet takes the area to scan to be one module (2), Opus the whole codebase (3);
+  - VO: the judges put the same fix on either side of the 10-minute boundary between levels 2
+    and 3.
+- **Volume against the human time-to-fix bucket.** Opus orders tasks better (Spearman 0.42,
+  Sonnet 0.24), but Sonnet puts more of the "15 min – 1 hour" tasks at level 3 (10–100
+  minutes): 13 of 14, against 9 of 14 for Opus.
+- **Reading.** Within one judge, levels order tasks consistently enough for correlational tests
+  such as `swebench-pl`'s. Absolute levels, which ability profiles depend on, shift by judge at
+  these boundaries; pinning them needs anchor examples at the disputed boundaries in the rubrics,
+  or a human-adjudicated set.
+
 ## Deviations and caveats
 
 - **Deviations 1–3** changed the judge harness, not the prompts, rubrics or checks: a lean judge
@@ -102,7 +134,9 @@ separate tasks.
 
 ```
 python experiments/benchmarks/swebench-30/analysis/analyse.py
+python experiments/benchmarks/swebench-30/analysis/exploratory.py
 ```
 
-The numbers above are those committed in `0eaa2e0`. Judges' reasoning and prompts quote task
-text and stay out of the repo.
+The pre-registered numbers are those committed in `0eaa2e0`; the exploratory review was added
+in the commit that introduced `analysis/exploratory.py`. Judges' reasoning and prompts quote
+task text and stay out of the repo.
