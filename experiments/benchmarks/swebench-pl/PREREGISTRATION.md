@@ -56,7 +56,8 @@ medium. The result decides nothing in this study; it informs the judge setting o
 ## Analysis
 
 Descriptive; scripts in `analysis/`, frozen outputs in `results/`. Analysis set: the 435 solvable
-tasks, pooling step 1 (its 37 solvable tasks) and step 2.
+tasks, pooling step 1 (its 37 solvable tasks) and step 2. The predictions below were drafted with
+the design and locked by Pablo on 2026-09-27, before any analysis of this study's labels.
 
 - Level distribution of each PL rubric.
 - **Q1 (main).** Spearman ρ between PLp and solve rate. Prediction: ρ < 0. The same for PLe and PLs
@@ -64,10 +65,19 @@ tasks, pooling step 1 (its 37 solvable tasks) and step 2.
 - **Q2.** Spearman ρ between PLp and SWE-bench's human time-to-fix bucket (`difficulty`).
   Prediction: ρ > 0.
 - **Robustness.** Q1 and Q2 without the 37 step-1 tasks.
+- **Robustness, test validity (added 2026-09-27, before any analysis).** Q1 and Q2 without the
+  tasks flagged by a test-validity audit. The solve-rate cut does not remove every broken task:
+  of the three SWE-bench Verified tasks OpenAI's 2026 audit names as broken, `django__django-14725`
+  (solve rate 0.074) is in the analysis set. The audit reads each task's issue, reference patch
+  and hidden tests and asks whether the tests demand behaviour or names the issue does not
+  specify. Two judges; disagreements go to Pablo, who adjudicates without seeing any planning
+  label. Scope, prompt and decision rule are pre-registered separately before the audit runs, and
+  the flag list is frozen before this analysis reads it.
 
 Power: at n = 435, a true |ρ| of 0.15 is detected with probability ≈ 0.88 and |ρ| = 0.20 with
 ≈ 0.99 (two-sided α = 0.05, Fisher z).
 
 ## Deviations
 
-None yet.
+None yet. One amendment before any analysis (2026-09-27): predictions locked by Pablo, and the
+test-validity robustness check added.
