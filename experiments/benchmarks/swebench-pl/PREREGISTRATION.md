@@ -43,6 +43,15 @@ Run `swepl-gate-low`: the same 132 cells and prompts, judged by `adele-judge-low
 Sonnet-max and Opus-medium, with the four conditions of step 1 evaluated for low in place of
 medium. The result decides nothing in this study; it informs the judge setting of later runs.
 
+## Step 1c — Opus at low effort on every solvable task (exploratory; added 2026-09-27, after the pre-registered analysis, before any label of this run)
+
+Pablo chose Opus at low effort for the solvable SWE-bench tasks and for later annotation. Run
+`swepl-r1-low` judges the 398 `swepl-r1` tasks on PLp, PLe and PLs with `adele-judge-low`, from
+prompts identical to `swepl-r1` (checked hash by hash); with `swepl-gate-low` it gives Opus-low
+labels on all 435 solvable tasks. Reported: agreement with the Opus-medium labels at scale, and
+Q1 and Q2 recomputed on the low labels. It changes nothing in the analysis above, which stays
+on the Opus-medium labels.
+
 ## Step 2 — scale-up (run `swepl-r1`)
 
 - **Items.** All SWE-bench Verified tasks (official 500, HF revision `c104f840`) whose leaderboard
