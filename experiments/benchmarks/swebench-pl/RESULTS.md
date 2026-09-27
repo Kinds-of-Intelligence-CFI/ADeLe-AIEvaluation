@@ -83,8 +83,9 @@ every solvable task was judged again at low effort (`results/low_effort.json`,
   one Opus call.
 - **Contamination.** Opus may recognise SWE-bench issues and recall their fixes (OpenAI showed
   frontier models reproducing reference patches from task ids), so PLp could partly encode
-  remembered solution complexity. Controlling for patch size does not rule this out; tasks newer
-  than the judge (SWE-rebench, Terminal-Bench 4.0) would.
+  remembered solution complexity. Controlling for patch size does not rule this out. Tasks the
+  judge cannot have seen would, for example SWE-rebench tasks created after its training data.
+  Terminal-Bench 4.0 does not qualify: its tasks were public from early 2026 (`tau2-tb4-pl`).
 - **Broken tests.** Epoch rates SWE-bench Verified Flawed. The solve-rate cut removes most
   broken tasks but not all: `django__django-14725`, which OpenAI's audit names as broken, has a
   solve rate of 0.074. The pending audit addresses this.
