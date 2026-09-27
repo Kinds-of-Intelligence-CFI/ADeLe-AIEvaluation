@@ -1,0 +1,280 @@
+{
+  "planned_level_distributions": {
+    "swe-bench-verified (swebench-pl, Opus low, 435 solvable)": {
+      "PLp": {
+        "n": 435,
+        "mean": 1.38,
+        "share_by_level": {
+          "0": 0.034,
+          "1": 0.554,
+          "2": 0.405,
+          "3": 0.007
+        }
+      },
+      "PLe": {
+        "n": 435,
+        "mean": 2.77,
+        "share_by_level": {
+          "1": 0.007,
+          "2": 0.214,
+          "3": 0.779
+        }
+      },
+      "PLs": {
+        "n": 435,
+        "mean": 1.02,
+        "share_by_level": {
+          "0": 0.002,
+          "1": 0.977,
+          "2": 0.021
+        }
+      }
+    },
+    "tau2-airline": {
+      "PLp": {
+        "n": 49,
+        "mean": 1.8,
+        "share_by_level": {
+          "1": 0.245,
+          "2": 0.714,
+          "3": 0.041
+        }
+      },
+      "PLe": {
+        "n": 49,
+        "mean": 1.08,
+        "share_by_level": {
+          "1": 0.918,
+          "2": 0.082
+        }
+      },
+      "PLs": {
+        "n": 49,
+        "mean": 1.86,
+        "share_by_level": {
+          "1": 0.143,
+          "2": 0.857
+        }
+      }
+    },
+    "tau2-banking_knowledge": {
+      "PLp": {
+        "n": 69,
+        "mean": 2.0,
+        "share_by_level": {
+          "1": 0.072,
+          "2": 0.855,
+          "3": 0.072
+        }
+      },
+      "PLe": {
+        "n": 69,
+        "mean": 2.04,
+        "share_by_level": {
+          "1": 0.174,
+          "2": 0.609,
+          "3": 0.217
+        }
+      },
+      "PLs": {
+        "n": 69,
+        "mean": 1.81,
+        "share_by_level": {
+          "0": 0.029,
+          "1": 0.13,
+          "2": 0.841
+        }
+      }
+    },
+    "tau2-retail": {
+      "PLp": {
+        "n": 114,
+        "mean": 1.95,
+        "share_by_level": {
+          "1": 0.07,
+          "2": 0.912,
+          "3": 0.018
+        }
+      },
+      "PLe": {
+        "n": 114,
+        "mean": 1.0,
+        "share_by_level": {
+          "1": 1.0
+        }
+      },
+      "PLs": {
+        "n": 114,
+        "mean": 1.92,
+        "share_by_level": {
+          "0": 0.018,
+          "1": 0.044,
+          "2": 0.939
+        }
+      }
+    },
+    "terminal-bench-4.0.0 analysis set": {
+      "PLp": {
+        "n": 33,
+        "mean": 2.97,
+        "share_by_level": {
+          "2": 0.121,
+          "3": 0.788,
+          "4": 0.091
+        }
+      },
+      "PLe": {
+        "n": 34,
+        "mean": 3.5,
+        "share_by_level": {
+          "3": 0.5,
+          "4": 0.5
+        }
+      },
+      "PLs": {
+        "n": 34,
+        "mean": 1.24,
+        "share_by_level": {
+          "0": 0.265,
+          "1": 0.265,
+          "2": 0.441,
+          "3": 0.029
+        }
+      }
+    },
+    "terminal-bench-4.0.0 other 32": {
+      "PLp": {
+        "n": 32,
+        "mean": 2.84,
+        "share_by_level": {
+          "2": 0.188,
+          "3": 0.781,
+          "4": 0.031
+        }
+      },
+      "PLe": {
+        "n": 32,
+        "mean": 3.53,
+        "share_by_level": {
+          "3": 0.469,
+          "4": 0.531
+        }
+      },
+      "PLs": {
+        "n": 32,
+        "mean": 1.09,
+        "share_by_level": {
+          "0": 0.25,
+          "1": 0.406,
+          "2": 0.344
+        }
+      }
+    }
+  },
+  "not_preregistered_text_length": {
+    "tau2-airline": {
+      "n": 49,
+      "text_chars_vs_solve_rate": {
+        "rho": -0.323,
+        "p": 0.024
+      },
+      "PLp_vs_text_chars": {
+        "rho": 0.521,
+        "p": 0.00012
+      },
+      "partial_PLp_vs_solve_rate_given_text_chars": -0.436,
+      "solve_rate_by_PLp": {
+        "1": {
+          "n": 12,
+          "mean": 0.97
+        },
+        "2": {
+          "n": 35,
+          "mean": 0.787
+        },
+        "3": {
+          "n": 2,
+          "mean": 0.554
+        }
+      }
+    },
+    "tau2-banking_knowledge": {
+      "n": 69,
+      "text_chars_vs_solve_rate": {
+        "rho": -0.517,
+        "p": 5.4e-06
+      },
+      "PLp_vs_text_chars": {
+        "rho": 0.417,
+        "p": 0.00037
+      },
+      "partial_PLp_vs_solve_rate_given_text_chars": -0.109,
+      "solve_rate_by_PLp": {
+        "1": {
+          "n": 5,
+          "mean": 0.506
+        },
+        "2": {
+          "n": 59,
+          "mean": 0.42
+        },
+        "3": {
+          "n": 5,
+          "mean": 0.176
+        }
+      }
+    },
+    "tau2-retail": {
+      "n": 114,
+      "text_chars_vs_solve_rate": {
+        "rho": -0.336,
+        "p": 0.00026
+      },
+      "PLp_vs_text_chars": {
+        "rho": 0.283,
+        "p": 0.0022
+      },
+      "partial_PLp_vs_solve_rate_given_text_chars": -0.179,
+      "solve_rate_by_PLp": {
+        "1": {
+          "n": 8,
+          "mean": 0.918
+        },
+        "2": {
+          "n": 104,
+          "mean": 0.755
+        },
+        "3": {
+          "n": 2,
+          "mean": 0.688
+        }
+      }
+    },
+    "terminal-bench-4.0.0 analysis set": {
+      "n": 33,
+      "text_chars_vs_solve_rate": {
+        "rho": 0.249,
+        "p": 0.16
+      },
+      "PLp_vs_text_chars": {
+        "rho": 0.07,
+        "p": 0.7
+      },
+      "partial_PLp_vs_solve_rate_given_text_chars": -0.08,
+      "solve_rate_by_PLp": {
+        "2": {
+          "n": 4,
+          "mean": 0.642
+        },
+        "3": {
+          "n": 26,
+          "mean": 0.46
+        },
+        "4": {
+          "n": 3,
+          "mean": 0.615
+        }
+      }
+    }
+  }
+}
