@@ -394,6 +394,43 @@ def results_swebench(experiments_dir, split, instance_ids, output):
                f"{df.groupby(['model', 'scaffold']).ngroups} model/scaffold pairs) → {output}")
 
 
+@results.command("fetch-tau2")
+@click.option("--entry", "entries", multiple=True,
+              help="Only these submissions (bucket folder names); default: every text-track one.")
+@click.option("--instances-dir", default="data/instances", show_default=True,
+              help="Frozen tau2 instances to check each task's text against, by prompt hash.")
+@click.option("--cache-dir", default="data/downloads/tau2-cache", show_default=True,
+              help="Parsed rows per results file, reused on reruns (small).")
+@click.option("--output", "-o", default="data/results/tau2.parquet", show_default=True)
+def results_tau2(entries, instances_dir, cache_dir, output):
+    """Per-task rewards from Sierra's public tau2 bucket (streams ~6 GB, keeps only rewards)."""
+    import glob
+    import logging
+
+    import pandas as pd
+
+    from adele.results.sources import tau2
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+    df = tau2.fetch_instances(entries=list(entries) or None, cache_dir=cache_dir)
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows ({df.groupby(['model', 'scaffold']).ngroups} model/scaffold "
+               f"pairs) → {output}")
+    paths = glob.glob(f"{instances_dir}/instances_tau2-*.csv")
+    if not paths:
+        click.echo(f"no frozen tau2 instances in {instances_dir}; text not checked")
+        return
+    frozen = pd.concat(pd.read_csv(p, dtype={"instance_id": str}) for p in paths)
+    j = df.merge(frozen[["benchmark", "instance_id", "prompt_sha12"]],
+                 on=["benchmark", "instance_id"], how="left")
+    j["joined"] = j["prompt_sha12"].notna()
+    j["same_text"] = j["task_prompt_sha12"] == j["prompt_sha12"]
+    report = j.groupby(["run", "benchmark"]).agg(
+        tasks=("instance_id", "size"), joined=("joined", "sum"), same_text=("same_text", "sum"))
+    click.echo("\nTask ids found among the frozen instances, and tasks whose text matches them:")
+    click.echo(report.to_string())
+
+
 @results.command("fetch-matharena")
 @click.option("--dataset", default="MathArena/aime_2026_outputs", show_default=True)
 @click.option("--local-path", default=None, help="Local parquet copy (skips the Hub).")
