@@ -157,6 +157,41 @@ def _load_terminal_bench() -> pd.DataFrame:
                   ds[cols["id"]].astype(str).tolist(), "terminalbench", "tb")
 
 
+TB4_REPO, TB4_REVISION = "harborframework/terminal-bench", "v4.0.0"
+
+
+def _load_terminal_bench_4() -> pd.DataFrame:
+    """Terminal-Bench 4.0.0 task instructions: ``tasks/<name>/instruction.md`` of the
+    Hub mirror at tag v4.0.0 (66 tasks). The text carries no-training canaries, so it
+    must stay in the gitignored data/ tree."""
+    from pathlib import Path
+
+    from huggingface_hub import snapshot_download
+    root = Path(snapshot_download(TB4_REPO, repo_type="dataset", revision=TB4_REVISION,
+                                  allow_patterns=["tasks/*/instruction.md"]))
+    paths = sorted(root.glob("tasks/*/instruction.md"))
+    return _frame([p.read_text(encoding="utf-8") for p in paths],
+                  [p.parent.name for p in paths], "terminalbench4", "tb4")
+
+
+def terminal_bench_4_metadata() -> pd.DataFrame:
+    """Per-task metadata from each ``task.toml`` at tag v4.0.0: category, subcategory
+    and the author's expert time estimate (hours), an independent difficulty anchor."""
+    import tomllib
+    from pathlib import Path
+
+    from huggingface_hub import snapshot_download
+    root = Path(snapshot_download(TB4_REPO, repo_type="dataset", revision=TB4_REVISION,
+                                  allow_patterns=["tasks/*/task.toml"]))
+    rows = []
+    for path in sorted(root.glob("tasks/*/task.toml")):
+        meta = tomllib.loads(path.read_text(encoding="utf-8")).get("metadata", {})
+        rows.append({"instance_id": path.parent.name, "category": meta.get("category"),
+                     "subcategory": meta.get("subcategory"),
+                     "expert_time_estimate_hours": meta.get("expert_time_estimate_hours")})
+    return pd.DataFrame(rows)
+
+
 def _load_aime() -> pd.DataFrame:
     """AIME 2025+2026 problem statements (MathArena problem sets).
 
@@ -184,6 +219,7 @@ BENCH_LOADERS: Dict[str, Callable[[], pd.DataFrame]] = {
     "usaco": _load_usaco,
     "taubench": _load_taubench,
     "terminalbench": _load_terminal_bench,
+    "terminalbench4": _load_terminal_bench_4,
     "aime": _load_aime,
 }
 

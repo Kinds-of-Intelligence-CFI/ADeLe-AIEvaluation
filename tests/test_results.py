@@ -137,6 +137,53 @@ def test_tau2_aggregates_from_fixture(tmp_path):
     assert "instance_id" not in df.columns
 
 
+def test_tau2_parse_results_file():
+    import hashlib
+
+    from adele.agentic.benchmarks import _taubench_prompt
+
+    instr = {"reason_for_call": "Cancel reservation EHGLP3.", "known_info": "You are Emma Kim."}
+    data = {
+        "info": {"environment_info": {"domain_name": "airline"},
+                 "user_info": {"llm": "gpt-5.2"}, "agent_info": {"llm": "some-model"}},
+        "tasks": [{"id": 0, "user_scenario": {"instructions": instr}}],
+        "simulations": [{"task_id": "0", "trial": t, "reward_info": {"reward": r}}
+                        for t, r in enumerate([1.0, 0.0, 1.0, None])],
+    }
+    df = tau2.parse_results(data)
+    row = df.iloc[0]
+    assert (row["benchmark"], row["instance_id"], row["n_trials"]) == ("tau2-airline", "0", 4)
+    assert row["success"] == 0.5 and row["mean_reward"] == 0.5  # a missing reward counts as 0
+    assert row["task_prompt_sha12"] == hashlib.sha256(
+        _taubench_prompt("airline", instr).encode()).hexdigest()[:12]
+    assert tau2.parse_results(data, domains=("retail",)).empty
+
+
+def test_tau2_label_runs_keeps_two_runs_of_one_domain_apart():
+    base = dict(benchmark="tau2-telecom", instance_id="t1", model="GPT-4.1", scaffold="tau2-agent",
+                success=1.0, n_trials=4, source="s")
+    df = pd.DataFrame([
+        {**base, "entry": "gpt-4-1", "source_key": "s/gpt-4-1/trajectories/telecom_default.json"},
+        {**base, "entry": "gpt-4-1", "source_key": "s/gpt-4-1/trajectories/telecom_no-user-op.json"},
+        {**base, "model": "o4-mini", "entry": "o4", "source_key": "s/o4/trajectories/telecom.json"},
+    ])
+    out = normalize(tau2.label_runs(df))
+    assert sorted(out["scaffold"]) == ["tau2-agent", "tau2-agent#gpt-4-1/telecom_default",
+                                       "tau2-agent#gpt-4-1/telecom_no-user-op"]
+
+
+def test_harbor_hub_export(tmp_path):
+    from adele.results.sources import harbor_hub
+
+    (tmp_path / "t.json").write_text(json.dumps({"tasks": ["a", "b"], "rows": [
+        {"id": "r1", "model": "m", "agent": "codex",
+         "solved": "30", "rewarded": "54", "exceptions": "01"}]}))
+    (tmp_path / "b.tsv").write_text("row_id\teffort\taccuracy\nr1\thigh\t30.0\n")
+    df = harbor_hub.from_export(tmp_path / "t.json", tmp_path / "b.tsv").set_index("instance_id")
+    assert df.loc["a", "success"] == 0.6 and df.loc["b", "success"] == 0.0
+    assert df.loc["b", "n_trials"] == 4 and df.loc["a", "scaffold"] == "codex|effort=high"
+
+
 # ---------------------------------------------------------------- arcprize (parser only)
 
 def test_arcprize_parse_json_blob_and_glyph_fallback():

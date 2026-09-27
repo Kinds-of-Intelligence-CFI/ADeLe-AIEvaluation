@@ -57,6 +57,7 @@ def _split_tau(row: pd.Series) -> Tuple[str, str]:
 CANONICALIZERS: Dict[str, Callable[[pd.Series], Tuple[str, str]]] = {
     "swebench": lambda r: ("swe-bench-verified", str(r["source_id"])),
     "terminalbench": lambda r: ("terminal-bench-2.0", str(r["source_id"])),
+    "terminalbench4": lambda r: ("terminal-bench-4.0.0", str(r["source_id"])),
     "aime": _split_aime,
     "taubench": _split_tau,
     "usaco": lambda r: ("usaco", str(r["source_id"])),
