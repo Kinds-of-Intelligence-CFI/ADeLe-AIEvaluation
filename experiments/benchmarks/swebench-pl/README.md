@@ -1,6 +1,7 @@
 # swebench-pl — the planning rubrics on all solvable SWE-bench Verified tasks
 
-Owner: Pablo. Status: pre-registered; step 1 (effort gate) pending.
+Owner: Pablo. Status: step 1 passed (`RUNLOG.md`); step 2 labels complete (1,194/1,194 parsed);
+analysis pending.
 
 PLp, PLe and PLs on the 435 SWE-bench Verified tasks with a leaderboard solve rate of at least
 0.05, judged by Opus at medium effort, to test whether planning demand tracks difficulty. Step 1
