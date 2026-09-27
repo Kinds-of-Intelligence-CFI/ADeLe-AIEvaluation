@@ -30,7 +30,7 @@ same judge setting, rubric files and prompt builder.
     benchmark's training-corpus canary, which are not part of the task.
 - A missing or unparseable answer is retried once, and the retry is recorded.
 - Dry run: the first six calls (one Terminal-Bench task and one tau2 task, three rubrics each) go
-  through one relay. The full run starts only if their transcripts pass the protocol check:
+  through one relay per run. The full run starts only if their transcripts pass the protocol check:
   - the exact message;
   - model and effort;
   - no CLAUDE.md attachment;
@@ -125,4 +125,5 @@ Terminal-Bench can confirm an effect as large as SWE-bench's, but cannot rule ou
 
 ## Deviations
 
-None yet.
+None yet. One amendment before any label (2026-09-27): the dry run goes through one relay per
+run, not a single relay, because a relay serves one judge-file folder.
