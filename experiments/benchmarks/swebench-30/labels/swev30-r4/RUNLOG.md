@@ -62,3 +62,41 @@ Approved by Pablo after the dry run above.
 - **Coverage.** Opus 792/792 answered and parsed (parse rate 100%); no retries needed.
 - **Cost.** Mean final-request context 14.6k tokens (5.7k–55.9k), mean 82 s per call (max
   455 s); 16 relays of 42–50 cells, 29–50 min each; the pass ran from 12:44 to 15:25.
+
+## 2026-09-26/27 — full run, Sonnet pass
+
+Started by Pablo at 18:45 on 2026-09-26, same harness as the Opus pass (`judge-dispatcher`
+relays sending each cell to `adele-judge` with the exact two-line message).
+
+- **Paced by the plan's 5-hour limit.** The combined use of this and another session hit the
+  limit once, around 19:33 on 2026-09-26. The pass was then run in batches of one task (at most
+  25 cells) and paused at 23:12 to leave room for other sessions. It resumed on 2026-09-27 at
+  10:06, paused again near the top of the 5-hour window, and ended at 15:25, the last cells in
+  relays of two tasks (50 cells).
+- **Count at the pause corrected.** 284 answer files were counted at the pause and reported as
+  284 of 792 answers. 12 of those files were stray copies (next item), so 272 cells had been answered and 520 remained.
+- **Stray copies on two tasks.** On `pylint-dev__pylint-4551` and `pylint-dev__pylint-6528`,
+  21 Sonnet judges first wrote their answer to a file named with a truncated id
+  (`pylint-4551@<dim>.txt`, `pylint-6528@<dim>.txt`), then wrote it again to the path in their
+  message; three more first tried to read a truncated path. Each stray copy is byte-identical to
+  the answer at the correct path. The copies are kept under
+  `judge-io/swev30-r4/responses_stray/sonnet/` and never analysed. This is the judges departing
+  from their instructions (one extra file), not the harness; no label is affected. No other task
+  and no Opus judge did it.
+- **Retries.** Four cells were cut off mid-call by the 2026-09-26 pause and got their one
+  recorded retry on 2026-09-27: `astropy__astropy-14508@KNf`, `astropy__astropy-14508@KNn`,
+  `django__django-11433@CEe`, `sympy__sympy-15976@MMs`. Their first attempts wrote nothing.
+- **Session-limit notices.** Nine judges' transcripts end with the harness's session-limit
+  notice (19:32–19:34 on 2026-09-26). Each had written its answer before the notice; the
+  answers are kept.
+- **Protocol check** over all 796 Sonnet judge transcripts (792 cells and the four retries):
+  exact two-line message; `claude-sonnet-5` at effort `max` (the one transcript without an
+  effort record is a cut-off first attempt that produced no output); no CLAUDE.md of any kind.
+  The attachments are the Opus pass's, plus the `auto_mode` flag and, on 8 calls, an empty
+  tool-bookkeeping record. No file opened or written other than the cell's prompt and answer,
+  apart from the stray copies above.
+- **Coverage.** Sonnet 792/792 answered and parsed (parse rate 100%). With the Opus pass, both
+  judges are complete: 1,584/1,584.
+- **Cost.** Mean final-request context 15.8k tokens (max 42.2k), mean 94 s per call (max
+  740 s). The 520 cells of 2026-09-27 took the weekly all-model limit from 41% to 57%, which
+  includes the orchestrating session and another session running in parallel.
