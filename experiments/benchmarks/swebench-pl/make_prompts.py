@@ -10,6 +10,7 @@ JUDGE_IO/<run>/prompts/. sample.csv, the indexes (hashes) and run.json are commi
 
     python experiments/benchmarks/swebench-pl/make_prompts.py
     python experiments/benchmarks/swebench-pl/make_prompts.py --low-gate   # step 1b only
+    python experiments/benchmarks/swebench-pl/make_prompts.py --low-r1     # step 1c only
 """
 
 import argparse
@@ -119,6 +120,13 @@ def write_run(run_id: str, ids: list[str], rubrics, text: pd.Series, sample_note
     return index
 
 
+def check_same_prompts(index: pd.DataFrame, run_id: str) -> None:
+    ref = pd.read_csv(HERE / f"labels/{run_id}/prompts_index.csv", dtype={"instance_id": str})
+    key = ["instance_id", "demand"]
+    assert index.set_index(key)["prompt_sha256"].sort_index().equals(
+        ref.set_index(key)["prompt_sha256"].sort_index()), f"prompts differ from {run_id}"
+
+
 def check_gate(index: pd.DataFrame) -> None:
     r4 = pd.read_csv(S30 / "labels/swev30-r4/prompts_index.csv", dtype={"instance_id": str})
     ref = r4[r4["demand"].isin(DIMS)].set_index(["instance_id", "demand"])["prompt_sha256"].sort_index()
@@ -129,7 +137,9 @@ def check_gate(index: pd.DataFrame) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--low-gate", action="store_true", help="write only run swepl-gate-low (step 1b)")
-    low_only = ap.parse_args().low_gate
+    ap.add_argument("--low-r1", action="store_true", help="write only run swepl-r1-low (step 1c)")
+    args = ap.parse_args()
+    low_only = args.low_gate
     inst = pd.read_parquet(ROOT / "data/instances/instances_swe-bench-verified.parquet")
     text = inst.set_index("instance_id")["prompt"]
     flags = pd.read_parquet(ROOT / "data/results/swebench.parquet")
@@ -143,6 +153,10 @@ def main() -> None:
     if low_only:
         check_gate(write_run("swepl-gate-low", gate_ids, rubrics, text,
                              "the 44 swebench-30 tasks, as swepl-gate", LOW_JUDGES, LOW_AGENT))
+        return
+    if args.low_r1:
+        check_same_prompts(write_run("swepl-r1-low", scale_ids, rubrics, text,
+                                     "the 398 swepl-r1 tasks, as swepl-r1", LOW_JUDGES, LOW_AGENT), "swepl-r1")
         return
 
     sample = pd.DataFrame({"instance_id": gate_ids + scale_ids})
