@@ -1,7 +1,7 @@
 # swebench-30 — first real-benchmark annotation run
 
 Owner: Pablo. Status: run `swev30-r4` complete, both judges 792/792 parsed
-(`labels/swev30-r4/RUNLOG.md`); analysis pending. `swev30-r1` to `swev30-r3` were dry runs,
+(`labels/swev30-r4/RUNLOG.md`); pre-registered analysis done (`results/analysis.json`). `swev30-r1` to `swev30-r3` were dry runs,
 superseded by deviations 1 to 3 in `PREREGISTRATION.md`.
 
 30 SWE-bench Verified tasks, stratified by leaderboard solve rate, plus the 14 pilot tasks as
