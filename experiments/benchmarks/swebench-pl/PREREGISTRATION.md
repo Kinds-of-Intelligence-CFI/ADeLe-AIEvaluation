@@ -36,6 +36,13 @@ quadratic-weighted κ). Step 2 starts only if all of the following hold:
 
 Otherwise step 2 does not start, and the gate result is reported.
 
+## Step 1b — Opus at low effort (exploratory; added 2026-09-27, before any low label)
+
+Run `swepl-gate-low`: the same 132 cells and prompts, judged by `adele-judge-low`, identical to
+`adele-judge-medium` except `effort: low`. The same metrics are reported against Opus-max,
+Sonnet-max and Opus-medium, with the four conditions of step 1 evaluated for low in place of
+medium. The result decides nothing in this study; it informs the judge setting of later runs.
+
 ## Step 2 — scale-up (run `swepl-r1`)
 
 - **Items.** All SWE-bench Verified tasks (official 500, HF revision `c104f840`) whose leaderboard
