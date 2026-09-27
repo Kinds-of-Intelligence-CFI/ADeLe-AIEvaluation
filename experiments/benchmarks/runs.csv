@@ -6,3 +6,4 @@ swebench-30,swev30-r4,2026-09-26T10:06:26+00:00,214608b,792,sonnet;opus,1584,158
 swebench-pl,swepl-gate,2026-09-26T21:45:06+00:00,0157be8,132,opus-medium,132,132
 swebench-pl,swepl-gate-low,2026-09-27T07:11:45+00:00,b0e68ef,132,opus-low,132,132
 swebench-pl,swepl-r1,2026-09-26T21:45:06+00:00,0157be8,1194,opus-medium,1194,1194
+swebench-pl,swepl-r1-low,2026-09-27T19:38:56+00:00,1a0d5f8,1194,opus-low,1194,1194

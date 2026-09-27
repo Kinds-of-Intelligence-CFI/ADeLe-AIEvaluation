@@ -62,3 +62,23 @@ lower, 2 higher; PLp shows no direction, 4 lower and 5 higher). It saves little:
 final-request context 7.7k tokens against 7.9k for medium, 12 s per call against 15 s. Effort
 below medium is not a useful cost lever for this protocol: most of each call is the fixed
 prompt reading and the written assessment, not thinking.
+
+## 2026-09-27 — step 1c, Opus at low effort on the 398 `swepl-r1` tasks (run `swepl-r1-low`, exploratory)
+
+1,194 calls through 12 `judge-dispatcher-low` relays of up to 102 cells, four at a time, from the
+pinned inputs (`ac87c20`); prompts identical to `swepl-r1`, checked hash by hash.
+
+- **Protocol check** over all 1,194 judge transcripts: exact two-line message, `claude-opus-5-5`
+  at effort `low`, no CLAUDE.md of any kind; the attachments are those of the earlier runs. One
+  judge (`matplotlib__matplotlib-25775@PLp`) first sent a malformed Write, which the harness
+  rejected before writing anything, then wrote its answer to the right file. No stray files.
+  Relay summaries miscounted (for example "135 sent" for 102 cells); coverage was verified from
+  the answer files.
+- **Coverage.** 1,194/1,194 answered and parsed. With `swepl-gate-low`, every one of the 435
+  solvable tasks has Opus-low labels on PLp, PLe and PLs.
+- **Cost.** Mean final-request context 7.8k tokens, mean 13 s per call; the run (with its
+  orchestration) took the weekly all-model limit from 68% to 75%.
+- **Result** (`analysis/low_effort.py`, `results/low_effort.json`): low against medium on the
+  435 tasks, exact 0.88 and within-1 1.00 over 1,305 cells (κ 0.92); PLp 0.86, PLe 0.82, PLs 0.98.
+  On the low labels, PLp against solve rate −0.57 (medium −0.63), PLe −0.46 (−0.53), PLp against
+  time-to-fix +0.45 (+0.45).

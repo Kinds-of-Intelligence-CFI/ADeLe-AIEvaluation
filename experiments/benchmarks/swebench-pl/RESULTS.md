@@ -64,6 +64,17 @@ analysis ran.
 - **Within repositories:** from −0.57 (sympy, 65 tasks) to −0.75 (matplotlib, 27); django
   (204 tasks) −0.63.
 
+## Opus at low effort (step 1c, exploratory)
+
+Added after the pre-registered analysis, at Pablo's choice of Opus at low effort for later runs:
+every solvable task was judged again at low effort (`results/low_effort.json`,
+`analysis/low_effort.py`).
+
+- **Agreement with medium effort**, 435 tasks: exact 0.88 and within one level 1.00 over 1,305
+  cells (κ 0.92); PLp 0.86, PLe 0.82, PLs 0.98. Low is 0.06 of a level higher on average.
+- **The main results hold, slightly weaker:** PLp against solve rate −0.57 (medium −0.63), PLe
+  −0.46 (medium −0.53), PLp against human time-to-fix +0.45 (medium +0.45).
+
 ## Deviations and caveats
 
 - **Deviations:** none. One amendment before any analysis: predictions locked, test-validity

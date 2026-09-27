@@ -2,7 +2,8 @@
 
 Owner: Pablo. Status: step 1 passed (`RUNLOG.md`); step 2 labels complete (1,194/1,194 parsed);
 predictions locked 2026-09-27; pre-registered analysis done (`results/analysis.json`), except
-the test-validity robustness check, which waits for the audit.
+the test-validity robustness check, which waits for the audit. Opus-low labels on all 435
+solvable tasks (step 1c, exploratory) are in `labels/swepl-r1-low/` and `labels/swepl-gate-low/`.
 
 PLp, PLe and PLs on the 435 SWE-bench Verified tasks with a leaderboard solve rate of at least
 0.05, judged by Opus at medium effort, to test whether planning demand tracks difficulty. Step 1
