@@ -22,3 +22,21 @@ the 27 PL cells it had answered):
 All four conditions hold (within-1 ≥ 0.90; exact 0.889 ≥ 0.741; shifts within ±0.25; parse
 1.00), so step 2 goes ahead. Cost: mean final-request context 7.9k tokens (3.2k–10.9k) against
 14.6k for the same judge at max; mean 15 s per call against 82 s.
+
+## 2026-09-27 — step 2, scale-up (run `swepl-r1`): complete
+
+1,194 Opus-medium calls (398 tasks × PLp, PLe, PLs) through eight `judge-dispatcher-medium`
+relays of 144–150 cells, four at a time, 03:56–04:40, after the 5-hour usage window reset (the
+run was held back from the evening window, which the operator's other work shared).
+
+- Relays: one judge call per cell, no duplicate, no other tool call (checked in every relay's
+  transcript; their own summaries undercount).
+- Protocol check over all 1,194 judge transcripts: exact two-line message, `claude-opus-5-5`,
+  effort `medium`, no CLAUDE.md of any kind, no file opened or written other than the cell's
+  prompt and answer; 0 problems. One transcript also carries a `deferred_tools_record`
+  attachment (a harness record of available tools), otherwise the attachments are the gate's.
+- Coverage: 1,194/1,194 answered and parsed; no retries needed.
+- Cost: mean final-request context 8.1k tokens (6.7k–19.5k), mean 16 s per call (max 24 s).
+
+With step 1's 37 solvable tasks, all 435 solvable tasks now have PL labels from the same judge
+and effort. The analysis waits for Pablo's review of the pre-registered predictions.
