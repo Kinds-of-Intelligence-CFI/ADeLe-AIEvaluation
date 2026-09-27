@@ -29,6 +29,12 @@ same judge setting, rubric files and prompt builder.
   - Terminal-Bench: the task's `instruction.md`, without the HTML comment lines that carry the
     benchmark's training-corpus canary, which are not part of the task.
 - A missing or unparseable answer is retried once, and the retry is recorded.
+- **Answers by another model (amendment 2).** The registered judge is `claude-opus-5-5`. When a
+  safety classifier stops it, Claude Code may finish the call with another model.
+  - `writers.py` matches each answer file to the Write call that produced it (same SHA-256) in
+    the judge's transcript, and records the writing model in `labels/<run>/writers.csv`.
+  - An answer written by another model is moved to `responses_fallback/`, and the cell is retried
+    once. If the retry again ends with another model, the cell has no label.
 - Dry run: the first six calls (one Terminal-Bench task and one tau2 task, three rubrics each) go
   through one relay per run. The full run starts only if their transcripts pass the protocol check:
   - the exact message;
@@ -72,7 +78,9 @@ the analysis uses. It is frozen before any label.
 
 ## Analysis
 
-Descriptive. `analysis/analyse.py` writes the frozen outputs to `results/`. The statistics are
+Descriptive. `analysis/analyse.py` writes the frozen outputs to `results/`. Labels are those the
+registered judge wrote; a task without one on a rubric drops out of that rubric's tests, and the
+counts are reported. The statistics are
 `swebench-pl`'s:
 - Spearman ρ, with a 95% CI by Fisher z using the Bonett–Wright standard error, and a two-sided p;
 - a prediction is supported if p < 0.05 with the predicted sign;
@@ -90,6 +98,8 @@ Descriptive. `analysis/analyse.py` writes the frozen outputs to `results/`. The 
     - The per-domain ρ are reported, without predictions of their own.
   - **Terminal-Bench**: the 34 tasks.
 - **Q2 (Terminal-Bench).** PLp against expert time, on the 34 tasks. Prediction: ρ > 0.
+- **Robustness, answers by other models (amendment 2).** Q1 and Q2 again, with the answers other
+  models wrote filling the cells the registered judge did not answer.
 - **Robustness (tau2).**
   - Q1 with the solve rate over all configurations (the panel's `solve_rate`).
   - Q1 pooled over the 232 tasks, without the domain split.
@@ -127,3 +137,10 @@ Terminal-Bench can confirm an effect as large as SWE-bench's, but cannot rule ou
 
 None yet. One amendment before any label (2026-09-27): the dry run goes through one relay per
 run, not a single relay, because a relay serves one judge-file folder.
+
+Amendment 2 (2026-09-27, after the dry run, before the full run and before any analysis): in the
+dry run, a safety classifier stopped the judge on two of the three calls for `uefi-bootkit`
+(Terminal-Bench, Security), and Claude Code finished both with `claude-opus-4-8`. Added: the rule on
+answers by another model, `writers.py`, the writing model in `labels_long.csv`, and the analysis
+of cells without a label and of other models' answers. In `swebench-pl`, five of its 2,388 Opus
+calls had a classifier stop, and Opus 5.5 wrote every one of those answers itself.

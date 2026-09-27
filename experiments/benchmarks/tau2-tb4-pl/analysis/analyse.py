@@ -9,6 +9,9 @@ mean of Fisher z); Q2, PLp against Terminal-Bench's expert time estimate; the ta
 checks; and the planned exploratory correlations on Terminal-Bench's other 32 tasks and all 66.
 Statistics as in swebench-pl (its `rho`): two-sided alpha = 0.05, Fisher-z 95% CI with the
 Bonett-Wright standard error; a prediction is supported when p < 0.05 with the predicted sign.
+Labels are those the registered judge (claude-opus-5-5) wrote; a task without one on a rubric
+drops out of that rubric's tests. The tests are repeated with the answers other models wrote
+after a safety-classifier stop (amendment 2).
 
 Needs the committed labels and sample.csv. Writes results/analysis.json and results/pl_levels.csv.
 
@@ -27,6 +30,8 @@ HERE = Path(__file__).resolve().parents[1]
 DIMS = ["PLp", "PLe", "PLs"]
 RUNS = ["tau2pl-r1", "tb4pl-r1"]
 TB4 = "terminal-bench-4.0.0"
+JUDGE_MODEL = "claude-opus-5-5"
+TESTS = ["Q1_tau2_within_domain", "Q1_terminal_bench", "Q2_terminal_bench_PLp_vs_expert_hours"]
 
 _spec = importlib.util.spec_from_file_location("swepl_analyse", HERE.parent / "swebench-pl/analysis/analyse.py")
 _swepl = importlib.util.module_from_spec(_spec)
@@ -39,7 +44,7 @@ def combined(df: pd.DataFrame, dim: str, outcome: str, direction: str) -> dict:
     Fisher z (Bonett-Wright variances). A domain where the rubric takes one value contributes
     nothing."""
     per, z, w = {}, [], []
-    for bench, g in df.groupby("benchmark"):
+    for bench, g in df.dropna(subset=[dim, outcome]).groupby("benchmark"):
         if g[dim].nunique() < 2:
             per[bench] = {"n": len(g), "note": "one level: not included"}
             continue
@@ -60,19 +65,24 @@ def combined(df: pd.DataFrame, dim: str, outcome: str, direction: str) -> dict:
             "per_domain": per}
 
 
+def corr(df: pd.DataFrame, dim: str, outcome: str, direction: str) -> dict:
+    g = df.dropna(subset=[dim, outcome])
+    return rho(g[dim], g[outcome], direction)
+
+
 def tested(df: pd.DataFrame) -> list[str]:
     return ["PLp"] + [d for d in DIMS[1:] if df[d].nunique() >= 3]
 
 
 def levels(df: pd.DataFrame) -> dict:
-    return {d: {int(k): int(v) for k, v in df[d].value_counts().reindex(range(6), fill_value=0).items()}
-            for d in DIMS}
+    return {d: {**{int(k): int(v) for k, v in df[d].value_counts().reindex(range(6), fill_value=0).items()},
+                "no_label": int(df[d].isna().sum())} for d in DIMS}
 
 
 def analyse(labels: pd.DataFrame, sample: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
     wide = labels.pivot(index=["benchmark", "instance_id"], columns="demand", values="level")[DIMS]
-    df = sample.set_index(["benchmark", "instance_id"]).join(wide, how="inner").reset_index()
-    assert len(df) == len(sample) and df[DIMS].notna().all().all()
+    df = sample.set_index(["benchmark", "instance_id"]).join(wide, how="left").reset_index()
+    assert len(df) == len(sample)
     tau2 = df[df["benchmark"].str.startswith("tau2-") & df["analysis_set"]]
     tb_all = df[df["benchmark"] == TB4]
     tb, tb_other = tb_all[tb_all["analysis_set"]], tb_all[~tb_all["analysis_set"]]
@@ -80,7 +90,7 @@ def analyse(labels: pd.DataFrame, sample: pd.DataFrame) -> tuple[dict, pd.DataFr
 
     sets = {**{b: g for b, g in tau2.groupby("benchmark")}, "tau2 (3 domains)": tau2,
             f"{TB4} analysis set": tb, f"{TB4} other 32": tb_other}
-    table = pd.DataFrame([{"set": s, "demand": d, "level": k, "tasks": v}
+    table = pd.DataFrame([{"set": s, "demand": d, "level": str(k), "tasks": v}
                           for s, g in sets.items() for d, c in levels(g).items() for k, v in c.items()])
     dims_tau2, dims_tb = tested(tau2), tested(tb)
     out = {
@@ -88,14 +98,14 @@ def analyse(labels: pd.DataFrame, sample: pd.DataFrame) -> tuple[dict, pd.DataFr
         "levels": {s: levels(g) for s, g in sets.items()},
         "rubrics_tested_in_Q1": {"tau2": dims_tau2, TB4: dims_tb},
         "Q1_tau2_within_domain": {d: combined(tau2, d, "solve_rate", "negative") for d in dims_tau2},
-        "Q1_terminal_bench": {d: rho(tb[d], tb["solve_rate"], "negative") for d in dims_tb},
-        "Q2_terminal_bench_PLp_vs_expert_hours": rho(tb["PLp"], tb["expert_hours"], "positive"),
+        "Q1_terminal_bench": {d: corr(tb, d, "solve_rate", "negative") for d in dims_tb},
+        "Q2_terminal_bench_PLp_vs_expert_hours": corr(tb, "PLp", "expert_hours", "positive"),
         "robustness_tau2_solve_rate_all_configurations": {
             d: combined(tau2, d, "solve_rate_all", "negative")["combined"] for d in dims_tau2},
-        "robustness_tau2_pooled_over_domains": {d: rho(tau2[d], tau2["solve_rate"], "negative") for d in dims_tau2},
+        "robustness_tau2_pooled_over_domains": {d: corr(tau2, d, "solve_rate", "negative") for d in dims_tau2},
         "exploratory_terminal_bench": {
-            name: {"PLp_vs_solve_rate": rho(g["PLp"], g["solve_rate"], "negative"),
-                   "PLp_vs_expert_hours": rho(g["PLp"], g["expert_hours"], "positive")}
+            name: {"PLp_vs_solve_rate": corr(g, "PLp", "solve_rate", "negative"),
+                   "PLp_vs_expert_hours": corr(g, "PLp", "expert_hours", "positive")}
             for name, g in (("other_32", tb_other), ("all_66", tb_all))},
     }
     return out, table
@@ -103,9 +113,15 @@ def analyse(labels: pd.DataFrame, sample: pd.DataFrame) -> tuple[dict, pd.DataFr
 
 def main() -> None:
     labels = pd.concat(pd.read_csv(HERE / f"labels/{r}/labels_long.csv", dtype={"instance_id": str}) for r in RUNS)
-    assert labels["valid"].all() and (labels["judge"] == "opus-low").all()
+    assert (labels["judge"] == "opus-low").all()
     sample = pd.read_csv(HERE / "sample.csv", dtype={"instance_id": str})
-    out, table = analyse(labels, sample)
+    usable = labels[labels["valid"]]
+    out, table = analyse(usable[usable["writer_model"] == JUDGE_MODEL], sample)
+    other = usable[usable["writer_model"] != JUDGE_MODEL]
+    out["unparsed_answers"] = int((~labels["valid"]).sum())
+    out["answers_by_other_models"] = other[["benchmark", "instance_id", "demand", "writer_model"]].to_dict("records")
+    out["robustness_with_other_models_answers"] = (
+        {k: v for k, v in analyse(usable, sample)[0].items() if k in TESTS} if len(other) else "none")
     (HERE / "results").mkdir(exist_ok=True)
     table.to_csv(HERE / "results/pl_levels.csv", index=False)
     (HERE / "results/analysis.json").write_text(json.dumps(out, indent=2) + "\n")
