@@ -1,0 +1,7 @@
+benchmark,tasks_with_results,verifiably_solvable,known_broken,text_collapsed,configs,single_models,systems,rows_text_differs,models_G0,models_G1,models_G2,models_G3,models_unknown
+swe-bench-verified,500,434,3,0,135,32,68,0,0,1,11,19,1
+tau2-airline,50,49,0,0,16,14,1,198,0,3,7,4,0
+tau2-banking_knowledge,93,69,0,0,29,26,0,118,9,9,7,1,0
+tau2-retail,114,114,0,0,16,14,1,168,0,3,7,4,0
+tau2-telecom,114,114,0,114,17,14,1,0,0,3,7,4,0
+terminal-bench-4.0.0,66,34,30,0,27,15,0,0,14,1,0,0,0

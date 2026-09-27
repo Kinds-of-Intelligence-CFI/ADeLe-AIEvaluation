@@ -1,0 +1,71 @@
+model,display,provider,release,system,aliases,note
+claude-2,Claude 2,Anthropic,2023-07,,,
+claude-3-haiku,Claude 3 Haiku,Anthropic,2024-03,,,
+claude-3-opus,Claude 3 Opus,Anthropic,2024-03,,,
+claude-3.5-sonnet,Claude 3.5 Sonnet,Anthropic,2024-10,,,release of the 20241022 version
+claude-3.7-sonnet,Claude 3.7 Sonnet,Anthropic,2025-02,,,
+claude-sonnet-4,Claude Sonnet 4,Anthropic,2025-05,,claude4sonnet,
+claude-opus-4,Claude Opus 4,Anthropic,2025-05,,claude4opus,
+claude-sonnet-4.5,Claude Sonnet 4.5,Anthropic,2025-09,,,
+claude-opus-4.5,Claude Opus 4.5,Anthropic,2025-11,,,
+claude-opus-4.6,Claude Opus 4.6,Anthropic,2026-02,,,
+claude-opus-4.7,Claude Opus 4.7,Anthropic,2026-04,,,
+claude-opus-4.8,Claude Opus 4.8,Anthropic,2026-05,,,
+claude-fable-5,Claude Fable 5,Anthropic,2026-06,,,
+claude-sonnet-5,Claude Sonnet 5,Anthropic,2026-06,,,release from the Terminal-Bench 4.0 leaderboard
+claude-opus-5,Claude Opus 5,Anthropic,2026-07,,,
+claude-fable-5.1,Claude Fable 5.1,Anthropic,2026-09,,,release from the Terminal-Bench 4.0 leaderboard
+gpt-4-turbo,GPT-4 Turbo,OpenAI,2023-11,,gpt41106preview,
+gpt-4o,GPT-4o,OpenAI,2024-05,,,
+o1-preview,o1-preview,OpenAI,2024-09,,,
+o3-mini,o3-mini,OpenAI,2025-01,,,
+gpt-4.1,GPT-4.1,OpenAI,2025-04,,,
+gpt-4.1-mini,GPT-4.1 mini,OpenAI,2025-04,,,
+o4-mini,o4-mini,OpenAI,2025-04,,,
+gpt-5,GPT-5,OpenAI,2025-08,,,
+gpt-5.2,GPT-5.2,OpenAI,2025-12,,,
+gpt-5.4,GPT-5.4,OpenAI,2026-03,,,
+gpt-5.5,GPT-5.5,OpenAI,2026-04,,,
+gpt-5.6-sol,GPT-5.6 Sol,OpenAI,2026-07,,,release from the tau2 submission (the Terminal-Bench leaderboard gives 2026-06-26)
+gpt-5.6-terra,GPT-5.6 Terra,OpenAI,2026-06,,,release from the Terminal-Bench 4.0 leaderboard
+gpt-5.6-luna,GPT-5.6 Luna,OpenAI,2026-06,,,release from the Terminal-Bench 4.0 leaderboard
+gpt-6-astra,GPT-6 Astra,OpenAI,2026-09,,,release from the Terminal-Bench 4.0 leaderboard
+gemini-2.0-flash,Gemini 2.0 Flash,Google,2024-12,,gemini20flashexp,
+gemini-2.5-pro,Gemini 2.5 Pro,Google,2025-06,,,
+gemini-3-pro,Gemini 3 Pro,Google,2025-11,,gemini3propreview gemini30pro,
+gemini-3-flash,Gemini 3 Flash,Google,2025-12,,,
+gemini-3.1-pro,Gemini 3.1 Pro,Google,2026-02,,gemini31propreview,
+gemini-3.5-flash,Gemini 3.5 Flash,Google,2026-05,,,
+gemini-3.7-flash,Gemini 3.7 Flash,Google,2026-08,,,release from the Terminal-Bench 4.0 leaderboard
+gemini-3.8-flash,Gemini 3.8 Flash,Google,2026-09,,,release from the Terminal-Bench 4.0 leaderboard
+grok-4-fast,Grok 4 Fast,xAI,2025-09,,,
+grok-4.1-fast,Grok 4.1 Fast,xAI,2025-11,,,
+grok-4.2,Grok 4.2,xAI,2026-03,,,
+grok-4.5,Grok 4.5,xAI,2026-07,,,
+grok-4.6,Grok 4.6,xAI,2026-08,,,release from the Terminal-Bench 4.0 leaderboard
+grok-4.7,Grok 4.7,xAI,2026-09,,,release from the Terminal-Bench 4.0 leaderboard
+glm-5,GLM-5,Z.ai,2026-02,,,
+glm-5.2,GLM-5.2,Z.ai,2026-06,,,
+glm-5.3,GLM-5.3,Z.ai,2026-08,,,release from the Terminal-Bench 4.0 leaderboard
+kimi-k2,Kimi K2,Moonshot AI,2025-07,,kimik20711preview kimik2instruct,
+kimi-k2-0905,Kimi K2 0905,Moonshot AI,2025-09,,kimik20905preview,
+kimi-k3,Kimi K3,Moonshot AI,2026-07,,,
+qwen-2.5,Qwen 2.5,Alibaba,2024-09,,,
+qwen-2.5-coder-32b,Qwen2.5-Coder-32B-Instruct,Alibaba,2024-11,,qwen25coder32binstruct,
+qwen3-coder-30b-a3b,Qwen3-Coder-30B-A3B-Instruct,Alibaba,2025-07,,qwen3coder30ba3binstruct,
+qwen3-max-thinking-preview,Qwen3-Max-Thinking-Preview,Alibaba,2025-10,,,release approximated by the submission date
+qwen3-max-thinking,Qwen3-Max-Thinking,Alibaba,2026-01,,,
+qwen3.5-397b-a17b,Qwen3.5-397B-A17B,Alibaba,2026-02,,,
+qwen3.8-max,Qwen 3.8 Max,Alibaba,2026-07,,,
+inkling,Inkling,Thinking Machines Lab,2026-07,,,
+muse-spark-1.1,Muse Spark 1.1,Meta,2026-07,,,
+toolorchestra,Nemotron-Orchestrator-8B (ToolOrchestra),NVIDIA,2025-11,yes,nemotronorchestrator8b,an orchestrator that calls other models
+deepswe-preview,DeepSWE-Preview,Agentica,2025-07,,httpshuggingfacecoagenticaorgdeepswepreview,
+swe-llama,SWE-Llama,Princeton,2023-10,,,
+llama3-swe-rl-70b,Llama3-SWE-RL-70B,Meta,2025-02,,,
+devstral-small-2505,Devstral Small 2505,Mistral,2025-05,,,
+devstral-small-2507,Devstral Small 2507,Mistral,2025-07,,,
+amazon-nova-premier,Amazon Nova Premier,Amazon,2025-04,,amazonnovapremierv10,
+mcts-refine-7b,MCTS-Refine-7B,research,,,,release unknown
+frogboss-32b,FrogBoss-32B-2510,research,2025-10,,frogboss32b2510,
+frogmini-14b,FrogMini-14B-2510,research,2025-10,,frogmini14b2510,
