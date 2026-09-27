@@ -43,3 +43,32 @@ cells are retried in the full run.
 
 A scan of every judge transcript of this session found five earlier classifier stops, all on
 SWE-bench (three in `swepl-r1`, two in `swepl-r1-low`). In each, Opus 5.5 wrote the answer itself.
+
+## 2026-09-27/28 — full run: complete
+
+Nine relays of 96–99 cells, two for Terminal-Bench and seven for tau2:
+- three at 20:49 UTC and two at 21:02;
+- four at 21:51, after the 5-hour usage window reset;
+- the last answer at 22:03.
+
+- **Coverage.** 894/894 cells answered and parsed: `tb4pl-r1` 198, `tau2pl-r1` 696.
+- **Writers** (`writers.py`, `labels/<run>/writers.csv`). 893 answers were written by
+  `claude-opus-5-5`.
+  - `uefi-bootkit@PLp` was written by `claude-opus-4-8` on both attempts (dry run and retry), so
+    it has no registered label (amendment 2); both answers are kept, the first in
+    `responses_fallback/`.
+  - The retry of `uefi-bootkit@PLs` was written by `claude-opus-5-5`.
+  - No other cell had a classifier stop, including the four other Security tasks.
+- **Protocol check** over all 896 judge transcripts (894 cells and the two retries): exact
+  two-line message, effort `low`, no CLAUDE.md of any kind, only the cell's own two files,
+  working directory `~/Developer/ADELE`.
+  - One exception: during the classifier stop on the `uefi-bootkit@PLp` retry, a Write to a
+    truncated path was rejected before anything was written. No stray file exists.
+- **Relays.** Eleven relay transcripts (two dry-run, nine full) hold 896 judge calls: one per
+  cell, plus the two retries. They made no other tool call besides their final report. Their
+  summaries miscounted (one said 96 for 99 cells); coverage was verified from the answer files.
+- **Cost.**
+  - Mean final-request context: 7.5k tokens (tau2) and 7.9k (Terminal-Bench).
+  - Mean time per call: 13 s and 16 s.
+  - The weekly all-model limit went from 75% to 80%, orchestration included.
+  - About 37% of a 5-hour window: 21 points before the reset, 16 after.
