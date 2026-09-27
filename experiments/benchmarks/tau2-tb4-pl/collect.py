@@ -1,10 +1,11 @@
 """Parse judge responses of a tau2-tb4-pl run into labels (as swebench-pl/collect.py).
 
 Reads <judge_io>/responses/<judge>/<file_id>@<dim>.txt, with judge_io from run.json, extracts
-the level with adele's parser, and writes
+the level with adele's parser, adds the model that wrote each answer (labels/<run>/writers.csv,
+from writers.py), and writes
   - data/annotations/<run>/raw.jsonl   full responses, i.e. the judges' reasons
                                        (gitignored: they quote task text)
-  - labels/<run>/labels_long.csv       ids, judge, level, hashes (committed)
+  - labels/<run>/labels_long.csv       ids, judge, writer model, level, hashes (committed)
 then prints coverage per judge: expected, answered, parsed.
 
     python experiments/benchmarks/tau2-tb4-pl/collect.py --run tau2pl-r1
@@ -32,6 +33,7 @@ def main() -> None:
     index = pd.read_csv(labels_dir / "prompts_index.csv", dtype={"instance_id": str})
     run = json.loads((labels_dir / "run.json").read_text())
     answers = ROOT / run["judge_io"] / "responses"
+    writers = pd.read_csv(labels_dir / "writers.csv").set_index(["judge", "file_id", "demand"])["writer_model"]
 
     rows = []
     for judge in run["design"]["judges"]:
@@ -44,6 +46,7 @@ def main() -> None:
             rows.append({
                 "benchmark": rec.benchmark, "instance_id": rec.instance_id,
                 "demand": rec.demand, "family": rec.family, "judge": judge,
+                "writer_model": writers[(judge, rec.file_id, rec.demand)],
                 "level": level if valid else None, "valid": bool(valid),
                 "prompt_sha256": rec.prompt_sha256,
                 "response_sha256": hashlib.sha256(response.encode("utf-8")).hexdigest(),
