@@ -82,3 +82,15 @@ pinned inputs (`ac87c20`); prompts identical to `swepl-r1`, checked hash by hash
   435 tasks, exact 0.88 and within-1 1.00 over 1,305 cells (κ 0.92); PLp 0.86, PLe 0.82, PLs 0.98.
   On the low labels, PLp against solve rate −0.57 (medium −0.63), PLe −0.46 (−0.53), PLp against
   time-to-fix +0.45 (+0.45).
+
+## 2026-09-27 — correction: safety-classifier stops
+
+A later scan of every judge transcript, made during `tau2-tb4-pl`, found that a safety classifier
+stopped the judge's response in five calls:
+- in `swepl-r1`: `astropy__astropy-13579@PLp`, `django__django-13786@PLp` and
+  `sympy__sympy-12419@PLs`;
+- in `swepl-r1-low`: `django__django-15741@PLp` and `matplotlib__matplotlib-25775@PLp`.
+
+The step 1c entry's "malformed Write" was one of these stops, and the other four were not
+reported. In all five, `claude-opus-5-5` then wrote the answer itself, and no other model appears
+in the transcripts. Every label stands.
