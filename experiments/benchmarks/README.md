@@ -22,6 +22,7 @@ to a model not in the fit.
 | first real-benchmark run (SWE-bench Verified, 30 tasks × 25 rubrics) | `swebench-30/` |
 | planning rubrics on all solvable SWE-bench Verified tasks (Opus, medium effort) | `swebench-pl/` |
 | planning rubrics on tau2 and Terminal-Bench 4.0 (Opus, low effort) | `tau2-tb4-pl/` |
+| a candidate Level 3 sentence for PLp, tested on real tasks | `plp-candidate/` |
 
 ## Runtime data is not in the repo
 
