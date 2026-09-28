@@ -124,6 +124,27 @@ From `results/analysis.json` and `results/exploratory.json` (`analysis/explorato
     perception, black-box probing and a one-off method choice as interacting decisions.
   - Exact agreement with the judge: 3 of 6.
 
+- **Follow-up: Opus at max effort** (pre-registered as exploratory, run `tb4pl-max`,
+  `results/effort_followup.json`). PLp on the 34 Terminal-Bench analysis-set tasks, same prompts;
+  33 have a registered label on both runs.
+  - Max against low: exact 0.82, within one level 1.00, κ 0.66, mean shift −0.12.
+    - Four of the 26 low-effort Level-3 tasks drop to 2, one Level 4 drops to 3 and one Level 3
+      rises to 4.
+    - Level-2 tasks go from 4 to 8.
+  - Prediction 1 held: shift below zero and more tasks at Level 2.
+  - Prediction 2 failed: max agrees with Pablo's blind labels on 2 of 6, against 3 of 6 at low
+    effort.
+  - So the pre-registered consequence, re-judging Terminal-Bench at max effort, is not triggered.
+  - Max keeps at 3 the three tasks Pablo put at 2. Its reasoning weighs the rubric's exclusions and
+    still counts early architectural choices that constrain later ones. For `html-js-filter`, it
+    cites the parse-and-serialise design, which follows the pattern of the rubric's Level-3
+    contest example.
+  - The disagreement is therefore not an effort artifact. It is a reading of the 2/3 gate, where
+    almost any real engineering task has some early choice that constrains later ones.
+  - On the max labels, PLp against solve rate is +0.05 [−0.30, 0.39] and against expert time
+    +0.29 [−0.06, 0.58]. Two of the tasks that dropped to Level 2 are among the hardest (solve
+    rates 0.05 and 0.13).
+
 ## Deviations and caveats
 
 - **Deviations:** none. Two amendments before the full run:

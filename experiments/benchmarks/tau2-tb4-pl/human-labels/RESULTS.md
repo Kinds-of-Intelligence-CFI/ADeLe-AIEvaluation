@@ -46,4 +46,10 @@ its text.
   harder to apply to real agentic tasks from their instructions alone.
 - Claude's reading is one more annotator from the judge's model family, not ground truth.
 
+**Follow-up at max effort** (`../RESULTS.md`, run `tb4pl-max`):
+- Opus at max effort keeps the three disputed tasks at 3 and moves `biped-contact-dynamics` to 3.
+- The 2/3 disagreement is a reading of the gate, not an effort artifact.
+- Claude revises its own reading: `html-js-filter` and `layout-config-recreation` are borderline
+  at 2/3, and `risk-scorer-replay` is still more likely 2.
+
 Files: `pablo_plp.csv` (blind labels as given), `unblinded.csv` (with judge and Claude columns).

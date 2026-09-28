@@ -1,0 +1,159 @@
+{
+  "n": {
+    "low": 33,
+    "max": 33,
+    "both": 33
+  },
+  "levels": {
+    "low": {
+      "0": 0,
+      "1": 0,
+      "2": 4,
+      "3": 26,
+      "4": 3,
+      "5": 0
+    },
+    "max": {
+      "0": 0,
+      "1": 0,
+      "2": 8,
+      "3": 22,
+      "4": 3,
+      "5": 0
+    }
+  },
+  "agreement_max_vs_low": {
+    "exact": 0.818,
+    "within1": 1.0,
+    "qwk": 0.661,
+    "mean_shift_max_minus_low": -0.121,
+    "lower": 5,
+    "higher": 1
+  },
+  "crosstab_low_rows_max_cols": {
+    "2": {
+      "2": 4,
+      "3": 4,
+      "4": 0
+    },
+    "3": {
+      "2": 0,
+      "3": 21,
+      "4": 1
+    },
+    "4": {
+      "2": 0,
+      "3": 1,
+      "4": 2
+    }
+  },
+  "exploratory_Q1_Q2": {
+    "low": {
+      "PLp_vs_solve_rate": {
+        "n": 33,
+        "n_off_mode": 7,
+        "rho": -0.06,
+        "p_two_sided": 0.742,
+        "ci95": [
+          -0.395,
+          0.29
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_expert_hours": {
+        "n": 33,
+        "n_off_mode": 7,
+        "rho": 0.192,
+        "p_two_sided": 0.284,
+        "ci95": [
+          -0.165,
+          0.505
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    },
+    "max": {
+      "PLp_vs_solve_rate": {
+        "n": 33,
+        "n_off_mode": 11,
+        "rho": 0.05,
+        "p_two_sided": 0.781,
+        "ci95": [
+          -0.298,
+          0.387
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_expert_hours": {
+        "n": 33,
+        "n_off_mode": 11,
+        "rho": 0.292,
+        "p_two_sided": 0.0987,
+        "ci95": [
+          -0.064,
+          0.583
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    }
+  },
+  "human_check": {
+    "tasks": {
+      "html-js-filter": {
+        "pablo": 2,
+        "low": 3,
+        "max": 3,
+        "claude": 2
+      },
+      "ctr-optimization": {
+        "pablo": 3,
+        "low": 3,
+        "max": 3,
+        "claude": 3
+      },
+      "cad-model": {
+        "pablo": null,
+        "low": 2,
+        "max": 2,
+        "claude": null
+      },
+      "biped-contact-dynamics": {
+        "pablo": 4,
+        "low": 4,
+        "max": 3,
+        "claude": 3
+      },
+      "layout-config-recreation": {
+        "pablo": 2,
+        "low": 3,
+        "max": 3,
+        "claude": 2
+      },
+      "photonic-waveguide-routing": {
+        "pablo": 3,
+        "low": 3,
+        "max": 3,
+        "claude": 3
+      },
+      "risk-scorer-replay": {
+        "pablo": 2,
+        "low": 3,
+        "max": 3,
+        "claude": 2
+      }
+    },
+    "exact_with_pablo": {
+      "low": 3,
+      "max": 2,
+      "of": 6
+    }
+  },
+  "predictions": {
+    "1_shift_below_zero_and_more_level_2_than_low": true,
+    "2_max_exact_with_pablo_at_least_4_of_6": false
+  }
+}

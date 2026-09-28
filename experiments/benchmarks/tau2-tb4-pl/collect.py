@@ -55,6 +55,7 @@ def main() -> None:
     if not rows:
         print("no responses yet")
         return
+    data_dir.mkdir(parents=True, exist_ok=True)
     with open(data_dir / "raw.jsonl", "w", encoding="utf-8") as f:
         for r in rows:
             f.write(json.dumps(r) + "\n")

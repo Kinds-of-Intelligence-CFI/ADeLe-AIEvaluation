@@ -89,3 +89,22 @@ boundary. Amendment 1 (`2736145`) put the rubric as gates.
 `make_max_run.py` copied the 34 PLp prompts of the Terminal-Bench analysis set from `tb4pl-r1`,
 byte-identical and checked by hash. The judge is `adele-judge` (Opus, effort max), sent through
 `judge-dispatcher` relays. Pre-registered in PREREGISTRATION.md, section Follow-up.
+
+## 2026-09-28 — follow-up run `tb4pl-max`: complete
+
+Two `judge-dispatcher` relays of 17 cells, 07:39–08:07 UTC, then one retry relay.
+- **Writers.** Three cells were written by `claude-opus-4-8` after a safety-classifier stop:
+  `formal-crypto`, `kv-live-surgery` and `uefi-bootkit`. Their answers were moved to
+  `responses_fallback/` and the cells retried once (amendment 2).
+  - The retries of `formal-crypto` and `kv-live-surgery` were written by `claude-opus-5-5`.
+  - `uefi-bootkit` fell back again, so it has no registered label.
+  - On both attempts at `uefi-bootkit`, the classifier stopped the judge's first Read before the
+    prompt had been read. The file name seems to be enough to trigger it.
+- **Protocol check** over all 37 judge transcripts: exact message, effort `max`, no CLAUDE.md,
+  working directory `~/Developer/ADELE`. The only flags are the two interrupted Reads on
+  `uefi-bootkit`, whose paths were cut off by the stop; no other file was opened.
+- **Coverage.** 34/34 answered and parsed, and 33 registered labels.
+  `collect.py` now creates its data folder.
+- **Cost.** Mean final-request context 23.6k tokens (11k–45k), mean 185 s per call, about 3× an
+  Opus-low call. The weekly meter went from 80% to 83–84% between the end of the main run and this
+  follow-up, including this session's orchestration.
