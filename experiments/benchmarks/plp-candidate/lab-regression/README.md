@@ -5,14 +5,17 @@ run through the rubric lab's standing tests: example placement (r25), examples d
 minimal pairs (r36), family diagonal (r42/r43) and battery-v1. Three judges (haiku, sonnet, opus
 at low effort) score every item under the current text and under C.
 
-**Status.** Pre-registered (2026-09-28). Judging not started.
+**Status.** Complete (2026-09-28): C passes. Nothing that holds under the current text breaks
+under C. See `RESULTS.md`.
 
 | | |
 |---|---|
 | design, decision rule, predictions | `PREREGISTRATION.md` |
 | items, with the 4-gram check | `items.csv` (built by `make_prompts.py`; rebuilt items in `reconstructed_items.csv`) |
 | runs | `labels/labreg-r1/` (pass 1), `labels/labreg-r2/` (pass 2, if needed) |
-| analysis | `analysis/analyse.py` → `results/regression.json` |
+| analysis | `analysis/analyse.py` → `results/regression.json`; `analysis/exploratory.py` → `results/exploratory.json` |
+| what happened | `RUNLOG.md` |
+| write-up | `RESULTS.md` |
 
 ## Reproduce
 

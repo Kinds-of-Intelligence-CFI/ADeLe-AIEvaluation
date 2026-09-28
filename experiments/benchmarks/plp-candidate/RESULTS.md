@@ -15,7 +15,9 @@ On Terminal-Bench, the candidate put slightly more tasks at 3, not fewer. It did
 the SWE-bench and tau2 correlations held or rose slightly. The pre-registered verdict is "no
 effect".
 
-**Status.** Complete (2026-09-28). No candidate is adopted, and `PLp.txt` is unchanged.
+**Status.** Complete (2026-09-28). No candidate passed its decision rule. Candidate C then passed
+the lab regression (`lab-regression/RESULTS.md`). Its adoption waits for Pablo's OK, and `PLp.txt` is
+unchanged.
 
 ## Design
 
@@ -133,6 +135,15 @@ The verdict is "no effect". Sealed prediction: rule 1 passes, 0.3, failed as exp
   after looking ahead" on `layout-config-recreation`, and that options must be compared "with an
   eye to what comes later" on `risk-scorer-replay`. This reading held under every version and
   both effort levels.
+
+## Lab regression of candidate C
+
+Pre-registered separately (`lab-regression/PREREGISTRATION.md`, `86de254`). Three judges (haiku,
+sonnet, opus) scored 99 lab items under the current text and under C: example placement, examples
+disentangle, minimal pairs, family diagonal and battery-v1. C passed: nothing that holds under the
+current text breaks under C. Placement and the minimal pairs gave identical levels. One battery
+loss in pass 1 did not repeat in pass 2. The new sentence was quoted in 5 of 297 answers, so on
+designed items it rarely fires. Details in `lab-regression/RESULTS.md`.
 
 ## Deviations and caveats
 
