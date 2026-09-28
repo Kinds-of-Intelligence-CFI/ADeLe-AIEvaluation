@@ -17,8 +17,102 @@
       3
     ]
   },
-  "rule2_swe": "not run",
-  "rule3_tau2": "not run",
+  "rule2_swe": {
+    "passed": true,
+    "n": 60,
+    "rho_candidate": -0.696,
+    "rho_reference": -0.625,
+    "mean_shift_candidate_minus_reference": 0.033,
+    "levels_candidate": {
+      "0": 2,
+      "1": 28,
+      "2": 28,
+      "3": 2
+    },
+    "levels_reference": {
+      "0": 2,
+      "1": 31,
+      "2": 24,
+      "3": 3
+    }
+  },
+  "rule3_tau2": {
+    "passed": true,
+    "candidate": {
+      "combined": {
+        "domains": 3,
+        "n": 232,
+        "rho": -0.352,
+        "p_two_sided": 1e-07,
+        "ci95": [
+          -0.465,
+          -0.228
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 14,
+          "rho": -0.493,
+          "p_two_sided": 0.00032,
+          "ci95": [
+            -0.689,
+            -0.23
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-banking_knowledge": {
+          "n": 69,
+          "n_off_mode": 10,
+          "rho": -0.256,
+          "p_two_sided": 0.0336,
+          "ci95": [
+            -0.468,
+            -0.017
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 11,
+          "rho": -0.35,
+          "p_two_sided": 0.000136,
+          "ci95": [
+            -0.506,
+            -0.172
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      }
+    },
+    "reference_combined": {
+      "domains": 3,
+      "n": 232,
+      "rho": -0.325,
+      "p_two_sided": 9.69e-07,
+      "ci95": [
+        -0.44,
+        -0.199
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "levels_candidate": {
+      "1": 29,
+      "2": 197,
+      "3": 6
+    },
+    "levels_reference": {
+      "1": 25,
+      "2": 198,
+      "3": 9
+    }
+  },
   "terminal_bench": {
     "pablo_2_tasks": {
       "html-js-filter": {
