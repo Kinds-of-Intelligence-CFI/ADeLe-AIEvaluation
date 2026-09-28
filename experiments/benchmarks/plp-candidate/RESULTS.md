@@ -2,16 +2,20 @@
 
 **Question.** Does a change to Level 3 make the PLp judge read the 2/3 boundary as Pablo does?
 
-**Answer.** No, neither of the two candidates passed. Candidate A, a replaced sentence, moved none
-of Pablo's three Level-2 Terminal-Bench tasks. Candidate B, an explicit rule, moved one of three.
-Details for A follow; B has its own section below.
+**Answer.** No. None of the three candidates passed.
+- Candidate A, a replaced sentence, moved none of Pablo's three Level-2 Terminal-Bench tasks.
+- Candidate B, an explicit Level 3 rule, moved one of them: `html-js-filter`.
+- Candidate C, a knowledge carve in the scope paragraph, moved the same one.
+
+The other two tasks stayed at Level 3 under every version and both effort levels. Details for A
+follow; B and C have their own sections below.
 
 Candidate A in detail: Pablo's three Level-2 Terminal-Bench tasks stayed at Level 3 under it.
 On Terminal-Bench, the candidate put slightly more tasks at 3, not fewer. It did no harm elsewhere:
 the SWE-bench and tau2 correlations held or rose slightly. The pre-registered verdict is "no
 effect".
 
-**Status.** Complete (2026-09-28). Neither candidate is adopted, and `PLp.txt` is unchanged.
+**Status.** Complete (2026-09-28). No candidate is adopted, and `PLp.txt` is unchanged.
 
 ## Design
 
@@ -98,6 +102,30 @@ The verdict is "no effect". Sealed prediction: rule 1 passes, 0.5, failed.
   - `risk-scorer-replay`: the code must generalise to unseen test packets. This is close to the
     "poor option" pattern, so it is borderline.
 - **The remaining disagreement is judgment, not wording.**
+
+## Candidate C: a knowledge carve
+
+Added after B's result, pre-registered before any label of C (`3043a15`). One sentence is added
+at the end of PLp's "What this dimension does not cover" paragraph, mirroring PLs's knowledge
+carve: "Knowing the established method is knowledge rather than planning, so pitfalls that the
+method avoids do not raise this demand." The levels are unchanged.
+
+| rule | result | passed |
+|---|---|---|
+| 1. At least 2 of Pablo's three Level-2 tasks move to 2, and his two Level-3 tasks stay at 3 | `html-js-filter` 2, `layout-config-recreation` 3, `risk-scorer-replay` 3; control 3, 3, 3. His Level-3 tasks stay at 3 | no |
+| 2 and 3. No harm on SWE-bench and tau2 | not run | — |
+
+The verdict is "no effect". Sealed prediction: rule 1 passes, 0.3, failed as expected.
+
+**Exploratory, candidate C:**
+- **Terminal-Bench levels.** At Level 2: 7 tasks (control 5). At 3: 25 (26). At 4: 2 (2).
+- **Agreement.** Against the control: exact 94%, mean shift −0.06. Exact with Pablo's six
+  labels: 3 (control 2).
+- **Same effect as B, lower cost.** C moves the same task and needs no Level 3 guard.
+- **The two remaining tasks.** The judge still reasons that early choices "may need to be revised
+  after looking ahead" on `layout-config-recreation`, and that options must be compared "with an
+  eye to what comes later" on `risk-scorer-replay`. This reading held under every version and
+  both effort levels.
 
 ## Deviations and caveats
 

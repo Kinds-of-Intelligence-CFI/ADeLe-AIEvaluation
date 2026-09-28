@@ -37,3 +37,9 @@ protocol check clean. Rule 1 failed, since only `html-js-filter` moved to Level 
 plus one sentence at the end of the "does not cover" paragraph. The hash check against the original
 prompts passed. `compare.py` gained `--arm knowl`, and re-run for A and B it reproduces their
 results. Stage 1 (`knowl-tb`) runs first.
+
+## 2026-09-28 — candidate C, stage 1 (`knowl-tb`): complete
+
+One relay, 34/34 answered and parsed, all written by `claude-opus-5-5`, no classifier stop,
+protocol check clean. Rule 1 failed, since only `html-js-filter` moved to Level 2. So stage 2 does
+not run, as pre-registered.

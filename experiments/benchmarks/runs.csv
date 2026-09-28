@@ -6,6 +6,9 @@ plp-candidate,ctrl-tb,2026-09-28T08:40:32+00:00,bd67db8,34,opus-low,34,34
 plp-candidate,guard-swe,2026-09-28T09:50:24+00:00,c508bdb,60,opus-low,0,0
 plp-candidate,guard-tau2,2026-09-28T09:50:24+00:00,c508bdb,232,opus-low,0,0
 plp-candidate,guard-tb,2026-09-28T09:50:24+00:00,c508bdb,34,opus-low,34,34
+plp-candidate,knowl-swe,2026-09-28T11:04:18+00:00,15cd030,60,opus-low,0,0
+plp-candidate,knowl-tau2,2026-09-28T11:04:18+00:00,15cd030,232,opus-low,0,0
+plp-candidate,knowl-tb,2026-09-28T11:04:18+00:00,15cd030,34,opus-low,34,34
 swebench-30,swev30-r1,2026-09-26T08:45:22+00:00,2c8ffe7,792,sonnet;opus,0,0
 swebench-30,swev30-r2,2026-09-26T08:55:29+00:00,5b74867,792,sonnet;opus,0,0
 swebench-30,swev30-r3,2026-09-26T09:43:30+00:00,67e9af9,792,sonnet;opus,0,0
