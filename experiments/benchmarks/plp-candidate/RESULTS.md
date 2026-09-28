@@ -16,8 +16,8 @@ the SWE-bench and tau2 correlations held or rose slightly. The pre-registered ve
 effect".
 
 **Status.** Complete (2026-09-28). No candidate passed its decision rule. Candidate C then passed
-the lab regression (`lab-regression/RESULTS.md`). Its adoption waits for Pablo's OK, and `PLp.txt` is
-unchanged.
+the lab regression (`lab-regression/RESULTS.md`); D, its first clause alone, did not. Which sentence
+to adopt is Pablo's decision, and `PLp.txt` is unchanged.
 
 ## Design
 
@@ -143,7 +143,9 @@ sonnet, opus) scored 99 lab items under the current text and under C: example pl
 disentangle, minimal pairs, family diagonal and battery-v1. C passed: nothing that holds under the
 current text breaks under C. Placement and the minimal pairs gave identical levels. One battery
 loss in pass 1 did not repeat in pass 2. The new sentence was quoted in 5 of 297 answers, so on
-designed items it rarely fires. Details in `lab-regression/RESULTS.md`.
+designed items it rarely fires. Candidate D, C's first clause only, failed the same regression by
+one confirmed two-level move and lowers labels more broadly than C. Details in
+`lab-regression/RESULTS.md`.
 
 ## Deviations and caveats
 

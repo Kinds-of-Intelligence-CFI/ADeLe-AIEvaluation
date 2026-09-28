@@ -12,9 +12,12 @@ breaks under C.
 - Disentanglement: no loss. C removed one leak among the foreign examples.
 - No item moved by two levels. 86 of 99 items got the same median under both texts. The 13 moves
   were one level each, 6 up and 7 down.
+- **Candidate D** (C's first clause only, "Knowing the established method is knowledge rather than
+  planning.") fails its rule by one confirmed two-level move. It also lowers labels more broadly
+  than C. See the section on D below.
 
-**Status.** Complete (2026-09-28): 600 judge calls, all parsed, verdict "pass". `PLp.txt` is
-unchanged. The edit and its provenance entry are proposed to Pablo, and wait for his OK.
+**Status.** Complete (2026-09-28). C: 600 judge calls, verdict "pass". D: 315 judge calls, verdict
+"fail". `PLp.txt` is unchanged; which sentence to adopt is Pablo's decision.
 
 ## Design
 
@@ -110,6 +113,44 @@ Not pre-registered. From `results/exploratory.json` (`analysis/exploratory.py`).
 - **Cost.** Mean final context and time per call: opus 6.5k tokens and 14 s, sonnet 8.3k and
   32 s, haiku 9.4k and 51 s. The weekly limit went from 88 to 93 per cent during the run, other
   sessions included.
+
+## Candidate D: the first clause only
+
+Pre-registered as an amendment before any label of D (`f53e9cb`). D alone was judged (`labreg-d1`,
+297 calls), against the current-text labels of `labreg-r1`. Pass 2 (`labreg-d2`, 18 calls) re-ran
+three items under both texts. From `results/regression_d.json` (`analysis/analyse.py --candidate d`).
+
+**Verdict: fail.** One two-level move repeated in pass 2. No loss repeated.
+
+| item | pass 1: current → D | pass 2: current → D | outcome |
+|---|---|---|---|
+| F-MSc-L3-4, haggling with a market trader | 3 → 1 | 2 → 1 | the two-level move repeats in the same direction: confirmed |
+| M-A1, loading ten identical boxes | 1 → 0 (so A1 to A3 "rises") | 1 → 1 | loss not repeated |
+| F-PLs-L4-3, two queues at one counter | 2 → 3 (a new leak) | 3 → 2 | loss not repeated |
+
+- The confirmed move goes toward a cleaner label. A foreign example stops leaking into PLp.
+- **D lowers labels more broadly than C.** Single-judge labels: 30 lower under D, 15 higher
+  (p = 0.036). All three judges lean lower: opus 8 against 3, sonnet 7 against 4, haiku 15 against
+  8. Under C only haiku leaned lower. The lean is on the battery (10 lower, 2 higher) and on
+  placement (5 lower, 0 higher).
+- **The planning checks hold.** All four minimal-pair checks, all nine family-diagonal items and
+  all placement checks hold under D once pass 2 is counted. One placement check improves: the
+  covering letter reaches Level 1 (from 2).
+- **Medians equal between texts:** 83 of 99 (C: 86). D quoted in 4 of 297 answers.
+
+**Sealed predictions for D.**
+
+| prediction | p | outcome |
+|---|---|---|
+| D passes | 0.45 | failed: one confirmed two-level move |
+| if D loses anything, it is a downward move | 0.9 | moot: no confirmed loss. The confirmed move was downward. |
+| D is quoted in 10 per cent or more of answers | 0.5 | failed: 1.3 per cent |
+| more single-judge labels lower under D | 0.8 | held (30 against 15) |
+| that shift is significant | 0.4 | happened (p = 0.036) |
+
+**Reading.** The shorter sentence is broader, as expected. It lowers PLp by one level on many items,
+mostly items with little planning, and it does not break the planning checks. By the pre-registered
+rule it is not "unchanged", so it is not the tested option. C is.
 
 ## Deviations and caveats
 

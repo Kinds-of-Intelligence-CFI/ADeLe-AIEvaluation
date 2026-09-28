@@ -44,3 +44,13 @@ Pablo asked for C's first clause only. `make_prompts.py --candidate d` wrote 99 
 `PLp_candidate_d.txt`. Each equals its `labreg-r1` current-text prompt plus the one sentence (checked).
 The ids do not overlap with earlier runs. The analysis script gained `--candidate d`; re-run for C, it
 reproduces `results/regression.json` exactly. It was tested on synthetic D labels, which were not kept.
+
+## 2026-09-28 — candidate D, pass 1 (`labreg-d1`) and pass 2 (`labreg-d2`): complete
+
+Pass 1: three relays of 99 cells (one per model), 18:09–18:47 UTC. 297/297 answered and parsed, all
+by the registered models. Five opus calls had a classifier stop; each still wrote its answer. The
+protocol check over the 297 transcripts is clean (haiku again without effort). Pass 1 found two
+losses and one two-level move, so pass 2 re-ran `F-MSc-L3-4`, `F-PLs-L4-3` and `M-A1` under both texts:
+18 calls (18:48–18:51 UTC), 6 per model, all parsed, protocol clean. One relay launch failed on a transient auto-mode
+check and was launched again; no cell was sent twice. Verdict for D: fail (the two-level move on
+`F-MSc-L3-4` repeated; neither loss did).
