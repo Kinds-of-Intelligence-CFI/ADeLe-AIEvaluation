@@ -6,7 +6,7 @@ Opus at low effort, as in the main studies.
 
 **Status.** Complete (2026-09-28): no candidate passed. A had no effect. B (an explicit rule) and C
 (a knowledge carve) each moved one of Pablo's three Level-2 tasks. See `RESULTS.md`. C then passed
-the lab regression (`lab-regression/`); adopting it waits for Pablo's OK.
+the lab regression (`lab-regression/`); D, its first clause alone, did not.
 
 | | |
 |---|---|

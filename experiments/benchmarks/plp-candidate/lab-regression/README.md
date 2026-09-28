@@ -6,8 +6,8 @@ minimal pairs (r36), family diagonal (r42/r43) and battery-v1. Three judges (hai
 at low effort) score every item under the current text and under C.
 
 **Status.** Complete (2026-09-28): C passes. Nothing that holds under the current text breaks
-under C. See `RESULTS.md`. Candidate D (C's first clause only) is pre-registered and being judged
-(`labels/labreg-d1/`).
+under C. See `RESULTS.md`. Candidate D (C's first clause only) fails its rule by one confirmed
+two-level move, and lowers labels more broadly than C.
 
 | | |
 |---|---|
