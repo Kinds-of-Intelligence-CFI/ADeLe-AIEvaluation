@@ -83,3 +83,9 @@ boundary. Amendment 1 (`2736145`) put the rubric as gates.
 - The 2/3 flag triggered: Pablo put 3 of 5 judge-3 tasks at 2, and Claude's reading sides with him
   on all three.
 - Details: `human-labels/RESULTS.md`.
+
+## 2026-09-28 — follow-up run `tb4pl-max` pinned (exploratory)
+
+`make_max_run.py` copied the 34 PLp prompts of the Terminal-Bench analysis set from `tb4pl-r1`,
+byte-identical and checked by hash. The judge is `adele-judge` (Opus, effort max), sent through
+`judge-dispatcher` relays. Pre-registered in PREREGISTRATION.md, section Follow-up.
