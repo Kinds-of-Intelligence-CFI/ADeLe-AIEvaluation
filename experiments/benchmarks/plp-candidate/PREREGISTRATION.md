@@ -133,4 +133,7 @@ The control is `ctrl-tb`.
 
 ## Deviations
 
-None yet.
+1. **2026-09-28: stage 2 of candidate C runs although its rule 1 failed.** This is at Pablo's
+   request, to judge C as a principled change: it mirrors PLs's knowledge carve and leaves the
+   levels untouched. C's pre-registered verdict stays "no effect". Rules 2 and 3 are reported as
+   harm checks for that decision, not as a pass of C's decision rule.
