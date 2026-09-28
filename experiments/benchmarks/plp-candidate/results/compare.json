@@ -1,0 +1,170 @@
+{
+  "rule1_binding": {
+    "passed": false,
+    "candidate": [
+      3,
+      3,
+      3
+    ],
+    "control": [
+      3,
+      3,
+      3
+    ]
+  },
+  "rule2_swe": {
+    "passed": true,
+    "n": 60,
+    "rho_candidate": -0.697,
+    "rho_reference": -0.625,
+    "mean_shift_candidate_minus_reference": 0.1,
+    "levels_candidate": {
+      "0": 2,
+      "1": 28,
+      "2": 24,
+      "3": 6
+    },
+    "levels_reference": {
+      "0": 2,
+      "1": 31,
+      "2": 24,
+      "3": 3
+    }
+  },
+  "rule3_tau2": {
+    "passed": true,
+    "candidate": {
+      "combined": {
+        "domains": 3,
+        "n": 232,
+        "rho": -0.363,
+        "p_two_sided": 3.89e-08,
+        "ci95": [
+          -0.475,
+          -0.24
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 16,
+          "rho": -0.555,
+          "p_two_sided": 3.52e-05,
+          "ci95": [
+            -0.733,
+            -0.305
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-banking_knowledge": {
+          "n": 69,
+          "n_off_mode": 14,
+          "rho": -0.33,
+          "p_two_sided": 0.00568,
+          "ci95": [
+            -0.53,
+            -0.094
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 13,
+          "rho": -0.301,
+          "p_two_sided": 0.00112,
+          "ci95": [
+            -0.463,
+            -0.12
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      }
+    },
+    "reference_combined": {
+      "domains": 3,
+      "n": 232,
+      "rho": -0.325,
+      "p_two_sided": 9.69e-07,
+      "ci95": [
+        -0.44,
+        -0.199
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "levels_candidate": {
+      "1": 29,
+      "2": 189,
+      "3": 14
+    },
+    "levels_reference": {
+      "1": 25,
+      "2": 198,
+      "3": 9
+    }
+  },
+  "terminal_bench": {
+    "pablo_2_tasks": {
+      "html-js-filter": {
+        "candidate": 3,
+        "control": 3
+      },
+      "layout-config-recreation": {
+        "candidate": 3,
+        "control": 3
+      },
+      "risk-scorer-replay": {
+        "candidate": 3,
+        "control": 3
+      }
+    },
+    "levels": {
+      "candidate": {
+        "2": 2,
+        "3": 30,
+        "4": 2
+      },
+      "control": {
+        "2": 5,
+        "3": 26,
+        "4": 2
+      },
+      "reference": {
+        "2": 4,
+        "3": 26,
+        "4": 3
+      }
+    },
+    "control_vs_reference_test_retest": {
+      "n": 33,
+      "exact": 0.879,
+      "mean_shift": -0.061
+    },
+    "candidate_vs_control": {
+      "n": 33,
+      "exact": 0.848,
+      "mean_shift": 0.091
+    },
+    "exact_with_pablo": {
+      "candidate": 2,
+      "control": 2,
+      "reference": 3
+    },
+    "exploratory": {
+      "candidate": {
+        "PLp_vs_solve_rate": 0.192,
+        "PLp_vs_expert_hours": 0.102
+      },
+      "control": {
+        "PLp_vs_solve_rate": 0.021,
+        "PLp_vs_expert_hours": 0.155
+      }
+    }
+  },
+  "verdict": "no effect"
+}

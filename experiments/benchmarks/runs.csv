@@ -1,4 +1,8 @@
 study,run,pinned_at,pinned_commit,prompts,judges,labels,parsed
+plp-candidate,cand-swe,2026-09-28T08:40:32+00:00,bd67db8,60,opus-low,60,60
+plp-candidate,cand-tau2,2026-09-28T08:40:32+00:00,bd67db8,232,opus-low,232,232
+plp-candidate,cand-tb,2026-09-28T08:40:32+00:00,bd67db8,34,opus-low,34,34
+plp-candidate,ctrl-tb,2026-09-28T08:40:32+00:00,bd67db8,34,opus-low,34,34
 swebench-30,swev30-r1,2026-09-26T08:45:22+00:00,2c8ffe7,792,sonnet;opus,0,0
 swebench-30,swev30-r2,2026-09-26T08:55:29+00:00,5b74867,792,sonnet;opus,0,0
 swebench-30,swev30-r3,2026-09-26T09:43:30+00:00,67e9af9,792,sonnet;opus,0,0
@@ -8,4 +12,5 @@ swebench-pl,swepl-gate-low,2026-09-27T07:11:45+00:00,b0e68ef,132,opus-low,132,13
 swebench-pl,swepl-r1,2026-09-26T21:45:06+00:00,0157be8,1194,opus-medium,1194,1194
 swebench-pl,swepl-r1-low,2026-09-27T19:38:56+00:00,1a0d5f8,1194,opus-low,1194,1194
 tau2-tb4-pl,tau2pl-r1,2026-09-27T20:41:56+00:00,8fcc830,696,opus-low,696,696
+tau2-tb4-pl,tb4pl-max,2026-09-28T07:39:47+00:00,0175184,34,opus-max,34,34
 tau2-tb4-pl,tb4pl-r1,2026-09-27T20:41:56+00:00,8fcc830,198,opus-low,198,198

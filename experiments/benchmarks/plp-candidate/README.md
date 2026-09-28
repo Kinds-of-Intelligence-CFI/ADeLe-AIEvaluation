@@ -4,7 +4,8 @@ Owner: Pablo. One candidate change to PLp's Level 3 is tested on real benchmark 
 one sentence (`PLp_candidate.txt`, and `PREREGISTRATION.md` for the exact wording). The judge is
 Opus at low effort, as in the main studies.
 
-**Status.** Pinned; judging next.
+**Status.** Complete (2026-09-28): no effect. The candidate did not move Pablo's three Level-2
+Terminal-Bench tasks, and it did no harm on SWE-bench or tau2. See `RESULTS.md`.
 
 | | |
 |---|---|
@@ -13,6 +14,7 @@ Opus at low effort, as in the main studies.
 | tasks and outcome data | `sample.csv` |
 | runs | `labels/cand-tb/`, `labels/ctrl-tb/`, `labels/cand-swe/`, `labels/cand-tau2/` |
 | analysis | `analysis/compare.py` → `results/compare.json` |
+| write-up | `RESULTS.md` |
 
 ## Reproduce
 
