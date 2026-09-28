@@ -1,0 +1,231 @@
+{
+  "placement": [
+    {
+      "item": "P-L0-1",
+      "level": 0,
+      "cur": 0,
+      "C": 0
+    },
+    {
+      "item": "P-L0-2",
+      "level": 0,
+      "cur": 1,
+      "C": 1
+    },
+    {
+      "item": "P-L0-3",
+      "level": 0,
+      "cur": 0,
+      "C": 0
+    },
+    {
+      "item": "P-L0-4",
+      "level": 0,
+      "cur": 3,
+      "C": 3
+    },
+    {
+      "item": "P-L0-5",
+      "level": 0,
+      "cur": 0,
+      "C": 0
+    },
+    {
+      "item": "P-L1-1",
+      "level": 1,
+      "cur": 1,
+      "C": 1
+    },
+    {
+      "item": "P-L1-2",
+      "level": 1,
+      "cur": 1,
+      "C": 1
+    },
+    {
+      "item": "P-L1-3",
+      "level": 1,
+      "cur": 2,
+      "C": 2
+    },
+    {
+      "item": "P-L2-1",
+      "level": 2,
+      "cur": 3,
+      "C": 3
+    },
+    {
+      "item": "P-L2-2",
+      "level": 2,
+      "cur": 2,
+      "C": 2
+    },
+    {
+      "item": "P-L2-3",
+      "level": 2,
+      "cur": 2,
+      "C": 2
+    },
+    {
+      "item": "P-L3-1",
+      "level": 3,
+      "cur": 3,
+      "C": 3
+    },
+    {
+      "item": "P-L3-2",
+      "level": 3,
+      "cur": 3,
+      "C": 3
+    },
+    {
+      "item": "P-L3-3",
+      "level": 3,
+      "cur": 3,
+      "C": 3
+    },
+    {
+      "item": "P-L4-1",
+      "level": 4,
+      "cur": 3,
+      "C": 3
+    },
+    {
+      "item": "P-L4-2",
+      "level": 4,
+      "cur": 4,
+      "C": 4
+    },
+    {
+      "item": "P-L4-3",
+      "level": 4,
+      "cur": 4,
+      "C": 4
+    },
+    {
+      "item": "P-L5-1",
+      "level": 5,
+      "cur": 4,
+      "C": 4
+    },
+    {
+      "item": "P-L5-2",
+      "level": 5,
+      "cur": 5,
+      "C": 5
+    },
+    {
+      "item": "P-L5-3",
+      "level": 5,
+      "cur": 4,
+      "C": 4
+    }
+  ],
+  "leaks": {
+    "cur": [
+      "F-MSc-L3-4",
+      "F-MSc-L4-1",
+      "F-MSc-L4-3",
+      "F-MSc-L5-1",
+      "F-MSc-L5-2",
+      "F-MSc-L5-3",
+      "F-PLe-L3-3",
+      "F-PLe-L4-2",
+      "F-PLe-L5-1",
+      "F-PLs-L5-4"
+    ],
+    "C": [
+      "F-MSc-L3-4",
+      "F-MSc-L4-1",
+      "F-MSc-L4-3",
+      "F-MSc-L5-1",
+      "F-MSc-L5-2",
+      "F-MSc-L5-3",
+      "F-PLe-L3-3",
+      "F-PLe-L4-2",
+      "F-PLe-L5-1"
+    ]
+  },
+  "cur_vs_stored_differences": [
+    {
+      "item": "D-PLs2",
+      "stored": 1,
+      "cur": 0
+    },
+    {
+      "item": "B-D01",
+      "stored": 0,
+      "cur": 1
+    },
+    {
+      "item": "B-D03",
+      "stored": 0,
+      "cur": 1
+    },
+    {
+      "item": "B-D05",
+      "stored": 1,
+      "cur": 2
+    },
+    {
+      "item": "B-D06",
+      "stored": 2,
+      "cur": 3
+    },
+    {
+      "item": "B-L01",
+      "stored": 0,
+      "cur": 1
+    },
+    {
+      "item": "B-M04",
+      "stored": 2,
+      "cur": 3
+    },
+    {
+      "item": "B-S01",
+      "stored": 1,
+      "cur": 2
+    },
+    {
+      "item": "B-X02",
+      "stored": 4,
+      "cur": 3
+    },
+    {
+      "item": "B-X06R",
+      "stored": 4,
+      "cur": 3
+    }
+  ],
+  "judges": {
+    "haiku-low": {
+      "exact_between_texts": 0.737,
+      "mean_cur": 2.212,
+      "mean_C": 2.182
+    },
+    "opus-low": {
+      "exact_between_texts": 0.889,
+      "mean_cur": 1.717,
+      "mean_C": 1.707
+    },
+    "sonnet-low": {
+      "exact_between_texts": 0.889,
+      "mean_cur": 1.768,
+      "mean_C": 1.788
+    }
+  },
+  "carve": {
+    "quotes": [
+      "B-L01 (sonnet-low)",
+      "F-PLe-L4-1 (sonnet-low)",
+      "F-PLe-L5-2 (sonnet-low)",
+      "F-PLs-L4-4 (haiku-low)",
+      "F-PLs-L4-5 (sonnet-low)"
+    ],
+    "word_knowledge_share": {
+      "cur": 0.084,
+      "C": 0.155
+    }
+  }
+}

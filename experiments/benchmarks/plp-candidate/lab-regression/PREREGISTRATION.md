@@ -130,4 +130,6 @@ points, best guess 4. Pablo chose to run everything at once.
 
 ## Deviations
 
-None yet.
+1. **2026-09-28: haiku ran without an effort setting.** The design says effort low for all three
+   judges. The harness applies no effort to Haiku 4.5, and its transcripts record none. Opus and
+   sonnet ran at low. Found during pass 1; nothing else changed.
