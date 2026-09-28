@@ -2,9 +2,11 @@
 the reported extras. Only labels written by the registered judge are used.
 Writes results/compare.json.
 
-    python experiments/benchmarks/plp-candidate/analysis/compare.py
+    python experiments/benchmarks/plp-candidate/analysis/compare.py               # candidate A
+    python experiments/benchmarks/plp-candidate/analysis/compare.py --arm guard   # candidate B
 """
 
+import argparse
 import importlib.util
 import json
 from pathlib import Path
@@ -16,6 +18,7 @@ HERE = Path(__file__).resolve().parents[1]
 BENCH = HERE.parent
 JUDGE_MODEL = "claude-opus-5-5"
 PABLO_2 = ["html-js-filter", "layout-config-recreation", "risk-scorer-replay"]
+PABLO_3 = ["ctr-optimization", "photonic-waveguide-routing"]
 _spec = importlib.util.spec_from_file_location("t2_analyse", BENCH / "tau2-tb4-pl/analysis/analyse.py")
 t2 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(t2)
@@ -41,8 +44,13 @@ def rho(x: pd.Series, y: pd.Series) -> float:
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--arm", default="cand", choices=["cand", "guard"])
+    arm = ap.parse_args().arm
     sample = pd.read_csv(HERE / "sample.csv", dtype={"instance_id": str})
-    lab = {r: plp(HERE / f"labels/{r}/labels_long.csv") for r in ("cand-tb", "ctrl-tb", "cand-swe", "cand-tau2")}
+    sample = sample[sample["run"].str.startswith("cand-")]  # the task lists; every arm uses the same tasks
+    names = {"cand-tb": f"{arm}-tb", "ctrl-tb": "ctrl-tb", "cand-swe": f"{arm}-swe", "cand-tau2": f"{arm}-tau2"}
+    lab = {k: plp(HERE / f"labels/{v}/labels_long.csv") for k, v in names.items() if (HERE / f"labels/{v}/labels_long.csv").exists()}
     ref_tb = plp(BENCH / "tau2-tb4-pl/labels/tb4pl-r1/labels_long.csv")
     ref_tau2 = plp(BENCH / "tau2-tb4-pl/labels/tau2pl-r1/labels_long.csv")
     ref_swe = pd.concat(plp(BENCH / f"swebench-pl/labels/{r}/labels_long.csv") for r in ("swepl-gate-low", "swepl-r1-low"))
@@ -54,23 +62,30 @@ def main() -> None:
     # Rule 1: binding on the three tasks Pablo put at Level 2.
     cand3, ctrl3 = at(lab["cand-tb"], PABLO_2), at(lab["ctrl-tb"], PABLO_2)
     rule1 = sum(v == 2 for v in cand3) >= 2 and sum(v == 2 for v in ctrl3) <= 1
+    keep3 = at(lab["cand-tb"], PABLO_3)
+    if arm == "guard":
+        rule1 = rule1 and all(v == 3 for v in keep3)
+    stage2 = "cand-swe" in lab and "cand-tau2" in lab
 
-    # Rule 2: SWE-bench, candidate against reference on the same tasks.
-    sw = sample[sample["run"] == "cand-swe"].set_index("instance_id")
-    c, r = lab["cand-swe"].droplevel(0), ref_swe.droplevel(0)
-    ids = [i for i in sw.index if i in c.index and i in r.index]
-    swe = {"n": len(ids), "rho_candidate": rho(c[ids], sw.loc[ids, "solve_rate"]),
-           "rho_reference": rho(r[ids], sw.loc[ids, "solve_rate"]),
-           "mean_shift_candidate_minus_reference": round(float((c[ids] - r[ids]).mean()), 3),
-           "levels_candidate": counts(c[ids]), "levels_reference": counts(r[ids])}
-    rule2 = abs(swe["rho_candidate"] - swe["rho_reference"]) <= 0.10 and abs(swe["mean_shift_candidate_minus_reference"]) <= 0.25
+    swe = comb = ta_ref = ta = None
+    rule2 = rule3 = None
+    if stage2:
+        # Rule 2: SWE-bench, candidate against reference on the same tasks.
+        sw = sample[sample["run"] == "cand-swe"].set_index("instance_id")
+        c, r = lab["cand-swe"].droplevel(0), ref_swe.droplevel(0)
+        ids = [i for i in sw.index if i in c.index and i in r.index]
+        swe = {"n": len(ids), "rho_candidate": rho(c[ids], sw.loc[ids, "solve_rate"]),
+               "rho_reference": rho(r[ids], sw.loc[ids, "solve_rate"]),
+               "mean_shift_candidate_minus_reference": round(float((c[ids] - r[ids]).mean()), 3),
+               "levels_candidate": counts(c[ids]), "levels_reference": counts(r[ids])}
+        rule2 = abs(swe["rho_candidate"] - swe["rho_reference"]) <= 0.10 and abs(swe["mean_shift_candidate_minus_reference"]) <= 0.25
 
-    # Rule 3: tau2, the pre-registered within-domain test on the candidate labels.
-    ta = sample[sample["run"] == "cand-tau2"].copy()
-    ta["PLp"] = [lab["cand-tau2"].get((b, i)) for b, i in zip(ta["benchmark"], ta["instance_id"])]
-    comb = t2.combined(ta, "PLp", "solve_rate", "negative")
-    rule3 = isinstance(comb["combined"], dict) and comb["combined"]["supported"] and comb["combined"]["rho"] <= -0.225
-    ta_ref = ta.assign(PLp=[ref_tau2.get((b, i)) for b, i in zip(ta["benchmark"], ta["instance_id"])])
+        # Rule 3: tau2, the pre-registered within-domain test on the candidate labels.
+        ta = sample[sample["run"] == "cand-tau2"].copy()
+        ta["PLp"] = [lab["cand-tau2"].get((b, i)) for b, i in zip(ta["benchmark"], ta["instance_id"])]
+        comb = t2.combined(ta, "PLp", "solve_rate", "negative")
+        rule3 = isinstance(comb["combined"], dict) and comb["combined"]["supported"] and comb["combined"]["rho"] <= -0.225
+        ta_ref = ta.assign(PLp=[ref_tau2.get((b, i)) for b, i in zip(ta["benchmark"], ta["instance_id"])])
 
     # Terminal-Bench extras: noise, agreement with Pablo, exploratory correlations.
     tbs = sample[sample["run"] == "cand-tb"].set_index("instance_id")
@@ -90,14 +105,20 @@ def main() -> None:
                         for name, s in (("candidate", lab["cand-tb"]), ("control", lab["ctrl-tb"]))
                         for v in [pd.Series(at(s, list(tbs.index)), index=tbs.index).pipe(lambda x: x[x >= 0])]},
     }
-    verdict = "helps" if rule1 and rule2 and rule3 else ("harms" if not (rule2 and rule3) else "no effect")
-    out = {"rule1_binding": {"passed": rule1, "candidate": cand3, "control": ctrl3},
-           "rule2_swe": {"passed": rule2, **swe},
+    if not rule1:
+        verdict = "no effect"
+    elif not stage2:
+        verdict = "stage 1 passed; stage 2 pending"
+    else:
+        verdict = "helps" if rule2 and rule3 else "harms"
+    out = {"arm": arm, "rule1_binding": {"passed": rule1, "candidate": cand3, "control": ctrl3, "pablo_3_tasks_candidate": keep3},
+           "rule2_swe": {"passed": rule2, **swe} if stage2 else "not run",
            "rule3_tau2": {"passed": rule3, "candidate": comb, "reference_combined": t2.combined(ta_ref, "PLp", "solve_rate", "negative")["combined"],
-                          "levels_candidate": counts(ta["PLp"].dropna().astype(int)), "levels_reference": counts(ta_ref["PLp"].dropna().astype(int))},
+                          "levels_candidate": counts(ta["PLp"].dropna().astype(int)), "levels_reference": counts(ta_ref["PLp"].dropna().astype(int))} if stage2 else "not run",
            "terminal_bench": tb, "verdict": verdict}
     (HERE / "results").mkdir(exist_ok=True)
-    (HERE / "results/compare.json").write_text(json.dumps(out, indent=2, default=str) + "\n")
+    name = "compare.json" if arm == "cand" else f"compare-{arm}.json"
+    (HERE / "results" / name).write_text(json.dumps(out, indent=2, default=str) + "\n")
     print(json.dumps(out, indent=2, default=str))
 
 

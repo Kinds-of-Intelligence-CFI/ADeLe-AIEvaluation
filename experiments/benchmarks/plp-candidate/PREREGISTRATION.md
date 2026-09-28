@@ -67,6 +67,40 @@ If it helps, the candidate goes to the lab's regression: example placement, the 
 pairs, the family diagonal, the 4-gram independence check, and three judges. Paolo's blind labels
 are also still pending. `PLp.txt` does not change before then.
 
+## Candidate B: an explicit rule (added 2026-09-28, after candidate A's result, before any label of B)
+
+Candidate A had no effect (`RESULTS.md`). Candidate B keeps the current Level 3 and adds one
+sentence right after its look-ahead sentence:
+
+- "Critically, a poor option that a standard choice avoids does not make the decisions interact."
+
+Level 3 grows from 93 to 108 words. The full text is in `PLp_candidate_b.txt`.
+
+**Runs.** `guard-tb` (the 34 Terminal-Bench tasks), then `guard-swe` (the same 60) and `guard-tau2`
+(the same 232). Same judge and settings as candidate A. The control is `ctrl-tb`, already run.
+
+**Two stages.**
+1. `guard-tb` only.
+2. `guard-swe` and `guard-tau2`, only if rule 1 passes.
+
+**Decision rule.** As for candidate A, with one addition to rule 1 so that pushing every task down
+cannot pass:
+1. **Binding.** At least 2 of Pablo's three Level-2 tasks are at 2 under `guard-tb`, and at most 1
+   of them is at 2 under `ctrl-tb`. Also, the two tasks Pablo put at 3 (`ctr-optimization`,
+   `photonic-waveguide-routing`) stay at 3.
+2. **No harm on SWE-bench.** As for A.
+3. **No harm on tau2.** As for A.
+
+The verdict works as for A. If stage 1 fails, the verdict is "no effect" and stage 2 does not run.
+
+**Predictions (sealed).**
+- Rule 1 passes: 0.5.
+- If stage 2 runs, rule 2 passes: 0.8.
+- If stage 2 runs, rule 3 passes: 0.6. tau2's few Level 3s may drop to 2.
+- Verdict "helps": 0.25.
+
+**Cost.** Stage 1: 34 calls. Stage 2: 292 calls, about 1.6% of a week.
+
 ## Deviations
 
 None yet.

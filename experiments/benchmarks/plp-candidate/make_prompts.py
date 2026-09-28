@@ -10,9 +10,11 @@ effort). Runs:
 Prompts built with the current text must reproduce the original runs' prompt hashes, which checks
 that nothing but the sentence differs.
 
-    python experiments/benchmarks/plp-candidate/make_prompts.py
+    python experiments/benchmarks/plp-candidate/make_prompts.py            # candidate A
+    python experiments/benchmarks/plp-candidate/make_prompts.py --guard    # candidate B only
 """
 
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -38,6 +40,8 @@ INSTRUCTION = "Prompt file: {prompt_file}\nResponse file: {response_file}"
 OLD = ("An option that looks good locally can be wrong because of its consequences several steps "
        "later, so alternatives must be compared by looking ahead before committing.")
 NEW = "The best choice at one step depends on choices at other steps, so options must be compared before committing."
+# Candidate B: the current Level 3 plus one sentence after OLD.
+GUARD = "Critically, a poor option that a standard choice avoids does not make the decisions interact."
 SEED = 20260928
 
 
@@ -96,10 +100,14 @@ def write_run(run_id: str, rows: pd.DataFrame, rubric: str, rubric_note: dict, n
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--guard", action="store_true", help="write only candidate B's runs")
+    guard = ap.parse_args().guard
     plp = load_active_catalog()["PLp"]
     assert plp.content.count(OLD) == 1
     candidate = plp.content.replace(OLD, NEW)
-    (HERE / "PLp_candidate.txt").write_text(candidate, encoding="utf-8")
+    if not guard:
+        (HERE / "PLp_candidate.txt").write_text(candidate, encoding="utf-8")
     base_note = {"file": str(Path(plp.file_path).relative_to(ROOT)), "sha256": sha256(Path(plp.file_path).read_bytes())}
     cand_note = {**base_note, "candidate": "plp-candidate/PLp_candidate.txt",
                  "candidate_sha256": sha256(candidate.encode("utf-8")), "old_sentence": OLD, "new_sentence": NEW}
@@ -134,12 +142,21 @@ def main() -> None:
 
     runs = {"cand-tb": (tb, candidate, cand_note), "ctrl-tb": (tb, plp.content, base_note),
             "cand-swe": (swe, candidate, cand_note), "cand-tau2": (tau2, candidate, cand_note)}
+    if guard:
+        cand_b = plp.content.replace(OLD, f"{OLD} {GUARD}")
+        (HERE / "PLp_candidate_b.txt").write_text(cand_b, encoding="utf-8")
+        note_b = {**base_note, "candidate": "plp-candidate/PLp_candidate_b.txt",
+                  "candidate_sha256": sha256(cand_b.encode("utf-8")), "inserted_after": OLD, "inserted_sentence": GUARD}
+        runs = {"guard-tb": (tb, cand_b, note_b), "guard-swe": (swe, cand_b, note_b), "guard-tau2": (tau2, cand_b, note_b)}
     frames = []
     for run_id, (rows, rubric, note) in runs.items():
         write_run(run_id, rows, rubric, note, plp.full_name)
         frames.append(rows.drop(columns="text").assign(run=run_id))
     cols = ["run", "benchmark", "instance_id", "file_id", "solve_rate", "expert_hours", "analysis_set"]
-    pd.concat(frames)[cols].to_csv(HERE / "sample.csv", index=False)
+    out = pd.concat(frames)[cols]
+    if guard:
+        out = pd.concat([pd.read_csv(HERE / "sample.csv", dtype={"instance_id": str}), out])
+    out.to_csv(HERE / "sample.csv", index=False)
 
 
 if __name__ == "__main__":
