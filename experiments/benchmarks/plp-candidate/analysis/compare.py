@@ -4,6 +4,7 @@ Writes results/compare.json.
 
     python experiments/benchmarks/plp-candidate/analysis/compare.py               # candidate A
     python experiments/benchmarks/plp-candidate/analysis/compare.py --arm guard   # candidate B
+    python experiments/benchmarks/plp-candidate/analysis/compare.py --arm knowl   # candidate C
 """
 
 import argparse
@@ -45,7 +46,7 @@ def rho(x: pd.Series, y: pd.Series) -> float:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--arm", default="cand", choices=["cand", "guard"])
+    ap.add_argument("--arm", default="cand", choices=["cand", "guard", "knowl"])
     arm = ap.parse_args().arm
     sample = pd.read_csv(HERE / "sample.csv", dtype={"instance_id": str})
     sample = sample[sample["run"].str.startswith("cand-")]  # the task lists; every arm uses the same tasks
@@ -63,7 +64,7 @@ def main() -> None:
     cand3, ctrl3 = at(lab["cand-tb"], PABLO_2), at(lab["ctrl-tb"], PABLO_2)
     rule1 = sum(v == 2 for v in cand3) >= 2 and sum(v == 2 for v in ctrl3) <= 1
     keep3 = at(lab["cand-tb"], PABLO_3)
-    if arm == "guard":
+    if arm != "cand":
         rule1 = rule1 and all(v == 3 for v in keep3)
     stage2 = "cand-swe" in lab and "cand-tau2" in lab
 

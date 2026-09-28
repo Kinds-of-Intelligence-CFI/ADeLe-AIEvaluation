@@ -30,3 +30,10 @@ Stage 1 (`guard-tb`) runs first.
 One relay, 34/34 answered and parsed, all written by `claude-opus-5-5`, no classifier stop,
 protocol check clean. Rule 1 failed, since only `html-js-filter` moved to Level 2. So stage 2
 (`guard-swe`, `guard-tau2`) does not run, as pre-registered, and its pinned prompts stay unjudged.
+
+## 2026-09-28 — candidate C pinned (`knowl-tb`, `knowl-swe`, `knowl-tau2`)
+
+`make_prompts.py --knowledge` wrote 326 prompts from `PLp_candidate_c.txt`. That is the current text
+plus one sentence at the end of the "does not cover" paragraph. The hash check against the original
+prompts passed. `compare.py` gained `--arm knowl`, and re-run for A and B it reproduces their
+results. Stage 1 (`knowl-tb`) runs first.
