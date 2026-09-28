@@ -133,6 +133,37 @@ Terminal-Bench can confirm an effect as large as SWE-bench's, but cannot rule ou
 - **The tau2 judge sees the user's side of the task.** What the agent must do also depends on the
   domain policy, which the judge does not see.
 
+## Follow-up: Opus at max effort on Terminal-Bench (exploratory; added 2026-09-28, after the human check, before any label of this run)
+
+**Why.** In the human check (`human-labels/RESULTS.md`), Pablo put 3 of 5 of the judge's Level-3
+tasks at Level 2. In those cases, the low-effort judge's own reasoning counted difficulty the rubric
+excludes as interacting decisions, and on one task it broke the tie-break. Question: does low
+effort inflate Level 3 on Terminal-Bench?
+
+**Run `tb4pl-max`.**
+- PLp on the 34 Terminal-Bench analysis-set tasks.
+- Prompts byte-identical to `tb4pl-r1` (checked by hash in `make_max_run.py`).
+- Judged by `swebench-30`'s `adele-judge`: Opus at max effort, the lab's "one strong judge", with
+  relays `judge-dispatcher`.
+- Amendment 2's rule on answers by other models applies.
+
+**Reported** (`analysis/effort_followup.py`):
+- agreement with the Opus-low labels: exact, within one level, κ, mean shift (max minus low), and
+  level counts;
+- PLp against solve rate and against expert time on the max labels, computed as Q1 and Q2 but
+  exploratory;
+- agreement with Pablo's six blind labels and with Claude's reading.
+
+**Predictions** (exploratory, not tests):
+1. On the analysis set, the mean shift from low to max is below zero, and more tasks sit at
+   Level 2 than the low run's four. Probability 0.55.
+2. Max agrees exactly with at least 4 of Pablo's 6 labels (low: 3). Probability 0.5.
+
+**Consequence.** If both hold, the Opus-low Terminal-Bench labels are treated as unreliable at the
+2/3 boundary. Re-judging Terminal-Bench on all three PL rubrics at max effort would then be
+proposed (198 calls, about 4% of a week). The pre-registered analysis above does not change.
+Cost of this run: 34 calls, about 0.7% of a week.
+
 ## Deviations
 
 None yet. One amendment before any label (2026-09-27): the dry run goes through one relay per
