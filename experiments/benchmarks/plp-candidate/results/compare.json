@@ -1,4 +1,5 @@
 {
+  "arm": "cand",
   "rule1_binding": {
     "passed": false,
     "candidate": [
@@ -8,6 +9,10 @@
     ],
     "control": [
       3,
+      3,
+      3
+    ],
+    "pablo_3_tasks_candidate": [
       3,
       3
     ]

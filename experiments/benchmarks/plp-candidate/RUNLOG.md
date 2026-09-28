@@ -17,3 +17,10 @@ Seven `judge-dispatcher-low` relays, 08:35–09:02 UTC, plus one retry.
   own files only. The one flag is a Write cut off by the classifier stop on `uefi-bootkit`, which
   wrote nothing.
 - **Cost.** Mean final-request context 7.2k–7.7k tokens, 16–20 s per call.
+
+## 2026-09-28 — candidate B pinned (`guard-tb`, `guard-swe`, `guard-tau2`)
+
+`make_prompts.py --guard` wrote 326 prompts from `PLp_candidate_b.txt`, which is the current text
+plus one sentence. The hash check against the original prompts passed again. `compare.py` gained
+`--arm guard`. Re-run for candidate A, it reproduces every number and adds two reported fields.
+Stage 1 (`guard-tb`) runs first.
