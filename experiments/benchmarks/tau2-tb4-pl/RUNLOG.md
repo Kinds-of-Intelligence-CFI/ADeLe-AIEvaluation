@@ -72,3 +72,14 @@ Nine relays of 96–99 cells, two for Terminal-Bench and seven for tau2:
   - Mean time per call: 13 s and 16 s.
   - The weekly all-model limit went from 75% to 80%, orchestration included.
   - About 37% of a 5-hour window: 21 points before the reset, 16 after.
+
+## 2026-09-28 — Pablo's blind PLp labels on Terminal-Bench (exploratory; `human-labels/`)
+
+Sealed before the first label (`79ec5fb`): 12 tasks and a decision rule on the Level 3/4
+boundary. Amendment 1 (`2736145`) put the rubric as gates.
+- The round ended after 7 tasks at Pablo's request, before the gates were used, and was then
+  unblinded.
+- k = 0: the boundary stands.
+- The 2/3 flag triggered: Pablo put 3 of 5 judge-3 tasks at 2, and Claude's reading sides with him
+  on all three.
+- Details: `human-labels/RESULTS.md`.

@@ -116,6 +116,14 @@ From `results/analysis.json` and `results/exploratory.json` (`analysis/explorato
   On Terminal-Bench, length relates to neither solve rate (+0.25, not significant) nor PLp
   (+0.07).
 
+- **Human check** (after the analysis, exploratory: `human-labels/RESULTS.md`). Pablo labelled 7
+  Terminal-Bench tasks blind; one was an abstention.
+  - He put none of the judge's Level 3s at 4, so there is no sign the Level 3/4 boundary is
+    too strict.
+  - He put 3 of 5 at 2, and on reading the rubric those look right: the judge counted
+    perception, black-box probing and a one-off method choice as interacting decisions.
+  - Exact agreement with the judge: 3 of 6.
+
 ## Deviations and caveats
 
 - **Deviations:** none. Two amendments before the full run:
