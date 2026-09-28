@@ -1,1 +1,8 @@
-order,instance_id,pablo_level,labelled_at,note
+order,instance_id,pablo_level,labelled_at,note,checklist_level,checklist_gate,checklist_at,checklist_note
+1,html-js-filter,2,2026-09-28T07:19:08+00:00,likely,,,,
+2,ctr-optimization,3,2026-09-28T07:21:24+00:00,probably,,,,
+3,cad-model,,2026-09-28T07:22:27+00:00,abstained: text insufficient (the schematic is not in the task text),,,,
+4,biped-contact-dynamics,4,2026-09-28T07:23:44+00:00,probably,,,,
+5,layout-config-recreation,2,2026-09-28T07:24:56+00:00,probably,,,,
+6,photonic-waveguide-routing,3,2026-09-28T07:26:16+00:00,perhaps,,,,
+7,risk-scorer-replay,2,2026-09-28T07:28:54+00:00,maybe; his words: many things to keep track of but they feel largely interdependent,,,,
