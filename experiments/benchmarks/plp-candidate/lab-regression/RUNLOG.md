@@ -37,3 +37,10 @@ Six relays, 15:41–16:28 UTC, plus one retry.
 classifier stop, answer still written by opus). Both texts got haiku 3, sonnet 2, opus 2. The loss
 is not confirmed. Verdict: pass. Weekly usage went from 88 to 93 per cent between 14:37 and 16:31
 UTC, other sessions included.
+
+## 2026-09-28 — candidate D pinned (`labreg-d1`)
+
+Pablo asked for C's first clause only. `make_prompts.py --candidate d` wrote 99 prompts from
+`PLp_candidate_d.txt`. Each equals its `labreg-r1` current-text prompt plus the one sentence (checked).
+The ids do not overlap with earlier runs. The analysis script gained `--candidate d`; re-run for C, it
+reproduces `results/regression.json` exactly. It was tested on synthetic D labels, which were not kept.

@@ -17,6 +17,10 @@ two arms are shuffled together, so nothing in a file name tells a judge the set,
 
     python experiments/benchmarks/plp-candidate/lab-regression/make_prompts.py             # pass 1
     python experiments/benchmarks/plp-candidate/lab-regression/make_prompts.py --replicate ITEM [ITEM ...]
+    python experiments/benchmarks/plp-candidate/lab-regression/make_prompts.py --candidate d [--replicate ITEM ...]
+
+Candidate D (added after C passed) is C's first clause only. It is judged alone (labreg-d1), against
+the current-text labels of labreg-r1; its pass 2 is labreg-d2.
 """
 
 import argparse
@@ -47,6 +51,9 @@ INSTRUCTION = "Prompt file: {prompt_file}\nResponse file: {response_file}"
 SCOPE_END = "Note, such features raise this demand only insofar as they make a workable plan harder to find."
 CARVE = ("Knowing the established method is knowledge rather than planning, so pitfalls that the method "
          "avoids do not raise this demand.")
+# Candidate D (added after C passed): the first clause of C only.
+CANDIDATE_D = HERE.parent / "PLp_candidate_d.txt"
+CARVE_D = "Knowing the established method is knowledge rather than planning."
 ID_CHARS = "abcdefghjkmnpqrstuvwxyz23456789"
 SEED = 20260928
 # Stored PLp medians of the rebuilt items, from the round records (r36 README and labels; r42 and
@@ -133,7 +140,7 @@ def build_items(plp_cur: str, plp_c: str, catalog) -> pd.DataFrame:
     return items
 
 
-def write_run(run_id: str, cells: list[dict], note: dict) -> None:
+def write_run(run_id: str, cells: list[dict], note: dict, arms: tuple[str, ...] = ("cur", "C")) -> None:
     io_dir, labels = JUDGE_IO / run_id, HERE / "labels" / run_id
     for d in [io_dir / "prompts", labels] + [io_dir / "responses" / j for j in JUDGES]:
         d.mkdir(parents=True, exist_ok=True)
@@ -145,7 +152,7 @@ def write_run(run_id: str, cells: list[dict], note: dict) -> None:
         "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "repo_commit": git("rev-parse", "HEAD").strip(),
         "repo_dirty_tracked_files": git("status", "--porcelain", "--untracked-files=no").splitlines(),
-        "design": {"n_cells": len(cells), "dims": ["PLp"], "arms": ["cur", "C"], "judges": JUDGES},
+        "design": {"n_cells": len(cells), "dims": ["PLp"], "arms": list(arms), "judges": JUDGES},
         **note,
         "prompt": {"builder": "adele.annotation.prompts.build_annotation_prompt",
                    "builder_file_sha256": sha256((ROOT / "src/adele/annotation/prompts.py").read_bytes())},
@@ -171,7 +178,9 @@ def opaque_ids(n: int, rng: random.Random, taken: set[str]) -> list[str]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--replicate", nargs="+", metavar="ITEM", help="write pass 2 (labreg-r2) for these items")
+    ap.add_argument("--candidate", choices=["c", "d"], default="c",
+                    help="c: both texts, run labreg-r1. d: candidate D alone, run labreg-d1 (baseline: labreg-r1)")
+    ap.add_argument("--replicate", nargs="+", metavar="ITEM", help="write pass 2 (labreg-r2 or labreg-d2)")
     args = ap.parse_args()
     catalog = load_active_catalog()
     plp = catalog["PLp"]
@@ -187,6 +196,44 @@ def main() -> None:
                        "inserted_after": SCOPE_END, "inserted_sentence": CARVE,
                        "set_P": "every Examples block stripped from the rubric shown (r25 design)"},
             "items": "lab-regression/items.csv", "lab_record_commit": LAB}
+
+    if args.candidate == "d":
+        plp_d = plp.content.replace(SCOPE_END, f"{SCOPE_END} {CARVE_D}")
+        CANDIDATE_D.write_text(plp_d, encoding="utf-8")
+        note = {**note, "rubric": {**note["rubric"], "candidate": "plp-candidate/PLp_candidate_d.txt",
+                                   "candidate_sha256": sha256(plp_d.encode("utf-8")), "inserted_sentence": CARVE_D}}
+        if args.replicate:  # pass 2 for D: the pass-1 prompts of both texts, under new ids
+            r1 = pd.read_csv(HERE / "labels/labreg-r1/prompts_index.csv").assign(pass1_run="labreg-r1")
+            d1 = pd.read_csv(HERE / "labels/labreg-d1/prompts_index.csv").assign(pass1_run="labreg-d1")
+            todo = pd.concat([r1[r1["arm"] == "cur"], d1])
+            todo = todo[todo["item_id"].isin(args.replicate)]
+            assert set(todo["item_id"]) == set(args.replicate), "unknown item"
+            taken = set(pd.concat(pd.read_csv(p) for p in HERE.glob("labels/*/prompts_index.csv"))["file_id"])
+            cells = []
+            for r, new in zip(todo.sample(frac=1, random_state=SEED + 12).itertuples(index=False),
+                              opaque_ids(len(todo), random.Random(SEED + 12), taken)):
+                prompt = (JUDGE_IO / r.pass1_run / "prompts" / f"{r.file_id}@PLp.txt").read_text(encoding="utf-8")
+                assert sha256(prompt.encode("utf-8")) == r.prompt_sha256
+                cells.append({"file_id": new, "item_id": r.item_id, "set": r.set, "arm": r.arm, "demand": "PLp",
+                              "prompt_sha256": r.prompt_sha256, "pass1_run": r.pass1_run,
+                              "pass1_file_id": r.file_id, "prompt": prompt})
+            write_run("labreg-d2", cells, {**note, "pass": 2, "replicates": ["labreg-r1", "labreg-d1"]}, ("cur", "D"))
+            return
+        judged = pd.read_csv(HERE / "items.csv").query("status == 'judged'")
+        cells = []
+        for r in judged.itertuples(index=False):
+            rubric = strip_examples(plp_d) if r.set == "P" else plp_d
+            prompt = build_annotation_prompt(demand_name=plp.full_name, rubric_content=rubric, task_instance=r.text)
+            cells.append({"item_id": r.item_id, "set": r.set, "arm": "D", "demand": "PLp",
+                          "prompt_sha256": sha256(prompt.encode("utf-8")), "prompt": prompt})
+        rng = random.Random(SEED + 10)
+        rng.shuffle(cells)
+        taken = set(pd.concat(pd.read_csv(p) for p in HERE.glob("labels/*/prompts_index.csv"))["file_id"])
+        for c, i in zip(cells, opaque_ids(len(cells), rng, taken)):
+            c["file_id"] = i
+        cells = [{"file_id": c["file_id"], **{k: v for k, v in c.items() if k != "file_id"}} for c in cells]
+        write_run("labreg-d1", cells, {**note, "pass": 1, "baseline": "labreg-r1, arm cur"}, ("D",))
+        return
 
     if args.replicate:
         r1 = pd.read_csv(HERE / "labels/labreg-r1/prompts_index.csv")
