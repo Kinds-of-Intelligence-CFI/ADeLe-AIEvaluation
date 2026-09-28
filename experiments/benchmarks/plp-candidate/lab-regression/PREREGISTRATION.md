@@ -128,6 +128,41 @@ points, best guess 4. Pablo chose to run everything at once.
   `experiments/benchmarks/`.
 - If C fails, `PLp.txt` stays unchanged and the report names what broke.
 
+## Candidate D: the first clause only (added 2026-09-28, after C passed, before any label of D)
+
+Pablo wants a shorter sentence: only the first clause of C.
+
+> Knowing the established method is knowledge rather than planning.
+
+The full text is in `../PLp_candidate_d.txt`. It is the current text plus this one sentence, in the
+same place as C's.
+
+**Design.** As for C, with one change: only D is judged (run `labreg-d1`, 99 items × 3 judges = 297
+calls). The current-text labels of `labreg-r1` are the baseline. They were judged earlier today with
+the same judges, prompts and settings. `make_prompts.py --candidate d` checks that each D prompt is
+its current-text prompt plus the one sentence.
+
+**Decision rule.** The same outcomes and rule as for C, with D in place of C. Pass 2 (`labreg-d2`)
+judges the items behind a pass-1 loss again, under both texts.
+
+**Why D could behave differently from C.** Without "so pitfalls that the method avoids…", the
+sentence is broader. Level 1 ("a well-established routine") and Level 3 ("established methods
+exist") both name established methods. A judge could read D as lowering them.
+
+**Predictions (sealed).**
+- D passes: 0.45.
+- If D loses anything, it is an item moving down: 0.9. Most at risk: Level 1 examples (to 0), and
+  Level 3 items with standard methods (to 2).
+- D's judges quote the new sentence in 10 per cent or more of their answers: 0.5.
+- More single-judge labels are lower under D than under the current text: 0.8. The sign test is
+  significant with D lower: 0.4.
+
+**Cost.** 297 calls plus pass 2, about 2.5 weekly points (93 to about 95.5 per cent).
+
+**Next.** If D passes, PLp's real-task labels are redone with D at Opus low (733 calls), after the
+weekly reset on 2026-09-29 at 20:00 UTC, under their own pre-registration. If D fails, C stays the
+tested option.
+
 ## Deviations
 
 1. **2026-09-28: haiku ran without an effort setting.** The design says effort low for all three

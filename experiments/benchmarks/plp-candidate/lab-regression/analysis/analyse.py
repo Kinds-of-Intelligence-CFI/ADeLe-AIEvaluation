@@ -2,6 +2,8 @@
 
 Reads items.csv and labels/labreg-r1/labels_long.csv (pass 1), plus labels/labreg-r2/labels_long.csv
 (pass 2, the re-runs) when it exists. Writes results/regression.json and prints a summary.
+With --candidate d, candidate D (labreg-d1, pass 2 labreg-d2) is compared with the current-text
+labels of labreg-r1, and the output is results/regression_d.json. D is shown as column "C".
 
 Rules, in short:
   - A label counts only if the judge's registered model wrote it (writers.csv, via collect.py).
@@ -12,9 +14,10 @@ Rules, in short:
     again under both texts (pass 2). A loss or a big move counts only if pass 2 repeats it.
   - C passes if no loss and no move of two levels or more is confirmed.
 
-    python experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse.py
+    python experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse.py [--candidate d]
 """
 
+import argparse
 import json
 import re
 from pathlib import Path
@@ -107,21 +110,35 @@ def feeders(name: str) -> list[str]:
     return [name.split()[1]]
 
 
-def load(run: str, items: pd.DataFrame) -> pd.DataFrame | None:
+def load(run: str, items: pd.DataFrame, arm: str | None = None) -> pd.DataFrame | None:
     f = HERE / f"labels/{run}/labels_long.csv"
     if not f.exists():
         return None
     lab = pd.read_csv(f)
+    if arm:
+        lab = lab[lab["arm"] == arm]
+    lab["arm"] = lab["arm"].replace({"D": "C"})  # the candidate under test is always column "C" below
     lab["counted"] = lab["valid"] & lab.apply(lambda r: str(r["writer_model"]).startswith(MODELS[r["judge"]]), axis=1)
     return lab
 
 
+# Candidate C: both texts judged in labreg-r1. Candidate D: D judged in labreg-d1, against the
+# current-text labels of labreg-r1.
+RUNS = {"c": {"pass1": [("labreg-r1", None)], "pass2": "labreg-r2", "raw": "labreg-r1", "out": "regression.json"},
+        "d": {"pass1": [("labreg-r1", "cur"), ("labreg-d1", None)], "pass2": "labreg-d2", "raw": "labreg-d1",
+              "out": "regression_d.json"}}
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--candidate", choices=list(RUNS), default="c")
+    runs = RUNS[ap.parse_args().candidate]
     items = pd.read_csv(HERE / "items.csv")
     judged = items[items["status"] == "judged"]
     fams = judged.groupby("family")["item_id"].apply(list).to_dict()
-    r1 = load("labreg-r1", items)
-    assert r1 is not None, "no pass-1 labels"
+    parts = [load(run, items, arm) for run, arm in runs["pass1"]]
+    assert all(p is not None for p in parts), "no pass-1 labels"
+    r1 = pd.concat(parts)
     m1 = medians(r1)
     cur1, c1 = m1["cur"].dropna().astype(int).to_dict(), m1["C"].dropna().astype(int).to_dict()
     o_cur, o_c = outcomes(items, cur1), outcomes(items, c1)
@@ -136,7 +153,7 @@ def main() -> None:
     big = sorted(i for i, d in moved.items() if abs(d) >= 2)
     to_rerun = sorted({i for k in losses for i in items_of(k) if i in moved} | set(big))
 
-    r2 = load("labreg-r2", items)
+    r2 = load(runs["pass2"], items)
     confirmed_losses, confirmed_big, pending = [], [], False
     if to_rerun:
         if r2 is None:
@@ -174,12 +191,12 @@ def main() -> None:
                  "mean_shift": round(float(sum(cur1[i] - s for i, s in zip(st["item_id"], st["stored_median"])) / len(st)), 3) if len(st) else None}
 
     # Exploratory: how often C's judges quote the new sentence (needs the gitignored raw responses).
-    raw = HERE.parents[3] / "data/annotations/labreg-r1/raw.jsonl"
+    raw = HERE.parents[3] / f"data/annotations/{runs['raw']}/raw.jsonl"
     carve = None
     if raw.exists():
         rows = [json.loads(l) for l in raw.read_text().splitlines()]
-        cite = [r for r in rows if r["arm"] == "C" and any(ph in r["response"].lower() for ph in CARVE_PHRASES)]
-        carve = {"C_answers": sum(r["arm"] == "C" for r in rows), "quoting_the_new_sentence": len(cite),
+        cite = [r for r in rows if r["arm"] in ("C", "D") and any(ph in r["response"].lower() for ph in CARVE_PHRASES)]
+        carve = {"C_answers": sum(r["arm"] in ("C", "D") for r in rows), "quoting_the_new_sentence": len(cite),
                  "by_set": pd.Series([r["set"] for r in cite]).value_counts().to_dict(),
                  "on_moved_items": sorted({r["item_id"] for r in cite if r["item_id"] in moved})}
 
@@ -200,7 +217,7 @@ def main() -> None:
         "outcomes_pass1": {k: {"cur": o_cur[k], "C": o_c.get(k)} for k in o_cur},
     }
     (HERE / "results").mkdir(exist_ok=True)
-    (HERE / "results/regression.json").write_text(json.dumps(res, indent=2) + "\n")
+    (HERE / "results" / runs["out"]).write_text(json.dumps(res, indent=2) + "\n")
     print("verdict:", verdict)
     print(f"outcomes holding: current {res['outcomes']['hold_under_current']}/{len(o_cur)}, C {res['outcomes']['hold_under_C']}/{len(o_cur)}")
     print("losses (pass 1):", losses or "none")
