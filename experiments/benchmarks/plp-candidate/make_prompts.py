@@ -12,6 +12,7 @@ that nothing but the sentence differs.
 
     python experiments/benchmarks/plp-candidate/make_prompts.py            # candidate A
     python experiments/benchmarks/plp-candidate/make_prompts.py --guard    # candidate B only
+    python experiments/benchmarks/plp-candidate/make_prompts.py --knowledge  # candidate C only
 """
 
 import argparse
@@ -42,6 +43,10 @@ OLD = ("An option that looks good locally can be wrong because of its consequenc
 NEW = "The best choice at one step depends on choices at other steps, so options must be compared before committing."
 # Candidate B: the current Level 3 plus one sentence after OLD.
 GUARD = "Critically, a poor option that a standard choice avoids does not make the decisions interact."
+# Candidate C: one sentence at the end of the "does not cover" paragraph, after SCOPE_END.
+SCOPE_END = "Note, such features raise this demand only insofar as they make a workable plan harder to find."
+CARVE = ("Knowing the established method is knowledge rather than planning, so pitfalls that the method "
+         "avoids do not raise this demand.")
 SEED = 20260928
 
 
@@ -102,11 +107,13 @@ def write_run(run_id: str, rows: pd.DataFrame, rubric: str, rubric_note: dict, n
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--guard", action="store_true", help="write only candidate B's runs")
-    guard = ap.parse_args().guard
+    ap.add_argument("--knowledge", action="store_true", help="write only candidate C's runs")
+    args = ap.parse_args()
+    guard, knowledge = args.guard, args.knowledge
     plp = load_active_catalog()["PLp"]
     assert plp.content.count(OLD) == 1
     candidate = plp.content.replace(OLD, NEW)
-    if not guard:
+    if not (guard or knowledge):
         (HERE / "PLp_candidate.txt").write_text(candidate, encoding="utf-8")
     base_note = {"file": str(Path(plp.file_path).relative_to(ROOT)), "sha256": sha256(Path(plp.file_path).read_bytes())}
     cand_note = {**base_note, "candidate": "plp-candidate/PLp_candidate.txt",
@@ -148,13 +155,20 @@ def main() -> None:
         note_b = {**base_note, "candidate": "plp-candidate/PLp_candidate_b.txt",
                   "candidate_sha256": sha256(cand_b.encode("utf-8")), "inserted_after": OLD, "inserted_sentence": GUARD}
         runs = {"guard-tb": (tb, cand_b, note_b), "guard-swe": (swe, cand_b, note_b), "guard-tau2": (tau2, cand_b, note_b)}
+    if knowledge:
+        assert plp.content.count(SCOPE_END) == 1
+        cand_c = plp.content.replace(SCOPE_END, f"{SCOPE_END} {CARVE}")
+        (HERE / "PLp_candidate_c.txt").write_text(cand_c, encoding="utf-8")
+        note_c = {**base_note, "candidate": "plp-candidate/PLp_candidate_c.txt",
+                  "candidate_sha256": sha256(cand_c.encode("utf-8")), "inserted_after": SCOPE_END, "inserted_sentence": CARVE}
+        runs = {"knowl-tb": (tb, cand_c, note_c), "knowl-swe": (swe, cand_c, note_c), "knowl-tau2": (tau2, cand_c, note_c)}
     frames = []
     for run_id, (rows, rubric, note) in runs.items():
         write_run(run_id, rows, rubric, note, plp.full_name)
         frames.append(rows.drop(columns="text").assign(run=run_id))
     cols = ["run", "benchmark", "instance_id", "file_id", "solve_rate", "expert_hours", "analysis_set"]
     out = pd.concat(frames)[cols]
-    if guard:
+    if guard or knowledge:
         out = pd.concat([pd.read_csv(HERE / "sample.csv", dtype={"instance_id": str}), out])
     out.to_csv(HERE / "sample.csv", index=False)
 

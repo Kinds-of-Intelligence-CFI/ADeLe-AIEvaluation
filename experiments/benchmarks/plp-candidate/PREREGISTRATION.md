@@ -101,6 +101,36 @@ The verdict works as for A. If stage 1 fails, the verdict is "no effect" and sta
 
 **Cost.** Stage 1: 34 calls. Stage 2: 292 calls, about 1.6% of a week.
 
+## Candidate C: a knowledge carve (added 2026-09-28, after candidate B's result, before any label of C)
+
+Candidate B moved one of Pablo's three Level-2 tasks. In discussion, the remaining 2/3 question
+became narrower: is the difficulty planning, or knowing the method? PLs already separates
+knowledge from its demand ("Having the governing regularity is knowledge rather than simulating,
+so an obscure law does not raise this demand."). PLp has no such sentence. Candidate C adds one at
+the end of PLp's "What this dimension does not cover" paragraph, and leaves the levels unchanged:
+
+- "Knowing the established method is knowledge rather than planning, so pitfalls that the method
+  avoids do not raise this demand."
+
+The full text is in `PLp_candidate_c.txt`.
+
+**Runs and stages.** As for B:
+1. `knowl-tb` (the 34 Terminal-Bench tasks);
+2. `knowl-swe` and `knowl-tau2`, only if rule 1 passes.
+
+The control is `ctrl-tb`.
+
+**Decision rule.** The same as B's, rules 1 to 3.
+
+**Predictions (sealed).**
+- Rule 1 passes: 0.3. Expected: `html-js-filter` moves to 2 (0.6), `risk-scorer-replay` (0.4),
+  `layout-config-recreation` (0.15).
+- If stage 2 runs, rule 2 passes: 0.75. The carve may move some SWE-bench tasks from 2 to 1.
+- If stage 2 runs, rule 3 passes: 0.7.
+- Verdict "helps": 0.15.
+
+**Cost.** Stage 1: 34 calls. Stage 2: 292 calls.
+
 ## Deviations
 
 None yet.
