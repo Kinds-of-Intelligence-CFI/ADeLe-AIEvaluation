@@ -122,6 +122,13 @@ The verdict is "no effect". Sealed prediction: rule 1 passes, 0.3, failed as exp
 - **Agreement.** Against the control: exact 94%, mean shift −0.06. Exact with Pablo's six
   labels: 3 (control 2).
 - **Same effect as B, lower cost.** C moves the same task and needs no Level 3 guard.
+- **Harm checks, run under deviation 1 at Pablo's request.** C did no harm.
+  - SWE-bench, 60 tasks: ρ with solve rate −0.70 against −0.63 on the reference labels, mean shift
+    +0.03.
+  - tau2, within domain: ρ −0.35 [−0.47, −0.23] against −0.33 (airline −0.49, banking −0.26,
+    retail −0.35). Tasks at Level 3: 6 (reference 9).
+  - There is no control run on these two benchmarks, so read the small gains as noise.
+  - All 292 answers were written by `claude-opus-5-5`.
 - **The two remaining tasks.** The judge still reasons that early choices "may need to be revised
   after looking ahead" on `layout-config-recreation`, and that options must be compared "with an
   eye to what comes later" on `risk-scorer-replay`. This reading held under every version and
@@ -129,7 +136,8 @@ The verdict is "no effect". Sealed prediction: rule 1 passes, 0.3, failed as exp
 
 ## Deviations and caveats
 
-- **Deviations:** none.
+- **Deviation 1:** candidate C's stage 2 ran although its rule 1 failed, at Pablo's request, to
+  judge C as a principled change. C's verdict stays "no effect".
 - **One call per task.** SWE-bench and tau2 have no control run, so their small gains may be noise.
 - **Paolo's blind labels are still pending.** They would show whether the stricter reading of the
   2/3 boundary is shared by both authors.

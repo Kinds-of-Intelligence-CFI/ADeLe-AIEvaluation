@@ -43,3 +43,9 @@ results. Stage 1 (`knowl-tb`) runs first.
 One relay, 34/34 answered and parsed, all written by `claude-opus-5-5`, no classifier stop,
 protocol check clean. Rule 1 failed, since only `html-js-filter` moved to Level 2. So stage 2 does
 not run, as pre-registered.
+
+## 2026-09-28 — candidate C, stage 2 (`knowl-swe`, `knowl-tau2`): complete, under deviation 1
+
+Four relays, 292/292 answered and parsed, all written by `claude-opus-5-5`, no classifier stop,
+protocol check clean. Harm checks passed: SWE-bench ρ −0.70 (reference −0.63), tau2 within domain
+−0.35 (reference −0.33).
