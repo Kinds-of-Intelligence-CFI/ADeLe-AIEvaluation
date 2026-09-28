@@ -1,13 +1,17 @@
 # plp-candidate — results
 
-**Question.** Does a new Level 3 sentence make the PLp judge read the 2/3 boundary as Pablo does?
+**Question.** Does a change to Level 3 make the PLp judge read the 2/3 boundary as Pablo does?
 
-**Answer.** No. Pablo's three Level-2 Terminal-Bench tasks stayed at Level 3 under the candidate.
+**Answer.** No, neither of the two candidates passed. Candidate A, a replaced sentence, moved none
+of Pablo's three Level-2 Terminal-Bench tasks. Candidate B, an explicit rule, moved one of three.
+Details for A follow; B has its own section below.
+
+Candidate A in detail: Pablo's three Level-2 Terminal-Bench tasks stayed at Level 3 under it.
 On Terminal-Bench, the candidate put slightly more tasks at 3, not fewer. It did no harm elsewhere:
 the SWE-bench and tau2 correlations held or rose slightly. The pre-registered verdict is "no
 effect".
 
-**Status.** Complete (2026-09-28). The candidate is not adopted, and `PLp.txt` is unchanged.
+**Status.** Complete (2026-09-28). Neither candidate is adopted, and `PLp.txt` is unchanged.
 
 ## Design
 
@@ -68,6 +72,32 @@ Level counts:
   `risk-scorer-replay`: "which probes to design depends on the hypotheses". The new sentence names
   that dependence, so the judge reads it as met.
 - **PLp against solve rate on Terminal-Bench:** candidate +0.19, control +0.02 (n = 33, no test).
+
+## Candidate B: an explicit rule
+
+Added after A's result, pre-registered before any label of B (`f2148ce`). One sentence is added
+to the current Level 3: "Critically, a poor option that a standard choice avoids does not make
+the decisions interact." Level 3 grows from 93 to 108 words.
+
+| rule | result | passed |
+|---|---|---|
+| 1. At least 2 of Pablo's three Level-2 tasks move to 2, and his two Level-3 tasks stay at 3 | `html-js-filter` 2, `layout-config-recreation` 3, `risk-scorer-replay` 3; control 3, 3, 3. His Level-3 tasks stay at 3 | no |
+| 2 and 3. No harm on SWE-bench and tau2 | not run: stage 2 runs only if rule 1 passes | — |
+
+The verdict is "no effect". Sealed prediction: rule 1 passes, 0.5, failed.
+
+**Exploratory, candidate B:**
+- **Terminal-Bench levels.** At Level 2: 7 tasks (control 5). At 3: 24 (26). At 4: 3 (2).
+- **Agreement.** Exact with Pablo's six labels: 3 (control 2). Against the control: exact 85%,
+  mean shift −0.03.
+- **The rule works as written.** On `html-js-filter`, the judge now says: "Avoiding a poor option
+  like naive regex is not the same as the decisions truly interacting."
+- **On the other two, the judge names interactions the rule does not cover.**
+  - `layout-config-recreation`: a limited budget of vector shapes must be shared across the missing
+    artwork. "Allocating limited resources" is in the rubric's own definition of planning.
+  - `risk-scorer-replay`: the code must generalise to unseen test packets. This is close to the
+    "poor option" pattern, so it is borderline.
+- **The remaining disagreement is judgment, not wording.**
 
 ## Deviations and caveats
 

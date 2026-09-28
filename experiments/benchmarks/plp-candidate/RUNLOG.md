@@ -24,3 +24,9 @@ Seven `judge-dispatcher-low` relays, 08:35–09:02 UTC, plus one retry.
 plus one sentence. The hash check against the original prompts passed again. `compare.py` gained
 `--arm guard`. Re-run for candidate A, it reproduces every number and adds two reported fields.
 Stage 1 (`guard-tb`) runs first.
+
+## 2026-09-28 — candidate B, stage 1 (`guard-tb`): complete
+
+One relay, 34/34 answered and parsed, all written by `claude-opus-5-5`, no classifier stop,
+protocol check clean. Rule 1 failed, since only `html-js-filter` moved to Level 2. So stage 2
+(`guard-swe`, `guard-tau2`) does not run, as pre-registered, and its pinned prompts stay unjudged.
