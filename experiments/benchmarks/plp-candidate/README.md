@@ -4,8 +4,8 @@ Owner: Pablo. One candidate change to PLp's Level 3 is tested on real benchmark 
 one sentence (`PLp_candidate.txt`, and `PREREGISTRATION.md` for the exact wording). The judge is
 Opus at low effort, as in the main studies.
 
-**Status.** Complete (2026-09-28): neither candidate passed. Candidate A (a replaced sentence) had
-no effect. Candidate B (an explicit rule) moved one of Pablo's three Level-2 tasks. See `RESULTS.md`.
+**Status.** Complete (2026-09-28): no candidate passed. A had no effect. B (an explicit rule) and C
+(a knowledge carve) each moved one of Pablo's three Level-2 tasks. See `RESULTS.md`.
 
 | | |
 |---|---|

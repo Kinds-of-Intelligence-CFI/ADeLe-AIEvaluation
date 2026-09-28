@@ -1,0 +1,81 @@
+{
+  "arm": "knowl",
+  "rule1_binding": {
+    "passed": false,
+    "candidate": [
+      2,
+      3,
+      3
+    ],
+    "control": [
+      3,
+      3,
+      3
+    ],
+    "pablo_3_tasks_candidate": [
+      3,
+      3
+    ]
+  },
+  "rule2_swe": "not run",
+  "rule3_tau2": "not run",
+  "terminal_bench": {
+    "pablo_2_tasks": {
+      "html-js-filter": {
+        "candidate": 2,
+        "control": 3
+      },
+      "layout-config-recreation": {
+        "candidate": 3,
+        "control": 3
+      },
+      "risk-scorer-replay": {
+        "candidate": 3,
+        "control": 3
+      }
+    },
+    "levels": {
+      "candidate": {
+        "2": 7,
+        "3": 25,
+        "4": 2
+      },
+      "control": {
+        "2": 5,
+        "3": 26,
+        "4": 2
+      },
+      "reference": {
+        "2": 4,
+        "3": 26,
+        "4": 3
+      }
+    },
+    "control_vs_reference_test_retest": {
+      "n": 33,
+      "exact": 0.879,
+      "mean_shift": -0.061
+    },
+    "candidate_vs_control": {
+      "n": 33,
+      "exact": 0.939,
+      "mean_shift": -0.061
+    },
+    "exact_with_pablo": {
+      "candidate": 3,
+      "control": 2,
+      "reference": 3
+    },
+    "exploratory": {
+      "candidate": {
+        "PLp_vs_solve_rate": 0.002,
+        "PLp_vs_expert_hours": 0.298
+      },
+      "control": {
+        "PLp_vs_solve_rate": 0.021,
+        "PLp_vs_expert_hours": 0.155
+      }
+    }
+  },
+  "verdict": "no effect"
+}
