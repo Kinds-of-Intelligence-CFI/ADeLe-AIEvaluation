@@ -5,7 +5,7 @@ Tests for the annotation module (prompts, parsing, backend detection).
 import json
 import pytest
 import numpy as np
-from adele.annotation.prompts import build_annotation_prompt, build_batch_request
+from adele.annotation.prompts import build_annotation_prompt, build_annotation_prompt_v2, build_batch_request
 from adele.annotation.parsing import (
     extract_demand_level,
     parse_batch_output,
@@ -544,3 +544,26 @@ class TestResume:
         assert second["AS"].tolist() == [4.0]            # was 2.0: judge/a's label reused
         assert again["AS"].tolist() == [2.0]
         assert calls == ["judge/a", "judge/b"]
+
+
+class TestBuildAnnotationPromptV2:
+    def test_same_as_tested_variant(self):
+        import importlib.util
+        from pathlib import Path
+        path = Path(__file__).resolve().parents[1] / "experiments/benchmarks/natural-prompt/prompt.py"
+        spec = importlib.util.spec_from_file_location("natural_prompt", path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        assert build_annotation_prompt_v2("Planning", "R", "T") == mod.build_natural_prompt_b("Planning", "R", "T")
+
+    def test_contents_and_no_chain_of_thought_wording(self):
+        prompt = build_annotation_prompt_v2("Planning", "<levels>", "Do the thing.")
+        assert "<rubric>\n<levels>\n</rubric>" in prompt
+        assert "<task>\nDo the thing.\n</task>" in prompt
+        assert "CHAIN" not in prompt and "step by step" not in prompt
+        assert prompt.endswith("The level of Planning demanded by this task is: N")
+
+    def test_answer_parses(self):
+        answer = "Assessment: a short fix.\n\nThe level of Planning demanded by this task is: 2"
+        assert extract_demand_level(answer) == (2.0, True)
+
