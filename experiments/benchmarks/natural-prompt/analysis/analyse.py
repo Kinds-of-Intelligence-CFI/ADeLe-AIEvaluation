@@ -17,7 +17,7 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parents[1]
 BENCH = HERE.parent
-JUDGE_IO = HERE.parents[3] / "judge-io"
+JUDGE_IO = HERE.parents[4] / "judge-io"
 DIMS = ["PLp", "PLe", "PLs"]
 NEW = "opus-low-natural"
 
