@@ -4,7 +4,9 @@ Owner: Pablo. Sonnet 5.5 at high effort labels PLp and PLe on the 44 gate tasks 
 with the gate's prompts byte for byte. Its labels are compared with the stored Opus labels (medium,
 low and max), and its cost per call is read from the plan's usage meters.
 
-**Status.** Pre-registered (2026-09-29). Judging not started.
+**Status.** Complete (2026-09-29): verdict "does not". Sonnet 5.5's safeguards block about half
+of the PLp prompts, agreement with Opus medium is 72% (Opus low: 86%), and it is not cheaper. See
+`RESULTS.md`.
 
 | | |
 |---|---|
@@ -12,6 +14,8 @@ low and max), and its cost per call is read from the plan's usage meters.
 | judge and relay agents | `adele-judge-high.md`, `judge-dispatcher-high.md` (installed in `~/Developer/ADELE/.claude/agents/`) |
 | run | `labels/s55h-gate/` (`make_run.py`) |
 | analysis | `analysis/analyse.py` → `results/agreement.json` |
+| what happened | `RUNLOG.md` |
+| write-up | `RESULTS.md` |
 
 ## Reproduce
 

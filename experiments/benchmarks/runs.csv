@@ -1,4 +1,5 @@
 study,run,pinned_at,pinned_commit,prompts,judges,labels,parsed
+judge-sonnet55,s55h-gate,2026-09-29T10:40:46+00:00,a6935a9,88,sonnet55-high,65,65
 plp-candidate,cand-swe,2026-09-28T08:40:32+00:00,bd67db8,60,opus-low,60,60
 plp-candidate,cand-tau2,2026-09-28T08:40:32+00:00,bd67db8,232,opus-low,232,232
 plp-candidate,cand-tb,2026-09-28T08:40:32+00:00,bd67db8,34,opus-low,34,34
