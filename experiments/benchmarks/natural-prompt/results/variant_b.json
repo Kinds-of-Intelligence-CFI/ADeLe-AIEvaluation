@@ -1,0 +1,43 @@
+{
+  "T1_PLe_kept": 12.0,
+  "T2_reverted": 2.0,
+  "T3_rest_cells": 111,
+  "T3_rest_exact": 0.955,
+  "T3_rest_mean_shift": {
+    "PLp": 0.0,
+    "PLe": 0.031,
+    "PLs": 0.0
+  },
+  "contested": {
+    "django__django-11451@PLp": {
+      "old": 0.0,
+      "plain": 1.0,
+      "B": 1.0
+    },
+    "django__django-12143@PLp": {
+      "old": 0.0,
+      "plain": 1.0,
+      "B": 1.0
+    },
+    "django__django-15629@PLp": {
+      "old": 2.0,
+      "plain": 3.0,
+      "B": 2.0
+    }
+  },
+  "A_unanswered": 0,
+  "A_calls_stopped_by_a_safeguard": 0,
+  "B_vs_old_all": {
+    "exact": 0.826,
+    "mean_shift": 0.144
+  },
+  "checks": {
+    "T1_PLe_kept_ge_10_of_12": 1.0,
+    "T2_reverted_ge_5_of_6": 0.0,
+    "T3_rest_exact_ge_0.85": true,
+    "T3_rest_shift_within_0.10": true,
+    "A_unanswered_le_2": true,
+    "P_counted_ge_0.95": true
+  },
+  "passes": false
+}

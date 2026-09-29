@@ -101,4 +101,6 @@ B passes if every check holds.
 
 ## Deviations
 
-None yet.
+1. **2026-09-29, counting error in amendment 1.** The first run changed 21 labels (12 PLe, 7 PLp, 2 PLs),
+   not 19, so T3's "other 113 cells" are 111. The cell lists of T1, T2 and the contested set are as
+   written and were not changed; only the count in the text and the script's sanity check were wrong.

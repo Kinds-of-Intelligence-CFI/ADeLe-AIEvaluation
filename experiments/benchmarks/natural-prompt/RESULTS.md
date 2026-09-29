@@ -7,8 +7,9 @@ without changing the labels of our judge (Opus low)?
 cells, including the 23 it had blocked twice. But it also moves Opus low's labels up: +0.16 on PLp
 and +0.27 on PLe. No label went down. So it is not a drop-in replacement for the old prompt.
 
-**Status.** Complete (2026-09-29): 176 calls, verdict "fixes the flags, but changes the labels". The
-old prompt stays in use. The main open question is whether the shift comes from the prompt or from
+**Status.** Complete (2026-09-29). First run: "fixes the flags, but changes the labels". Variant B
+(amendment 1): fails one of five checks (T2) but keeps the other labels at 95.5%. The old prompt
+stays in use until Pablo decides. The main open question is whether the shift comes from the prompt or from
 judge drift since 2026-09-27, when the old labels were made.
 
 ## Design
@@ -72,6 +73,41 @@ From `results/natural_prompt.json` (`analysis/analyse.py`).
   a quarter level on PLe. That is the size of the Sonnet-against-Opus offset in `judge-sonnet55`.
 - **Cost.** The 5-hour meter went from 0% to 10% and the weekly meter from 0% to 2%, over 176 calls
   plus relays and my own turns.
+
+## Amendment 1: variant B
+
+Pre-registered after reading the first run's 21 changed answers (`34a6567`; see deviation 1 for
+the count). Variant B adds: compare with the rubric's examples, base the level on the stated
+conditions rather than on how long or easy the work looks, and choose the lower of two adjacent
+levels only when the task genuinely fits both. From `results/variant_b.json`
+(`analysis/analyse_b.py`).
+
+| check | result | holds |
+|---|---|---|
+| T1. the 12 PLe cells stay at 3 | 12 of 12 | yes |
+| T2. the 6 upgraded PLp/PLs cells go back | 2 of 6 | no |
+| T3. the other 111 cells match the old labels | 95.5% exact; shifts 0.00 (PLp), +0.03 (PLe), 0.00 (PLs) | yes |
+| A. Sonnet 5.5 answers the 44 PLp cells | 44 of 44, no safeguard stop | yes |
+| P. Opus cells labelled by Opus 5.5 | 132 of 132 | yes |
+
+**Verdict: fails (T2).**
+- Back to the old label: django-11433 (PLp 1, citing the Level 1 examples) and django-15629 (PLs 1,
+  citing the failing-test example).
+- Still at 2: astropy-7671, scikit-learn-14894 and sympy-20916 (PLp), and django-15916 (PLs). The
+  judges now compare with the examples, but match these bug fixes to Level 2's data-pipeline example.
+  Two answers still take the higher level after naming the lower one ("Level 1 or at most Level 2";
+  "could be argued down to Level 1").
+- Contested cells: django-11451 and django-12143 stay at 1 (old 0); django-15629 PLp returns to 2.
+- Overall against the old labels: 82.6% exact, shift +0.14, almost all from the 12 PLe cells.
+
+**Sealed predictions.** T1 0.75: held. T2 0.55: failed. T3 0.7: held. A 0.85: held. B passes 0.35:
+failed.
+
+**Reading.** Variant B keeps what the plain prompt fixed (the PLe reading and Sonnet's blocks) and
+removes the drift elsewhere: 95.5% agreement on the undisputed cells is above Opus low's repeat
+agreement (about 88%). The miss is narrow: whether a standard bug fix is one routine (PLp 1) or a
+few assembled steps (PLp 2). That is a boundary question in the rubric, like the 2/3 question in
+`plp-2-3-boundary`, and no prompt sentence settled it.
 
 ## Deviations and caveats
 

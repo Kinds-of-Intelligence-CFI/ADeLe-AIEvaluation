@@ -1,10 +1,10 @@
 """Pre-registered analysis of variant B (PREREGISTRATION.md, amendment 1). Writes results/variant_b.json.
 
-Targets come from the 19 cells whose label changed between the old prompt (swepl-gate-low) and the plain
+Targets come from the 21 cells whose label changed between the old prompt (swepl-gate-low) and the plain
 prompt (np-gate-opuslow), judged against the rubric text on 2026-09-29:
   T1  the 12 PLe cells keep the plain prompt's 3 (at least 10 of 12);
   T2  the 4 PLp 1->2 cells and the 2 PLs 1->2 cells go back to the old label (at least 5 of 6);
-  T3  the other 113 cells (all but the 19) match the old labels: exact 0.85 or more, and every rubric's
+  T3  the other 111 cells (all but the 21) match the old labels: exact 0.85 or more, and every rubric's
       mean shift within +-0.10;
   A   Sonnet 5.5 high answers the 44 PLp cells: at most 2 without an answer after one retry;
   P   at least 95% of the 132 Opus cells labelled by claude-opus-5-5 and parsed.
@@ -44,7 +44,7 @@ def main() -> None:
     b = levels(HERE / "labels/npb-gate-opuslow/labels_long.csv", "claude-opus-5-5")
     expected = len(pd.read_csv(HERE / "labels/npb-gate-opuslow/prompts_index.csv"))
     disputed = set(old.index[(old - plain.reindex(old.index)).fillna(0) != 0])
-    assert len(disputed) == 19 and {(i, "PLe") for i in PLE_KEEP} | set(REVERT) | set(CONTESTED) == disputed
+    assert len(disputed) == 21 and {(i, "PLe") for i in PLE_KEEP} | set(REVERT) | set(CONTESTED) == disputed
 
     t1 = sum(b.get((i, "PLe")) == 3 for i in PLE_KEEP)
     t2 = sum(b.get(c) == old[c] for c in REVERT)
