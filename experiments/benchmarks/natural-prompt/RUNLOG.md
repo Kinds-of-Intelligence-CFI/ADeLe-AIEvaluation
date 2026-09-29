@@ -22,3 +22,11 @@ on synthetic labels, which were not kept.
 - **Analysis.** A passes; B fails check 3 (shifts +0.16 PLp, +0.27 PLe, all upward). Verdict: "fixes
   the flags, but changes the labels". The answer-length path in `analyse.py` was fixed (it pointed one
   folder too high); that figure is exploratory.
+
+## 2026-09-29 — variant B (`npb-plp-s55h`, `npb-gate-opuslow`): complete
+
+Pinned with `make_runs.py --variant b`; amendment 1 pushed as `34a6567`. One `judge-dispatcher-v2-high`
+relay and three `judge-dispatcher-v2-low` relays, 21:26–21:37 UTC. A: 44/44 by `claude-sonnet-5-5`,
+no safeguard stop. B: 132/132 by `claude-opus-5-5`. Protocol checks clean. The analysis's sanity
+check failed on a miscount (21 changed cells, not 19; deviation 1); after correcting the count, B
+fails T2 (2 of 6 reverted) and passes the rest.
