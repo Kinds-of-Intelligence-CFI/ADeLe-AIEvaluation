@@ -25,3 +25,27 @@ The level of {demand} demanded by this task is: N"""
 def build_natural_prompt(demand_name: str, rubric_content: str, task_instance: str) -> str:
     """The natural prompt for one (task, rubric) pair."""
     return TEMPLATE.format(demand=demand_name, rubric=rubric_content, task=task_instance)
+
+
+# Variant B (2026-09-29): the plain prompt with two guards. The first run moved PLe to the rubric's reading
+# but raised PLp and PLs past a standard routine and a matching example. B adds a comparison with the
+# examples, bases the level on the stated conditions, and keeps the lower-of-two rule for real doubt.
+TEMPLATE_B = """We are annotating AI evaluation tasks for a research study on the cognitive demands that tasks make. Below are a rubric for {demand}, with levels from 0 to 5, and a task.
+
+<rubric>
+{rubric}
+</rubric>
+
+<task>
+{task}
+</task>
+
+Rate the task's demand for {demand} according to the rubric, not any particular solver's attempt at it.
+
+Before giving a level, write a short assessment of the task against the rubric: what the task requires, which level's conditions it meets, and what keeps it below the next level. Compare the task with the rubric's examples at the levels you consider. Base the level on the conditions the rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent levels, choose the lower one. Give the level that this assessment supports. End with this sentence, with the level as a single digit:
+The level of {demand} demanded by this task is: N"""
+
+
+def build_natural_prompt_b(demand_name: str, rubric_content: str, task_instance: str) -> str:
+    """Variant B of the natural prompt for one (task, rubric) pair."""
+    return TEMPLATE_B.format(demand=demand_name, rubric=rubric_content, task=task_instance)

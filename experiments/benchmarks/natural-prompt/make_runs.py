@@ -13,6 +13,7 @@ prompt's own wording differs.
     python experiments/benchmarks/natural-prompt/make_runs.py
 """
 
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -59,11 +60,17 @@ def load_prompt_module():
 
 
 def main() -> None:
-    natural = load_prompt_module().build_natural_prompt
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--variant", choices=["a", "b"], default="a", help="b: variant B, runs npb-*")
+    variant = ap.parse_args().variant
+    mod = load_prompt_module()
+    natural = mod.build_natural_prompt_b if variant == "b" else mod.build_natural_prompt
     gate = pd.read_csv(BENCH / "swebench-pl/labels/swepl-gate/prompts_index.csv", dtype={"instance_id": str})
     inst = pd.read_parquet(ROOT / "data/instances/instances_swe-bench-verified.parquet").set_index("instance_id")
     catalog = load_active_catalog()
     for run_id, spec in RUNS.items():
+        if variant == "b":
+            run_id = run_id.replace("np-", "npb-")
         io, labels = JUDGE_IO / run_id, HERE / "labels" / run_id
         for d in [io / "prompts", labels] + [io / "responses" / j for j in spec["judges"]]:
             d.mkdir(parents=True, exist_ok=True)
@@ -88,7 +95,7 @@ def main() -> None:
             "benchmark": ["swe-bench-verified"],
             "design": {"n_tasks": len({r["instance_id"] for r in rows}), "dims": spec["dims"], "n_prompts": len(rows),
                        "judges": spec["judges"]},
-            "prompt": {"builder": "natural-prompt/prompt.py:build_natural_prompt",
+            "prompt": {"builder": "natural-prompt/prompt.py:" + natural.__name__,
                        "builder_file_sha256": sha256((HERE / "prompt.py").read_bytes()),
                        "inputs_checked_against": "swebench-pl/labels/swepl-gate (old prompt rebuilt, hashes equal)"},
             "judge_agent": {"file": str(agent.relative_to(ROOT)), "sha256": sha256(agent.read_bytes())},

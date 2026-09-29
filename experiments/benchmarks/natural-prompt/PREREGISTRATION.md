@@ -65,6 +65,40 @@ starts after the weekly reset (2026-09-29 20:00 UTC).
 - Both pass: 0.3.
 - Answers are shorter under the natural prompt: 0.75.
 
+## Amendment 1: variant B (added 2026-09-29, after the first run, before any label of B)
+
+**Why.** In the first run, the plain prompt moved 19 labels, all upward. Reading the 19 answers
+against the rubric text: on the 12 PLe cells the plain prompt follows the rubric (checking is
+elected, which is Level 3, and r59 measured such tasks at 3). On 4 PLp cells it called a standard
+debugging routine "assembled" (Level 2), and on 2 PLs cells it ignored a Level 1 example that
+matches the task. So the aim is to keep the PLe gain and undo the other upgrades.
+
+**Variant B** (`prompt.py`, `TEMPLATE_B`) adds three sentences to the assessment paragraph: "Compare
+the task with the rubric's examples at the levels you consider. Base the level on the conditions
+the rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent
+levels, choose the lower one." The old lower-of-two sentence is dropped, so the rule is stated once.
+
+**Runs.** `npb-gate-opuslow` (Opus low, the 132 gate cells) and `npb-plp-s55h` (Sonnet 5.5 high, the
+44 PLp cells), with the same agents, relays and retry rule as before.
+
+**Checks** (`analysis/analyse_b.py`). Pablo chose not to add blind labels, so the targets come from
+my reading of the rubric, which is not independent of the judges.
+- T1: at least 10 of the 12 PLe cells stay at 3.
+- T2: at least 5 of the 6 upgraded PLp and PLs cells (astropy-7671, django-11433, scikit-learn-14894,
+  sympy-20916 on PLp; django-15629, django-15916 on PLs) go back to their old label.
+- T3: on the other 113 cells, exact agreement with the old labels 0.85 or more, and each rubric's
+  mean shift within ±0.10.
+- A: at most 2 of the 44 PLp cells without a Sonnet 5.5 answer after one retry.
+- P: at least 95% of the 132 Opus cells labelled by `claude-opus-5-5`.
+- The 3 contested PLp cells (django-11451 and django-12143 at 0 to 1, django-15629 at 2 to 3) are
+  reported, not scored.
+
+B passes if every check holds.
+
+**Predictions (sealed).** T1 0.75; T2 0.55; T3 0.7; A 0.85; B passes 0.35.
+
+**Cost.** 176 calls, plus retries; about 1.5 weekly points.
+
 ## Deviations
 
 None yet.
