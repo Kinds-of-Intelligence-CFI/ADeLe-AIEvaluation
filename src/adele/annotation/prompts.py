@@ -62,6 +62,39 @@ def build_annotation_prompt(
     return full_prompt
 
 
+PROMPT_V2 = """We are annotating AI evaluation tasks for a research study on the cognitive demands that tasks make. Below are a rubric for {demand}, with levels from 0 to 5, and a task.
+
+<rubric>
+{rubric}
+</rubric>
+
+<task>
+{task}
+</task>
+
+Rate the task's demand for {demand} according to the rubric, not any particular solver's attempt at it.
+
+Before giving a level, write a short assessment of the task against the rubric: what the task requires, which level's conditions it meets, and what keeps it below the next level. Compare the task with the rubric's examples at the levels you consider. Base the level on the conditions the rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent levels, choose the lower one. Give the level that this assessment supports. End with this sentence, with the level as a single digit:
+The level of {demand} demanded by this task is: N"""
+
+
+def build_annotation_prompt_v2(
+    demand_name: str,
+    rubric_content: str,
+    task_instance: str,
+) -> str:
+    """Build the v2 annotation prompt (adopted 2026-09-29).
+
+    Same inputs as :func:`build_annotation_prompt`, in plain wording. The v1
+    prompt asks for written "chain-of-thought" steps, which Sonnet 5.5's
+    safeguards block; this one asks for a short assessment before the level.
+    It was tested as variant B in ``experiments/benchmarks/natural-prompt``.
+    The answer ends with "... is: N", which :func:`extract_demand_level`
+    reads. The v1 builder stays for reproducing earlier runs.
+    """
+    return PROMPT_V2.format(demand=demand_name, rubric=rubric_content, task=task_instance)
+
+
 def build_batch_request(
     custom_id: str,
     demand_acronym: str,
