@@ -12,8 +12,9 @@ sliding-block example, whatever the amount of search.
 
 **Status.** B2: complete (2026-09-30). All three pre-registered tests failed. Candidate S, the structural
 change (amendment 1), passed the exit criterion narrowly on the same 54 states: search bits +0.23
-(p = 0.002) against length +0.21 (p = 0.004). It still fails E3. Next, per the pre-registration, come the
-SWE-bench gate sanity check and the lab regression. Nothing changes in `src/` yet.
+(p = 0.002) against length +0.21 (p = 0.004). It still fails E3. On the SWE-bench gate tasks (amendment 2), S's labels track solve rate more
+strongly than the current text's: ρ = −0.73 against −0.55 on 37 tasks. All three sanity checks hold. Next
+comes the lab regression, in a fresh session. Nothing changes in `src/` yet.
 
 ## Design
 
@@ -114,6 +115,32 @@ Caveats:
 - The pass is narrow on 54 states, with one judge.
 - Compressing labels to 2 could reduce the benchmark correlations. The SWE-bench sanity check exists
   to test that.
+
+## Amendment 2: SWE-bench sanity check for S
+
+Pre-registered before any of its labels (`e60bfc8`). The run covers PLp on the 44 SWE-bench Verified
+gate tasks, one Opus-low call each, with the v2 prompt. The baseline is the current text with the same
+builder and judge (`natural-prompt`, `npb-gate-opuslow`); prompts were hash-checked. All 44 answers
+were written by `claude-opus-5-5` and parsed; the protocol check was clean. From
+`results/s_swe_gate.json` (`analysis/swe_gate.py`).
+
+| test | result | prediction (p) | holds |
+|---|---|---|---|
+| G1. S vs solve rate < 0, p < 0.05 (37 solvable tasks) | ρ = −0.73, p = 2 × 10⁻⁷ | 0.75 | yes |
+| G2. at most 0.15 weaker than the current text (−0.55) | 0.18 stronger | 0.6 | yes |
+| G3. most common level at most 85% | 68% (30 of 44 at 2) | 0.75 | yes |
+
+**Reading, as fixed in advance: all three hold, so the lab regression comes next,** in a fresh session
+and pre-registered first.
+
+Exploratory:
+- **Levels.** S gives 13 tasks at 1, 30 at 2 and 1 at 3. The current text gives 18 at 1 and 26 at 2. S
+  matches the current text on 77% of tasks, with a mean shift of +0.14. So on SWE-bench, S moves a few
+  bug fixes from 1 to 2 and sharpens the ordering. Unlike on the puzzles, it does not compress labels
+  to 2.
+- **The gain may partly be noise.** It rests on one call per task and 37 tasks. The 95% intervals of
+  the two correlations overlap widely. The safe conclusion is that S does not weaken the benchmark
+  link, and it may strengthen it.
 
 ## Deviations and caveats
 
