@@ -10,8 +10,10 @@ p = 0.0002) and not search (+0.13, p = 0.22). That is essentially what the curre
 type label. Any river-crossing state with an interacting constraint is matched to the Level 3
 sliding-block example, whatever the amount of search.
 
-**Status.** Complete (2026-09-30). All three pre-registered tests failed. Following the pre-registration,
-the lab regression was not run, and nothing changes in `src/`.
+**Status.** B2: complete (2026-09-30). All three pre-registered tests failed. Candidate S, the structural
+change (amendment 1), passed the exit criterion narrowly on the same 54 states: search bits +0.23
+(p = 0.002) against length +0.21 (p = 0.004). It still fails E3. Next, per the pre-registration, come the
+SWE-bench gate sanity check and the lab regression. Nothing changes in `src/` yet.
 
 ## Design
 
@@ -64,6 +66,54 @@ an example cannot fix this, because the scale itself lacks the axis. The options
    to a separate measure.
 
 This is a methodology decision for Pablo and the team.
+
+## Amendment 1: candidate S, the structural change
+
+Pre-registered before any of its labels (`f22cf47`). S is B2 plus a placement rule: the level is the higher
+of the kind of planning and the size of the search. It adds a small, moderate or large search at Levels 2,
+3 and 4, a Level 4 example of a large pure search, and a Level 5 note that search size alone does not
+reach 5. From `results/s_search.json` (`analysis/analyse.py --run s-search --out s_search.json`). All 162
+answers were written by `claude-opus-5-5` and parsed; the protocol check was clean.
+
+| test | S | B2 | current text | holds (S) |
+|---|---|---|---|---|
+| E1 (exit). bits > 0, p < 0.05, and above ctg | bits +0.23 (p = 0.002), ctg +0.21 (p = 0.004) | +0.13 / +0.37 | +0.10 / +0.33 | **yes** |
+| E2. ctg coefficient below 0.328 | 0.213 | 0.366 | — | yes |
+| E3. Spearman with Opus 5.5's non-optimal share ≥ 0.3 | 0.05 | 0.19 | −0.02 | no |
+
+Pre-registered probabilities: E1 0.45, E2 0.55, E3 0.35.
+
+**Reading, as fixed in advance: E1 holds, so the SWE-bench gate sanity check and the lab regression come
+next.** The pass is narrow. The search coefficient only just exceeds the length coefficient, and both
+remain significant.
+
+**Mean PLp by cell under S** (current text in brackets):
+
+| crossings left | bits low | bits mid | bits high |
+|---|---|---|---|
+| 2–3 | 1.50 (1.50) | 2.00 (2.33) | 2.33 (2.33) |
+| 4–6 | 2.00 (2.33) | 2.33 (2.50) | 2.17 (2.67) |
+| 7+ | 2.17 (3.00) | 2.50 (2.67) | 2.83 (2.83) |
+
+Exploratory:
+- **Where the gain comes from.** S mostly brings long, easy states down: 7+ crossings with low bits
+  fall from 3.00 to 2.17. It does not lift short, trappy states: 2–3 crossings with high bits stay at
+  2.33. So the length effect shrinks, but S does not yet see the states strong solvers find hardest
+  (E3 fails).
+- **Labels compress to 2.** S gives 38 states at 2, 14 at 3, 1 at 1 and 1 at 0. The current text gives
+  20, 30, 3 and 1. The mean shift is −0.26, and S matches the current text on 63% of states. No state
+  reaches 4.
+- **Repeats agree much more.** All three repeats agreed on 83% of states under S, against 59% under
+  the current text. The rule seems to make judgements more consistent.
+- **The judges use the rule sparingly.** 33 of 162 answers cite the size of the search. A typical
+  answer places a small puzzle at 3 because "the plan still has to be found by a small search that
+  looks a few steps ahead". It keeps it below 4 because "the state space is tiny, only a few choices
+  could go wrong".
+
+Caveats:
+- The pass is narrow on 54 states, with one judge.
+- Compressing labels to 2 could reduce the benchmark correlations. The SWE-bench sanity check exists
+  to test that.
 
 ## Deviations and caveats
 
