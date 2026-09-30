@@ -4,7 +4,7 @@ Owner: Pablo. The rivercross frames and solver ground truth (`experiments/riverc
 arm) are read without change. Opus low judges PLp, PLe and PLs, one state per call, with the v2
 annotation prompt. The labels are checked against the solver's cost-to-go.
 
-**Status.** Complete (2026-09-30). PLp tracks the solver (ρ = 0.85), but mostly through distance to the goal, not search (amendment 1). See `RESULTS.md`.
+**Status.** Complete (2026-09-30). PLp tracks the solver (ρ = 0.85), but through the length of the remaining solution, not search (amendments 1 and 2). See `RESULTS.md`.
 
 | | |
 |---|---|

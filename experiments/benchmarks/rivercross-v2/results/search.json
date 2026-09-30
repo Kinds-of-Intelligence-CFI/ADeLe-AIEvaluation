@@ -1,0 +1,125 @@
+{
+  "solver_model": "claude-haiku-4-5-20251001",
+  "n": {
+    "states": 54,
+    "PLp": 54,
+    "VO": 54,
+    "failure": 54,
+    "solver_attempts": 270
+  },
+  "sample_spearman_ctg_bits": 0.144,
+  "PLp_model": {
+    "bits": {
+      "coef": 0.101,
+      "p": 0.259
+    },
+    "ctg": {
+      "coef": 0.328,
+      "p": 0.000105
+    },
+    "r2": 0.27,
+    "n": 54
+  },
+  "failure_model": {
+    "bits": {
+      "coef": 0.039,
+      "p": 0.27
+    },
+    "ctg": {
+      "coef": 0.124,
+      "p": 0.000213
+    },
+    "r2": 0.26,
+    "n": 54
+  },
+  "C3_PLp_vs_failure": 0.2,
+  "checks": {
+    "H1_bits_on_PLp": false,
+    "H2_ctg_on_PLp": true,
+    "H3_bits_gt_ctg_on_PLp": false,
+    "C1_bits_on_failure": false,
+    "C2_ctg_on_failure": true,
+    "C3_PLp_vs_failure_ge_0.3": false
+  },
+  "sensitivity_tree_bits": {
+    "PLp_model": {
+      "tree_bits": {
+        "coef": 0.034,
+        "p": 0.62
+      },
+      "ctg": {
+        "coef": 0.331,
+        "p": 0.000109
+      },
+      "r2": 0.251,
+      "n": 54
+    },
+    "failure_model": {
+      "tree_bits": {
+        "coef": 0.061,
+        "p": 0.088
+      },
+      "ctg": {
+        "coef": 0.105,
+        "p": 0.00101
+      },
+      "r2": 0.282,
+      "n": 54
+    }
+  },
+  "descriptive": {
+    "PLp_levels": {
+      "0": 1,
+      "1": 3,
+      "2": 20,
+      "3": 30
+    },
+    "VO_levels": {
+      "1": 9,
+      "2": 45
+    },
+    "VO_vs_ctg": 0.416,
+    "VO_vs_bits": 0.346,
+    "PLp_vs_ctg": 0.513,
+    "PLp_vs_bits": 0.167,
+    "failure_vs_ctg": 0.438,
+    "failure_vs_bits": 0.116,
+    "PLp_by_cell": {
+      "2-3": {
+        "high": 2.33,
+        "low": 1.5,
+        "mid": 2.33
+      },
+      "4-6": {
+        "high": 2.67,
+        "low": 2.33,
+        "mid": 2.5
+      },
+      "7+": {
+        "high": 2.83,
+        "low": 3.0,
+        "mid": 2.67
+      }
+    },
+    "failure_by_cell": {
+      "2-3": {
+        "high": 0.17,
+        "low": 0.17,
+        "mid": 0.17
+      },
+      "4-6": {
+        "high": 0.23,
+        "low": 0.1,
+        "mid": 0.4
+      },
+      "7+": {
+        "high": 0.47,
+        "low": 0.43,
+        "mid": 0.5
+      }
+    },
+    "PLp_repeat_agreement": 0.593,
+    "solver_success": 0.707,
+    "solver_optimal": 0.559
+  }
+}

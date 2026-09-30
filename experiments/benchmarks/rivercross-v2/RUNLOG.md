@@ -48,3 +48,18 @@ so the mid band was widened to 5–8 before any label. New agents `rc-solver` an
 (copies in this folder) were installed in `~/Developer/ADELE/.claude/agents/`; the harness loads them
 from the next user message. `score_solve.py` was checked on library-generated solutions, and
 `analysis/search.py` on random synthetic labels (not kept). No prompt contains a solver value.
+
+## 2026-09-30 — amendment 2 runs: complete
+
+- **PLp and VO.** Three `judge-dispatcher-v2-low` relays for `rc-search` (54 × 3) and one for
+  `rc-search-vo` (54). All answers were written by `claude-opus-5-5` and parsed. Protocol checks
+  clean.
+- **Solver pilot.** Five `rc-solver-dispatcher` relays (model haiku) launched at once alongside the
+  PLp relays hit the concurrent-subagent limit: t2 sent nothing and was relaunched after the others
+  finished. 60/60 attempts, all by `claude-haiku-4-5-20251001`, success 0.767 → the solver is Haiku
+  (rule: Sonnet only at 0.15 or less).
+- **Solver main run.** Five relays, three at a time. One t1 cell failed with a transient harness
+  error before answering and was sent once more. 270/270 attempts, all by Haiku 4.5, no classifier
+  stop.
+- **Analysis.** `analysis/search.py --solver-model claude-haiku-4-5-20251001`: H2 and C2 hold; H1,
+  H3, C1 and C3 fail.
