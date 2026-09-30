@@ -17,3 +17,8 @@ all fail. The lab regression was not started, as the pre-registration requires.
 
 `make_s.py` built `PLp_S.txt`: B2 plus six insertions, checked, with no 4-gram shared with the frames.
 54 prompts are to be judged three times each.
+
+## 2026-09-30 — run `s-search`: complete
+
+Three relays, 21:19–21:27 UTC. 162/162 answered and parsed, all by `claude-opus-5-5`. Protocol check
+clean. E1 and E2 hold, and E3 fails.

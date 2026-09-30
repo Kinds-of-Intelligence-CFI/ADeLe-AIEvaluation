@@ -4,7 +4,7 @@ Owner: Pablo. The candidate adds two sentences to PLp's description and a contra
 It is tested first on the rivercross grid of `rivercross-v2` amendment 2, which separates search from
 length.
 
-**Status.** Complete (2026-09-30). B2 failed: the judges still follow length. See `RESULTS.md`.
+**Status.** B2 failed. Structural candidate S passed the rivercross exit criterion narrowly (amendment 1). The SWE-bench sanity check and the lab regression come next. See `RESULTS.md`.
 
 | | |
 |---|---|
