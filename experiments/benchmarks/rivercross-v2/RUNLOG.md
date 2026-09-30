@@ -63,3 +63,8 @@ from the next user message. `score_solve.py` was checked on library-generated so
   stop.
 - **Analysis.** `analysis/search.py --solver-model claude-haiku-4-5-20251001`: H2 and C2 hold; H1,
   H3, C1 and C3 fail.
+
+## 2026-09-30 — pinned amendment 3 runs (`rc-solve-sonnet`, `rc-solve-opus`)
+
+`make_strong.py` copied the 54 `rc-solve` prompts (hashes checked) into two runs. `analysis/strong.py`
+was tested on synthetic outcomes, which were not kept.
