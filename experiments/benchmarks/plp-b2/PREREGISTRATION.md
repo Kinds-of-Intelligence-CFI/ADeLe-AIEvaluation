@@ -110,3 +110,34 @@ rerunning them reproduces `b2_search.json` byte for byte.
   scale asks for it. PLp is then kept as a kind-of-planning scale, and this is reported to the team.
 
 **Cost.** 162 Opus-low calls, under 1 weekly point.
+
+## Amendment 2 — SWE-bench sanity check for candidate S (2026-09-30, before any of its labels)
+
+**Why.** S passed the rivercross exit criterion, but its labels bunch at 2. The next step fixed in
+amendment 1 is to check that S keeps PLp's link to difficulty on a real benchmark.
+
+**Run `s-swe-gate`** (`make_s_swe.py`). PLp on the 44 SWE-bench Verified gate tasks, one Opus-low call
+each, with the v2 prompt. The baseline is `natural-prompt` run `npb-gate-opuslow`: the same tasks,
+builder and judge with the current text. Every baseline prompt was rebuilt and matched its stored hash,
+so only the rubric differs.
+
+**Tests** (`analysis/swe_gate.py`), over the 37 solvable gate tasks (solve rate at least 0.05), as in
+`swebench-pl`:
+
+| test | holds if | p |
+|---|---|---|
+| G1 | Spearman of S's PLp with solve rate < 0, one-sided p < 0.05 | 0.75 |
+| G2 | S's Spearman at most 0.15 weaker (closer to zero) than the current text's | 0.6 |
+| G3 | no collapse: the most common level holds at most 85% of the 44 tasks | 0.75 |
+
+The baseline value was known before this pre-registration: ρ = −0.554 for the current text on the 37
+tasks, from existing labels. The synthetic test of the analysis script printed it. So G2 asks S to
+reach −0.404 or stronger.
+
+**Reading.**
+- **G1–G3 hold:** the lab regression comes next, in a fresh session, pre-registered first.
+- **G1 or G2 fails:** S trades benchmark validity for construct validity. Pablo and the team decide
+  between S, the current text, and a revision.
+- **G3 fails:** the scale collapses on real tasks, and S needs revision before anything else.
+
+**Cost.** 44 Opus-low calls.

@@ -22,3 +22,9 @@ all fail. The lab regression was not started, as the pre-registration requires.
 
 Three relays, 21:19–21:27 UTC. 162/162 answered and parsed, all by `claude-opus-5-5`. Protocol check
 clean. E1 and E2 hold, and E3 fails.
+
+## 2026-09-30 — pinned run `s-swe-gate` (amendment 2)
+
+`make_s_swe.py` rebuilt the 44 current-text gate prompts and matched every stored hash, then wrote the
+S prompts. `analysis/swe_gate.py` was tested on synthetic labels, which were not kept. That test printed
+the baseline Spearman from existing labels (−0.554), which is recorded in the amendment.
