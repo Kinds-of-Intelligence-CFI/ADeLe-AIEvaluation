@@ -17,3 +17,11 @@ which were not kept.
 - **Meters.** 5-hour 11% → 21%, weekly 15% → 16%.
 - **Analysis.** `analysis/analyse.py`, run with `uv run --with scipy`. T3 fails; the other five
   tests hold.
+
+## 2026-09-30 — pinned run `rc-contrast` (amendment 1)
+
+`make_contrast.py` solved 50 puzzles and drew 9 search pairs and 21 length pairs: 59 distinct states,
+59 PLp prompts, each to be judged three times. It reproduces the existing frame wording exactly (checked
+on `chain-3-boat-1#s2`). The library gives missionaries-cannibals with boat 2 and boat 3 the same name,
+so the script renames them by boat size. No prompt contains a solver value. `analysis/contrast.py` was
+tested on random synthetic labels, which were not kept.
