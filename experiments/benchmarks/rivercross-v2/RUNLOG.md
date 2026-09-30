@@ -39,3 +39,12 @@ tested on random synthetic labels, which were not kept.
   The `rc-state` and `rc-play` writers files were regenerated and gain only that column.
 - **Protocol check.** Clean.
 - **Analysis.** `analysis/contrast.py`: L1 holds, S1 fails.
+
+## 2026-09-30 — pinned amendment 2 runs (`rc-search`, `rc-search-vo`, `rc-solve-pilot`, `rc-solve`)
+
+`make_search.py` solved 93 puzzles (3,942 states 2 or more crossings from the goal) and drew 54 states
+(6 per cell) and 12 pilot states. The first band choice (mid 5.5–7.5) left only 5 puzzles in one cell,
+so the mid band was widened to 5–8 before any label. New agents `rc-solver` and `rc-solver-dispatcher`
+(copies in this folder) were installed in `~/Developer/ADELE/.claude/agents/`; the harness loads them
+from the next user message. `score_solve.py` was checked on library-generated solutions, and
+`analysis/search.py` on random synthetic labels (not kept). No prompt contains a solver value.

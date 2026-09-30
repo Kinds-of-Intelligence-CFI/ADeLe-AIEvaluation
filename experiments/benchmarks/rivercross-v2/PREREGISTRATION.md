@@ -127,3 +127,80 @@ detect.
 
 **Exploratory.** Spearman of PLp with cost-to-go and with decision points over all 59 states, mean PLp
 at each value, and how often the three repeats agree.
+
+## Amendment 2 — search as depth × width, apart from execution length (2026-09-30, before any of its labels)
+
+**Why.** In amendment 1, PLp rose when forced crossings were added and barely moved when decision
+points were added. Pablo's reading: search demand does grow with depth and width, but a forced step
+(width 1) adds depth without adding search. So the question is whether PLp follows the size of the
+search, or the forced length of the solution, which belongs to Volume.
+
+**Measures** (`make_search.py`, per state, from the solver):
+- **Execution length:** crossings left (ctg).
+- **Search bits.** Take the legal crossing sequences of length ctg that never undo the previous
+  crossing. Bits = −log₂ of the share of those sequences that reach the goal.
+  - A forced step multiplies both counts by 1, so it adds nothing.
+  - Choices that all work keep the share high, so they add little.
+  - Only choices that can go wrong add bits, at any depth.
+- **Tree bits** (sensitivity): log₂ of the number of those sequences. This counts depth × width,
+  including choices that all work.
+
+**Puzzles and sample.**
+- **Pool.** 93 solvable puzzles: the four conflict topologies (3–7 items, boat 1–4),
+  missionaries-cannibals (3–5 pairs, boat 2–3), and chain, star and cycle puzzles with 1–3 extra
+  "free" items that conflict with nothing. The free items lengthen solutions with little search.
+- **Grid.** States 2 or more crossings from the goal are placed on a 3 × 3 grid: crossings left
+  (2–3, 4–6, 7+) by bits (up to 4.5, 5–8, 8.5+).
+- **Draw.** 6 states per cell, at most one per puzzle in a cell (seed 20260930). That gives 54
+  states from 37 puzzles, with a sample Spearman of crossings left against bits of 0.14.
+- **Pilot.** 12 more states outside the sample, for the solver pilot.
+
+**Runs.**
+- `rc-search`: PLp on the 54 states. Three repeats by Opus low with the v2 prompt; the label is the
+  median.
+- `rc-search-vo`: VO on the 54 states, once. There is no Volume rubric in the v2 set, so this uses
+  the published v1 rubric. It is descriptive only: VO bins by log₁₀ of human minutes and counts
+  thinking time, so it is not a clean measure of execution length.
+- `rc-solve-pilot`, then `rc-solve`: a solver model gets each state with an answer format, five
+  independent attempts per state, through the new `rc-solver` agent (Read and Write only) and its
+  relay `rc-solver-dispatcher`. `score_solve.py` replays each answer with the library's rules. An
+  attempt succeeds if every crossing is legal and everything ends on the right bank. The scorer was
+  checked on solver-generated solutions: 66 of 66 optimal ones succeed, and truncated ones fail.
+- **Solver model, fixed by the pilot.** Haiku 4.5 (alias `haiku`) makes 5 attempts on each of the
+  12 pilot states.
+  - If its success share is 0.15 or less, the solver is Sonnet 5.5 (alias `sonnet`, effort low from
+    the agent file), and the pilot is rerun with it for the record.
+  - Otherwise the solver is Haiku.
+  - Above 0.9, Haiku is still used, and C1–C3 are flagged as having little variance.
+- **Model check.** As before, only answers by the intended model count. Other answers are set aside
+  and retried once.
+
+**Tests** (`analysis/search.py`). Both predictors are standardised, and OLS uses HC3 standard errors.
+Failure is the share of a state's five attempts that do not succeed.
+
+| test | model | holds if | p |
+|---|---|---|---|
+| H1 | PLp ~ bits + ctg | bits coefficient > 0, p < 0.05 | 0.4 |
+| H2 | same | ctg coefficient > 0, p < 0.05 | 0.8 |
+| H3 | same | bits coefficient > ctg coefficient | 0.25 |
+| C1 | failure ~ bits + ctg | bits coefficient > 0, p < 0.05 | 0.6 |
+| C2 | same | ctg coefficient > 0, p < 0.05 | 0.5 |
+| C3 | — | Spearman of PLp with failure at least 0.3 | 0.5 |
+
+**Reading, fixed in advance.**
+- **H1 without H2:** PLp follows search, as intended.
+- **H2 without H1:** PLp follows forced length, which is Volume's ground. The PLp rubric, or the way
+  judges apply it, then needs to say that forced steps do not count.
+- **Both:** PLp follows both, and H3 says which dominates.
+- **C1 and C2** say which of the two actually makes a state harder for a solver. That is the
+  criterion PLp should serve.
+
+**Sensitivity.** H1–H3 and C1–C2 are rerun with tree bits in place of bits.
+
+**Descriptive.** VO levels and their correlation with crossings left and with bits. PLp and failure
+by cell of the grid. How often the three repeats agree.
+
+**Cost.**
+- 162 PLp calls and 54 VO calls by Opus low.
+- 60 pilot calls and 270 solver calls by Haiku (or Sonnet).
+- About 2.5 weekly points in all.
