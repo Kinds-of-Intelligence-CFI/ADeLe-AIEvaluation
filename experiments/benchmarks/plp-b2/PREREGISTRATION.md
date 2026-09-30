@@ -56,4 +56,4 @@ and repeat agreement.
 
 ## Deviations
 
-None yet.
+None. See `RESULTS.md`.

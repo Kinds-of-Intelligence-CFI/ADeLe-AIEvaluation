@@ -4,7 +4,7 @@ Owner: Pablo. The candidate adds two sentences to PLp's description and a contra
 It is tested first on the rivercross grid of `rivercross-v2` amendment 2, which separates search from
 length.
 
-**Status.** Pre-registered (2026-09-30). Judging not started.
+**Status.** Complete (2026-09-30). B2 failed: the judges still follow length. See `RESULTS.md`.
 
 | | |
 |---|---|
@@ -12,3 +12,4 @@ length.
 | design, predictions | `PREREGISTRATION.md` |
 | runs | `labels/b2-search/` |
 | analysis | `analysis/analyse.py` → `results/b2_search.json` |
+| results | `RESULTS.md` |
