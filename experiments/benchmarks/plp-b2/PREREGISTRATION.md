@@ -57,3 +57,56 @@ and repeat agreement.
 ## Deviations
 
 None. See `RESULTS.md`.
+
+## Amendment 1 — candidate S, the structural change (2026-09-30, before any of its labels)
+
+**Why.** B2 failed because PLp's levels are kinds of planning, not amounts. Every river-crossing state
+is the same kind, so the scale had no place for more or less search. Pablo chose to change the
+structure and approved the wording of the level sentences. He asked for the cap to be set from first
+principles.
+
+**Principle.** Planning demand is the search a competent solver must still do after using what they
+know, since knowledge collapses search. The kinds of planning are proxies for typical search sizes.
+So the size of the search can place a task directly.
+- **It can reach Level 4.** A deep search with no shortcut is hard whether or not a decomposition is
+  discovered, and capping it lower would squeeze the hard end of the scale.
+- **It cannot reach Level 5.** A vast search with a known method is mechanical, and one without any
+  method is invention, which is what defines Level 5.
+
+**Candidate S** (`PLp_S.txt`, built by `make_s.py`). It is B2 plus:
+- **Introduction:** "Two things set the level: the kind of planning the task needs, and the size of
+  the search it needs. The size of the search is how many choices could go wrong and how far ahead
+  their consequences show. Place the task at the higher of the two."
+- **Level 2:** "Or the search is small: a few choices could go wrong, but each shows its consequence
+  at once or one step later, so no looking ahead is needed."
+- **Level 3:** "Or the search is moderate: several choices could go wrong, and their consequences show
+  only a few steps later, so options must be compared by looking ahead."
+- **Level 4:** "Or the search is large: many choices could go wrong and depend on one another, their
+  consequences show only far ahead, and most plans that look workable fail." Plus the example:
+  "Timetable twelve exams into five slots under stated clashes and room limits, where most partial
+  timetables that look fine fail only when the last few exams are placed."
+- **Level 5:** "The size of the search alone does not place a task here."
+
+No new text shares a word 4-gram with the 54 frames.
+
+**Run `s-search`.** The same 54 states, builder and judge as `b2-search` (Opus low, three repeats,
+median). `analysis/analyse.py` gained `--run` and `--out` options. Its defaults are unchanged, and
+rerunning them reproduces `b2_search.json` byte for byte.
+
+**Tests** (as for B2):
+
+| test | holds if | p |
+|---|---|---|
+| **E1 (exit criterion)** | bits coefficient > 0 with p < 0.05, and larger than ctg's | 0.45 |
+| E2 | ctg coefficient below the current text's (0.328) | 0.55 |
+| E3 | Spearman with Opus 5.5's non-optimal share at least 0.3 | 0.35 |
+
+**Descriptive.** How many states reach Level 4, by cell.
+
+**Reading.**
+- **E1 holds:** next are the SWE-bench gate sanity check (44 tasks) and the lab regression, each
+  pre-registered before it runs.
+- **E1 fails:** the judges cannot estimate the size of the search from a state's text, even when the
+  scale asks for it. PLp is then kept as a kind-of-planning scale, and this is reported to the team.
+
+**Cost.** 162 Opus-low calls, under 1 weekly point.

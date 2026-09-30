@@ -7,9 +7,11 @@ Predictors standardised, OLS with HC3 errors.
   E2  B2's ctg coefficient smaller than the current text's (0.328)
   E3  Spearman of B2's PLp with Opus 5.5's non-optimal share (rivercross-v2 amendment 3) at least 0.3
 
-    python experiments/benchmarks/plp-b2/analysis/analyse.py
+    python experiments/benchmarks/plp-b2/analysis/analyse.py                       # B2 (default)
+    python experiments/benchmarks/plp-b2/analysis/analyse.py --run s-search --out s_search.json   # amendment 1
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -37,8 +39,12 @@ def ols(y: pd.Series, X: pd.DataFrame) -> dict:
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run", default="b2-search")
+    ap.add_argument("--out", default="b2_search.json")
+    args = ap.parse_args()
     truth = pd.read_csv(RC / "frames/search_truth.csv").set_index("custom_id")
-    b2, agree_b2 = plp(HERE / "labels/b2-search/labels_long.csv")
+    b2, agree_b2 = plp(HERE / f"labels/{args.run}/labels_long.csv")
     cur, agree_cur = plp(RC / "labels/rc-search/labels_long.csv")
     sv = pd.read_csv(RC / "labels/rc-solve-opus/solve_long.csv")
     sv = sv[sv["writer_model"] == JUDGE]
@@ -69,7 +75,7 @@ def main() -> None:
                "mean_shift_B2_minus_current": round(float((d["B2"] - d["current"]).mean()), 3),
                "repeat_agreement": {"B2": agree_b2, "current": agree_cur}}}
     (HERE / "results").mkdir(exist_ok=True)
-    (HERE / "results/b2_search.json").write_text(json.dumps(out, indent=2) + "\n")
+    (HERE / "results" / args.out).write_text(json.dumps(out, indent=2) + "\n")
     print(json.dumps(out, indent=1))
 
 
