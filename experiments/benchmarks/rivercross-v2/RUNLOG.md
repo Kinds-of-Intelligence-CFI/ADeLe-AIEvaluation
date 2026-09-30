@@ -68,3 +68,15 @@ from the next user message. `score_solve.py` was checked on library-generated so
 
 `make_strong.py` copied the 54 `rc-solve` prompts (hashes checked) into two runs. `analysis/strong.py`
 was tested on synthetic outcomes, which were not kept.
+
+## 2026-09-30 — amendment 3 runs: complete
+
+- **Judging.** From 16:32 UTC, after the 5-hour reset, `rc-solver-dispatcher` relays with at most
+  four running at a time: Sonnet 5.5 and Opus 5.5, attempts t1–t5.
+- **Stalls.** Opus t3 (13 answers), Opus t4 (9) and Sonnet t3 (1) stopped on the harness stream
+  watchdog. The missing cells (41, 45, 53) were sent again in new relays; the attempt folders hold
+  no duplicate answers.
+- **Coverage.** 270/270 attempts per model, all by the intended model (`claude-sonnet-5-5`,
+  `claude-opus-5-5`), with no classifier stop.
+- **Analysis.** `analysis/strong.py`: O1 holds for both models, O2 and P1 fail for both, F2 holds
+  for Sonnet, and Opus's failure tests are at the ceiling.

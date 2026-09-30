@@ -3,25 +3,30 @@
 **Question.** On river-crossing puzzles, where an exact solver knows the true remaining work, do the
 current planning rubrics behave as they should?
 
-**Answer.** PLp does not follow search. In the main runs it tracks the solver's cost-to-go at
-Spearman ρ = 0.85. Two follow-ups show that this is mostly the length of the remaining solution:
-- **Amendment 1, matched pairs.** Extra crossings raised PLp. Extra decision points barely did.
-- **Amendment 2, depth × width.** Search is measured as the bits needed to find a working sequence,
-  with forced steps counting zero, on a balanced grid against length. Length predicts PLp
-  (standardised coefficient +0.33, p = 0.0001). Search bits do not (+0.10, p = 0.26).
+**Answer.** PLp does not follow search, and search is what makes these puzzles hard for strong
+models. In the main runs PLp tracks the solver's cost-to-go at Spearman ρ = 0.85, but three follow-ups
+show that this is the length of the remaining solution:
+- **Amendments 1 and 2, the labels.** On matched pairs and on a grid balanced between search bits
+  (depth × width, with forced steps counting zero) and length, PLp rises with length (+0.33,
+  p = 0.0001) and not with search (+0.10, p = 0.26).
+- **Amendment 3, strong solvers.** Sonnet 5.5 and Opus 5.5 almost always solve the states: Opus 98.5%,
+  Sonnet 91.5%. When they miss the shortest solution, it is on states with more search bits (Opus
+  +0.071, p = 0.004; Sonnet +0.087, p = 0.016), not on longer ones. The trappiest short states are the
+  hardest: Opus misses the optimum on 37% of attempts at 2–3 crossings with high bits, against 0% at
+  2–3 crossings with low bits. PLp, which puts short states low, does not track this (ρ = −0.02 with
+  Opus, 0.10 with Sonnet).
 
-A Haiku solver fails more often on longer states too (47% at 7+ crossings, 17% at 2–3), and not on
-states with more search bits. But nearly all its failures are illegal moves, which are state-tracking
-slips rather than failed searches. So on these puzzles, length drives both the labels and a small
-model's errors, through bookkeeping rather than search. PLs stays low, as its rubric says. PLe splits
-into 0 for a single crossing and 3 for a written multi-step answer, which follows its rubric; on
-agent play with a referee it is 1.
+Only Haiku's and Sonnet's outright failures rise with length, and those are state-tracking slips. PLs
+stays low, as its rubric says. PLe splits into 0 for a single crossing and 3 for a written multi-step
+answer, which follows its rubric; on agent play with a referee it is 1.
 
 **Status.** Complete (2026-09-30). The main runs have 178 cells, all labelled by Opus 5.5 at effort
 low; five of the six sealed tests held, and T3 failed. Amendment 1 judged 59 more states three times
 each: L1 (length effect) held and S1 (search effect) failed. Amendment 2 judged 54 balanced states
 three times for PLp and once for VO, with 270 Haiku solver attempts: H2 and C2 (length) held;
-H1, H3, C1 and C3 failed.
+H1, H3, C1 and C3 failed. Amendment 3 repeated the solver criterion with Sonnet 5.5 and Opus 5.5
+(270 attempts each): O1 (search predicts non-optimal answers) held for both, O2 and P1 failed for both,
+F2 held for Sonnet, and Opus's failure tests hit the ceiling.
 
 ## Design
 
@@ -214,6 +219,61 @@ Caveats:
 - The solver criterion mixes planning with state tracking. A referee-checked, move-by-move solver
   would isolate search better, since illegal moves would be rejected rather than counted as failures.
 
+## Amendment 3: strong solvers
+
+Pre-registered before any of its answers (`3b71501`). The same 54 prompts go to Sonnet 5.5 and Opus 5.5
+(`rc-solver`, effort low), five attempts each, scored as in amendment 2 plus optimality: success with
+the minimum number of crossings. From `results/strong.json` (`analysis/strong.py`).
+
+| | Sonnet 5.5 | Opus 5.5 |
+|---|---|---|
+| success | 247 of 270 (91.5%) | 266 of 270 (98.5%) |
+| failures | 17 illegal moves, 6 legal but short of the goal | 4 illegal moves |
+| non-optimal share | 27% | 9.3% |
+
+| test | Sonnet 5.5 | holds | Opus 5.5 | holds |
+|---|---|---|---|---|
+| F1. failure ~ bits | −0.009, p = 0.67 | no | ceiling (1.5% failures) | uninformative |
+| F2. failure ~ ctg | +0.057, p = 0.008 | yes | ceiling | uninformative |
+| O1. non-optimal ~ bits | +0.087, p = 0.016 | **yes** | +0.071, p = 0.004 | **yes** |
+| O2. non-optimal ~ ctg | −0.050, p = 0.21 | no | −0.048, p = 0.044 (negative) | no |
+| P1. PLp vs non-optimal ≥ 0.3 | ρ = 0.10 | no | ρ = −0.02 | no |
+
+Pre-registered probabilities: O1 0.45 for each model, O2 0.45 and 0.4, P1 0.35 for each, F2 0.4 for
+Sonnet.
+
+**Reading, as fixed in advance: O1 without O2 for both strong solvers. Search makes these states
+hard for strong models, and PLp, which follows length, misses it.**
+
+**Opus's non-optimal share by cell:**
+
+| crossings left | bits low | bits mid | bits high |
+|---|---|---|---|
+| 2–3 | 0.00 | 0.07 | 0.37 |
+| 4–6 | 0.03 | 0.10 | 0.17 |
+| 7+ | 0.00 | 0.07 | 0.03 |
+
+For comparison, mean PLp at 2–3 crossings is 1.5 (low bits) and 2.33 (high bits), against 2.7–3.0 at
+7+.
+
+Exploratory:
+- **The hardest states for strong models are short and trappy.** Near the goal, a high-bits state has
+  few working continuations among many legal ones, so a detour looks natural. Long states often have
+  more slack. Non-optimal answers even fall slightly with length once bits are held fixed (Opus
+  −0.048).
+- **Two kinds of difficulty, two rubrics.** Sonnet's outright failures still rise with length
+  (+0.057, p = 0.008), and they are mostly illegal moves. So length does raise a demand, but it is
+  state tracking. That is working memory or execution, not planning. On these puzzles PLp follows
+  that demand rather than its own.
+- PLp against failure: ρ = 0.27 for Sonnet and −0.01 for Opus.
+
+Caveats:
+- Non-optimality counts any longer route as a miss, including a correct but roundabout answer. The
+  prompt asked for "a sequence" that works, not the shortest one, so non-optimality measures search
+  quality without having been demanded.
+- Effort was low. Higher effort would probably lower both shares.
+- 54 states and one prompt format.
+
 ## Deviations and caveats
 
 - **Amendment 1, transcript gap.** For one of the 177 contrast answers
@@ -227,6 +287,9 @@ Caveats:
   limit. One pilot relay (t2) sent nothing and was relaunched later. One main-run cell (t1,
   `star-3+free2-boat-1--L-farmer.item2.item3.item5`) failed with a transient harness error before any
   answer and was sent once more. No cell has two answers in one attempt folder.
+- **Amendment 3, stalled relays.** Three relays (Opus t3 and t4, Sonnet t3) stopped on a harness
+  watchdog, with 10 minutes without progress, while usage was low. Only the cells with no answer
+  were sent again: 41, 45 and 53. No cell has two answers in one attempt folder.
 - No other deviations from the pre-registration.
 - **One judge.** The older rivercross work compared three judges.
 - **Narrow, small ground truth.** There are 43 states, and 34 of them are 1 or 2 crossings from the
