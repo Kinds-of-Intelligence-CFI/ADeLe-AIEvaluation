@@ -141,3 +141,9 @@ reach −0.404 or stronger.
 - **G3 fails:** the scale collapses on real tasks, and S needs revision before anything else.
 
 **Cost.** 44 Opus-low calls.
+
+## Amendment 3 — lab regression for candidate S (2026-09-30, before any of its labels)
+
+S passed the SWE-bench gate (amendment 2), so the lab regression runs next. It is pre-registered in
+`../plp-candidate/lab-regression/PREREGISTRATION.md`, section "Candidate S", with the lab's items
+and checks: v2 prompt, S only, Opus low with three repeats, runs `labreg-s1` and `labreg-s2`.
