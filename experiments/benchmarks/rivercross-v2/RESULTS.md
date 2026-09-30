@@ -4,20 +4,24 @@
 current planning rubrics behave as they should?
 
 **Answer.** PLp does not follow search. In the main runs it tracks the solver's cost-to-go at
-Spearman ρ = 0.85. The length-versus-search contrast (amendment 1) shows that this is mostly
-distance to the goal:
-- two extra decision points at the same length moved the label on only 2 of 9 pairs;
-- more crossings left, at the same decision points, raised it on 13 of 21 pairs, and lowered it on
-  none.
+Spearman ρ = 0.85. Two follow-ups show that this is mostly the length of the remaining solution:
+- **Amendment 1, matched pairs.** Extra crossings raised PLp. Extra decision points barely did.
+- **Amendment 2, depth × width.** Search is measured as the bits needed to find a working sequence,
+  with forced steps counting zero, on a balanced grid against length. Length predicts PLp
+  (standardised coefficient +0.33, p = 0.0001). Search bits do not (+0.10, p = 0.26).
 
-The effect is a step, not a slope. States 2 crossings from the goal get PLp 0–1, states 4 away get
-2, and states 5 or more away get 3. The PLp rubric says length should not raise the demand. PLs stays
-low, as its rubric says. PLe splits into 0 for a single crossing and 3 for a written multi-step
-answer, which follows its rubric. On agent play with a referee, PLe is 1.
+A Haiku solver fails more often on longer states too (47% at 7+ crossings, 17% at 2–3), and not on
+states with more search bits. But nearly all its failures are illegal moves, which are state-tracking
+slips rather than failed searches. So on these puzzles, length drives both the labels and a small
+model's errors, through bookkeeping rather than search. PLs stays low, as its rubric says. PLe splits
+into 0 for a single crossing and 3 for a written multi-step answer, which follows its rubric; on
+agent play with a referee it is 1.
 
 **Status.** Complete (2026-09-30). The main runs have 178 cells, all labelled by Opus 5.5 at effort
 low; five of the six sealed tests held, and T3 failed. Amendment 1 judged 59 more states three times
-each: L1 (length effect) held and S1 (search effect) failed.
+each: L1 (length effect) held and S1 (search effect) failed. Amendment 2 judged 54 balanced states
+three times for PLp and once for VO, with 270 Haiku solver attempts: H2 and C2 (length) held;
+H1, H3, C1 and C3 failed.
 
 ## Design
 
@@ -138,6 +142,78 @@ Caveats:
   boundary at whether decisions interact, which is what decision points approximate. So the result
   still counts against it.
 
+## Amendment 2: search as depth × width, apart from execution length
+
+Pre-registered before any of its labels (`415d459`). The sample is 54 states from 37 puzzles, 6 per
+cell of a 3 × 3 grid of crossings left (2–3, 4–6, 7+) by search bits (up to 4.5, 5–8, 8.5+). The
+pool includes puzzles with "free" items that conflict with nothing. The sample Spearman of crossings
+left against bits is 0.14.
+- **PLp:** three Opus-low repeats; the label is the median.
+- **VO:** v1 rubric, once per state.
+- **Solver:** five Haiku 4.5 attempts per state. The pre-registered pilot on 12 other states gave a
+  success share of 0.77, so the rule chose Haiku. The attempts were replayed with the puzzle rules.
+
+From `results/search.json` (`analysis/search.py`). Coefficients are standardised; standard errors
+are HC3.
+
+| test | model | result | prediction (p) | holds |
+|---|---|---|---|---|
+| H1 | PLp ~ bits + ctg | bits +0.10, p = 0.26 | > 0, p < 0.05 (0.4) | no |
+| H2 | same | ctg +0.33, p = 0.0001 | > 0, p < 0.05 (0.8) | yes |
+| H3 | same | bits below ctg | bits > ctg (0.25) | no |
+| C1 | failure ~ bits + ctg | bits +0.04, p = 0.27 | > 0, p < 0.05 (0.6) | no |
+| C2 | same | ctg +0.12, p = 0.0002 | > 0, p < 0.05 (0.5) | yes |
+| C3 | — | Spearman of PLp with failure 0.20 | at least 0.3 (0.5) | no |
+
+**Reading, as fixed in advance: H2 without H1, so PLp follows forced length, which is Volume's
+ground.** The solver criterion agrees that length, not search bits, is what makes these states
+harder for Haiku (C2 without C1).
+
+**Mean PLp by cell:**
+
+| crossings left | bits low | bits mid | bits high |
+|---|---|---|---|
+| 2–3 | 1.50 | 2.33 | 2.33 |
+| 4–6 | 2.33 | 2.50 | 2.67 |
+| 7+ | 3.00 | 2.67 | 2.83 |
+
+**Solver failure share by cell:**
+
+| crossings left | bits low | bits mid | bits high |
+|---|---|---|---|
+| 2–3 | 0.17 | 0.17 | 0.17 |
+| 4–6 | 0.10 | 0.40 | 0.23 |
+| 7+ | 0.43 | 0.50 | 0.47 |
+
+Exploratory:
+- **How the solver fails.** Of 270 attempts, 191 succeeded (71%), 71 made an illegal move (26%),
+  5 gave no parsable answer, and only 3 were legal but did not reach the goal. Illegal moves rise
+  with length: 14% at 2–3 crossings, 20% at 4–6, and 44% at 7+. So Haiku rarely fails to find a
+  plan. It fails to keep the banks straight over a long sequence. That is a state-tracking demand
+  (working memory, execution), not a planning one, so this criterion cannot vindicate PLp following
+  length.
+- **Search bits predict neither labels nor failures on these puzzles.** Tree bits (depth × width,
+  counting choices that all work) do no better. They give +0.03 on PLp (p = 0.62) and +0.06 on
+  failure (p = 0.09). The puzzles may simply be small enough that search is not the bottleneck for a
+  language model.
+- **PLp also rises with search bits at short lengths.** At 2–3 crossings, low bits give a mean of 1.5
+  and mid or high bits 2.33, and the judges' answers cite interacting choices. Overall the effect is
+  small next to length.
+- **VO** is 1 on 9 states and 2 on 45. It rises weakly with crossings left (ρ = 0.42) and with bits
+  (0.35), as expected for a rubric that counts thinking time in coarse log-time bins.
+- **Repeats.** All three PLp repeats agreed on 59% of states. PLp was 3 on 30 states, 2 on 20, 1 on
+  3 and 0 on 1.
+- **Judge reasoning.** Some answers misread the puzzle. One, for a chain puzzle with free items,
+  says taking the free items early "can lead to a forbidden pair later", though free items conflict
+  with nothing.
+
+Caveats:
+- One judge and one solver model.
+- Search bits count all legal non-undoing sequences as equally likely, which no real solver does.
+- 54 states.
+- The solver criterion mixes planning with state tracking. A referee-checked, move-by-move solver
+  would isolate search better, since illegal moves would be rejected rather than counted as failures.
+
 ## Deviations and caveats
 
 - **Amendment 1, transcript gap.** For one of the 177 contrast answers
@@ -147,6 +223,10 @@ Caveats:
   now accepts that confirmation when no Write call matches, and marks such cells
   `evidence = harness_confirmation` in `writers.csv`. It is the only such cell.
 
+- **Amendment 2, relay scheduling.** Launching eight relays at once hit the harness's concurrent-subagent
+  limit. One pilot relay (t2) sent nothing and was relaunched later. One main-run cell (t1,
+  `star-3+free2-boat-1--L-farmer.item2.item3.item5`) failed with a transient harness error before any
+  answer and was sent once more. No cell has two answers in one attempt folder.
 - No other deviations from the pre-registration.
 - **One judge.** The older rivercross work compared three judges.
 - **Narrow, small ground truth.** There are 43 states, and 34 of them are 1 or 2 crossings from the

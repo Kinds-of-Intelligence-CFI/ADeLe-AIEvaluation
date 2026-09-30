@@ -19,6 +19,10 @@ plp-candidate,knowl-tau2,2026-09-28T11:04:18+00:00,15cd030,232,opus-low,232,232
 plp-candidate,knowl-tb,2026-09-28T11:04:18+00:00,15cd030,34,opus-low,34,34
 rivercross-v2,rc-contrast,2026-09-30T12:26:33+00:00,281ab27,59,opus-low-r1;opus-low-r2;opus-low-r3,177,177
 rivercross-v2,rc-play,2026-09-30T12:08:46+00:00,b07f993,49,opus-low,49,49
+rivercross-v2,rc-search,2026-09-30T12:51:16+00:00,04c87c0,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162
+rivercross-v2,rc-search-vo,2026-09-30T12:51:16+00:00,04c87c0,54,opus-low,54,54
+rivercross-v2,rc-solve,2026-09-30T12:51:16+00:00,04c87c0,54,t1;t2;t3;t4;t5,0,0
+rivercross-v2,rc-solve-pilot,2026-09-30T12:51:16+00:00,04c87c0,12,t1;t2;t3;t4;t5,0,0
 rivercross-v2,rc-state,2026-09-30T12:08:46+00:00,b07f993,129,opus-low,129,129
 swebench-30,swev30-r1,2026-09-26T08:45:22+00:00,2c8ffe7,792,sonnet;opus,0,0
 swebench-30,swev30-r2,2026-09-26T08:55:29+00:00,5b74867,792,sonnet;opus,0,0
