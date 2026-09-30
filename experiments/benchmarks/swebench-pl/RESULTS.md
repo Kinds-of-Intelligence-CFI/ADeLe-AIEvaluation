@@ -1,5 +1,10 @@
 # swebench-pl — results
 
+> **Superseded labels (2026-09-30).** These results use the v1 annotation prompt. The PL labels were
+> redone with the adopted v2 prompt in [`pl-relabel-v2`](../pl-relabel-v2/RESULTS.md): PLp holds
+> (−0.58 against solve rate with Opus low), but PLe weakens to −0.29, because the v2 prompt puts
+> almost every task at PLe 3. Quote the v2 numbers.
+
 **Question.** Do the v2 planning rubrics (PLp Planning, PLe Action control and execution, PLs
 Simulating) track how hard SWE-bench Verified tasks are, across the 435 tasks that leaderboard
 agents solve at least sometimes?
