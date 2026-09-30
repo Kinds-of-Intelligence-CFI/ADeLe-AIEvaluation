@@ -204,3 +204,47 @@ by cell of the grid. How often the three repeats agree.
 - 162 PLp calls and 54 VO calls by Opus low.
 - 60 pilot calls and 270 solver calls by Haiku (or Sonnet).
 - About 2.5 weekly points in all.
+
+## Amendment 3 — strong solvers (2026-09-30, before any of its answers)
+
+**Why.** Pablo does not trust Haiku as the difficulty criterion. It is too weak, and its failures in
+amendment 2 were almost all illegal moves, meaning state-tracking slips. The question is how hard these
+states are for frontier models. So the amendment 2 solver criterion is repeated with Sonnet 5.5 and
+Opus 5.5.
+
+**Runs** (`make_strong.py`). The 54 `rc-solve` prompts are copied unchanged, with the same SHA-256.
+- `rc-solve-sonnet`: model alias `sonnet` (Sonnet 5.5), five attempts per state.
+- `rc-solve-opus`: model alias `opus` (Opus 5.5), five attempts per state.
+
+Both use the `rc-solver` agent at effort low and are scored by `score_solve.py`. At most four relays
+run at a time. Only answers by the intended model count; others are set aside and retried once.
+
+**A second criterion.** Strong models may rarely fail, so each attempt is also scored as optimal or
+not: it succeeds, and it uses the solver's minimum number of crossings. A tracking slip makes an
+answer illegal, while a weak search makes it longer. So non-optimality is the more search-sensitive
+criterion.
+
+**Tests, per solver** (`analysis/strong.py`). PLp is the amendment 2 label. Predictors are
+standardised; OLS uses HC3 standard errors.
+
+| test | model | holds if | p (Sonnet) | p (Opus) |
+|---|---|---|---|---|
+| F1 | failure ~ bits + ctg | bits > 0, p < 0.05 | 0.25 | 0.2 |
+| F2 | same | ctg > 0, p < 0.05 | 0.4 | 0.35 |
+| O1 | non-optimal ~ bits + ctg | bits > 0, p < 0.05 | 0.45 | 0.45 |
+| O2 | same | ctg > 0, p < 0.05 | 0.45 | 0.4 |
+| P1 | — | Spearman of PLp with non-optimal share at least 0.3 | 0.35 | 0.35 |
+
+If a criterion's overall share is below 0.05, its tests are reported as uninformative (ceiling), not
+as failed. My probability that failure hits that ceiling is 0.4 for Sonnet and 0.5 for Opus.
+
+**Reading, fixed in advance.**
+- **O1 without O2:** search makes these states hard for strong models, and PLp, which follows
+  length, misses it. That is a clear case for the rubric note on forced steps.
+- **O2 or F2 without O1:** length drives difficulty even for strong models. Then the question for
+  the team is whether that belongs to PLp or to a memory or execution rubric.
+- **Ceiling on both criteria:** these puzzles are too easy for frontier models, and the testbed
+  cannot answer the question for them without harder puzzles.
+
+**Cost.** 540 solver calls: about 3–5 weekly points, run after the 5-hour window resets
+(16:30 UTC).
