@@ -41,4 +41,4 @@ Old Opus-low values in brackets.
 
 ## Deviations
 
-None yet.
+See `RESULTS.md`, "Deviations and caveats".

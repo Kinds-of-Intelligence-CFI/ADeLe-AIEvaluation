@@ -35,7 +35,8 @@ def read(path: Path) -> pd.DataFrame:
 
 
 def agreement(new: pd.DataFrame, old: pd.DataFrame) -> dict:
-    m = new.merge(old, on=["instance_id", "demand"], suffixes=("_new", "_old"))
+    # tau2 task ids repeat across domains ("0" in airline and in retail), so the benchmark is part of the key.
+    m = new.merge(old, on=["benchmark", "instance_id", "demand"], suffixes=("_new", "_old"))
     out = {}
     for d in DIMS:
         x = m[m["demand"] == d]
