@@ -1,5 +1,10 @@
 # tau2-tb4-pl — results
 
+> **Superseded labels (2026-09-30).** These results use the v1 annotation prompt. The PL labels were
+> redone with the adopted v2 prompt in [`pl-relabel-v2`](../pl-relabel-v2/RESULTS.md): PLp within
+> tau2 domains is −0.38, PLe within domain is no longer significant (−0.11), and Terminal-Bench
+> still shows no significant link. Quote the v2 numbers.
+
 **Question.** Do the v2 planning rubrics (PLp Planning, PLe Action control and execution, PLs
 Simulating) track task difficulty beyond SWE-bench Verified, on tau2 (airline, retail,
 banking_knowledge) and on Terminal-Bench 4.0.0?
