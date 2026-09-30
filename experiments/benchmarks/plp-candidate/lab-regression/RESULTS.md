@@ -182,3 +182,66 @@ python experiments/benchmarks/plp-candidate/lab-regression/analysis/exploratory.
 
 The numbers above are those committed with this file. Prompts and the judges' reasoning stay out of
 the repo (`data/annotations/labreg-r1/`, `labreg-r2/`). The exploratory carve counts need them.
+
+## Candidate S: the structural change
+
+Pre-registered before any label of S (`26af4b9`, section "Candidate S"). S alone, v2 prompt, Opus low,
+three repeats per item, median. Reference: the current text's Opus-low labels in `labreg-r1` (v1
+prompt). Pass 2 re-judges flagged items under both texts with the v2 prompt. From
+`results/regression_s.json` (`analysis/analyse_s.py`).
+
+**Verdict: fail, by one confirmed loss on a one-vote margin.** Nothing else broke.
+
+| check | holds, reference | holds, S |
+|---|---|---|
+| Placement (P, 20 current examples) | 14 | 13 |
+| Minimal pairs (M) | 4 of 4 | 4 of 4 |
+| Family diagonal, rebuilt and battery (D) | 9 of 9 | 9 of 9 |
+| Disentanglement, examples (F) | 25 of 32 | 26 of 32 |
+| Battery checks (B) | 31 of 36 | 31 of 36 |
+| All | 83 of 101 | 83 of 101 |
+
+- **The loss.** `P-L1-3`, the covering letter (a Level 1 example), goes from 1 to 2 under S. Pass 1:
+  S gave 2, 2, 2. Pass 2, both texts with the v2 prompt: current text 1, 1, 2 (median 1); S 2, 1, 2
+  (median 2). The loss repeats, so it is confirmed. One repeat decides it. The same example already
+  read 2 under the current text with three judges in the C run.
+- **Gain.** `F-MSc-L4-1` (lease negotiation) stops leaking: 3 to 2.
+- **No move of two levels.** 15 of 99 items moved by one level: 9 up, 6 down (sign test p = 0.61).
+- **S's new examples**, with examples stripped, all land on their own level: Hanoi 1, sliding block 3,
+  timetabling 4.
+- **Level 4 now appears.** Four lab items go from 3 to 4: delivery route (`B-P01`), wedding seating
+  (`D-PLp1`), van packing (`M-A2`), and the Mars-landing PLe example (`F-PLe-L5-1`, a leak that
+  deepens). Exam timetabling (`D-PLp2`) stays at 3.
+- **Other moves.** Four PLs examples drop from 1 to 0 and one from 2 to 1 (cleaner). Small upward
+  moves on the flatmate dispute (1 to 2), network diagnosis `B-S04` (1 to 2), reactor `B-X04` (2 to 3)
+  and ledger reconciliation (0 to 1). The meal plan `B-D06` drops from 3 to 2.
+- **S's search text is used.** 118 of 306 answers (39 per cent) quote it. All three repeats agree on
+  82 per cent of items. Levels under S: 0 to 5 = 19, 32, 16, 24, 10, 1.
+
+**Sealed predictions.**
+
+| prediction | p | outcome |
+|---|---|---|
+| S passes | 0.4 | failed (one confirmed loss) |
+| no confirmed loss: placement / pairs / diagonal / disentanglement | 0.65 / 0.85 / 0.8 / 0.75 | failed / held / held / held |
+| no confirmed move of two levels | 0.85 | held |
+| if S loses anything, it moves up | 0.7 | happened: a Level 1 example rose to 2, via "search is small" |
+| more item medians higher than lower | 0.65 | held (9 against 6), not significant |
+| new examples on their own level: Hanoi / sliding block / timetabling | 0.55 / 0.5 / 0.45 | all three held |
+| a lab item below 4 reaches 4 | 0.5 | happened (four items) |
+| `D-PLp2` reaches 4 | 0.35 | did not happen (3) |
+| search text quoted in 30 per cent or more | 0.6 | held (39 per cent) |
+| all three repeats agree on 70 per cent or more | 0.6 | held (82 per cent) |
+
+**Reading.** By the rule, S fails. The failure is narrow. It sits on an item that was already
+unstable under the current text, and the risk it shows was predicted: the "search is small" clause
+of Level 2 can lift a Level 1 writing task. Everything else holds, and S spreads the top of the scale
+(Level 4 appears where the searches are large). The Mars-landing leak deepening to 4 is the one
+worrying move that the rule does not catch. What to do is Pablo's and the team's call. A Level 2
+clause that says a choice with a sensible default is not a choice that could go wrong would target
+the loss directly, but it would need its own rivercross check and regression.
+
+**Caveats.** The pass-1 reference is one label under the v1 prompt. Pass 2 corrects this only for
+the flagged item. The 15 one-level moves mix text and prompt effects. One judge (`F-PLs-L3-1`, repeat
+2) wrote its answer twice. The saved file is its second Write, and `writers.py` confirms Opus wrote
+it. There were no classifier stops, and every answer was written by `claude-opus-5-5`.

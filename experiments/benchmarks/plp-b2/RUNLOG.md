@@ -33,3 +33,8 @@ the baseline Spearman from existing labels (−0.554), which is recorded in the 
 
 One relay of 44 cells. 44/44 answered and parsed, all by `claude-opus-5-5`. Protocol check clean.
 G1–G3 hold.
+
+## 2026-10-01 — lab regression for S (amendment 3): fail, narrowly
+
+See `../plp-candidate/lab-regression/RESULTS.md`, section "Candidate S". One confirmed loss: the covering-letter
+example (Level 1) reads 2 under S, on a one-vote margin in pass 2. Nothing else broke.
