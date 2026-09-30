@@ -4,13 +4,14 @@ Owner: Pablo. PLp, PLe and PLs on SWE-bench Verified, tau2 and Terminal-Bench 4.
 Opus low with the v2 annotation prompt (`build_annotation_prompt_v2`), and each study's pre-registered
 analysis rerun on the new labels.
 
-**Status.** Pre-registered (2026-09-29). Judging not started.
+**Status.** Complete (2026-09-30). PLp results hold; SWE-bench PLe weakens. See `RESULTS.md`.
 
 | | |
 |---|---|
 | design, predictions | `PREREGISTRATION.md` |
 | runs | `labels/v2-swe/`, `labels/v2-tau2/`, `labels/v2-tb4/` (`make_prompts.py`) |
 | analysis | `analysis/analyse.py` → `results/relabel.json` |
+| results | `RESULTS.md` |
 
 ## Reproduce
 

@@ -4,6 +4,9 @@ natural-prompt,np-gate-opuslow,2026-09-29T16:11:25+00:00,8fe002d,132,opus-low,13
 natural-prompt,np-plp-s55h,2026-09-29T16:11:25+00:00,8fe002d,44,sonnet55-high,44,44
 natural-prompt,npb-gate-opuslow,2026-09-29T21:30:16+00:00,7fe93c9,132,opus-low,132,132
 natural-prompt,npb-plp-s55h,2026-09-29T21:30:16+00:00,7fe93c9,44,sonnet55-high,44,44
+pl-relabel-v2,v2-swe,2026-09-29T21:46:41+00:00,a82b229,1194,opus-low,1194,1194
+pl-relabel-v2,v2-tau2,2026-09-29T21:46:41+00:00,a82b229,696,opus-low,696,696
+pl-relabel-v2,v2-tb4,2026-09-29T21:46:41+00:00,a82b229,198,opus-low,195,195
 plp-candidate,cand-swe,2026-09-28T08:40:32+00:00,bd67db8,60,opus-low,60,60
 plp-candidate,cand-tau2,2026-09-28T08:40:32+00:00,bd67db8,232,opus-low,232,232
 plp-candidate,cand-tb,2026-09-28T08:40:32+00:00,bd67db8,34,opus-low,34,34
