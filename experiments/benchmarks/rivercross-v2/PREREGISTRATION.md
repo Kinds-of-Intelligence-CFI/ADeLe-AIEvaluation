@@ -82,3 +82,48 @@ What would matter:
 ## Deviations
 
 None. See `RESULTS.md`.
+
+## Amendment 1 — length or search? (2026-09-30, before any `rc-contrast` label)
+
+**Why.** In the main runs, PLp rose one level per step of cost-to-go (ρ = 0.85, `RESULTS.md`). On these
+puzzles cost-to-go mixes two things: how long the remaining solution is, and how much search it takes to
+find. The PLp rubric scores only the second: "Nor is the demand raised by how long or laborious the
+execution is". So the main result cannot tell whether the judge follows search or counts crossings.
+
+**Measures.** Both come from the solver, over the states of 50 solvable puzzles (`make_contrast.py`):
+- **Length:** cost-to-go, the number of crossings left.
+- **Search:** decision points. This is the fewest steps, along any optimal route from the state, at
+  which some legal crossing other than undoing the previous one is not optimal. A step with a single
+  sensible crossing is forced and does not count. At the state itself, any non-optimal crossing
+  counts, because the frame does not show the previous crossing.
+
+**Run `rc-contrast`.** Pairs are drawn within one puzzle, so the rules and wording match within a pair
+(seed 20260930):
+- **9 search pairs.** These are all the (puzzle, cost-to-go) combinations where decision points
+  differ by 2 or more. The pair has the same length and different search.
+- **21 length pairs.** One per puzzle, with the widest gap in cost-to-go (2 or more) at equal decision
+  points. Neither state is one crossing from the goal, since the rubric's Level 0 already covers that.
+- **Scale.** 59 distinct states, PLp only. Each state is judged three times by Opus low (judge folders
+  `opus-low-r1` to `r3`), and the label is the median. That makes 177 calls, about 1 weekly point.
+  The frames use the same wording as `rc-state`, built by the rivercross library's `_subproblem_text`.
+
+**Tests** (`analysis/contrast.py`). The difference in each pair is PLp(more) − PLp(less).
+
+| test | holds if | p |
+|---|---|---|
+| S1. search effect | mean difference over search pairs at least 0.5, and one-sided sign test p < 0.05 | 0.3 |
+| L1. length effect | the same over length pairs | 0.7 |
+
+**Reading, fixed in advance.**
+- **S1 holds and L1 fails:** PLp follows search, as the rubric intends.
+- **L1 holds and S1 fails:** PLp follows length, which the rubric says it should not. The ρ = 0.85
+  result would then be mainly a length effect.
+- **Both hold:** PLp follows both.
+- **Neither holds:** neither effect was detected.
+
+With only 9 search pairs, S1 has little power: the sign test needs about 5 untied pairs, all in one
+direction. So a failed S1 is weak evidence against a search effect, while a length effect is easier to
+detect.
+
+**Exploratory.** Spearman of PLp with cost-to-go and with decision points over all 59 states, mean PLp
+at each value, and how often the three repeats agree.
