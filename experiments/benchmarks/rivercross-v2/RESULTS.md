@@ -3,14 +3,21 @@
 **Question.** On river-crossing puzzles, where an exact solver knows the true remaining work, do the
 current planning rubrics behave as they should?
 
-**Answer.** PLp does. It tracks the solver's cost-to-go at Spearman ρ = 0.85, rising one level at a
-time from 0 (one crossing left) to 3 (five or more). PLs stays low, as its rubric says it should on
-rule-governed puzzles. PLe is not flat, contrary to my prediction. It splits into 0 for a single
-crossing and 3 for a written multi-step answer, which is what its rubric says. On the agent-play
-states, where a referee checks every move, PLe is 1 on 47 of 49.
+**Answer.** PLp does not follow search. In the main runs it tracks the solver's cost-to-go at
+Spearman ρ = 0.85. The length-versus-search contrast (amendment 1) shows that this is mostly
+distance to the goal:
+- two extra decision points at the same length moved the label on only 2 of 9 pairs;
+- more crossings left, at the same decision points, raised it on 13 of 21 pairs, and lowered it on
+  none.
 
-**Status.** Complete (2026-09-30). All 178 cells were labelled by Opus 5.5 at effort low. Five of
-the six sealed tests held; T3 failed.
+The effect is a step, not a slope. States 2 crossings from the goal get PLp 0–1, states 4 away get
+2, and states 5 or more away get 3. The PLp rubric says length should not raise the demand. PLs stays
+low, as its rubric says. PLe splits into 0 for a single crossing and 3 for a written multi-step
+answer, which follows its rubric. On agent play with a referee, PLe is 1.
+
+**Status.** Complete (2026-09-30). The main runs have 178 cells, all labelled by Opus 5.5 at effort
+low; five of the six sealed tests held, and T3 failed. Amendment 1 judged 59 more states three times
+each: L1 (length effect) held and S1 (search effect) failed.
 
 ## Design
 
@@ -81,9 +88,65 @@ Mean PLp by cost-to-go: 0.0 (1), 1.0 (2), 2.0 (3 and 4), 3.0 (5 and 7).
 - **Cost.** 178 calls, 12:10–12:18 UTC. The 5-hour meter went from 11% to 21% and the weekly meter
   from 15% to 16%, including my own turns.
 
+## Amendment 1: length or search?
+
+Pre-registered after the main results and before any of its labels (`743feec`). The states come from
+50 solvable puzzles (`make_contrast.py`), in pairs from the same puzzle:
+- **9 search pairs:** same cost-to-go, 2 or more extra decision points.
+- **21 length pairs:** same decision points, 2 or more extra crossings left.
+
+Each state was judged three times, and the label is the median. From `results/contrast.json`
+(`analysis/contrast.py`):
+
+| test | result | prediction (p) | holds |
+|---|---|---|---|
+| S1. search effect | mean +0.22; 2 pairs higher, 0 lower, 7 tied; sign test p = 0.25 | mean ≥ 0.5 and p < 0.05 (0.3) | no |
+| L1. length effect | mean +1.29; 13 pairs higher, 0 lower, 8 tied; sign test p = 0.0001 | the same (0.7) | yes |
+
+**Reading, as fixed in advance: PLp follows length, which the rubric says it should not.**
+
+Exploratory:
+- **The length effect is a step near the goal.** In the 15 length pairs whose shorter state is 2
+  crossings from the goal, the mean difference is +1.73. In the 6 pairs whose shorter state is 3 or
+  more away, it is +0.17.
+- **PLp by crossings left**, number of states at each level:
+
+  | crossings left | PLp 0 | PLp 1 | PLp 2 | PLp 3 |
+  |---|---|---|---|---|
+  | 2 | 7 | 5 | 3 | 0 |
+  | 4 | 0 | 0 | 19 | 2 |
+  | 6 or more | 0 | 0 | 2 | 14 |
+
+- **The judges solve the state and grade how trivial the solution looks.** A typical answer at 2
+  crossings: "The solution is two crossings ... the decisions are trivial ... Level 1". They do not
+  weigh how many wrong moves are open along the way.
+- **Seven two-crossing states got PLp 0.** Level 0 requires "a single forced action". Two crossings
+  with a wrong option open are neither, so these look like misreadings of the rubric.
+- Over all 59 states, PLp correlates with crossings left at 0.81 and with decision points at 0.50.
+  The two measures correlate with each other at 0.45.
+- All three repeats agreed on 66% of states.
+
+Caveats:
+- **Decision points are my proxy for search.** They count legal moves that are not optimal. Some of
+  those only waste a crossing rather than lead to a dead end, so the proxy may overstate how much
+  real search a state needs.
+- **The search pairs sit mostly at 4 crossings,** where PLp is 2 on 19 of 21 states. Level 3 was
+  within reach, so no ceiling blocked a search effect there.
+- **The rubric's levels are kinds of planning, not amounts.** Arguably, more decision points need
+  not change the level as long as the kind of planning is the same. But the rubric puts the 2/3
+  boundary at whether decisions interact, which is what decision points approximate. So the result
+  still counts against it.
+
 ## Deviations and caveats
 
-- No deviations from the pre-registration.
+- **Amendment 1, transcript gap.** For one of the 177 contrast answers
+  (`missionaries-cannibals-4-boat-3--R-C2.C3.M1.M3`, repeat 1), the judge transcript lacks the
+  assistant record that holds the Write call. The harness's "File created successfully" reply for
+  that file is present, and every record in that transcript is from `claude-opus-5-5`. `writers.py`
+  now accepts that confirmation when no Write call matches, and marks such cells
+  `evidence = harness_confirmation` in `writers.csv`. It is the only such cell.
+
+- No other deviations from the pre-registration.
 - **One judge.** The older rivercross work compared three judges.
 - **Narrow, small ground truth.** There are 43 states, and 34 of them are 1 or 2 crossings from the
   goal. Only 3 states have five or more.

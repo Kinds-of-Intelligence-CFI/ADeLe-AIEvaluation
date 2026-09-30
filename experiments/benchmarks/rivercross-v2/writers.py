@@ -33,7 +33,7 @@ def main() -> None:
     index = pd.read_csv(HERE / f"labels/{args.run}/prompts_index.csv", dtype={"instance_id": str})
     io = (ROOT / run["judge_io"]).resolve()
 
-    writes, calls, stops = {}, {}, {}
+    writes, calls, stops, created = {}, {}, {}, {}
     for f in args.transcripts.glob("agent-*.jsonl"):
         with open(f, encoding="utf-8") as fh:
             lines = fh.readlines()
@@ -42,8 +42,14 @@ def main() -> None:
         cell = lines[0].split(f"{io}/prompts/")[1].split(".txt")[0]
         calls[cell] = calls.get(cell, 0) + 1
         stops[cell] = stops.get(cell, 0) + any(s in line for line in lines for s in STOPS)
+        models = {json.loads(x)["message"].get("model") for x in lines if '"type":"assistant"' in x}
         for line in lines:
             r = json.loads(line)
+            # Fallback evidence: the harness confirms the file this transcript created, even when the
+            # assistant record holding the Write call is missing from the transcript.
+            if r.get("type") == "user" and "File created successfully at: " in line:
+                path = line.split("File created successfully at: ")[1].split(" ")[0]
+                created.setdefault(path, []).append((r.get("timestamp"), models - {None, "<synthetic>"}, cell))
             if r.get("type") != "assistant":
                 continue
             for b in r["message"].get("content", []):
@@ -60,9 +66,14 @@ def main() -> None:
             if not path.exists():
                 continue
             match = [w for w in writes.get(hashlib.sha256(path.read_bytes()).hexdigest(), []) if w[2] == cell]
-            assert match, f"{cell}: no Write call produced this file"
+            evidence = "write_sha256"
+            if not match:
+                conf = [c for c in created.get(str(path), []) if c[2] == cell and len(c[1]) == 1]
+                assert len(conf) == 1, f"{cell} ({judge}): no Write call or single-model confirmation for this file"
+                match, evidence = [(conf[0][0], next(iter(conf[0][1])), cell)], "harness_confirmation"
             rows.append({"file_id": rec.file_id, "demand": rec.demand, "judge": judge,
-                         "writer_model": max(match)[1], "calls": calls[cell], "classifier_stops": stops[cell]})
+                         "writer_model": max(match)[1], "evidence": evidence,
+                         "calls": calls[cell], "classifier_stops": stops[cell]})
     out = pd.DataFrame(rows)
     out.to_csv(HERE / f"labels/{args.run}/writers.csv", index=False)
     # Every cell, answered or not: calls made and calls stopped by a safeguard.
