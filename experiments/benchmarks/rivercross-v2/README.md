@@ -4,13 +4,14 @@ Owner: Pablo. The rivercross frames and solver ground truth (`experiments/riverc
 arm) are read without change. Opus low judges PLp, PLe and PLs, one state per call, with the v2
 annotation prompt. The labels are checked against the solver's cost-to-go.
 
-**Status.** Pre-registered (2026-09-30). Judging not started.
+**Status.** Complete (2026-09-30). PLp tracks the solver (ρ = 0.85). See `RESULTS.md`.
 
 | | |
 |---|---|
 | design, predictions | `PREREGISTRATION.md` |
 | runs | `labels/rc-state/`, `labels/rc-play/` (`make_prompts.py`) |
 | analysis | `analysis/analyse.py` → `results/rivercross.json` |
+| results | `RESULTS.md` |
 
 ## Reproduce
 

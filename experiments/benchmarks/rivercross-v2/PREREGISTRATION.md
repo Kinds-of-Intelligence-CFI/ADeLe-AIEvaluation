@@ -81,4 +81,4 @@ What would matter:
 
 ## Deviations
 
-None yet.
+None. See `RESULTS.md`.

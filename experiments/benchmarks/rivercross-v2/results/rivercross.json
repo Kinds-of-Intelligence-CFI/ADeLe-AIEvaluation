@@ -1,0 +1,149 @@
+{
+  "counts": {
+    "rc-state": {
+      "PLp": 43,
+      "PLe": 43,
+      "PLs": 43
+    },
+    "rc-play": 49
+  },
+  "levels": {
+    "rc-state": {
+      "PLp": {
+        "0": 16,
+        "1": 15,
+        "2": 8,
+        "3": 4
+      },
+      "PLe": {
+        "0": 12,
+        "1": 4,
+        "2": 2,
+        "3": 25
+      },
+      "PLs": {
+        "1": 8,
+        "2": 35
+      }
+    },
+    "rc-play PLe": {
+      "1": 47,
+      "2": 2
+    }
+  },
+  "cost_to_go": {
+    "1": 12,
+    "2": 22,
+    "3": 2,
+    "4": 4,
+    "5": 2,
+    "7": 1
+  },
+  "T1_PLp_vs_cost_to_go": {
+    "n": 43,
+    "rho": 0.847,
+    "p_two_sided": 7.79e-13,
+    "ci95": [
+      0.734,
+      0.915
+    ]
+  },
+  "T2_cost_to_go_1": {
+    "n": 12,
+    "share_PLp_le_1": 1.0
+  },
+  "T3_PLe_modal_share": 0.581,
+  "T4_PLs": {
+    "share_le_2": 1.0,
+    "vs_cost_to_go": {
+      "n": 43,
+      "rho": 0.561,
+      "p_two_sided": 9.12e-05,
+      "ci95": [
+        0.313,
+        0.737
+      ]
+    }
+  },
+  "T5_play_PLe_modal_share": 0.959,
+  "checks": {
+    "T1_PLp_rho_ge_0.6_and_p_lt_0.05": true,
+    "T2_ctg1_PLp_le_1_share_ge_0.8": true,
+    "T3_PLe_modal_share_ge_0.8": false,
+    "T4a_PLs_le_2_share_ge_0.8": true,
+    "T4b_PLs_rho_below_PLp_rho": true,
+    "T5_play_PLe_modal_share_ge_0.8": true
+  },
+  "exploratory": {
+    "PLp_mean_by_cost_to_go": {
+      "1": 0.0,
+      "2": 1.0,
+      "3": 2.0,
+      "4": 2.0,
+      "5": 3.0,
+      "7": 3.0
+    },
+    "PLs_vs_items": {
+      "n": 43,
+      "rho": 0.237,
+      "p_two_sided": 0.126,
+      "ci95": [
+        -0.068,
+        0.501
+      ]
+    },
+    "PLs_vs_forbidden_pairs": {
+      "n": 41,
+      "rho": 0.155,
+      "p_two_sided": 0.334,
+      "ci95": [
+        -0.161,
+        0.441
+      ]
+    },
+    "PLs_vs_boat": {
+      "n": 43,
+      "rho": -0.494,
+      "p_two_sided": 0.000751,
+      "ci95": [
+        -0.692,
+        -0.228
+      ]
+    },
+    "PLp_vs_items": {
+      "n": 43,
+      "rho": 0.451,
+      "p_two_sided": 0.00241,
+      "ci95": [
+        0.174,
+        0.662
+      ]
+    },
+    "PLe_vs_cost_to_go": {
+      "n": 43,
+      "rho": 0.784,
+      "p_two_sided": 5.05e-10,
+      "ci95": [
+        0.633,
+        0.878
+      ]
+    },
+    "PLs_mean_by_topology": {
+      "chain": 1.92,
+      "complete": 1.67,
+      "cycle": 1.9,
+      "missionaries-cannibals": 2.0,
+      "star": 1.69
+    },
+    "PLp_against_old_opus_labels": {
+      "n": 43,
+      "exact": 0.744,
+      "mean_shift": -0.07
+    },
+    "PLe_play_against_old_opus_labels": {
+      "n": 49,
+      "exact": 0.041,
+      "mean_shift": -0.653
+    }
+  }
+}
