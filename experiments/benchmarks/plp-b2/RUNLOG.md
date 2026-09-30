@@ -12,3 +12,8 @@ current text (0.101 and 0.328).
 Three `judge-dispatcher-v2-low` relays of 54 cells (model opus). 162/162 answered and parsed, all by
 `claude-opus-5-5`, with no classifier stop. Protocol check clean. `analysis/analyse.py`: E1, E2 and E3
 all fail. The lab regression was not started, as the pre-registration requires.
+
+## 2026-09-30 — pinned run `s-search` (amendment 1)
+
+`make_s.py` built `PLp_S.txt`: B2 plus six insertions, checked, with no 4-gram shared with the frames.
+54 prompts are to be judged three times each.
