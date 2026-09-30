@@ -63,3 +63,13 @@ three battery items and no others. Every pass-2 S prompt reproduces its pass-1 p
 kept). `analysis/analyse_s.py` was tested on synthetic labels, which were not kept. That test showed
 that 83 of 101 checks hold under the reference (labreg-r1, opus-low, current text), from existing labels.
 `writers.py` now maps repeat judge names (`opus-low-r1`) to their model.
+
+## 2026-09-30/10-01 — candidate S, pass 1 (`labreg-s1`) and pass 2 (`labreg-s2`): complete
+
+Pass 1: three `judge-dispatcher-v2-low` relays of 102 cells (one per repeat), about 11 minutes each,
+run concurrently. 306/306 answered and parsed, all written by `claude-opus-5-5`, with no classifier
+stop. Protocol check over 306 transcripts: exact two-line message, working directory `~/Developer/ADELE`,
+effort low, no CLAUDE.md attached (the only mention is boilerplate in the harness system prompt),
+Read then Write only. Exception: one judge (`kmy2z`, repeat 2) wrote its own answer twice. One pass-1
+loss (`P-L1-3`), no move of two levels. Pass 2: six direct `adele-judge-v2-low` calls (both texts × 3
+repeats), all parsed, all Opus 5.5. The loss repeats. Verdict: fail.
