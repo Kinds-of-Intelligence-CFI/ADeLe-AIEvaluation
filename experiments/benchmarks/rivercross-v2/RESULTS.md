@@ -83,8 +83,9 @@ Mean PLp by cost-to-go: 0.0 (1), 1.0 (2), 2.0 (3 and 4), 3.0 (5 and 7).
   - So PLs does not pick up search size beyond the one-step case.
 - **Against the older PLp labels.** 74% match the older Opus labels for the same states, with a
   mean shift of −0.07. Those came from an earlier rubric and many states per call. So the link to
-  remaining search that the rivercross arm found (Spearman 0.83–0.89) survives both the rubric
-  re-key and the move to one state per call with the v2 prompt.
+  cost-to-go that the rivercross arm found (Spearman 0.83–0.89) survives both the rubric re-key and
+  the move to one state per call with the v2 prompt. Amendment 1 shows that the link is mostly
+  distance to the goal, not search.
 - **Cost.** 178 calls, 12:10–12:18 UTC. The 5-hour meter went from 11% to 21% and the weekly meter
   from 15% to 16%, including my own turns.
 
