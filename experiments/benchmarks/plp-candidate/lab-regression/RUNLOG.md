@@ -54,3 +54,12 @@ losses and one two-level move, so pass 2 re-ran `F-MSc-L3-4`, `F-PLs-L4-3` and `
 18 calls (18:48–18:51 UTC), 6 per model, all parsed, protocol clean. One relay launch failed on a transient auto-mode
 check and was launched again; no cell was sent twice. Verdict for D: fail (the two-level move on
 `F-MSc-L3-4` repeated; neither loss did).
+
+## 2026-09-30 — candidate S pinned (`labreg-s1`)
+
+`make_prompts_s.py` wrote 102 prompts: S under the v2 prompt, set P with examples stripped, the three
+new S examples added to set P (`items_s.csv`). The 4-gram check against S's bullets voids the same
+three battery items and no others. Every pass-2 S prompt reproduces its pass-1 prompt (tested, not
+kept). `analysis/analyse_s.py` was tested on synthetic labels, which were not kept. That test showed
+that 83 of 101 checks hold under the reference (labreg-r1, opus-low, current text), from existing labels.
+`writers.py` now maps repeat judge names (`opus-low-r1`) to their model.

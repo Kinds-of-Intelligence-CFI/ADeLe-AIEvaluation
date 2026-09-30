@@ -67,7 +67,7 @@ def main() -> None:
                          "calls": calls[key], "classifier_stops": stops[key]})
     out = pd.DataFrame(rows)
     out.to_csv(HERE / f"labels/{args.run}/writers.csv", index=False)
-    other = out[[not str(m).startswith(MODELS[j]) for j, m in zip(out["judge"], out["writer_model"])]]
+    other = out[[not str(m).startswith(MODELS[re.sub(r"-r\d+$", "", j)]) for j, m in zip(out["judge"], out["writer_model"])]]
     print(out.groupby("judge")["writer_model"].value_counts().to_dict())
     print("cells with a classifier stop:", int((out["classifier_stops"] > 0).sum()),
           "| cells called more than once:", int((out["calls"] > 1).sum()))

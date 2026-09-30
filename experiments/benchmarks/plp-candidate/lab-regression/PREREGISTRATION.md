@@ -168,3 +168,63 @@ tested option.
 1. **2026-09-28: haiku ran without an effort setting.** The design says effort low for all three
    judges. The harness applies no effort to Haiku 4.5, and its transcripts record none. Opus and
    sonnet ran at low. Found during pass 1; nothing else changed.
+
+## Candidate S: the structural change (added 2026-09-30, before any label of S)
+
+**Why.** S is the structural PLp candidate of `plp-b2` (amendment 1): the level is the higher of the
+kind of planning and the size of the search. It passed the rivercross exit test narrowly and the
+SWE-bench gate. The order fixed there says the lab regression comes next. The text is
+`../../plp-b2/PLp_S.txt` (sha256 `76a88e78…`).
+
+**Pablo's design choices (2026-09-30).**
+- Only the prompt we intend to use: the v2 prompt (`build_annotation_prompt_v2`).
+- Only S is judged. There is no full current-text arm.
+- Opus low is the only judge. Sonnet 5.5 blocks PLp prompts, and haiku is too weak.
+
+**Design.**
+- **Run `labreg-s1`** (`make_prompts_s.py`). The 99 judged items of `items.csv`, plus S's three new
+  examples in set P (Tower of Hanoi, Level 1; sliding-block puzzle, Level 3; exam timetabling,
+  Level 4). That is 102 items (`items_s.csv`). The 4-gram check against S's bullets gives the same
+  three void items and no new ones. Set P is judged with every Examples block stripped, as before.
+- **Judge.** `adele-judge-v2-low`, model opus, three repeats per item (`opus-low-r1` to `-r3`), via
+  `judge-dispatcher-v2-low`. The label is the median of the three.
+- **Reference.** The current text's `opus-low` label in `labreg-r1` (one label per item, v1 prompt).
+  So pass 1 differs from the reference in both text and prompt. Pass 2 removes the prompt
+  difference for the items that matter.
+- **Pass 2 (`labreg-s2`).** Every item behind a pass-1 loss (among the items that moved), and every
+  item that moved by two levels or more, is judged again under both texts, the current text and S,
+  with the v2 prompt, three Opus-low repeats each. Its current-text medians replace the reference
+  for those items.
+- **Writers.** As before, an answer counts only if `claude-opus-5-5` wrote it. Others go to
+  `responses_fallback/`, and the cell is judged once more.
+
+**Checks and rule.** The same checks as for C (`analysis/analyse.py`), computed by
+`analysis/analyse_s.py`. A loss is a check that holds under the reference and fails under S.
+S passes if no loss and no move of two levels or more is confirmed in pass 2. The three new examples
+have no reference: their placement is reported, not ruled on.
+
+**Also reported.** Per-set agreement and shifts, a sign test over item medians (S against the
+reference), S's level counts, how often all three repeats agree, and how often answers quote S's
+search text ("size of the search", "higher of the two", "search is small/moderate/large",
+"could go wrong").
+
+**Predictions (sealed).**
+- S passes: 0.4.
+- No confirmed loss: placement 0.65, minimal pairs 0.85, family diagonal 0.8, disentanglement 0.75.
+  No confirmed move of two levels or more: 0.85.
+- If S loses anything, it is an item moving up: 0.7. At risk: Level 0 and 1 examples (the "search
+  is small" clause may lift them to 2), and MSc negotiation examples in F (large search, to 3 or 4).
+- More item medians are higher under S than lower: 0.65.
+- The new examples reach their own level with examples stripped: Hanoi 0.55, sliding block 0.5,
+  timetabling 0.45.
+- At least one lab item below 4 in the reference reaches 4 under S: 0.5. `D-PLp2` (exam
+  timetabling) does: 0.35.
+- S's search text is quoted in 30 per cent or more of answers: 0.6.
+- All three repeats agree on 70 per cent or more of items: 0.6.
+
+**Cost.** 306 Opus-low calls in pass 1, plus up to about 120 in pass 2. About 2 to 3 weekly points
+(now 29 per cent).
+
+**Next.** If S passes, the team sees S with all three results, then adoption in `src/` (Pablo's OK)
+and the relabel. If S fails, the report names each confirmed loss, and S needs revision or a team
+decision.
