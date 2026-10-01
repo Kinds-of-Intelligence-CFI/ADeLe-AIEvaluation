@@ -58,3 +58,10 @@ a one-cell pilot (6 consecutive 200-line Reads, full coverage) then the other 38
 into the session after a first launch attempt failed (that relay was released unsent). 38 labelled; age's PLp judge
 read lines 1–1,000 of 1,001 on both attempts, rejected by the full-read check (no label). Ran `analysis/analyse.py`;
 results and an exploratory prompt-length control in RESULTS.md.
+
+## 2026-10-01 — chunked judge's stopping rule fixed (after the run)
+
+`adele-judge-v2-low-chunked.md` now says to read the next part after every full 200-line part, even when the text looks
+complete, and to stop only after a part returns fewer than 200 lines. The run used the pinned version (sha256
+`6d55cad0…`); the new file is `3f99cedc…`, so `adele mass check programbench-pl-long` now reports agent drift. Future
+chunked runs pin the new version.

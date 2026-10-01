@@ -9,6 +9,7 @@ claude-opus-4,Claude Opus 4,Anthropic,2025-05,,claude4opus,
 claude-sonnet-4.5,Claude Sonnet 4.5,Anthropic,2025-09,,,
 claude-opus-4.5,Claude Opus 4.5,Anthropic,2025-11,,,
 claude-opus-4.6,Claude Opus 4.6,Anthropic,2026-02,,,
+claude-sonnet-4.6,Claude Sonnet 4.6,Anthropic,2026-02,,,
 claude-opus-4.7,Claude Opus 4.7,Anthropic,2026-04,,,
 claude-opus-4.8,Claude Opus 4.8,Anthropic,2026-05,,,
 claude-fable-5,Claude Fable 5,Anthropic,2026-06,,,
@@ -36,6 +37,7 @@ gemini-3-pro,Gemini 3 Pro,Google,2025-11,,gemini3propreview gemini30pro,
 gemini-3-flash,Gemini 3 Flash,Google,2025-12,,,
 gemini-3.1-pro,Gemini 3.1 Pro,Google,2026-02,,gemini31propreview,
 gemini-3.5-flash,Gemini 3.5 Flash,Google,2026-05,,,
+gemini-3.6-flash,Gemini 3.6 Flash,Google,2026-07,,,
 gemini-3.7-flash,Gemini 3.7 Flash,Google,2026-08,,,release from the Terminal-Bench 4.0 leaderboard
 gemini-3.8-flash,Gemini 3.8 Flash,Google,2026-09,,,release from the Terminal-Bench 4.0 leaderboard
 grok-4-fast,Grok 4 Fast,xAI,2025-09,,,
@@ -47,8 +49,10 @@ grok-4.7,Grok 4.7,xAI,2026-09,,,release from the Terminal-Bench 4.0 leaderboard
 glm-5,GLM-5,Z.ai,2026-02,,,
 glm-5.2,GLM-5.2,Z.ai,2026-06,,,
 glm-5.3,GLM-5.3,Z.ai,2026-08,,,release from the Terminal-Bench 4.0 leaderboard
+glm-5.3-flash,GLM-5.3-Flash,Z.ai,2026-08,,,
 kimi-k2,Kimi K2,Moonshot AI,2025-07,,kimik20711preview kimik2instruct,
 kimi-k2-0905,Kimi K2 0905,Moonshot AI,2025-09,,kimik20905preview,
+kimi-k2.7-code,Kimi K2.7 Code,Moonshot AI,2026-06,,,
 kimi-k3,Kimi K3,Moonshot AI,2026-07,,,
 qwen-2.5,Qwen 2.5,Alibaba,2024-09,,,
 qwen-2.5-coder-32b,Qwen2.5-Coder-32B-Instruct,Alibaba,2024-11,,qwen25coder32binstruct,
@@ -57,8 +61,11 @@ qwen3-max-thinking-preview,Qwen3-Max-Thinking-Preview,Alibaba,2025-10,,,release 
 qwen3-max-thinking,Qwen3-Max-Thinking,Alibaba,2026-01,,,
 qwen3.5-397b-a17b,Qwen3.5-397B-A17B,Alibaba,2026-02,,,
 qwen3.8-max,Qwen 3.8 Max,Alibaba,2026-07,,,
+deepseek-v4-flash,DeepSeek V4 Flash,DeepSeek,2026-07,,,release of the 2026-07-31 build (first API preview 2026-04)
+deepseek-v4-pro,DeepSeek V4 Pro,DeepSeek,2026-08,,,GA release 2026-08-13 (first API preview 2026-04)
 inkling,Inkling,Thinking Machines Lab,2026-07,,,
 muse-spark-1.1,Muse Spark 1.1,Meta,2026-07,,,
+muse-spark-1.2,Muse Spark 1.2,Meta,2026-08,,,
 toolorchestra,Nemotron-Orchestrator-8B (ToolOrchestra),NVIDIA,2025-11,yes,nemotronorchestrator8b,an orchestrator that calls other models
 deepswe-preview,DeepSWE-Preview,Agentica,2025-07,,httpshuggingfacecoagenticaorgdeepswepreview,
 swe-llama,SWE-Llama,Princeton,2023-10,,,
