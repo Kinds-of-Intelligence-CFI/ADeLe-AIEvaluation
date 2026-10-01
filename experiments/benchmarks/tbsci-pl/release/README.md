@@ -21,8 +21,8 @@ configs:
 
 # ADeLe — Terminal-Bench Science 0.1 with demand labels
 
-All {n_tasks} tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and flags for tasks that may be broken.
-{n_labels} labels. Built at commit `{commit}` of
+All 70 tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and flags for tasks that may be broken.
+207 labels. Built at commit `c2677df` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tbsci-pl/`).
 
@@ -32,7 +32,7 @@ All {n_tasks} tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and 
 |---|---|---|
 | `labels_wide.csv` (default) | task | domain, field, expert hours, trials and solve rate, flags, one column per rubric |
 | `labels.csv` | task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
-| `tasks.csv` | task (all {n_tasks}) | the same outcomes and flags, without labels |
+| `tasks.csv` | task (all 70) | the same outcomes and flags, without labels |
 | `open_issues.csv` | open `[TASK FIX]` issue | number, date, task, whether it counts for the flag, title, link |
 | `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
 
@@ -44,13 +44,13 @@ Task text is not included (Terminal-Bench Science tasks carry a no-training cana
 
 Every task is kept. Two flags let users filter:
 
-- **`solved_any`**: some trial solves the task. {n_solved_any} tasks; {n_never} are never solved. With no pass ever
+- **`solved_any`**: some trial solves the task. 65 tasks; 5 are never solved. With no pass ever
   recorded, a broken task cannot be told apart from a hard one.
-- **`open_issue`**: an open `[TASK FIX]` issue on the benchmark's GitHub names the task ({n_open_issue} tasks; issue
-  numbers in `open_issues`; list fetched {issues_date}). Issues that only concern running on non-x86 machines do not
+- **`open_issue`**: an open `[TASK FIX]` issue on the benchmark's GitHub names the task (37 tasks; issue
+  numbers in `open_issues`; list fetched 2026-10-01). Issues that only concern running on non-x86 machines do not
   count: the leaderboard runs on x86_64. An open issue is a report, not a confirmed defect.
 
-{n_clean} tasks are solved and have no open issue.
+33 tasks are solved and have no open issue.
 
 **Solve rate** is the share of scored trials with reward 1 across the 12 leaderboard configurations with public trials
 (Harbor Hub, `v0-1-eval`, 3 trials per task, exported 2026-10-01). A trial without a reward is missing, not a failure.
@@ -64,18 +64,18 @@ Every task is kept. Two flags let users filter:
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
   level. The judge never sees tests, solutions or agent attempts.
-- **Missing labels:** {unlabelled}. A safety classifier handed the judge's calls on this task to another model, and
+- **Missing labels:** `protein-active-learning (PLp)`, `protein-active-learning (PLe)`, `protein-active-learning (PLs)`. A safety classifier handed the judge's calls on this task to another model, and
   those answers were discarded.
 
 ## What the labels show
 
-PLp against solve rate: ρ = {rho_all_solve_rate} on all tasks; {rho_solved_any_no_open_issue_solve_rate} on the
-solved tasks without an open issue. PLp against expert hours: ρ = {rho_all_expert_hours} on all tasks;
-{rho_solved_any_no_open_issue_expert_hours} on the solved tasks without an open issue. Spearman, two-sided.
+PLp against solve rate: ρ = +0.24 (p = 0.045) on all tasks; +0.36 (p = 0.042) on the
+solved tasks without an open issue. PLp against expert hours: ρ = +0.41 (p = 0.0005) on all tasks;
++0.48 (p = 0.0058) on the solved tasks without an open issue. Spearman, two-sided.
 
 ## Limits
 
-- Small: {n_tasks} tasks, 12 configurations, 3 trials each. Wide confidence intervals.
+- Small: 70 tasks, 12 configurations, 3 trials each. Wide confidence intervals.
 - The issue flag is a snapshot of open reports, not an audit.
 - Dropping never-solved tasks would use the outcome itself.
 - Terminal-Bench Science tasks are public; this is not a contamination-free set.
