@@ -55,3 +55,12 @@ one judge call per repeat and cell, every judge from `~/Developer/ADELE`. (`writ
 across repeats, so its "called more than once: 162" means three calls per cell, one per repeat.) The rivercross
 analysis needs statsmodels: `uv run --extra annotate --with scipy --with statsmodels` (uv.lock deleted).
 E1 fails; G1–G3 hold. `labreg-sq1` stays pinned but unjudged, as pre-registered. S is frozen.
+
+## 2026-10-01 — pinned O runs (amendment 5)
+
+`PLp_O.txt` written by hand with Pablo. `make_prompts_s.py --candidate o` wrote `labreg-o1` (108 prompts: the
+S items with O's example bullets, plus six format-pair items in set U, none sharing a 4-gram with O's
+bullets). `make_o.py` wrote `o-search` (54 × 3), `o-odds` (54, odds-elicitation prompt) and `o-swe-gate` (44).
+No text new in O shares a 4-gram with the frames or the lab items. `analysis/odds_o.py` and the O branch of
+`analyse_s.py` were tested on synthetic labels, which were not kept; `analyse_s.py`'s defaults still reproduce
+`regression_s.json` byte for byte.

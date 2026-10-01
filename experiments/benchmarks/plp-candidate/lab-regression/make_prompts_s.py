@@ -10,6 +10,10 @@ example bullets in set P (items_s.csv). Set P is scored with every Examples bloc
 With --candidate sq, the same is done for candidate S-q (../../plp-b2/PLp_Sq.txt): runs labreg-sq1 and
 labreg-sq2. Its items are those of items_s.csv; the 4-gram check is redone against S-q's bullets.
 
+With --candidate o, candidate O (../../plp-b2/PLp_O.txt, odds as the driver) is done the same way: runs labreg-o1
+and labreg-o2, items in items_o.csv: the items of items_s.csv with O's own new example bullets, plus the
+open-versus-multiple-choice minimal pairs of format_pairs.csv (set U), each 4-gram-checked against O's bullets.
+
 Pass 2 judges the listed items under both texts, S and the current text, with the v2 prompt: the
 current-text arm is the control that pass 1 lacks.
 """
@@ -68,23 +72,24 @@ def prompt(full_name: str, content: str, item) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--candidate", choices=["s", "sq"], default="s")
+    ap.add_argument("--candidate", choices=["s", "sq", "o"], default="s")
     ap.add_argument("--replicate", nargs="+", metavar="ITEM", help="write pass 2 (labreg-s2)")
     args = ap.parse_args()
     plp = load_active_catalog()["PLp"]
-    path = S_FILE if args.candidate == "s" else S_FILE.with_name("PLp_Sq.txt")
+    path = {"s": S_FILE, "sq": S_FILE.with_name("PLp_Sq.txt"), "o": S_FILE.with_name("PLp_O.txt")}[args.candidate]
     s = s_text(path)
     c = args.candidate
     mp.JUDGES, mp.AGENT = JUDGES, AGENT
+    items_file = "items_o.csv" if c == "o" else "items_s.csv"
     note = {"rubric": {"file": str(Path(plp.file_path).relative_to(ROOT)),
                        "sha256": mp.sha256(Path(plp.file_path).read_bytes()),
                        "candidate": f"plp-b2/{path.name}", "candidate_sha256": mp.sha256(path.read_bytes()),
                        "set_P": "every Examples block stripped from the rubric shown (r25 design)"},
-            "items": "lab-regression/items_s.csv", "lab_record_commit": mp.LAB}
+            "items": f"lab-regression/{items_file}", "lab_record_commit": mp.LAB}
     taken = set(pd.concat(pd.read_csv(p) for p in HERE.glob("labels/*/prompts_index.csv"))["file_id"])
 
     if args.replicate:
-        items = pd.read_csv(HERE / "items_s.csv").set_index("item_id")
+        items = pd.read_csv(HERE / items_file).set_index("item_id")
         assert set(args.replicate) <= set(items.index), "unknown item"
         cells = [{"item_id": i, "set": items.loc[i, "set"], "arm": arm, "demand": "PLp",
                   "prompt": prompt(plp.full_name, content, SimpleNamespace(**items.loc[i]))}
@@ -94,12 +99,19 @@ def main() -> None:
         items = build_items(plp.content, s)
         if c == "s":
             items.to_csv(HERE / "items_s.csv", index=False)
+        elif c == "o":  # O's own new bullets, plus the format pairs, 4-gram-checked against O's bullets
+            pairs = pd.read_csv(HERE / "format_pairs.csv").assign(status="judged", source="format_pairs.csv")
+            bul = [mp.fourgrams(t) for _, t in mp.bullets(s)]
+            for r in pairs.itertuples(index=False):
+                assert not any(mp.fourgrams(r.text) & g for g in bul), f"{r.item_id} shares a 4-gram with O"
+            items = pd.concat([items, pairs], ignore_index=True)
+            items.to_csv(HERE / "items_o.csv", index=False)
         else:  # S-q has S's bullets: same items
             assert items.equals(build_items(plp.content, s_text()))
         judged = items[items["status"] == "judged"]
         cells = [{"item_id": r.item_id, "set": r.set, "arm": "S", "demand": "PLp",
                   "prompt": prompt(plp.full_name, s, r)} for r in judged.itertuples(index=False)]
-        run, extra, arms, seed = f"labreg-{c}1", {"pass": 1, "reference": "labreg-r1, arm cur, judge opus-low (v1 prompt)"}, ("S",), SEED + (0 if c == "s" else 100)
+        run, extra, arms, seed = f"labreg-{c}1", {"pass": 1, "reference": "labreg-r1, arm cur, judge opus-low (v1 prompt)"}, ("S",), SEED + {"s": 0, "sq": 100, "o": 200}[c]
     for c in cells:
         c["prompt_sha256"] = mp.sha256(c["prompt"].encode("utf-8"))
     rng = random.Random(seed)

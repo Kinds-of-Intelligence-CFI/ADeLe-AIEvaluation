@@ -1,0 +1,33 @@
+{
+  "run_id": "o-swe-gate",
+  "created_at": "2026-10-01T09:26:44+00:00",
+  "repo_commit": "f347d3a97c88e5de89a39c52d297cd1625c662c4",
+  "repo_dirty_tracked_files": [
+    "M experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse_s.py",
+    " M experiments/benchmarks/plp-candidate/lab-regression/make_prompts_s.py"
+  ],
+  "benchmark": [
+    "swe-bench-verified"
+  ],
+  "baseline": "plp-b2/labels/s-swe-gate (S) and natural-prompt/labels/npb-gate-opuslow (current text)",
+  "rubric": {
+    "candidate": "experiments/benchmarks/plp-b2/PLp_O.txt",
+    "candidate_sha256": "30eba01175b767009394934f95aeafbbe68fb71ee8338cdd16665e590f4899a6",
+    "fourgrams_new_text_shared": {
+      "frames": [],
+      "lab_items": []
+    }
+  },
+  "design": {
+    "n_prompts": 44,
+    "judges": {
+      "opus-low": "adele-judge-v2-low, model alias 'opus'"
+    }
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/o-swe-gate",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}
