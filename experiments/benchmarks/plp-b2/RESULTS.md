@@ -10,11 +10,12 @@ p = 0.0002) and not search (+0.13, p = 0.22). That is essentially what the curre
 type label. Any river-crossing state with an interacting constraint is matched to the Level 3
 sliding-block example, whatever the amount of search.
 
-**Status.** B2: complete (2026-09-30). All three pre-registered tests failed. Candidate S, the structural
-change (amendment 1), passed the exit criterion narrowly on the same 54 states: search bits +0.23
-(p = 0.002) against length +0.21 (p = 0.004). It still fails E3. On the SWE-bench gate tasks (amendment 2), S's labels track solve rate more
-strongly than the current text's: ρ = −0.73 against −0.55 on 37 tasks. All three sanity checks hold. Next
-comes the lab regression, in a fresh session. Nothing changes in `src/` yet.
+**Status.** Complete (2026-10-01). B2 failed all three tests. Candidate S (structural, amendment 1) passed rivercross
+and the SWE-bench gate but failed the lab regression narrowly, on the covering-letter example (amendment 3). S-q (search
+size as odds, amendment 4) failed the rivercross exit test, though within noise of S. O (odds as the single driver,
+amendment 5) failed the lab regression on the same covering-letter item and held everything else, with fewer leaks than
+S. Removing B2's "could go wrong" sentence did not fix that item (amendment 6). **Pablo adopted O on 2026-10-01**
+(`src/` commit `92f28fc`); on real tasks it labels like the previous text (`../plp-o-relabel`).
 
 ## Design
 
