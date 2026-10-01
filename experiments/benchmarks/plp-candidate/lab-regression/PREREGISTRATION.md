@@ -236,3 +236,11 @@ Its lab regression follows the design, checks and rule of "Candidate S" exactly,
 runs `labreg-sq1` (102 items, same items as S) and `labreg-sq2`; `make_prompts_s.py --candidate sq`;
 `analysis/analyse_s.py --candidate sq`. It runs only if S-q passes the rivercross exit test and the
 SWE-bench gate. Predictions are in amendment 4.
+
+## Candidate O (added 2026-10-01, before any label of O)
+
+O is the odds-driven rewrite (`../../plp-b2/PREREGISTRATION.md`, amendment 5). Its lab regression follows
+"Candidate S" exactly, with O in place of S, runs `labreg-o1` and `labreg-o2`, items `items_o.csv`. One addition,
+set U (`format_pairs.csv`): three planning problems, each posed open-ended and as four listed options (target
+PLp 3). A pair fails if its two items get different medians in pass 1 and again in pass 2, where both are
+judged again under both texts. A confirmed split fails O like a confirmed loss. Predictions are in amendment 5.

@@ -200,3 +200,60 @@ the odds ("one time in", "one in a hundred").
 - Rivercross answers quote the odds in 30 per cent or more of cases: 0.6.
 
 **Cost.** 162 + 44 + 306 Opus-low calls, plus pass 2. About 3 to 4 weekly points.
+
+## Amendment 5 — candidate O: odds as the single driver (2026-10-01, before any of its labels)
+
+**Why.** S-q failed E1, but a bootstrap showed that E1 cannot separate the texts: the chance that bits beats
+crossings left is 0.58 for S and 0.23 for S-q, and they label 87% of states alike. Pablo prefers S-q's idea
+(search measured by odds) and asked for it to be made sound. Review against the desiderata found three
+problems in S and S-q. First, "two things set the level … the higher of the two" makes two drivers
+(desideratum 3). Second, naming levels in the preamble breaks the v1 shape (desideratum 7). Third, odds of a
+"plan works" grow with length, and they overlap with UG, which is the success floor of a blind guesser. O
+was rewritten with Pablo, sentence by sentence, on 2026-10-01.
+
+**Candidate O** (`PLp_O.txt`). One driver: the search that remains for someone who has the knowledge the
+task calls for (knowing how tasks of a kind are done is knowledge, not planning). It rises with how rarely a
+plan built step by step comes out workable without an earlier step having to be undone, and with how far
+back the undoing reaches. Each level keeps S's description and ends with one odds anchor: a plan built
+from the routine is never undone (1); hardly ever, however many steps (2); workable between one time in two
+and one in a hundred (3); less than one in a hundred, undone far back (4); almost never, as no knowledge
+structures the search (5). Where description and odds disagree, the odds decide. The scope paragraph adds
+that answer format adds nothing, and that for a task scored partway through the plan is the one still to be
+made. The Level 4 timetabling example is reworded to the odds. No text new in O shares a word 4-gram with
+the 54 frames or the lab items.
+
+**Tests.**
+1. **Lab regression, runs `labreg-o1`/`labreg-o2`** (confirmatory). S's design and rule
+   (`../plp-candidate/lab-regression/PREREGISTRATION.md`, "Candidate S"), with O in place of S, plus set U:
+   three minimal pairs (`format_pairs.csv`), each one planning problem posed open-ended and as four listed
+   options. A pair fails if its two items get different medians in pass 1 and again in pass 2 (both re-judged
+   under both texts). 108 items, three Opus-low repeats.
+   `make_prompts_s.py --candidate o`, `analysis/analyse_s.py --candidate o`.
+2. **SWE-bench gate, run `o-swe-gate`** (confirmatory). G1–G3 as for S. `analysis/swe_gate.py --run o-swe-gate
+   --out o_swe_gate.json`.
+3. **Rivercross levels, run `o-search`** (descriptive). E1–E3 reported, not ruled on: E1 cannot separate texts.
+   `analysis/analyse.py --run o-search --out o_search.json`.
+4. **Odds elicitation, run `o-odds`** (exploratory). The same 54 states, one Opus-low call each, with a prompt
+   that asks only for O's odds ("one time in N"), not a level. It asks whether judges can estimate the quantity
+   O is built on. Q1: Spearman of log2 N with search bits at least 0.5. Q2: in log2 N ~ bits + ctg, bits is
+   significant and above ctg. Bits are a proxy: they count random non-undo sequences, not O's agent.
+   `analysis/odds_o.py`.
+
+All four run together.
+
+**Decision rule.** O replaces S as the frozen PLp candidate if the lab regression passes (including the format
+pairs) and G1–G3 hold. Otherwise S stays frozen. Tests 3 and 4 inform the write-up and the team, not the
+decision. Adoption in `src/` still needs Pablo's explicit OK.
+
+**Predictions (sealed).**
+- Lab regression passes: 0.45. The covering letter is at Level 1 in pass 1: 0.65.
+- Format pairs: all three equal in pass 1: 0.45. No confirmed split: 0.7. If a pair splits, the
+  multiple-choice item is lower: 0.8.
+- The Level 4 timetabling example lands at 4: 0.5. `D-PLp2` (exam timetabling) reaches 4: 0.4.
+- Lab answers quote the odds or the undoing in 30% or more of cases: 0.7.
+- G1–G3 hold: 0.75. O's SWE Spearman stronger than S's (−0.729): 0.3.
+- Rivercross: ctg coefficient below the current text's (0.328): 0.6. E1: 0.35. Any state at Level 4: 0.2.
+- Odds elicitation: Q1 0.5, Q2 0.4.
+- O replaces S: 0.35.
+
+**Cost.** 324 + 44 + 162 + 54 = 584 Opus-low calls, plus pass 2. About 4 to 5 weekly points.

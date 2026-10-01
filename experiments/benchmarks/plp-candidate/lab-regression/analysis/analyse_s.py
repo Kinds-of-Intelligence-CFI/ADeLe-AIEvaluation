@@ -10,6 +10,8 @@ S's three new examples (P-S-*) have no reference; their placement is reported, n
     python experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse_s.py [--candidate sq]
 
 With --candidate sq, candidate S-q is analysed the same way (labreg-sq1, labreg-sq2 -> regression_sq.json).
+With --candidate o, candidate O (labreg-o1, labreg-o2 -> regression_o.json, items_o.csv) adds the format pairs
+(set U): a pair fails if its open and multiple-choice items get different medians in pass 1 and again in pass 2.
 """
 
 import argparse
@@ -25,6 +27,7 @@ HERE = Path(__file__).resolve().parents[1]
 OPUS = "claude-opus-5-5"
 S_PHRASES = ("size of the search", "higher of the two", "search is small", "search is moderate", "search is large",
              "could go wrong")
+O_PHRASES = ("undone", "undoing", "step by step", "one time in", "odds")
 
 
 def load(run: str) -> pd.DataFrame | None:
@@ -43,9 +46,9 @@ def medians(lab: pd.DataFrame, arm: str) -> dict[str, int]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--candidate", choices=["s", "sq"], default="s")
+    ap.add_argument("--candidate", choices=["s", "sq", "o"], default="s")
     c = ap.parse_args().candidate
-    items = pd.read_csv(HERE / "items_s.csv")
+    items = pd.read_csv(HERE / ("items_o.csv" if c == "o" else "items_s.csv"))
     judged = items[items["status"] == "judged"]
     fams = judged.groupby("family")["item_id"].apply(list).to_dict()
     r1 = load("labreg-r1")
@@ -65,10 +68,13 @@ def main() -> None:
 
     moved = {i: s1[i] - ref[i] for i in ref if i in s1 and s1[i] != ref[i]}
     big = sorted(i for i, d in moved.items() if abs(d) >= 2)
-    to_rerun = sorted({i for k in losses for i in items_of(k) if i in moved} | set(big))
+    upairs = items[items["set"] == "U"].groupby("pair")["item_id"].apply(list).to_dict() if "pair" in items else {}
+    split1 = sorted(p for p, ids in upairs.items() if len({s1.get(i) for i in ids}) > 1)
+    to_rerun = sorted({i for k in losses for i in items_of(k) if i in moved} | set(big)
+                      | {i for p in split1 for i in upairs[p]})
 
     s2_lab = load(f"labreg-{c}2")
-    confirmed_losses, confirmed_big, pending, pass2 = [], [], False, None
+    confirmed_losses, confirmed_big, confirmed_splits, pending, pass2 = [], [], [], False, None
     if to_rerun:
         if s2_lab is None:
             pending = True
@@ -83,6 +89,7 @@ def main() -> None:
                 d2 = sx[i] - ref2[i]
                 if d2 != 0 and (d2 > 0) == (moved[i] > 0):
                     confirmed_big.append(i)
+            confirmed_splits = [p for p in split1 if len({s2[i] for i in upairs[p]}) > 1]
             pass2 = {i: {"cur_v2": cur2[i], "S_v2": s2[i]} for i in sorted(cur2)}
 
     diffs = [s1[i] - ref[i] for i in ref if i in s1]
@@ -105,11 +112,11 @@ def main() -> None:
     quotes = None
     if raw.exists():
         rows = [json.loads(l) for l in raw.read_text().splitlines()]
-        cite = [r for r in rows if any(ph in r["response"].lower() for ph in S_PHRASES)]
+        cite = [r for r in rows if any(ph in r["response"].lower() for ph in (O_PHRASES if c == "o" else S_PHRASES))]
         quotes = {"answers": len(rows), "quoting_S_search_text": len(cite),
                   "on_moved_items": sorted({r["item_id"] for r in cite if r["item_id"] in moved})}
 
-    verdict = "pending pass 2" if pending else ("fail" if confirmed_losses or confirmed_big else "pass")
+    verdict = "pending pass 2" if pending else ("fail" if confirmed_losses or confirmed_big or confirmed_splits else "pass")
     res = {
         "verdict": verdict,
         "outcomes": {"n": len(o_ref), "hold_under_reference": sum(bool(v) for v in o_ref.values()),
@@ -128,6 +135,11 @@ def main() -> None:
         "medians_pass1": {i: {"reference": ref.get(i), "S": s1.get(i)} for i in sorted(set(ref) | set(s1))},
         "outcomes_pass1": {k: {"reference": o_ref[k], "S": o_s.get(k)} for k in o_ref},
     }
+    if upairs:
+        res = {**{k: v for k, v in res.items() if k != "per_set"},
+               "format_pairs_pass1": {p: {i: s1.get(i) for i in ids} for p, ids in upairs.items()},
+               "format_pairs_split_pass1": split1, "confirmed_format_splits": confirmed_splits,
+               "per_set": res["per_set"]}
     (HERE / "results").mkdir(exist_ok=True)
     (HERE / f"results/regression_{c}.json").write_text(json.dumps(res, indent=2) + "\n")
     print("verdict:", verdict)
@@ -137,7 +149,8 @@ def main() -> None:
     print("gains (pass 1):", gains or "none")
     print("moved items (pass 1):", res["moved_items_pass1"] or "none")
     print("re-run in pass 2:", to_rerun or "none", "| confirmed losses:", confirmed_losses or "none",
-          "| confirmed moves of 2+:", confirmed_big or "none")
+          "| confirmed moves of 2+:", confirmed_big or "none", "| format pairs split (pass 1 / confirmed):",
+          split1 or "none", "/", confirmed_splits or "none")
     print("per set:", per_set)
     print("sign test:", res["sign_test_item_medians"], "| new examples:", new_examples)
     print("S levels:", res["S_level_counts"], "| repeat agreement:", repeat_agree, "| quotes:", quotes)
