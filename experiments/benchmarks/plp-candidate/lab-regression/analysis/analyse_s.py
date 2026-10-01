@@ -7,9 +7,12 @@ texts with the v2 prompt, three repeats each. A loss or a big move counts only i
 with pass 2's current-text medians as the reference. The checks are those of analyse.py.
 S's three new examples (P-S-*) have no reference; their placement is reported, not ruled on.
 
-    python experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse_s.py
+    python experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse_s.py [--candidate sq]
+
+With --candidate sq, candidate S-q is analysed the same way (labreg-sq1, labreg-sq2 -> regression_sq.json).
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -39,13 +42,16 @@ def medians(lab: pd.DataFrame, arm: str) -> dict[str, int]:
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--candidate", choices=["s", "sq"], default="s")
+    c = ap.parse_args().candidate
     items = pd.read_csv(HERE / "items_s.csv")
     judged = items[items["status"] == "judged"]
     fams = judged.groupby("family")["item_id"].apply(list).to_dict()
     r1 = load("labreg-r1")
     ref = r1[r1["counted"] & (r1["judge"] == "opus-low") & (r1["arm"] == "cur")].set_index("item_id")["level"]
     ref = ref.astype(int).to_dict()
-    s1_lab = load("labreg-s1")
+    s1_lab = load(f"labreg-{c}1")
     assert s1_lab is not None, "no pass-1 labels"
     s1 = medians(s1_lab, "S")
     base = items[~items["item_id"].str.startswith("P-S-")]
@@ -61,7 +67,7 @@ def main() -> None:
     big = sorted(i for i, d in moved.items() if abs(d) >= 2)
     to_rerun = sorted({i for k in losses for i in items_of(k) if i in moved} | set(big))
 
-    s2_lab = load("labreg-s2")
+    s2_lab = load(f"labreg-{c}2")
     confirmed_losses, confirmed_big, pending, pass2 = [], [], False, None
     if to_rerun:
         if s2_lab is None:
@@ -95,7 +101,7 @@ def main() -> None:
     repeat_agree = round(float((ok.nunique() == 1).mean()), 3)
     levels = pd.Series(list(s1.values())).value_counts().sort_index().to_dict()
 
-    raw = HERE.parents[3] / "data/annotations/labreg-s1/raw.jsonl"
+    raw = HERE.parents[3] / f"data/annotations/labreg-{c}1/raw.jsonl"
     quotes = None
     if raw.exists():
         rows = [json.loads(l) for l in raw.read_text().splitlines()]
@@ -123,7 +129,7 @@ def main() -> None:
         "outcomes_pass1": {k: {"reference": o_ref[k], "S": o_s.get(k)} for k in o_ref},
     }
     (HERE / "results").mkdir(exist_ok=True)
-    (HERE / "results/regression_s.json").write_text(json.dumps(res, indent=2) + "\n")
+    (HERE / f"results/regression_{c}.json").write_text(json.dumps(res, indent=2) + "\n")
     print("verdict:", verdict)
     print(f"outcomes holding: reference {res['outcomes']['hold_under_reference']}/{len(o_ref)}, "
           f"S {res['outcomes']['hold_under_S']}/{len(o_ref)}")

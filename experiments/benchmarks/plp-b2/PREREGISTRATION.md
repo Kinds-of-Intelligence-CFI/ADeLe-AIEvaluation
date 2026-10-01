@@ -147,3 +147,56 @@ reach −0.404 or stronger.
 S passed the SWE-bench gate (amendment 2), so the lab regression runs next. It is pre-registered in
 `../plp-candidate/lab-regression/PREREGISTRATION.md`, section "Candidate S", with the lab's items
 and checks: v2 prompt, S only, Opus low with three repeats, runs `labreg-s1` and `labreg-s2`.
+
+## Amendment 4 — candidate S-q: search size as odds (2026-10-01, before any of its labels)
+
+**Why.** S failed its lab regression narrowly: the covering-letter example (Level 1) read 2, through
+the "search is small" clause. S measures the search by counting choices that could go wrong, and a
+count grows with the length of a task. Pablo asked to quantify the size of the search better before
+testing a fix, and chose to define it by odds (2026-10-01). This is the search-bits measure of
+`rivercross-v2` put into words. It is length-invariant: a long task whose method fixes every step
+has odds of one. And it settles the covering letter without an extra sentence, since almost any
+sensible letter works.
+
+**Candidate S-q** (`PLp_Sq.txt`, built by `make_sq.py`). It is S with four sentences replaced:
+- Introduction: "The size of the search is how rarely a plan works when it is built by someone who
+  knows the usual methods for this kind of task but does not look ahead."
+- Level 2: "Or the search is small: such a plan works at least one time in four, and any slip shows
+  at once."
+- Level 3: "Or the search is moderate: such a plan works between one time in four and one in a
+  hundred, so options must be compared by looking ahead."
+- Level 4: "Or the search is large: such a plan works less than one time in a hundred, and most plans
+  that look workable fail only far ahead."
+
+The thresholds are about 2 and 6.6 bits. No new text shares a word 4-gram with the 54 frames or the
+lab items.
+
+**Three tests, as for S, in this order.**
+1. **Rivercross, run `sq-search`.** The 54 states of `s-search`, Opus low, three repeats, median.
+   `analysis/analyse.py --run sq-search --out sq_search.json`. Tests E1 (exit), E2 and E3 as for S.
+2. **SWE-bench gate, run `sq-swe-gate`.** The 44 tasks of `s-swe-gate`, one Opus-low call each.
+   Every S prompt was rebuilt and matched its stored hash. `analysis/swe_gate.py --run sq-swe-gate
+   --out sq_swe_gate.json`. Tests G1 to G3 as for S (G2 against the current text, ρ = −0.554).
+3. **Lab regression, runs `labreg-sq1` and `labreg-sq2`.** Exactly the design and rule of S's lab
+   regression (`../plp-candidate/lab-regression/PREREGISTRATION.md`, "Candidate S"), with S-q in place
+   of S. `make_prompts_s.py --candidate sq`, `analysis/analyse_s.py --candidate sq`.
+
+Tests 1 and 2 run together. Test 3 runs only if E1 and G1 to G3 hold.
+
+**Decision rule (Pablo, 2026-10-01).** S-q is accepted if E1 holds, G1 to G3 hold, and the lab
+regression passes. Otherwise S is frozen, and the next step is to plan the remaining experiments.
+
+**Also reported, against S** (not ruled on). Bits and ctg coefficients, E3, level counts and repeat
+agreement on rivercross; the SWE Spearman; the covering letter's level; and how often answers quote
+the odds ("one time in", "one in a hundred").
+
+**Predictions (sealed).**
+- E1 holds: 0.5. S-q's bits coefficient above S's (0.230): 0.45. Its ctg coefficient below S's (0.213): 0.5.
+- E3 holds: 0.25.
+- Fewer rivercross states at Level 2 than under S (38 of 54): 0.55.
+- G1 to G3 hold: 0.75. S-q's SWE Spearman stronger than S's (−0.729): 0.35.
+- The lab regression passes, given it runs: 0.45. The covering letter is at Level 1 in pass 1: 0.55.
+- S-q is accepted: 0.25.
+- Rivercross answers quote the odds in 30 per cent or more of cases: 0.6.
+
+**Cost.** 162 + 44 + 306 Opus-low calls, plus pass 2. About 3 to 4 weekly points.
