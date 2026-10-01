@@ -46,3 +46,12 @@ example (Level 1) reads 2 under S, on a one-vote margin in pass 2. Nothing else 
 `labreg-sq1` (102 prompts, same items as S). No new 4-gram is shared with the frames or the lab items. The
 analysis scripts gained `--run`/`--candidate` options; their defaults reproduce the stored S results (results
 files unchanged).
+
+## 2026-10-01 — runs `sq-search` and `sq-swe-gate`: complete
+
+Four `judge-dispatcher-v2-low` relays (three of 54 for rivercross, one of 44 for SWE), about 7.5 minutes,
+run together. 162/162 and 44/44 answered and parsed, all by `claude-opus-5-5`, with no classifier stop. Exactly
+one judge call per repeat and cell, every judge from `~/Developer/ADELE`. (`writers.py` counts calls per cell
+across repeats, so its "called more than once: 162" means three calls per cell, one per repeat.) The rivercross
+analysis needs statsmodels: `uv run --extra annotate --with scipy --with statsmodels` (uv.lock deleted).
+E1 fails; G1–G3 hold. `labreg-sq1` stays pinned but unjudged, as pre-registered. S is frozen.
