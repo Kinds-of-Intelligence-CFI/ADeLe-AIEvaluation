@@ -257,3 +257,7 @@ decision. Adoption in `src/` still needs Pablo's explicit OK.
 - O replaces S: 0.35.
 
 **Cost.** 324 + 44 + 162 + 54 = 584 Opus-low calls, plus pass 2. About 4 to 5 weekly points.
+
+## Amendment 6 — screen of O′, O without "Only choices that could go wrong…" (2026-10-01, before any label)
+
+Pre-registered in `../plp-candidate/lab-regression/PREREGISTRATION.md`, "Candidate O′ screen". Text `PLp_O2.txt`.
