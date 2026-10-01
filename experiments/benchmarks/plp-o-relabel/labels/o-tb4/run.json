@@ -1,0 +1,37 @@
+{
+  "run_id": "o-tb4",
+  "created_at": "2026-10-01T10:05:18+00:00",
+  "repo_commit": "92f28fc6838a92e5772cb49779c2c8aa9c831a46",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "terminal-bench-4.0.0"
+  ],
+  "design": {
+    "n_tasks": 66,
+    "dims": [
+      "PLp"
+    ],
+    "n_prompts": 66,
+    "judges": {
+      "opus-low": "Claude Code subagent 'adele-judge-v2-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'opus'"
+    }
+  },
+  "rubric": {
+    "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+    "sha256": "322674efb257df4fbb1c93415cd903d554c62b510623846148d635309ad4194f",
+    "previous": "062c5af:src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt"
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9",
+    "inputs_checked_against": "pl-relabel-v2/labels/v2-tb4"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/o-tb4",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}
