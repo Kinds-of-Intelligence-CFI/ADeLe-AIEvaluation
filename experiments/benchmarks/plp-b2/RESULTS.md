@@ -153,3 +153,56 @@ Exploratory:
 ```
 python experiments/benchmarks/plp-b2/analysis/analyse.py
 ```
+
+## Amendment 4 — candidate S-q (search size as odds): fails the exit test; S is frozen
+
+Pre-registered before any label (`77603b2`). S-q is S with the size of the search defined by odds
+(how rarely a plan works when built with the usual methods but without looking ahead), with
+thresholds of one in four and one in a hundred.
+
+**Rivercross, run `sq-search`** (`results/sq_search.json`). 162/162 answers, all by Opus 5.5.
+
+| | S-q | S | current text |
+|---|---|---|---|
+| bits coefficient | +0.18 (p = .024) | +0.23 (p = .002) | +0.10 (ns) |
+| ctg coefficient | +0.25 (p = .003) | +0.21 (p = .004) | +0.33 |
+| E1: bits > 0, significant, and above ctg | **fails** | holds | fails |
+| E2: ctg below the current text | holds | holds | — |
+| E3: Spearman with Opus non-optimal share ≥ 0.3 | fails (0.05) | fails (0.05) | — |
+| levels 0/1/2/3 | 2/0/38/14 | 1/1/38/14 | — |
+| all three repeats agree | 74% | 83% | 59% |
+
+Mean PLp by cell (crossings left × search bits): the 2–3 crossing, low-bits states sit at 1.33. Every
+other cell lies between 2.17 and 2.67. The odds wording is read: 106 of 162 answers (65%) quote it.
+But the levels barely move. S-q labels the grid almost exactly as S does, with a little more weight
+on length.
+
+**SWE-bench gate, run `sq-swe-gate`** (`results/sq_swe_gate.json`; run alongside, as pre-registered).
+44/44, all by Opus 5.5. ρ = −0.724 with solve rate (S −0.729, current text −0.554); levels 1/2 = 14/30.
+G1–G3 hold.
+
+**Lab regression:** not run, as pre-registered (E1 failed).
+
+**Decision (Pablo's rule, 2026-10-01): S-q is not accepted. S is frozen** as the PLp candidate, with its
+narrow lab-regression loss (the covering letter, 1 → 2) on record.
+
+**Predictions.**
+
+| prediction | p | outcome |
+|---|---|---|
+| E1 holds | 0.5 | failed |
+| bits coefficient above S's (0.230) | 0.45 | failed (0.179) |
+| ctg coefficient below S's (0.213) | 0.5 | failed (0.246) |
+| E3 holds | 0.25 | failed |
+| fewer states at Level 2 than S (38) | 0.55 | failed (38) |
+| G1–G3 hold | 0.75 | held |
+| SWE Spearman stronger than S's | 0.35 | failed (−0.724 against −0.729) |
+| S-q accepted | 0.25 | failed |
+| odds quoted in 30% or more of rivercross answers | 0.6 | held (65%) |
+
+**Reading.** Telling the judges how to measure the search does not make them measure it better. They
+quote the odds, but they estimate them from how long and involved the state looks, so the length
+signal persists. The gain from S over the current text came from the structural rule (place the task
+at the higher of the two), not from how the size of the search is worded. Two cautions. With 54 states
+and three repeats, the S and S-q coefficients are within noise of each other (both have SEs near 0.07).
+And E1 is a strict test: S-q's bits effect is still significant.
