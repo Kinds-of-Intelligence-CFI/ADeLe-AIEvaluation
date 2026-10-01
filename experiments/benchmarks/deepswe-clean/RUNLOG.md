@@ -16,3 +16,8 @@ tokens, ~1 weekly subagent point. Not pinned or run.
 
 Trial durations do not settle the timeout question: `agent_duration_seconds` exceeds 5,400 s in 29 configurations run
 before the change, so it is not the agent budget.
+
+## 2026-10-01 — labels collected, analysed
+
+Run `deepswe-clean` (`adele mass`, subagent backend, Opus 5.5 low), pinned after the pre-registration was pushed (`1175f15`).
+All 270 cells labelled in two rounds plus one retry (v2PLs-7db20dfa328922af: the judge wrote twice, rejected for protocol, relabelled). `check` OK. Ran `analysis/analyse.py`; results in RESULTS.md.
