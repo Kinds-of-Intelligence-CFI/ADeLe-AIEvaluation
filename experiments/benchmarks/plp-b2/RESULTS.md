@@ -206,3 +206,68 @@ signal persists. The gain from S over the current text came from the structural 
 at the higher of the two), not from how the size of the search is worded. Two cautions. With 54 states
 and three repeats, the S and S-q coefficients are within noise of each other (both have SEs near 0.07).
 And E1 is a strict test: S-q's bits effect is still significant.
+
+## Amendment 5 — candidate O (odds as the single driver): fails narrowly, on the same item as S
+
+Pre-registered before any label (`ba00f4f`). Every answer was written by Opus 5.5, with no classifier stop.
+
+**Decision rule: O does not replace S.** The lab regression fails on one confirmed loss, the covering letter
+(Level 1 example), as it did for S. The SWE gate holds. Under the rule, S stays frozen.
+
+**1. Lab regression** (`../plp-candidate/lab-regression/results/regression_o.json`).
+
+| | O | S | reference (current text) |
+|---|---|---|---|
+| checks holding (of 101) | 86 | 83 | 83 |
+| pass-1 losses | covering letter | covering letter | — |
+| confirmed in pass 2 | yes: O 2, 2, 2 against current 2, 1, 1 | yes | — |
+| moves of two levels | none | none | — |
+| Mars-landing PLe example (a leak) | 3 | 4 | 3 |
+| all three repeats agree | 82% | 82% | — |
+
+- **Format pairs (set U): no split.** All 18 labels are 3, open and multiple choice alike.
+- Gains over the reference: the Level 2 city-day example now lands at 2; two MSc examples stop leaking
+  (lease 3 → 2, MSc L5 3 → 2); battery M04 moves off the diagonal as registered. Five PLs examples drop by one.
+- The new Level 4 timetabling example lands at 4. Route (`B-P01`) and van packing (`M-A2`) go to 4. Exam
+  timetabling (`D-PLp2`) stays at 3.
+- O's text is quoted (odds, undoing, step by step) in 246 of 324 answers (76%).
+
+**The covering letter.** Judges under every text agree on the facts: a template, some selection of CV
+points, choices that do not interact, a plan that almost always works first time. They split only on
+whether selecting evidence is assembling subtasks (2) or lies inside the routine (1). Levels 1 and 2 both
+have odds near one, so O's odds cannot decide it. Pooled Opus v2 labels: current text 2 of 6 at Level 2,
+S and O 10 of 12 (Fisher p = 0.11). S and O share B2's scope sentence ("Only choices that could go wrong
+add to this demand"), which the current text lacks, and judges under O start from that framing ("the only
+real decisions are which CV items…"). That sentence is the likely common cause. Untested.
+
+**2. SWE gate** (`results/o_swe_gate.json`). ρ = −0.706 with solve rate (S −0.729, current −0.554); levels
+1/2/3 = 13/30/1. G1–G3 hold.
+
+**3. Rivercross levels** (`results/o_search.json`; descriptive). Bits +0.216 (p = .005), ctg +0.218
+(p = .005); current text ctg +0.328. E2 holds; E1 is a tie. Spearman with Opus's non-optimal share 0.29
+(S 0.05, S-q 0.05): the closest any text has come to E3. Levels 0/1/2/3 = 1/4/39/10, no Level 4.
+
+**4. Odds elicitation** (`results/o_odds.json`; exploratory). Judges put nearly every state at "one time in
+1 to 3" (10th–90th percentile). Spearman with bits 0.24 (ns), with ctg 0.36. Q1 and Q2 fail. This test is
+weak, as flagged before it ran: bits count random non-undo sequences, but O's agent puts a slip right as
+soon as it shows, and on these puzzles an unsafe crossing shows at once. For O's agent the true odds may
+well be high. The run shows that judges do not see rivercross states as sparse searches. It does not show
+they misjudge O's quantity.
+
+**Predictions.**
+
+| prediction | p | outcome |
+|---|---|---|
+| lab regression passes | 0.45 | failed (covering letter) |
+| covering letter at Level 1 in pass 1 | 0.65 | failed (2) |
+| format pairs all equal in pass 1 / no confirmed split | 0.45 / 0.7 | held / held |
+| timetabling example at 4 / `D-PLp2` at 4 | 0.5 / 0.4 | held / failed |
+| O's text quoted in 30% or more of lab answers | 0.7 | held (76%) |
+| G1–G3 hold / Spearman stronger than S's | 0.75 / 0.3 | held / failed (−0.706) |
+| rivercross ctg below current / E1 / any state at 4 | 0.6 / 0.35 / 0.2 | held / failed (tie) / failed |
+| odds elicitation Q1 / Q2 | 0.5 / 0.4 | failed / failed |
+| O replaces S | 0.35 | failed |
+
+**Reading.** O behaves at least as well as S everywhere the lab measures, and better on leaks (86 against 83
+checks, the Mars-landing leak gone). It fails on the same single item as S, which is a 1/2 boundary that
+O's odds by design do not reach. The rule treats O and S alike, so both carry the same loss.
