@@ -274,6 +274,28 @@ Caveats:
 - Effort was low. Higher effort would probably lower both shares.
 - 54 states and one prompt format.
 
+## Amendment 4: PLe and PLs on the 54 grid states
+
+Run `rivercross-search-pl` (`adele mass`, one Opus-low call per state and rubric; prompts as in `o-search`): 108 of 108
+labelled, one answer rejected for a double write and relabelled, `check` OK. Analysis `analysis/pl_search.py` →
+`results/pl_search.json`.
+
+**PLs is 2 on all 54 states**, so it carries no information here. **PLe is 3 on 52 states** and 1 on two. PLe rises
+with crossings left (ρ = +0.31, p = 0.02), carried by the two Level-1 states, and with search bits (+0.25, p = 0.07);
+it does not track the strong solvers' failures or non-optimal answers (|ρ| ≤ 0.12). For comparison, PLp (median of the
+three O repeats) gives ctg +0.44, bits +0.40, Opus non-optimal +0.29 (p = 0.03).
+
+| sealed prediction | p | outcome |
+|---|---|---|
+| PLs uses at most two adjacent levels on at least 50 states | 0.7 | held (one level) |
+| PLs against ctg and bits: both \|ρ\| < 0.3 | 0.6 | held trivially (PLs constant) |
+| PLe against ctg positive, p < 0.05 | 0.4 | held (+0.31) |
+| neither PLe nor PLs reaches \|ρ\| ≥ 0.3 with the Opus non-optimal share | 0.75 | held |
+
+Reading: on these puzzles only PLp varies with the state. PLs reads the rules (one kind of world, always level 2) and
+PLe the kind of deliverable (a written, self-checked sequence, almost always level 3), as on the state-visible frames
+of the main run.
+
 ## Deviations and caveats
 
 - **Amendment 1, transcript gap.** For one of the 177 contrast answers
