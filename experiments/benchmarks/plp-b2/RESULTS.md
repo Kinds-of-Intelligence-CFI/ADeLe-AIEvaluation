@@ -293,3 +293,9 @@ letter now reads 2 under S, O and O′ alike. Under the current text it read 2 i
 run's three-judge median. It is a 1/2 boundary item that every candidate tested here tips to 2, and no wording
 tested isolates why. By the rule, S stays frozen. Whether to accept O with this one-item loss on record is Pablo's
 decision.
+
+## Decision (Pablo, 2026-10-01): O is adopted
+
+Pablo accepted O despite its one-item lab loss (the covering letter, a 1/2 boundary item no tested wording fixes).
+`src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt` is now `PLp_O.txt` (sha256 `322674ef…`, MANIFEST updated); the change
+record is in `docs/rubric-provenance/PLp.md`. S is superseded. Next: the real-task PLp relabel, pre-registered first.
