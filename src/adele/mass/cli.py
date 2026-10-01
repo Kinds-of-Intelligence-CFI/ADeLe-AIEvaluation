@@ -285,6 +285,8 @@ def check_cmd(run_ref, transcripts, cwd):
         click.echo(f"protocol: {p['transcripts']} judge transcripts, {len(p['failures'])} failing; models {p['models']}")
         for f in p["failures"]:
             click.echo(f"  {f['cell']}: {'; '.join(f['problems'])} ({f['transcript']})")
+        for f in p["rejected_failures"]:
+            click.echo(f"  (rejected attempt, not used) {f['cell']}: {'; '.join(f['problems'])}")
         if p["classifier_stops"]:
             click.echo(f"classifier stops: {', '.join(p['classifier_stops'])}")
         if p["called_more_than_once"]:
