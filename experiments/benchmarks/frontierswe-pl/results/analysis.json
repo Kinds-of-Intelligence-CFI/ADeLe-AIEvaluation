@@ -1,0 +1,367 @@
+{
+  "primary": "{dim}_vs_solve_rate_0.9 on clean",
+  "n": {
+    "clean": 19,
+    "clean_unflagged": 14
+  },
+  "unlabelled": {
+    "PLp": [],
+    "PLe": [],
+    "PLs": []
+  },
+  "levels": {
+    "clean": {
+      "PLp": {
+        "3": 18,
+        "4": 1
+      },
+      "PLe": {
+        "3": 14,
+        "4": 5
+      },
+      "PLs": {
+        "1": 9,
+        "2": 10
+      }
+    },
+    "clean_unflagged": {
+      "PLp": {
+        "3": 14
+      },
+      "PLe": {
+        "3": 10,
+        "4": 4
+      },
+      "PLs": {
+        "1": 8,
+        "2": 6
+      }
+    }
+  },
+  "spearman": {
+    "clean": {
+      "PLp_vs_solve_rate_0.9": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": -0.196,
+        "p_two_sided": 0.421,
+        "ci95": [
+          -0.6,
+          0.288
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_solve_rate_0.75": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": -0.196,
+        "p_two_sided": 0.422,
+        "ci95": [
+          -0.6,
+          0.288
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_solve_rate_0.5": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": -0.327,
+        "p_two_sided": 0.172,
+        "ci95": [
+          -0.687,
+          0.162
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_mean_reward": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": -0.344,
+        "p_two_sided": 0.149,
+        "ci95": [
+          -0.698,
+          0.144
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_best_solve_rate_0.9": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": -0.173,
+        "p_two_sided": 0.478,
+        "ci95": [
+          -0.584,
+          0.308
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.9": {
+        "n": 19,
+        "n_off_mode": 5,
+        "rho": 0.287,
+        "p_two_sided": 0.233,
+        "ci95": [
+          -0.201,
+          0.662
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.75": {
+        "n": 19,
+        "n_off_mode": 5,
+        "rho": 0.154,
+        "p_two_sided": 0.528,
+        "ci95": [
+          -0.325,
+          0.571
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.5": {
+        "n": 19,
+        "n_off_mode": 5,
+        "rho": -0.022,
+        "p_two_sided": 0.928,
+        "ci95": [
+          -0.472,
+          0.437
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_mean_reward": {
+        "n": 19,
+        "n_off_mode": 5,
+        "rho": 0.0,
+        "p_two_sided": 1.0,
+        "ci95": [
+          -0.454,
+          0.454
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_best_solve_rate_0.9": {
+        "n": 19,
+        "n_off_mode": 5,
+        "rho": 0.132,
+        "p_two_sided": 0.59,
+        "ci95": [
+          -0.345,
+          0.554
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.9": {
+        "n": 19,
+        "n_off_mode": 9,
+        "rho": -0.01,
+        "p_two_sided": 0.968,
+        "ci95": [
+          -0.462,
+          0.446
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.75": {
+        "n": 19,
+        "n_off_mode": 9,
+        "rho": 0.029,
+        "p_two_sided": 0.906,
+        "ci95": [
+          -0.431,
+          0.477
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.5": {
+        "n": 19,
+        "n_off_mode": 9,
+        "rho": -0.068,
+        "p_two_sided": 0.781,
+        "ci95": [
+          -0.507,
+          0.399
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_mean_reward": {
+        "n": 19,
+        "n_off_mode": 9,
+        "rho": -0.058,
+        "p_two_sided": 0.814,
+        "ci95": [
+          -0.499,
+          0.407
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_best_solve_rate_0.9": {
+        "n": 19,
+        "n_off_mode": 9,
+        "rho": -0.068,
+        "p_two_sided": 0.783,
+        "ci95": [
+          -0.507,
+          0.399
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "clean_unflagged": {
+      "PLp_vs_solve_rate_0.9": {
+        "n": 14,
+        "note": "constant: not testable"
+      },
+      "PLp_vs_solve_rate_0.75": {
+        "n": 14,
+        "note": "constant: not testable"
+      },
+      "PLp_vs_solve_rate_0.5": {
+        "n": 14,
+        "note": "constant: not testable"
+      },
+      "PLp_vs_mean_reward": {
+        "n": 14,
+        "note": "constant: not testable"
+      },
+      "PLp_vs_best_solve_rate_0.9": {
+        "n": 14,
+        "note": "constant: not testable"
+      },
+      "PLe_vs_solve_rate_0.9": {
+        "n": 14,
+        "n_off_mode": 4,
+        "rho": 0.439,
+        "p_two_sided": 0.116,
+        "ci95": [
+          -0.146,
+          0.797
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.75": {
+        "n": 14,
+        "n_off_mode": 4,
+        "rho": 0.338,
+        "p_two_sided": 0.237,
+        "ci95": [
+          -0.25,
+          0.744
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.5": {
+        "n": 14,
+        "n_off_mode": 4,
+        "rho": 0.0,
+        "p_two_sided": 1.0,
+        "ci95": [
+          -0.531,
+          0.531
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_mean_reward": {
+        "n": 14,
+        "n_off_mode": 4,
+        "rho": 0.039,
+        "p_two_sided": 0.894,
+        "ci95": [
+          -0.502,
+          0.558
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_best_solve_rate_0.9": {
+        "n": 14,
+        "n_off_mode": 4,
+        "rho": 0.278,
+        "p_two_sided": 0.335,
+        "ci95": [
+          -0.306,
+          0.71
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.9": {
+        "n": 14,
+        "n_off_mode": 6,
+        "rho": 0.036,
+        "p_two_sided": 0.902,
+        "ci95": [
+          -0.504,
+          0.556
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.75": {
+        "n": 14,
+        "n_off_mode": 6,
+        "rho": 0.054,
+        "p_two_sided": 0.853,
+        "ci95": [
+          -0.491,
+          0.569
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.5": {
+        "n": 14,
+        "n_off_mode": 6,
+        "rho": 0.108,
+        "p_two_sided": 0.713,
+        "ci95": [
+          -0.45,
+          0.605
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_mean_reward": {
+        "n": 14,
+        "n_off_mode": 6,
+        "rho": 0.107,
+        "p_two_sided": 0.715,
+        "ci95": [
+          -0.45,
+          0.605
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_best_solve_rate_0.9": {
+        "n": 14,
+        "n_off_mode": 6,
+        "rho": 0.018,
+        "p_two_sided": 0.951,
+        "ci95": [
+          -0.517,
+          0.544
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    }
+  }
+}
