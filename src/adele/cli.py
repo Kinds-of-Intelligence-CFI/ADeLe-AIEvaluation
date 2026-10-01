@@ -7,6 +7,7 @@ Usage:
     adele profile <annotations_csv> [options]
     adele rubrics list
     adele benchmarks list
+    adele mass plan|pin|status|next|run|collect|check ...
 """
 
 import importlib
@@ -333,6 +334,22 @@ def instances_prepare(benchmarks, out_dir, n_dimensions, sample, seed):
                f"{n_dimensions} dimensions. Manifest: {out_dir}/INSTANCES.tsv")
 
 
+@instances.command("register")
+@click.argument("file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--benchmark", "-b", required=True, help="Canonical benchmark slug of every row in FILE.")
+@click.option("--n-dimensions", type=int, default=7, show_default=True, help="For the cost estimate.")
+def instances_register(file, benchmark, n_dimensions):
+    """Validate an already-frozen FILE and add it to the INSTANCES.tsv next to it (no loader)."""
+    from adele.instances import register
+
+    try:
+        row = register(file, benchmark, n_dimensions=n_dimensions)
+    except ValueError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"{benchmark}: {row['n_instances']} instances, sha256 {row['sha256'][:12]}…, "
+               f"warnings: {row['warnings']}")
+
+
 @instances.command("check-join")
 @click.argument("instances_dir")
 @click.argument("results_parquet")
@@ -485,6 +502,15 @@ def results_join(parquets, output):
     df.to_parquet(_ensure_parent(output))
     click.echo(f"{len(df)} rows → {output}\n\nCoverage (instances per benchmark × model/scaffold):")
     click.echo(coverage_report(df).to_string())
+
+
+# =========================================================================
+# Mass annotation runs (adele.mass; heavy imports stay inside the commands)
+# =========================================================================
+
+from adele.mass.cli import mass  # noqa: E402
+
+main.add_command(mass)
 
 
 # =========================================================================

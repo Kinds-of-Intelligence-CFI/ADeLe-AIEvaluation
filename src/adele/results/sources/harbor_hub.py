@@ -24,8 +24,13 @@ import pandas as pd
 from adele.results.schema import normalize
 
 
-def from_export(trials_json: str | Path, leaderboard_tsv: str | Path) -> pd.DataFrame:
-    """One row per (task, leaderboard row), in the results schema."""
+def from_export(trials_json: str | Path, leaderboard_tsv: str | Path, *, benchmark: str = "terminal-bench-4.0.0",
+                n_trials_run: int = 5, source: str = "harbor-hub-tb4-leaderboard") -> pd.DataFrame:
+    """One row per (task, leaderboard row), in the results schema.
+
+    The defaults are Terminal-Bench 4.0.0's; other Harbor Hub leaderboards exported the same way pass their own
+    (e.g. ``benchmark="terminal-bench-science-0.1", n_trials_run=3``).
+    """
     data = json.loads(Path(trials_json).read_text())
     board = {r["row_id"]: r for r in csv.DictReader(open(leaderboard_tsv), delimiter="\t")}
     rows = []
@@ -34,12 +39,12 @@ def from_export(trials_json: str | Path, leaderboard_tsv: str | Path) -> pd.Data
         for i, task in enumerate(data["tasks"]):
             solved, rewarded, errors = (int(rec[k][i]) for k in ("solved", "rewarded", "exceptions"))
             rows.append({
-                "benchmark": "terminal-bench-4.0.0", "instance_id": task,
+                "benchmark": benchmark, "instance_id": task,
                 "model": rec["model"], "scaffold": f"{rec['agent']}|effort={meta['effort']}",
                 "success": solved / rewarded if rewarded else float("nan"),
-                "n_trials": rewarded, "n_trials_run": 5, "n_exceptions": errors,
+                "n_trials": rewarded, "n_trials_run": n_trials_run, "n_exceptions": errors,
                 "effort": meta["effort"], "leaderboard_accuracy": float(meta["accuracy"]),
-                "leaderboard_row": rec["id"], "source": "harbor-hub-tb4-leaderboard",
+                "leaderboard_row": rec["id"], "source": source,
             })
     df = pd.DataFrame(rows)
     return normalize(df[df["n_trials"] > 0])

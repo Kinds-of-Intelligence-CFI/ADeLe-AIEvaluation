@@ -1,6 +1,7 @@
 """Tests for adele.results — schema, joins, and every offline fetcher path."""
 
 import json
+from pathlib import Path
 
 import pandas as pd
 import pytest
@@ -182,6 +183,23 @@ def test_harbor_hub_export(tmp_path):
     df = harbor_hub.from_export(tmp_path / "t.json", tmp_path / "b.tsv").set_index("instance_id")
     assert df.loc["a", "success"] == 0.6 and df.loc["b", "success"] == 0.0
     assert df.loc["b", "n_trials"] == 4 and df.loc["a", "scaffold"] == "codex|effort=high"
+    assert df.loc["a", "benchmark"] == "terminal-bench-4.0.0" and df.loc["a", "n_trials_run"] == 5
+
+
+_TBSCI = Path(__file__).resolve().parents[1] / "experiments/benchmarks/panel/sources/terminal-bench-science-0.1"
+
+
+@pytest.mark.skipif(not (_TBSCI / "harbor_hub_trials_0-1.json").exists(), reason="TB-Science export not present")
+def test_harbor_hub_export_terminal_bench_science():
+    from adele.results.sources import harbor_hub
+
+    src = _TBSCI
+    df = harbor_hub.from_export(src / "harbor_hub_trials_0-1.json", src / "leaderboard_0-1.tsv",
+                                benchmark="terminal-bench-science-0.1", n_trials_run=3,
+                                source="harbor-hub-tbsci-leaderboard")
+    assert set(df["benchmark"]) == {"terminal-bench-science-0.1"} and set(df["n_trials_run"]) == {3}
+    assert df["instance_id"].nunique() == 70 and df["leaderboard_row"].nunique() == 12
+    assert df["n_trials"].max() <= 3 and df["success"].between(0, 1).all()
 
 
 # ---------------------------------------------------------------- arcprize (parser only)
