@@ -244,3 +244,30 @@ O is the odds-driven rewrite (`../../plp-b2/PREREGISTRATION.md`, amendment 5). I
 set U (`format_pairs.csv`): three planning problems, each posed open-ended and as four listed options (target
 PLp 3). A pair fails if its two items get different medians in pass 1 and again in pass 2, where both are
 judged again under both texts. A confirmed split fails O like a confirmed loss. Predictions are in amendment 5.
+
+## Candidate O′ screen (added 2026-10-01, before any label of O′)
+
+**Why.** O and S both fail on one item, the covering letter (Level 1 example), which they put at 2. Pooled Opus v2
+labels: current text 2 of 6 at Level 2, S and O 10 of 12. The one sentence S and O share and the current text lacks
+is "Only choices that could go wrong add to this demand." Judges under O start from that framing. Pablo asked to test
+O without it.
+
+**Candidate O′** (`../../plp-b2/PLp_O2.txt`): O minus exactly that sentence. The next sentence ("A step with one
+sensible option, or a choice where every option works, adds nothing, however many such steps there are.") stays.
+
+**Run `labreg-o2s`** (`screen_o2.py`). Set P of `items_o.csv`: 23 example bullets, judged with every Examples block
+stripped, v2 prompt, Opus low (`adele-judge-v2-low`), repeats r1 to r3. The covering letter gets three more O′
+repeats (r4 to r6), and three more under O (its `labreg-o1` prompt, reused), so both texts have six labels for it.
+75 calls.
+
+**Rule.** The screen passes if all three hold:
+- (a) the covering letter is at Level 2 in at most 2 of its 6 O′ labels (the current text's rate);
+- (b) set P has at least as many examples at their own level under O′ as under O (`labreg-o1` medians);
+- (c) no set-P median moves by two levels or more between O and O′.
+
+**Reading.** If the screen passes, the sentence is the cause. O′ then gets the full lab regression and the SWE gate
+under O's design and rule, pre-registered first, and replaces S if both pass. If it fails, the sentence is not the
+cause (or not the only one). The choice between S, O and the current text goes back to Pablo.
+
+**Predictions (sealed).** (a) 0.45; (b) 0.7; (c) 0.95; the screen passes 0.35. If (a) holds, the letter's O labels
+in r4 to r6 are mostly 2 (at least 2 of 3): 0.75.

@@ -79,3 +79,9 @@ repeats), all parsed, all Opus 5.5. The loss repeats. Verdict: fail.
 Pass 1: three relays of 108 cells. 324/324 answered and parsed, all Opus 5.5, no classifier stop. One loss (`P-L1-3`),
 no two-level move, no format-pair split. Pass 2: six direct calls; O 2, 2, 2, current text 2, 1, 1. The loss is
 confirmed. Verdict: fail. Write-up in `../../plp-b2/RESULTS.md`, amendment 5.
+
+## 2026-10-01 — O′ screen pinned (`labreg-o2s`)
+
+`screen_o2.py pin` wrote 24 prompts: 23 set-P items under O′ (checked to be O minus the one sentence, examples
+stripped), plus the covering letter's `labreg-o1` O prompt (hash checked). The analysis was tested on synthetic
+labels, which were not kept.
