@@ -80,3 +80,10 @@ was tested on synthetic outcomes, which were not kept.
   `claude-opus-5-5`), with no classifier stop.
 - **Analysis.** `analysis/strong.py`: O1 holds for both models, O2 and P1 fail for both, F2 holds
   for Sonnet, and Opus's failure tests are at the ceiling.
+
+## 2026-10-01 — amendment 4: PLe and PLs on the 54 grid states
+
+`register_search.py` registered the states as `rivercross-search` (PLp prompts reproduce all 54 `o-search` hashes).
+Run `rivercross-search-pl` pinned after amendment 4 was pushed (`4ba59ae`): 108 cells in 3 relays, one PLe answer
+written twice (protocol rejection) and relabelled; 108/108 by `claude-opus-5-5`, `check` OK. `analysis/pl_search.py`
+written before any label.
