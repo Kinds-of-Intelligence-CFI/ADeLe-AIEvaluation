@@ -1,0 +1,28 @@
+# The 19 clean FrontierSWE v2 tasks (experiments/benchmarks/frontierswe-pl, keep == True: some model's best run reaches
+# 0.9) on the adopted v2 planning family (PLp = text O, PLe, PLs). Prompt = instruction.md + the cited README.
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting). Not pinned or run yet.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/frontierswe-pl.toml
+name = "frontierswe-pl"
+
+[tasks]
+benchmarks = ["frontierswe-v2"]
+subset = "experiments/benchmarks/frontierswe-pl/tasks.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 50

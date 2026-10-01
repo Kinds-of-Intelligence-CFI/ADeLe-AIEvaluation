@@ -1,0 +1,35 @@
+instance_id,ref,kind,state,opened,claim,status_v1_1
+koota-entity-snapshot-rollback,1,issue,open,2026-05-27,verifier_hang,looping candidate code hangs the verifier (infra timeout instead of a scored fail); not a false negative for correct code
+skrub-duration-encoding,11,issue,open,2026-05-30,gold_fails_env_drift,unpinned polars; v1.1 audit (#52) reports the gold now passes
+quill-shared-toolbar-focus,13,issue,open,2026-05-30,env_broken,headed browser fails to connect (v1.0 report); see also PR 78
+prometheus-transactional-reload-status,13,issue,open,2026-05-30,env_broken,Go module download timeouts (v1.0 report)
+gql-incremental-graphql-delivery,13,issue,open,2026-05-30,underspecified_prompt,commenter claim; not confirmed by maintainers
+bandit-structured-nosec-directives,13,issue,open,2026-05-30,underspecified_prompt,commenter claim; not confirmed by maintainers
+langchain-request-coalescing,17,issue,open,2026-05-31,gold_fails_env_drift,stale snapshot in base image; v1.1 audit (#52) reports the gold now passes
+quill-shared-toolbar-focus,24,pr,open,2026-06-03,test_too_strict,test requires aria-disabled='false' and rejects attribute removal
+dateutil-rfc5545-timezone-interop,30,issue,open,2026-06-08,gold_fails_env_drift,v1.0 report; v1.1 audit (#52) finds 112/113 golds pass
+fd-deterministic-multi-key-sorting,30,issue,open,2026-06-08,gold_fails_env_drift,v1.0 report; v1.1 audit (#52) finds 112/113 golds pass
+igel-persist-feature-schema,30,issue,open,2026-06-08,gold_fails_env_drift,v1.0 report; v1.1 audit (#52) finds 112/113 golds pass
+langchain-request-coalescing,30,issue,open,2026-06-08,gold_fails_env_drift,v1.0 report; v1.1 audit (#52) reports the gold now passes
+narwhals-rolling-window-suite,30,issue,open,2026-06-08,gold_fails_env_drift,v1.0 report; v1.1 audit (#52) reports the gold now passes
+skrub-duration-encoding,30,issue,open,2026-06-08,gold_fails_env_drift,v1.0 report; v1.1 audit (#52) reports the gold now passes
+mnamer-daemon-watch-lifecycle,30,issue,open,2026-06-08,gold_fails,v1.0 report; v1.1 audit (#52) finds 112/113 golds pass
+helm-unified-manifest-stream,30,issue,open,2026-06-08,gold_fails,v1.0 report; v1.1 audit (#52) finds 112/113 golds pass
+prometheus-transactional-reload-status,45,issue,open,2026-06-25,flaky_p2p_gold_fails,unrelated flaky TestQueryLog in p2p list; gold scores 0
+drizzle-orm-window-function-builders,51,issue,open,2026-07-07,env_unbuildable,Dockerfile fallback cannot build (npm 404); the prebuilt image is used by default
+csstree-shorthand-expansion-compression,52,issue,open,2026-07-08,test_too_strict,test expects lowercase currentcolor (audit claim)
+koota-entity-snapshot-rollback,52,issue,open,2026-07-08,metadata_typo,base_commit_hash in tasks.json has 39 chars
+prometheus-transactional-reload-status,52,issue,open,2026-07-08,gold_fails,v1.1 audit: the only gold that fails its own verifier (p2p regressions)
+drizzle-orm-window-function-builders,57,pr,open,2026-07-15,env_unbuildable,fix PR for #51
+claude-code-by-agents-recursive-delegation,60,pr,open,2026-07-16,verifier_hang,looping candidate patch hangs the verifier
+obsidian-linter-auto-table-of-contents,75,issue,open,2026-08-07,underspecified_prompt,test ids depend on an unstated display name (also in Epoch's list)
+onedump-dump-encryption-pipeline,76,issue,open,2026-08-10,verifier_test_collision,agent and hidden tests share names (also in Epoch's list)
+quill-shared-toolbar-focus,78,pr,open,2026-08-11,env_host_dependent,headed Chromium fails on hosts without a display; gold scores 0 there
+eicrud-keyset-pagination-cursor,92,issue,closed,2026-09-14,env_host_dependent,gold fails on slow storage (hook timeouts); passes on Datacurve's own audit hosts
+obsidian-linter-auto-table-of-contents,93,pr,open,2026-09-15,underspecified_prompt,fix PR for #75
+dynamodb-toolbox-conditional-attribute-requirements,100,pr,open,2026-09-25,env_host_dependent,gold OOMs on many-core hosts
+dynamodb-toolbox-lazy-recursive-schemas,100,pr,open,2026-09-25,env_host_dependent,gold OOMs on many-core hosts
+effect-sse-httpapi-streaming,100,pr,open,2026-09-25,env_host_dependent,gold OOMs on many-core hosts
+meriyah-explicit-resource-declarations,100,pr,open,2026-09-25,env_host_dependent,gold OOMs on many-core hosts
+superjson-error-stack-serialization,100,pr,open,2026-09-25,env_host_dependent,gold OOMs on many-core hosts
+true-myth-iterable-collection-combinators,100,pr,open,2026-09-25,env_host_dependent,gold OOMs on many-core hosts
