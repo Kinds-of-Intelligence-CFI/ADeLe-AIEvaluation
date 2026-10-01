@@ -24,6 +24,8 @@ STOPS = ("stopped by a safety classifier", "safeguards flagged this message")
 INSTRUCTION = "Prompt file: {prompt}\nResponse file: {response}"
 _PATHS = re.compile(r"Prompt file: (\S+)\s*\n\s*Response file: (\S+)")
 _CREATED = "File created successfully at: "
+_LINE_NO = re.compile(r"^(\d+)\t", re.M)  # the Read tool numbers each returned line "<n>\t"
+READ_MAX_LINE = 2000  # the Read tool cuts longer lines
 DEFAULT_CWD = "~/Developer/ADELE"
 FORBIDDEN_ATTACHMENTS = {"nested_memory", "instructions"}
 
@@ -40,6 +42,8 @@ class Transcript:
     models: Set[str] = field(default_factory=set)
     efforts: Set[str] = field(default_factory=set)
     tools: List[Tuple[str, Dict[str, Any]]] = field(default_factory=list)
+    tool_ids: List[Optional[str]] = field(default_factory=list)
+    results: Dict[str, Tuple[bool, str]] = field(default_factory=dict)  # tool_use id -> (is_error, text)
     writes: List[Tuple[str, Optional[str], str, str]] = field(default_factory=list)  # ts, model, file, sha256
     created: List[str] = field(default_factory=list)
     attachments: Set[str] = field(default_factory=set)
@@ -77,8 +81,13 @@ def scan_transcripts(directory: Path, io_dir: Path) -> List[Transcript]:
             t.stopped |= any(s in line for s in STOPS)
             if r.get("type") == "attachment":
                 t.attachments.add(r.get("attachment", {}).get("type"))
-            elif r.get("type") == "user" and _CREATED in line:
-                t.created.append(line.split(_CREATED)[1].split(" ")[0])
+            elif r.get("type") == "user":
+                if _CREATED in line:
+                    t.created.append(line.split(_CREATED)[1].split(" ")[0])
+                content = r.get("message", {}).get("content")
+                for b in content if isinstance(content, list) else []:
+                    if isinstance(b, dict) and b.get("type") == "tool_result" and b.get("tool_use_id"):
+                        t.results[b["tool_use_id"]] = (bool(b.get("is_error")), _text(b.get("content")))
             elif r.get("type") == "assistant":
                 model = r["message"].get("model")
                 if model and model != "<synthetic>":
@@ -88,6 +97,7 @@ def scan_transcripts(directory: Path, io_dir: Path) -> List[Transcript]:
                 for b in r["message"].get("content", []):
                     if isinstance(b, dict) and b.get("type") == "tool_use":
                         t.tools.append((b.get("name"), b.get("input", {})))
+                        t.tool_ids.append(b.get("id"))
                         if b.get("name") == "Write" and "content" in b.get("input", {}):
                             digest = hashlib.sha256(b["input"]["content"].encode("utf-8")).hexdigest()
                             t.writes.append((r.get("timestamp") or "", model, b["input"].get("file_path", ""),
@@ -118,7 +128,9 @@ def transcript_problems(run: Any, t: Transcript, cwd: str) -> List[str]:
     """Protocol problems of one judge transcript (empty when it followed the protocol): the first message is
     exactly the two-line instruction for a cell of the run; the working directory is ``cwd``; the judge read
     its prompt file then wrote its response file and did nothing else (``SubagentHandback`` aside); no
-    CLAUDE.md or memory was attached; effort and agent are the spec's."""
+    CLAUDE.md or memory was attached; effort and agent are the spec's. With ``relay.chunk_lines`` (prompts too
+    long for one Read) the judge may Read its prompt several times, but the Read results must together return
+    every line of the prompt file, and no line may be longer than the Read tool returns whole."""
     judge, problems = run.judge, []
     cell = Path(t.prompt_path).stem
     if cell not in run.cells.index or t.prompt_path != str(run.prompt_path(cell)):
@@ -129,11 +141,16 @@ def transcript_problems(run: Any, t: Transcript, cwd: str) -> List[str]:
         problems.append("first message is not exactly the two-line instruction")
     if t.cwd != cwd:
         problems.append(f"cwd {t.cwd!r} != {cwd!r}")
+    chunked = bool(judge.relay.get("chunk_lines"))
     tools = [(n, i.get("file_path")) for n, i in t.tools if n != "SubagentHandback"]
-    if t.response_path in t.created and tools == [("Read", t.prompt_path)]:
+    reads = next((k for k, x in enumerate(tools) if x != ("Read", t.prompt_path)), len(tools))
+    if t.response_path in t.created and reads and reads == len(tools):
         tools.append(("Write", t.response_path))  # the Write record is missing; the harness confirmed it
-    if tools != [("Read", t.prompt_path), ("Write", t.response_path)]:
-        problems.append(f"tool calls {[n for n, _ in tools]} are not Read(prompt) then Write(response)")
+    if not ((reads >= 1 if chunked else reads == 1) and tools[reads:] == [("Write", t.response_path)]):
+        problems.append(f"tool calls {[n for n, _ in tools]} are not Read(prompt) then Write(response)"
+                        + (" (Read may repeat)" if chunked else ""))
+    elif chunked:
+        problems += _unread(t)
     bad = t.attachments & FORBIDDEN_ATTACHMENTS
     if bad:
         problems.append(f"attachments {sorted(bad)} (CLAUDE.md or memory) present")
@@ -142,6 +159,26 @@ def transcript_problems(run: Any, t: Transcript, cwd: str) -> List[str]:
     if t.agent_type and t.agent_type != judge.relay.get("judge_agent"):
         problems.append(f"agent {t.agent_type!r} != {judge.relay.get('judge_agent')!r}")
     return problems
+
+
+def _unread(t: Transcript) -> List[str]:
+    """Chunked reads: prompt lines that no successful Read of the prompt returned, and lines too long to return."""
+    text = Path(t.prompt_path).read_text(encoding="utf-8")
+    lines = text.split("\n")
+    if lines and lines[-1] == "":
+        lines.pop()
+    seen: Set[int] = set()
+    for (name, inp), tid in zip(t.tools, t.tool_ids):
+        if name == "Read" and inp.get("file_path") == t.prompt_path and tid in t.results and not t.results[tid][0]:
+            seen.update(int(n) for n in _LINE_NO.findall(t.results[tid][1]))
+    out = []
+    missing = set(range(1, len(lines) + 1)) - seen
+    if missing:
+        out.append(f"{len(missing)} of {len(lines)} prompt lines not returned by any Read (first: {min(missing)})")
+    long = sum(len(x.rstrip("\r")) > READ_MAX_LINE for x in lines)
+    if long:
+        out.append(f"{long} prompt lines longer than {READ_MAX_LINE} characters")
+    return out
 
 
 class SubagentBackend:

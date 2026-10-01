@@ -41,7 +41,7 @@ _KEYS = {
     "rubrics": {"refs"},
     "prompt": {"builder"},
     "judge": {"backend", "model", "effort", "repeats", "retry", "max_tokens", "folder", "relay"},
-    "relay": {"dispatcher", "judge_agent", "model_alias", "batch_size", "cwd"},
+    "relay": {"dispatcher", "judge_agent", "model_alias", "batch_size", "cwd", "chunk_lines"},
 }
 
 
@@ -133,6 +133,8 @@ def judge_from_dict(d: Dict[str, Any], builder: str = "v2") -> JudgeSpec:
         relay.setdefault("batch_size", 50)
         if not isinstance(relay["batch_size"], int) or relay["batch_size"] < 1:
             raise SpecError("judge.relay.batch_size must be a positive integer")
+        if "chunk_lines" in relay and (not isinstance(relay["chunk_lines"], int) or relay["chunk_lines"] < 1):
+            raise SpecError("judge.relay.chunk_lines must be a positive integer")
     elif relay:
         raise SpecError("[judge.relay] only applies to the subagent backend")
     short = relay.get("model_alias", model.replace("/", "-"))

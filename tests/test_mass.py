@@ -314,14 +314,24 @@ def test_cli_plan_pin_run_status_collect_check(env):
 # ----------------------------------------------------------------------------- subagent backend
 
 def transcript(dirpath: Path, name: str, prompt: Path, response: Path, text: str, model: str = OPUS,
-               write_record: bool = True, extra: list = (), attachments: list = ()) -> None:
-    """A judge transcript shaped like Claude Code's subagent JSONL files."""
+               write_record: bool = True, extra: list = (), attachments: list = (), reads: list = None) -> None:
+    """A judge transcript shaped like Claude Code's subagent JSONL files. ``reads``: (offset, limit) Read calls
+    whose results number the returned prompt lines as the Read tool does; default one plain Read."""
     recs = [{"type": "user", "cwd": CWD, "timestamp": "2026-10-01T10:00:00Z",
              "message": {"role": "user", "content": f"Prompt file: {prompt}\nResponse file: {response}"}}]
     recs += [{"type": "attachment", "attachment": {"type": t}} for t in attachments]
-    recs.append({"type": "assistant", "timestamp": "2026-10-01T10:00:01Z", "perTurnEffort": "low",
-                 "message": {"model": model, "content": [
-                     {"type": "tool_use", "name": "Read", "input": {"file_path": str(prompt)}}]}})
+    if reads is None:
+        recs.append({"type": "assistant", "timestamp": "2026-10-01T10:00:01Z", "perTurnEffort": "low",
+                     "message": {"model": model, "content": [
+                         {"type": "tool_use", "name": "Read", "input": {"file_path": str(prompt)}}]}})
+    lines = prompt.read_text().split("\n") if reads else []
+    for k, (offset, limit) in enumerate(reads or []):
+        recs.append({"type": "assistant", "perTurnEffort": "low", "message": {"model": model, "content": [
+            {"type": "tool_use", "id": f"r{k}", "name": "Read",
+             "input": {"file_path": str(prompt), "offset": offset, "limit": limit}}]}})
+        got = "\n".join(f"{n}\t{lines[n - 1]}" for n in range(offset, min(offset + limit, len(lines) + 1)))
+        recs.append({"type": "user", "message": {"content": [
+            {"type": "tool_result", "tool_use_id": f"r{k}", "content": got}]}})
     recs += extra
     if write_record:
         recs.append({"type": "assistant", "timestamp": "2026-10-01T10:00:05Z", "perTurnEffort": "low",
@@ -420,6 +430,9 @@ def test_subagent_protocol_breach_rejects_the_answer(env):
     assert not lab.loc[bad, "valid"] and not lab.loc[bad, "protocol_ok"]
     assert lab.loc[good, "valid"] and lab.loc[good, "protocol_ok"]
     assert "Bash" in Ledger.load(run.dir).latest()[bad]["protocol"]
+    # The rejected attempt's breach no longer fails the check.
+    rep = check(run, tdir)
+    assert not rep["protocol"]["failures"] and [f["cell"] for f in rep["protocol"]["rejected_failures"]] == [bad]
 
 
 def test_subagent_fetch_refuses_untraceable_answers(env):
@@ -470,6 +483,38 @@ def test_protocol_check(env):
     rep = check(run, tdir)
     assert not rep["ok"] and rep["protocol"]["called_more_than_once"] == [str(run.response_path(cells[0], 1))]
     assert "cwd" in " ".join(check(run, tdir, cwd="/elsewhere")["protocol"]["failures"][0]["problems"])
+
+
+def test_chunked_reads_must_return_every_prompt_line(env):
+    run = pinned(env, judge=subagent(chunk_lines=2))
+    tdir = env / "subagents"
+    tdir.mkdir()
+    cells = list(run.cells.index)
+    n = len(run.prompt_path(cells[0]).read_text().split("\n"))
+    chunks = [(o, 2) for o in range(1, n + 1, 2)]
+    transcript(tdir, "c0", run.prompt_path(cells[0]), run.response_path(cells[0], 1), "x", reads=chunks)
+    transcript(tdir, "c1", run.prompt_path(cells[1]), run.response_path(cells[1], 1), "x", reads=chunks[:-1])
+    rep = check(run, tdir)
+    problems = {f["cell"]: " ".join(f["problems"]) for f in rep["protocol"]["failures"]}
+    assert set(problems) == {cells[1]} and "not returned by any Read" in problems[cells[1]]
+    long = run.prompt_path(cells[2])
+    long.write_text(long.read_text() + "\n" + "y" * 2001)
+    m = len(long.read_text().split("\n"))
+    transcript(tdir, "c2", long, run.response_path(cells[2], 1), "x", reads=[(o, 2) for o in range(1, m + 1, 2)])
+    problems = {f["cell"]: " ".join(f["problems"]) for f in check(run, tdir)["protocol"]["failures"]}
+    assert "longer than 2000" in problems[cells[2]]
+    # Without chunk_lines a second Read breaks the protocol.
+    plain = pinned(env, name="plain", judge=subagent())
+    pdir = env / "plain-subagents"
+    pdir.mkdir()
+    c = list(plain.cells.index)[0]
+    transcript(pdir, "p0", plain.prompt_path(c), plain.response_path(c, 1), "x", reads=[(1, 2), (3, 100)])
+    assert "Read(prompt) then Write" in " ".join(check(plain, pdir)["protocol"]["failures"][0]["problems"])
+
+
+def test_spec_rejects_bad_chunk_lines(env):
+    with pytest.raises(SpecError, match="chunk_lines"):
+        load_spec(write_spec(env, judge=subagent(chunk_lines=0)))
 
 
 # ----------------------------------------------------------------------------- API backends (mocked)
