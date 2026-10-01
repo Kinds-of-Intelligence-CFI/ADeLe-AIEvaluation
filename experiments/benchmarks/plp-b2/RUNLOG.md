@@ -38,3 +38,11 @@ G1–G3 hold.
 
 See `../plp-candidate/lab-regression/RESULTS.md`, section "Candidate S". One confirmed loss: the covering-letter
 example (Level 1) reads 2 under S, on a one-vote margin in pass 2. Nothing else broke.
+
+## 2026-10-01 — pinned S-q runs (amendment 4)
+
+`make_sq.py` built `PLp_Sq.txt` (S with four sentences replaced, checked) and wrote `sq-search` (54 × 3) and
+`sq-swe-gate` (44; every S prompt reproduced its stored hash). `make_prompts_s.py --candidate sq` wrote
+`labreg-sq1` (102 prompts, same items as S). No new 4-gram is shared with the frames or the lab items. The
+analysis scripts gained `--run`/`--candidate` options; their defaults reproduce the stored S results (results
+files unchanged).

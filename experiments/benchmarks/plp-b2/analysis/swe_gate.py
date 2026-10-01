@@ -8,8 +8,10 @@ come from swebench-pl/sample.csv.
   G3  no collapse: the most common level holds at most 85% of the 44 tasks
 
     python experiments/benchmarks/plp-b2/analysis/swe_gate.py
+    python experiments/benchmarks/plp-b2/analysis/swe_gate.py --run sq-swe-gate --out sq_swe_gate.json  # amendment 4
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -28,7 +30,11 @@ def levels(path: Path) -> pd.Series:
 
 
 def main() -> None:
-    s = levels(HERE / "labels/s-swe-gate/labels_long.csv")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run", default="s-swe-gate")
+    ap.add_argument("--out", default="s_swe_gate.json")
+    args = ap.parse_args()
+    s = levels(HERE / f"labels/{args.run}/labels_long.csv")
     cur = levels(BENCH / "natural-prompt/labels/npb-gate-opuslow/labels_long.csv")
     sample = pd.read_csv(BENCH / "swebench-pl/sample.csv").set_index("instance_id")
     df = pd.DataFrame({"S": s, "current": cur}).join(sample[["solve_rate", "solvable"]])
@@ -48,7 +54,7 @@ def main() -> None:
                            "exact_S_vs_current": round(float((df["S"] == df["current"]).mean()), 3),
                            "mean_shift_S_minus_current": round(float((df["S"] - df["current"]).mean()), 3)}}
     (HERE / "results").mkdir(exist_ok=True)
-    (HERE / "results/s_swe_gate.json").write_text(json.dumps(out, indent=2) + "\n")
+    (HERE / "results" / args.out).write_text(json.dumps(out, indent=2) + "\n")
     print(json.dumps(out, indent=1))
 
 

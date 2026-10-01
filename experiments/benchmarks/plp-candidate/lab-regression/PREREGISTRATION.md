@@ -228,3 +228,11 @@ search text ("size of the search", "higher of the two", "search is small/moderat
 **Next.** If S passes, the team sees S with all three results, then adoption in `src/` (Pablo's OK)
 and the relabel. If S fails, the report names each confirmed loss, and S needs revision or a team
 decision.
+
+## Candidate S-q (added 2026-10-01, before any label of S-q)
+
+S-q is S with the size of the search defined by odds (`../../plp-b2/PREREGISTRATION.md`, amendment 4).
+Its lab regression follows the design, checks and rule of "Candidate S" exactly, with S-q in place of S:
+runs `labreg-sq1` (102 items, same items as S) and `labreg-sq2`; `make_prompts_s.py --candidate sq`;
+`analysis/analyse_s.py --candidate sq`. It runs only if S-q passes the rivercross exit test and the
+SWE-bench gate. Predictions are in amendment 4.
