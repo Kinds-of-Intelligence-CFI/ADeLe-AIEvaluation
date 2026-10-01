@@ -49,3 +49,12 @@ lines by `adele-judge-v2-low-chunked`; the protocol check (`relay.chunk_lines`) 
 in a Read result. 117 tasks stay in `programbench-pl` (one Read; max 50,000 chars, 1,500 lines). Largest 200-line
 window across the long prompts: ~79k chars, so the judge halves a part whose Read fails. Analysis reads both runs.
 Predictions sealed in `PREREGISTRATION.md`.
+
+## 2026-10-01 — labels collected, analysed
+
+`programbench-pl` (351 cells): three rounds of 3 relays plus retries. 348 labelled; zip-password-finder's 3 cells were
+answered by Opus 4.8 on both attempts (classifier fallback; no label). `check` OK. `programbench-pl-long` (39 cells):
+a one-cell pilot (6 consecutive 200-line Reads, full coverage) then the other 38; the new chunked agents only loaded
+into the session after a first launch attempt failed (that relay was released unsent). 38 labelled; age's PLp judge
+read lines 1–1,000 of 1,001 on both attempts, rejected by the full-read check (no label). Ran `analysis/analyse.py`;
+results and an exploratory prompt-length control in RESULTS.md.
