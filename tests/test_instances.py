@@ -160,3 +160,26 @@ def test_unique_prompt_view_and_propagate():
     by = full.set_index("instance_id")["PLp"]
     assert by["t1"] == by["t2"]                 # duplicates share the label
     assert by["t3"] != by["t1"]
+
+
+# ------------------------------------------------------------ register
+
+def test_register_adds_a_frozen_file_and_never_changes_existing_entries(tmp_path):
+    from adele.instances import register
+
+    frame = pd.DataFrame({"prompt": ["Fix the parser bug, carefully please."], "source_id": ["a__a-1"]})
+    prepare(["swebench"], tmp_path, loaders={"swebench": lambda: frame}, fmt="csv")
+    before = (tmp_path / "INSTANCES.tsv").read_text().splitlines()
+    new = pd.DataFrame({"benchmark": ["toy-bench"] * 2, "instance_id": ["t1", "t2"],
+                        "prompt": ["Train a model on the weird data set.", "Sort the strange records by time."]})
+    new.to_parquet(tmp_path / "instances_toy-bench.parquet")
+    row = register(tmp_path / "instances_toy-bench.parquet", "toy-bench")
+    after = (tmp_path / "INSTANCES.tsv").read_text().splitlines()
+    assert after[:2] == before and after[2].startswith("toy-bench\t2\t") and row["loader"] == "registered"
+    assert register(tmp_path / "instances_toy-bench.parquet", "toy-bench") == row  # same content: no-op
+    assert (tmp_path / "INSTANCES.tsv").read_text().splitlines() == after
+    new.assign(prompt=new["prompt"] + " Now.").to_parquet(tmp_path / "instances_toy-bench.parquet")
+    with pytest.raises(ValueError, match="already in"):
+        register(tmp_path / "instances_toy-bench.parquet", "toy-bench")
+    with pytest.raises(ValueError, match="benchmark column"):
+        register(tmp_path / "instances_toy-bench.parquet", "other-bench")

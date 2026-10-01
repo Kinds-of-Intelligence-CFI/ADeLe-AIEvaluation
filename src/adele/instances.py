@@ -178,37 +178,72 @@ def prepare(
             warnings = validate_instances(part, where=slug)
             for w in warnings:
                 logger.warning("%s: %s", slug, w)
-            est = estimate_cost(part, n_dimensions=n_dimensions)
             path = out / f"instances_{slug}.{fmt}"
             if fmt == "parquet":
                 part.to_parquet(path)   # needs pyarrow (ships with the [annotate] extra)
             else:
                 part.to_csv(path, index=False)
-            manifest_rows.append({
-                "benchmark": slug,
-                "n_instances": len(part),
-                "sha256": _frame_sha256(part),
-                "loader": name,
-                "median_prompt_chars": int(part["prompt"].str.len().median()),
-                "max_prompt_chars": int(part["prompt"].str.len().max()),
-                "est_calls": int(est["calls"]),
-                "est_tokens_in": int(est["tokens_in"]),
-                "warnings": "; ".join(warnings) or "-",
-                "file": path.name,
-            })
+            manifest_rows.append(_manifest_row(part, slug, name, path, warnings, n_dimensions))
     manifest = pd.DataFrame(manifest_rows)
-    # Freezing one benchmark must not erase the provenance of the others frozen
-    # into the same directory: replace only the rows re-frozen by this call.
+    _merge_manifest(out, manifest)
+    logger.info("froze %d benchmarks (%d instances, ~%.1fM input tokens for %d dims) → %s",
+                len(manifest), manifest["n_instances"].sum(),
+                manifest["est_tokens_in"].sum() / 1e6, n_dimensions, out)
+    return manifest
+
+
+def _manifest_row(part: pd.DataFrame, slug: str, loader: str, path: Path, warnings: List[str],
+                  n_dimensions: int) -> Dict[str, object]:
+    est = estimate_cost(part, n_dimensions=n_dimensions)
+    return {
+        "benchmark": slug,
+        "n_instances": len(part),
+        "sha256": _frame_sha256(part),
+        "loader": loader,
+        "median_prompt_chars": int(part["prompt"].str.len().median()),
+        "max_prompt_chars": int(part["prompt"].str.len().max()),
+        "est_calls": int(est["calls"]),
+        "est_tokens_in": int(est["tokens_in"]),
+        "warnings": "; ".join(warnings) or "-",
+        "file": path.name,
+    }
+
+
+def _merge_manifest(out: Path, manifest: pd.DataFrame) -> None:
+    """Freezing one benchmark must not erase the provenance of the others frozen
+    into the same directory: replace only the rows re-frozen by this call."""
     on_disk = manifest
     if (out / MANIFEST_NAME).exists():
         prior = pd.read_csv(out / MANIFEST_NAME, sep="\t")
         prior = prior[~prior["benchmark"].isin(manifest["benchmark"])]
         on_disk = pd.concat([prior, manifest], ignore_index=True)
     on_disk.sort_values("benchmark").to_csv(out / MANIFEST_NAME, sep="\t", index=False)
-    logger.info("froze %d benchmarks (%d instances, ~%.1fM input tokens for %d dims) → %s",
-                len(manifest), manifest["n_instances"].sum(),
-                manifest["est_tokens_in"].sum() / 1e6, n_dimensions, out)
-    return manifest
+
+
+def register(path: str | Path, benchmark: str, *, n_dimensions: int = 7) -> Dict[str, object]:
+    """Add an already-frozen instance file (made without a loader) to the ``INSTANCES.tsv`` next to it.
+
+    The file must have the instance columns and only ``benchmark`` rows; it is validated as
+    :func:`prepare` validates loader output. An entry that already exists is never changed:
+    registering the same content again is a no-op, different content is refused.
+    """
+    path = Path(path)
+    df = pd.read_parquet(path) if path.suffix == ".parquet" else pd.read_csv(path, dtype={"instance_id": str})
+    if "benchmark" in df.columns and set(df["benchmark"].astype(str)) != {benchmark}:
+        raise ValueError(f"{path}: benchmark column is {sorted(set(df['benchmark'].astype(str)))}, not [{benchmark!r}]")
+    warnings = validate_instances(df, where=benchmark)
+    for w in warnings:
+        logger.warning("%s: %s", benchmark, w)
+    row = _manifest_row(df, benchmark, "registered", path, warnings, n_dimensions)
+    index = path.parent / MANIFEST_NAME
+    if index.exists():
+        prior = pd.read_csv(index, sep="\t").set_index("benchmark")
+        if benchmark in prior.index:
+            if prior.loc[benchmark, "sha256"] == row["sha256"] and prior.loc[benchmark, "file"] == path.name:
+                return row
+            raise ValueError(f"{benchmark} is already in {index} with other content; existing entries are not changed")
+    _merge_manifest(path.parent, pd.DataFrame([row]))
+    return row
 
 
 def check_join(instances_dir: str | Path, results_parquet: str | Path) -> pd.DataFrame:
