@@ -85,3 +85,9 @@ confirmed. Verdict: fail. Write-up in `../../plp-b2/RESULTS.md`, amendment 5.
 `screen_o2.py pin` wrote 24 prompts: 23 set-P items under O′ (checked to be O minus the one sentence, examples
 stripped), plus the covering letter's `labreg-o1` O prompt (hash checked). The analysis was tested on synthetic
 labels, which were not kept.
+
+## 2026-10-01 — O′ screen (`labreg-o2s`): complete
+
+Six direct calls (letter, O′ and O, r4 to r6), then three relays of 23 cells (r1 to r3). 75/75 answered and parsed,
+all Opus 5.5, no classifier stop. (a) failed as soon as r4 to r6 returned, since O′ already had three of six labels
+at 2. The rest was run as pre-registered. Verdict: fail.
