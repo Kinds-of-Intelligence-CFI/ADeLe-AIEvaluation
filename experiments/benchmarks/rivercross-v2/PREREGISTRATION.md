@@ -248,3 +248,23 @@ as failed. My probability that failure hits that ceiling is 0.4 for Sonnet and 0
 
 **Cost.** 540 solver calls: about 3–5 weekly points, run after the 5-hour window resets
 (16:30 UTC).
+
+## Amendment 4 — PLe and PLs on the 54 grid states (2026-10-01, before any of their labels)
+
+**Why.** The 54 states of amendment 2 carry PLp labels (adopted text O: `plp-b2` run `o-search`, three Opus-low
+repeats) but no PLe or PLs labels. Pablo asked for them, so the rivercross testbed has all three planning rubrics.
+
+**Design.** The states are registered as the `adele mass` benchmark `rivercross-search` (`register_search.py`; the
+runner's PLp prompt reproduces all 54 `o-search` prompt hashes). Run `rivercross-search-pl`
+(`../mass-annotation/specs/rivercross-search-pl.toml`): v2/PLe and v2/PLs, one Opus-low call each, v2 prompt
+(108 calls). Analysis (`analysis/pl_search.py`): Spearman of PLe, PLs and PLp (median of the three O repeats) with
+execution length (ctg), search (bits), and the Opus and Sonnet non-optimal and failure shares of amendment 3.
+
+**Predictions (sealed).** Earlier, PLs sat at 1–2 on every state-visible frame and PLe split by frame type, not by
+state.
+- PLs uses at most two adjacent levels on at least 50 of the 54 states: 0.7.
+- PLs against ctg and against bits: both |ρ| < 0.3: 0.6.
+- PLe against ctg positive with p < 0.05: 0.4.
+- Neither PLe nor PLs reaches |ρ| ≥ 0.3 with the Opus non-optimal share: 0.75.
+
+**Cost.** 108 Opus-low calls, well under a weekly point.
