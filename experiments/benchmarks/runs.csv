@@ -8,8 +8,13 @@ pl-relabel-v2,v2-swe,2026-09-29T21:46:41+00:00,a82b229,1194,opus-low,1194,1194
 pl-relabel-v2,v2-tau2,2026-09-29T21:46:41+00:00,a82b229,696,opus-low,696,696
 pl-relabel-v2,v2-tb4,2026-09-29T21:46:41+00:00,a82b229,198,opus-low,195,195
 plp-b2,b2-search,2026-09-30T20:56:13+00:00,cd37852,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162
+plp-b2,o-odds,2026-10-01T09:26:44+00:00,f347d3a,54,opus-low,0,0
+plp-b2,o-search,2026-10-01T09:26:44+00:00,f347d3a,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162
+plp-b2,o-swe-gate,2026-10-01T09:26:44+00:00,f347d3a,44,opus-low,44,44
 plp-b2,s-search,2026-09-30T21:18:29+00:00,c2cdc2a,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162
 plp-b2,s-swe-gate,2026-09-30T21:30:27+00:00,b5d1174,44,opus-low,44,44
+plp-b2,sq-search,2026-10-01T08:07:04+00:00,924cf3b,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162
+plp-b2,sq-swe-gate,2026-10-01T08:07:04+00:00,924cf3b,44,opus-low,44,44
 plp-candidate,cand-swe,2026-09-28T08:40:32+00:00,bd67db8,60,opus-low,60,60
 plp-candidate,cand-tau2,2026-09-28T08:40:32+00:00,bd67db8,232,opus-low,232,232
 plp-candidate,cand-tb,2026-09-28T08:40:32+00:00,bd67db8,34,opus-low,34,34
@@ -20,6 +25,9 @@ plp-candidate,guard-tb,2026-09-28T09:50:24+00:00,c508bdb,34,opus-low,34,34
 plp-candidate,knowl-swe,2026-09-28T11:04:18+00:00,15cd030,60,opus-low,60,60
 plp-candidate,knowl-tau2,2026-09-28T11:04:18+00:00,15cd030,232,opus-low,232,232
 plp-candidate,knowl-tb,2026-09-28T11:04:18+00:00,15cd030,34,opus-low,34,34
+plp-o-relabel,o-swe,2026-10-01T10:05:18+00:00,92f28fc,398,opus-low,398,398
+plp-o-relabel,o-tau2,2026-10-01T10:05:18+00:00,92f28fc,232,opus-low,232,232
+plp-o-relabel,o-tb4,2026-10-01T10:05:18+00:00,92f28fc,66,opus-low,65,65
 rivercross-v2,rc-contrast,2026-09-30T12:26:33+00:00,281ab27,59,opus-low-r1;opus-low-r2;opus-low-r3,177,177
 rivercross-v2,rc-play,2026-09-30T12:08:46+00:00,b07f993,49,opus-low,49,49
 rivercross-v2,rc-search,2026-09-30T12:51:16+00:00,04c87c0,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162
@@ -33,6 +41,7 @@ swebench-30,swev30-r1,2026-09-26T08:45:22+00:00,2c8ffe7,792,sonnet;opus,0,0
 swebench-30,swev30-r2,2026-09-26T08:55:29+00:00,5b74867,792,sonnet;opus,0,0
 swebench-30,swev30-r3,2026-09-26T09:43:30+00:00,67e9af9,792,sonnet;opus,0,0
 swebench-30,swev30-r4,2026-09-26T10:06:26+00:00,214608b,792,sonnet;opus,1584,1584
+swebench-clean,clean-swe,2026-10-01T13:17:45+00:00,5d4a8ef,90,opus-low,90,90
 swebench-pl,swepl-gate,2026-09-26T21:45:06+00:00,0157be8,132,opus-medium,132,132
 swebench-pl,swepl-gate-low,2026-09-27T07:11:45+00:00,b0e68ef,132,opus-low,132,132
 swebench-pl,swepl-r1,2026-09-26T21:45:06+00:00,0157be8,1194,opus-medium,1194,1194
