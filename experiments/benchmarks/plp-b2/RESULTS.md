@@ -271,3 +271,25 @@ they misjudge O's quantity.
 **Reading.** O behaves at least as well as S everywhere the lab measures, and better on leaks (86 against 83
 checks, the Mars-landing leak gone). It fails on the same single item as S, which is a 1/2 boundary that
 O's odds by design do not reach. The rule treats O and S alike, so both carry the same loss.
+
+## Amendment 6 — O′ screen (O without "Only choices that could go wrong…"): fails
+
+Pre-registered before any label (`a4afbcb`); details in `../plp-candidate/lab-regression/results/screen_o2.json`.
+75 calls, all parsed, all by Opus 5.5.
+
+- **(a) fails.** The covering letter is at Level 2 in 6 of 6 O′ labels (O: 5 of 6). Removing the sentence does not
+  bring it back to 1. The sentence is not the cause.
+- **(b) fails narrowly.** Set P examples at their own level: O′ 16 of 23, O 17. The template webpage (Level 2) drops to 1.
+- **(c) holds.** No set-P median moves by two levels. One example moved by one.
+- Misses shared by O and O′: temperature conversion and real-time translation (Level 0, read 1 and 3), the
+  covering letter, the unclimbed face (4, read 3), synthesis route and research programme (5, read 4). These
+  misses predate both candidates (see the C run's exploratory section).
+
+**Predictions.** (a) 0.45: failed. (b) 0.7: failed. (c) 0.95: held. Screen passes 0.35: failed. The letter's O
+labels in r4 to r6 mostly 2: 0.75, held (2, 2, 2).
+
+**Reading.** The covering letter's move to Level 2 is not caused by that sentence. With examples stripped, the
+letter now reads 2 under S, O and O′ alike. Under the current text it read 2 in 2 of 6 v2 labels and in the C
+run's three-judge median. It is a 1/2 boundary item that every candidate tested here tips to 2, and no wording
+tested isolates why. By the rule, S stays frozen. Whether to accept O with this one-item loss on record is Pablo's
+decision.
