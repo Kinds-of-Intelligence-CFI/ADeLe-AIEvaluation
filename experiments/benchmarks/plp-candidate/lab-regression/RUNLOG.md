@@ -73,3 +73,9 @@ effort low, no CLAUDE.md attached (the only mention is boilerplate in the harnes
 Read then Write only. Exception: one judge (`kmy2z`, repeat 2) wrote its own answer twice. One pass-1
 loss (`P-L1-3`), no move of two levels. Pass 2: six direct `adele-judge-v2-low` calls (both texts × 3
 repeats), all parsed, all Opus 5.5. The loss repeats. Verdict: fail.
+
+## 2026-10-01 — candidate O, pass 1 (`labreg-o1`) and pass 2 (`labreg-o2`): complete
+
+Pass 1: three relays of 108 cells. 324/324 answered and parsed, all Opus 5.5, no classifier stop. One loss (`P-L1-3`),
+no two-level move, no format-pair split. Pass 2: six direct calls; O 2, 2, 2, current text 2, 1, 1. The loss is
+confirmed. Verdict: fail. Write-up in `../../plp-b2/RESULTS.md`, amendment 5.

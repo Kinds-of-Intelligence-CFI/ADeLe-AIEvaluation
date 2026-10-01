@@ -64,3 +64,10 @@ bullets). `make_o.py` wrote `o-search` (54 × 3), `o-odds` (54, odds-elicitation
 No text new in O shares a 4-gram with the frames or the lab items. `analysis/odds_o.py` and the O branch of
 `analyse_s.py` were tested on synthetic labels, which were not kept; `analyse_s.py`'s defaults still reproduce
 `regression_s.json` byte for byte.
+
+## 2026-10-01 — O runs complete (amendment 5)
+
+Eight relays of `judge-dispatcher-v2-low` (at most four at once): `labreg-o1` 3 × 108, `o-swe-gate` 44, `o-odds` 54,
+`o-search` 3 × 54. Pass 2 (`labreg-o2`): six direct calls on the covering letter. All 590 answers parsed, all by
+`claude-opus-5-5`, no classifier stop, every cell called once per repeat. Verdict: O fails on the covering letter
+(confirmed); SWE gate holds. S stays frozen.

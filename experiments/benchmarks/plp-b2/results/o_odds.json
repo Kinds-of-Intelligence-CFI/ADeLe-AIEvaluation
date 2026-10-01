@@ -1,0 +1,52 @@
+{
+  "n": 54,
+  "unparsed": [],
+  "rho_bits": {
+    "rho": 0.237,
+    "p": 0.0838
+  },
+  "rho_ctg": {
+    "rho": 0.358,
+    "p": 0.00779
+  },
+  "model": {
+    "bits": {
+      "coef": 0.161,
+      "p": 0.0897
+    },
+    "ctg": {
+      "coef": 0.164,
+      "p": 0.0456
+    },
+    "r2": 0.119,
+    "n": 54
+  },
+  "checks": {
+    "Q1_rho_bits_ge_0.5": false,
+    "Q2_bits_sig_and_above_ctg": false
+  },
+  "descriptive": {
+    "log2_odds_by_cell": {
+      "2-3": {
+        "high": 1.0,
+        "low": 0.33,
+        "mid": 0.5
+      },
+      "4-6": {
+        "high": 0.67,
+        "low": 0.67,
+        "mid": 1.37
+      },
+      "7+": {
+        "high": 1.03,
+        "low": 0.76,
+        "mid": 1.29
+      }
+    },
+    "odds_quantiles": {
+      "0.1": 1.0,
+      "0.5": 2.0,
+      "0.9": 3.0
+    }
+  }
+}
