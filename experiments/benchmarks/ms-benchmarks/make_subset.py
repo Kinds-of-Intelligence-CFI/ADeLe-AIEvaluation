@@ -11,7 +11,7 @@ Sets (each study's own `keep`, or all tasks where the study has no exclusions):
   deepswe-v1.1                 deepswe-clean (90)
   frontierswe-v2               frontierswe-pl (19)
   programbench                 programbench-pl (130: 117 single-read + 13 long)
-  rivercross-search            rivercross-v2 amendment 2 grid (54)
+Rivercross is not included (amendment 1): it has no other agents, so both rubrics are 0 by construction.
 
     python experiments/benchmarks/ms-benchmarks/make_subset.py
 """
@@ -38,8 +38,6 @@ def main() -> None:
     parts.append(tau2.loc[tau2["keep"].astype(bool), ["benchmark", "instance_id"]])
     parts.append(pd.DataFrame({"benchmark": "programbench",
                                "instance_id": kept(BENCH / "programbench-pl/subset_single.csv")}))
-    parts.append(pd.DataFrame({"benchmark": "rivercross-search",
-                               "instance_id": pd.read_csv(BENCH / "rivercross-v2/frames/search_frame.csv")["custom_id"]}))
     single = pd.concat(parts, ignore_index=True).assign(keep=True)
     assert not single.duplicated(["benchmark", "instance_id"]).any()
     single.to_csv(HERE / "subset.csv", index=False)
