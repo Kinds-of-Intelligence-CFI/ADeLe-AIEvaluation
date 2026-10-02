@@ -23,3 +23,10 @@ At the orchestrator's request, two additions:
 `L-r30-S1` and `L-r30-S2` ("will hear you out"). The analysis gained the r30 contrast check and the new MSm
 check. It was tested again on synthetic labels in a scratch folder, which were deleted. Rebuilding gives the
 same ids and prompts.
+
+## 2026-10-02 — judged, analysed
+
+Pass 1 (`ms-labreg1`): twelve relays to `judge-dispatcher-v2-low`, 540/540 answered and parsed, all by
+`claude-opus-5-5`, no classifier stop, no duplicate call. Failures: F-on-MSm (PLs L5-2, L5-3 at 4) and L r36 (D2 at 3).
+Pass 2 (`ms-labreg2`, `make_prompts.py --replicate`): 9 calls, same medians; both failures confirmed. Verdict: fail.
+Results in RESULTS.md.
