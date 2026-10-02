@@ -512,6 +512,20 @@ def test_chunked_reads_must_return_every_prompt_line(env):
     assert "Read(prompt) then Write" in " ".join(check(plain, pdir)["protocol"]["failures"][0]["problems"])
 
 
+def test_equivalent_paths_are_the_same_file(env):
+    run = pinned(env, judge=subagent())
+    tdir = env / "subagents"
+    tdir.mkdir()
+    cell = list(run.cells.index)[0]
+    response = run.response_path(cell, 1)
+    detour = run.io_dir / "prompts" / ".." / "responses" / response.parent.name / response.name
+    transcript(tdir, "d0", run.prompt_path(cell), response, "x")
+    (tdir / "agent-d0.jsonl").write_text((tdir / "agent-d0.jsonl").read_text().replace(
+        f'"file_path": "{response}", "content"', f'"file_path": "{detour}", "content"'))
+    assert str(detour) in (tdir / "agent-d0.jsonl").read_text()
+    assert check(run, tdir)["ok"]
+
+
 def test_spec_rejects_bad_chunk_lines(env):
     with pytest.raises(SpecError, match="chunk_lines"):
         load_spec(write_spec(env, judge=subagent(chunk_lines=0)))
