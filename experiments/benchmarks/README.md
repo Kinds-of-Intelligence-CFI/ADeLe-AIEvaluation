@@ -17,6 +17,7 @@ to a model not in the fit.
 | judge | CLI `adele agentic judge` |
 | partner data requests | `docs/partner-data-request.md` |
 | pilot sample (4 benchmarks × 5 tasks) | `pilot/`, regenerate with `adele agentic pilot --seed 0` |
+| overview across benchmarks, all rubrics (hand-written) | `SUMMARY.md` |
 | results of every study, and the run registry | `RESULTS.md`, `runs.csv` |
 | every benchmark's per-task results under one set of rules (coverage, verifiably solvable tasks, model registry) | `panel/` |
 | first real-benchmark run (SWE-bench Verified, 30 tasks × 25 rubrics) | `swebench-30/` |

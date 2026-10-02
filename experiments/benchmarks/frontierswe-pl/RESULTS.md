@@ -51,9 +51,9 @@ is coarse for long agentic work.
 
 ## Amendment 1 — PLp on the 15 dropped tasks
 
-**Question.** Does the clean-set rule (drop tasks no model brings to 0.9) cut off the top of the PLp scale?
+**What it asks.** Does the clean-set rule (drop tasks no model brings to 0.9) cut off the top of the PLp scale?
 
-**Answer.** Partly; by the pre-registered rule the result is inconclusive. 4 of the 15 dropped tasks get PLp 4, against
+**What it found.** Partly; by the pre-registered rule the result is inconclusive. 4 of the 15 dropped tasks get PLp 4, against
 1 of 19 kept (Fisher one-sided p = 0.10). The four are optimisation and systems builds: cranelift-codegen-opt,
 libexpat-optimization, postgresql-18-on-sqlite and sglang-inference-system-optimization. The ML research tasks
 (optimizer-design, weather forecasting, MEG decoding) stay at 3. With all 34 tasks, PLp falls with mean reward
