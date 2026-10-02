@@ -1,5 +1,7 @@
 study,run,pinned_at,pinned_commit,prompts,judges,labels,parsed
 judge-sonnet55,s55h-gate,2026-09-29T10:40:46+00:00,a6935a9,88,sonnet55-high,65,65
+ms-lab-regression,ms-labreg1,2026-10-02T14:30:40+00:00,bfec0a5,180,opus-low-r1;opus-low-r2;opus-low-r3,540,540
+ms-lab-regression,ms-labreg2,2026-10-02T14:51:07+00:00,8bacd8e,3,opus-low-r1;opus-low-r2;opus-low-r3,9,9
 natural-prompt,np-gate-opuslow,2026-09-29T16:11:25+00:00,8fe002d,132,opus-low,132,132
 natural-prompt,np-plp-s55h,2026-09-29T16:11:25+00:00,8fe002d,44,sonnet55-high,44,44
 natural-prompt,npb-gate-opuslow,2026-09-29T21:30:16+00:00,7fe93c9,132,opus-low,132,132

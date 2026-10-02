@@ -63,7 +63,7 @@ def registry() -> pd.DataFrame:
             "run": run["run_id"],
             "pinned_at": run["created_at"],
             "pinned_commit": run["repo_commit"][:7],
-            "prompts": run["design"]["n_prompts"],
+            "prompts": run["design"].get("n_prompts", run["design"].get("n_cells")),
             "judges": ";".join(run["design"]["judges"]),
             "labels": 0 if lab is None else len(lab),
             "parsed": 0 if lab is None else int(lab["valid"].sum()),
