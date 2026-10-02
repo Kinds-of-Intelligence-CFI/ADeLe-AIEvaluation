@@ -11,6 +11,7 @@ Claude Code may finish the call with another model; such answers are rejected as
 
 import hashlib
 import json
+import os
 import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -83,7 +84,7 @@ def scan_transcripts(directory: Path, io_dir: Path) -> List[Transcript]:
                 t.attachments.add(r.get("attachment", {}).get("type"))
             elif r.get("type") == "user":
                 if _CREATED in line:
-                    t.created.append(line.split(_CREATED)[1].split(" ")[0])
+                    t.created.append(os.path.normpath(line.split(_CREATED)[1].split(" ")[0]))
                 content = r.get("message", {}).get("content")
                 for b in content if isinstance(content, list) else []:
                     if isinstance(b, dict) and b.get("type") == "tool_result" and b.get("tool_use_id"):
@@ -96,12 +97,14 @@ def scan_transcripts(directory: Path, io_dir: Path) -> List[Transcript]:
                     t.efforts.add(r["perTurnEffort"])
                 for b in r["message"].get("content", []):
                     if isinstance(b, dict) and b.get("type") == "tool_use":
-                        t.tools.append((b.get("name"), b.get("input", {})))
+                        inp = dict(b.get("input", {}))
+                        if "file_path" in inp:  # a judge may write "prompts/../responses/x.txt" for the same file
+                            inp["file_path"] = os.path.normpath(inp["file_path"])
+                        t.tools.append((b.get("name"), inp))
                         t.tool_ids.append(b.get("id"))
                         if b.get("name") == "Write" and "content" in b.get("input", {}):
                             digest = hashlib.sha256(b["input"]["content"].encode("utf-8")).hexdigest()
-                            t.writes.append((r.get("timestamp") or "", model, b["input"].get("file_path", ""),
-                                             digest))
+                            t.writes.append((r.get("timestamp") or "", model, inp.get("file_path", ""), digest))
         out.append(t)
     return out
 
