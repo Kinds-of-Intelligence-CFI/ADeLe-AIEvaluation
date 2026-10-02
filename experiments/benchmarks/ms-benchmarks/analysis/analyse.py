@@ -11,7 +11,6 @@ claude-opus-5-5 count. Per set: the level distribution, the share of tasks at le
   deepswe-v1.1                 solve_rate (deepswe-clean)
   frontierswe-v2               solve_rate_0.9 (frontierswe-pl)
   programbench                 solve_rate_0.9 (programbench-pl)
-  rivercross-search            Opus 5.5's non-optimal share (rivercross-v2 amendment 3), predicted positive
 A rubric with one level in a set is reported as not testable there.
 
     python experiments/benchmarks/ms-benchmarks/analysis/analyse.py
@@ -63,12 +62,6 @@ def outcomes() -> pd.DataFrame:
     t = pd.read_csv(BENCH / "tau2-clean/tasks.csv", dtype={"instance_id": str})
     t = t[t["keep"].astype(bool)]
     parts.append(pd.DataFrame({"benchmark": t["benchmark"], "instance_id": t["instance_id"], "outcome": t["solve_rate"]}))
-    sv = pd.read_csv(BENCH / "rivercross-v2/labels/rc-solve-opus/solve_long.csv")
-    sv = sv[sv["writer_model"] == "claude-opus-5-5"]
-    per = sv.groupby("custom_id")
-    keep = per.size()[per.size() >= 3].index
-    parts.append(pd.DataFrame({"benchmark": "rivercross-search", "instance_id": keep,
-                               "outcome": (1 - per["optimal"].mean()).loc[keep].values}))
     return pd.concat(parts, ignore_index=True)
 
 
@@ -82,7 +75,7 @@ def main() -> None:
         out["unlabelled"][name] = {d: int(g[d].isna().sum()) for d in DIMS}
         out["levels"][name] = {d: {str(int(k)): int(v) for k, v in g[d].value_counts().sort_index().items()} for d in DIMS}
         out["share_0_or_1"][name] = {d: round(float((g[d].dropna() <= 1).mean()), 3) for d in DIMS}
-        direction = "positive" if name == "rivercross-search" else "negative"
+        direction = "negative"
         for d in DIMS:
             h = g.dropna(subset=[d, "outcome"])
             if name == "tau2":

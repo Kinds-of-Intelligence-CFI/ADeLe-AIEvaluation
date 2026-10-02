@@ -1,13 +1,13 @@
 # MSm and MSc (v2 drafts) on the clean sets of the PL studies (experiments/benchmarks/ms-benchmarks): SWE-bench Verified,
-# tau2 (3 domains), Terminal-Bench 4.0 and Science, DeepSWE, FrontierSWE, ProgramBench (single-read tasks) and the
-# rivercross grid. ProgramBench's 13 long tasks are in ms-benchmarks-long.toml.
+# tau2 (3 domains), Terminal-Bench 4.0 and Science, DeepSWE, FrontierSWE, ProgramBench (single-read tasks).
+# The rivercross grid was dropped before any label (no other agents; amendment 1). ProgramBench's 13 long tasks are in ms-benchmarks-long.toml.
 # Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting).
 #   adele mass plan experiments/benchmarks/mass-annotation/specs/ms-benchmarks.toml
 name = "ms-benchmarks"
 
 [tasks]
 benchmarks = ["swe-bench-verified", "tau2-airline", "tau2-retail", "tau2-banking_knowledge", "terminal-bench-4.0.0",
-              "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench", "rivercross-search"]
+              "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench"]
 subset = "experiments/benchmarks/ms-benchmarks/subset.csv"
 
 [rubrics]

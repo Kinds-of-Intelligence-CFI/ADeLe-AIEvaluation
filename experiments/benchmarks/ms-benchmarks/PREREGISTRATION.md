@@ -30,3 +30,11 @@ judge may credit inferring an issue author's or user's intent.
 - On the single-agent sets, no rubric is significant (p < 0.05) against the outcome where testable: 0.7.
 
 **Cost.** 2,166 Opus-low calls on the subscription.
+
+## Amendment 1 (2026-10-02, before any label)
+
+- **Rivercross dropped** (Pablo): it has no other agents, so both rubrics are 0 by construction and the 108 calls would
+  test nothing. 1,029 tasks remain; `ms-benchmarks` has 2,032 cells and `ms-benchmarks-long` 26.
+- **Order** (Pablo): the run waits for the MS lab regression (`../ms-lab-regression/`), which checks that today's judge
+  and prompt reproduce the lab's results for MSm and MSc. If that regression fails, this run is held and Pablo decides.
+- Predictions unchanged.
