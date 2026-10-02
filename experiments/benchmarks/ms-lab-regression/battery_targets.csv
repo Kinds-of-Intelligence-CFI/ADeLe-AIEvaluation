@@ -1,0 +1,35 @@
+battery_id,rubric,target,check,registered,stored,note
+M01,MSc,4,>=4,4,4,pure MSc. check: battery H1 (high side) at the registered level of 4 or more
+M02,MSc,5,>=4,5,5,pure MSc. check: battery H1 (high side) at the registered level of 4 or more
+M03,MSc,4,>=4,4,4,pure MSc. check: battery H1 (high side) at the registered level of 4 or more
+M04,MSc,4,>=4,4,4,pure MSc. check: battery H1 (high side) at the registered level of 4 or more
+X03,MSc,5,>=4,5,5,co-occurring PLp+MSc. check: battery H2 (4 or more on both intended dimensions)
+X05,MSc,4,>=4,4,4,co-occurring PLe+MSc. check: battery H2
+X06R,MSc,5,>=4,5,5,co-occurring PLs+MSc (r36 replacement for X06). check: battery H2
+D04,MSc,2,within1,2,2,MSc mid-band. check: battery H4 (within 1 of the registered level)
+D07,MSc,2,within1,2,2,MSc mid-band. check: battery H4
+D08,MSc,3,within1,3,3,MSc mid-band. check: battery H4
+L01,MSc,0,<=1,0,0,anchor. check: battery H3
+L02,MSc,0,<=1,0,0,anchor. check: battery H3
+L03,MSc,0,<=1,0,0,anchor. check: battery H3
+L04,MSc,0,<=1,0,0,anchor. check: battery H3
+L01,MSm,0,<=1,,,anchor; no other agent. new check: battery-v1 never scored MSm
+L02,MSm,0,<=1,,,anchor; no other agent. new check
+L03,MSm,0,<=1,,,anchor; no other agent. new check
+L04,MSm,0,<=1,,,anchor; no other agent. new check
+P01,MSm,0,<=1,,,pure PLp; no other agent. new check
+P02,MSm,0,<=1,,,pure PLp; the guests are agents but every constraint is stated up front (MSm's stated-stance carve). new check
+P03,MSm,0,<=1,,,pure PLp; no other agent. new check
+P04,MSm,0,<=1,,,pure PLp; no other agent. new check
+E01,MSm,0,<=1,,,pure PLe; no other agent. new check
+E02,MSm,0,<=1,,,pure PLe; no other agent. new check
+E03,MSm,0,<=1,,,pure PLe; no other agent. new check
+E04,MSm,0,<=1,,,pure PLe; no other agent. new check
+S01,MSm,0,<=1,,,pure PLs; staff move stock while you count. Their presence matters but nothing about their minds does (at most Level 1 detection). new check
+S02,MSm,0,<=1,,,pure PLs; others start and stop the machines. Their actions matter but nothing about their minds does. new check
+S03,MSm,0,<=1,,,pure PLs; no other agent. new check
+S04,MSm,0,<=1,,,pure PLs; traffic comes from users but no mind need be modelled. new check
+M01,MSm,1,<=2,,,"pure MSc. He states his refusal and gives his reason in full, and nothing puts his sincerity in question. MSm's stated-stance carve applies: the inferring is done, and bringing him to swap is interaction work. What remains is reading a person in an exchange, Level 1 or at most 2. A 3+ means the carve did not bind. new check"
+M02,MSm,3,<=3,,,"pure MSc. Both positions are stated, so the carve and Level 5's anti-count guard (several stated positions demand no more than one) keep it below 4. But each neighbour watches what the other is offered, and how each will take the other's offer is not stated. That needs feelings attributed (resentment, a sense of fairness): a genuine Level 3 demand, not forced low. A 4+ means the anti-count guard did not bind. new check"
+M03,MSm,3,within1,,,"pure MSc. He states what he wants (the premium plan) but not why, and he will argue. The carve needs the stance stated together with the reasons, so it does not apply. Bringing him round needs his unstated reasons inferred: Level 3 mentalising, not explicit reasoning about interlocking states. Genuine demand, not forced low. new check"
+M04,MSm,1,<=2,,,"pure MSc. He states in writing that he will not deliver before March, with his reasons set out in full, and nothing puts his sincerity in question. The carve applies as for M01: Level 1 or at most 2. A 3+ means the carve did not bind. new check"
