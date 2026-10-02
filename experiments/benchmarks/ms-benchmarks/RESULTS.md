@@ -73,5 +73,5 @@ one task off zero, so nothing is testable there; where a coefficient exists it i
 
 - Rivercross was dropped before any label (amendment 1).
 - Runner fix during the run: two judges wrote to `prompts/../responses/…`; the runner now normalises paths
-  (`src/adele/mass/backends/subagent.py`, local commit awaiting push approval). No answer changed.
+  (`src/adele/mass/backends/subagent.py`, commit `70db192`). No answer changed.
 - One chunked-read answer was written before the judge finished reading; rejected for protocol and relabelled.
