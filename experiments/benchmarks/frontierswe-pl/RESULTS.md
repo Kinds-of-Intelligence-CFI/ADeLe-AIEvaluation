@@ -8,7 +8,9 @@ Its correlation with solve rate is negative but far from significant (ρ = −0.
 p = 0.15). PLe and PLs show nothing.
 
 **Status.** Complete (2026-10-01). 57 cells (19 tasks × PLp, PLe, PLs), all labelled by Opus 5.5 at effort low,
-protocol clean. All five sealed predictions came out as the higher-probability side.
+protocol clean. All five sealed predictions came out as the higher-probability side. Amendment 1 (2026-10-02): PLp on
+the 15 dropped tasks; 4 reach Level 4 (inconclusive by the pre-registered rule), and PLp falls with mean reward on all
+34 (ρ = −0.36, p = 0.037).
 
 ## Design
 
@@ -46,6 +48,32 @@ From `results/analysis.json` (`analysis/analyse.py`). Spearman, Fisher-z 95% int
 FrontierSWE tasks are all large projects, and the PLp scale treats them alike: Level 3 covers almost everything. With
 19 tasks and one off-mode label, this benchmark cannot test PLp. Like Terminal-Bench, it says the top of the PLp scale
 is coarse for long agentic work.
+
+## Amendment 1 — PLp on the 15 dropped tasks
+
+**Question.** Does the clean-set rule (drop tasks no model brings to 0.9) cut off the top of the PLp scale?
+
+**Answer.** Partly; by the pre-registered rule the result is inconclusive. 4 of the 15 dropped tasks get PLp 4, against
+1 of 19 kept (Fisher one-sided p = 0.10). The four are optimisation and systems builds: cranelift-codegen-opt,
+libexpat-optimization, postgresql-18-on-sqlite and sglang-inference-system-optimization. The ML research tasks
+(optimizer-design, weather forecasting, MEG decoding) stay at 3. With all 34 tasks, PLp falls with mean reward
+(ρ = −0.36, p = 0.037), which the 19 clean tasks alone could not show.
+
+From `results/dropped.json` (`analysis/dropped.py`); run `frontierswe-pl-dropped`, 15 calls, all labelled by Opus 5.5
+at effort low, check OK.
+
+| prediction | p | outcome |
+|---|---|---|
+| at least one dropped task at PLp 4 or higher | 0.65 | held (4) |
+| five or more at PLp 4 or higher (rule: hides the top) | 0.2 | did not happen (4) |
+| one or fewer (rule: does not hide the top) | 0.5 | did not happen (4) |
+| Fisher one-sided p < 0.05 | 0.2 | did not happen (p 0.10) |
+| PLp against mean reward on all 34 negative, p < 0.05 | 0.2 | happened (−0.36, p 0.037) |
+
+**Reading.** Level 4 is commoner among the tasks no model solves, so the clean-set rule removes some of the top of the
+scale. It does not explain the whole ceiling: 11 of the 15 hardest tasks still sit at 3, including the open research
+ones. The all-34 correlation uses mean reward, which is defined for never-solved tasks; it is the one outcome here that
+does not need the clean-set rule.
 
 ## Deviations and caveats
 
