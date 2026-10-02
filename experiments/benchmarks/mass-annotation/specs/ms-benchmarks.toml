@@ -1,0 +1,30 @@
+# MSm and MSc (v2 drafts) on the clean sets of the PL studies (experiments/benchmarks/ms-benchmarks): SWE-bench Verified,
+# tau2 (3 domains), Terminal-Bench 4.0 and Science, DeepSWE, FrontierSWE, ProgramBench (single-read tasks) and the
+# rivercross grid. ProgramBench's 13 long tasks are in ms-benchmarks-long.toml.
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting).
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/ms-benchmarks.toml
+name = "ms-benchmarks"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "tau2-airline", "tau2-retail", "tau2-banking_knowledge", "terminal-bench-4.0.0",
+              "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench", "rivercross-search"]
+subset = "experiments/benchmarks/ms-benchmarks/subset.csv"
+
+[rubrics]
+refs = ["v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 50
