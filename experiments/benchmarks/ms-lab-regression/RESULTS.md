@@ -53,9 +53,9 @@ runs one way: steering someone requires modelling them, but modelling someone do
 - **The judge and prompt are not the problem.** Where the lab's items exist verbatim, today's judge reproduces them
   exactly, including the full MSc ladder and Pablo's labels.
 - **PLs's Level 5 examples load MSm.** An arms race and a bank run are forecasts in which each side's expectation of
-  the other drives the outcome; MSm reads that as beliefs about beliefs. This is a desideratum-6 question for PLs's
-  examples (they should load PLs alone), or a construct ruling that reflexive expectations count for both, as the
-  PLp/PLs chess co-load was accepted. Pablo decides.
+  the other drives the outcome; MSm reads that as beliefs about beliefs. Pablo's ruling (2026-10-02): the overlap is
+  acceptable, and reflexive expectations count for both rubrics, as the PLp/PLs chess co-load was accepted. The PLs
+  examples stay as they are.
 - **The r36 failure is most likely the rebuild.** r36 saved only "dozens of custody splits, most unworkable". The
   rebuilt text has parents who each reject any split favouring the other, which MSc's own Level 5 note places below 5
   when the required positions can be reconciled. It cannot separate rebuild from judge; every verbatim item argues for
