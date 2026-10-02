@@ -14,6 +14,7 @@ list exists, so nothing else is dropped. `dropped_at_0.5` marks tasks no best ru
 `dropped_at_0.9_only` marks those the 0.9 rule drops but a 0.5 rule would keep. Flags (not exclusions):
   github_issue    an open issue on Proximal-Labs/frontier-swe-v2 names the task (frontierswe-data/NOTES.md, 2026-10-01)
   version_suffix  the task.toml name carries a -patched/-hardened/-qemu/-impl suffix that the site slug lacks
+subset_dropped.csv lists the never-solved tasks (amendment 1).
 
     python experiments/benchmarks/frontierswe-pl/make_set.py
 """
@@ -60,6 +61,8 @@ def main() -> None:
     out["keep"] = out["excluded_by"] == ""
     out = out.rename_axis("instance_id").sort_index().reset_index()
     out.to_csv(HERE / "tasks.csv", index=False)
+    # Amendment 1: the never-solved tasks, as an `adele mass` subset.
+    out.loc[~out["keep"], ["instance_id"]].assign(keep=True).to_csv(HERE / "subset_dropped.csv", index=False)
 
     k = out[out["keep"]]
     print(f"{len(out)} tasks; kept {len(k)}; never_solved at {TAU}: {int((~out['keep']).sum())} "
