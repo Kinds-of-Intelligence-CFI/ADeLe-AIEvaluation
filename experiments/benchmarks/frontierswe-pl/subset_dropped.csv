@@ -1,0 +1,16 @@
+instance_id,keep
+cranelift-codegen-opt,True
+ffmpeg-libswscale-optimization,True
+fitness-recap-video-in-remotion,True
+libexpat-optimization,True
+medium-range-weather-forecast,True
+meg-speech-decoding,True
+msms-denovo-generation,True
+multi-gpu-efficient-finetuning,True
+notebook-compression,True
+optimizer-design,True
+postgresql-18-on-sqlite,True
+sglang-inference-system-optimization,True
+snooker-prediction,True
+synthetic-music-diarization,True
+vision-only-torcs-racing-bot,True

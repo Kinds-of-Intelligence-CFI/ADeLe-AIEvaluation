@@ -48,3 +48,29 @@ latter. With n = 19 and a coarse outcome, power is low.
 - At least 15 of the 19 tasks at PLp 3 or higher: 0.75.
 - At least one task at PLp 4 or higher: 0.6.
 - Neither PLe nor PLs significant (p < 0.05) against solve rate at 0.9: 0.8.
+
+## Amendment 1 — PLp on the 15 dropped tasks (2026-10-02, before any of their labels)
+
+**Why.** The clean-set rule drops the 15 tasks no model brings to 0.9. Most are research and optimisation work
+(optimizer design, inference and codec optimisation, weather forecasting), where a plan may have to be discovered.
+The judge rarely gives PLp 4 on any benchmark. This tests whether our own filter cuts off the top of the scale.
+Pablo approved the test (2026-10-02).
+
+**Design.** Run `frontierswe-pl-dropped` (`../mass-annotation/specs/frontierswe-pl-dropped.toml`): v2/PLp (text O) on
+the 15 dropped tasks (`subset_dropped.csv`, from `make_set.py`), same prompt and judge as the main run, 15 calls.
+Analysis (`analysis/dropped.py` → `results/dropped.json`):
+- **Primary.** The number of dropped tasks at PLp 4 or higher. Rule: 5 or more means the clean-set rule hides the top
+  of the scale; 1 or fewer means it does not, and the ceiling lies in how the scale reads long engineering tasks;
+  2 to 4 is inconclusive.
+- **Secondary.** Share at PLp ≥ 4, dropped against kept (1 of 19): Fisher exact, one-sided. PLp against run-weighted
+  mean reward on all 34 tasks: Spearman, predicted negative.
+
+**Predictions (sealed).** On the 19 kept tasks, 18 are at PLp 3 and one at 4. Across benchmarks the judge gives 4
+rarely, mostly to tasks whose structure must be found.
+- At least one dropped task at PLp 4 or higher: 0.65.
+- Five or more at PLp 4 or higher (rule: hides the top): 0.2.
+- One or fewer (rule: does not hide the top): 0.5.
+- Fisher one-sided p < 0.05: 0.2.
+- PLp against mean reward on all 34 negative with p < 0.05: 0.2.
+
+**Cost.** 15 Opus-low calls.
