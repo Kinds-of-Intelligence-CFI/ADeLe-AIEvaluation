@@ -42,7 +42,22 @@ MSm and MSc come from one study across all sets:
   mostly 0–2. Their signals are weak and secondary.
 - **MSm and MSc separate social from single-agent tasks.** They are 0 on every coding and terminal set and about 2 on
   tau2, the only set with another party. They do not track tau2 difficulty: tau2 tasks fail on procedure, which PLp
-  reads. Testing them needs frontier benchmarks with real social variation.
+  reads. The social benchmarks below test them further.
+
+## Social benchmarks (2026-10-03)
+
+Three frontier benchmarks with other parties, labelled on all five rubrics to test MSm and MSc where social demand
+should matter.
+
+| benchmark | outcome | MSm / MSc levels | result |
+|---|---|---|---|
+| [EQ-Bench 4](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/eqbench4-plms/RESULTS.md) (120 persona chats, 10 models) | new judged outcome: did the person disclose their hidden issue (κ 0.87; tracks Elo +0.85) | MSm 4 on 119; MSc 3 or 4 | no rubric tracks disclosure within source; MSm saturates |
+| [CooperBench](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/cooperbench-plms/RESULTS.md) (120 pairs, solo and coop) | drop in success from solo to coop | coop: MSm 3, MSc 2 on all; solo 0 | both rise with cooperation, but are flat across pairs; no link to the drop |
+| [Game Arena](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/gamearena-plms/RESULTS.md) (24 game × role) | none comparable across games | MSc 0 on board games, 4 on werewolf talk and bargaining | profiles as expected; a model's social-game edge does not match its EQ-Bench rating |
+
+What it says: MSm and MSc separate social from non-social tasks reliably, but within a social benchmark they barely
+vary, so they cannot rank social tasks by difficulty. What makes social tasks hard here (a defensive persona, a power
+imbalance, colliding features) is not what the rubrics read.
 
 ## Controlled tests
 
