@@ -6,11 +6,13 @@ they meet the rubric desiderata (natural, v1-like, no glosses or stock phrases, 
 **Answer.** Mostly, but 42 bullets needed changing, and all 42 pass a placement check. Six reviewers (one per PL and MS
 rubric, one for the three memory rubrics) checked all 165 bullets against `BRIEF.md`. They reworded 33, replaced 9
 and dropped 2 (44 of 165 touched), and flagged 10 for Pablo without changing them. The 42 new or reworded bullets were then judged with the bullet
-itself removed from the rubric: 37 land on their level and 5 one level off; none is two or more off. All are adopted.
+itself removed from the rubric: 37 land on their level and 5 one level off; none is two or more off. The PL and MS changes are adopted; the 16 memory-rubric changes are not (see Status).
 
 **Status.** Complete (2026-10-04). 126 Opus 5.5 low calls (3 repeats per bullet; 3 retried after a permission block
-stopped the judges from saving), all written by Opus 5.5. Adopted into `src/` on Pablo's standing approval for
-example-only changes. Benchmark labels predate these texts.
+stopped the judges from saving), all written by Opus 5.5. The PLp, PLe, PLs, MSm and MSc changes are adopted into `src/`
+on Pablo's standing approval for example-only changes. The MMe, MMp and MMs changes were adopted in `d4ec2ec` by mistake
+and reverted on 2026-10-04: those rubrics are Marko's, so the candidates and reviews in `MM*/` are suggestions for him,
+not adopted text. Benchmark labels predate these texts.
 
 ## What changed, by rubric
 
@@ -36,7 +38,7 @@ kept). Rule, set before judging: adopt if the median of three is within one leve
 - Exact: 37 of 42.
 - One level off: PLp Level 0 translation (reads 1), PLp Level 5 research programme (4, 4, 5), PLs Level 4 checkout
   memory spiral (reads 3), and the MMs chess and mental-multiplication pair (read 5 and 4 at Levels 4 and 5). The
-  MMs pair was swapped, so both now sit at the level they read.
+  candidate swaps the MMs pair, so both would sit at the level they read (a suggestion for Marko, not adopted).
 - The new computer-world PLs examples: Level 3 retries (3, 3, 3), Level 4 memory spiral (3, 3, 3), Level 5 congestion
   control (5, 5, 5).
 

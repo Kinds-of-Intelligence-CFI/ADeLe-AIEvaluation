@@ -16,7 +16,7 @@ Examples:
 
 Level 2: Low. Executing a short, fixed sequence of 3–5 ordered actions with minimal branching, where the steps are known or inferable but not routinely practised; careful adherence is needed to avoid error.
 Examples:
-* Write the Markdown for a table with two columns, a header row and two data rows.
+* Write the Markdown for a 2-column, 3-row table: first the header row, then the separator row, then two data rows, each on its own line.
 * Format a raw reference into APA 7th style, listing the ordered steps.
 * Set a digital clock to 7:30 am.
 
@@ -24,12 +24,12 @@ Level 3: Intermediate. The task requires executing or explaining a longer or con
 Examples:
 * Performing long multiplication of two two-digit numbers, showing each partial product and carry.
 * Outlining the Euclidean algorithm to find the greatest common divisor of 42 and 70.
-* Give the Git commands to rebase a feature branch onto the latest main, what to run if a conflict stops the rebase, and how to update the remote branch.
+* Outline the exact command-line sequence to initialise a Git repository, add all files, commit with the message 'init', create a remote on GitHub named origin, and push the main branch.
 
 Level 4: High. Achieving the correct answer relies on a complex, hierarchical or pattern-driven procedure — for example, recognising and extending a hidden stimulus sequence, using nested loops, or switching sub-routines based on cues.
 Examples:
-* Describe the adult cardiac-arrest algorithm, switching between the shockable and non-shockable branches as the heart rhythm changes at each two-minute check.
-* Describe the hierarchical algorithm, case recognition and finger-trick sequence that solves all four last-layer corners on a 4×4 Rubik's Cube.
+* List every item in the Cessna 172 pre-flight checklist from Cabin Documents through Flight Controls in proper order.
+* Describe the hierarchical algorithm, case recognition and finger-trick sequence that solves all four last-layer corners on a 4×4 Rubik's Cube at competition speed.
 * Give the coordinated sequence a licensed electrician follows to de-energise, replace and re-energise a three-phase distribution board, including lock-out/tag-out, voltage verification, conductor sizing, insulation-resistance testing and earth-fault loop-impedance measurement to code.
 
 Level 5: Very high. The item demands intricate, domain-specific procedural schemas that integrate probabilistic cues, adapt to novel contexts, or unfold over many steps with multiple levels of sub-goal management. These abilities are typically honed by extensive practice and often executed implicitly.
