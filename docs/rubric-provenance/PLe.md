@@ -31,3 +31,10 @@ commissioning minimal pair HELD at 2 unanimously, the elected arm at 3 — the e
 drag juncture-checking into L1. The tau re-key sheet is adopted; the five tau-* PLe anchors are 1.
 r76's own caveats (tau cells corroborative rather than independent; 4-gram check run post-hoc,
 one against-prediction hit on T4) are in RESULTS-r76.md.
+
+## 2026-10-04 — examples review
+
+Example bullets only; no level statement, Note or scope text changed. Reviewed against the rubric's own clauses and the
+desiderata (`experiments/benchmarks/examples-review/PLe/REVIEW.md`); each new or reworded bullet was placement-checked
+with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
+approval for example-only changes. Flagged items are listed in the review.

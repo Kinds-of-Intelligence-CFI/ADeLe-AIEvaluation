@@ -25,3 +25,10 @@ text — 9/9 medians equal to r61, 26/27 cells exact, all three carves cited by 
 head-counting miss on the briefing item replicated and absorbed by the median exactly as in r61.
 Caveat recorded in the round: r61's item texts were never persisted, so r75 used reconstructions
 from the r61 descriptions. MSc's only remaining gap is desideratum 9.
+
+## 2026-10-04 — examples review
+
+Example bullets only; no level statement, Note or scope text changed. Reviewed against the rubric's own clauses and the
+desiderata (`experiments/benchmarks/examples-review/MSc/REVIEW.md`); each new or reworded bullet was placement-checked
+with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
+approval for example-only changes. Flagged items are listed in the review.

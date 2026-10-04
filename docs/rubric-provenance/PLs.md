@@ -54,3 +54,10 @@ Moved out of the rubric's `#!` line on 2026-08-25. Rounds are in `labs/rubric-qa
   examples show the rule rather than change it.
 - **Known effect.** PLs falls on runnable code tasks, mainly DeepSWE (12 of 13 sampled tasks at Level 2 fall to 1).
   Released PLs labels predate this text; they are relabelled under `experiments/benchmarks/pls-relabel`.
+
+## 2026-10-04 — examples review
+
+Example bullets only; no level statement, Note or scope text changed. Reviewed against the rubric's own clauses and the
+desiderata (`experiments/benchmarks/examples-review/PLs/REVIEW.md`); each new or reworded bullet was placement-checked
+with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
+approval for example-only changes. Flagged items are listed in the review.

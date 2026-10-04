@@ -18,3 +18,10 @@ The turned-agent item (three mutually constraining attributions in one exchange)
 r60's two-attribution item had correctly held at 4. Both directions of the L4/L5 boundary are now
 measured: single nesting stays at 4, a three-way interlock reaches 5, dyadic or not. The last
 untested operative claim in MSm is closed. Still OPEN: no human label on any MSm item.
+
+## 2026-10-04 — examples review
+
+Example bullets only; no level statement, Note or scope text changed. Reviewed against the rubric's own clauses and the
+desiderata (`experiments/benchmarks/examples-review/MSm/REVIEW.md`); each new or reworded bullet was placement-checked
+with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
+approval for example-only changes. Flagged items are listed in the review.

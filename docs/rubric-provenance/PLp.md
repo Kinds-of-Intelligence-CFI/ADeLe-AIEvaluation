@@ -34,3 +34,10 @@ Moved out of the rubric's `#!` line on 2026-08-25. Rounds are in `labs/rubric-qa
 - **Open.** Judges' odds estimates were not validated (the rivercross proxy does not match O's agent). Real-task
   relabel and incremental prediction (desideratum 9) are next.
 - version: v2-o (2026-10-01); sha256 322674ef…
+
+## 2026-10-04 — examples review
+
+Example bullets only; no level statement, Note or scope text changed. Reviewed against the rubric's own clauses and the
+desiderata (`experiments/benchmarks/examples-review/PLp/REVIEW.md`); each new or reworded bullet was placement-checked
+with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
+approval for example-only changes. Flagged items are listed in the review.
