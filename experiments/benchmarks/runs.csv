@@ -30,6 +30,8 @@ plp-candidate,knowl-tb,2026-09-28T11:04:18+00:00,15cd030,34,opus-low,34,34
 plp-o-relabel,o-swe,2026-10-01T10:05:18+00:00,92f28fc,398,opus-low,398,398
 plp-o-relabel,o-tau2,2026-10-01T10:05:18+00:00,92f28fc,232,opus-low,232,232
 plp-o-relabel,o-tb4,2026-10-01T10:05:18+00:00,92f28fc,66,opus-low,65,65
+pls-computer,plsc-1,2026-10-04T10:36:31+00:00,590f986,209,opus-low,209,209
+pls-computer,plsc-2,2026-10-04T10:44:39+00:00,0fc261b,6,opus-low,6,6
 rivercross-v2,rc-contrast,2026-09-30T12:26:33+00:00,281ab27,59,opus-low-r1;opus-low-r2;opus-low-r3,177,177
 rivercross-v2,rc-play,2026-09-30T12:08:46+00:00,b07f993,49,opus-low,49,49
 rivercross-v2,rc-search,2026-09-30T12:51:16+00:00,04c87c0,54,opus-low-r1;opus-low-r2;opus-low-r3,162,162

@@ -4,7 +4,7 @@ Owner: Pablo. Three example bullets are added to PLs at Levels 3, 4 and 5: compu
 (`PLs_candidate.txt`). The check is that they place where intended and change nothing else. Judge: Opus 5.5 at
 effort low, v2 prompt.
 
-**Status.** Pre-registered 2026-10-04; running.
+**Status.** Complete (2026-10-04): the candidate passes, and all three examples are kept. They lower PLs on DeepSWE. See `RESULTS.md`.
 
 | | |
 |---|---|
