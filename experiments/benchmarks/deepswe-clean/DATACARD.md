@@ -53,6 +53,7 @@ missing, not failures. `solve_rate_pre_timeout` drops the 8 configurations run a
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
+  PLs is the text adopted on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction (verbatim, as the agent sees it), a
@@ -61,8 +62,8 @@ missing, not failures. `solve_rate_pre_timeout` drops the 8 configurations run a
 
 ## What the labels show
 
-PLp falls with solve rate on the clean set: ρ = {rho_plp}. PLe and PLs show nothing (ρ ≈ 0). MSm and MSc are 0 on
-every task: DeepSWE involves no other party. Full results:
+PLp falls with solve rate on the clean set: ρ = {rho_plp}. PLs falls too: ρ = -0.22 (p = 0.033, n = 90). PLe shows
+nothing (ρ ≈ 0). MSm and MSc are 0 on every task: DeepSWE involves no other party. Full results:
 [deepswe-clean/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/deepswe-clean/RESULTS.md).
 
 ## Limits

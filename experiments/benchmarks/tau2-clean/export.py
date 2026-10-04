@@ -7,9 +7,11 @@
   release/rubrics.csv      every rubric used: code, generation, name, file, sha256
   release/MANIFEST.tsv     sha256 of every file above
 
-Inputs are committed study files only (tasks.csv, the labels_long.csv of each source run, the mass run's labels.csv,
-results/clean.json), so the release can be rebuilt at any commit. Only answers written by claude-opus-5-5 are exported.
-No task text. Tasks are keyed by (benchmark, instance_id): tau2 ids repeat across domains.
+Inputs are committed study files only (tasks.csv, the labels_long.csv of each PLp and PLe source run, the labels.csv of
+mass run tau2-clean-new-pl for PLp and PLe, the labels.csv and manifest.json of mass run pls-relabel, which gives every
+PLs label with the PLs text of 2026-10-04, results/clean.json), so the release can be rebuilt at any commit. Only
+answers written by claude-opus-5-5 are exported. No task text. Tasks are keyed by (benchmark, instance_id): tau2 ids
+repeat across domains.
 
     python experiments/benchmarks/tau2-clean/analysis/analyse.py      # results/clean.json, quoted in the card
     python experiments/benchmarks/tau2-clean/export.py
@@ -33,9 +35,9 @@ DIMS = ["PLp", "PLe", "PLs"]
 KEY = ["benchmark", "instance_id"]
 # (rubric, run folder, study). Order matters: the first source with a label wins.
 SOURCES = [("PLp", "plp-o-relabel/labels/o-tau2", "plp-o-relabel"),
-           ("PLe", "pl-relabel-v2/labels/v2-tau2", "pl-relabel-v2"),
-           ("PLs", "pl-relabel-v2/labels/v2-tau2", "pl-relabel-v2")]
-MASS_RUN = BENCH / "mass-annotation/runs/tau2-clean-new-pl"
+           ("PLe", "pl-relabel-v2/labels/v2-tau2", "pl-relabel-v2")]
+MASS_RUN = BENCH / "mass-annotation/runs/tau2-clean-new-pl"  # PLp and PLe of the new banking tasks
+PLS_RUN = BENCH / "mass-annotation/runs/pls-relabel"  # every PLs label
 
 
 def sha256(b: bytes) -> str:
@@ -68,12 +70,21 @@ def main() -> None:
                          "study": study, "run": Path(run).name})
     mass = ok(pd.read_csv(MASS_RUN / "labels.csv", dtype={"instance_id": str}))
     builder = json.loads((MASS_RUN / "manifest.json").read_text())["frozen"]["prompt"]["function"]
-    for r in mass[mass["rubric_ref"].isin([f"v2/{d}" for d in DIMS])].itertuples(index=False):
+    for r in mass[mass["rubric_ref"].isin(["v2/PLp", "v2/PLe"])].itertuples(index=False):
         rows.append({"benchmark": r.benchmark, "instance_id": r.instance_id, "rubric": r.rubric_ref,
                      "level": int(r.level), "judge_model": r.writer_model, "judge_effort": r.effort,
                      "judge_harness": "claude-code-subagent" if r.backend == "subagent" else r.backend,
                      "prompt_builder": builder, "prompt_sha256": r.prompt_sha256,
                      "response_sha256": r.response_sha256, "study": "mass-annotation", "run": r.run})
+    pls = ok(pd.read_csv(PLS_RUN / "labels.csv", dtype={"instance_id": str}))
+    pls = pls[pls["benchmark"].str.startswith("tau2-") & (pls["rubric_ref"] == "v2/PLs")]
+    frozen = json.loads((PLS_RUN / "manifest.json").read_text())["frozen"]
+    for r in pls.itertuples(index=False):
+        rows.append({"benchmark": r.benchmark, "instance_id": r.instance_id, "rubric": r.rubric_ref,
+                     "level": int(r.level), "judge_model": r.writer_model, "judge_effort": r.effort,
+                     "judge_harness": "claude-code-subagent" if r.backend == "subagent" else r.backend,
+                     "prompt_builder": frozen["prompt"]["function"], "prompt_sha256": r.prompt_sha256,
+                     "response_sha256": r.response_sha256, "study": "pls-relabel", "run": r.run})
     labels = pd.DataFrame(rows)
     labels = labels[labels.set_index(KEY).index.isin(keep.index)].drop_duplicates(KEY + ["rubric"], keep="first")
     missing = len(keep) * len(DIMS) - len(labels)
@@ -87,15 +98,16 @@ def main() -> None:
             .join(labels.pivot(index=KEY, columns="rubric", values="level")))
     wide.reset_index().to_csv(OUT / "labels_wide.csv", index=False)
     tasks.to_csv(OUT / "tasks.csv", index=False)
-    pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
-                   "file": str(Path(cat[d].file_path).relative_to(ROOT)),
-                   "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS]).to_csv(
-        OUT / "rubrics.csv", index=False)
+    rub = pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
+                         "file": str(Path(cat[d].file_path).relative_to(ROOT)),
+                         "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS])
+    rub.loc[rub["code"] == "PLs", "sha256"] = frozen["rubrics"]["v2/PLs"]["sha256"]  # pinned by pls-relabel
+    rub.to_csv(OUT / "rubrics.csv", index=False)
 
     res = json.loads((HERE / "results/clean.json").read_text())
     plp = res["within_domain_vs_solve_rate"]["PLp"]["combined"]
     fill = {"{n_kept}": str(len(keep)), "{n_labels}": str(len(labels)), "{commit}": git("rev-parse", "--short", "HEAD"),
-            "{n_new}": str(int((labels["study"] == "mass-annotation").sum() // len(DIMS))),
+            "{n_new}": str(len(labels.loc[labels["run"] == MASS_RUN.name, KEY].drop_duplicates())),
             "{rho_plp}": f"{plp['rho']:+.2f}", "{p_plp}": f"{plp['p_two_sided']:.2g}"}
     card = (HERE / "DATACARD.md").read_text(encoding="utf-8")
     for k, v in fill.items():

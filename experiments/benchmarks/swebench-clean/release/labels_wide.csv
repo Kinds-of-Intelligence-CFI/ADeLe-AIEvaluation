@@ -3,9 +3,9 @@ astropy__astropy-12907,88,135,0.6519,15 min - 1 hour,3,2,1,1
 astropy__astropy-13033,2,135,0.0148,15 min - 1 hour,3,1,1,1
 astropy__astropy-13236,12,135,0.0889,15 min - 1 hour,3,2,1,1
 astropy__astropy-13453,67,135,0.4963,15 min - 1 hour,3,2,1,1
-astropy__astropy-13579,96,135,0.7111,1-4 hours,3,2,2,2
+astropy__astropy-13579,96,135,0.7111,1-4 hours,3,2,1,2
 astropy__astropy-13977,1,135,0.0074,15 min - 1 hour,3,2,1,1
-astropy__astropy-14096,92,135,0.6815,15 min - 1 hour,3,2,2,1
+astropy__astropy-14096,92,135,0.6815,15 min - 1 hour,3,2,1,1
 astropy__astropy-14182,8,135,0.0593,15 min - 1 hour,3,2,1,1
 astropy__astropy-14309,127,135,0.9407,<15 min fix,3,1,1,0
 astropy__astropy-14365,14,135,0.1037,15 min - 1 hour,3,2,1,1
@@ -30,17 +30,17 @@ django__django-11099,127,135,0.9407,<15 min fix,3,0,1,0
 django__django-11119,127,135,0.9407,<15 min fix,3,1,1,0
 django__django-11138,15,135,0.1111,1-4 hours,3,2,1,2
 django__django-11141,21,135,0.1556,15 min - 1 hour,3,1,1,1
-django__django-11149,38,135,0.2815,15 min - 1 hour,3,2,1,1
+django__django-11149,38,135,0.2815,15 min - 1 hour,3,2,2,1
 django__django-11163,125,135,0.9259,<15 min fix,2,0,1,0
 django__django-11179,117,135,0.8667,<15 min fix,3,1,1,0
 django__django-11206,43,135,0.3185,15 min - 1 hour,3,2,1,1
-django__django-11211,91,135,0.6741,15 min - 1 hour,3,2,2,1
+django__django-11211,91,135,0.6741,15 min - 1 hour,3,2,1,1
 django__django-11239,46,135,0.3407,<15 min fix,3,1,1,0
-django__django-11265,42,135,0.3111,15 min - 1 hour,3,2,2,1
+django__django-11265,42,135,0.3111,15 min - 1 hour,3,2,1,1
 django__django-11276,101,135,0.7481,15 min - 1 hour,3,1,1,1
 django__django-11292,107,135,0.7926,15 min - 1 hour,3,2,1,1
 django__django-11299,63,135,0.4667,<15 min fix,3,2,1,0
-django__django-11333,64,135,0.4741,15 min - 1 hour,3,1,1,1
+django__django-11333,64,135,0.4741,15 min - 1 hour,3,1,2,1
 django__django-11433,17,135,0.1259,<15 min fix,3,2,1,0
 django__django-11451,106,135,0.7852,<15 min fix,3,1,1,0
 django__django-11477,2,135,0.0148,15 min - 1 hour,3,2,1,1
@@ -50,8 +50,8 @@ django__django-11551,120,135,0.8889,15 min - 1 hour,3,1,1,1
 django__django-11555,53,135,0.3926,<15 min fix,3,2,1,0
 django__django-11603,125,135,0.9259,<15 min fix,2,1,1,0
 django__django-11728,15,135,0.1111,15 min - 1 hour,3,1,1,1
-django__django-11734,3,135,0.0222,15 min - 1 hour,3,3,2,1
-django__django-11740,76,135,0.563,15 min - 1 hour,3,2,2,1
+django__django-11734,3,135,0.0222,15 min - 1 hour,3,3,1,1
+django__django-11740,76,135,0.563,15 min - 1 hour,3,2,1,1
 django__django-11749,94,135,0.6963,15 min - 1 hour,3,2,1,1
 django__django-11790,31,135,0.2296,15 min - 1 hour,3,1,1,1
 django__django-11815,86,135,0.637,15 min - 1 hour,3,1,1,1
@@ -70,7 +70,7 @@ django__django-12155,129,135,0.9556,15 min - 1 hour,3,1,1,1
 django__django-12193,76,135,0.563,<15 min fix,3,1,1,0
 django__django-12209,110,135,0.8148,<15 min fix,3,2,1,0
 django__django-12262,84,135,0.6222,15 min - 1 hour,3,2,1,1
-django__django-12273,18,135,0.1333,15 min - 1 hour,3,2,1,1
+django__django-12273,18,135,0.1333,15 min - 1 hour,3,2,2,1
 django__django-12276,115,135,0.8519,<15 min fix,3,1,1,0
 django__django-12304,84,135,0.6222,<15 min fix,3,1,1,0
 django__django-12308,22,135,0.163,<15 min fix,3,1,1,0
@@ -98,7 +98,7 @@ django__django-13279,86,135,0.637,15 min - 1 hour,3,2,1,1
 django__django-13297,60,135,0.4444,<15 min fix,3,2,1,0
 django__django-13315,84,135,0.6222,15 min - 1 hour,3,2,1,1
 django__django-13343,93,135,0.6889,15 min - 1 hour,3,2,1,1
-django__django-13344,5,135,0.037,1-4 hours,3,2,2,2
+django__django-13344,5,135,0.037,1-4 hours,3,2,1,2
 django__django-13346,57,135,0.4222,15 min - 1 hour,3,2,1,1
 django__django-13363,122,135,0.9037,<15 min fix,3,1,1,0
 django__django-13406,62,135,0.4593,<15 min fix,3,2,1,0
@@ -117,18 +117,18 @@ django__django-13741,125,135,0.9259,<15 min fix,3,1,1,0
 django__django-13786,119,135,0.8815,15 min - 1 hour,3,2,1,1
 django__django-13794,7,135,0.0519,<15 min fix,3,1,1,0
 django__django-13807,42,135,0.3111,<15 min fix,3,1,1,0
-django__django-13810,98,135,0.7259,15 min - 1 hour,3,2,2,1
+django__django-13810,98,135,0.7259,15 min - 1 hour,3,2,1,1
 django__django-13820,122,135,0.9037,15 min - 1 hour,3,1,1,1
 django__django-13821,118,135,0.8741,<15 min fix,3,2,1,0
 django__django-13837,101,135,0.7481,1-4 hours,3,2,1,2
 django__django-13925,55,135,0.4074,15 min - 1 hour,3,2,1,1
 django__django-13933,112,135,0.8296,<15 min fix,3,1,1,0
-django__django-13964,73,135,0.5407,15 min - 1 hour,3,2,2,1
+django__django-13964,73,135,0.5407,15 min - 1 hour,3,2,1,1
 django__django-14007,84,135,0.6222,1-4 hours,3,2,1,2
 django__django-14017,83,135,0.6148,15 min - 1 hour,3,2,1,1
 django__django-14053,101,135,0.7481,15 min - 1 hour,3,2,1,1
 django__django-14089,126,135,0.9333,<15 min fix,2,0,1,0
-django__django-14122,78,135,0.5778,15 min - 1 hour,3,2,2,1
+django__django-14122,78,135,0.5778,15 min - 1 hour,3,2,1,1
 django__django-14140,35,135,0.2593,15 min - 1 hour,3,2,1,1
 django__django-14170,3,135,0.0222,15 min - 1 hour,3,2,1,1
 django__django-14238,110,135,0.8148,15 min - 1 hour,3,1,1,1
@@ -155,19 +155,19 @@ django__django-14771,63,135,0.4667,15 min - 1 hour,3,2,1,1
 django__django-14792,1,135,0.0074,<15 min fix,3,2,1,0
 django__django-14855,127,135,0.9407,<15 min fix,3,1,1,0
 django__django-14999,84,135,0.6222,<15 min fix,3,2,1,0
-django__django-15022,74,135,0.5481,15 min - 1 hour,3,2,2,1
+django__django-15022,74,135,0.5481,15 min - 1 hour,3,2,1,1
 django__django-15037,65,135,0.4815,15 min - 1 hour,3,2,1,1
 django__django-15098,2,135,0.0148,15 min - 1 hour,3,2,1,1
 django__django-15103,96,135,0.7111,15 min - 1 hour,3,2,1,1
 django__django-15104,128,135,0.9481,<15 min fix,3,1,1,0
 django__django-15127,30,135,0.2222,<15 min fix,3,2,1,0
-django__django-15128,66,135,0.4889,1-4 hours,3,2,2,2
+django__django-15128,66,135,0.4889,1-4 hours,3,2,1,2
 django__django-15161,65,135,0.4815,15 min - 1 hour,3,2,1,1
 django__django-15252,1,135,0.0074,15 min - 1 hour,3,2,1,1
 django__django-15268,58,135,0.4296,1-4 hours,3,2,2,2
 django__django-15277,125,135,0.9259,<15 min fix,2,0,1,0
 django__django-15278,105,135,0.7778,15 min - 1 hour,3,2,1,1
-django__django-15280,14,135,0.1037,15 min - 1 hour,3,2,2,1
+django__django-15280,14,135,0.1037,15 min - 1 hour,3,2,1,1
 django__django-15315,116,135,0.8593,<15 min fix,3,1,1,0
 django__django-15368,124,135,0.9185,<15 min fix,3,1,1,0
 django__django-15375,56,135,0.4148,15 min - 1 hour,3,2,1,1
@@ -178,22 +178,22 @@ django__django-15503,22,135,0.163,1-4 hours,3,2,1,2
 django__django-15525,77,135,0.5704,15 min - 1 hour,3,2,1,1
 django__django-15554,24,135,0.1778,15 min - 1 hour,3,2,1,1
 django__django-15561,103,135,0.763,15 min - 1 hour,3,2,1,1
-django__django-15563,15,135,0.1111,15 min - 1 hour,3,2,2,1
+django__django-15563,15,135,0.1111,15 min - 1 hour,3,2,1,1
 django__django-15569,123,135,0.9111,<15 min fix,3,1,1,0
-django__django-15572,102,135,0.7556,<15 min fix,3,2,1,0
-django__django-15695,12,135,0.0889,15 min - 1 hour,3,2,2,1
+django__django-15572,102,135,0.7556,<15 min fix,3,2,2,0
+django__django-15695,12,135,0.0889,15 min - 1 hour,3,2,1,1
 django__django-15731,118,135,0.8741,15 min - 1 hour,3,1,1,1
 django__django-15732,19,135,0.1407,15 min - 1 hour,3,2,1,1
 django__django-15741,115,135,0.8519,<15 min fix,3,1,1,0
 django__django-15814,97,135,0.7185,15 min - 1 hour,3,1,1,1
 django__django-15851,119,135,0.8815,<15 min fix,3,1,1,0
 django__django-15863,105,135,0.7778,<15 min fix,3,2,1,0
-django__django-15916,35,135,0.2593,15 min - 1 hour,3,2,2,1
+django__django-15916,35,135,0.2593,15 min - 1 hour,3,2,1,1
 django__django-15930,79,135,0.5852,<15 min fix,3,2,1,0
-django__django-15957,9,135,0.0667,1-4 hours,3,3,2,2
+django__django-15957,9,135,0.0667,1-4 hours,3,3,1,2
 django__django-15973,6,135,0.0444,15 min - 1 hour,3,2,1,1
 django__django-15987,89,135,0.6593,<15 min fix,3,1,1,0
-django__django-16032,73,135,0.5407,15 min - 1 hour,3,2,2,1
+django__django-16032,73,135,0.5407,15 min - 1 hour,3,2,1,1
 django__django-16082,87,135,0.6444,15 min - 1 hour,3,1,1,1
 django__django-16100,94,135,0.6963,<15 min fix,3,1,1,0
 django__django-16136,97,135,0.7185,15 min - 1 hour,3,2,1,1
@@ -226,16 +226,16 @@ django__django-7530,110,135,0.8148,15 min - 1 hour,3,1,1,1
 django__django-9296,127,135,0.9407,<15 min fix,2,0,1,0
 matplotlib__matplotlib-13989,103,135,0.763,<15 min fix,3,1,1,0
 matplotlib__matplotlib-20488,33,135,0.2444,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-20676,20,135,0.1481,<15 min fix,3,2,2,0
+matplotlib__matplotlib-20676,20,135,0.1481,<15 min fix,3,2,1,0
 matplotlib__matplotlib-20826,40,135,0.2963,15 min - 1 hour,3,2,1,1
 matplotlib__matplotlib-20859,94,135,0.6963,<15 min fix,2,1,1,0
 matplotlib__matplotlib-21568,1,135,0.0074,15 min - 1 hour,3,2,1,1
 matplotlib__matplotlib-22719,121,135,0.8963,<15 min fix,3,1,1,0
 matplotlib__matplotlib-22865,51,135,0.3778,15 min - 1 hour,3,1,1,1
 matplotlib__matplotlib-22871,49,135,0.363,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-23299,6,135,0.0444,15 min - 1 hour,3,2,2,1
+matplotlib__matplotlib-23299,6,135,0.0444,15 min - 1 hour,3,2,1,1
 matplotlib__matplotlib-23412,104,135,0.7704,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-23476,2,135,0.0148,<15 min fix,3,2,2,0
+matplotlib__matplotlib-23476,2,135,0.0148,<15 min fix,3,2,1,0
 matplotlib__matplotlib-24026,102,135,0.7556,15 min - 1 hour,3,2,1,1
 matplotlib__matplotlib-24149,101,135,0.7481,<15 min fix,3,1,1,0
 matplotlib__matplotlib-24177,12,135,0.0889,<15 min fix,3,2,1,0
@@ -254,7 +254,7 @@ matplotlib__matplotlib-26113,114,135,0.8444,<15 min fix,3,2,1,0
 matplotlib__matplotlib-26208,2,135,0.0148,<15 min fix,3,2,1,0
 matplotlib__matplotlib-26291,67,135,0.4963,15 min - 1 hour,3,1,1,1
 matplotlib__matplotlib-26342,103,135,0.763,15 min - 1 hour,3,1,1,1
-mwaskom__seaborn-3069,44,135,0.3259,15 min - 1 hour,3,3,2,1
+mwaskom__seaborn-3069,44,135,0.3259,15 min - 1 hour,3,3,1,1
 mwaskom__seaborn-3187,6,135,0.0444,15 min - 1 hour,3,2,1,1
 pallets__flask-5014,123,135,0.9111,<15 min fix,3,1,1,0
 psf__requests-1142,67,135,0.4963,<15 min fix,3,1,1,0
@@ -279,7 +279,7 @@ pydata__xarray-4966,112,135,0.8296,15 min - 1 hour,3,2,1,1
 pydata__xarray-6461,100,135,0.7407,<15 min fix,3,1,1,0
 pydata__xarray-6599,43,135,0.3185,15 min - 1 hour,3,2,1,1
 pydata__xarray-6721,63,135,0.4667,15 min - 1 hour,3,2,1,1
-pydata__xarray-6744,67,135,0.4963,15 min - 1 hour,3,2,2,1
+pydata__xarray-6744,67,135,0.4963,15 min - 1 hour,3,2,1,1
 pydata__xarray-6938,13,135,0.0963,15 min - 1 hour,3,2,1,1
 pydata__xarray-7233,111,135,0.8222,15 min - 1 hour,3,2,1,1
 pylint-dev__pylint-4970,23,135,0.1704,<15 min fix,3,1,1,0
@@ -323,7 +323,7 @@ scikit-learn__scikit-learn-13439,122,135,0.9037,<15 min fix,3,1,1,0
 scikit-learn__scikit-learn-13496,113,135,0.837,<15 min fix,3,2,1,0
 scikit-learn__scikit-learn-13779,116,135,0.8593,<15 min fix,3,1,1,0
 scikit-learn__scikit-learn-14053,110,135,0.8148,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-14141,125,135,0.9259,<15 min fix,3,1,1,0
+scikit-learn__scikit-learn-14141,125,135,0.9259,<15 min fix,3,1,0,0
 scikit-learn__scikit-learn-14496,128,135,0.9481,<15 min fix,3,1,1,0
 scikit-learn__scikit-learn-14629,19,135,0.1407,15 min - 1 hour,3,2,1,1
 scikit-learn__scikit-learn-14710,104,135,0.7704,15 min - 1 hour,3,1,1,1
@@ -371,10 +371,10 @@ sphinx-doc__sphinx-9258,42,135,0.3111,<15 min fix,3,2,1,0
 sphinx-doc__sphinx-9281,83,135,0.6148,<15 min fix,3,2,1,0
 sphinx-doc__sphinx-9320,115,135,0.8519,<15 min fix,3,1,1,0
 sphinx-doc__sphinx-9367,116,135,0.8593,<15 min fix,2,1,1,0
-sphinx-doc__sphinx-9461,1,135,0.0074,1-4 hours,3,3,2,2
+sphinx-doc__sphinx-9461,1,135,0.0074,1-4 hours,3,3,1,2
 sphinx-doc__sphinx-9591,41,135,0.3037,<15 min fix,3,2,1,0
 sphinx-doc__sphinx-9602,8,135,0.0593,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-9658,41,135,0.3037,15 min - 1 hour,3,2,2,1
+sphinx-doc__sphinx-9658,41,135,0.3037,15 min - 1 hour,3,2,1,1
 sphinx-doc__sphinx-9673,73,135,0.5407,15 min - 1 hour,3,2,1,1
 sphinx-doc__sphinx-9698,107,135,0.7926,<15 min fix,3,1,1,0
 sphinx-doc__sphinx-9711,101,135,0.7481,<15 min fix,3,1,1,0

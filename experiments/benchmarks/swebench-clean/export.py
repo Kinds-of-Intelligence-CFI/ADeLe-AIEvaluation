@@ -7,13 +7,16 @@
   release/rubrics.csv      every rubric used: code, generation, name, file, sha256
   release/MANIFEST.tsv     sha256 of every file above
 
-Inputs are the committed study files only (tasks.csv and the labels_long.csv of each source run), so the release can be
-rebuilt at any commit. Only answers written by the requested judge (claude-opus-5-5) are exported. No task text.
+Inputs are the committed study files only (tasks.csv, the labels_long.csv of each PLp and PLe source run, and the
+labels.csv and manifest.json of mass run pls-relabel, which gives every PLs label with the PLs text of 2026-10-04), so
+the release can be rebuilt at any commit. Only answers written by the requested judge (claude-opus-5-5) are exported.
+No task text.
 
     uv run --extra annotate python experiments/benchmarks/swebench-clean/export.py
 """
 
 import hashlib
+import json
 import subprocess
 from pathlib import Path
 
@@ -33,10 +36,8 @@ SOURCES = [("PLp", "swebench-clean/labels/clean-swe", "swebench-clean"),
            ("PLp", "plp-b2/labels/o-swe-gate", "plp-b2"),
            ("PLe", "swebench-clean/labels/clean-swe", "swebench-clean"),
            ("PLe", "pl-relabel-v2/labels/v2-swe", "pl-relabel-v2"),
-           ("PLe", "natural-prompt/labels/npb-gate-opuslow", "natural-prompt"),
-           ("PLs", "swebench-clean/labels/clean-swe", "swebench-clean"),
-           ("PLs", "pl-relabel-v2/labels/v2-swe", "pl-relabel-v2"),
-           ("PLs", "natural-prompt/labels/npb-gate-opuslow", "natural-prompt")]
+           ("PLe", "natural-prompt/labels/npb-gate-opuslow", "natural-prompt")]
+PLS_RUN = BENCH / "mass-annotation/runs/pls-relabel"  # every PLs label
 BUCKETS = {"<15 min fix": 0, "15 min - 1 hour": 1, "1-4 hours": 2, ">4 hours": 3}
 
 
@@ -66,6 +67,16 @@ def main() -> None:
                          "prompt_builder": "adele.annotation.prompts.build_annotation_prompt_v2",
                          "prompt_sha256": r.prompt_sha256, "response_sha256": r.response_sha256,
                          "study": study, "run": Path(run).name})
+    pls = pd.read_csv(PLS_RUN / "labels.csv", dtype={"instance_id": str})
+    pls = pls[(pls["benchmark"] == "swe-bench-verified") & (pls["rubric_ref"] == "v2/PLs") & pls["valid"].astype(bool)
+              & pls["writer_model"].astype(str).str.startswith(MODEL)]
+    frozen = json.loads((PLS_RUN / "manifest.json").read_text())["frozen"]
+    for r in pls[pls["instance_id"].isin(keep.index)].itertuples(index=False):
+        rows.append({"instance_id": r.instance_id, "rubric": r.rubric_ref, "level": int(r.level),
+                     "judge_model": r.writer_model, "judge_effort": r.effort,
+                     "judge_harness": "claude-code-subagent" if r.backend == "subagent" else r.backend,
+                     "prompt_builder": frozen["prompt"]["function"], "prompt_sha256": r.prompt_sha256,
+                     "response_sha256": r.response_sha256, "study": "pls-relabel", "run": r.run})
     labels = pd.DataFrame(rows).drop_duplicates(["instance_id", "rubric"], keep="first")
     missing = len(keep) * 3 - len(labels)
     assert missing == 0, f"{missing} clean-task labels missing"
@@ -83,6 +94,7 @@ def main() -> None:
     rub = [{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
             "file": str(Path(cat[d].file_path).relative_to(ROOT)), "sha256": sha256(Path(cat[d].file_path).read_bytes())}
            for d in ("PLp", "PLe", "PLs")]
+    rub[2]["sha256"] = frozen["rubrics"]["v2/PLs"]["sha256"]  # the PLs text pinned by pls-relabel
     pd.DataFrame(rub).to_csv(OUT / "rubrics.csv", index=False)
 
     card = (HERE / "DATACARD.md").read_text(encoding="utf-8")

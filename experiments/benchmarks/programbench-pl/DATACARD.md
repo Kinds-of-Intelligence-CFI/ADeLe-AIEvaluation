@@ -59,6 +59,7 @@ runs. `difficulty` is ProgramBench's own label.
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
+  PLs is the text adopted on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept. Prompts too long for one read (13 tasks) were read in 200-line parts by the same
   model, and a check required every line to come back.

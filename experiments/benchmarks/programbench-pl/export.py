@@ -1,7 +1,8 @@
 """Build the shareable release of ProgramBench with demand labels: release/ (see ../release.py for the layout).
 
-Labels: PLp, PLe, PLs from runs programbench-pl and programbench-pl-long; MSm, MSc from runs ms-benchmarks and
-ms-benchmarks-long (the 130 clean tasks). No task text (third-party documentation under many licences).
+Labels: PLp, PLe from runs programbench-pl and programbench-pl-long; PLs from runs pls-relabel and pls-relabel-long
+(the PLs text of 2026-10-04); MSm, MSc from runs ms-benchmarks and ms-benchmarks-long (the 130 clean tasks). No task
+text (third-party documentation under many licences).
 
     python experiments/benchmarks/programbench-pl/analysis/analyse.py      # results/analysis.json, quoted in the card
     python experiments/benchmarks/programbench-pl/export.py
@@ -24,7 +25,9 @@ def main() -> None:
     res = json.loads((HERE / "results/analysis.json").read_text())
     r = res["spearman"]["clean"]["PLp_vs_solve_rate_0.9"]
     tasks = pd.read_csv(HERE / "tasks.csv", dtype={"instance_id": str})
-    runs = {"programbench-pl": "programbench-pl", "programbench-pl-long": "programbench-pl",
+    runs = {"programbench-pl": ("programbench-pl", ["PLp", "PLe"]),
+            "programbench-pl-long": ("programbench-pl", ["PLp", "PLe"]),
+            "pls-relabel": ("pls-relabel", ["PLs"]), "pls-relabel-long": ("pls-relabel", ["PLs"]),
             "ms-benchmarks": "ms-benchmarks", "ms-benchmarks-long": "ms-benchmarks"}
     lab, _ = release.labels("programbench", runs, DIMS)
     have = set(zip(lab["instance_id"], lab["rubric"]))

@@ -19,7 +19,7 @@ tau2-airline,23,airline-23,all,0.3214,7,0.3214,7,,,,,177c082262a7,2,2,2
 tau2-airline,24,airline-24,all,0.8571,7,0.623,16,,,,,8ae492ed74d7,1,2,2
 tau2-airline,25,airline-25,all,0.9643,7,0.9643,7,,,,,4b6daf998305,1,2,2
 tau2-airline,26,airline-26,all,1.0,7,0.8852,16,,,,,ca31d67ec9d0,1,1,2
-tau2-airline,27,airline-27,all,1.0,7,1.0,7,,,,,536b0139b184,1,2,1
+tau2-airline,27,airline-27,all,1.0,7,1.0,7,,,,,536b0139b184,1,2,2
 tau2-airline,28,airline-28,all,0.9643,7,0.9508,16,,,,,541f5822048e,1,1,2
 tau2-airline,29,airline-29,all,0.2143,7,0.2143,7,,,,,5d70e57ccb36,1,2,2
 tau2-airline,3,airline-3,all,0.9643,7,0.9508,16,,,,,1a462785237b,1,1,0
@@ -33,7 +33,7 @@ tau2-airline,36,airline-36,all,1.0,7,0.9016,16,,,,,99edc60315c7,1,1,2
 tau2-airline,37,airline-37,all,0.8929,7,0.4754,16,,,,,035416fdb458,1,2,2
 tau2-airline,38,airline-38,all,1.0,7,0.6066,16,,,,,4951a5239020,1,2,2
 tau2-airline,39,airline-39,all,0.2857,7,0.2623,16,,,,,a84839abdbfe,1,2,2
-tau2-airline,4,airline-4,all,1.0,7,0.9836,16,,,,,fcdc60b8df27,1,1,1
+tau2-airline,4,airline-4,all,1.0,7,0.9836,16,,,,,fcdc60b8df27,1,1,2
 tau2-airline,40,airline-40,all,1.0,7,1.0,16,,,,,628cccf63c7b,1,1,1
 tau2-airline,41,airline-41,all,0.9643,7,0.8033,16,,,,,3b3036a7133a,1,2,2
 tau2-airline,42,airline-42,all,0.7143,7,0.7143,7,,,,,4c605480e601,1,2,2
@@ -164,16 +164,16 @@ tau2-retail,98,retail-98,all,0.375,8,0.375,8,,,,,ba123ca42f41,1,2,2
 tau2-retail,99,retail-99,all,0.625,8,0.625,8,,,,,de1c744ece65,1,2,2
 tau2-banking_knowledge,task_001,banking_knowledge-task_001,date >= 2026-07 (post v1.0.1 grading),0.9,10,0.9,10,0.8148,27.0,0.819,29.0,a7a71d203980,2,2,2
 tau2-banking_knowledge,task_002,banking_knowledge-task_002,date >= 2026-07 (post v1.0.1 grading),0.95,10,0.95,10,0.9259,27.0,0.9052,29.0,aa2bd5d9b014,3,2,2
-tau2-banking_knowledge,task_003,banking_knowledge-task_003,date >= 2026-07 (post v1.0.1 grading),0.4,10,0.4,10,0.4167,27.0,0.4052,29.0,8bc7a22d6552,3,2,2
-tau2-banking_knowledge,task_004,banking_knowledge-task_004,date >= 2026-07 (post v1.0.1 grading),0.725,10,0.725,10,0.5463,27.0,0.5431,29.0,d87c8ca156dc,1,1,2
+tau2-banking_knowledge,task_003,banking_knowledge-task_003,date >= 2026-07 (post v1.0.1 grading),0.4,10,0.4,10,0.4167,27.0,0.4052,29.0,8bc7a22d6552,3,2,1
+tau2-banking_knowledge,task_004,banking_knowledge-task_004,date >= 2026-07 (post v1.0.1 grading),0.725,10,0.725,10,0.5463,27.0,0.5431,29.0,d87c8ca156dc,1,1,1
 tau2-banking_knowledge,task_005,banking_knowledge-task_005,date >= 2026-07 (post v1.0.1 grading),0.375,10,0.375,10,0.4722,27.0,0.4655,29.0,e19df3d0f19a,1,2,2
 tau2-banking_knowledge,task_006,banking_knowledge-task_006,date >= 2026-07 (post v1.0.1 grading),1.0,10,1.0,10,0.9815,27.0,0.9569,29.0,21152f51087f,2,2,1
 tau2-banking_knowledge,task_007,banking_knowledge-task_007,date >= 2026-07 (post v1.0.1 grading),0.65,10,0.65,10,0.6296,27.0,0.5948,29.0,3877817f3321,3,2,1
-tau2-banking_knowledge,task_008,banking_knowledge-task_008,date >= 2026-07 (post v1.0.1 grading),0.675,10,0.675,10,0.4815,27.0,0.4569,29.0,30afeec6bd94,2,2,2
+tau2-banking_knowledge,task_008,banking_knowledge-task_008,date >= 2026-07 (post v1.0.1 grading),0.675,10,0.675,10,0.4815,27.0,0.4569,29.0,30afeec6bd94,2,2,1
 tau2-banking_knowledge,task_010,banking_knowledge-task_010,date >= 2026-07 (post v1.0.1 grading),0.225,10,0.225,10,0.2315,27.0,0.2586,29.0,364f60558371,1,2,2
 tau2-banking_knowledge,task_012,banking_knowledge-task_012,date >= 2026-07 (post v1.0.1 grading),0.65,10,0.65,10,0.6389,27.0,0.6379,29.0,33e1ae9b3fa1,1,1,1
 tau2-banking_knowledge,task_014,banking_knowledge-task_014,date >= 2026-07 (post v1.0.1 grading),0.375,10,0.375,10,0.3889,27.0,0.3966,29.0,d1b079c5f931,1,1,1
-tau2-banking_knowledge,task_015,banking_knowledge-task_015,date >= 2026-07 (post v1.0.1 grading),0.55,10,0.55,10,0.3426,27.0,0.319,29.0,a02c926a83c9,2,2,2
+tau2-banking_knowledge,task_015,banking_knowledge-task_015,date >= 2026-07 (post v1.0.1 grading),0.55,10,0.55,10,0.3426,27.0,0.319,29.0,a02c926a83c9,2,2,1
 tau2-banking_knowledge,task_016,banking_knowledge-task_016,date >= 2026-07 (post v1.0.1 grading),0.375,10,0.375,10,0.5556,27.0,0.5517,29.0,0676d0288d82,2,2,2
 tau2-banking_knowledge,task_017,banking_knowledge-task_017,date >= 2026-07 (post v1.0.1 grading),0.775,10,0.775,10,0.5926,27.0,0.5862,29.0,e64acf2ae416,2,2,2
 tau2-banking_knowledge,task_018,banking_knowledge-task_018,date >= 2026-07 (post v1.0.1 grading),0.45,10,0.45,10,0.3148,27.0,0.2931,29.0,883a32b482be,3,2,2
@@ -188,7 +188,7 @@ tau2-banking_knowledge,task_026,banking_knowledge-task_026,date >= 2026-07 (post
 tau2-banking_knowledge,task_028,banking_knowledge-task_028,date >= 2026-07 (post v1.0.1 grading),0.475,10,0.475,10,0.3084,27.0,0.287,29.0,c9adc9f1822c,3,2,2
 tau2-banking_knowledge,task_029,banking_knowledge-task_029,date >= 2026-07 (post v1.0.1 grading),0.025,10,0.025,10,0.0093,27.0,0.0087,29.0,ed8fe97f08d7,2,2,2
 tau2-banking_knowledge,task_031,banking_knowledge-task_031,date >= 2026-07 (post v1.0.1 grading),0.975,10,0.975,10,0.6636,27.0,0.6261,29.0,f4a5175bf950,3,2,2
-tau2-banking_knowledge,task_032,banking_knowledge-task_032,date >= 2026-07 (post v1.0.1 grading),0.9,10,0.9,10,0.6449,27.0,0.6435,29.0,6d08a963dfd3,1,2,2
+tau2-banking_knowledge,task_032,banking_knowledge-task_032,date >= 2026-07 (post v1.0.1 grading),0.9,10,0.9,10,0.6449,27.0,0.6435,29.0,6d08a963dfd3,1,2,1
 tau2-banking_knowledge,task_033,banking_knowledge-task_033,date >= 2026-07 (post v1.0.1 grading),0.55,10,0.55,10,0.4393,27.0,0.4696,29.0,358c29b9454e,1,2,2
 tau2-banking_knowledge,task_034,banking_knowledge-task_034,date >= 2026-07 (post v1.0.1 grading),0.575,10,0.575,10,0.5701,27.0,0.6,29.0,52eb2f45df3f,2,1,2
 tau2-banking_knowledge,task_035,banking_knowledge-task_035,date >= 2026-07 (post v1.0.1 grading),0.9,10,0.9,10,0.8879,27.0,0.8957,29.0,0fffe857cfa9,1,2,2
@@ -216,7 +216,7 @@ tau2-banking_knowledge,task_059,banking_knowledge-task_059,date >= 2026-07 (post
 tau2-banking_knowledge,task_063,banking_knowledge-task_063,date >= 2026-07 (post v1.0.1 grading),0.15,10,0.15,10,0.0748,27.0,0.0696,29.0,7e228c1b1621,2,2,2
 tau2-banking_knowledge,task_064,banking_knowledge-task_064,date >= 2026-07 (post v1.0.1 grading),0.9,10,0.9,10,0.4393,27.0,0.4261,29.0,e8f01ecf99d6,1,3,2
 tau2-banking_knowledge,task_070,banking_knowledge-task_070,date >= 2026-07 (post v1.0.1 grading),0.275,10,0.275,10,0.2243,27.0,0.2174,29.0,6ad4d8084e9d,1,2,1
-tau2-banking_knowledge,task_071,banking_knowledge-task_071,date >= 2026-07 (post v1.0.1 grading),0.2,10,0.2,10,0.1215,27.0,0.113,29.0,4f34282b15d5,2,2,0
+tau2-banking_knowledge,task_071,banking_knowledge-task_071,date >= 2026-07 (post v1.0.1 grading),0.2,10,0.2,10,0.1215,27.0,0.113,29.0,4f34282b15d5,2,2,1
 tau2-banking_knowledge,task_072,banking_knowledge-task_072,date >= 2026-07 (post v1.0.1 grading),0.65,10,0.65,10,0.4206,27.0,0.3913,29.0,c0fde3b9c2c3,3,2,2
 tau2-banking_knowledge,task_073,banking_knowledge-task_073,date >= 2026-07 (post v1.0.1 grading),0.55,10,0.55,10,0.2991,27.0,0.287,29.0,0f116b92f590,3,2,2
 tau2-banking_knowledge,task_074,banking_knowledge-task_074,date >= 2026-07 (post v1.0.1 grading),0.35,10,0.35,10,0.1402,27.0,0.1304,29.0,69d925d33327,3,2,2

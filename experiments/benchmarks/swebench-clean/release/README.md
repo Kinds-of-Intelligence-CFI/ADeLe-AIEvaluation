@@ -20,7 +20,7 @@ configs:
 # ADeLe — SWE-bench Verified clean set with demand labels
 
 A subset of SWE-bench Verified that drops tasks known or likely to be broken, with ADeLe demand labels for every task.
-443 tasks, 1329 labels. Built at commit `27c7ddd` of
+443 tasks, 1329 labels. Built at commit `cd608bf` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/swebench-clean/`).
 
@@ -60,7 +60,8 @@ are hard: only 1 to 6 of the 135 entries solve them. They are kept because some 
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating). Each
-  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01.
+  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one
+  adopted on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept: when a safety classifier hands a call to another model, that answer is discarded.
 - **Prompt.** ADeLe's v2 annotation prompt (`build_annotation_prompt_v2`): the rubric and the task, a short written

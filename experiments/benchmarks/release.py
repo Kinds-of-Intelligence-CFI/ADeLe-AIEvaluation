@@ -8,8 +8,8 @@
   release/MANIFEST.tsv     sha256 of every file above
 
 Inputs are committed files only: the study's tasks.csv and the labels.csv and manifest.json of `adele mass` runs. Only
-valid answers written by claude-opus-5-5 are exported. A rubric must be pinned to the same text by every run that used
-it. No task text. Used by deepswe-clean, frontierswe-pl and programbench-pl export.py.
+valid answers written by claude-opus-5-5 are exported. A rubric must be pinned to the same text by every run that
+contributes it. No task text. Used by deepswe-clean, frontierswe-pl and programbench-pl export.py.
 """
 
 import hashlib
@@ -34,19 +34,22 @@ def commit() -> str:
                           check=True).stdout.strip()
 
 
-def labels(benchmark: str, runs: dict[str, str], dims: list[str]) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Labels of `benchmark` from runs {run: study}, and the rubric pins. Each (task, rubric) must come from one run."""
+def labels(benchmark: str, runs: dict[str, str | tuple[str, list[str]]],
+           dims: list[str]) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Labels of `benchmark` from runs {run: study}, and the rubric pins. Each (task, rubric) must come from one run.
+    A run given as {run: (study, rubrics)} contributes only those rubrics."""
     rows, pins = [], {}
-    for run, study in runs.items():
+    for run, src in runs.items():
+        study, use = (src, dims) if isinstance(src, str) else (src[0], [x for x in dims if x in src[1]])
         d = BENCH / "mass-annotation/runs" / run
         frozen = json.loads((d / "manifest.json").read_text())["frozen"]
         for ref, r in frozen["rubrics"].items():
-            if ref.removeprefix("v2/") in dims:
+            if ref.removeprefix("v2/") in use:
                 assert pins.setdefault(ref, r)["sha256"] == r["sha256"], f"{ref}: runs pin different texts"
         lab = pd.read_csv(d / "labels.csv", dtype={"instance_id": str})
         lab = lab[(lab["benchmark"] == benchmark) & lab["valid"].astype(bool)
                   & lab["writer_model"].astype(str).str.startswith(MODEL)
-                  & lab["rubric_ref"].isin([f"v2/{x}" for x in dims])]
+                  & lab["rubric_ref"].isin([f"v2/{x}" for x in use])]
         rows.append(pd.DataFrame({
             "instance_id": lab["instance_id"], "rubric": lab["rubric_ref"], "level": lab["level"].astype(int),
             "judge_model": lab["writer_model"], "judge_effort": lab["effort"],
@@ -62,7 +65,8 @@ def labels(benchmark: str, runs: dict[str, str], dims: list[str]) -> tuple[pd.Da
     return out, rubrics
 
 
-def build(here: Path, benchmark: str, runs: dict[str, str], dims: list[str], fill: dict[str, str]) -> None:
+def build(here: Path, benchmark: str, runs: dict[str, str | tuple[str, list[str]]], dims: list[str],
+          fill: dict[str, str]) -> None:
     out = here / "release"
     out.mkdir(exist_ok=True)
     tasks = pd.read_csv(here / "tasks.csv", dtype={"instance_id": str}).set_index("instance_id")

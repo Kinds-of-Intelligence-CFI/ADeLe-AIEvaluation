@@ -21,7 +21,7 @@ configs:
 
 All 34 tasks of FrontierSWE v2, with per-task outcomes, flags and ADeLe demand labels. 110 labels
 (PLp 34, PLe 19, PLs 19, MSm 19, MSc 19): PLp on all 34 tasks, the other rubrics on the 19 clean tasks. Built at commit
-`fd88cd4` of [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch
+`cd608bf` of [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch
 `agentic-v2`, `experiments/benchmarks/frontierswe-pl/`).
 
 ## What is in it
@@ -55,6 +55,7 @@ best run of any model.
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
+  PLs is the text adopted on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and what the agent sees (`instruction.md`, plus the README it

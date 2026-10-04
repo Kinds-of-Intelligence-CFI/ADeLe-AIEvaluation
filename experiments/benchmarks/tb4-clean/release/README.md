@@ -20,7 +20,7 @@ configs:
 # ADeLe — Terminal-Bench 4.0.0 clean set with demand labels
 
 A subset of Terminal-Bench 4.0.0 that drops the tasks an external review found defective, and the tasks no current
-agent solves, with ADeLe demand labels. 35 tasks, 102 labels. Built at commit `1b27d56` of
+agent solves, with ADeLe demand labels. 35 tasks, 103 labels. Built at commit `cd608bf` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tb4-clean/`).
 
@@ -53,13 +53,14 @@ each). **Expert hours** is the task author's estimate from each task's `task.tom
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating), each a
-  0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01.
+  0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one adopted
+  on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
   level. The judge never sees tests, solutions or agent attempts.
-- **Missing labels.** 34 of 35 tasks have all three labels. `uefi-bootkit` has none: a safety classifier
-  stopped the judge on both attempts, and the answers it handed to another model were discarded.
+- **Missing labels.** 34 of 35 tasks have all three labels. `uefi-bootkit` has only PLs: for PLp and PLe a
+  safety classifier stopped the judge on both attempts, and the answers it handed to another model were discarded.
 
 ## What the labels show (descriptive)
 

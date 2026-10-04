@@ -2,7 +2,8 @@
 studies. Writes results/analysis.json.
 
 New labels: mass runs pls-relabel and pls-relabel-long (Opus 5.5 low, v2 prompt); only valid answers written by
-claude-opus-5-5 count. Old labels: v2/PLs in each study's release/labels.csv (the text before the change). Per set:
+claude-opus-5-5 count. Old labels: v2/PLs in each study's release/labels.csv at commit OLD (the releases before they
+took the new labels; the text before the change). Per set:
 level distributions (old, new), the old-to-new crosstab, the share unchanged, the mean shift, and Spearman with the
 set's primary outcome for both (as ms-benchmarks: swebench-pl's `rho`, predicted negative; tau2 within domain,
 combined by Fisher z). A rubric with one level in a set is reported as not testable there.
@@ -11,7 +12,9 @@ combined by Fisher z). A rubric with one level in a set is reported as not testa
 """
 
 import importlib.util
+import io
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -25,6 +28,7 @@ SETS = {"swe-bench-verified": ("swebench-clean", "solve_rate"), "terminal-bench-
         "terminal-bench-science-0.1": ("tbsci-pl", "solve_rate"), "deepswe-v1.1": ("deepswe-clean", "solve_rate"),
         "frontierswe-v2": ("frontierswe-pl", "solve_rate_0.9"), "programbench": ("programbench-pl", "solve_rate_0.9")}
 TAU2 = ["tau2-airline", "tau2-retail", "tau2-banking_knowledge"]
+OLD = "cd608bf"  # last commit whose releases carry the PLs labels of the earlier text
 
 
 def load(name: str, path: Path):
@@ -46,13 +50,19 @@ def new_labels() -> pd.DataFrame:
     return lab[lab["rubric_ref"] == "v2/PLs"][["benchmark", "instance_id", "level"]].rename(columns={"level": "new"})
 
 
+def at_old(path: Path) -> pd.DataFrame:
+    rel = path.relative_to(BENCH.parents[1]).as_posix()
+    out = subprocess.run(["git", "-C", str(BENCH), "show", f"{OLD}:{rel}"], capture_output=True, text=True, check=True)
+    return pd.read_csv(io.StringIO(out.stdout), dtype={"instance_id": str})
+
+
 def old_labels(sub: pd.DataFrame) -> pd.DataFrame:
     parts = []
     for bench, (study, _) in SETS.items():
-        lab = pd.read_csv(BENCH / study / "release/labels.csv", dtype={"instance_id": str})
+        lab = at_old(BENCH / study / "release/labels.csv")
         parts.append(lab[lab["rubric"] == "v2/PLs"][["instance_id", "level"]].assign(benchmark=bench))
     # tau2 ids repeat across domains, so its domain comes from labels_wide
-    w = pd.read_csv(BENCH / "tau2-clean/release/labels_wide.csv", dtype={"instance_id": str})
+    w = at_old(BENCH / "tau2-clean/release/labels_wide.csv")
     parts.append(w[["benchmark", "instance_id", "v2/PLs"]].rename(columns={"v2/PLs": "level"}))
     old = pd.concat(parts).rename(columns={"level": "old"})
     assert not old.duplicated(["benchmark", "instance_id"]).any()

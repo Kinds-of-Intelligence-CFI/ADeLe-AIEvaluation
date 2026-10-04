@@ -8,9 +8,10 @@
   release/rubrics.csv      every rubric used: code, generation, name, file, sha256
   release/MANIFEST.tsv     sha256 of every file above
 
-Inputs are committed files only (tasks.csv, open_issues.csv, the mass run tbsci-pl, results/analysis.json). Only
-answers written by claude-opus-5-5 are exported; a task without one is listed as unlabelled in the card. No task text
-(Terminal-Bench Science tasks carry a no-training canary).
+Inputs are committed files only (tasks.csv, open_issues.csv, the mass runs tbsci-pl for PLp and PLe and pls-relabel for
+PLs, with the PLs text of 2026-10-04, results/analysis.json). Only answers written by claude-opus-5-5 are exported; a
+task without one is listed as unlabelled in the card. No task text (Terminal-Bench Science tasks carry a no-training
+canary).
 
     python experiments/benchmarks/tbsci-pl/analysis/analyse.py      # results/analysis.json, quoted in the card
     python experiments/benchmarks/tbsci-pl/export.py
@@ -31,7 +32,8 @@ ROOT = HERE.parents[2]
 OUT = HERE / "release"
 MODEL = "claude-opus-5-5"
 DIMS = ["PLp", "PLe", "PLs"]
-RUN = HERE.parent / "mass-annotation/runs/tbsci-pl"
+RUN = HERE.parent / "mass-annotation/runs/tbsci-pl"  # PLp and PLe
+PLS_RUN = HERE.parent / "mass-annotation/runs/pls-relabel"  # PLs
 
 
 def sha256(b: bytes) -> str:
@@ -47,26 +49,31 @@ def main() -> None:
     tasks = pd.read_csv(HERE / "tasks.csv").set_index("instance_id")
     cat = load_active_catalog()
 
-    lab = pd.read_csv(RUN / "labels.csv", dtype={"instance_id": str})
-    lab = lab[lab["valid"].astype(bool) & lab["writer_model"].astype(str).str.startswith(MODEL)
-              & lab["rubric_ref"].isin([f"v2/{d}" for d in DIMS])]
-    builder = json.loads((RUN / "manifest.json").read_text())["frozen"]["prompt"]["function"]
-    labels = pd.DataFrame({"instance_id": lab["instance_id"], "rubric": lab["rubric_ref"],
-                           "level": lab["level"].astype(int), "judge_model": lab["writer_model"],
-                           "judge_effort": lab["effort"],
-                           "judge_harness": lab["backend"].replace({"subagent": "claude-code-subagent"}),
-                           "prompt_builder": builder, "prompt_sha256": lab["prompt_sha256"],
-                           "response_sha256": lab["response_sha256"], "study": "tbsci-pl", "run": lab["run"]})
-    labels = labels.sort_values(["instance_id", "rubric"])
+    parts = []
+    for run, study, dims in ((RUN, "tbsci-pl", ["PLp", "PLe"]), (PLS_RUN, "pls-relabel", ["PLs"])):
+        lab = pd.read_csv(run / "labels.csv", dtype={"instance_id": str})
+        lab = lab[(lab["benchmark"] == "terminal-bench-science-0.1") & lab["valid"].astype(bool)
+                  & lab["writer_model"].astype(str).str.startswith(MODEL)
+                  & lab["rubric_ref"].isin([f"v2/{d}" for d in dims])]
+        builder = json.loads((run / "manifest.json").read_text())["frozen"]["prompt"]["function"]
+        parts.append(pd.DataFrame({"instance_id": lab["instance_id"], "rubric": lab["rubric_ref"],
+                                   "level": lab["level"].astype(int), "judge_model": lab["writer_model"],
+                                   "judge_effort": lab["effort"],
+                                   "judge_harness": lab["backend"].replace({"subagent": "claude-code-subagent"}),
+                                   "prompt_builder": builder, "prompt_sha256": lab["prompt_sha256"],
+                                   "response_sha256": lab["response_sha256"], "study": study, "run": lab["run"]}))
+    labels = pd.concat(parts, ignore_index=True).sort_values(["instance_id", "rubric"])
     labels.to_csv(OUT / "labels.csv", index=False)
     wide = tasks.join(labels.pivot(index="instance_id", columns="rubric", values="level"))
     wide.reset_index().to_csv(OUT / "labels_wide.csv", index=False)
     tasks.reset_index().to_csv(OUT / "tasks.csv", index=False)
     shutil.copyfile(HERE / "open_issues.csv", OUT / "open_issues.csv")
-    pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
-                   "file": str(Path(cat[d].file_path).relative_to(ROOT)),
-                   "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS]).to_csv(
-        OUT / "rubrics.csv", index=False)
+    rub = pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
+                         "file": str(Path(cat[d].file_path).relative_to(ROOT)),
+                         "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS])
+    pin = json.loads((PLS_RUN / "manifest.json").read_text())["frozen"]["rubrics"]["v2/PLs"]["sha256"]
+    rub.loc[rub["code"] == "PLs", "sha256"] = pin  # the PLs text pinned by pls-relabel
+    rub.to_csv(OUT / "rubrics.csv", index=False)
 
     res = json.loads((HERE / "results/analysis.json").read_text())
     have = set(zip(labels["instance_id"], labels["rubric"]))

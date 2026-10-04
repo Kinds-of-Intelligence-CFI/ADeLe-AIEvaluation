@@ -4,7 +4,7 @@ Owner: Pablo. PLs gained three computer-world examples on 2026-10-04 (`../pls-co
 labels of the PL studies' clean sets with that text, to replace the released ones. Judge: Opus 5.5 at effort low,
 v2 prompt.
 
-**Status.** Pre-registered 2026-10-04; running (launched the same day, at Pablo's request).
+**Status.** Complete (2026-10-04): PLs falls on DeepSWE and now tracks its solve rate there; elsewhere little changes. See `RESULTS.md`.
 
 | | |
 |---|---|

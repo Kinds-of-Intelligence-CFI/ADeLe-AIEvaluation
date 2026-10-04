@@ -53,13 +53,14 @@ each). **Expert hours** is the task author's estimate from each task's `task.tom
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating), each a
-  0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01.
+  0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one adopted
+  on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
   level. The judge never sees tests, solutions or agent attempts.
-- **Missing labels.** {n_full} of {n_kept} tasks have all three labels. `uefi-bootkit` has none: a safety classifier
-  stopped the judge on both attempts, and the answers it handed to another model were discarded.
+- **Missing labels.** {n_full} of {n_kept} tasks have all three labels. `uefi-bootkit` has only PLs: for PLp and PLe a
+  safety classifier stopped the judge on both attempts, and the answers it handed to another model were discarded.
 
 ## What the labels show (descriptive)
 

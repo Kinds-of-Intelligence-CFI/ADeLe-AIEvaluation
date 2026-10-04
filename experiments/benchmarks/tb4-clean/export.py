@@ -1,9 +1,10 @@
 """Build the shareable release of the Terminal-Bench 4.0.0 clean set (release/, Hugging Face layout) and a short
 descriptive summary (results/clean.json).
 
-The PL labels already exist: PLp (text O) from plp-o-relabel run o-tb4, PLe and PLs from pl-relabel-v2 run v2-tb4.
-All are Opus 5.5 at effort low with the v2 prompt. Only answers written by claude-opus-5-5 are exported; a clean task
-without such an answer is listed as unlabelled. No task text (Terminal-Bench tasks carry a no-training canary).
+The PL labels already exist: PLp (text O) from plp-o-relabel run o-tb4, PLe from pl-relabel-v2 run v2-tb4, PLs (the
+text of 2026-10-04) from mass run pls-relabel. All are Opus 5.5 at effort low with the v2 prompt. Only answers written
+by claude-opus-5-5 are exported; a clean task without such an answer is listed as unlabelled. No task text
+(Terminal-Bench tasks carry a no-training canary).
 
 The summary is descriptive, not a pre-registered test: these labels and outcomes were already analysed on the full
 benchmark in tau2-tb4-pl and pl-relabel-v2.
@@ -27,8 +28,8 @@ BENCH = HERE.parent
 OUT = HERE / "release"
 MODEL = "claude-opus-5-5"
 SOURCES = [("PLp", "plp-o-relabel/labels/o-tb4", "plp-o-relabel"),
-           ("PLe", "pl-relabel-v2/labels/v2-tb4", "pl-relabel-v2"),
-           ("PLs", "pl-relabel-v2/labels/v2-tb4", "pl-relabel-v2")]
+           ("PLe", "pl-relabel-v2/labels/v2-tb4", "pl-relabel-v2")]
+PLS_RUN = BENCH / "mass-annotation/runs/pls-relabel"  # every PLs label
 DIMS = ["PLp", "PLe", "PLs"]
 
 
@@ -56,16 +57,27 @@ def main() -> None:
                          "prompt_builder": "adele.annotation.prompts.build_annotation_prompt_v2",
                          "prompt_sha256": r.prompt_sha256, "response_sha256": r.response_sha256,
                          "study": study, "run": Path(run).name})
+    pls = pd.read_csv(PLS_RUN / "labels.csv", dtype={"instance_id": str})
+    pls = pls[(pls["benchmark"] == "terminal-bench-4.0.0") & (pls["rubric_ref"] == "v2/PLs") & pls["valid"].astype(bool)
+              & pls["writer_model"].astype(str).str.startswith(MODEL)]
+    frozen = json.loads((PLS_RUN / "manifest.json").read_text())["frozen"]
+    for r in pls[pls["instance_id"].isin(keep.index)].itertuples(index=False):
+        rows.append({"instance_id": r.instance_id, "rubric": r.rubric_ref, "level": int(r.level),
+                     "judge_model": r.writer_model, "judge_effort": r.effort,
+                     "judge_harness": "claude-code-subagent" if r.backend == "subagent" else r.backend,
+                     "prompt_builder": frozen["prompt"]["function"], "prompt_sha256": r.prompt_sha256,
+                     "response_sha256": r.response_sha256, "study": "pls-relabel", "run": r.run})
     labels = pd.DataFrame(rows).sort_values(["instance_id", "rubric"])
     labels.to_csv(OUT / "labels.csv", index=False)
     wide = keep[["category", "expert_hours", "n_configs", "n_trials", "solved_trials", "solve_rate"]].join(
         labels.pivot(index="instance_id", columns="rubric", values="level"))
     wide.reset_index().to_csv(OUT / "labels_wide.csv", index=False)
     tasks.to_csv(OUT / "tasks.csv", index=False)
-    pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
-                   "file": str(Path(cat[d].file_path).relative_to(ROOT)),
-                   "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS]).to_csv(
-        OUT / "rubrics.csv", index=False)
+    rub = pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
+                         "file": str(Path(cat[d].file_path).relative_to(ROOT)),
+                         "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS])
+    rub.loc[rub["code"] == "PLs", "sha256"] = frozen["rubrics"]["v2/PLs"]["sha256"]  # pinned by pls-relabel
+    rub.to_csv(OUT / "rubrics.csv", index=False)
 
     unlabelled = sorted(set(keep.index) - set(labels["instance_id"]))
     full = wide.dropna(subset=[f"v2/{d}" for d in DIMS])

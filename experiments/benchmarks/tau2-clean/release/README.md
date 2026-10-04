@@ -20,7 +20,7 @@ configs:
 # ADeLe — tau2 clean set with demand labels
 
 The tau2 tasks of three domains (airline, retail, banking_knowledge) that some agent has solved, with ADeLe demand
-labels for every task. 242 tasks, 726 labels. Built at commit `c2677df` of
+labels for every task. 242 tasks, 726 labels. Built at commit `cd608bf` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tau2-clean/`).
 
@@ -62,14 +62,15 @@ task of the domain (airline 7, retail 8, banking 10). `solve_rate_all` uses ever
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating). Each
-  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01.
+  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one
+  adopted on 2026-10-04.
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt (`build_annotation_prompt_v2`): the rubric and the task, a short written
   assessment, then the level. The judge sees only the user scenario, never the expected actions or any agent's attempt.
-- **Runs.** 10 banking tasks were labelled in run `tau2-clean-new-pl` (ADeLe's mass-annotation runner); the rest
-  come from the earlier runs `o-tau2` (PLp) and `v2-tau2` (PLe, PLs). The prompts are byte-identical across these runs
-  for the same task and rubric.
+- **Runs.** PLp and PLe of 10 banking tasks were labelled in run `tau2-clean-new-pl` (ADeLe's mass-annotation
+  runner); the rest come from the earlier runs `o-tau2` (PLp) and `v2-tau2` (PLe). The prompts are byte-identical across
+  these runs for the same task and rubric. Every PLs label comes from run `pls-relabel`.
 
 ## What the labels show
 

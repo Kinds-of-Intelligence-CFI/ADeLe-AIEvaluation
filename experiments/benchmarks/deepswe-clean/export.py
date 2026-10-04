@@ -1,7 +1,8 @@
 """Build the shareable release of DeepSWE v1.1 with demand labels: release/ (see ../release.py for the layout).
 
-Labels: PLp, PLe, PLs from run deepswe-clean; MSm, MSc from run ms-benchmarks (both on the 90 clean tasks). No task
-text (the DeepSWE site carries a no-training canary); no trial data (no terms, deep-swe #94).
+Labels: PLp, PLe from run deepswe-clean; PLs from run pls-relabel (the PLs text of 2026-10-04); MSm, MSc from run
+ms-benchmarks (all on the 90 clean tasks). No task text (the DeepSWE site carries a no-training canary); no trial data
+(no terms, deep-swe #94).
 
     python experiments/benchmarks/deepswe-clean/analysis/analyse.py      # results/analysis.json, quoted in the card
     python experiments/benchmarks/deepswe-clean/export.py
@@ -23,7 +24,8 @@ def main() -> None:
     res = json.loads((HERE / "results/analysis.json").read_text())
     r = res["spearman"]["clean"]["PLp_vs_solve_rate"]
     tasks = pd.read_csv(HERE / "tasks.csv")
-    release.build(HERE, "deepswe-v1.1", {"deepswe-clean": "deepswe-clean", "ms-benchmarks": "ms-benchmarks"},
+    release.build(HERE, "deepswe-v1.1", {"deepswe-clean": ("deepswe-clean", ["PLp", "PLe"]),
+                                         "pls-relabel": ("pls-relabel", ["PLs"]), "ms-benchmarks": "ms-benchmarks"},
                   ["PLp", "PLe", "PLs", "MSm", "MSc"],
                   {"{n_clean}": str(int(tasks["keep"].sum())),
                    "{rho_plp}": f"{r['rho']:+.2f} (p = {r['p_two_sided']:.2g}, n = {r['n']})"})
