@@ -45,3 +45,20 @@ There is no decision rule. This is a feasibility pilot: it tells us whether a Je
 ## Cost
 
 About 16M input tokens at $0.042 per million: under $1. No subscription usage.
+
+## Amendment 1 (2026-10-04, during the run, before any result was looked at)
+
+Pablo asked whether to use Jev's distributions and Opus's reasoning. Added, all from labels already being collected:
+- **Probability on Opus's level**: mean probability Jev puts on the level Opus chose, and the log loss of Opus's labels
+  under Jev's distribution (probabilities floored at 0.01), per rubric. This credits Jev for spreading mass where a
+  task is ambiguous, since a single Opus sample is itself noisy (`pls-computer`: 6 of 20 reruns changed).
+- **Calibration**: for each level Jev gives probability p, the share of cases where Opus chose it, in bins of 0.1.
+- **Expected level**: Spearman of Jev's expected level with each agentic set's outcome, next to its most probable
+  level and Opus's label.
+- **Diagnosis (descriptive)**: 8 disagreements per rubric (40), seeded, of two levels or more where possible. For
+  each, Opus's written reason is read and the deciding clause is named, to see whether Jev misses the same clauses.
+
+Predictions (sealed):
+- Jev's expected level tracks the outcome at least as well as its most probable level on SWE-bench PLp: 0.6.
+- Mean probability on Opus's level ≥ 0.4 for PLp: 0.5.
+- In the diagnosis, a single clause explains at least half of the PLs disagreements: 0.55.
