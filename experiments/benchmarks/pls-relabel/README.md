@@ -4,7 +4,7 @@ Owner: Pablo. PLs gained three computer-world examples on 2026-10-04 (`../pls-co
 labels of the PL studies' clean sets with that text, to replace the released ones. Judge: Opus 5.5 at effort low,
 v2 prompt.
 
-**Status.** Pre-registered 2026-10-04; launches after the weekly usage reset (2026-10-06, 20:00 UTC).
+**Status.** Pre-registered 2026-10-04; running (launched the same day, at Pablo's request).
 
 | | |
 |---|---|

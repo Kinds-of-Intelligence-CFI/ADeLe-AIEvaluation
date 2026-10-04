@@ -43,3 +43,8 @@ changed 6 of 20):
 ## Cost
 
 1,029 Opus-low calls on the subscription. `adele mass plan`: about 5 weekly points.
+
+## Deviations
+
+1. **2026-10-04: launched before the weekly reset**, at Pablo's request ("Run 2"), with weekly usage at 55 per cent.
+   Recorded before any label. Nothing else changed.
