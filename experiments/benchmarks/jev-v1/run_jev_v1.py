@@ -60,6 +60,7 @@ def rubric(code: str) -> tuple[str, str]:
     name = text.splitlines()[0].removeprefix("# ").strip()
     body = "\n".join(text.splitlines()[1:]).strip()
     body = re.sub(r"\s*Examples:\s*$", "", body, flags=re.M)  # some v1 files put "Examples:" on the level line
+    body = re.sub(r"^Level (\d)\. ", r"Level \1: ", body, flags=re.M)  # the KN files write "Level 0. None:"
     return name, body
 
 

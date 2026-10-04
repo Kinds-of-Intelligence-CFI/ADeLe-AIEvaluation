@@ -5,7 +5,9 @@ written by claude-opus-5-5): PLp, PLe and PLs from each agentic study's release/
 ms-benchmarks runs; the social sets from their mass runs. Per rubric, pooled and per set: exact and within-one
 agreement, quadratic weighted kappa, mean signed difference (Jev - Opus), level counts. Agentic sets: Spearman of
 each rubric with the set's primary outcome, Jev and Opus (ms-benchmarks' outcomes, swebench-pl's `rho`, tau2-tb4-pl's
-`combined` within domain). Also: MS separation, confidence vs agreement, repeat determinism, skips.
+`combined` within domain). Also: MS separation, confidence vs agreement, repeat determinism, skips. Amendment 1:
+probability on Opus's level and log loss, calibration, the expected level against outcomes, and a seeded sample of
+disagreements for reading Opus's reasons.
 
     python experiments/benchmarks/jev-pilot/analysis/analyse.py
 """
@@ -125,7 +127,7 @@ def main() -> None:
     out["criterion"] = {}
     for (s, d), g in ag.groupby(["set", "rubric"]):
         res = {}
-        for who in ("jev", "opus"):
+        for who in ("jev", "expected", "opus"):
             h = g.dropna(subset=[who, "outcome"])
             if s == "tau2":
                 res[who] = combined(h, who, "outcome", "negative")["combined"]
@@ -134,6 +136,21 @@ def main() -> None:
             else:
                 res[who] = rho(h[who], h["outcome"], "negative")
         out["criterion"][f"{s}/{d}"] = res
+
+    # amendment 1
+    p_opus = df.apply(lambda r: r[f"p{r['opus']}"], axis=1)
+    df["p_opus"] = p_opus
+    out["prob_on_opus"] = {d: {"mean": round(float(g["p_opus"].mean()), 3),
+                               "log_loss": round(float(-np.log(g["p_opus"].clip(lower=0.01)).mean()), 3)}
+                           for d, g in df.groupby("rubric")}
+    cal = pd.concat([pd.DataFrame({"p": df[f"p{k}"], "hit": (df["opus"] == k).astype(int)}) for k in range(6)])
+    cal["bin"] = (cal["p"].clip(upper=0.999) * 10).astype(int) / 10
+    out["calibration"] = {f"{b:.1f}": {"n": int(len(g)), "opus_share": round(float(g["hit"].mean()), 3),
+                                       "mean_p": round(float(g["p"].mean()), 3)} for b, g in cal.groupby("bin")}
+    dis = df[df["jev"] != df["opus"]].assign(gap=lambda t: (t["jev"] - t["opus"]).abs())
+    sample = pd.concat([g.sort_values("gap", ascending=False).head(40).sample(min(8, len(g)), random_state=20261004)
+                        for _, g in dis.groupby("rubric")])
+    out["diagnosis_sample"] = sample[["benchmark", "instance_id", "rubric", "jev", "opus", "confidence"]].to_dict("records")
 
     hit = (df["jev"] == df["opus"]).astype(int)
     r, p = spearmanr(df["confidence"], hit)
