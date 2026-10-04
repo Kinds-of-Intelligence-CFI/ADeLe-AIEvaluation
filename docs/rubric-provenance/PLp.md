@@ -41,3 +41,10 @@ Example bullets only; no level statement, Note or scope text changed. Reviewed a
 desiderata (`experiments/benchmarks/examples-review/PLp/REVIEW.md`); each new or reworded bullet was placement-checked
 with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
 approval for example-only changes. Flagged items are listed in the review.
+
+## 2026-10-04 — synthesis example moved to Level 4
+
+Pablo's decision on a flagged item of the examples review. The synthesis-route bullet moves verbatim from Level 5 to
+Level 4: planning a synthesis is established work (retrosynthetic analysis), so the Level 5 Note ("where … the kind of
+work is itself established, the task belongs at the level below") places it at 4, and the judge already read it as 4.
+Level 5 keeps two examples (proof strategy, research programme). Relabelled in `experiments/benchmarks/relabel-v3`.

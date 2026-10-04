@@ -25,3 +25,10 @@ Example bullets only; no level statement, Note or scope text changed. Reviewed a
 desiderata (`experiments/benchmarks/examples-review/MSm/REVIEW.md`); each new or reworded bullet was placement-checked
 with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
 approval for example-only changes. Flagged items are listed in the review.
+
+## 2026-10-04 — seller example shortened
+
+Pablo's decision on a flagged item of the examples review. The Level 5 seller's "final offer" bullet (the dyadic Level 5
+route, ruling of 2026-08-20) is cut from 69 to 47 words: the closing gloss ("Only two parties are involved, and …") is
+removed and "knows" is used only for the stated fact. The three interlocking attributions are kept (her real limit,
+what she thinks he already suspects, what she wants him to conclude). Relabelled in `experiments/benchmarks/relabel-v3`.

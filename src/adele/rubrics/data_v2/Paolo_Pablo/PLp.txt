@@ -38,9 +38,9 @@ Examples:
 * Solve a contest programming problem for which no standard technique applies. The key idea must be found first, and most approaches that look promising fail only once they are worked through.
 * Plan the first ascent of an unclimbed face. The line, the camp sites and the loads all depend on one another, and almost every line that looks good from the valley dead-ends high on the face. The deliverable is the route plan, not the climb.
 * Timetable twelve exams into five slots under stated clashes and room limits. Almost no timetable built slot by slot comes out valid, and the clash shows only when the last exams are placed.
+* Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails. The route is designed on paper, and nothing is run at the bench.
 
 Level 5: Very high. The task requires the plan to be invented. No established procedure exists for it at all, so no knowledge structures the search. A plan built step by step almost never comes out workable, and workable plans are so rare that finding one constitutes a novel discovery. The decomposition into subgoals must be created from scratch, with whole families of candidate approaches generated, evaluated and discarded. Note, a task belongs here only where no established procedure exists for it at all. Where the decomposition must be discovered but the kind of work is itself established, the task belongs at the level below.
 Examples:
-* Devise a synthesis route for a complex, previously unsynthesised natural product, where almost every sequence of reactions fails. The route is designed on paper, and nothing is run at the bench.
 * Devise the proof strategy for a long-standing open conjecture, where the lemmas to aim for must themselves be discovered and restructured as attempts collapse. Writing the finished argument out is not the difficulty.
 * Plan a multi-year research programme against an unsolved scientific problem on which every known line of attack has failed, and no one yet knows which sub-questions are worth posing. The programme is written as a proposal rather than carried out.
