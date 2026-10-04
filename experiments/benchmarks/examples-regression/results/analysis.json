@@ -1,0 +1,129 @@
+{
+  "n_labels": {
+    "exreg-1": 752,
+    "exreg-2": 6
+  },
+  "by_dim": {
+    "PLp": {
+      "B": {
+        "n": 33,
+        "same": 30
+      },
+      "R": {
+        "n": 60,
+        "same": 48
+      },
+      "up": 6,
+      "down": 9,
+      "sign_test_p": 0.6072,
+      "noise": {
+        "n": 20,
+        "same": 16,
+        "up": 2,
+        "down": 2
+      },
+      "moves_2plus": [],
+      "drift": false,
+      "verdict": "pass"
+    },
+    "PLe": {
+      "B": {
+        "n": 36,
+        "same": 35
+      },
+      "R": {
+        "n": 60,
+        "same": 54
+      },
+      "up": 2,
+      "down": 5,
+      "sign_test_p": 0.4531,
+      "noise": {
+        "n": 20,
+        "same": 19,
+        "up": 0,
+        "down": 1
+      },
+      "moves_2plus": [],
+      "drift": false,
+      "verdict": "pass"
+    },
+    "PLs": {
+      "B": {
+        "n": 36,
+        "same": 30
+      },
+      "R": {
+        "n": 60,
+        "same": 54
+      },
+      "up": 7,
+      "down": 5,
+      "sign_test_p": 0.7744,
+      "noise": {
+        "n": 20,
+        "same": 16,
+        "up": 1,
+        "down": 3
+      },
+      "moves_2plus": [
+        {
+          "item_id": "B-M03",
+          "set": "B",
+          "ref": 1,
+          "level": 3,
+          "pass2_old": 2,
+          "pass2_new": 2,
+          "confirmed": false
+        }
+      ],
+      "drift": false,
+      "verdict": "pass"
+    },
+    "MSm": {
+      "B": {
+        "n": 36,
+        "same": 32
+      },
+      "R": {
+        "n": 60,
+        "same": 54
+      },
+      "up": 5,
+      "down": 5,
+      "sign_test_p": 1.0,
+      "noise": {
+        "n": 20,
+        "same": 17,
+        "up": 1,
+        "down": 2
+      },
+      "moves_2plus": [],
+      "drift": false,
+      "verdict": "pass"
+    },
+    "MSc": {
+      "B": {
+        "n": 35,
+        "same": 34
+      },
+      "R": {
+        "n": 60,
+        "same": 60
+      },
+      "up": 1,
+      "down": 0,
+      "sign_test_p": 1.0,
+      "noise": {
+        "n": 20,
+        "same": 20,
+        "up": 0,
+        "down": 0
+      },
+      "moves_2plus": [],
+      "drift": false,
+      "verdict": "pass"
+    }
+  },
+  "pass2_needed": []
+}

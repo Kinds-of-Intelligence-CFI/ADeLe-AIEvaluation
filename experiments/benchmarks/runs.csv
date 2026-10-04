@@ -1,4 +1,6 @@
 study,run,pinned_at,pinned_commit,prompts,judges,labels,parsed
+examples-regression,exreg-1,2026-10-04T12:56:21+00:00,ca8caf4,752,opus-low,752,752
+examples-regression,exreg-2,2026-10-04T13:18:52+00:00,f1871f8,6,opus-low,6,6
 examples-review,exrev-1,2026-10-04T12:41:25+00:00,fe42f7a,126,opus-low,126,126
 judge-sonnet55,s55h-gate,2026-09-29T10:40:46+00:00,a6935a9,88,sonnet55-high,65,65
 ms-lab-regression,ms-labreg1,2026-10-02T14:30:40+00:00,bfec0a5,180,opus-low-r1;opus-low-r2;opus-low-r3,540,540

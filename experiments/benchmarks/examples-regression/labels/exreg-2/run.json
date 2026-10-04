@@ -1,0 +1,24 @@
+{
+  "run_id": "exreg-2",
+  "created_at": "2026-10-04T13:18:52+00:00",
+  "repo_commit": "f1871f802c00bdbb6b3dd3ee3b1936ac9b054e1d",
+  "judge_io": "../../judge-io/exreg-2",
+  "design": {
+    "n_cells": 6,
+    "dims": [
+      "PLp",
+      "PLe",
+      "PLs",
+      "MSm",
+      "MSc"
+    ],
+    "judges": {
+      "opus-low": "adele-judge-v2-low via judge-dispatcher-v2-low, model opus"
+    }
+  },
+  "texts": {
+    "old": "d4ec2ec~1",
+    "new": "d4ec2ec"
+  },
+  "pass": 2
+}

@@ -1,0 +1,30 @@
+# Relabel of all five v2 rubrics after the 2026-10-04 examples review (experiments/benchmarks/relabel-v2), on the clean sets of the PL studies: SWE-bench Verified,
+# tau2 (3 domains), Terminal-Bench 4.0 and Science, DeepSWE, FrontierSWE, ProgramBench (single-read tasks).
+# Same tasks as ms-benchmarks (subset copied). ProgramBench's 13 long tasks are in relabel-v2-long.toml.
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting).
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2.toml
+name = "relabel-v2"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "tau2-airline", "tau2-retail", "tau2-banking_knowledge", "terminal-bench-4.0.0",
+              "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench"]
+subset = "experiments/benchmarks/pls-relabel/subset.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 50
