@@ -14,8 +14,9 @@ intended, and leave the rest of PLs unchanged?
   tasks released at Level 2 fall to 1.
 
 **Status.** Complete (2026-10-04). 209 pass-1 calls and 6 pass-2 calls, all written by Opus 5.5 at effort low,
-no classifier stops. Verdict by the pre-registered rule: **pass**. Adopted by Pablo on 2026-10-04 (see the end); before that adoption needed
-Pablo's OK. Sealed predictions: 18 of the 20 not set at 0.5 on the right side (misses: Level 5 placed exactly, at 0.4; M3 holds, at 0.6).
+no classifier stops. Verdict by the pre-registered rule: **pass**. Adopted by Pablo on 2026-10-04 (see the end).
+Sealed predictions: 18 of the 20 not set at 0.5 on the right side (misses: Level 5 placed exactly, at 0.4; M3
+holds, at 0.6).
 
 ## Design
 
