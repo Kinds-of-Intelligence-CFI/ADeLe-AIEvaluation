@@ -14,7 +14,7 @@ intended, and leave the rest of PLs unchanged?
   tasks released at Level 2 fall to 1.
 
 **Status.** Complete (2026-10-04). 209 pass-1 calls and 6 pass-2 calls, all written by Opus 5.5 at effort low,
-no classifier stops. Verdict by the pre-registered rule: **pass**. `PLs.txt` is unchanged; adoption needs
+no classifier stops. Verdict by the pre-registered rule: **pass**. Adopted by Pablo on 2026-10-04 (see the end); before that adoption needed
 Pablo's OK. Sealed predictions: 18 of the 20 not set at 0.5 on the right side (misses: Level 5 placed exactly, at 0.4; M3 holds, at 0.6).
 
 ## Design
@@ -114,3 +114,8 @@ I did not predict a downward shift on any benchmark.
 | items | `items.csv`, `pairs.csv` |
 | labels | `labels/plsc-1/`, `labels/plsc-2/` (`labels_long.csv`, `writers.csv`, `run.json`) |
 | analysis | `analysis/analyse.py` → `results/analysis.json` |
+
+## Adoption (2026-10-04)
+
+Pablo adopted the three examples. `src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt` is now `PLs_candidate.txt`, and
+`MANIFEST.tsv` carries its new hash. The PLs labels of the seven benchmarks are redone in `../pls-relabel`.

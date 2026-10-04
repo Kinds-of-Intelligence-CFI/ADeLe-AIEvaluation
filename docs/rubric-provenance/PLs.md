@@ -38,3 +38,19 @@ Moved out of the rubric's `#!` line on 2026-08-25. Rounds are in `labs/rubric-qa
 - Criterion-validity pilots r66/r67: raw Brier is a contaminated criterion (irreducible outcome
   entropy); excess-over-naive doubles the correlation; the r66 join mixed resolution horizons and
   is corrected in r67; the forecasting corpus is genuinely low-PLs under the severity doctrine.
+
+## 2026-10-04 — three computer-world examples added (Pablo's ruling)
+
+- **What changed.** One example bullet at the end of Levels 3, 4 and 5, each a computer world that cannot be run
+  first: a web service whose retries load a slowing database, with no copy to try a release on (Level 3); an LRU cache
+  shared by a cycling batch job and a web process's hot keys, on the live cache only (Level 4); 300 services moved to a
+  new retry and timeout policy in one release, with no copy at that scale (Level 5). No other change.
+- **Why.** José noted that the only computer-world example sat at Level 1, so the rubric read as capping computer
+  tasks low. Pablo's ruling: PLs is simulating in one's head, not with an external tool, so the "run the system and
+  look" clause stays. The examples show the other side of that clause, where the run cannot be repeated.
+- **Evidence.** `experiments/benchmarks/pls-computer` (Opus low, v2 prompt; pre-registered): the examples place at 3,
+  3 (within one of 4) and 5 under the old text; no minimal-pair loss; no confirmed two-level move on the battery or on
+  60 real tasks; no upward drift. The old text already placed non-runnable computer situations at 3 to 4, so the
+  examples show the rule rather than change it.
+- **Known effect.** PLs falls on runnable code tasks, mainly DeepSWE (12 of 13 sampled tasks at Level 2 fall to 1).
+  Released PLs labels predate this text; they are relabelled under `experiments/benchmarks/pls-relabel`.
