@@ -1,8 +1,8 @@
 benchmark,rubric,level,tasks,n
 SWE-bench Verified,PLp,0,10,443
 SWE-bench Verified,PLp,1,135,443
-SWE-bench Verified,PLp,2,290,443
-SWE-bench Verified,PLp,3,8,443
+SWE-bench Verified,PLp,2,292,443
+SWE-bench Verified,PLp,3,6,443
 SWE-bench Verified,PLp,4,0,443
 SWE-bench Verified,PLp,5,0,443
 SWE-bench Verified,PLe,0,0,443
@@ -31,9 +31,9 @@ SWE-bench Verified,MSc,4,0,443
 SWE-bench Verified,MSc,5,0,443
 ProgramBench,PLp,0,0,129
 ProgramBench,PLp,1,0,129
-ProgramBench,PLp,2,27,129
-ProgramBench,PLp,3,102,129
-ProgramBench,PLp,4,0,129
+ProgramBench,PLp,2,33,129
+ProgramBench,PLp,3,94,129
+ProgramBench,PLp,4,2,129
 ProgramBench,PLp,5,0,129
 ProgramBench,PLe,0,0,129
 ProgramBench,PLe,1,0,129
@@ -61,8 +61,8 @@ ProgramBench,MSc,4,0,129
 ProgramBench,MSc,5,0,129
 DeepSWE,PLp,0,0,90
 DeepSWE,PLp,1,0,90
-DeepSWE,PLp,2,32,90
-DeepSWE,PLp,3,58,90
+DeepSWE,PLp,2,39,90
+DeepSWE,PLp,3,51,90
 DeepSWE,PLp,4,0,90
 DeepSWE,PLp,5,0,90
 DeepSWE,PLe,0,0,90
@@ -92,8 +92,8 @@ DeepSWE,MSc,5,0,90
 FrontierSWE,PLp,0,0,19
 FrontierSWE,PLp,1,0,19
 FrontierSWE,PLp,2,0,19
-FrontierSWE,PLp,3,17,19
-FrontierSWE,PLp,4,2,19
+FrontierSWE,PLp,3,19,19
+FrontierSWE,PLp,4,0,19
 FrontierSWE,PLp,5,0,19
 FrontierSWE,PLe,0,0,19
 FrontierSWE,PLe,1,0,19
@@ -121,9 +121,9 @@ FrontierSWE,MSc,4,0,19
 FrontierSWE,MSc,5,0,19
 Terminal-Bench 4.0,PLp,0,0,35
 Terminal-Bench 4.0,PLp,1,0,35
-Terminal-Bench 4.0,PLp,2,8,35
-Terminal-Bench 4.0,PLp,3,26,35
-Terminal-Bench 4.0,PLp,4,1,35
+Terminal-Bench 4.0,PLp,2,9,35
+Terminal-Bench 4.0,PLp,3,24,35
+Terminal-Bench 4.0,PLp,4,2,35
 Terminal-Bench 4.0,PLp,5,0,35
 Terminal-Bench 4.0,PLe,0,0,35
 Terminal-Bench 4.0,PLe,1,0,35
@@ -181,8 +181,8 @@ TB-Science,MSc,4,0,69
 TB-Science,MSc,5,0,69
 tau2,PLp,0,0,242
 tau2,PLp,1,28,242
-tau2,PLp,2,212,242
-tau2,PLp,3,2,242
+tau2,PLp,2,213,242
+tau2,PLp,3,1,242
 tau2,PLp,4,0,242
 tau2,PLp,5,0,242
 tau2,PLe,0,0,242
@@ -211,8 +211,8 @@ tau2,MSc,4,24,242
 tau2,MSc,5,0,242
 EQ-Bench 4,PLp,0,0,120
 EQ-Bench 4,PLp,1,0,120
-EQ-Bench 4,PLp,2,103,120
-EQ-Bench 4,PLp,3,17,120
+EQ-Bench 4,PLp,2,116,120
+EQ-Bench 4,PLp,3,4,120
 EQ-Bench 4,PLp,4,0,120
 EQ-Bench 4,PLp,5,0,120
 EQ-Bench 4,PLe,0,0,120
@@ -241,8 +241,8 @@ EQ-Bench 4,MSc,4,43,120
 EQ-Bench 4,MSc,5,0,120
 CooperBench (coop),PLp,0,0,120
 CooperBench (coop),PLp,1,1,120
-CooperBench (coop),PLp,2,88,120
-CooperBench (coop),PLp,3,31,120
+CooperBench (coop),PLp,2,95,120
+CooperBench (coop),PLp,3,24,120
 CooperBench (coop),PLp,4,0,120
 CooperBench (coop),PLp,5,0,120
 CooperBench (coop),PLe,0,0,120
@@ -271,8 +271,8 @@ CooperBench (coop),MSc,4,0,120
 CooperBench (coop),MSc,5,0,120
 CooperBench (solo),PLp,0,0,120
 CooperBench (solo),PLp,1,5,120
-CooperBench (solo),PLp,2,109,120
-CooperBench (solo),PLp,3,6,120
+CooperBench (solo),PLp,2,111,120
+CooperBench (solo),PLp,3,4,120
 CooperBench (solo),PLp,4,0,120
 CooperBench (solo),PLp,5,0,120
 CooperBench (solo),PLe,0,0,120
@@ -320,8 +320,8 @@ Game Arena,PLs,5,0,24
 Game Arena,MSm,0,5,24
 Game Arena,MSm,1,6,24
 Game Arena,MSm,2,5,24
-Game Arena,MSm,3,5,24
-Game Arena,MSm,4,3,24
+Game Arena,MSm,3,7,24
+Game Arena,MSm,4,1,24
 Game Arena,MSm,5,0,24
 Game Arena,MSc,0,15,24
 Game Arena,MSc,1,5,24

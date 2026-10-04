@@ -1,5 +1,6 @@
 """Level histograms of the five v2 rubrics (PLp, PLe, PLs, MSm, MSc) on every benchmark, with the current labels: the
-relabel-v2 runs (Opus 5.5 low, v2 prompt, reviewed examples of d4ec2ec). Agentic sets are their clean sets; CooperBench
+relabel-v2 runs (Opus 5.5 low, v2 prompt, reviewed examples of d4ec2ec), with the relabel-v3
+labels where PLp and MSm cells were re-judged after the two flagged examples were fixed (d6cc9ca). Agentic sets are their clean sets; CooperBench
 is split into coop and solo prompts. Writes dims_now.csv and dims_now.png.
 
     python experiments/benchmarks/pl-histograms/plot_dims_now.py
@@ -23,12 +24,28 @@ SETS = {"swe-bench-verified": "SWE-bench Verified", "programbench": "ProgramBenc
         "cooperbench@coop": "CooperBench (coop)", "cooperbench@solo": "CooperBench (solo)", "gamearena": "Game Arena"}
 
 
-def labels() -> pd.DataFrame:
+RUNS_V3 = ["relabel-v3-plp", "relabel-v3-plp-long", "relabel-v3-plp-eqbench4", "relabel-v3-plp-cooperbench",
+           "relabel-v3-plp-gamearena", "relabel-v3-msm-eqbench4", "relabel-v3-msm-gamearena"]
+
+
+def latest(runs: list[str]) -> pd.DataFrame:
+    """Valid Opus 5.5 labels of `runs`, with relabel-v3 labels (PLp and MSm cells near the two fixed examples)
+    replacing the earlier ones where a cell was re-judged."""
     parts = []
-    for run in RUNS:
-        lab = pd.read_csv(BENCH / "mass-annotation/runs" / run / "labels.csv", dtype={"instance_id": str})
-        parts.append(lab[lab["valid"].astype(bool) & lab["writer_model"].astype(str).str.startswith(MODEL)])
-    lab = pd.concat(parts)
+    for i, group in enumerate((runs, RUNS_V3)):
+        for run in group:
+            p = BENCH / "mass-annotation/runs" / run / "labels.csv"
+            if not p.exists():
+                continue
+            lab = pd.read_csv(p, dtype={"instance_id": str})
+            lab = lab[lab["valid"].astype(bool) & lab["writer_model"].astype(str).str.startswith(MODEL)]
+            parts.append(lab.assign(_v3=i))
+    lab = pd.concat(parts).sort_values("_v3")
+    return lab.drop_duplicates(["benchmark", "instance_id", "rubric_ref"], keep="last").drop(columns="_v3")
+
+
+def labels() -> pd.DataFrame:
+    lab = latest(RUNS)
     key = lab["benchmark"].where(~lab["benchmark"].str.startswith("tau2"), "tau2")
     coop = lab["benchmark"] == "cooperbench"
     key = key.where(~coop, "cooperbench@" + lab["instance_id"].str.split("@").str[-1])

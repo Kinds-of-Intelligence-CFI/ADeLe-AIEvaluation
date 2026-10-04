@@ -1,0 +1,79 @@
+{
+  "run": "relabel-v3-plp-long",
+  "created_at": "2026-10-04T19:06:27+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/relabel-v3-plp-long.toml",
+  "git": {
+    "commit": "d6cc9ca7ccecf50084a660966f514ee650809abe",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low-chunked.md",
+      "sha256": "d63ca13de36bf5099656a569d0e54a410416546adfea22ea6d401afa777bb5c3"
+    },
+    "adele-judge-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low-chunked.md",
+      "sha256": "3f99cedcf760eeeeda20dff6b4c47b83c5ce25035be3aba22e5ad7b9d436e5a7"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "d36049ffc78083d3cf6a70a82621a3938a514c5b6ecefa58366251189cdd3d2a",
+      "content": "# relabel-v3 (PLp, long): re-judges only the PLp cells whose relabel-v2 label is within one level of the\n# changed example (PLp Levels 3-5: the synthesis bullet moved from Level 5 to 4). See experiments/benchmarks/relabel-v3.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v3-plp-long.toml\nname = \"relabel-v3-plp-long\"\n\n[tasks]\nbenchmarks = [\"programbench\"]\nsubset = \"experiments/benchmarks/relabel-v3/subsets/PLp_long.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low-chunked\"\njudge_agent = \"adele-judge-v2-low-chunked\"\nmodel_alias = \"opus\"\nbatch_size = 100\nchunk_lines = 200\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 13
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/relabel-v3/subsets/PLp_long.csv",
+        "sha256": "defc519bbbd131a2b5ef8957bf36456cb5be1a2be50dc66777844e0b2e2225e9",
+        "n_ids": 13
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low-chunked",
+        "judge_agent": "adele-judge-v2-low-chunked",
+        "model_alias": "opus",
+        "batch_size": 100,
+        "chunk_lines": 200
+      }
+    },
+    "cells": {
+      "n": 13,
+      "sha256": "3a2d214cb5294290b7f12351043a9c25aed49a365ee1a64809c41ac8dbf2550c"
+    }
+  }
+}

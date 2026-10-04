@@ -1,0 +1,126 @@
+{
+  "run": "relabel-v3-plp",
+  "created_at": "2026-10-04T19:06:27+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/relabel-v3-plp.toml",
+  "git": {
+    "commit": "d6cc9ca7ccecf50084a660966f514ee650809abe",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "3f666ca87795071de7d05551e65fbe6109bab04bd286d6adbecb9497f6746bc4",
+      "content": "# relabel-v3 (PLp, main): re-judges only the PLp cells whose relabel-v2 label is within one level of the\n# changed example (PLp Levels 3-5: the synthesis bullet moved from Level 5 to 4). See experiments/benchmarks/relabel-v3.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v3-plp.toml\nname = \"relabel-v3-plp\"\n\n[tasks]\nbenchmarks = [\"swe-bench-verified\", \"tau2-airline\", \"tau2-retail\", \"tau2-banking_knowledge\", \"terminal-bench-4.0.0\",\n              \"terminal-bench-science-0.1\", \"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\"]\nsubset = \"experiments/benchmarks/relabel-v3/subsets/PLp_main.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "15aff8a5168ec20396765fb1e020da4f17bed101d7c30c849bc57aaf900991e8",
+          "frame_sha256": "f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f",
+          "n_selected": 8
+        },
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "217187f31c08f389196d73251cecf55ee8414427ac4d170422db699d69a7b0d0",
+          "frame_sha256": "5d51a59e061d005ef6c7d229052c37b9d600c349d96d088647ec1127732f7165",
+          "n_selected": 0
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "ef0dc74a178d950cbbf3abe2d71c40026ef51993699adf2e74bea6e7c523b6cd",
+          "frame_sha256": "6fecc25306f946cdc31287ffa6ce4156d9e24c24f52d86ceb5c4a2cf9bd16015",
+          "n_selected": 0
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "b9e101ef4070fb6e6f249ea4081e60fee646cb93fad7a1eea9f2ee2d879088fb",
+          "frame_sha256": "20bc6ba5dbbaf6abd30585345475da5f6be585f8dc7b3366d7c6ba3976992e00",
+          "n_selected": 2
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "c9fb6c2e13335c9142b4ed2c2748f2edf68de0365db00843fb20d0b8927837c8",
+          "frame_sha256": "66ccf094b35b3ce0e90115623ff4f762e0bba8ef0710711d738f4cf9419e26cd",
+          "n_selected": 27
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "cb27455bcbd81ec0dc9da76b5c0b2278f73ef0eeebaffe2e42f777dfde394d58",
+          "frame_sha256": "0a32c66768dbac26bd8b87b4180276b12906ee423894d259e8a3f54f0aa3581d",
+          "n_selected": 60
+        },
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "eb250bb822880479180ae134ee6beb6c3c70b65316777dfc22cd0aac57b5dfd8",
+          "frame_sha256": "a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac",
+          "n_selected": 58
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "d9deb21a68db8d2c125da4659759ab375465846762c59c658f61495195a99f01",
+          "frame_sha256": "af62cb1bf63e006fe9d649a9702ddfe26bf1c4fa28a5280323ff6f4ed354c325",
+          "n_selected": 19
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 89
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/relabel-v3/subsets/PLp_main.csv",
+        "sha256": "34521ec61ab1033acb9a649c79c68c4b2d3c7ef35b1e8167a90d0b600b1b4a35",
+        "n_ids": 263
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 263,
+      "sha256": "7d9a826619509bf69dd0bb028230376a5f7e45b25a950181cf8080f796aff190"
+    }
+  }
+}

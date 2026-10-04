@@ -4,7 +4,7 @@ Owner: Pablo. Re-judges the PLp cells at Levels 3–5 and the MSm cells at Level
 fixed (PLp synthesis bullet moved from Level 5 to 4; MSm Level 5 seller bullet shortened). Design and predictions:
 `PREREGISTRATION.md`. Old labels: `old_labels.csv` (frozen). Selected cells: `selected.csv`.
 
-**Status.** Pre-registered; not yet run.
+**Status.** Complete (2026-10-04): 456 of 456 cells; see `RESULTS.md` and `RUNLOG.md`.
 
     adele mass pin experiments/benchmarks/mass-annotation/specs/relabel-v3-plp.toml      # and the six other relabel-v3-*
     /annotate relabel-v3-plp (then the other six runs)

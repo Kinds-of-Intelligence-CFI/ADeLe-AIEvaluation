@@ -1,6 +1,7 @@
 """PLp, PLe and PLs level counts on the seven agentic benchmarks (clean sets): the labels first shared (each study's
 release/labels_wide.csv at cd608bf, before the 2026-10-04 example changes) against the current labels (mass runs
-relabel-v2 and relabel-v2-long, under the reviewed examples of d4ec2ec). Writes pl_initial_vs_now.csv and
+relabel-v2 and relabel-v2-long, under the reviewed examples of d4ec2ec, with relabel-v3 where PLp cells were
+re-judged after the synthesis example moved to Level 4). Writes pl_initial_vs_now.csv and
 pl_initial_vs_now.png. Both arms cover the same tasks: those labelled in the initial release.
 
     python experiments/benchmarks/pl-histograms/plot_initial_vs_now.py
@@ -40,13 +41,28 @@ def initial(study: str, benchmark: str | None) -> pd.DataFrame:
                   var_name="rubric_ref", value_name="initial").dropna()
 
 
-def now() -> pd.DataFrame:
+RUNS_V3 = ["relabel-v3-plp", "relabel-v3-plp-long", "relabel-v3-plp-eqbench4", "relabel-v3-plp-cooperbench",
+           "relabel-v3-plp-gamearena", "relabel-v3-msm-eqbench4", "relabel-v3-msm-gamearena"]
+
+
+def latest(runs: list[str]) -> pd.DataFrame:
+    """Valid Opus 5.5 labels of `runs`, with relabel-v3 labels (PLp and MSm cells near the two fixed examples)
+    replacing the earlier ones where a cell was re-judged."""
     parts = []
-    for run in RUNS:
-        lab = pd.read_csv(BENCH / "mass-annotation/runs" / run / "labels.csv", dtype={"instance_id": str})
-        lab = lab[lab["valid"].astype(bool) & lab["writer_model"].astype(str).str.startswith(MODEL)]
-        parts.append(lab[["benchmark", "instance_id", "rubric_ref", "level"]].rename(columns={"level": "now"}))
-    return pd.concat(parts)
+    for i, group in enumerate((runs, RUNS_V3)):
+        for run in group:
+            p = BENCH / "mass-annotation/runs" / run / "labels.csv"
+            if not p.exists():
+                continue
+            lab = pd.read_csv(p, dtype={"instance_id": str})
+            lab = lab[lab["valid"].astype(bool) & lab["writer_model"].astype(str).str.startswith(MODEL)]
+            parts.append(lab.assign(_v3=i))
+    lab = pd.concat(parts).sort_values("_v3")
+    return lab.drop_duplicates(["benchmark", "instance_id", "rubric_ref"], keep="last").drop(columns="_v3")
+
+
+def now() -> pd.DataFrame:
+    return latest(RUNS)[["benchmark", "instance_id", "rubric_ref", "level"]].rename(columns={"level": "now"})
 
 
 def main() -> None:
