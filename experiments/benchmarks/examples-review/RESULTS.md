@@ -4,8 +4,8 @@
 they meet the rubric desiderata (natural, v1-like, no glosses or stock phrases, no sibling loading)?
 
 **Answer.** Mostly, but 42 bullets needed changing, and all 42 pass a placement check. Six reviewers (one per PL and MS
-rubric, one for the three memory rubrics) checked all 165 bullets against `BRIEF.md`. They fixed, replaced or dropped
-47 and flagged 12 for Pablo without changing them. The 42 new or reworded bullets were then judged with the bullet
+rubric, one for the three memory rubrics) checked all 165 bullets against `BRIEF.md`. They reworded 33, replaced 9
+and dropped 2 (44 of 165 touched), and flagged 10 for Pablo without changing them. The 42 new or reworded bullets were then judged with the bullet
 itself removed from the rubric: 37 land on their level and 5 one level off; none is two or more off. All are adopted.
 
 **Status.** Complete (2026-10-04). 126 Opus 5.5 low calls (3 repeats per bullet; 3 retried after a permission block
