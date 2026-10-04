@@ -22,7 +22,7 @@ configs:
 # ADeLe — Terminal-Bench Science 0.1 with demand labels
 
 All 70 tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and flags for tasks that may be broken.
-207 labels. Built at commit `cd608bf` of
+207 labels. Built at commit `386cd10` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tbsci-pl/`).
 

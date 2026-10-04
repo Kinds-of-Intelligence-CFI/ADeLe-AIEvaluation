@@ -21,7 +21,7 @@ configs:
 
 All 34 tasks of FrontierSWE v2, with per-task outcomes, flags and ADeLe demand labels. 110 labels
 (PLp 34, PLe 19, PLs 19, MSm 19, MSc 19): PLp on all 34 tasks, the other rubrics on the 19 clean tasks. Built at commit
-`cd608bf` of [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch
+`386cd10` of [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch
 `agentic-v2`, `experiments/benchmarks/frontierswe-pl/`).
 
 ## What is in it

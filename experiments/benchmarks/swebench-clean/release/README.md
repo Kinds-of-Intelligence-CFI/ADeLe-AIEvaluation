@@ -20,7 +20,7 @@ configs:
 # ADeLe — SWE-bench Verified clean set with demand labels
 
 A subset of SWE-bench Verified that drops tasks known or likely to be broken, with ADeLe demand labels for every task.
-443 tasks, 1329 labels. Built at commit `cd608bf` of
+443 tasks, 1329 labels. Built at commit `386cd10` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/swebench-clean/`).
 

@@ -20,7 +20,7 @@ configs:
 # ADeLe — tau2 clean set with demand labels
 
 The tau2 tasks of three domains (airline, retail, banking_knowledge) that some agent has solved, with ADeLe demand
-labels for every task. 242 tasks, 726 labels. Built at commit `cd608bf` of
+labels for every task. 242 tasks, 726 labels. Built at commit `386cd10` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tau2-clean/`).
 

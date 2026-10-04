@@ -20,7 +20,7 @@ configs:
 # ADeLe — DeepSWE v1.1 with demand labels
 
 All 113 tasks of DeepSWE v1.1, with per-task solve rates, external defect flags, and ADeLe demand labels on the
-90 clean tasks. 450 labels (PLp 90, PLe 90, PLs 90, MSm 90, MSc 90). Built at commit `cd608bf` of
+90 clean tasks. 450 labels (PLp 90, PLe 90, PLs 90, MSm 90, MSc 90). Built at commit `386cd10` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/deepswe-clean/`).
 

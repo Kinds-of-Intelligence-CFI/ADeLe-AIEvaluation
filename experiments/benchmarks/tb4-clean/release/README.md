@@ -20,7 +20,7 @@ configs:
 # ADeLe — Terminal-Bench 4.0.0 clean set with demand labels
 
 A subset of Terminal-Bench 4.0.0 that drops the tasks an external review found defective, and the tasks no current
-agent solves, with ADeLe demand labels. 35 tasks, 103 labels. Built at commit `cd608bf` of
+agent solves, with ADeLe demand labels. 35 tasks, 103 labels. Built at commit `386cd10` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tb4-clean/`).
 

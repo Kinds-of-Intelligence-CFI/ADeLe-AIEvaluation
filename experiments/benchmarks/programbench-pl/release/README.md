@@ -20,7 +20,7 @@ configs:
 # ADeLe — ProgramBench with demand labels
 
 All 200 tasks of ProgramBench v1.2.5, with per-task outcomes, flags, and ADeLe demand labels on the 130
-clean tasks. 644 labels (PLp 128, PLe 129, PLs 129, MSm 129, MSc 129). Built at commit `cd608bf` of
+clean tasks. 644 labels (PLp 128, PLe 129, PLs 129, MSm 129, MSc 129). Built at commit `386cd10` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/programbench-pl/`).
 
