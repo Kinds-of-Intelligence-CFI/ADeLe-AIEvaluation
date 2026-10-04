@@ -1,0 +1,97 @@
+{
+  "run": "relabel-v2-eqbench4",
+  "created_at": "2026-10-04T15:31:11+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/relabel-v2-eqbench4.toml",
+  "git": {
+    "commit": "9fd48995eee3383e0b707880c8a9b18ceb79844c",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/relabel-v2/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/relabel-v2/ledger.csv"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "57045d7e1dbcfc424951efd6f397e14615c77acbaf03585406d9c11737d2eaa8",
+      "content": "# relabel-v2-eqbench4 (relabel after the 2026-10-04 examples review; experiments/benchmarks/relabel-v2): the planning (PLp text O, PLe, PLs) and social (MSm, MSc) rubrics on all 120 EQ-Bench 4 persona\n# scenarios. Prompt = what the tested model sees at the start, then the persona simulator's hidden brief (as for tau2).\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-eqbench4.toml\nname = \"relabel-v2-eqbench4\"\n\n[tasks]\nbenchmarks = [\"eqbench4\"]\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "eqbench4": {
+          "file": "instances_eqbench4.parquet",
+          "file_sha256": "2d690e9279eda9be3e1db73ca8087fb2f71fb163c7add1a634715e5243b672cd",
+          "frame_sha256": "d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4",
+          "n_selected": 120
+        }
+      },
+      "subset": null
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "63b8272d4fb383968b7ebd0143492f2792e1b3ea8a983b6d35ea58110e200d62",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "cbbdf8fbd2657ffb88e007392bf7f7c9ba5dd9cd56843d211dc2bb2cceb04a34",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 600,
+      "sha256": "f70842774fe0d5c3dbd91b9640998cc4d1851f1b1d2dc1cedd4d74dc5688424c"
+    }
+  }
+}

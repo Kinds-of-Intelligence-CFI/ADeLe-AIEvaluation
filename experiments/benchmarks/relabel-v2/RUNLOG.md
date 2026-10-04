@@ -8,4 +8,16 @@ four `judge-dispatcher-v2-low` relays of 100 cells, about 10 minutes each: 1,195
 5 cells rejected once and queued for retry by the runner. Weekly usage 62 to 66 per cent (about 1 point per 400
 calls). Stopped with no relay in flight, to continue in a new session (orchestrator context; about 15 rounds remain).
 
-Not yet pinned: `relabel-v2-long`, `relabel-v2-eqbench4`, `relabel-v2-cooperbench`, `relabel-v2-gamearena`.
+## 2026-10-04 — `relabel-v2` finished; the other four runs pinned
+
+Rounds 4 to 13 in the same way (ten rounds of four relays, the last of three). `relabel-v2` done at 16:25 UTC:
+5,071 of 5,080 cells labelled, every protocol check passed, weekly usage 66 to 77 per cent. Nine cells have no label:
+all five rubrics of two tasks, `programbench / agourlay__zip-password-finder.704700d` and
+`terminal-bench-science-0.1 / protein-active-learning`, minus one cell that a retry labelled. On these two tasks the
+safety classifier swapped the judge to a fallback model (Opus 4.8 or Opus 5) on every attempt, so the runner rejected
+the answers (`fallback_writer`); four more attempts wrote the answer twice and failed the protocol check. Both tasks
+are dual use (password cracking, protein design). They stay unlabelled; the analysis drops them as missing.
+
+`relabel-v2-long` (65 cells), `relabel-v2-eqbench4` (600), `relabel-v2-cooperbench` (1,200) and
+`relabel-v2-gamearena` (120) pinned at 16:15 UTC. The runner allows one open batch of relays per run, so relays of
+different runs share the four slots.
