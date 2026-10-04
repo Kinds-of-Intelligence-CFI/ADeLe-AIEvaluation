@@ -5,19 +5,23 @@
   release/open_issues.csv  the open [TASK FIX] issues the open_issue flag rests on, with the fetch date
   release/labels.csv       one row per (task, rubric): level and full provenance
   release/labels_wide.csv  one row per task: outcomes and flags, one column per rubric
-  release/rubrics.csv      every rubric used: code, generation, name, file, sha256
+  release/rubrics.csv      one row per rubric text used: code, generation, name, file, sha256, and the runs that used it
   release/MANIFEST.tsv     sha256 of every file above
 
-Inputs are committed files only (tasks.csv, open_issues.csv, the mass runs tbsci-pl for PLp and PLe and pls-relabel for
-PLs, with the PLs text of 2026-10-04, results/analysis.json). Only answers written by claude-opus-5-5 are exported; a
-task without one is listed as unlabelled in the card. No task text (Terminal-Bench Science tasks carry a no-training
-canary).
+Labels (PLp, PLe, PLs; ../release.py `current_labels`): all from relabel-v2 (examples review of 2026-10-04, d4ec2ec),
+with PLp re-judged in relabel-v3 for cells at PLp 3-5 after the synthesis example moved to Level 4 (d6cc9ca). The
+merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). Inputs are committed files only
+(tasks.csv, open_issues.csv, the labels.csv and manifest.json of those mass runs, results/analysis.json for task
+counts). Only answers written by claude-opus-5-5 are exported; a task without one is listed as unlabelled in the card.
+The card's correlations are computed here from the released labels, as in analysis/analyse.py (swebench-pl's `rho`).
+No task text (Terminal-Bench Science tasks carry a no-training canary).
 
-    python experiments/benchmarks/tbsci-pl/analysis/analyse.py      # results/analysis.json, quoted in the card
+    python experiments/benchmarks/tbsci-pl/analysis/analyse.py      # results/analysis.json (task counts)
     python experiments/benchmarks/tbsci-pl/export.py
 """
 
 import hashlib
+import importlib.util
 import json
 import shutil
 import subprocess
@@ -25,15 +29,22 @@ from pathlib import Path
 
 import pandas as pd
 
-from adele.agentic import load_active_catalog
-
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 OUT = HERE / "release"
-MODEL = "claude-opus-5-5"
 DIMS = ["PLp", "PLe", "PLs"]
-RUN = HERE.parent / "mass-annotation/runs/tbsci-pl"  # PLp and PLe
-PLS_RUN = HERE.parent / "mass-annotation/runs/pls-relabel"  # PLs
+OUTCOMES = {"solve_rate": "negative", "expert_hours": "positive"}
+
+
+def load(name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+release = load("release", HERE.parent / "release.py")
+rho = load("swepl_analyse", HERE.parent / "swebench-pl/analysis/analyse.py").rho
 
 
 def sha256(b: bytes) -> str:
@@ -47,33 +58,13 @@ def git(*args: str) -> str:
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     tasks = pd.read_csv(HERE / "tasks.csv").set_index("instance_id")
-    cat = load_active_catalog()
-
-    parts = []
-    for run, study, dims in ((RUN, "tbsci-pl", ["PLp", "PLe"]), (PLS_RUN, "pls-relabel", ["PLs"])):
-        lab = pd.read_csv(run / "labels.csv", dtype={"instance_id": str})
-        lab = lab[(lab["benchmark"] == "terminal-bench-science-0.1") & lab["valid"].astype(bool)
-                  & lab["writer_model"].astype(str).str.startswith(MODEL)
-                  & lab["rubric_ref"].isin([f"v2/{d}" for d in dims])]
-        builder = json.loads((run / "manifest.json").read_text())["frozen"]["prompt"]["function"]
-        parts.append(pd.DataFrame({"instance_id": lab["instance_id"], "rubric": lab["rubric_ref"],
-                                   "level": lab["level"].astype(int), "judge_model": lab["writer_model"],
-                                   "judge_effort": lab["effort"],
-                                   "judge_harness": lab["backend"].replace({"subagent": "claude-code-subagent"}),
-                                   "prompt_builder": builder, "prompt_sha256": lab["prompt_sha256"],
-                                   "response_sha256": lab["response_sha256"], "study": study, "run": lab["run"]}))
-    labels = pd.concat(parts, ignore_index=True).sort_values(["instance_id", "rubric"])
+    labels = release.release_labels(HERE, "terminal-bench-science-0.1", DIMS)
     labels.to_csv(OUT / "labels.csv", index=False)
-    wide = tasks.join(labels.pivot(index="instance_id", columns="rubric", values="level"))
+    wide = tasks.join(release.wide(labels, DIMS))
     wide.reset_index().to_csv(OUT / "labels_wide.csv", index=False)
     tasks.reset_index().to_csv(OUT / "tasks.csv", index=False)
     shutil.copyfile(HERE / "open_issues.csv", OUT / "open_issues.csv")
-    rub = pd.DataFrame([{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
-                         "file": str(Path(cat[d].file_path).relative_to(ROOT)),
-                         "sha256": sha256(Path(cat[d].file_path).read_bytes())} for d in DIMS])
-    pin = json.loads((PLS_RUN / "manifest.json").read_text())["frozen"]["rubrics"]["v2/PLs"]["sha256"]
-    rub.loc[rub["code"] == "PLs", "sha256"] = pin  # the PLs text pinned by pls-relabel
-    rub.to_csv(OUT / "rubrics.csv", index=False)
+    release.rubrics(labels, DIMS).to_csv(OUT / "rubrics.csv", index=False)
 
     res = json.loads((HERE / "results/analysis.json").read_text())
     have = set(zip(labels["instance_id"], labels["rubric"]))
@@ -85,13 +76,17 @@ def main() -> None:
             "{n_solved_any}": str(res["n"]["solved_any"]), "{n_clean}": str(res["n"]["solved_any_no_open_issue"]),
             "{n_open_issue}": str(int(tasks["open_issue"].sum())), "{n_never}": str(int((~tasks["solved_any"]).sum())),
             "{issues_date}": str(issues["fetched_on"].iloc[0])}
-    for k in ("all", "solved_any_no_open_issue"):
-        for y in ("solve_rate", "expert_hours"):
-            r = res["spearman"][k][f"PLp_vs_{y}"]
-            fill[f"{{rho_{k}_{y}}}"] = f"{r['rho']:+.2f} (p = {r['p_two_sided']:.2g})" if "rho" in r else "not testable"
+    sets = {"all": wide, "solved_any_no_open_issue": wide[wide["solved_any"] & ~wide["open_issue"]]}
+    for k, g in sets.items():
+        for y, direction in OUTCOMES.items():
+            h = g.dropna(subset=["v2/PLp", y])
+            ok = h["v2/PLp"].nunique() > 1 and h[y].nunique() > 1
+            r = rho(h["v2/PLp"], h[y], direction) if ok else None
+            fill[f"{{rho_{k}_{y}}}"] = f"{r['rho']:+.2f} (p = {r['p_two_sided']:.2g})" if r else "not testable"
     card = (HERE / "DATACARD.md").read_text(encoding="utf-8")
     for k, v in fill.items():
         card = card.replace(k, v)
+    assert "{" not in card.split("---", 2)[2], "unfilled placeholder in DATACARD.md"
     (OUT / "README.md").write_text(card, encoding="utf-8")
     files = ["README.md", "tasks.csv", "open_issues.csv", "labels.csv", "labels_wide.csv", "rubrics.csv"]
     (OUT / "MANIFEST.tsv").write_text("file\tsha256\n" + "".join(

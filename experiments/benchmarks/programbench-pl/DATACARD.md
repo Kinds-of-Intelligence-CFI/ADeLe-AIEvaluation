@@ -31,7 +31,7 @@ clean tasks. {n_labels} labels ({label_counts}). Built at commit `{commit}` of
 | `labels_wide.csv` (default) | task | outcomes, prompt size, flags, `keep`, one column per rubric (empty for dropped tasks) |
 | `labels.csv` | task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
 | `tasks.csv` | task (all {n_tasks}) | the same outcomes and flags, without labels |
-| `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
+| `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 Task text is not included: the documentation the agent sees comes from third-party programs under many licences. Join
 on `instance_id` with [`facebookresearch/ProgramBench`](https://github.com/facebookresearch/ProgramBench), tag
@@ -59,15 +59,18 @@ runs. `difficulty` is ProgramBench's own label.
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
-  PLs is the text adopted on 2026-10-04.
+- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
+  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
+  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
+  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
+  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept. Prompts too long for one read (13 tasks) were read in 200-line parts by the same
   model, and a check required every line to come back.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and what the agent sees (the agent instruction, the workspace
   file listing and the full documentation), a short written assessment, then the level. The judge never sees tests,
   solutions or agent attempts.
-- **Missing labels:** {unlabelled}. For zip-password-finder a safety classifier handed every attempt to another model;
-  for age (PLp) the judge twice stopped reading one line short of the end, which the check rejected.
+- **Missing labels:** {unlabelled}. A safety classifier handed every attempt on this task to another model.
 
 ## What the labels show
 

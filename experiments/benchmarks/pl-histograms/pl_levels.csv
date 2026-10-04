@@ -1,126 +1,126 @@
 benchmark,rubric,level,tasks,n
-SWE-bench Verified,PLp,0,16,443
-SWE-bench Verified,PLp,1,163,443
-SWE-bench Verified,PLp,2,256,443
-SWE-bench Verified,PLp,3,8,443
+SWE-bench Verified,PLp,0,10,443
+SWE-bench Verified,PLp,1,135,443
+SWE-bench Verified,PLp,2,292,443
+SWE-bench Verified,PLp,3,6,443
 SWE-bench Verified,PLp,4,0,443
 SWE-bench Verified,PLp,5,0,443
 SWE-bench Verified,PLe,0,0,443
-SWE-bench Verified,PLe,1,1,443
-SWE-bench Verified,PLe,2,19,443
-SWE-bench Verified,PLe,3,423,443
+SWE-bench Verified,PLe,1,2,443
+SWE-bench Verified,PLe,2,11,443
+SWE-bench Verified,PLe,3,430,443
 SWE-bench Verified,PLe,4,0,443
 SWE-bench Verified,PLe,5,0,443
-SWE-bench Verified,PLs,0,2,443
-SWE-bench Verified,PLs,1,436,443
-SWE-bench Verified,PLs,2,5,443
+SWE-bench Verified,PLs,0,1,443
+SWE-bench Verified,PLs,1,441,443
+SWE-bench Verified,PLs,2,1,443
 SWE-bench Verified,PLs,3,0,443
 SWE-bench Verified,PLs,4,0,443
 SWE-bench Verified,PLs,5,0,443
-ProgramBench,PLp,0,0,128
-ProgramBench,PLp,1,0,128
-ProgramBench,PLp,2,24,128
-ProgramBench,PLp,3,104,128
-ProgramBench,PLp,4,0,128
-ProgramBench,PLp,5,0,128
+ProgramBench,PLp,0,0,129
+ProgramBench,PLp,1,0,129
+ProgramBench,PLp,2,33,129
+ProgramBench,PLp,3,94,129
+ProgramBench,PLp,4,2,129
+ProgramBench,PLp,5,0,129
 ProgramBench,PLe,0,0,129
 ProgramBench,PLe,1,0,129
 ProgramBench,PLe,2,0,129
-ProgramBench,PLe,3,116,129
-ProgramBench,PLe,4,13,129
+ProgramBench,PLe,3,126,129
+ProgramBench,PLe,4,3,129
 ProgramBench,PLe,5,0,129
 ProgramBench,PLs,0,0,129
-ProgramBench,PLs,1,123,129
-ProgramBench,PLs,2,6,129
+ProgramBench,PLs,1,125,129
+ProgramBench,PLs,2,4,129
 ProgramBench,PLs,3,0,129
 ProgramBench,PLs,4,0,129
 ProgramBench,PLs,5,0,129
 DeepSWE,PLp,0,0,90
 DeepSWE,PLp,1,0,90
-DeepSWE,PLp,2,24,90
-DeepSWE,PLp,3,66,90
+DeepSWE,PLp,2,39,90
+DeepSWE,PLp,3,51,90
 DeepSWE,PLp,4,0,90
 DeepSWE,PLp,5,0,90
 DeepSWE,PLe,0,0,90
 DeepSWE,PLe,1,0,90
 DeepSWE,PLe,2,0,90
-DeepSWE,PLe,3,81,90
-DeepSWE,PLe,4,9,90
+DeepSWE,PLe,3,87,90
+DeepSWE,PLe,4,3,90
 DeepSWE,PLe,5,0,90
-DeepSWE,PLs,0,1,90
-DeepSWE,PLs,1,64,90
-DeepSWE,PLs,2,25,90
+DeepSWE,PLs,0,0,90
+DeepSWE,PLs,1,66,90
+DeepSWE,PLs,2,24,90
 DeepSWE,PLs,3,0,90
 DeepSWE,PLs,4,0,90
 DeepSWE,PLs,5,0,90
 FrontierSWE,PLp,0,0,19
 FrontierSWE,PLp,1,0,19
 FrontierSWE,PLp,2,0,19
-FrontierSWE,PLp,3,18,19
-FrontierSWE,PLp,4,1,19
+FrontierSWE,PLp,3,19,19
+FrontierSWE,PLp,4,0,19
 FrontierSWE,PLp,5,0,19
 FrontierSWE,PLe,0,0,19
 FrontierSWE,PLe,1,0,19
 FrontierSWE,PLe,2,0,19
-FrontierSWE,PLe,3,14,19
-FrontierSWE,PLe,4,5,19
+FrontierSWE,PLe,3,15,19
+FrontierSWE,PLe,4,4,19
 FrontierSWE,PLe,5,0,19
-FrontierSWE,PLs,0,1,19
-FrontierSWE,PLs,1,12,19
+FrontierSWE,PLs,0,0,19
+FrontierSWE,PLs,1,13,19
 FrontierSWE,PLs,2,6,19
 FrontierSWE,PLs,3,0,19
 FrontierSWE,PLs,4,0,19
 FrontierSWE,PLs,5,0,19
-Terminal-Bench 4.0,PLp,0,0,34
-Terminal-Bench 4.0,PLp,1,0,34
-Terminal-Bench 4.0,PLp,2,7,34
-Terminal-Bench 4.0,PLp,3,25,34
-Terminal-Bench 4.0,PLp,4,2,34
-Terminal-Bench 4.0,PLp,5,0,34
-Terminal-Bench 4.0,PLe,0,0,34
-Terminal-Bench 4.0,PLe,1,0,34
-Terminal-Bench 4.0,PLe,2,1,34
-Terminal-Bench 4.0,PLe,3,16,34
-Terminal-Bench 4.0,PLe,4,17,34
-Terminal-Bench 4.0,PLe,5,0,34
+Terminal-Bench 4.0,PLp,0,0,35
+Terminal-Bench 4.0,PLp,1,0,35
+Terminal-Bench 4.0,PLp,2,9,35
+Terminal-Bench 4.0,PLp,3,24,35
+Terminal-Bench 4.0,PLp,4,2,35
+Terminal-Bench 4.0,PLp,5,0,35
+Terminal-Bench 4.0,PLe,0,0,35
+Terminal-Bench 4.0,PLe,1,0,35
+Terminal-Bench 4.0,PLe,2,1,35
+Terminal-Bench 4.0,PLe,3,21,35
+Terminal-Bench 4.0,PLe,4,13,35
+Terminal-Bench 4.0,PLe,5,0,35
 Terminal-Bench 4.0,PLs,0,10,35
-Terminal-Bench 4.0,PLs,1,11,35
-Terminal-Bench 4.0,PLs,2,14,35
+Terminal-Bench 4.0,PLs,1,13,35
+Terminal-Bench 4.0,PLs,2,12,35
 Terminal-Bench 4.0,PLs,3,0,35
 Terminal-Bench 4.0,PLs,4,0,35
 Terminal-Bench 4.0,PLs,5,0,35
 TB-Science,PLp,0,0,69
 TB-Science,PLp,1,0,69
-TB-Science,PLp,2,8,69
-TB-Science,PLp,3,52,69
-TB-Science,PLp,4,9,69
+TB-Science,PLp,2,9,69
+TB-Science,PLp,3,53,69
+TB-Science,PLp,4,7,69
 TB-Science,PLp,5,0,69
 TB-Science,PLe,0,0,69
 TB-Science,PLe,1,0,69
-TB-Science,PLe,2,1,69
-TB-Science,PLe,3,24,69
-TB-Science,PLe,4,44,69
+TB-Science,PLe,2,0,69
+TB-Science,PLe,3,27,69
+TB-Science,PLe,4,42,69
 TB-Science,PLe,5,0,69
 TB-Science,PLs,0,30,69
-TB-Science,PLs,1,7,69
-TB-Science,PLs,2,29,69
-TB-Science,PLs,3,2,69
-TB-Science,PLs,4,1,69
+TB-Science,PLs,1,10,69
+TB-Science,PLs,2,26,69
+TB-Science,PLs,3,3,69
+TB-Science,PLs,4,0,69
 TB-Science,PLs,5,0,69
 tau2,PLp,0,0,242
-tau2,PLp,1,24,242
-tau2,PLp,2,212,242
-tau2,PLp,3,6,242
+tau2,PLp,1,28,242
+tau2,PLp,2,213,242
+tau2,PLp,3,1,242
 tau2,PLp,4,0,242
 tau2,PLp,5,0,242
 tau2,PLe,0,0,242
-tau2,PLe,1,192,242
-tau2,PLe,2,34,242
-tau2,PLe,3,16,242
+tau2,PLe,1,186,242
+tau2,PLe,2,36,242
+tau2,PLe,3,20,242
 tau2,PLe,4,0,242
 tau2,PLe,5,0,242
-tau2,PLs,0,3,242
-tau2,PLs,1,18,242
+tau2,PLs,0,5,242
+tau2,PLs,1,16,242
 tau2,PLs,2,221,242
 tau2,PLs,3,0,242
 tau2,PLs,4,0,242

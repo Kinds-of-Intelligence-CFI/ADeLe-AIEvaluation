@@ -12,31 +12,36 @@ should give a negative ρ: higher demand, fewer solves.
 
 ## Results
 
-ρ against solve rate on the clean set. "ns" = not significant (p ≥ 0.05). Levels are counts of tasks.
+ρ against solve rate on the clean set, with the current labels (the releases' labels: relabel-v2, with PLp re-judged
+at Levels 3–5 in relabel-v3; see [relabel-v2](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v2/RESULTS.md) and [relabel-v3](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+Each study's own RESULTS.md keeps its original analysis on earlier labels. "ns" = not significant (p ≥ 0.05).
+Levels are counts of tasks.
 
 | benchmark | tasks | PLp | PLe | PLs | MSm / MSc |
 |---|---|---|---|---|---|
-| [SWE-bench Verified](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/swebench-clean/RESULTS.md) | 443 | **−0.58**; levels 0–3 | −0.30 (423 at 3) | −0.09 ns (436 at 1) | all 0 |
-| [ProgramBench](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/programbench-pl/RESULTS.md) | 128 | **−0.48**; 2/3 = 24/104 | −0.09 ns | −0.09 ns | all 0 |
-| [tau2](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tau2-clean/RESULTS.md) (within domain) | 242 | **−0.30**; mostly 2 | −0.07 ns | −0.20 | about 2; −0.07 ns / +0.09 ns |
-| [DeepSWE](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/deepswe-clean/RESULTS.md) | 90 | **−0.22** (p 0.04); 2/3 = 24/66 | 0.00 | −0.22 (p 0.03) | all 0 |
-| [FrontierSWE](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/frontierswe-pl/RESULTS.md) | 19 | −0.20 ns; 18 of 19 at 3 | +0.29 ns | +0.07 ns | about 0 |
-| [Terminal-Bench 4.0](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tb4-clean/RESULTS.md) | 34 | +0.12 ns; 25 of 34 at 3 | −0.17 ns | −0.01 ns | about 0 |
-| [TB-Science](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tbsci-pl/RESULTS.md) | 69 | +0.24 (wrong sign); 52 of 69 at 3 | 0.00 | +0.04 ns | about 0 |
+| [SWE-bench Verified](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/swebench-clean/RESULTS.md) | 443 | **−0.55**; levels 0–3 | −0.26 (430 at 3) | −0.05 ns (441 at 1) | all 0 |
+| [ProgramBench](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/programbench-pl/RESULTS.md) | 129 | **−0.49**; 2/3/4 = 33/94/2 | −0.12 ns | −0.15 ns | all 0 |
+| [tau2](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tau2-clean/RESULTS.md) (within domain) | 242 | **−0.28**; mostly 2 | −0.14 (p 0.03) | −0.14 (p 0.03) | about 2; −0.12 ns / +0.10 ns |
+| [DeepSWE](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/deepswe-clean/RESULTS.md) | 90 | −0.08 ns; 2/3 = 39/51 | +0.04 ns | −0.13 ns | all 0 |
+| [FrontierSWE](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/frontierswe-pl/RESULTS.md) | 19 | not testable; all 19 at 3 | +0.42 ns | −0.04 ns | about 0 |
+| [Terminal-Bench 4.0](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tb4-clean/RESULTS.md) | 35 | +0.21 ns; 24 of 35 at 3 | −0.01 ns | −0.09 ns | about 0 |
+| [TB-Science](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tbsci-pl/RESULTS.md) | 69 | +0.28 (wrong sign, p 0.02); 53 of 69 at 3 | −0.03 ns | +0.06 ns | about 0 |
 
 MSm and MSc come from one study across all sets:
 [ms-benchmarks](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/ms-benchmarks/RESULTS.md).
 
 ## What it says
 
-- **PLp tracks difficulty where planning drives it.** It works on SWE-bench Verified, ProgramBench, tau2 and DeepSWE.
-  On ProgramBench it survives a control for prompt length.
+- **PLp tracks difficulty where planning drives it.** It works on SWE-bench Verified, ProgramBench and tau2, and has
+  held through every relabel. On ProgramBench it survives a control for prompt length. Its weak DeepSWE signal (−0.22
+  on earlier labels) did not survive the relabel (−0.08).
 - **PLp is flat where knowledge drives difficulty.** On Terminal-Bench 4.0 and TB-Science most tasks sit at PLp 3, and
   agents fail on domain knowledge and strict verifiers. A flat PLp is what the rubric should do there. On TB-Science
   PLp does rise with the authors' expert-hour estimates (+0.41).
-- **PLp is coarse at the top.** Long projects sit at Level 3. On FrontierSWE, the tasks no model solves get Level 4
-  more often (4 of 15, against 1 of 19). Across all 34 FrontierSWE tasks, PLp falls with mean reward (−0.36, p 0.04).
-  Our clean-set rule therefore cuts off part of the top, though not all of it
+- **PLp is coarse at the top.** Long projects sit at Level 3: all 19 clean FrontierSWE tasks do now. With earlier
+  labels, the FrontierSWE tasks no model solves got Level 4 more often (4 of 15, against 1 of 19), and PLp fell with
+  mean reward across all 34 tasks (−0.36, p 0.04); those dropped tasks were not relabelled. Our clean-set rule therefore
+  cuts off part of the top, though not all of it
   ([amendment 1](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/frontierswe-pl/RESULTS.md)).
 - **PLe and PLs barely vary on real tasks.** PLe is mostly 3 on coding work and goes higher on terminal tasks. PLs is
   mostly 0–2. Their signals are weak and secondary.
@@ -46,8 +51,13 @@ MSm and MSc come from one study across all sets:
   ([pls-computer](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/pls-computer/RESULTS.md)),
   and PLs was relabelled on all seven sets
   ([pls-relabel](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/pls-relabel/RESULTS.md)).
-  The PLs column above is the new labels. PLs fell on DeepSWE (Level 2 on 25 of 90, was 59) and now tracks its solve
-  rate; on SWE-bench its weak signal halved (was −0.18).
+  PLs fell on DeepSWE (Level 2 on 24 of 90, was 59) and on SWE-bench (1 of 443, was 26). The DeepSWE signal that
+  appeared after the first PLs relabel (−0.22) did not survive the full relabel (−0.13 ns); only tau2 keeps a weak
+  PLs signal (−0.14).
+- **The examples review changed labels only at noise level (2026-10-04).** All example bullets of the five rubrics were
+  reviewed and 42 reworded or replaced; two flagged ones were then fixed. The relabels kept 86–97% of labels (judge
+  reruns alone keep 80–100%), and every strong signal held ([relabel-v2](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v2/RESULTS.md),
+  [relabel-v3](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **MSm and MSc separate social from single-agent tasks.** They are 0 on every coding and terminal set and about 2 on
   tau2, the only set with another party. They do not track tau2 difficulty: tau2 tasks fail on procedure, which PLp
   reads. The social benchmarks below test them further.
@@ -87,10 +97,14 @@ Per-task labels and outcomes, ready to share, with a data card each (GitHub only
 [deepswe-clean](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/tree/agentic-v2/experiments/benchmarks/deepswe-clean/release),
 [frontierswe-pl](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/tree/agentic-v2/experiments/benchmarks/frontierswe-pl/release),
 [programbench-pl](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/tree/agentic-v2/experiments/benchmarks/programbench-pl/release).
-The first three hold the planning labels only; the last three also hold MSm and MSc.
+The first three hold the planning labels only; the last three also hold MSm and MSc. All carry the current labels
+(relabel-v2, with PLp re-judged at Levels 3–5 in relabel-v3); each row names its run, and `rubrics.csv` lists both PLp
+texts.
 
 ## Limits
 
-- One judge, one sample per cell. Human labels exist only for small lab sets.
+- One judge, one sample per cell. The judge is not deterministic: a rerun changes 5–20% of PL labels, so weak signals on
+  small sets (DeepSWE, 90 tasks) can appear or vanish with a redraw. Human labels exist only for small lab sets.
+- PLp labels are merged from two runs. Only cells at Levels 3–5 were re-judged, so PLp leans slightly down.
 - Solve rates come from public leaderboards, with their own defects. Clean sets remove the known ones.
 - Correlations are within benchmark. Comparing levels across benchmarks needs a common scale, which is future work.

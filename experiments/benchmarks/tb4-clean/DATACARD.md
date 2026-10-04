@@ -31,7 +31,7 @@ agent solves, with ADeLe demand labels. {n_kept} tasks, {n_labels} labels. Built
 | `labels_wide.csv` (default) | clean task | category, expert-hour estimate, trials and solve rate, one column per rubric |
 | `labels.csv` | clean task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
 | `tasks.csv` | Terminal-Bench 4.0.0 task (all 66) | solve counts, Epoch's defect type, exclusion reasons, and `keep` |
-| `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
+| `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 Task text is not included (Terminal-Bench tasks carry a no-training canary). Join on `instance_id` with Terminal-Bench
 4.0.0 (Hugging Face `harborframework/terminal-bench`, tag `v4.0.0`).
@@ -53,20 +53,23 @@ each). **Expert hours** is the task author's estimate from each task's `task.tom
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating), each a
-  0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one adopted
-  on 2026-10-04.
+  0–5 scale; `rubrics.csv` pins the exact text by sha256.
+- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
+  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
+  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
+  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
+  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
   level. The judge never sees tests, solutions or agent attempts.
-- **Missing labels.** {n_full} of {n_kept} tasks have all three labels. `uefi-bootkit` has only PLs: for PLp and PLe a
-  safety classifier stopped the judge on both attempts, and the answers it handed to another model were discarded.
+- **Missing labels:** {unlabelled}. {n_full} of {n_kept} tasks have all three labels.
 
 ## What the labels show (descriptive)
 
 On the fully labelled clean tasks, PLp against solve rate: ρ = {rho_solve} (p = {p_solve}); against expert hours:
 ρ = {rho_hours} (p = {p_hours}). As on the full benchmark, PLp does not track Terminal-Bench difficulty: most tasks sit
-at PLp 3. These labels were already analysed on all 66 tasks, so this is a description, not a new test.
+at PLp 3. PLp was already analysed on all 66 tasks with earlier labels, so this is a description, not a new test.
 
 ## Limits
 

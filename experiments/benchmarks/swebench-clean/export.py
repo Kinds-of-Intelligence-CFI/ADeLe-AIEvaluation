@@ -4,41 +4,42 @@
   release/tasks.csv        all 500 Verified tasks: solve counts, exclusion reasons, keep flag
   release/labels.csv       one row per (clean task, rubric): level and full provenance
   release/labels_wide.csv  one row per clean task: solve rate, time-to-fix bucket, one column per rubric
-  release/rubrics.csv      every rubric used: code, generation, name, file, sha256
+  release/rubrics.csv      one row per rubric text used: code, generation, name, file, sha256, and the runs that used it
   release/MANIFEST.tsv     sha256 of every file above
 
-Inputs are the committed study files only (tasks.csv, the labels_long.csv of each PLp and PLe source run, and the
-labels.csv and manifest.json of mass run pls-relabel, which gives every PLs label with the PLs text of 2026-10-04), so
-the release can be rebuilt at any commit. Only answers written by the requested judge (claude-opus-5-5) are exported.
-No task text.
+Labels (PLp, PLe, PLs; ../release.py `current_labels`): all from relabel-v2 (examples review of 2026-10-04, d4ec2ec),
+with PLp re-judged in relabel-v3 for cells at PLp 3-5 after the synthesis example moved to Level 4 (d6cc9ca). The
+merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). Inputs are committed files only
+(tasks.csv and the labels.csv and manifest.json of those mass runs), so the release can be rebuilt at any commit. Only
+answers written by claude-opus-5-5 are exported. The card's numbers on labels are computed here from the released
+labels, as in analysis/analyse.py (swebench-pl's `rho` on the clean tasks). No task text.
 
     uv run --extra annotate python experiments/benchmarks/swebench-clean/export.py
 """
 
 import hashlib
-import json
+import importlib.util
 import subprocess
 from pathlib import Path
 
 import pandas as pd
 
-from adele.agentic import load_active_catalog
-
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 BENCH = HERE.parent
 OUT = HERE / "release"
-HF_REVISION = "c104f840cc67f8b6eec6f759ebc8b2693d585d4a"  # SWE-bench Verified, as in swebench-pl
-MODEL = "claude-opus-5-5"
-# (rubric, run folder, study that produced it). Order matters: the first source with a label wins.
-SOURCES = [("PLp", "swebench-clean/labels/clean-swe", "swebench-clean"),
-           ("PLp", "plp-o-relabel/labels/o-swe", "plp-o-relabel"),
-           ("PLp", "plp-b2/labels/o-swe-gate", "plp-b2"),
-           ("PLe", "swebench-clean/labels/clean-swe", "swebench-clean"),
-           ("PLe", "pl-relabel-v2/labels/v2-swe", "pl-relabel-v2"),
-           ("PLe", "natural-prompt/labels/npb-gate-opuslow", "natural-prompt")]
-PLS_RUN = BENCH / "mass-annotation/runs/pls-relabel"  # every PLs label
-BUCKETS = {"<15 min fix": 0, "15 min - 1 hour": 1, "1-4 hours": 2, ">4 hours": 3}
+DIMS = ["PLp", "PLe", "PLs"]
+
+
+def load(name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+release = load("release", BENCH / "release.py")
+swe = load("swepl_analyse", BENCH / "swebench-pl/analysis/analyse.py")
 
 
 def sha256(b: bytes) -> str:
@@ -55,56 +56,37 @@ def main() -> None:
     OUT.mkdir(exist_ok=True)
     tasks = pd.read_csv(HERE / "tasks.csv")
     keep = tasks[tasks["keep"]].set_index("instance_id")
-    cat = load_active_catalog()
 
-    rows = []
-    for dim, run, study in SOURCES:
-        lab = pd.read_csv(BENCH / run / "labels_long.csv", dtype={"instance_id": str})
-        lab = lab[(lab["demand"] == dim) & lab["valid"] & lab["writer_model"].astype(str).str.startswith(MODEL)]
-        for r in lab[lab["instance_id"].isin(keep.index)].itertuples(index=False):
-            rows.append({"instance_id": r.instance_id, "rubric": f"v2/{dim}", "level": int(r.level),
-                         "judge_model": r.writer_model, "judge_effort": "low", "judge_harness": "claude-code-subagent",
-                         "prompt_builder": "adele.annotation.prompts.build_annotation_prompt_v2",
-                         "prompt_sha256": r.prompt_sha256, "response_sha256": r.response_sha256,
-                         "study": study, "run": Path(run).name})
-    pls = pd.read_csv(PLS_RUN / "labels.csv", dtype={"instance_id": str})
-    pls = pls[(pls["benchmark"] == "swe-bench-verified") & (pls["rubric_ref"] == "v2/PLs") & pls["valid"].astype(bool)
-              & pls["writer_model"].astype(str).str.startswith(MODEL)]
-    frozen = json.loads((PLS_RUN / "manifest.json").read_text())["frozen"]
-    for r in pls[pls["instance_id"].isin(keep.index)].itertuples(index=False):
-        rows.append({"instance_id": r.instance_id, "rubric": r.rubric_ref, "level": int(r.level),
-                     "judge_model": r.writer_model, "judge_effort": r.effort,
-                     "judge_harness": "claude-code-subagent" if r.backend == "subagent" else r.backend,
-                     "prompt_builder": frozen["prompt"]["function"], "prompt_sha256": r.prompt_sha256,
-                     "response_sha256": r.response_sha256, "study": "pls-relabel", "run": r.run})
-    labels = pd.DataFrame(rows).drop_duplicates(["instance_id", "rubric"], keep="first")
-    missing = len(keep) * 3 - len(labels)
+    labels = release.release_labels(HERE, "swe-bench-verified", DIMS)
+    missing = len(keep) * len(DIMS) - len(labels)
     assert missing == 0, f"{missing} clean-task labels missing"
-    labels.sort_values(["instance_id", "rubric"]).to_csv(OUT / "labels.csv", index=False)
+    labels.to_csv(OUT / "labels.csv", index=False)
 
-    meta = load_dataset("princeton-nlp/SWE-bench_Verified", split="test", revision=HF_REVISION).to_pandas()
+    meta = load_dataset("princeton-nlp/SWE-bench_Verified", split="test", revision=swe.HF_REVISION).to_pandas()
     meta = meta.set_index("instance_id")
-    wide = labels.pivot(index="instance_id", columns="rubric", values="level")
     wide = (keep[["solved_by", "of_entries", "solve_rate"]].join(meta["difficulty"].rename("time_to_fix"))
-            .join(wide))
-    wide["time_to_fix_bucket"] = wide["time_to_fix"].map(BUCKETS)
+            .join(release.wide(labels, DIMS)))
+    wide["time_to_fix_bucket"] = wide["time_to_fix"].map(swe.BUCKETS)
     wide.reset_index().to_csv(OUT / "labels_wide.csv", index=False)
     tasks.to_csv(OUT / "tasks.csv", index=False)
+    release.rubrics(labels, DIMS).to_csv(OUT / "rubrics.csv", index=False)
 
-    rub = [{"rubric": f"v2/{d}", "code": d, "generation": "v2", "name": cat[d].full_name,
-            "file": str(Path(cat[d].file_path).relative_to(ROOT)), "sha256": sha256(Path(cat[d].file_path).read_bytes())}
-           for d in ("PLp", "PLe", "PLs")]
-    rub[2]["sha256"] = frozen["rubrics"]["v2/PLs"]["sha256"]  # the PLs text pinned by pls-relabel
-    pd.DataFrame(rub).to_csv(OUT / "rubrics.csv", index=False)
-
+    plp, hard = wide["v2/PLp"], wide["solved_by"] <= 6
+    q1 = swe.rho(plp, wide["solve_rate"], "negative")
+    q2 = swe.rho(plp, wide["time_to_fix_bucket"], "positive")
+    fill = {"{n_kept}": str(len(keep)), "{n_labels}": str(len(labels)), "{commit}": git("rev-parse", "--short", "HEAD"),
+            "{n_hard}": str(int(hard.sum())), "{rho_solve}": f"{q1['rho']:+.2f}", "{rho_ttf}": f"{q2['rho']:+.2f}",
+            "{plp_hard}": f"{plp[hard].mean():.2f}", "{plp_rest}": f"{plp[~hard].mean():.2f}"}
     card = (HERE / "DATACARD.md").read_text(encoding="utf-8")
-    n = {"kept": len(keep), "labels": len(labels), "commit": git("rev-parse", "--short", "HEAD")}
-    (OUT / "README.md").write_text(card.replace("{n_kept}", str(n["kept"])).replace("{n_labels}", str(n["labels"]))
-                                   .replace("{commit}", n["commit"]), encoding="utf-8")
+    for k, v in fill.items():
+        card = card.replace(k, v)
+    assert "{" not in card.split("---", 2)[2], "unfilled placeholder in DATACARD.md"
+    (OUT / "README.md").write_text(card, encoding="utf-8")
     files = ["README.md", "tasks.csv", "labels.csv", "labels_wide.csv", "rubrics.csv"]
     (OUT / "MANIFEST.tsv").write_text("file\tsha256\n" + "".join(
         f"{f}\t{sha256((OUT / f).read_bytes())}\n" for f in files))
-    print(f"release/: {n['kept']} tasks, {n['labels']} labels")
+    print(f"release/: {len(keep)} tasks, {len(labels)} labels; PLp vs solve rate {fill['{rho_solve}']}, "
+          f"vs time-to-fix {fill['{rho_ttf}']}; PLp hard {fill['{plp_hard}']}, rest {fill['{plp_rest}']}")
 
 
 if __name__ == "__main__":

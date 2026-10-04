@@ -1,444 +1,444 @@
-instance_id,solved_by,of_entries,solve_rate,time_to_fix,v2/PLe,v2/PLp,v2/PLs,time_to_fix_bucket
-astropy__astropy-12907,88,135,0.6519,15 min - 1 hour,3,2,1,1
-astropy__astropy-13033,2,135,0.0148,15 min - 1 hour,3,1,1,1
-astropy__astropy-13236,12,135,0.0889,15 min - 1 hour,3,2,1,1
-astropy__astropy-13453,67,135,0.4963,15 min - 1 hour,3,2,1,1
-astropy__astropy-13579,96,135,0.7111,1-4 hours,3,2,1,2
-astropy__astropy-13977,1,135,0.0074,15 min - 1 hour,3,2,1,1
-astropy__astropy-14096,92,135,0.6815,15 min - 1 hour,3,2,1,1
-astropy__astropy-14182,8,135,0.0593,15 min - 1 hour,3,2,1,1
-astropy__astropy-14309,127,135,0.9407,<15 min fix,3,1,1,0
-astropy__astropy-14365,14,135,0.1037,15 min - 1 hour,3,2,1,1
-astropy__astropy-14369,22,135,0.163,1-4 hours,3,2,1,2
-astropy__astropy-14508,76,135,0.563,15 min - 1 hour,3,2,1,1
-astropy__astropy-14539,97,135,0.7185,15 min - 1 hour,3,2,1,1
-astropy__astropy-14598,7,135,0.0519,15 min - 1 hour,3,2,1,1
-astropy__astropy-14995,116,135,0.8593,<15 min fix,3,2,1,0
-astropy__astropy-7166,107,135,0.7926,<15 min fix,3,1,1,0
-astropy__astropy-7336,121,135,0.8963,<15 min fix,3,1,1,0
-astropy__astropy-7606,8,135,0.0593,15 min - 1 hour,3,1,1,1
-astropy__astropy-7671,114,135,0.8444,15 min - 1 hour,3,2,1,1
-astropy__astropy-8707,11,135,0.0815,15 min - 1 hour,3,2,1,1
-astropy__astropy-8872,10,135,0.0741,15 min - 1 hour,3,2,1,1
-django__django-10097,46,135,0.3407,<15 min fix,3,2,1,0
-django__django-10880,100,135,0.7407,<15 min fix,3,1,1,0
-django__django-10914,117,135,0.8667,<15 min fix,3,1,1,0
-django__django-10973,105,135,0.7778,15 min - 1 hour,3,2,1,1
-django__django-11066,128,135,0.9481,<15 min fix,2,0,1,0
-django__django-11095,121,135,0.8963,15 min - 1 hour,3,1,1,1
-django__django-11099,127,135,0.9407,<15 min fix,3,0,1,0
-django__django-11119,127,135,0.9407,<15 min fix,3,1,1,0
-django__django-11138,15,135,0.1111,1-4 hours,3,2,1,2
-django__django-11141,21,135,0.1556,15 min - 1 hour,3,1,1,1
-django__django-11149,38,135,0.2815,15 min - 1 hour,3,2,2,1
-django__django-11163,125,135,0.9259,<15 min fix,2,0,1,0
-django__django-11179,117,135,0.8667,<15 min fix,3,1,1,0
-django__django-11206,43,135,0.3185,15 min - 1 hour,3,2,1,1
-django__django-11211,91,135,0.6741,15 min - 1 hour,3,2,1,1
-django__django-11239,46,135,0.3407,<15 min fix,3,1,1,0
-django__django-11265,42,135,0.3111,15 min - 1 hour,3,2,1,1
-django__django-11276,101,135,0.7481,15 min - 1 hour,3,1,1,1
-django__django-11292,107,135,0.7926,15 min - 1 hour,3,2,1,1
-django__django-11299,63,135,0.4667,<15 min fix,3,2,1,0
-django__django-11333,64,135,0.4741,15 min - 1 hour,3,1,2,1
-django__django-11433,17,135,0.1259,<15 min fix,3,2,1,0
-django__django-11451,106,135,0.7852,<15 min fix,3,1,1,0
-django__django-11477,2,135,0.0148,15 min - 1 hour,3,2,1,1
-django__django-11490,50,135,0.3704,<15 min fix,3,2,1,0
-django__django-11532,58,135,0.4296,15 min - 1 hour,3,2,1,1
-django__django-11551,120,135,0.8889,15 min - 1 hour,3,1,1,1
-django__django-11555,53,135,0.3926,<15 min fix,3,2,1,0
-django__django-11603,125,135,0.9259,<15 min fix,2,1,1,0
-django__django-11728,15,135,0.1111,15 min - 1 hour,3,1,1,1
+instance_id,solved_by,of_entries,solve_rate,time_to_fix,v2/PLp,v2/PLe,v2/PLs,time_to_fix_bucket
+astropy__astropy-12907,88,135,0.6519,15 min - 1 hour,2,3,1,1
+astropy__astropy-13033,2,135,0.0148,15 min - 1 hour,2,3,1,1
+astropy__astropy-13236,12,135,0.0889,15 min - 1 hour,2,3,1,1
+astropy__astropy-13453,67,135,0.4963,15 min - 1 hour,2,3,1,1
+astropy__astropy-13579,96,135,0.7111,1-4 hours,2,3,1,2
+astropy__astropy-13977,1,135,0.0074,15 min - 1 hour,2,3,1,1
+astropy__astropy-14096,92,135,0.6815,15 min - 1 hour,2,3,1,1
+astropy__astropy-14182,8,135,0.0593,15 min - 1 hour,2,3,1,1
+astropy__astropy-14309,127,135,0.9407,<15 min fix,1,3,1,0
+astropy__astropy-14365,14,135,0.1037,15 min - 1 hour,1,3,1,1
+astropy__astropy-14369,22,135,0.163,1-4 hours,2,3,1,2
+astropy__astropy-14508,76,135,0.563,15 min - 1 hour,2,3,1,1
+astropy__astropy-14539,97,135,0.7185,15 min - 1 hour,2,3,1,1
+astropy__astropy-14598,7,135,0.0519,15 min - 1 hour,2,3,1,1
+astropy__astropy-14995,116,135,0.8593,<15 min fix,2,3,1,0
+astropy__astropy-7166,107,135,0.7926,<15 min fix,1,3,1,0
+astropy__astropy-7336,121,135,0.8963,<15 min fix,1,3,1,0
+astropy__astropy-7606,8,135,0.0593,15 min - 1 hour,1,3,1,1
+astropy__astropy-7671,114,135,0.8444,15 min - 1 hour,2,3,1,1
+astropy__astropy-8707,11,135,0.0815,15 min - 1 hour,2,3,1,1
+astropy__astropy-8872,10,135,0.0741,15 min - 1 hour,2,3,1,1
+django__django-10097,46,135,0.3407,<15 min fix,2,3,1,0
+django__django-10880,100,135,0.7407,<15 min fix,1,3,1,0
+django__django-10914,117,135,0.8667,<15 min fix,2,3,1,0
+django__django-10973,105,135,0.7778,15 min - 1 hour,1,3,1,1
+django__django-11066,128,135,0.9481,<15 min fix,0,3,1,0
+django__django-11095,121,135,0.8963,15 min - 1 hour,1,3,1,1
+django__django-11099,127,135,0.9407,<15 min fix,0,3,1,0
+django__django-11119,127,135,0.9407,<15 min fix,1,3,1,0
+django__django-11138,15,135,0.1111,1-4 hours,2,3,1,2
+django__django-11141,21,135,0.1556,15 min - 1 hour,1,3,1,1
+django__django-11149,38,135,0.2815,15 min - 1 hour,2,3,1,1
+django__django-11163,125,135,0.9259,<15 min fix,0,1,1,0
+django__django-11179,117,135,0.8667,<15 min fix,1,2,1,0
+django__django-11206,43,135,0.3185,15 min - 1 hour,2,3,1,1
+django__django-11211,91,135,0.6741,15 min - 1 hour,2,3,1,1
+django__django-11239,46,135,0.3407,<15 min fix,1,3,1,0
+django__django-11265,42,135,0.3111,15 min - 1 hour,2,3,1,1
+django__django-11276,101,135,0.7481,15 min - 1 hour,1,3,1,1
+django__django-11292,107,135,0.7926,15 min - 1 hour,2,3,1,1
+django__django-11299,63,135,0.4667,<15 min fix,2,3,1,0
+django__django-11333,64,135,0.4741,15 min - 1 hour,1,3,1,1
+django__django-11433,17,135,0.1259,<15 min fix,2,3,1,0
+django__django-11451,106,135,0.7852,<15 min fix,1,3,1,0
+django__django-11477,2,135,0.0148,15 min - 1 hour,2,3,1,1
+django__django-11490,50,135,0.3704,<15 min fix,1,3,1,0
+django__django-11532,58,135,0.4296,15 min - 1 hour,2,3,1,1
+django__django-11551,120,135,0.8889,15 min - 1 hour,1,3,1,1
+django__django-11555,53,135,0.3926,<15 min fix,2,3,1,0
+django__django-11603,125,135,0.9259,<15 min fix,1,3,1,0
+django__django-11728,15,135,0.1111,15 min - 1 hour,2,3,1,1
 django__django-11734,3,135,0.0222,15 min - 1 hour,3,3,1,1
-django__django-11740,76,135,0.563,15 min - 1 hour,3,2,1,1
-django__django-11749,94,135,0.6963,15 min - 1 hour,3,2,1,1
-django__django-11790,31,135,0.2296,15 min - 1 hour,3,1,1,1
-django__django-11815,86,135,0.637,15 min - 1 hour,3,1,1,1
-django__django-11820,1,135,0.0074,<15 min fix,3,2,1,0
-django__django-11848,41,135,0.3037,15 min - 1 hour,3,2,1,1
-django__django-11880,126,135,0.9333,<15 min fix,3,1,1,0
-django__django-11885,10,135,0.0741,1-4 hours,3,2,1,2
-django__django-11951,109,135,0.8074,<15 min fix,2,0,1,0
-django__django-11964,40,135,0.2963,<15 min fix,3,2,1,0
-django__django-11999,110,135,0.8148,15 min - 1 hour,3,1,1,1
-django__django-12039,73,135,0.5407,15 min - 1 hour,3,2,1,1
-django__django-12050,117,135,0.8667,15 min - 1 hour,3,1,1,1
-django__django-12125,61,135,0.4519,<15 min fix,3,2,1,0
-django__django-12143,126,135,0.9333,15 min - 1 hour,3,1,1,1
-django__django-12155,129,135,0.9556,15 min - 1 hour,3,1,1,1
-django__django-12193,76,135,0.563,<15 min fix,3,1,1,0
-django__django-12209,110,135,0.8148,<15 min fix,3,2,1,0
-django__django-12262,84,135,0.6222,15 min - 1 hour,3,2,1,1
-django__django-12273,18,135,0.1333,15 min - 1 hour,3,2,2,1
-django__django-12276,115,135,0.8519,<15 min fix,3,1,1,0
-django__django-12304,84,135,0.6222,<15 min fix,3,1,1,0
-django__django-12308,22,135,0.163,<15 min fix,3,1,1,0
-django__django-12419,122,135,0.9037,<15 min fix,3,1,1,0
-django__django-12663,57,135,0.4222,15 min - 1 hour,3,2,1,1
-django__django-12708,88,135,0.6519,1-4 hours,3,2,1,2
-django__django-12713,111,135,0.8222,15 min - 1 hour,3,1,1,1
-django__django-12741,93,135,0.6889,<15 min fix,3,1,1,0
-django__django-12754,57,135,0.4222,15 min - 1 hour,3,2,1,1
-django__django-12774,62,135,0.4593,15 min - 1 hour,3,2,1,1
-django__django-12858,89,135,0.6593,15 min - 1 hour,3,2,1,1
-django__django-12965,49,135,0.363,15 min - 1 hour,3,2,1,1
-django__django-13012,89,135,0.6593,15 min - 1 hour,3,2,1,1
-django__django-13023,61,135,0.4519,<15 min fix,3,1,1,0
-django__django-13028,103,135,0.763,15 min - 1 hour,3,2,1,1
-django__django-13033,74,135,0.5481,15 min - 1 hour,3,2,1,1
-django__django-13089,126,135,0.9333,<15 min fix,3,1,1,0
-django__django-13109,126,135,0.9333,<15 min fix,3,1,1,0
-django__django-13112,52,135,0.3852,<15 min fix,3,2,1,0
-django__django-13121,61,135,0.4519,15 min - 1 hour,3,2,1,1
-django__django-13128,55,135,0.4074,1-4 hours,3,3,1,2
-django__django-13158,72,135,0.5333,15 min - 1 hour,3,2,1,1
-django__django-13195,2,135,0.0148,15 min - 1 hour,3,2,1,1
-django__django-13279,86,135,0.637,15 min - 1 hour,3,2,1,1
-django__django-13297,60,135,0.4444,<15 min fix,3,2,1,0
-django__django-13315,84,135,0.6222,15 min - 1 hour,3,2,1,1
-django__django-13343,93,135,0.6889,15 min - 1 hour,3,2,1,1
-django__django-13344,5,135,0.037,1-4 hours,3,2,1,2
-django__django-13346,57,135,0.4222,15 min - 1 hour,3,2,1,1
-django__django-13363,122,135,0.9037,<15 min fix,3,1,1,0
-django__django-13406,62,135,0.4593,<15 min fix,3,2,1,0
-django__django-13410,123,135,0.9111,<15 min fix,2,0,1,0
-django__django-13417,110,135,0.8148,<15 min fix,3,2,1,0
-django__django-13449,74,135,0.5481,1-4 hours,3,2,1,2
-django__django-13512,40,135,0.2963,<15 min fix,3,1,1,0
-django__django-13516,114,135,0.8444,15 min - 1 hour,3,1,1,1
-django__django-13551,57,135,0.4222,<15 min fix,3,2,1,0
-django__django-13568,53,135,0.3926,15 min - 1 hour,3,2,1,1
-django__django-13569,97,135,0.7185,15 min - 1 hour,3,2,1,1
-django__django-13590,96,135,0.7111,15 min - 1 hour,3,1,1,1
-django__django-13658,130,135,0.963,15 min - 1 hour,2,0,1,1
-django__django-13670,121,135,0.8963,15 min - 1 hour,3,1,1,1
-django__django-13741,125,135,0.9259,<15 min fix,3,1,1,0
-django__django-13786,119,135,0.8815,15 min - 1 hour,3,2,1,1
-django__django-13794,7,135,0.0519,<15 min fix,3,1,1,0
-django__django-13807,42,135,0.3111,<15 min fix,3,1,1,0
-django__django-13810,98,135,0.7259,15 min - 1 hour,3,2,1,1
-django__django-13820,122,135,0.9037,15 min - 1 hour,3,1,1,1
-django__django-13821,118,135,0.8741,<15 min fix,3,2,1,0
-django__django-13837,101,135,0.7481,1-4 hours,3,2,1,2
-django__django-13925,55,135,0.4074,15 min - 1 hour,3,2,1,1
-django__django-13933,112,135,0.8296,<15 min fix,3,1,1,0
-django__django-13964,73,135,0.5407,15 min - 1 hour,3,2,1,1
-django__django-14007,84,135,0.6222,1-4 hours,3,2,1,2
-django__django-14017,83,135,0.6148,15 min - 1 hour,3,2,1,1
-django__django-14053,101,135,0.7481,15 min - 1 hour,3,2,1,1
-django__django-14089,126,135,0.9333,<15 min fix,2,0,1,0
-django__django-14122,78,135,0.5778,15 min - 1 hour,3,2,1,1
-django__django-14140,35,135,0.2593,15 min - 1 hour,3,2,1,1
-django__django-14170,3,135,0.0222,15 min - 1 hour,3,2,1,1
-django__django-14238,110,135,0.8148,15 min - 1 hour,3,1,1,1
-django__django-14311,60,135,0.4444,15 min - 1 hour,3,2,1,1
-django__django-14315,3,135,0.0222,<15 min fix,3,1,1,0
-django__django-14349,113,135,0.837,15 min - 1 hour,3,1,1,1
-django__django-14351,52,135,0.3852,15 min - 1 hour,3,2,1,1
-django__django-14373,130,135,0.963,<15 min fix,3,1,1,0
-django__django-14376,27,135,0.2,<15 min fix,3,1,1,0
-django__django-14404,37,135,0.2741,<15 min fix,3,1,1,0
-django__django-14434,94,135,0.6963,15 min - 1 hour,3,1,1,1
-django__django-14493,107,135,0.7926,<15 min fix,3,1,1,0
-django__django-14500,93,135,0.6889,15 min - 1 hour,3,1,1,1
-django__django-14534,11,135,0.0815,<15 min fix,3,1,1,0
-django__django-14539,102,135,0.7556,<15 min fix,3,2,1,0
-django__django-14559,95,135,0.7037,15 min - 1 hour,3,1,1,1
-django__django-14580,68,135,0.5037,<15 min fix,3,2,1,0
-django__django-14608,97,135,0.7185,<15 min fix,3,1,1,0
-django__django-14631,48,135,0.3556,1-4 hours,3,2,1,2
-django__django-14672,119,135,0.8815,15 min - 1 hour,2,1,1,1
-django__django-14752,125,135,0.9259,<15 min fix,2,0,1,0
-django__django-14765,123,135,0.9111,<15 min fix,2,0,1,0
-django__django-14771,63,135,0.4667,15 min - 1 hour,3,2,1,1
-django__django-14792,1,135,0.0074,<15 min fix,3,2,1,0
-django__django-14855,127,135,0.9407,<15 min fix,3,1,1,0
-django__django-14999,84,135,0.6222,<15 min fix,3,2,1,0
-django__django-15022,74,135,0.5481,15 min - 1 hour,3,2,1,1
-django__django-15037,65,135,0.4815,15 min - 1 hour,3,2,1,1
-django__django-15098,2,135,0.0148,15 min - 1 hour,3,2,1,1
-django__django-15103,96,135,0.7111,15 min - 1 hour,3,2,1,1
-django__django-15104,128,135,0.9481,<15 min fix,3,1,1,0
-django__django-15127,30,135,0.2222,<15 min fix,3,2,1,0
-django__django-15128,66,135,0.4889,1-4 hours,3,2,1,2
-django__django-15161,65,135,0.4815,15 min - 1 hour,3,2,1,1
-django__django-15252,1,135,0.0074,15 min - 1 hour,3,2,1,1
-django__django-15268,58,135,0.4296,1-4 hours,3,2,2,2
-django__django-15277,125,135,0.9259,<15 min fix,2,0,1,0
-django__django-15278,105,135,0.7778,15 min - 1 hour,3,2,1,1
-django__django-15280,14,135,0.1037,15 min - 1 hour,3,2,1,1
-django__django-15315,116,135,0.8593,<15 min fix,3,1,1,0
-django__django-15368,124,135,0.9185,<15 min fix,3,1,1,0
-django__django-15375,56,135,0.4148,15 min - 1 hour,3,2,1,1
-django__django-15380,100,135,0.7407,<15 min fix,3,2,1,0
-django__django-15382,84,135,0.6222,15 min - 1 hour,3,2,1,1
-django__django-15467,128,135,0.9481,<15 min fix,3,1,1,0
-django__django-15503,22,135,0.163,1-4 hours,3,2,1,2
-django__django-15525,77,135,0.5704,15 min - 1 hour,3,2,1,1
-django__django-15554,24,135,0.1778,15 min - 1 hour,3,2,1,1
-django__django-15561,103,135,0.763,15 min - 1 hour,3,2,1,1
-django__django-15563,15,135,0.1111,15 min - 1 hour,3,2,1,1
-django__django-15569,123,135,0.9111,<15 min fix,3,1,1,0
-django__django-15572,102,135,0.7556,<15 min fix,3,2,2,0
-django__django-15695,12,135,0.0889,15 min - 1 hour,3,2,1,1
-django__django-15731,118,135,0.8741,15 min - 1 hour,3,1,1,1
-django__django-15732,19,135,0.1407,15 min - 1 hour,3,2,1,1
-django__django-15741,115,135,0.8519,<15 min fix,3,1,1,0
-django__django-15814,97,135,0.7185,15 min - 1 hour,3,1,1,1
-django__django-15851,119,135,0.8815,<15 min fix,3,1,1,0
-django__django-15863,105,135,0.7778,<15 min fix,3,2,1,0
-django__django-15916,35,135,0.2593,15 min - 1 hour,3,2,1,1
-django__django-15930,79,135,0.5852,<15 min fix,3,2,1,0
+django__django-11740,76,135,0.563,15 min - 1 hour,2,3,1,1
+django__django-11749,94,135,0.6963,15 min - 1 hour,2,3,1,1
+django__django-11790,31,135,0.2296,15 min - 1 hour,2,3,1,1
+django__django-11815,86,135,0.637,15 min - 1 hour,2,3,1,1
+django__django-11820,1,135,0.0074,<15 min fix,2,3,1,0
+django__django-11848,41,135,0.3037,15 min - 1 hour,1,3,1,1
+django__django-11880,126,135,0.9333,<15 min fix,1,3,1,0
+django__django-11885,10,135,0.0741,1-4 hours,2,3,1,2
+django__django-11951,109,135,0.8074,<15 min fix,1,3,1,0
+django__django-11964,40,135,0.2963,<15 min fix,1,3,1,0
+django__django-11999,110,135,0.8148,15 min - 1 hour,2,3,1,1
+django__django-12039,73,135,0.5407,15 min - 1 hour,2,3,1,1
+django__django-12050,117,135,0.8667,15 min - 1 hour,2,3,1,1
+django__django-12125,61,135,0.4519,<15 min fix,2,3,1,0
+django__django-12143,126,135,0.9333,15 min - 1 hour,1,3,1,1
+django__django-12155,129,135,0.9556,15 min - 1 hour,1,3,1,1
+django__django-12193,76,135,0.563,<15 min fix,1,3,1,0
+django__django-12209,110,135,0.8148,<15 min fix,2,3,1,0
+django__django-12262,84,135,0.6222,15 min - 1 hour,2,3,1,1
+django__django-12273,18,135,0.1333,15 min - 1 hour,2,3,1,1
+django__django-12276,115,135,0.8519,<15 min fix,1,3,1,0
+django__django-12304,84,135,0.6222,<15 min fix,1,3,1,0
+django__django-12308,22,135,0.163,<15 min fix,1,3,1,0
+django__django-12419,122,135,0.9037,<15 min fix,1,3,1,0
+django__django-12663,57,135,0.4222,15 min - 1 hour,2,3,1,1
+django__django-12708,88,135,0.6519,1-4 hours,2,3,1,2
+django__django-12713,111,135,0.8222,15 min - 1 hour,1,3,1,1
+django__django-12741,93,135,0.6889,<15 min fix,1,3,1,0
+django__django-12754,57,135,0.4222,15 min - 1 hour,2,3,1,1
+django__django-12774,62,135,0.4593,15 min - 1 hour,2,3,1,1
+django__django-12858,89,135,0.6593,15 min - 1 hour,2,3,1,1
+django__django-12965,49,135,0.363,15 min - 1 hour,2,3,1,1
+django__django-13012,89,135,0.6593,15 min - 1 hour,2,3,1,1
+django__django-13023,61,135,0.4519,<15 min fix,1,3,1,0
+django__django-13028,103,135,0.763,15 min - 1 hour,2,3,1,1
+django__django-13033,74,135,0.5481,15 min - 1 hour,2,3,1,1
+django__django-13089,126,135,0.9333,<15 min fix,1,2,1,0
+django__django-13109,126,135,0.9333,<15 min fix,1,3,1,0
+django__django-13112,52,135,0.3852,<15 min fix,2,3,1,0
+django__django-13121,61,135,0.4519,15 min - 1 hour,2,3,1,1
+django__django-13128,55,135,0.4074,1-4 hours,2,3,1,2
+django__django-13158,72,135,0.5333,15 min - 1 hour,2,3,1,1
+django__django-13195,2,135,0.0148,15 min - 1 hour,2,3,1,1
+django__django-13279,86,135,0.637,15 min - 1 hour,2,3,1,1
+django__django-13297,60,135,0.4444,<15 min fix,2,3,1,0
+django__django-13315,84,135,0.6222,15 min - 1 hour,2,3,1,1
+django__django-13343,93,135,0.6889,15 min - 1 hour,1,3,1,1
+django__django-13344,5,135,0.037,1-4 hours,2,3,1,2
+django__django-13346,57,135,0.4222,15 min - 1 hour,2,3,1,1
+django__django-13363,122,135,0.9037,<15 min fix,2,3,1,0
+django__django-13406,62,135,0.4593,<15 min fix,2,3,1,0
+django__django-13410,123,135,0.9111,<15 min fix,0,3,1,0
+django__django-13417,110,135,0.8148,<15 min fix,2,3,1,0
+django__django-13449,74,135,0.5481,1-4 hours,2,3,1,2
+django__django-13512,40,135,0.2963,<15 min fix,2,3,1,0
+django__django-13516,114,135,0.8444,15 min - 1 hour,1,3,1,1
+django__django-13551,57,135,0.4222,<15 min fix,2,3,1,0
+django__django-13568,53,135,0.3926,15 min - 1 hour,2,3,1,1
+django__django-13569,97,135,0.7185,15 min - 1 hour,2,3,1,1
+django__django-13590,96,135,0.7111,15 min - 1 hour,1,3,1,1
+django__django-13658,130,135,0.963,15 min - 1 hour,0,2,1,1
+django__django-13670,121,135,0.8963,15 min - 1 hour,1,3,1,1
+django__django-13741,125,135,0.9259,<15 min fix,1,3,1,0
+django__django-13786,119,135,0.8815,15 min - 1 hour,2,3,1,1
+django__django-13794,7,135,0.0519,<15 min fix,2,3,1,0
+django__django-13807,42,135,0.3111,<15 min fix,1,3,1,0
+django__django-13810,98,135,0.7259,15 min - 1 hour,2,3,1,1
+django__django-13820,122,135,0.9037,15 min - 1 hour,1,3,1,1
+django__django-13821,118,135,0.8741,<15 min fix,1,3,1,0
+django__django-13837,101,135,0.7481,1-4 hours,2,3,1,2
+django__django-13925,55,135,0.4074,15 min - 1 hour,2,3,1,1
+django__django-13933,112,135,0.8296,<15 min fix,1,3,1,0
+django__django-13964,73,135,0.5407,15 min - 1 hour,2,3,1,1
+django__django-14007,84,135,0.6222,1-4 hours,2,3,1,2
+django__django-14017,83,135,0.6148,15 min - 1 hour,2,3,1,1
+django__django-14053,101,135,0.7481,15 min - 1 hour,2,3,1,1
+django__django-14089,126,135,0.9333,<15 min fix,1,3,1,0
+django__django-14122,78,135,0.5778,15 min - 1 hour,2,3,1,1
+django__django-14140,35,135,0.2593,15 min - 1 hour,2,3,1,1
+django__django-14170,3,135,0.0222,15 min - 1 hour,2,3,1,1
+django__django-14238,110,135,0.8148,15 min - 1 hour,1,3,1,1
+django__django-14311,60,135,0.4444,15 min - 1 hour,2,3,1,1
+django__django-14315,3,135,0.0222,<15 min fix,1,3,1,0
+django__django-14349,113,135,0.837,15 min - 1 hour,2,3,1,1
+django__django-14351,52,135,0.3852,15 min - 1 hour,3,3,1,1
+django__django-14373,130,135,0.963,<15 min fix,1,3,1,0
+django__django-14376,27,135,0.2,<15 min fix,1,3,1,0
+django__django-14404,37,135,0.2741,<15 min fix,1,3,1,0
+django__django-14434,94,135,0.6963,15 min - 1 hour,1,3,1,1
+django__django-14493,107,135,0.7926,<15 min fix,1,3,1,0
+django__django-14500,93,135,0.6889,15 min - 1 hour,2,3,1,1
+django__django-14534,11,135,0.0815,<15 min fix,1,3,1,0
+django__django-14539,102,135,0.7556,<15 min fix,2,3,1,0
+django__django-14559,95,135,0.7037,15 min - 1 hour,1,3,1,1
+django__django-14580,68,135,0.5037,<15 min fix,2,3,1,0
+django__django-14608,97,135,0.7185,<15 min fix,2,3,1,0
+django__django-14631,48,135,0.3556,1-4 hours,2,3,1,2
+django__django-14672,119,135,0.8815,15 min - 1 hour,1,3,1,1
+django__django-14752,125,135,0.9259,<15 min fix,0,3,1,0
+django__django-14765,123,135,0.9111,<15 min fix,1,2,1,0
+django__django-14771,63,135,0.4667,15 min - 1 hour,2,3,1,1
+django__django-14792,1,135,0.0074,<15 min fix,2,3,1,0
+django__django-14855,127,135,0.9407,<15 min fix,1,3,1,0
+django__django-14999,84,135,0.6222,<15 min fix,2,3,1,0
+django__django-15022,74,135,0.5481,15 min - 1 hour,2,3,2,1
+django__django-15037,65,135,0.4815,15 min - 1 hour,2,3,1,1
+django__django-15098,2,135,0.0148,15 min - 1 hour,2,3,1,1
+django__django-15103,96,135,0.7111,15 min - 1 hour,1,3,1,1
+django__django-15104,128,135,0.9481,<15 min fix,1,3,1,0
+django__django-15127,30,135,0.2222,<15 min fix,2,3,1,0
+django__django-15128,66,135,0.4889,1-4 hours,2,3,1,2
+django__django-15161,65,135,0.4815,15 min - 1 hour,2,3,1,1
+django__django-15252,1,135,0.0074,15 min - 1 hour,2,3,1,1
+django__django-15268,58,135,0.4296,1-4 hours,2,3,1,2
+django__django-15277,125,135,0.9259,<15 min fix,0,2,1,0
+django__django-15278,105,135,0.7778,15 min - 1 hour,2,3,1,1
+django__django-15280,14,135,0.1037,15 min - 1 hour,2,3,1,1
+django__django-15315,116,135,0.8593,<15 min fix,1,3,1,0
+django__django-15368,124,135,0.9185,<15 min fix,1,3,1,0
+django__django-15375,56,135,0.4148,15 min - 1 hour,2,3,1,1
+django__django-15380,100,135,0.7407,<15 min fix,2,3,1,0
+django__django-15382,84,135,0.6222,15 min - 1 hour,2,3,1,1
+django__django-15467,128,135,0.9481,<15 min fix,0,2,1,0
+django__django-15503,22,135,0.163,1-4 hours,2,3,1,2
+django__django-15525,77,135,0.5704,15 min - 1 hour,2,3,1,1
+django__django-15554,24,135,0.1778,15 min - 1 hour,2,3,1,1
+django__django-15561,103,135,0.763,15 min - 1 hour,2,3,1,1
+django__django-15563,15,135,0.1111,15 min - 1 hour,2,3,1,1
+django__django-15569,123,135,0.9111,<15 min fix,1,3,1,0
+django__django-15572,102,135,0.7556,<15 min fix,2,3,1,0
+django__django-15695,12,135,0.0889,15 min - 1 hour,2,3,1,1
+django__django-15731,118,135,0.8741,15 min - 1 hour,1,3,1,1
+django__django-15732,19,135,0.1407,15 min - 1 hour,2,3,1,1
+django__django-15741,115,135,0.8519,<15 min fix,1,3,1,0
+django__django-15814,97,135,0.7185,15 min - 1 hour,1,3,1,1
+django__django-15851,119,135,0.8815,<15 min fix,1,3,1,0
+django__django-15863,105,135,0.7778,<15 min fix,2,3,1,0
+django__django-15916,35,135,0.2593,15 min - 1 hour,2,3,1,1
+django__django-15930,79,135,0.5852,<15 min fix,2,3,1,0
 django__django-15957,9,135,0.0667,1-4 hours,3,3,1,2
-django__django-15973,6,135,0.0444,15 min - 1 hour,3,2,1,1
-django__django-15987,89,135,0.6593,<15 min fix,3,1,1,0
-django__django-16032,73,135,0.5407,15 min - 1 hour,3,2,1,1
-django__django-16082,87,135,0.6444,15 min - 1 hour,3,1,1,1
-django__django-16100,94,135,0.6963,<15 min fix,3,1,1,0
-django__django-16136,97,135,0.7185,15 min - 1 hour,3,2,1,1
-django__django-16145,116,135,0.8593,<15 min fix,3,1,1,0
-django__django-16255,128,135,0.9481,<15 min fix,3,1,1,0
-django__django-16256,5,135,0.037,15 min - 1 hour,3,2,1,1
-django__django-16315,51,135,0.3778,15 min - 1 hour,3,2,1,1
-django__django-16333,123,135,0.9111,<15 min fix,3,1,1,0
-django__django-16429,125,135,0.9259,<15 min fix,2,1,1,0
-django__django-16454,34,135,0.2519,15 min - 1 hour,3,2,1,1
-django__django-16493,117,135,0.8667,15 min - 1 hour,3,2,1,1
-django__django-16527,128,135,0.9481,15 min - 1 hour,3,0,1,1
-django__django-16560,37,135,0.2741,1-4 hours,3,2,1,2
-django__django-16569,129,135,0.9556,<15 min fix,2,1,1,0
-django__django-16612,113,135,0.837,15 min - 1 hour,3,1,1,1
-django__django-16642,78,135,0.5778,<15 min fix,3,1,1,0
-django__django-16661,71,135,0.5259,15 min - 1 hour,3,2,1,1
-django__django-16662,112,135,0.8296,15 min - 1 hour,3,1,1,1
-django__django-16801,124,135,0.9185,<15 min fix,3,1,1,0
-django__django-16819,104,135,0.7704,15 min - 1 hour,3,2,1,1
-django__django-16877,62,135,0.4593,15 min - 1 hour,3,1,1,1
-django__django-16899,103,135,0.763,<15 min fix,3,1,1,0
-django__django-16901,97,135,0.7185,15 min - 1 hour,3,2,1,1
-django__django-16938,29,135,0.2148,15 min - 1 hour,3,2,1,1
-django__django-16950,19,135,0.1407,15 min - 1 hour,3,2,1,1
-django__django-17029,125,135,0.9259,<15 min fix,3,0,1,0
-django__django-17084,47,135,0.3481,15 min - 1 hour,3,2,1,1
-django__django-17087,90,135,0.6667,<15 min fix,3,2,1,0
-django__django-7530,110,135,0.8148,15 min - 1 hour,3,1,1,1
-django__django-9296,127,135,0.9407,<15 min fix,2,0,1,0
-matplotlib__matplotlib-13989,103,135,0.763,<15 min fix,3,1,1,0
-matplotlib__matplotlib-20488,33,135,0.2444,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-20676,20,135,0.1481,<15 min fix,3,2,1,0
-matplotlib__matplotlib-20826,40,135,0.2963,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-20859,94,135,0.6963,<15 min fix,2,1,1,0
-matplotlib__matplotlib-21568,1,135,0.0074,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-22719,121,135,0.8963,<15 min fix,3,1,1,0
-matplotlib__matplotlib-22865,51,135,0.3778,15 min - 1 hour,3,1,1,1
-matplotlib__matplotlib-22871,49,135,0.363,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-23299,6,135,0.0444,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-23412,104,135,0.7704,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-23476,2,135,0.0148,<15 min fix,3,2,1,0
-matplotlib__matplotlib-24026,102,135,0.7556,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-24149,101,135,0.7481,<15 min fix,3,1,1,0
-matplotlib__matplotlib-24177,12,135,0.0889,<15 min fix,3,2,1,0
-matplotlib__matplotlib-24570,90,135,0.6667,<15 min fix,3,1,1,0
-matplotlib__matplotlib-24627,75,135,0.5556,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-24637,77,135,0.5704,15 min - 1 hour,3,1,1,1
-matplotlib__matplotlib-24870,3,135,0.0222,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-24970,107,135,0.7926,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-25122,114,135,0.8444,<15 min fix,3,1,1,0
-matplotlib__matplotlib-25287,109,135,0.8074,<15 min fix,3,1,1,0
-matplotlib__matplotlib-25311,64,135,0.4741,<15 min fix,3,2,1,0
-matplotlib__matplotlib-25332,67,135,0.4963,<15 min fix,3,2,1,0
-matplotlib__matplotlib-25775,60,135,0.4444,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-25960,11,135,0.0815,15 min - 1 hour,3,2,1,1
-matplotlib__matplotlib-26113,114,135,0.8444,<15 min fix,3,2,1,0
-matplotlib__matplotlib-26208,2,135,0.0148,<15 min fix,3,2,1,0
-matplotlib__matplotlib-26291,67,135,0.4963,15 min - 1 hour,3,1,1,1
-matplotlib__matplotlib-26342,103,135,0.763,15 min - 1 hour,3,1,1,1
+django__django-15973,6,135,0.0444,15 min - 1 hour,2,3,1,1
+django__django-15987,89,135,0.6593,<15 min fix,1,3,1,0
+django__django-16032,73,135,0.5407,15 min - 1 hour,2,3,1,1
+django__django-16082,87,135,0.6444,15 min - 1 hour,2,3,1,1
+django__django-16100,94,135,0.6963,<15 min fix,1,3,1,0
+django__django-16136,97,135,0.7185,15 min - 1 hour,2,3,1,1
+django__django-16145,116,135,0.8593,<15 min fix,2,3,1,0
+django__django-16255,128,135,0.9481,<15 min fix,1,2,1,0
+django__django-16256,5,135,0.037,15 min - 1 hour,2,3,1,1
+django__django-16315,51,135,0.3778,15 min - 1 hour,2,3,1,1
+django__django-16333,123,135,0.9111,<15 min fix,1,3,1,0
+django__django-16429,125,135,0.9259,<15 min fix,1,3,1,0
+django__django-16454,34,135,0.2519,15 min - 1 hour,2,3,1,1
+django__django-16493,117,135,0.8667,15 min - 1 hour,2,3,1,1
+django__django-16527,128,135,0.9481,15 min - 1 hour,1,3,1,1
+django__django-16560,37,135,0.2741,1-4 hours,2,3,1,2
+django__django-16569,129,135,0.9556,<15 min fix,1,3,1,0
+django__django-16612,113,135,0.837,15 min - 1 hour,1,3,1,1
+django__django-16642,78,135,0.5778,<15 min fix,1,3,1,0
+django__django-16661,71,135,0.5259,15 min - 1 hour,2,3,1,1
+django__django-16662,112,135,0.8296,15 min - 1 hour,2,3,1,1
+django__django-16801,124,135,0.9185,<15 min fix,1,3,1,0
+django__django-16819,104,135,0.7704,15 min - 1 hour,2,3,1,1
+django__django-16877,62,135,0.4593,15 min - 1 hour,1,3,1,1
+django__django-16899,103,135,0.763,<15 min fix,1,3,1,0
+django__django-16901,97,135,0.7185,15 min - 1 hour,2,3,1,1
+django__django-16938,29,135,0.2148,15 min - 1 hour,2,3,1,1
+django__django-16950,19,135,0.1407,15 min - 1 hour,2,3,1,1
+django__django-17029,125,135,0.9259,<15 min fix,1,3,1,0
+django__django-17084,47,135,0.3481,15 min - 1 hour,3,3,1,1
+django__django-17087,90,135,0.6667,<15 min fix,2,3,1,0
+django__django-7530,110,135,0.8148,15 min - 1 hour,1,3,1,1
+django__django-9296,127,135,0.9407,<15 min fix,1,2,1,0
+matplotlib__matplotlib-13989,103,135,0.763,<15 min fix,2,3,1,0
+matplotlib__matplotlib-20488,33,135,0.2444,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-20676,20,135,0.1481,<15 min fix,2,3,1,0
+matplotlib__matplotlib-20826,40,135,0.2963,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-20859,94,135,0.6963,<15 min fix,1,3,1,0
+matplotlib__matplotlib-21568,1,135,0.0074,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-22719,121,135,0.8963,<15 min fix,2,3,1,0
+matplotlib__matplotlib-22865,51,135,0.3778,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-22871,49,135,0.363,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-23299,6,135,0.0444,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-23412,104,135,0.7704,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-23476,2,135,0.0148,<15 min fix,2,3,1,0
+matplotlib__matplotlib-24026,102,135,0.7556,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-24149,101,135,0.7481,<15 min fix,2,3,1,0
+matplotlib__matplotlib-24177,12,135,0.0889,<15 min fix,2,3,1,0
+matplotlib__matplotlib-24570,90,135,0.6667,<15 min fix,1,3,1,0
+matplotlib__matplotlib-24627,75,135,0.5556,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-24637,77,135,0.5704,15 min - 1 hour,1,3,1,1
+matplotlib__matplotlib-24870,3,135,0.0222,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-24970,107,135,0.7926,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-25122,114,135,0.8444,<15 min fix,1,3,1,0
+matplotlib__matplotlib-25287,109,135,0.8074,<15 min fix,1,3,1,0
+matplotlib__matplotlib-25311,64,135,0.4741,<15 min fix,2,3,1,0
+matplotlib__matplotlib-25332,67,135,0.4963,<15 min fix,2,3,1,0
+matplotlib__matplotlib-25775,60,135,0.4444,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-25960,11,135,0.0815,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-26113,114,135,0.8444,<15 min fix,2,3,1,0
+matplotlib__matplotlib-26208,2,135,0.0148,<15 min fix,2,3,1,0
+matplotlib__matplotlib-26291,67,135,0.4963,15 min - 1 hour,2,3,1,1
+matplotlib__matplotlib-26342,103,135,0.763,15 min - 1 hour,1,3,1,1
 mwaskom__seaborn-3069,44,135,0.3259,15 min - 1 hour,3,3,1,1
-mwaskom__seaborn-3187,6,135,0.0444,15 min - 1 hour,3,2,1,1
-pallets__flask-5014,123,135,0.9111,<15 min fix,3,1,1,0
-psf__requests-1142,67,135,0.4963,<15 min fix,3,1,1,0
-psf__requests-1724,83,135,0.6148,<15 min fix,3,1,1,0
-psf__requests-1766,98,135,0.7259,<15 min fix,3,1,1,0
-psf__requests-1921,75,135,0.5556,<15 min fix,3,1,1,0
-psf__requests-2317,83,135,0.6148,<15 min fix,3,1,1,0
-psf__requests-2931,45,135,0.3333,15 min - 1 hour,3,1,1,1
-psf__requests-5414,73,135,0.5407,<15 min fix,3,2,1,0
-psf__requests-6028,8,135,0.0593,15 min - 1 hour,3,2,1,1
-pydata__xarray-2905,78,135,0.5778,15 min - 1 hour,3,2,1,1
-pydata__xarray-3095,75,135,0.5556,15 min - 1 hour,3,2,1,1
-pydata__xarray-3151,103,135,0.763,15 min - 1 hour,3,2,1,1
-pydata__xarray-3677,117,135,0.8667,15 min - 1 hour,2,2,1,1
-pydata__xarray-3993,54,135,0.4,1-4 hours,3,2,1,2
-pydata__xarray-4075,125,135,0.9259,<15 min fix,3,1,1,0
-pydata__xarray-4094,64,135,0.4741,<15 min fix,3,2,1,0
-pydata__xarray-4356,116,135,0.8593,<15 min fix,3,1,1,0
-pydata__xarray-4629,128,135,0.9481,<15 min fix,3,0,1,0
-pydata__xarray-4695,57,135,0.4222,15 min - 1 hour,3,2,1,1
-pydata__xarray-4966,112,135,0.8296,15 min - 1 hour,3,2,1,1
-pydata__xarray-6461,100,135,0.7407,<15 min fix,3,1,1,0
-pydata__xarray-6599,43,135,0.3185,15 min - 1 hour,3,2,1,1
-pydata__xarray-6721,63,135,0.4667,15 min - 1 hour,3,2,1,1
-pydata__xarray-6744,67,135,0.4963,15 min - 1 hour,3,2,1,1
-pydata__xarray-6938,13,135,0.0963,15 min - 1 hour,3,2,1,1
-pydata__xarray-7233,111,135,0.8222,15 min - 1 hour,3,2,1,1
-pylint-dev__pylint-4970,23,135,0.1704,<15 min fix,3,1,1,0
-pylint-dev__pylint-6386,35,135,0.2593,15 min - 1 hour,3,2,1,1
-pylint-dev__pylint-6528,55,135,0.4074,15 min - 1 hour,3,2,1,1
-pylint-dev__pylint-6903,129,135,0.9556,<15 min fix,3,2,1,0
-pylint-dev__pylint-7277,103,135,0.763,<15 min fix,3,2,1,0
-pylint-dev__pylint-8898,10,135,0.0741,1-4 hours,3,2,1,2
-pytest-dev__pytest-10051,43,135,0.3185,15 min - 1 hour,3,1,1,1
-pytest-dev__pytest-10081,94,135,0.6963,<15 min fix,3,2,1,0
-pytest-dev__pytest-10356,2,135,0.0148,1-4 hours,3,2,1,2
-pytest-dev__pytest-5262,93,135,0.6889,<15 min fix,3,1,1,0
-pytest-dev__pytest-5631,95,135,0.7037,15 min - 1 hour,3,1,1,1
-pytest-dev__pytest-5787,35,135,0.2593,1-4 hours,3,2,1,2
-pytest-dev__pytest-5809,129,135,0.9556,<15 min fix,2,1,1,0
-pytest-dev__pytest-5840,2,135,0.0148,15 min - 1 hour,3,2,1,1
-pytest-dev__pytest-6197,31,135,0.2296,1-4 hours,3,2,1,2
-pytest-dev__pytest-6202,127,135,0.9407,<15 min fix,3,1,1,0
-pytest-dev__pytest-7205,85,135,0.6296,<15 min fix,3,1,1,0
-pytest-dev__pytest-7236,83,135,0.6148,15 min - 1 hour,3,2,1,1
-pytest-dev__pytest-7324,42,135,0.3111,15 min - 1 hour,3,2,1,1
-pytest-dev__pytest-7432,94,135,0.6963,<15 min fix,3,1,1,0
-pytest-dev__pytest-7490,66,135,0.4889,15 min - 1 hour,3,2,1,1
-pytest-dev__pytest-7521,86,135,0.637,<15 min fix,3,1,1,0
-pytest-dev__pytest-7571,107,135,0.7926,15 min - 1 hour,3,1,1,1
-pytest-dev__pytest-7982,120,135,0.8889,<15 min fix,3,1,1,0
-pytest-dev__pytest-8399,124,135,0.9185,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-10297,124,135,0.9185,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-10844,130,135,0.963,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-10908,72,135,0.5333,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-11310,113,135,0.837,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-11578,123,135,0.9111,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-12585,129,135,0.9556,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-12682,69,135,0.5111,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-12973,93,135,0.6889,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-13124,66,135,0.4889,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-13135,108,135,0.8,<15 min fix,3,2,1,0
-scikit-learn__scikit-learn-13142,103,135,0.763,<15 min fix,3,2,1,0
-scikit-learn__scikit-learn-13328,119,135,0.8815,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-13439,122,135,0.9037,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-13496,113,135,0.837,<15 min fix,3,2,1,0
-scikit-learn__scikit-learn-13779,116,135,0.8593,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-14053,110,135,0.8148,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-14141,125,135,0.9259,<15 min fix,3,1,0,0
-scikit-learn__scikit-learn-14496,128,135,0.9481,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-14629,19,135,0.1407,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-14710,104,135,0.7704,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-14983,49,135,0.363,<15 min fix,3,1,1,0
-scikit-learn__scikit-learn-15100,123,135,0.9111,15 min - 1 hour,3,1,1,1
-scikit-learn__scikit-learn-25102,42,135,0.3111,1-4 hours,3,2,1,2
-scikit-learn__scikit-learn-25232,94,135,0.6963,<15 min fix,3,2,1,0
-scikit-learn__scikit-learn-25747,15,135,0.1111,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-25931,94,135,0.6963,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-25973,90,135,0.6667,<15 min fix,3,2,1,0
-scikit-learn__scikit-learn-26194,3,135,0.0222,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-26323,108,135,0.8,15 min - 1 hour,3,2,1,1
-scikit-learn__scikit-learn-9288,99,135,0.7333,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-10323,57,135,0.4222,<15 min fix,3,1,1,0
-sphinx-doc__sphinx-10435,3,135,0.0222,<15 min fix,3,1,1,0
-sphinx-doc__sphinx-10449,68,135,0.5037,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-10466,101,135,0.7481,15 min - 1 hour,3,1,1,1
-sphinx-doc__sphinx-10614,2,135,0.0148,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-10673,72,135,0.5333,15 min - 1 hour,3,3,1,1
-sphinx-doc__sphinx-11445,55,135,0.4074,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-7454,55,135,0.4074,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-7462,1,135,0.0074,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-7590,1,135,0.0074,>4 hours,3,2,1,3
-sphinx-doc__sphinx-7757,67,135,0.4963,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-7889,91,135,0.6741,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-7910,80,135,0.5926,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-7985,5,135,0.037,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8035,75,135,0.5556,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8056,22,135,0.163,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8120,87,135,0.6444,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8265,16,135,0.1185,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8269,90,135,0.6667,<15 min fix,3,1,1,0
-sphinx-doc__sphinx-8459,67,135,0.4963,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-8475,97,135,0.7185,<15 min fix,3,1,1,0
-sphinx-doc__sphinx-8548,13,135,0.0963,1-4 hours,3,2,1,2
-sphinx-doc__sphinx-8551,48,135,0.3556,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8593,59,135,0.437,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8595,98,135,0.7259,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-8621,47,135,0.3481,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-8638,14,135,0.1037,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-8721,114,135,0.8444,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-9229,1,135,0.0074,1-4 hours,3,2,1,2
-sphinx-doc__sphinx-9230,44,135,0.3259,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-9258,42,135,0.3111,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-9281,83,135,0.6148,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-9320,115,135,0.8519,<15 min fix,3,1,1,0
-sphinx-doc__sphinx-9367,116,135,0.8593,<15 min fix,2,1,1,0
-sphinx-doc__sphinx-9461,1,135,0.0074,1-4 hours,3,3,1,2
-sphinx-doc__sphinx-9591,41,135,0.3037,<15 min fix,3,2,1,0
-sphinx-doc__sphinx-9602,8,135,0.0593,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-9658,41,135,0.3037,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-9673,73,135,0.5407,15 min - 1 hour,3,2,1,1
-sphinx-doc__sphinx-9698,107,135,0.7926,<15 min fix,3,1,1,0
-sphinx-doc__sphinx-9711,101,135,0.7481,<15 min fix,3,1,1,0
-sympy__sympy-11618,107,135,0.7926,15 min - 1 hour,3,1,1,1
-sympy__sympy-12096,121,135,0.8963,<15 min fix,3,1,1,0
-sympy__sympy-12419,69,135,0.5111,15 min - 1 hour,3,2,1,1
-sympy__sympy-12481,91,135,0.6741,<15 min fix,3,1,1,0
-sympy__sympy-12489,19,135,0.1407,1-4 hours,3,2,1,2
-sympy__sympy-13031,36,135,0.2667,15 min - 1 hour,3,2,1,1
-sympy__sympy-13091,25,135,0.1852,15 min - 1 hour,3,2,1,1
-sympy__sympy-13372,109,135,0.8074,<15 min fix,3,1,1,0
-sympy__sympy-13480,125,135,0.9259,<15 min fix,3,1,1,0
-sympy__sympy-13551,48,135,0.3556,15 min - 1 hour,3,2,1,1
-sympy__sympy-13615,48,135,0.3556,15 min - 1 hour,3,2,1,1
-sympy__sympy-13647,111,135,0.8222,15 min - 1 hour,3,2,1,1
-sympy__sympy-13757,62,135,0.4593,15 min - 1 hour,3,2,1,1
-sympy__sympy-13798,7,135,0.0519,15 min - 1 hour,3,2,1,1
-sympy__sympy-13877,36,135,0.2667,15 min - 1 hour,3,3,1,1
-sympy__sympy-13878,65,135,0.4815,>4 hours,3,2,1,3
-sympy__sympy-13974,21,135,0.1556,15 min - 1 hour,3,2,1,1
-sympy__sympy-14248,8,135,0.0593,1-4 hours,3,2,1,2
-sympy__sympy-14711,112,135,0.8296,<15 min fix,3,1,1,0
-sympy__sympy-14976,62,135,0.4593,15 min - 1 hour,3,2,1,1
-sympy__sympy-15017,54,135,0.4,<15 min fix,3,1,1,0
-sympy__sympy-15345,60,135,0.4444,<15 min fix,3,1,1,0
-sympy__sympy-15349,97,135,0.7185,15 min - 1 hour,3,1,1,1
-sympy__sympy-15599,29,135,0.2148,15 min - 1 hour,3,2,1,1
-sympy__sympy-15809,85,135,0.6296,<15 min fix,3,1,1,0
-sympy__sympy-15875,64,135,0.4741,<15 min fix,3,2,1,0
-sympy__sympy-15976,27,135,0.2,15 min - 1 hour,3,2,1,1
-sympy__sympy-16597,1,135,0.0074,1-4 hours,3,3,1,2
-sympy__sympy-16766,122,135,0.9037,<15 min fix,3,1,1,0
-sympy__sympy-16792,72,135,0.5333,15 min - 1 hour,3,2,1,1
-sympy__sympy-16886,121,135,0.8963,<15 min fix,1,0,0,0
-sympy__sympy-17139,86,135,0.637,<15 min fix,3,1,1,0
-sympy__sympy-17318,10,135,0.0741,15 min - 1 hour,3,2,1,1
-sympy__sympy-17630,3,135,0.0222,1-4 hours,3,2,1,2
-sympy__sympy-18189,96,135,0.7111,<15 min fix,3,1,1,0
-sympy__sympy-18211,59,135,0.437,15 min - 1 hour,3,2,1,1
-sympy__sympy-18698,33,135,0.2444,15 min - 1 hour,3,2,1,1
-sympy__sympy-18763,54,135,0.4,<15 min fix,3,1,1,0
-sympy__sympy-19040,25,135,0.1852,15 min - 1 hour,3,2,1,1
-sympy__sympy-19346,107,135,0.7926,15 min - 1 hour,3,1,1,1
-sympy__sympy-19495,67,135,0.4963,<15 min fix,3,2,1,0
-sympy__sympy-19637,119,135,0.8815,<15 min fix,2,1,1,0
-sympy__sympy-19783,63,135,0.4667,15 min - 1 hour,3,2,1,1
-sympy__sympy-19954,106,135,0.7852,<15 min fix,3,2,1,0
-sympy__sympy-20590,64,135,0.4741,15 min - 1 hour,3,1,1,1
-sympy__sympy-20801,87,135,0.6444,15 min - 1 hour,3,2,1,1
-sympy__sympy-20916,6,135,0.0444,<15 min fix,3,2,1,0
-sympy__sympy-21379,51,135,0.3778,15 min - 1 hour,3,2,1,1
-sympy__sympy-21596,1,135,0.0074,15 min - 1 hour,3,2,1,1
-sympy__sympy-21612,9,135,0.0667,15 min - 1 hour,3,2,1,1
-sympy__sympy-22080,2,135,0.0148,15 min - 1 hour,3,2,1,1
-sympy__sympy-22456,97,135,0.7185,15 min - 1 hour,3,2,1,1
-sympy__sympy-22914,120,135,0.8889,15 min - 1 hour,3,0,1,1
-sympy__sympy-23262,89,135,0.6593,15 min - 1 hour,3,2,1,1
-sympy__sympy-23413,22,135,0.163,15 min - 1 hour,3,2,1,1
-sympy__sympy-23534,103,135,0.763,<15 min fix,3,1,1,0
-sympy__sympy-23824,110,135,0.8148,15 min - 1 hour,3,1,1,1
-sympy__sympy-23950,85,135,0.6296,15 min - 1 hour,3,1,1,1
-sympy__sympy-24066,99,135,0.7333,15 min - 1 hour,3,2,1,1
-sympy__sympy-24213,124,135,0.9185,15 min - 1 hour,3,1,1,1
-sympy__sympy-24443,116,135,0.8593,15 min - 1 hour,3,2,1,1
-sympy__sympy-24539,121,135,0.8963,<15 min fix,3,1,1,0
-sympy__sympy-24562,57,135,0.4222,<15 min fix,3,2,1,0
-sympy__sympy-24661,101,135,0.7481,15 min - 1 hour,3,2,1,1
+mwaskom__seaborn-3187,6,135,0.0444,15 min - 1 hour,2,3,1,1
+pallets__flask-5014,123,135,0.9111,<15 min fix,1,3,1,0
+psf__requests-1142,67,135,0.4963,<15 min fix,2,3,1,0
+psf__requests-1724,83,135,0.6148,<15 min fix,1,3,1,0
+psf__requests-1766,98,135,0.7259,<15 min fix,1,3,1,0
+psf__requests-1921,75,135,0.5556,<15 min fix,2,3,1,0
+psf__requests-2317,83,135,0.6148,<15 min fix,2,3,1,0
+psf__requests-2931,45,135,0.3333,15 min - 1 hour,2,3,1,1
+psf__requests-5414,73,135,0.5407,<15 min fix,2,3,1,0
+psf__requests-6028,8,135,0.0593,15 min - 1 hour,2,3,1,1
+pydata__xarray-2905,78,135,0.5778,15 min - 1 hour,2,3,1,1
+pydata__xarray-3095,75,135,0.5556,15 min - 1 hour,2,3,1,1
+pydata__xarray-3151,103,135,0.763,15 min - 1 hour,2,3,1,1
+pydata__xarray-3677,117,135,0.8667,15 min - 1 hour,2,3,1,1
+pydata__xarray-3993,54,135,0.4,1-4 hours,2,3,1,2
+pydata__xarray-4075,125,135,0.9259,<15 min fix,1,3,1,0
+pydata__xarray-4094,64,135,0.4741,<15 min fix,2,3,1,0
+pydata__xarray-4356,116,135,0.8593,<15 min fix,2,3,1,0
+pydata__xarray-4629,128,135,0.9481,<15 min fix,1,3,1,0
+pydata__xarray-4695,57,135,0.4222,15 min - 1 hour,2,3,1,1
+pydata__xarray-4966,112,135,0.8296,15 min - 1 hour,2,3,1,1
+pydata__xarray-6461,100,135,0.7407,<15 min fix,1,3,1,0
+pydata__xarray-6599,43,135,0.3185,15 min - 1 hour,2,3,1,1
+pydata__xarray-6721,63,135,0.4667,15 min - 1 hour,2,3,1,1
+pydata__xarray-6744,67,135,0.4963,15 min - 1 hour,2,3,1,1
+pydata__xarray-6938,13,135,0.0963,15 min - 1 hour,2,3,1,1
+pydata__xarray-7233,111,135,0.8222,15 min - 1 hour,1,3,1,1
+pylint-dev__pylint-4970,23,135,0.1704,<15 min fix,2,3,1,0
+pylint-dev__pylint-6386,35,135,0.2593,15 min - 1 hour,2,3,1,1
+pylint-dev__pylint-6528,55,135,0.4074,15 min - 1 hour,2,3,1,1
+pylint-dev__pylint-6903,129,135,0.9556,<15 min fix,2,3,1,0
+pylint-dev__pylint-7277,103,135,0.763,<15 min fix,1,3,1,0
+pylint-dev__pylint-8898,10,135,0.0741,1-4 hours,2,3,1,2
+pytest-dev__pytest-10051,43,135,0.3185,15 min - 1 hour,2,3,1,1
+pytest-dev__pytest-10081,94,135,0.6963,<15 min fix,1,3,1,0
+pytest-dev__pytest-10356,2,135,0.0148,1-4 hours,2,3,1,2
+pytest-dev__pytest-5262,93,135,0.6889,<15 min fix,1,3,1,0
+pytest-dev__pytest-5631,95,135,0.7037,15 min - 1 hour,1,3,1,1
+pytest-dev__pytest-5787,35,135,0.2593,1-4 hours,2,3,1,2
+pytest-dev__pytest-5809,129,135,0.9556,<15 min fix,0,2,1,0
+pytest-dev__pytest-5840,2,135,0.0148,15 min - 1 hour,2,3,1,1
+pytest-dev__pytest-6197,31,135,0.2296,1-4 hours,2,3,1,2
+pytest-dev__pytest-6202,127,135,0.9407,<15 min fix,1,3,1,0
+pytest-dev__pytest-7205,85,135,0.6296,<15 min fix,1,3,1,0
+pytest-dev__pytest-7236,83,135,0.6148,15 min - 1 hour,2,3,1,1
+pytest-dev__pytest-7324,42,135,0.3111,15 min - 1 hour,2,3,1,1
+pytest-dev__pytest-7432,94,135,0.6963,<15 min fix,2,3,1,0
+pytest-dev__pytest-7490,66,135,0.4889,15 min - 1 hour,2,3,1,1
+pytest-dev__pytest-7521,86,135,0.637,<15 min fix,2,3,1,0
+pytest-dev__pytest-7571,107,135,0.7926,15 min - 1 hour,2,3,1,1
+pytest-dev__pytest-7982,120,135,0.8889,<15 min fix,1,3,1,0
+pytest-dev__pytest-8399,124,135,0.9185,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-10297,124,135,0.9185,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-10844,130,135,0.963,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-10908,72,135,0.5333,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-11310,113,135,0.837,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-11578,123,135,0.9111,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-12585,129,135,0.9556,<15 min fix,1,3,1,0
+scikit-learn__scikit-learn-12682,69,135,0.5111,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-12973,93,135,0.6889,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-13124,66,135,0.4889,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-13135,108,135,0.8,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-13142,103,135,0.763,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-13328,119,135,0.8815,<15 min fix,1,3,1,0
+scikit-learn__scikit-learn-13439,122,135,0.9037,<15 min fix,1,3,1,0
+scikit-learn__scikit-learn-13496,113,135,0.837,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-13779,116,135,0.8593,<15 min fix,1,3,1,0
+scikit-learn__scikit-learn-14053,110,135,0.8148,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-14141,125,135,0.9259,<15 min fix,1,2,0,0
+scikit-learn__scikit-learn-14496,128,135,0.9481,<15 min fix,1,3,1,0
+scikit-learn__scikit-learn-14629,19,135,0.1407,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-14710,104,135,0.7704,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-14983,49,135,0.363,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-15100,123,135,0.9111,15 min - 1 hour,1,3,1,1
+scikit-learn__scikit-learn-25102,42,135,0.3111,1-4 hours,2,3,1,2
+scikit-learn__scikit-learn-25232,94,135,0.6963,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-25747,15,135,0.1111,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-25931,94,135,0.6963,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-25973,90,135,0.6667,<15 min fix,2,3,1,0
+scikit-learn__scikit-learn-26194,3,135,0.0222,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-26323,108,135,0.8,15 min - 1 hour,2,3,1,1
+scikit-learn__scikit-learn-9288,99,135,0.7333,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-10323,57,135,0.4222,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-10435,3,135,0.0222,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-10449,68,135,0.5037,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-10466,101,135,0.7481,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-10614,2,135,0.0148,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-10673,72,135,0.5333,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-11445,55,135,0.4074,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-7454,55,135,0.4074,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-7462,1,135,0.0074,<15 min fix,1,3,1,0
+sphinx-doc__sphinx-7590,1,135,0.0074,>4 hours,2,3,1,3
+sphinx-doc__sphinx-7757,67,135,0.4963,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-7889,91,135,0.6741,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-7910,80,135,0.5926,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-7985,5,135,0.037,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8035,75,135,0.5556,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8056,22,135,0.163,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8120,87,135,0.6444,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8265,16,135,0.1185,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8269,90,135,0.6667,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-8459,67,135,0.4963,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-8475,97,135,0.7185,<15 min fix,1,3,1,0
+sphinx-doc__sphinx-8548,13,135,0.0963,1-4 hours,2,3,1,2
+sphinx-doc__sphinx-8551,48,135,0.3556,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8593,59,135,0.437,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-8595,98,135,0.7259,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-8621,47,135,0.3481,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-8638,14,135,0.1037,15 min - 1 hour,3,3,1,1
+sphinx-doc__sphinx-8721,114,135,0.8444,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-9229,1,135,0.0074,1-4 hours,2,3,1,2
+sphinx-doc__sphinx-9230,44,135,0.3259,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-9258,42,135,0.3111,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-9281,83,135,0.6148,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-9320,115,135,0.8519,<15 min fix,1,3,1,0
+sphinx-doc__sphinx-9367,116,135,0.8593,<15 min fix,1,3,1,0
+sphinx-doc__sphinx-9461,1,135,0.0074,1-4 hours,2,3,1,2
+sphinx-doc__sphinx-9591,41,135,0.3037,<15 min fix,2,3,1,0
+sphinx-doc__sphinx-9602,8,135,0.0593,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-9658,41,135,0.3037,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-9673,73,135,0.5407,15 min - 1 hour,2,3,1,1
+sphinx-doc__sphinx-9698,107,135,0.7926,<15 min fix,1,3,1,0
+sphinx-doc__sphinx-9711,101,135,0.7481,<15 min fix,1,3,1,0
+sympy__sympy-11618,107,135,0.7926,15 min - 1 hour,1,3,1,1
+sympy__sympy-12096,121,135,0.8963,<15 min fix,1,3,1,0
+sympy__sympy-12419,69,135,0.5111,15 min - 1 hour,2,3,1,1
+sympy__sympy-12481,91,135,0.6741,<15 min fix,2,3,1,0
+sympy__sympy-12489,19,135,0.1407,1-4 hours,2,3,1,2
+sympy__sympy-13031,36,135,0.2667,15 min - 1 hour,2,3,1,1
+sympy__sympy-13091,25,135,0.1852,15 min - 1 hour,2,3,1,1
+sympy__sympy-13372,109,135,0.8074,<15 min fix,1,3,1,0
+sympy__sympy-13480,125,135,0.9259,<15 min fix,1,2,1,0
+sympy__sympy-13551,48,135,0.3556,15 min - 1 hour,2,3,1,1
+sympy__sympy-13615,48,135,0.3556,15 min - 1 hour,2,3,1,1
+sympy__sympy-13647,111,135,0.8222,15 min - 1 hour,2,3,1,1
+sympy__sympy-13757,62,135,0.4593,15 min - 1 hour,2,3,1,1
+sympy__sympy-13798,7,135,0.0519,15 min - 1 hour,2,3,1,1
+sympy__sympy-13877,36,135,0.2667,15 min - 1 hour,2,3,1,1
+sympy__sympy-13878,65,135,0.4815,>4 hours,2,3,1,3
+sympy__sympy-13974,21,135,0.1556,15 min - 1 hour,2,3,1,1
+sympy__sympy-14248,8,135,0.0593,1-4 hours,2,3,1,2
+sympy__sympy-14711,112,135,0.8296,<15 min fix,1,3,1,0
+sympy__sympy-14976,62,135,0.4593,15 min - 1 hour,2,3,1,1
+sympy__sympy-15017,54,135,0.4,<15 min fix,1,3,1,0
+sympy__sympy-15345,60,135,0.4444,<15 min fix,2,3,1,0
+sympy__sympy-15349,97,135,0.7185,15 min - 1 hour,1,3,1,1
+sympy__sympy-15599,29,135,0.2148,15 min - 1 hour,1,3,1,1
+sympy__sympy-15809,85,135,0.6296,<15 min fix,1,3,1,0
+sympy__sympy-15875,64,135,0.4741,<15 min fix,2,3,1,0
+sympy__sympy-15976,27,135,0.2,15 min - 1 hour,2,3,1,1
+sympy__sympy-16597,1,135,0.0074,1-4 hours,2,3,1,2
+sympy__sympy-16766,122,135,0.9037,<15 min fix,1,3,1,0
+sympy__sympy-16792,72,135,0.5333,15 min - 1 hour,2,3,1,1
+sympy__sympy-16886,121,135,0.8963,<15 min fix,0,1,1,0
+sympy__sympy-17139,86,135,0.637,<15 min fix,2,3,1,0
+sympy__sympy-17318,10,135,0.0741,15 min - 1 hour,1,3,1,1
+sympy__sympy-17630,3,135,0.0222,1-4 hours,2,3,1,2
+sympy__sympy-18189,96,135,0.7111,<15 min fix,2,3,1,0
+sympy__sympy-18211,59,135,0.437,15 min - 1 hour,2,3,1,1
+sympy__sympy-18698,33,135,0.2444,15 min - 1 hour,2,3,1,1
+sympy__sympy-18763,54,135,0.4,<15 min fix,1,3,1,0
+sympy__sympy-19040,25,135,0.1852,15 min - 1 hour,2,3,1,1
+sympy__sympy-19346,107,135,0.7926,15 min - 1 hour,1,3,1,1
+sympy__sympy-19495,67,135,0.4963,<15 min fix,2,3,1,0
+sympy__sympy-19637,119,135,0.8815,<15 min fix,2,3,1,0
+sympy__sympy-19783,63,135,0.4667,15 min - 1 hour,2,3,1,1
+sympy__sympy-19954,106,135,0.7852,<15 min fix,2,3,1,0
+sympy__sympy-20590,64,135,0.4741,15 min - 1 hour,2,3,1,1
+sympy__sympy-20801,87,135,0.6444,15 min - 1 hour,2,3,1,1
+sympy__sympy-20916,6,135,0.0444,<15 min fix,2,3,1,0
+sympy__sympy-21379,51,135,0.3778,15 min - 1 hour,2,3,1,1
+sympy__sympy-21596,1,135,0.0074,15 min - 1 hour,2,3,1,1
+sympy__sympy-21612,9,135,0.0667,15 min - 1 hour,2,3,1,1
+sympy__sympy-22080,2,135,0.0148,15 min - 1 hour,2,3,1,1
+sympy__sympy-22456,97,135,0.7185,15 min - 1 hour,2,3,1,1
+sympy__sympy-22914,120,135,0.8889,15 min - 1 hour,1,3,1,1
+sympy__sympy-23262,89,135,0.6593,15 min - 1 hour,2,3,1,1
+sympy__sympy-23413,22,135,0.163,15 min - 1 hour,2,3,1,1
+sympy__sympy-23534,103,135,0.763,<15 min fix,2,3,1,0
+sympy__sympy-23824,110,135,0.8148,15 min - 1 hour,1,3,1,1
+sympy__sympy-23950,85,135,0.6296,15 min - 1 hour,2,3,1,1
+sympy__sympy-24066,99,135,0.7333,15 min - 1 hour,2,3,1,1
+sympy__sympy-24213,124,135,0.9185,15 min - 1 hour,2,3,1,1
+sympy__sympy-24443,116,135,0.8593,15 min - 1 hour,2,3,1,1
+sympy__sympy-24539,121,135,0.8963,<15 min fix,1,3,1,0
+sympy__sympy-24562,57,135,0.4222,<15 min fix,2,3,1,0
+sympy__sympy-24661,101,135,0.7481,15 min - 1 hour,2,3,1,1

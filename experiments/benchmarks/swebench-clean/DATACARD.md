@@ -31,7 +31,7 @@ A subset of SWE-bench Verified that drops tasks known or likely to be broken, wi
 | `labels_wide.csv` (default) | clean task | solve count and rate, SWE-bench's time-to-fix estimate, one column per rubric |
 | `labels.csv` | clean task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
 | `tasks.csv` | Verified task (all 500) | solve count, the reasons a task was excluded, and `keep` |
-| `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
+| `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 Task text is not included. Join on `instance_id` with
 [`princeton-nlp/SWE-bench_Verified`](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified).
@@ -60,8 +60,12 @@ are hard: only 1 to 6 of the 135 entries solve them. They are kept because some 
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating). Each
-  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one
-  adopted on 2026-10-04.
+  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256.
+- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
+  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
+  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
+  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
+  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept: when a safety classifier hands a call to another model, that answer is discarded.
 - **Prompt.** ADeLe's v2 annotation prompt (`build_annotation_prompt_v2`): the rubric and the task, a short written
@@ -69,9 +73,9 @@ are hard: only 1 to 6 of the 135 entries solve them. They are kept because some 
 
 ## What the labels show
 
-On the {n_kept} tasks, PLp falls with solve rate (Spearman ρ = −0.58) and rises with the human time-to-fix estimate
-(ρ = +0.47). The 35 hard tasks average PLp 2.0, against 1.54 for the rest. PLe and PLs barely vary on this benchmark:
-almost every task is PLe 3 and PLs 1. Details:
+On the {n_kept} tasks, PLp falls with solve rate (Spearman ρ = {rho_solve}) and rises with the human time-to-fix
+estimate (ρ = {rho_ttf}). The {n_hard} hard tasks average PLp {plp_hard}, against {plp_rest} for the rest. PLe and PLs
+barely vary on this benchmark: almost every task is PLe 3 and PLs 1. Details:
 [`RESULTS.md`](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/swebench-clean/RESULTS.md).
 
 ## Limits

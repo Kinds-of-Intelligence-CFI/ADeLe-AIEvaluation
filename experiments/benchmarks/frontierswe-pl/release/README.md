@@ -19,19 +19,19 @@ configs:
 
 # ADeLe — FrontierSWE v2 with demand labels
 
-All 34 tasks of FrontierSWE v2, with per-task outcomes, flags and ADeLe demand labels. 110 labels
-(PLp 34, PLe 19, PLs 19, MSm 19, MSc 19): PLp on all 34 tasks, the other rubrics on the 19 clean tasks. Built at commit
-`386cd10` of [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch
-`agentic-v2`, `experiments/benchmarks/frontierswe-pl/`).
+All 34 tasks of FrontierSWE v2, with per-task outcomes, flags and ADeLe demand labels on the 19 clean
+tasks. 95 labels (PLp 19, PLe 19, PLs 19, MSm 19, MSc 19). Built at commit `b528ffa` of
+[ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
+`experiments/benchmarks/frontierswe-pl/`).
 
 ## What is in it
 
 | file | one row per | what |
 |---|---|---|
-| `labels_wide.csv` (default) | task | outcomes, flags, `keep`, one column per rubric |
+| `labels_wide.csv` (default) | task | outcomes, flags, `keep`, one column per rubric (empty for dropped tasks) |
 | `labels.csv` | task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
 | `tasks.csv` | task (all 34) | the same outcomes and flags, without labels |
-| `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
+| `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 Task text is not included (the task repository has no licence). Join on `instance_id` with
 [`Proximal-Labs/frontier-swe-v2`](https://github.com/Proximal-Labs/frontier-swe-v2), tag `v2.0.0` (commit `da83f84`).
@@ -55,18 +55,24 @@ best run of any model.
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
-  PLs is the text adopted on 2026-10-04.
+- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
+  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
+  label replaces the old one. Every clean task was at PLp 3–5 in relabel-v2, so every PLp label here comes from
+  relabel-v3. Each row of `labels.csv` names its run. The merge is one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
+  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and what the agent sees (`instruction.md`, plus the README it
   cites), a short written assessment, then the level. The judge never sees tests, solutions or agent attempts.
-- **Missing labels:** none.
+- **Missing labels:** none on the clean tasks. The 15 dropped tasks have no labels here. Their PLp was labelled
+  with an earlier text (amendment 1 of the study, in RESULTS.md); those labels were not relabelled and are not
+  released.
 
 ## What the labels show
 
-PLp is 3 on almost every task (Level 4 on 5 of 34). On the clean set it barely varies, so it cannot be
-tested there: against solve rate, ρ = -0.20 (p = 0.42, n = 19). On all 34 tasks PLp falls with mean reward: ρ = -0.36 (p = 0.037, n = 34).
-MSm is 0 on 18 of the 19 clean tasks and MSc on all 19: FrontierSWE involves no other party. Full results:
+PLp on the 19 clean tasks: Level 3 on 19 of 19. With so little spread, PLp cannot be tested against solve rate
+here (one level: not testable). MSm is 0 on 18 of the 19 clean tasks and MSc on all 19: FrontierSWE involves no other
+party. Full results:
 [frontierswe-pl/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/frontierswe-pl/RESULTS.md).
 
 ## Limits

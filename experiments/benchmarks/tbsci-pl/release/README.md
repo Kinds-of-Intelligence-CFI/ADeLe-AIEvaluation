@@ -22,7 +22,7 @@ configs:
 # ADeLe — Terminal-Bench Science 0.1 with demand labels
 
 All 70 tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and flags for tasks that may be broken.
-207 labels. Built at commit `386cd10` of
+207 labels. Built at commit `b528ffa` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tbsci-pl/`).
 
@@ -34,7 +34,7 @@ All 70 tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and flags f
 | `labels.csv` | task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
 | `tasks.csv` | task (all 70) | the same outcomes and flags, without labels |
 | `open_issues.csv` | open `[TASK FIX]` issue | number, date, task, whether it counts for the flag, title, link |
-| `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
+| `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 Task text is not included (Terminal-Bench Science tasks carry a no-training canary). Join on `instance_id` with
 [`harbor-framework/terminal-bench-science`](https://github.com/harbor-framework/terminal-bench-science), tag `v0.1.0`
@@ -59,8 +59,12 @@ Every task is kept. Two flags let users filter:
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating), each a
-  0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one adopted
-  on 2026-10-04.
+  0–5 scale; `rubrics.csv` pins the exact text by sha256.
+- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
+  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
+  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
+  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
+  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
@@ -70,9 +74,9 @@ Every task is kept. Two flags let users filter:
 
 ## What the labels show
 
-PLp against solve rate: ρ = +0.24 (p = 0.045) on all tasks; +0.36 (p = 0.042) on the
-solved tasks without an open issue. PLp against expert hours: ρ = +0.41 (p = 0.0005) on all tasks;
-+0.48 (p = 0.0058) on the solved tasks without an open issue. Spearman, two-sided.
+PLp against solve rate: ρ = +0.28 (p = 0.022) on all tasks; +0.47 (p = 0.0065) on the
+solved tasks without an open issue. PLp against expert hours: ρ = +0.41 (p = 0.00055) on all tasks;
++0.49 (p = 0.004) on the solved tasks without an open issue. Spearman, two-sided.
 
 ## Limits
 

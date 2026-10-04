@@ -31,7 +31,7 @@ labels for every task. {n_kept} tasks, {n_labels} labels. Built at commit `{comm
 | `labels_wide.csv` (default) | clean task | solve rates, the hash of the task text, one column per rubric |
 | `labels.csv` | clean task × rubric | the level, with the judge, prompt and answer hashes and the run that made it |
 | `tasks.csv` | tau2 task with results (257) | solve counts and rates, the reason a task was excluded, and `keep` |
-| `rubrics.csv` | rubric | code, name, generation, file and sha256 of the exact text used |
+| `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 A task is `(benchmark, instance_id)`: ids repeat across domains (`0` is an airline and a retail task). Task text is
 not included. It is the user scenario of `data/tau2/domains/<domain>/tasks.json` in
@@ -62,21 +62,22 @@ task of the domain (airline 7, retail 8, banking 10). `solve_rate_all` uses ever
 ## How the labels were made
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating). Each
-  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256. PLp is the text adopted on 2026-10-01, PLs the one
-  adopted on 2026-10-04.
+  is a 0–5 scale; `rubrics.csv` pins the exact text by sha256.
+- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
+  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
+  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
+  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
+  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt (`build_annotation_prompt_v2`): the rubric and the task, a short written
   assessment, then the level. The judge sees only the user scenario, never the expected actions or any agent's attempt.
-- **Runs.** PLp and PLe of {n_new} banking tasks were labelled in run `tau2-clean-new-pl` (ADeLe's mass-annotation
-  runner); the rest come from the earlier runs `o-tau2` (PLp) and `v2-tau2` (PLe). The prompts are byte-identical across
-  these runs for the same task and rubric. Every PLs label comes from run `pls-relabel`.
 
 ## What the labels show
 
 PLp against solve rate, within domain: ρ = {rho_plp} (p = {p_plp}; Spearman per domain, combined by Fisher z).
-Details:
-[`results/clean.json`](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tau2-clean/results/clean.json).
+The study's results, on earlier labels:
+[`RESULTS.md`](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tau2-clean/RESULTS.md).
 
 ## Limits
 
