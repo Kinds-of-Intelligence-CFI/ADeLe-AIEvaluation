@@ -21,3 +21,10 @@ are dual use (password cracking, protein design). They stay unlabelled; the anal
 `relabel-v2-long` (65 cells), `relabel-v2-eqbench4` (600), `relabel-v2-cooperbench` (1,200) and
 `relabel-v2-gamearena` (120) pinned at 16:15 UTC. The runner allows one open batch of relays per run, so relays of
 different runs share the four slots.
+
+## 2026-10-04 — all five runs finished
+
+`relabel-v2-long` 65 of 65 (two judges read only part of a long prompt; the runner rejected them and the retries
+passed). `relabel-v2-eqbench4` 600 of 600, `relabel-v2-gamearena` 120 of 120 (one judge wrote twice; retry passed),
+`relabel-v2-cooperbench` 1,200 of 1,200. Every protocol check passed in all five runs. Total 7,056 labels of 7,065
+cells. Finished 17:35 UTC at 84 per cent weekly usage (62 at the start), so the whole relabel used about 22 points.
