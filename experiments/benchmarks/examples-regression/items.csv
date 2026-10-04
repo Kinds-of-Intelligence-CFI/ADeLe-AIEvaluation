@@ -1,0 +1,97 @@
+item_id,set,text,void_dims,benchmark,instance_id,noise,ref_PLp,ref_PLe,ref_PLs,ref_MSm,ref_MSc
+B-D01,B,Post sixty ledger entries. The system checks them in batches of ten and reports errors after each batch.,,,,,,,,,
+B-D02,B,Book a journey with three connecting trains from a fixed published timetable. A handful of options exist and all of them are visible.,,,,,,,,,
+B-D03,B,"A gauge is partly obscured by a pipe. Move to a position from which it can be read, and report the value.",,,,,,,,,
+B-D04,B,"Over the course of one conversation, elicit from a willing colleague what they need from a new internal tool.",,,,,,,,,
+B-D05,B,Write a five-thousand-word report in one sitting. Nobody reads any part of it until it is finished.,,,,,,,,,
+B-D06,B,Plan a week of meals under stated dietary constraints and a fixed budget. All prices and constraints are given.,,,,,,,,,
+B-D07,B,"Ask a colleague who is glad to help which meeting room is free, then book it, adapting if the first choice turns out to be taken.",,,,,,,,,
+B-D08,B,"Over several meetings, draw out from a willing client what they actually need, and bring them to accept a smaller scope than the one they asked for.",MSc,,,,,,,,
+B-D09,B,"Check whether a shared document has been edited since yesterday. The change log is not displayed, but timestamps can be requested.",,,,,,,,,
+B-D10,B,"Diagnose which of three services is failing. Logs are available but must be requested one at a time, and the failure is intermittent.",,,,,,,,,
+B-E01,B,"Carry out a sixty-step calibration procedure, supplied to you in full, where nothing is checked until the very end and an error at any step invalidates every step after it.",,,,,,,,,
+B-E02,B,"Transfer the stated sum to the stated account. The transfer settles instantly, is confirmed on screen, and cannot be reversed.",,,,,,,,,
+B-E03,B,"Apply a supplied list of three hundred corrections to a manuscript in the given order. A correction applied to the wrong line silently shifts every later line reference, and nothing is checked until the end.",PLp,,,,,,,,
+B-E04,B,"Execute a supplied database migration script step by step against the live system. There is no rollback, and each step must be verified before it is committed.",,,,,,,,,
+B-L01,B,Alphabetise a list of two hundred surnames.,,,,,,,,,
+B-L02,B,Convert a stated temperature from Celsius to Fahrenheit.,,,,,,,,,
+B-L03,B,Which planet is closest to the Sun?,,,,,,,,,
+B-L04,B,Copy the text of a supplied paragraph into a new document.,,,,,,,,,
+B-M01,B,"A colleague has said plainly that he will not swap shifts, and has given his reason in full. Bring him to swap.",,,,,,,,,
+B-M02,B,"Two neighbours have each stated their position on where the boundary fence goes. The positions are incompatible, and each watches what the other is offered. Reach an agreement both will sign.",,,,,,,,,
+B-M03,B,"A customer has stated that he wants the premium plan. Policy requires you to move him to the standard one, and he will argue. Bring him to accept it.",,,,,,,,,
+B-M04,B,"A supplier has stated in writing that he will not deliver before March, with his reasons set out in full. Negotiate him to February.",,,,,,,,,
+B-P01,B,"A delivery van must visit fourteen addresses and return to the depot. Every distance is given in a table, the roads never change, and nothing is hidden. Work out the shortest route and write it down.",,,,,,,,,
+B-P02,B,"Twelve guests must be seated under nine interlocking constraints, all of them stated up front. Produce a seating plan that satisfies every constraint, and state the plan.",,,,,,,,,
+B-P03,B,Prove a stated number-theoretic claim for which no standard technique applies and the proof strategy must be invented. Write out the finished proof.,PLp,,,,,,,,
+B-P04,B,"Given a fixed and fully known warehouse layout and a list of two hundred items to pick, devise the picking order that minimises walking distance. Report the order.",,,,,,,,,
+B-S01,B,"Report the current stock level of one product in a warehouse whose inventory system is unavailable, and where staff are moving stock while you count.",,,,,,,,,
+B-S02,B,"Report which of six machines on a factory floor is running. There is no display, and the machines are started and stopped by others while you observe.",,,,,,,,,
+B-S03,B,You are put inside an unfamiliar building with no map and no signage. Report how many floors it has.,,,,,,,,,
+B-S04,B,"Identify which of four network links is currently congested. Utilisation is not exposed anywhere, and traffic patterns shift from minute to minute.",,,,,,,,,
+B-X01,B,"Decommission a legacy system for which no standard procedure exists, where each step, once taken, cannot be undone.",PLp,,,,,,,,
+B-X02,B,"Find a route through a cave system whose passages are unmapped and partly flooded, with water levels changing as you go.",,,,,,,,,
+B-X03,B,"Devise a restructuring for which no template exists, and bring three directors holding incompatible positions to sign it.",,,,,,,,,
+B-X04,B,"Operate a chemical reactor whose internal state cannot be measured directly and drifts, carrying out an irreversible sequence of additions.",,,,,,,,,
+B-X05,B,"Conduct a live negotiation in which each concession, once voiced, cannot be retracted, against a counterpart holding out for a different outcome.",,,,,,,,,
+B-X06R,B,"Restore power to a district after a storm. Which lines are live is not shown anywhere and changes as crews work, while three depot managers each demand their own area first and each sees what the others are given.",,,,,,,,,
+R-swe-bench-verified-matplotlib__matplotlib-26291,R,,,swe-bench-verified,matplotlib__matplotlib-26291,True,1.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-django__django-11333,R,,,swe-bench-verified,django__django-11333,True,1.0,3.0,2.0,0.0,0.0
+R-swe-bench-verified-sphinx-doc__sphinx-7454,R,,,swe-bench-verified,sphinx-doc__sphinx-7454,True,2.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-django__django-14580,R,,,swe-bench-verified,django__django-14580,True,2.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-django__django-14608,R,,,swe-bench-verified,django__django-14608,False,1.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-psf__requests-1921,R,,,swe-bench-verified,psf__requests-1921,False,1.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-django__django-13346,R,,,swe-bench-verified,django__django-13346,False,2.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-sympy__sympy-15345,R,,,swe-bench-verified,sympy__sympy-15345,False,1.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-pylint-dev__pylint-6903,R,,,swe-bench-verified,pylint-dev__pylint-6903,False,2.0,3.0,1.0,0.0,0.0
+R-swe-bench-verified-django__django-13820,R,,,swe-bench-verified,django__django-13820,False,1.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-psd-tools-blend-range-api,R,,,deepswe-v1.1,psd-tools-blend-range-api,True,2.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-textual-kitty-key-phases,R,,,deepswe-v1.1,textual-kitty-key-phases,True,3.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-python-statemachine-state-data-scoping,R,,,deepswe-v1.1,python-statemachine-state-data-scoping,True,3.0,3.0,2.0,0.0,0.0
+R-deepswe-v1.1-anko-default-function-arguments,R,,,deepswe-v1.1,anko-default-function-arguments,False,3.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-clack-async-autocomplete-options,R,,,deepswe-v1.1,clack-async-autocomplete-options,False,3.0,4.0,2.0,0.0,0.0
+R-deepswe-v1.1-abs-stepped-slices,R,,,deepswe-v1.1,abs-stepped-slices,False,2.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-gql-incremental-graphql-delivery,R,,,deepswe-v1.1,gql-incremental-graphql-delivery,False,3.0,3.0,2.0,0.0,0.0
+R-deepswe-v1.1-claude-code-by-agents-recursive-delegation,R,,,deepswe-v1.1,claude-code-by-agents-recursive-delegation,False,2.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-bandit-structured-nosec-directives,R,,,deepswe-v1.1,bandit-structured-nosec-directives,False,3.0,3.0,1.0,0.0,0.0
+R-deepswe-v1.1-happy-dom-deterministic-intersectionobserver,R,,,deepswe-v1.1,happy-dom-deterministic-intersectionobserver,False,2.0,3.0,1.0,0.0,0.0
+R-terminal-bench-4.0.0-shadow-relay,R,,,terminal-bench-4.0.0,shadow-relay,True,3.0,3.0,2.0,0.0,0.0
+R-terminal-bench-4.0.0-rs-archive-clone,R,,,terminal-bench-4.0.0,rs-archive-clone,True,3.0,4.0,2.0,0.0,0.0
+R-terminal-bench-4.0.0-react-lead-form,R,,,terminal-bench-4.0.0,react-lead-form,True,3.0,4.0,2.0,0.0,0.0
+R-terminal-bench-4.0.0-satb-audio-transcription,R,,,terminal-bench-4.0.0,satb-audio-transcription,False,2.0,4.0,0.0,0.0,0.0
+R-terminal-bench-4.0.0-fp8-rmsnorm-gemm,R,,,terminal-bench-4.0.0,fp8-rmsnorm-gemm,False,3.0,3.0,1.0,0.0,0.0
+R-terminal-bench-4.0.0-biped-contact-dynamics,R,,,terminal-bench-4.0.0,biped-contact-dynamics,False,3.0,4.0,2.0,0.0,0.0
+R-terminal-bench-4.0.0-coq-block-bound,R,,,terminal-bench-4.0.0,coq-block-bound,False,4.0,2.0,0.0,0.0,0.0
+R-terminal-bench-4.0.0-formal-crypto,R,,,terminal-bench-4.0.0,formal-crypto,False,4.0,3.0,2.0,0.0,0.0
+R-terminal-bench-4.0.0-live-database-cutover,R,,,terminal-bench-4.0.0,live-database-cutover,False,3.0,4.0,2.0,0.0,0.0
+R-terminal-bench-4.0.0-fin-saccr-rwa,R,,,terminal-bench-4.0.0,fin-saccr-rwa,False,2.0,4.0,0.0,0.0,0.0
+R-tau2-retail-20,R,,,tau2-retail,20,True,2.0,1.0,2.0,2.0,2.0
+R-tau2-retail-112,R,,,tau2-retail,112,True,2.0,1.0,2.0,2.0,2.0
+R-tau2-retail-15,R,,,tau2-retail,15,True,2.0,1.0,2.0,2.0,2.0
+R-tau2-retail-80,R,,,tau2-retail,80,True,2.0,1.0,2.0,3.0,2.0
+R-tau2-retail-70,R,,,tau2-retail,70,False,2.0,1.0,2.0,2.0,2.0
+R-tau2-retail-49,R,,,tau2-retail,49,False,2.0,1.0,2.0,2.0,2.0
+R-tau2-retail-104,R,,,tau2-retail,104,False,2.0,1.0,2.0,3.0,2.0
+R-tau2-retail-100,R,,,tau2-retail,100,False,2.0,1.0,2.0,2.0,2.0
+R-tau2-retail-73,R,,,tau2-retail,73,False,1.0,1.0,2.0,2.0,2.0
+R-tau2-retail-109,R,,,tau2-retail,109,False,2.0,1.0,2.0,2.0,2.0
+R-eqbench4-hand_rd2_002_boundary_or_punishment_187c14a9,R,,,eqbench4,hand_rd2_002_boundary_or_punishment_187c14a9,True,2.0,3.0,3.0,4.0,3.0
+R-eqbench4-e6179553-2e6b-4cf5-853b-71e8c7b7580c,R,,,eqbench4,e6179553-2e6b-4cf5-853b-71e8c7b7580c,True,2.0,3.0,3.0,4.0,3.0
+R-eqbench4-1de8c7d5-00b8-48c1-841c-896e43de4771,R,,,eqbench4,1de8c7d5-00b8-48c1-841c-896e43de4771,True,3.0,3.0,3.0,4.0,3.0
+R-eqbench4-6a2b41be-2350-45d1-be21-275dacb1ae6c,R,,,eqbench4,6a2b41be-2350-45d1-be21-275dacb1ae6c,False,3.0,3.0,3.0,4.0,3.0
+R-eqbench4-9658b0c0-d620-4bc4-85a0-1b8e40f42dea,R,,,eqbench4,9658b0c0-d620-4bc4-85a0-1b8e40f42dea,False,2.0,3.0,3.0,4.0,3.0
+R-eqbench4-4635d911-adac-4d2d-a273-1b4418a1b780,R,,,eqbench4,4635d911-adac-4d2d-a273-1b4418a1b780,False,2.0,3.0,3.0,4.0,3.0
+R-eqbench4-cdbbc88d-51ec-4627-9d45-72713a844873,R,,,eqbench4,cdbbc88d-51ec-4627-9d45-72713a844873,False,2.0,3.0,3.0,4.0,3.0
+R-eqbench4-hand_eta_003_litigator_73ac4f87,R,,,eqbench4,hand_eta_003_litigator_73ac4f87,False,3.0,3.0,3.0,4.0,4.0
+R-eqbench4-81987fa3-e5c6-4926-b940-c576009b9075,R,,,eqbench4,81987fa3-e5c6-4926-b940-c576009b9075,False,2.0,3.0,3.0,4.0,3.0
+R-eqbench4-58739507-f06a-418d-a53f-dda056a0c05d,R,,,eqbench4,58739507-f06a-418d-a53f-dda056a0c05d,False,2.0,3.0,3.0,4.0,3.0
+R-cooperbench-samuelcolvin_dirty_equals_task-43-f5-f8@coop,R,,,cooperbench,samuelcolvin_dirty_equals_task-43-f5-f8@coop,True,2.0,3.0,2.0,3.0,2.0
+R-cooperbench-huggingface_datasets_task-6252-f4-f5@coop,R,,,cooperbench,huggingface_datasets_task-6252-f4-f5@coop,True,2.0,3.0,2.0,3.0,2.0
+R-cooperbench-dspy_task-8587-f2-f5@coop,R,,,cooperbench,dspy_task-8587-f2-f5@coop,True,2.0,4.0,1.0,3.0,2.0
+R-cooperbench-dottxt_ai_outlines_task-1655-f1-f6@coop,R,,,cooperbench,dottxt_ai_outlines_task-1655-f1-f6@coop,False,2.0,3.0,1.0,3.0,2.0
+R-cooperbench-pallets_click_task-2068-f3-f12@coop,R,,,cooperbench,pallets_click_task-2068-f3-f12@coop,False,2.0,3.0,2.0,3.0,2.0
+R-cooperbench-samuelcolvin_dirty_equals_task-43-f1-f8@coop,R,,,cooperbench,samuelcolvin_dirty_equals_task-43-f1-f8@coop,False,2.0,3.0,1.0,3.0,2.0
+R-cooperbench-pallets_click_task-2068-f2-f6@coop,R,,,cooperbench,pallets_click_task-2068-f2-f6@coop,False,3.0,4.0,2.0,3.0,2.0
+R-cooperbench-dottxt_ai_outlines_task-1371-f1-f3@coop,R,,,cooperbench,dottxt_ai_outlines_task-1371-f1-f3@coop,False,3.0,4.0,2.0,3.0,2.0
+R-cooperbench-pallets_jinja_task-1465-f1-f4@coop,R,,,cooperbench,pallets_jinja_task-1465-f1-f4@coop,False,2.0,4.0,2.0,3.0,2.0
+R-cooperbench-pallets_jinja_task-1465-f4-f6@coop,R,,,cooperbench,pallets_jinja_task-1465-f4-f6@coop,False,2.0,3.0,2.0,2.0,2.0
