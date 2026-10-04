@@ -1,0 +1,253 @@
+benchmark,rubric,labels,level,tasks,n
+SWE-bench Verified,PLp,initial,0,16,443
+SWE-bench Verified,PLp,initial,1,163,443
+SWE-bench Verified,PLp,initial,2,256,443
+SWE-bench Verified,PLp,initial,3,8,443
+SWE-bench Verified,PLp,initial,4,0,443
+SWE-bench Verified,PLp,initial,5,0,443
+SWE-bench Verified,PLp,now,0,10,443
+SWE-bench Verified,PLp,now,1,135,443
+SWE-bench Verified,PLp,now,2,290,443
+SWE-bench Verified,PLp,now,3,8,443
+SWE-bench Verified,PLp,now,4,0,443
+SWE-bench Verified,PLp,now,5,0,443
+SWE-bench Verified,PLe,initial,0,0,443
+SWE-bench Verified,PLe,initial,1,1,443
+SWE-bench Verified,PLe,initial,2,19,443
+SWE-bench Verified,PLe,initial,3,423,443
+SWE-bench Verified,PLe,initial,4,0,443
+SWE-bench Verified,PLe,initial,5,0,443
+SWE-bench Verified,PLe,now,0,0,443
+SWE-bench Verified,PLe,now,1,2,443
+SWE-bench Verified,PLe,now,2,11,443
+SWE-bench Verified,PLe,now,3,430,443
+SWE-bench Verified,PLe,now,4,0,443
+SWE-bench Verified,PLe,now,5,0,443
+SWE-bench Verified,PLs,initial,0,1,443
+SWE-bench Verified,PLs,initial,1,416,443
+SWE-bench Verified,PLs,initial,2,26,443
+SWE-bench Verified,PLs,initial,3,0,443
+SWE-bench Verified,PLs,initial,4,0,443
+SWE-bench Verified,PLs,initial,5,0,443
+SWE-bench Verified,PLs,now,0,1,443
+SWE-bench Verified,PLs,now,1,441,443
+SWE-bench Verified,PLs,now,2,1,443
+SWE-bench Verified,PLs,now,3,0,443
+SWE-bench Verified,PLs,now,4,0,443
+SWE-bench Verified,PLs,now,5,0,443
+ProgramBench,PLp,initial,0,0,128
+ProgramBench,PLp,initial,1,0,128
+ProgramBench,PLp,initial,2,24,128
+ProgramBench,PLp,initial,3,104,128
+ProgramBench,PLp,initial,4,0,128
+ProgramBench,PLp,initial,5,0,128
+ProgramBench,PLp,now,0,0,128
+ProgramBench,PLp,now,1,0,128
+ProgramBench,PLp,now,2,27,128
+ProgramBench,PLp,now,3,101,128
+ProgramBench,PLp,now,4,0,128
+ProgramBench,PLp,now,5,0,128
+ProgramBench,PLe,initial,0,0,129
+ProgramBench,PLe,initial,1,0,129
+ProgramBench,PLe,initial,2,0,129
+ProgramBench,PLe,initial,3,116,129
+ProgramBench,PLe,initial,4,13,129
+ProgramBench,PLe,initial,5,0,129
+ProgramBench,PLe,now,0,0,129
+ProgramBench,PLe,now,1,0,129
+ProgramBench,PLe,now,2,0,129
+ProgramBench,PLe,now,3,126,129
+ProgramBench,PLe,now,4,3,129
+ProgramBench,PLe,now,5,0,129
+ProgramBench,PLs,initial,0,0,129
+ProgramBench,PLs,initial,1,114,129
+ProgramBench,PLs,initial,2,15,129
+ProgramBench,PLs,initial,3,0,129
+ProgramBench,PLs,initial,4,0,129
+ProgramBench,PLs,initial,5,0,129
+ProgramBench,PLs,now,0,0,129
+ProgramBench,PLs,now,1,125,129
+ProgramBench,PLs,now,2,4,129
+ProgramBench,PLs,now,3,0,129
+ProgramBench,PLs,now,4,0,129
+ProgramBench,PLs,now,5,0,129
+DeepSWE,PLp,initial,0,0,90
+DeepSWE,PLp,initial,1,0,90
+DeepSWE,PLp,initial,2,24,90
+DeepSWE,PLp,initial,3,66,90
+DeepSWE,PLp,initial,4,0,90
+DeepSWE,PLp,initial,5,0,90
+DeepSWE,PLp,now,0,0,90
+DeepSWE,PLp,now,1,0,90
+DeepSWE,PLp,now,2,32,90
+DeepSWE,PLp,now,3,58,90
+DeepSWE,PLp,now,4,0,90
+DeepSWE,PLp,now,5,0,90
+DeepSWE,PLe,initial,0,0,90
+DeepSWE,PLe,initial,1,0,90
+DeepSWE,PLe,initial,2,0,90
+DeepSWE,PLe,initial,3,81,90
+DeepSWE,PLe,initial,4,9,90
+DeepSWE,PLe,initial,5,0,90
+DeepSWE,PLe,now,0,0,90
+DeepSWE,PLe,now,1,0,90
+DeepSWE,PLe,now,2,0,90
+DeepSWE,PLe,now,3,87,90
+DeepSWE,PLe,now,4,3,90
+DeepSWE,PLe,now,5,0,90
+DeepSWE,PLs,initial,0,0,90
+DeepSWE,PLs,initial,1,31,90
+DeepSWE,PLs,initial,2,59,90
+DeepSWE,PLs,initial,3,0,90
+DeepSWE,PLs,initial,4,0,90
+DeepSWE,PLs,initial,5,0,90
+DeepSWE,PLs,now,0,0,90
+DeepSWE,PLs,now,1,66,90
+DeepSWE,PLs,now,2,24,90
+DeepSWE,PLs,now,3,0,90
+DeepSWE,PLs,now,4,0,90
+DeepSWE,PLs,now,5,0,90
+FrontierSWE,PLp,initial,0,0,19
+FrontierSWE,PLp,initial,1,0,19
+FrontierSWE,PLp,initial,2,0,19
+FrontierSWE,PLp,initial,3,18,19
+FrontierSWE,PLp,initial,4,1,19
+FrontierSWE,PLp,initial,5,0,19
+FrontierSWE,PLp,now,0,0,19
+FrontierSWE,PLp,now,1,0,19
+FrontierSWE,PLp,now,2,0,19
+FrontierSWE,PLp,now,3,17,19
+FrontierSWE,PLp,now,4,2,19
+FrontierSWE,PLp,now,5,0,19
+FrontierSWE,PLe,initial,0,0,19
+FrontierSWE,PLe,initial,1,0,19
+FrontierSWE,PLe,initial,2,0,19
+FrontierSWE,PLe,initial,3,14,19
+FrontierSWE,PLe,initial,4,5,19
+FrontierSWE,PLe,initial,5,0,19
+FrontierSWE,PLe,now,0,0,19
+FrontierSWE,PLe,now,1,0,19
+FrontierSWE,PLe,now,2,0,19
+FrontierSWE,PLe,now,3,15,19
+FrontierSWE,PLe,now,4,4,19
+FrontierSWE,PLe,now,5,0,19
+FrontierSWE,PLs,initial,0,0,19
+FrontierSWE,PLs,initial,1,9,19
+FrontierSWE,PLs,initial,2,10,19
+FrontierSWE,PLs,initial,3,0,19
+FrontierSWE,PLs,initial,4,0,19
+FrontierSWE,PLs,initial,5,0,19
+FrontierSWE,PLs,now,0,0,19
+FrontierSWE,PLs,now,1,13,19
+FrontierSWE,PLs,now,2,6,19
+FrontierSWE,PLs,now,3,0,19
+FrontierSWE,PLs,now,4,0,19
+FrontierSWE,PLs,now,5,0,19
+Terminal-Bench 4.0,PLp,initial,0,0,34
+Terminal-Bench 4.0,PLp,initial,1,0,34
+Terminal-Bench 4.0,PLp,initial,2,7,34
+Terminal-Bench 4.0,PLp,initial,3,25,34
+Terminal-Bench 4.0,PLp,initial,4,2,34
+Terminal-Bench 4.0,PLp,initial,5,0,34
+Terminal-Bench 4.0,PLp,now,0,0,34
+Terminal-Bench 4.0,PLp,now,1,0,34
+Terminal-Bench 4.0,PLp,now,2,8,34
+Terminal-Bench 4.0,PLp,now,3,25,34
+Terminal-Bench 4.0,PLp,now,4,1,34
+Terminal-Bench 4.0,PLp,now,5,0,34
+Terminal-Bench 4.0,PLe,initial,0,0,34
+Terminal-Bench 4.0,PLe,initial,1,0,34
+Terminal-Bench 4.0,PLe,initial,2,1,34
+Terminal-Bench 4.0,PLe,initial,3,16,34
+Terminal-Bench 4.0,PLe,initial,4,17,34
+Terminal-Bench 4.0,PLe,initial,5,0,34
+Terminal-Bench 4.0,PLe,now,0,0,34
+Terminal-Bench 4.0,PLe,now,1,0,34
+Terminal-Bench 4.0,PLe,now,2,1,34
+Terminal-Bench 4.0,PLe,now,3,20,34
+Terminal-Bench 4.0,PLe,now,4,13,34
+Terminal-Bench 4.0,PLe,now,5,0,34
+Terminal-Bench 4.0,PLs,initial,0,9,34
+Terminal-Bench 4.0,PLs,initial,1,9,34
+Terminal-Bench 4.0,PLs,initial,2,16,34
+Terminal-Bench 4.0,PLs,initial,3,0,34
+Terminal-Bench 4.0,PLs,initial,4,0,34
+Terminal-Bench 4.0,PLs,initial,5,0,34
+Terminal-Bench 4.0,PLs,now,0,10,34
+Terminal-Bench 4.0,PLs,now,1,12,34
+Terminal-Bench 4.0,PLs,now,2,12,34
+Terminal-Bench 4.0,PLs,now,3,0,34
+Terminal-Bench 4.0,PLs,now,4,0,34
+Terminal-Bench 4.0,PLs,now,5,0,34
+TB-Science,PLp,initial,0,0,69
+TB-Science,PLp,initial,1,0,69
+TB-Science,PLp,initial,2,8,69
+TB-Science,PLp,initial,3,52,69
+TB-Science,PLp,initial,4,9,69
+TB-Science,PLp,initial,5,0,69
+TB-Science,PLp,now,0,0,69
+TB-Science,PLp,now,1,0,69
+TB-Science,PLp,now,2,9,69
+TB-Science,PLp,now,3,53,69
+TB-Science,PLp,now,4,7,69
+TB-Science,PLp,now,5,0,69
+TB-Science,PLe,initial,0,0,69
+TB-Science,PLe,initial,1,0,69
+TB-Science,PLe,initial,2,1,69
+TB-Science,PLe,initial,3,24,69
+TB-Science,PLe,initial,4,44,69
+TB-Science,PLe,initial,5,0,69
+TB-Science,PLe,now,0,0,69
+TB-Science,PLe,now,1,0,69
+TB-Science,PLe,now,2,0,69
+TB-Science,PLe,now,3,27,69
+TB-Science,PLe,now,4,42,69
+TB-Science,PLe,now,5,0,69
+TB-Science,PLs,initial,0,29,69
+TB-Science,PLs,initial,1,10,69
+TB-Science,PLs,initial,2,25,69
+TB-Science,PLs,initial,3,5,69
+TB-Science,PLs,initial,4,0,69
+TB-Science,PLs,initial,5,0,69
+TB-Science,PLs,now,0,30,69
+TB-Science,PLs,now,1,10,69
+TB-Science,PLs,now,2,26,69
+TB-Science,PLs,now,3,3,69
+TB-Science,PLs,now,4,0,69
+TB-Science,PLs,now,5,0,69
+tau2,PLp,initial,0,0,242
+tau2,PLp,initial,1,24,242
+tau2,PLp,initial,2,212,242
+tau2,PLp,initial,3,6,242
+tau2,PLp,initial,4,0,242
+tau2,PLp,initial,5,0,242
+tau2,PLp,now,0,0,242
+tau2,PLp,now,1,28,242
+tau2,PLp,now,2,212,242
+tau2,PLp,now,3,2,242
+tau2,PLp,now,4,0,242
+tau2,PLp,now,5,0,242
+tau2,PLe,initial,0,0,242
+tau2,PLe,initial,1,192,242
+tau2,PLe,initial,2,34,242
+tau2,PLe,initial,3,16,242
+tau2,PLe,initial,4,0,242
+tau2,PLe,initial,5,0,242
+tau2,PLe,now,0,0,242
+tau2,PLe,now,1,186,242
+tau2,PLe,now,2,36,242
+tau2,PLe,now,3,20,242
+tau2,PLe,now,4,0,242
+tau2,PLe,now,5,0,242
+tau2,PLs,initial,0,4,242
+tau2,PLs,initial,1,14,242
+tau2,PLs,initial,2,224,242
+tau2,PLs,initial,3,0,242
+tau2,PLs,initial,4,0,242
+tau2,PLs,initial,5,0,242
+tau2,PLs,now,0,5,242
+tau2,PLs,now,1,16,242
+tau2,PLs,now,2,221,242
+tau2,PLs,now,3,0,242
+tau2,PLs,now,4,0,242
+tau2,PLs,now,5,0,242
