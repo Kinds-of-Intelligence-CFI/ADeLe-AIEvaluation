@@ -36,3 +36,11 @@ changed 20, 5, 20, 15 and 0 per cent):
 
 7,065 Opus-low calls; `adele mass plan` estimates about 35 weekly points (the PLs relabel used about 4 for 1,029 calls,
 so likely about 28). Run with `/annotate`, at most four relays at a time, stopping at 85 per cent weekly usage.
+
+## Deviations
+
+1. **2026-10-04: started before the weekly reset**, at Pablo's request ("Start the relabel now"), with weekly usage at
+   62 per cent. The runs pause at 85 per cent weekly usage and resume after the reset (2026-10-06, 20:00 UTC). Order:
+   `relabel-v2`, `relabel-v2-long`, then the three social runs. Recorded before any label.
+2. **Relay size 100 instead of 50** (`batch_size` in all five specs, before pinning), to halve the number of relays per
+   session. The judge, prompt and cells are unchanged; the examples regression used relays of 94 cells without issue.

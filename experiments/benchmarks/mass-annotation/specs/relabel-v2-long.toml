@@ -26,5 +26,5 @@ retry = { fallback_writer = 1, unparsed = 1 }
 dispatcher = "judge-dispatcher-v2-low-chunked"
 judge_agent = "adele-judge-v2-low-chunked"
 model_alias = "opus"
-batch_size = 50
+batch_size = 100
 chunk_lines = 200
