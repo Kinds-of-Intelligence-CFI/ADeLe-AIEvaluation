@@ -27,7 +27,7 @@ Examples:
 Level 3: Intermediate. The task requires the content to be completed. The image holds only part of it. The rest is hidden, smeared, drowned in noise or below the image's resolution, so what survives must be filled in from the usual form of such content. Critically, the task stays here however badly the image is degraded, so long as what survives in it is enough to complete the content.
 Examples:
 * Read a licence plate from a single frame blurred by motion.
-* Read a six-digit meter whose glass is cracked across two of the digits.
+* Read a six-digit meter on which a splash of paint covers the lower half of two digits.
 * Read the figures in a table from a screenshot compressed so hard that some digits have smeared together.
 * Tell whether a road sign seen through thick fog, with only its lower edge showing, is round or triangular.
 
