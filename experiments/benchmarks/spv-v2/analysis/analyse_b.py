@@ -64,7 +64,7 @@ def main() -> None:
     b7 = med(pm) == 3
     print(f"\nP-meter labels: {''.join(map(str, pm))}")
 
-    k = m[m.arm.isin(["cand", "cand_key"])].pivot_table(index="item_id", columns="arm", values="level")
+    k = m[m.arm.isin(["cand", "cand_key"])].pivot_table(index="item_id", columns="arm", values="level").dropna()
     agree = (k.cand == k.cand_key).mean()
     print(f"key vs no key (cand), same median: {agree:.0%} of {len(k)}; "
           f"key higher on {(k.cand_key > k.cand).sum()}, lower on {(k.cand_key < k.cand).sum()}")
