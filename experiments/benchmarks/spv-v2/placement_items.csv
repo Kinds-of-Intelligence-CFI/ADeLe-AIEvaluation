@@ -1,0 +1,23 @@
+item_id,level,bullet
+P-L0-00,0,Answer a question about a passage of supplied text.
+P-L0-01,0,Compute a total from figures given in words.
+P-L0-02,0,Summarise a telephone conversation supplied as a written transcript.
+P-L1-03,1,Read the time from a clock face photographed straight on in good light.
+P-L1-04,1,State the colour of a car that fills most of a clear photograph.
+P-L1-05,1,Read the title of the open window in a full-screen screenshot.
+P-L1-06,1,Give the value of the tallest bar in a bar chart whose bars are labelled.
+P-L2-07,2,"Read a line of handwriting written across a printed form, where the ink crosses the ruled boxes."
+P-L2-08,2,"Read the words pressed into a notepad page by writing on the sheet above, photographed under light from the side."
+P-L2-09,2,Read the tiny axis labels of a chart in a screenshot of a large monitor.
+P-L2-10,2,"Follow one series through a line chart where five coloured lines cross many times, and give its last value."
+P-L3-11,3,Read a licence plate from a single frame blurred by motion.
+P-L3-12,3,Read a six-digit meter whose glass is cracked across two of the digits.
+P-L3-13,3,Read the figures in a table from a screenshot compressed so hard that some digits have smeared together.
+P-L3-14,3,"Tell whether a road sign seen through thick fog, with only its lower edge showing, is round or triangular."
+P-L4-15,4,"Read a document photographed in overlapping strips, each cut mid-line, where the lines must be rejoined across strips before anything can be read."
+P-L4-16,4,"Determine the shape of a vase from several photographs, each showing only a partial silhouette against a bright background."
+P-L4-17,4,"Rebuild a long web page from six scrolled screenshots whose overlaps are not marked, and give the total in its last row."
+P-L4-18,4,"Establish which of two near-identical rooms a photograph was taken in, from details that appear in different frames of a walkthrough and never together."
+P-L5-19,5,Recover the surface relief of an object from the way light falls across it in a single photograph.
+P-L5-20,5,Recover the shape of a clear glass object from how it bends the pattern of the tiles behind it.
+P-L5-21,5,Recover what was said in a closed room from a silent video of a crisp packet vibrating on a table.

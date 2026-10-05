@@ -1,0 +1,45 @@
+# Visual processing
+
+This rubric assesses the difficulty level of tasks requiring information to be recovered from an image. The difficulty rises with how far the needed content sits from a plain reading of the image. It ranges from tasks with nothing to read from an image, through content that reads at a glance, content that is all there but must be brought out, and content that is partly lost and must be completed, to content that no single image holds and content that no image shows at all. Content must be brought out when it is small, faint or low in contrast, or when it is laid over other content. It is lost where the image no longer holds part of it, through occlusion, blur, noise, compression or too few pixels. These are properties of the image, not of the eye that reads it. Layers or channels captured together, in a fixed and known relation, count as one image. Where a task needs several pieces of content, its level is set by the hardest piece it needs.
+
+What this dimension does not cover. Only getting the content out of the image is scored here. What the content means, and the knowledge needed to interpret it, are not. Finding a target among distractors is search rather than reading, so a target that is hard to find but plain once found makes no demand here. A scene of many elements, all of them plain, makes no demand either, however many must be counted or compared. Rotating, projecting or otherwise transforming a shape that has already been read is spatial reasoning. How long looking must be kept up is not scored here, and producing images is not perception.
+
+Level 0: None. The task requires nothing to be read from an image. It has no image, or any image it has is incidental to what is asked.
+Examples:
+* Answer a question about a passage of supplied text.
+* Compute a total from figures given in words.
+* Summarise a telephone conversation supplied as a written transcript.
+
+Level 1: Very low. The task requires the content to be read off as presented. The image holds all of it, plainly, at a size and contrast that read at a glance. Note, a busy image stays here so long as what the task needs is itself plain.
+Examples:
+* Read the time from a clock face photographed straight on in good light.
+* State the colour of a car that fills most of a clear photograph.
+* Read the title of the open window in a full-screen screenshot.
+* Give the value of the tallest bar in a bar chart whose bars are labelled.
+
+Level 2: Low. The task requires the content to be brought out. All of it is in the image, but it does not read at a glance. It is small, faint or low in contrast, or it is laid over or under other content and must be pulled apart from it. Critically, the whole of the content is still there. Where part of it is missing, the task belongs at the level above.
+Examples:
+* Read a line of handwriting written across a printed form, where the ink crosses the ruled boxes.
+* Read the words pressed into a notepad page by writing on the sheet above, photographed under light from the side.
+* Read the tiny axis labels of a chart in a screenshot of a large monitor.
+* Follow one series through a line chart where five coloured lines cross many times, and give its last value.
+
+Level 3: Intermediate. The task requires the content to be completed. The image holds only part of it. The rest is hidden, smeared, drowned in noise or below the image's resolution, so what survives must be filled in from the usual form of such content. Critically, the task stays here however badly the image is degraded, so long as what survives in it is enough to complete the content.
+Examples:
+* Read a licence plate from a single frame blurred by motion.
+* Read a six-digit meter whose glass is cracked across two of the digits.
+* Read the figures in a table from a screenshot compressed so hard that some digits have smeared together.
+* Tell whether a road sign seen through thick fog, with only its lower edge showing, is round or triangular.
+
+Level 4: High. The task requires the content to be combined. No single image holds it. Several images, taken from different viewpoints, at different times or through different channels, must first be brought into correspondence, and how they relate to one another is not given. Note, images that already stand in a fixed, known relation count as one image, and the task belongs below.
+Examples:
+* Read a document photographed in overlapping strips, each cut mid-line, where the lines must be rejoined across strips before anything can be read.
+* Determine the shape of a vase from several photographs, each showing only a partial silhouette against a bright background.
+* Rebuild a long web page from six scrolled screenshots whose overlaps are not marked, and give the total in its last row.
+* Establish which of two near-identical rooms a photograph was taken in, from details that appear in different frames of a walkthrough and never together.
+
+Level 5: Very high. The task requires the content to be inverted. No image shows the content itself. It shows only a trace the content left on how the image was formed, so the content follows only by modelling that formation and working back through it. Critically, content that is in the image, however small, faint or degraded, belongs below.
+Examples:
+* Recover the surface relief of an object from the way light falls across it in a single photograph.
+* Recover the shape of a clear glass object from how it bends the pattern of the tiles behind it.
+* Recover what was said in a closed room from a silent video of a crisp packet vibrating on a table.
