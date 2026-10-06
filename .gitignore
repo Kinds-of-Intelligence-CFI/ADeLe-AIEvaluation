@@ -185,3 +185,12 @@ data/
 
 # Local API key files (never commit)
 local_*_key.txt
+
+# Agent traces and archives must never be committed (public repo; see experiments/benchmarks/contamination_check.py).
+experiments/**/*.jsonl
+experiments/**/*.tar.gz
+experiments/**/*.tgz
+experiments/**/*.tar
+experiments/**/*.zip
+experiments/**/traces/
+experiments/**/trajectories/
