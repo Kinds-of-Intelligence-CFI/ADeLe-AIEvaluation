@@ -218,3 +218,17 @@ are compared with the released labels and with other levels of reasoning, in agr
 
 **Order.** The Opus NR arm finishes first. Then SR and R-high on the reference subset, then SNR (PL and tau2 MS
 first), within the 5-hour window rule (stop launching at 90%).
+
+### Amendment 4a (2026-10-06, a few minutes after amendment 4; no Sonnet no-reasoning or Opus-high label yet)
+
+Pablo clarified the request: run only Opus and Sonnet at effort low with the single-digit instruction, and compare
+both with our previous (released) labels.
+- **Withdrawn:** the SR arm (Sonnet with reasoning) and the R-high arm (Opus high). Their specs and pinned runs are
+  removed.
+- One SR relay had started and was stopped. Its 12 answers stay outside the repo, uncollected and unanalysed.
+- **Unchanged:**
+  - the SNR arm (7,595 cells), its decision rule and the cost analysis;
+  - the comparisons with the released labels, with NR and with R′ (the same-day reasoning yardstick already
+    collected).
+- **Predictions:** the three about SR and R-high (model effect larger than reasoning effect; R-high agreement; R-high
+  cost) are void. The others stand.
