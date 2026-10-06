@@ -1,0 +1,632 @@
+{
+  "n_nr": 5101,
+  "n_ref": 530,
+  "agreement": {
+    "MSc": {
+      "n": 917,
+      "exact": 0.974,
+      "within1": 0.998,
+      "qwk": 0.99,
+      "mean_shift": -0.005
+    },
+    "MSm": {
+      "n": 919,
+      "exact": 0.891,
+      "within1": 1.0,
+      "qwk": 0.975,
+      "mean_shift": -0.057
+    },
+    "PLe": {
+      "n": 1089,
+      "exact": 0.929,
+      "within1": 0.999,
+      "qwk": 0.926,
+      "mean_shift": -0.015
+    },
+    "PLp": {
+      "n": 1089,
+      "exact": 0.875,
+      "within1": 1.0,
+      "qwk": 0.85,
+      "mean_shift": -0.059
+    },
+    "PLs": {
+      "n": 1087,
+      "exact": 0.897,
+      "within1": 0.999,
+      "qwk": 0.883,
+      "mean_shift": -0.003
+    }
+  },
+  "yardstick": {
+    "MSc": {
+      "ref_vs_released": {
+        "n": 40,
+        "exact": 0.975,
+        "within1": 1.0,
+        "qwk": 0.978,
+        "mean_shift": 0.025
+      },
+      "nr_vs_released": {
+        "n": 40,
+        "exact": 0.975,
+        "within1": 0.975,
+        "qwk": 0.789,
+        "mean_shift": -0.075
+      },
+      "nr_vs_ref": {
+        "n": 40,
+        "exact": 0.95,
+        "within1": 0.975,
+        "qwk": 0.778,
+        "mean_shift": -0.1
+      }
+    },
+    "MSm": {
+      "ref_vs_released": {
+        "n": 40,
+        "exact": 0.775,
+        "within1": 1.0,
+        "qwk": 0.461,
+        "mean_shift": 0.125
+      },
+      "nr_vs_released": {
+        "n": 40,
+        "exact": 0.75,
+        "within1": 1.0,
+        "qwk": 0.293,
+        "mean_shift": -0.1
+      },
+      "nr_vs_ref": {
+        "n": 40,
+        "exact": 0.725,
+        "within1": 1.0,
+        "qwk": 0.209,
+        "mean_shift": -0.225
+      }
+    },
+    "PLe": {
+      "ref_vs_released": {
+        "n": 116,
+        "exact": 0.94,
+        "within1": 0.991,
+        "qwk": 0.896,
+        "mean_shift": -0.052
+      },
+      "nr_vs_released": {
+        "n": 116,
+        "exact": 0.957,
+        "within1": 0.991,
+        "qwk": 0.918,
+        "mean_shift": -0.034
+      },
+      "nr_vs_ref": {
+        "n": 116,
+        "exact": 0.931,
+        "within1": 1.0,
+        "qwk": 0.92,
+        "mean_shift": 0.017
+      }
+    },
+    "PLp": {
+      "ref_vs_released": {
+        "n": 116,
+        "exact": 0.871,
+        "within1": 1.0,
+        "qwk": 0.869,
+        "mean_shift": 0.026
+      },
+      "nr_vs_released": {
+        "n": 116,
+        "exact": 0.836,
+        "within1": 1.0,
+        "qwk": 0.846,
+        "mean_shift": -0.095
+      },
+      "nr_vs_ref": {
+        "n": 116,
+        "exact": 0.828,
+        "within1": 1.0,
+        "qwk": 0.834,
+        "mean_shift": -0.121
+      }
+    },
+    "PLs": {
+      "ref_vs_released": {
+        "n": 116,
+        "exact": 0.914,
+        "within1": 1.0,
+        "qwk": 0.725,
+        "mean_shift": 0.0
+      },
+      "nr_vs_released": {
+        "n": 116,
+        "exact": 0.922,
+        "within1": 1.0,
+        "qwk": 0.753,
+        "mean_shift": -0.026
+      },
+      "nr_vs_ref": {
+        "n": 116,
+        "exact": 0.957,
+        "within1": 1.0,
+        "qwk": 0.855,
+        "mean_shift": -0.026
+      }
+    }
+  },
+  "criterion": {
+    "cooperbench/MSc": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "cooperbench/MSm": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "cooperbench/PLe": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "cooperbench/PLp": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "cooperbench/PLs": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "deepswe-v1.1/MSc": {
+      "n": 88,
+      "nr": null,
+      "released": null
+    },
+    "deepswe-v1.1/MSm": {
+      "n": 90,
+      "nr": null,
+      "released": null
+    },
+    "deepswe-v1.1/PLe": {
+      "n": 90,
+      "nr": 0.11220741347452935,
+      "released": 0.04407936562396851
+    },
+    "deepswe-v1.1/PLp": {
+      "n": 90,
+      "nr": -0.06698668639543529,
+      "released": -0.08372173187879997
+    },
+    "deepswe-v1.1/PLs": {
+      "n": 90,
+      "nr": -0.13771740976454472,
+      "released": -0.12960181113286146
+    },
+    "eqbench4/MSc": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "eqbench4/MSm": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "eqbench4/PLe": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "eqbench4/PLp": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "eqbench4/PLs": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "frontierswe-v2/MSc": {
+      "n": 19,
+      "nr": null,
+      "released": null
+    },
+    "frontierswe-v2/MSm": {
+      "n": 19,
+      "nr": 0.021805400144814482,
+      "released": 0.021805400144814482
+    },
+    "frontierswe-v2/PLe": {
+      "n": 19,
+      "nr": 0.5207680139220575,
+      "released": 0.4180158337159458
+    },
+    "frontierswe-v2/PLp": {
+      "n": 19,
+      "nr": -0.08011815598800885,
+      "released": null
+    },
+    "frontierswe-v2/PLs": {
+      "n": 19,
+      "nr": 0.04392170078529497,
+      "released": -0.04189990161804388
+    },
+    "gamearena/MSc": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "gamearena/MSm": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "gamearena/PLe": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "gamearena/PLp": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "gamearena/PLs": {
+      "n": 0,
+      "nr": null,
+      "released": null
+    },
+    "programbench/MSc": {
+      "n": 129,
+      "nr": null,
+      "released": null
+    },
+    "programbench/MSm": {
+      "n": 129,
+      "nr": null,
+      "released": null
+    },
+    "programbench/PLe": {
+      "n": 129,
+      "nr": -0.09024062873602169,
+      "released": -0.1205180016216481
+    },
+    "programbench/PLp": {
+      "n": 129,
+      "nr": -0.5477534026526691,
+      "released": -0.4880805967429704,
+      "diff_ci95": [
+        -0.167,
+        0.051
+      ]
+    },
+    "programbench/PLs": {
+      "n": 129,
+      "nr": 0.03483179237619887,
+      "released": -0.14718819856158827
+    },
+    "swe-bench-verified/MSc": {
+      "n": 130,
+      "nr": null,
+      "released": null
+    },
+    "swe-bench-verified/MSm": {
+      "n": 130,
+      "nr": null,
+      "released": null
+    },
+    "swe-bench-verified/PLe": {
+      "n": 443,
+      "nr": -0.18386090018092693,
+      "released": -0.26247864654700265
+    },
+    "swe-bench-verified/PLp": {
+      "n": 443,
+      "nr": -0.5608960827394176,
+      "released": -0.5461447202396832,
+      "diff_ci95": [
+        -0.073,
+        0.043
+      ]
+    },
+    "swe-bench-verified/PLs": {
+      "n": 443,
+      "nr": -0.07066303751898022,
+      "released": -0.053464845800139674
+    },
+    "tau2/MSc": {
+      "n": 242,
+      "nr": 0.118,
+      "released": 0.1
+    },
+    "tau2/MSm": {
+      "n": 242,
+      "nr": 0.133,
+      "released": -0.118
+    },
+    "tau2/PLe": {
+      "n": 98,
+      "nr": -0.192,
+      "released": -0.279
+    },
+    "tau2/PLp": {
+      "n": 99,
+      "nr": -0.361,
+      "released": -0.246,
+      "diff_ci95": [
+        -0.216,
+        -0.028
+      ]
+    },
+    "tau2/PLs": {
+      "n": 98,
+      "nr": -0.172,
+      "released": -0.073
+    }
+  },
+  "levels": {
+    "MSc": {
+      "nr": {
+        "0": 461,
+        "1": 9,
+        "2": 285,
+        "3": 92,
+        "4": 69,
+        "5": 1
+      },
+      "released": {
+        "0": 456,
+        "1": 14,
+        "2": 286,
+        "3": 90,
+        "4": 70,
+        "5": 1
+      }
+    },
+    "MSm": {
+      "nr": {
+        "0": 453,
+        "1": 32,
+        "2": 258,
+        "3": 54,
+        "4": 121,
+        "5": 1
+      },
+      "released": {
+        "0": 454,
+        "1": 30,
+        "2": 206,
+        "3": 108,
+        "4": 120,
+        "5": 1
+      }
+    },
+    "PLe": {
+      "nr": {
+        "0": 23,
+        "1": 69,
+        "2": 47,
+        "3": 897,
+        "4": 53
+      },
+      "released": {
+        "0": 23,
+        "1": 69,
+        "2": 31,
+        "3": 913,
+        "4": 53
+      }
+    },
+    "PLp": {
+      "nr": {
+        "0": 9,
+        "1": 239,
+        "2": 638,
+        "3": 200,
+        "4": 3
+      },
+      "released": {
+        "0": 11,
+        "1": 168,
+        "2": 709,
+        "3": 199,
+        "4": 2
+      }
+    },
+    "PLs": {
+      "nr": {
+        "0": 5,
+        "1": 767,
+        "2": 196,
+        "3": 119
+      },
+      "released": {
+        "0": 5,
+        "1": 746,
+        "2": 235,
+        "3": 101
+      }
+    }
+  },
+  "length": {
+    "cooperbench/MSc": {
+      "nr": 0.836,
+      "released": 0.819
+    },
+    "cooperbench/MSm": {
+      "nr": 0.803,
+      "released": 0.83
+    },
+    "cooperbench/PLe": {
+      "nr": 0.54,
+      "released": 0.562
+    },
+    "cooperbench/PLp": {
+      "nr": 0.383,
+      "released": 0.309
+    },
+    "cooperbench/PLs": {
+      "nr": 0.709,
+      "released": 0.603
+    },
+    "deepswe-v1.1/MSc": {
+      "nr": null,
+      "released": null
+    },
+    "deepswe-v1.1/MSm": {
+      "nr": null,
+      "released": null
+    },
+    "deepswe-v1.1/PLe": {
+      "nr": 0.124,
+      "released": 0.092
+    },
+    "deepswe-v1.1/PLp": {
+      "nr": -0.29,
+      "released": -0.303
+    },
+    "deepswe-v1.1/PLs": {
+      "nr": -0.06,
+      "released": 0.096
+    },
+    "eqbench4/MSc": {
+      "nr": 0.555,
+      "released": 0.551
+    },
+    "eqbench4/MSm": {
+      "nr": 0.157,
+      "released": 0.025
+    },
+    "eqbench4/PLe": {
+      "nr": 0.087,
+      "released": null
+    },
+    "eqbench4/PLp": {
+      "nr": 0.159,
+      "released": 0.111
+    },
+    "eqbench4/PLs": {
+      "nr": -0.069,
+      "released": 0.097
+    },
+    "frontierswe-v2/MSc": {
+      "nr": null,
+      "released": null
+    },
+    "frontierswe-v2/MSm": {
+      "nr": -0.043,
+      "released": -0.043
+    },
+    "frontierswe-v2/PLe": {
+      "nr": 0.29,
+      "released": 0.283
+    },
+    "frontierswe-v2/PLp": {
+      "nr": 0.158,
+      "released": null
+    },
+    "frontierswe-v2/PLs": {
+      "nr": -0.118,
+      "released": -0.021
+    },
+    "gamearena/MSc": {
+      "nr": 0.534,
+      "released": 0.534
+    },
+    "gamearena/MSm": {
+      "nr": 0.693,
+      "released": 0.678
+    },
+    "gamearena/PLe": {
+      "nr": 0.226,
+      "released": 0.226
+    },
+    "gamearena/PLp": {
+      "nr": -0.04,
+      "released": -0.007
+    },
+    "gamearena/PLs": {
+      "nr": 0.092,
+      "released": 0.24
+    },
+    "programbench/MSc": {
+      "nr": null,
+      "released": null
+    },
+    "programbench/MSm": {
+      "nr": null,
+      "released": null
+    },
+    "programbench/PLe": {
+      "nr": -0.059,
+      "released": -0.162
+    },
+    "programbench/PLp": {
+      "nr": 0.195,
+      "released": 0.051
+    },
+    "programbench/PLs": {
+      "nr": 0.159,
+      "released": 0.161
+    },
+    "swe-bench-verified/MSc": {
+      "nr": null,
+      "released": null
+    },
+    "swe-bench-verified/MSm": {
+      "nr": null,
+      "released": null
+    },
+    "swe-bench-verified/PLe": {
+      "nr": 0.105,
+      "released": 0.117
+    },
+    "swe-bench-verified/PLp": {
+      "nr": 0.199,
+      "released": 0.174
+    },
+    "swe-bench-verified/PLs": {
+      "nr": 0.047,
+      "released": 0.06
+    },
+    "tau2/MSc": {
+      "nr": 0.005,
+      "released": -0.005
+    },
+    "tau2/MSm": {
+      "nr": -0.256,
+      "released": -0.201
+    },
+    "tau2/PLe": {
+      "nr": 0.491,
+      "released": 0.503
+    },
+    "tau2/PLp": {
+      "nr": 0.294,
+      "released": 0.212
+    },
+    "tau2/PLs": {
+      "nr": -0.118,
+      "released": -0.033
+    }
+  },
+  "compliance": {
+    "answers": 5097,
+    "bare_sentence": 1.0,
+    "median_chars": 1.0
+  },
+  "decision": {
+    "signal_cells_weaker_by_0.10": [],
+    "agreement_gaps": {
+      "PLp": -0.035,
+      "PLe": 0.017,
+      "PLs": 0.008
+    },
+    "verdict": "reasoning not needed"
+  }
+}
