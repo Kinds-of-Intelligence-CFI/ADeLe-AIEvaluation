@@ -712,10 +712,13 @@ def test_noreason_builder_differs_from_v2_only_in_the_instruction():
 
     a = prompts.build_annotation_prompt_v2("Planning", "RUBRIC", "TASK")
     b = prompts.build_annotation_prompt_v2_noreason("Planning", "RUBRIC", "TASK")
-    diff = [(x, y) for x, y in zip(a.splitlines(), b.splitlines()) if x != y]
-    assert len(a.splitlines()) == len(b.splitlines()) and len(diff) == 1
-    assert "assessment" in diff[0][0] and "without any assessment" in diff[0][1]
-    assert a.rsplit("\n", 1)[1] == b.rsplit("\n", 1)[1]  # same final answer sentence
+    la, lb = a.splitlines(), b.splitlines()
+    assert la[:-2] == lb[:-1]  # everything before the final instruction is identical
+    assert "assessment" in la[-2] and "without any assessment" in lb[-1] and "single digit from 0 to 5" in lb[-1]
+    assert la[-1].startswith("The level of") and "The level of" not in b  # no closing sentence in the NR prompt
+    from adele.annotation.parsing import extract_demand_level
+    assert extract_demand_level("3") == (3.0, True) and extract_demand_level(" 0\n") == (0.0, True)
+    assert extract_demand_level("6")[1] is False and extract_demand_level("35")[1] is False
     assert BUILDERS["v2-noreason"] == "build_annotation_prompt_v2_noreason"
     j = judge_from_dict({"backend": "subagent", "model": "claude-opus-5-5", "effort": "low"}, "v2-noreason")
     assert j.relay["judge_agent"] == "adele-judge-v2-low"

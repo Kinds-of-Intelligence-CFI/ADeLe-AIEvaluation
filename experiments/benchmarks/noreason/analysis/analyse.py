@@ -128,7 +128,7 @@ def main() -> None:
         out["length"][f"{s}/{d}"] = {c: (round(float(spearmanr(x[c], x["chars"])[0]), 3)
                                          if x[c].nunique() > 1 else None) for c in ("nr", "released")}
 
-    bare = re.compile(r"^\s*The level of .+ demanded by this task is: \d\s*$", re.S)
+    bare = re.compile(r"^\s*[0-5]\s*$")
     io = Path.home() / "Developer/ADELE/judge-io"
     resp = [(io / r / "responses/opus-low" / f"{c}.txt") for r, c in zip(nr["run"], nr["cell_id"])]
     texts = [p.read_text(errors="ignore") for p in resp if p.exists()]

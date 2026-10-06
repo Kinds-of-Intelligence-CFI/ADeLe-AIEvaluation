@@ -86,3 +86,24 @@ parsed, and the share of such answers is reported as a protocol-compliance check
 About 19 weekly points by the runner's estimate (Opus-low calibration). NR calls are shorter, so probably less.
 Usage was 94% at launch on 2026-10-06, with a reset at 22:00 CEST. Order of launch: the reference runs and
 `noreason-ms` first, then `noreason-pl`, which carries on after the reset.
+
+## Amendment 1 (2026-10-06, before any no-reasoning label was collected)
+
+**The change.** At Pablo's request, the no-reasoning judge now answers with the bare digit. The closing sentence
+"The level of … demanded by this task is: N" is gone.
+- The final instruction now reads: "Answer with the level alone, as a single digit from 0 to 5, and nothing else."
+- Everything before it is identical to the v2 prompt (tested).
+- `extract_demand_level` now also accepts a response that is exactly one digit from 0 to 5. All other inputs parse as
+  before.
+
+**What happened to the first no-reasoning relays.**
+- Two `noreason-ms` relays had started with the sentence format. They were stopped after 132 answers.
+- All 132 answers were the bare sentence (median 77 characters). None was collected.
+- They are kept, not analysed, in `aborted/` and in `judge-io/_aborted/`.
+- `noreason-ms` and `noreason-pl` were re-pinned with the new prompt. The reference runs are unaffected.
+
+**New check: hidden thinking.**
+- The compliance check now counts answers that are a bare digit. The 0.8 prediction stands for that.
+- I also report how many judge transcripts carry a thinking block, and how long those blocks are, in both arms.
+- So far, in the sentence-format relays, 12 of 137 transcripts had a thinking block (0–240 characters). In the
+  reference arm, 38 of 300 did.

@@ -34,6 +34,10 @@ def extract_demand_level(response: str) -> tuple[float, bool]:
     if not response or not response.strip():
         return float("nan"), False
 
+    # A bare digit is the whole answer (the v2-noreason prompt asks for exactly that).
+    if re.fullmatch(r"\s*[0-5]\s*", response):
+        return float(response.strip()), True
+
     # First try: look for the structured conclusion pattern
     # "the level of *X* demanded by the given TASK INSTANCE is: SCORE"
     # Match the full number (\d+) so a stray multi-digit value like "is: 12"

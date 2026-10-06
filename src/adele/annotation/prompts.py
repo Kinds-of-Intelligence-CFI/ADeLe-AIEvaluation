@@ -86,8 +86,8 @@ PROMPT_V2_NOREASON = PROMPT_V2.replace(
     "supports. End with this sentence, with the level as a single digit:",
     "Give the level directly, without any assessment, explanation or other text. Base the level on the conditions the "
     "rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent levels, choose the "
-    "lower one. Answer with only this sentence, with the level as a single digit:",
-)
+    "lower one. Answer with the level alone, as a single digit from 0 to 5, and nothing else.",
+).replace("\nThe level of {demand} demanded by this task is: N", "")
 assert PROMPT_V2_NOREASON != PROMPT_V2
 
 
@@ -99,7 +99,8 @@ def build_annotation_prompt_v2_noreason(
     """The v2 prompt without written reasoning: the judge states the level only.
 
     Identical to :func:`build_annotation_prompt_v2` except the final instruction, which drops the assessment and the
-    comparison with the rubric's examples. Built for the no-reasoning ablation (``experiments/benchmarks/noreason``).
+    comparison with the rubric's examples and asks for the bare digit (no closing sentence). Built for the
+    no-reasoning ablation (``experiments/benchmarks/noreason``).
     """
     return PROMPT_V2_NOREASON.format(demand=demand_name, rubric=rubric_content, task=task_instance)
 
