@@ -144,3 +144,77 @@ social sets, `noreason-long` and `noreason-ms-rest`.
    - **A plain-API counterfactual:** the prompt plus the answer, at standard and batch prices.
    - Reported for all cells and for matched cells, i.e. the reference subset judged in both arms.
    - Results are reported next to the precision results. Nothing is decided on cost.
+
+## Amendment 4 (2026-10-06, before any Sonnet 5.5 or Opus-high label; Opus no-reasoning arm about 85% labelled)
+
+Pablo asked to finish the Opus no-reasoning arm and to run Sonnet 5.5 with the same no-reasoning instruction. Both
+are compared with the released labels and with other levels of reasoning, in agreement and in cost.
+
+**New arms.** Each spec is the twin of an existing one, with only the judge changed. The prompts are byte-identical.
+
+| arm | runs | judge | builder | cells |
+|---|---|---|---|---|
+| SNR | `noreason-s-{pl,ms,ms-rest,long,eqbench4,cooperbench,gamearena}` | Sonnet 5.5, effort low | v2-noreason | 7,595 |
+| SR | `noreason-s-ref`, `noreason-s-ref-ms` | Sonnet 5.5, effort low | v2 (written reasoning) | 530 |
+| R-high | `noreason-ref-high`, `noreason-ref-ms-high` | Opus 5.5, effort high | v2 (written reasoning) | 530 |
+
+- SNR mirrors the Opus no-reasoning arm (NR) cell for cell.
+- On the reference subset (150 tasks × PL and 40 tau2 tasks × MS, 530 cells), five arms label the same cells on
+  the same days:
+  - R′ (Opus low, reasoning);
+  - NR (Opus low, no reasoning);
+  - SR (Sonnet low, reasoning);
+  - SNR (Sonnet low, no reasoning);
+  - R-high (Opus high, reasoning).
+- This gives a 2×2 of model × written reasoning at effort low, plus a high-effort reasoning anchor.
+- Sonnet 5.5 at effort low through `adele-judge-v2-low` (alias `sonnet`). Opus high through `adele-judge-v2-high`.
+- Only answers written by the requested model count. Sonnet has no fallback model: a safeguard stop leaves the cell
+  without a label. Such cells get one retry, then no label, and the coverage loss is reported.
+
+**Analysis additions.**
+- **A. Agreement.** For every arm, on the reference subset and per rubric:
+  - exact agreement, within one level, quadratic κ and mean shift;
+  - against the released labels, against R′, and between every pair of arms.
+  - For SNR, also against the released labels on all cells, as for NR.
+- **B. Criterion validity.** ρ(SNR) against ρ(released) on all tasks, with the bootstrap CI of the difference for
+  the three signal cells, as for NR. For SR and R-high, ρ on the reference subset only. This is secondary, since n is
+  about 150.
+- **C, D.** Level distributions and the length heuristic, for SNR as for NR.
+- **Cost.** `analysis/cost.py`, extended to every arm:
+  - harness USD per label;
+  - Sonnet 5.5 at $2 input, $2.50 cache write, $0.20 cache read and $10 output per million tokens;
+  - median seconds per call;
+  - the plain-API counterfactual;
+  - matched cells: the reference subset.
+  - The plan meters are recorded at the start and end of each arm where the arms do not overlap.
+- **Coverage.** The share of cells labelled by the requested model, and the safeguard stops, per arm.
+
+**Decision rule for SNR (Sonnet without reasoning as a replacement judge).**
+- **Usable** if all four hold:
+  1. its exact agreement with the released labels is at most 5 points below the yardstick (R′ against released)
+     for each of PLp, PLe and PLs;
+  2. in at least two of the three signal cells, ρ(SNR) is within 0.05 of ρ(released) or stronger, and in none is it
+     weaker by 0.10 or more;
+  3. at least 95% of cells are labelled by `claude-sonnet-5-5`;
+  4. its harness cost per label on matched cells is at least 30% below NR's.
+- **Not usable** if any of these holds:
+  - a gap of 10 points or more on at least two PL rubrics;
+  - ρ weaker by 0.10 or more in at least two signal cells;
+  - coverage below 90%.
+- **Otherwise mixed.** Report which condition fails.
+- The NR decision rule above is unchanged.
+
+**Predictions (sealed).**
+- SNR verdict: usable 0.25, mixed 0.40, not usable 0.35.
+- SNR PLp exact agreement with the released labels ≥ 0.80: 0.35.
+- |mean SNR PLp shift against released| ≥ 0.15: 0.5.
+- SNR SWE-bench PLp ρ within 0.05 of released, or stronger: 0.45.
+- SNR coverage ≥ 95%: 0.75.
+- SNR harness cost per label ≥ 30% below NR on matched cells: 0.5.
+- On the reference subset, the model effect on PLp agreement with released is larger than the written-reasoning
+  effect (|SR − R′| + |SNR − NR| > |NR − R′| + |SNR − SR|): 0.7.
+- R-high agrees with released on PLp better than R′ does: 0.4.
+- R-high costs at least twice R′ per label: 0.7.
+
+**Order.** The Opus NR arm finishes first. Then SR and R-high on the reference subset, then SNR (PL and tau2 MS
+first), within the 5-hour window rule (stop launching at 90%).

@@ -1,0 +1,108 @@
+{
+  "run": "noreason-ref-ms-high",
+  "created_at": "2026-10-06T21:37:30+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/noreason-ref-ms-high.toml",
+  "git": {
+    "commit": "9b5293083bc3c52de91218ec27475b7dad3a0f8e",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/noreason-cooperbench/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-cooperbench/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-eqbench4/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-eqbench4/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-long/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-long/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-ms-rest/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-ms-rest/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-pl/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-pl/ledger.csv",
+      " M experiments/benchmarks/noreason/PREREGISTRATION.md",
+      " M experiments/benchmarks/noreason/results/cost.csv"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-high": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-high.md",
+      "sha256": "60b2825bf0885c1bf687f69b22425545cdebdb41bae6bad5e0b7f0ce1a3e3539"
+    },
+    "adele-judge-v2-high": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-high.md",
+      "sha256": "293d0192e9eaf748d3a1b3df084d79b28b4b0d6d62a91166be15fada99972847"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "50f5550bb82de5598dcdef85592153d45e8f58e69e2e813863c92b3d0944432a",
+      "content": "# noreason amendment 4: twin of noreason-ref-ms.toml with Opus 5.5 at effort high (written reasoning, v2 prompt); nothing else changed.\n# No-reasoning ablation (experiments/benchmarks/noreason): same-day reference WITH reasoning (v2 prompt), current texts, 40 tau2 tasks, MS rubrics.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/noreason-ref-ms.toml\nname = \"noreason-ref-ms-high\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-retail\", \"tau2-banking_knowledge\"]\nsubset = \"experiments/benchmarks/noreason/refresh_tau2_subset.csv\"\n\n[rubrics]\nrefs = [\"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"high\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-high\"\njudge_agent = \"adele-judge-v2-high\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "217187f31c08f389196d73251cecf55ee8414427ac4d170422db699d69a7b0d0",
+          "frame_sha256": "5d51a59e061d005ef6c7d229052c37b9d600c349d96d088647ec1127732f7165",
+          "n_selected": 10
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "ef0dc74a178d950cbbf3abe2d71c40026ef51993699adf2e74bea6e7c523b6cd",
+          "frame_sha256": "6fecc25306f946cdc31287ffa6ce4156d9e24c24f52d86ceb5c4a2cf9bd16015",
+          "n_selected": 16
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "b9e101ef4070fb6e6f249ea4081e60fee646cb93fad7a1eea9f2ee2d879088fb",
+          "frame_sha256": "20bc6ba5dbbaf6abd30585345475da5f6be585f8dc7b3366d7c6ba3976992e00",
+          "n_selected": 14
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/noreason/refresh_tau2_subset.csv",
+        "sha256": "deddd207709365da4f9e9b17090316d62006c83673e54db57544e21eadaff245",
+        "n_ids": 40
+      }
+    },
+    "rubrics": {
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "dd130fcea382645ea3c1b294a2264a4aa1e8f605b197a1193ba8c156bb3c8ce2",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-high",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-high",
+        "judge_agent": "adele-judge-v2-high",
+        "model_alias": "opus",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 80,
+      "sha256": "be2ff9fb2947895e878417579603147a590ec027abc4502e7814f7041cc4c579"
+    }
+  }
+}
