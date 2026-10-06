@@ -107,3 +107,21 @@ Usage was 94% at launch on 2026-10-06, with a reset at 22:00 CEST. Order of laun
 - I also report how many judge transcripts carry a thinking block, and how long those blocks are, in both arms.
 - So far, in the sentence-format relays, 12 of 137 transcripts had a thinking block (0–240 characters). In the
   reference arm, 38 of 300 did.
+
+## Amendment 2 (2026-10-06, before any no-reasoning label was collected)
+
+At Pablo's request, the no-reasoning arm now covers every set the released (reasoning) labels cover. Each new spec is
+its reasoning twin with only the run name and builder changed.
+
+| run | twin | cells |
+|---|---|---|
+| `noreason-ms-rest` | MS rows of relabel-v2 on the six non-tau2 single-read sets | 1,548 |
+| `noreason-long` | relabel-v2-long (ProgramBench's 13 long tasks, chunked judge) | 65 |
+| `noreason-eqbench4` | relabel-v2-eqbench4 | 600 |
+| `noreason-cooperbench` | relabel-v2-cooperbench | 1,200 |
+| `noreason-gamearena` | relabel-v2-gamearena | 120 |
+
+The decision rule and the predictions above are unchanged and still apply to the primary sets. On the new sets I
+report agreement with the released labels, level counts and, where `ms-benchmarks` defines an outcome, ρ. These are
+secondary. Pablo asked to run until the weekly quota runs out. Order: `noreason-ms` and `noreason-pl` first, then the
+social sets, `noreason-long` and `noreason-ms-rest`.

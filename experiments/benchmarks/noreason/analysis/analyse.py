@@ -100,10 +100,11 @@ def boot(g: pd.DataFrame, n: int = 5000, seed: int = 0) -> list[float]:
 
 
 def main() -> None:
-    sets = sorted(set(pd.read_csv(BENCH / "pls-relabel/subset.csv")["benchmark"]))
+    sets = sorted(set(pd.read_csv(BENCH / "pls-relabel/subset.csv")["benchmark"])) + ["eqbench4", "cooperbench", "gamearena"]
     rel = release.current_labels(sets, DIMS)[KEY + ["level"]].rename(columns={"level": "released"})
     rel["rubric"] = rel["rubric"].str.removeprefix("v2/")
-    nr = run_labels(["noreason-pl", "noreason-ms"], "nr")
+    nr = run_labels(["noreason-pl", "noreason-ms", "noreason-ms-rest", "noreason-long", "noreason-eqbench4",
+                     "noreason-cooperbench", "noreason-gamearena"], "nr")
     ref = run_labels(["noreason-ref", "noreason-ref-ms"], "ref")[KEY + ["ref"]]
     df = nr.merge(rel, on=KEY, how="left").merge(ref, on=KEY, how="left").merge(outcomes(), on=["benchmark",
                                                                                                "instance_id"], how="left")
