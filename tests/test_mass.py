@@ -704,3 +704,18 @@ def test_pl_example_specs_plan(name, n):
     except SpecError as exc:
         pytest.skip(f"instances not registered here: {exc}")
     assert len(cells) == n and spec.refs == ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+
+def test_noreason_builder_differs_from_v2_only_in_the_instruction():
+    from adele.annotation import prompts
+    from adele.mass.spec import BUILDERS, judge_from_dict
+
+    a = prompts.build_annotation_prompt_v2("Planning", "RUBRIC", "TASK")
+    b = prompts.build_annotation_prompt_v2_noreason("Planning", "RUBRIC", "TASK")
+    diff = [(x, y) for x, y in zip(a.splitlines(), b.splitlines()) if x != y]
+    assert len(a.splitlines()) == len(b.splitlines()) and len(diff) == 1
+    assert "assessment" in diff[0][0] and "without any assessment" in diff[0][1]
+    assert a.rsplit("\n", 1)[1] == b.rsplit("\n", 1)[1]  # same final answer sentence
+    assert BUILDERS["v2-noreason"] == "build_annotation_prompt_v2_noreason"
+    j = judge_from_dict({"backend": "subagent", "model": "claude-opus-5-5", "effort": "low"}, "v2-noreason")
+    assert j.relay["judge_agent"] == "adele-judge-v2-low"

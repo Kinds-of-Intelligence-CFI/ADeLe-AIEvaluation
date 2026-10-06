@@ -30,7 +30,8 @@ from typing import Any, Dict, List, Optional
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 BACKENDS = ("subagent", "anthropic-batch", "openai-batch", "litellm", "fake")
-BUILDERS = {"v1": "build_annotation_prompt", "v2": "build_annotation_prompt_v2"}
+BUILDERS = {"v1": "build_annotation_prompt", "v2": "build_annotation_prompt_v2",
+            "v2-noreason": "build_annotation_prompt_v2_noreason"}
 # Why an attempt can be rejected; each reason has its own retry budget (extra attempts). ``protocol``: the
 # subagent judge's transcript broke the protocol (see adele.mass.backends.subagent.transcript_problems).
 REASONS = ("fallback_writer", "unparsed", "refusal", "error", "protocol")
@@ -126,7 +127,7 @@ def judge_from_dict(d: Dict[str, Any], builder: str = "v2") -> JudgeSpec:
     if backend == "subagent":
         if not effort:
             raise SpecError("judge.effort is required for the subagent backend (it picks the judge agent)")
-        v = "v2-" if builder == "v2" else ""
+        v = "v2-" if builder.startswith("v2") else ""
         relay.setdefault("dispatcher", f"judge-dispatcher-{v}{effort}")
         relay.setdefault("judge_agent", f"adele-judge-{v}{effort}")
         relay.setdefault("model_alias", model.split("-")[1] if model.startswith("claude-") else model)
@@ -218,4 +219,6 @@ def build_prompt(builder: str, rubric: RubricRef, task: str) -> str:
     if builder == "v1":
         return prompts.build_annotation_prompt(demand_name=rubric.full_name, rubric_content=rubric.content,
                                                task_instance=task)
+    if builder == "v2-noreason":
+        return prompts.build_annotation_prompt_v2_noreason(rubric.full_name, rubric.content, task)
     return prompts.build_annotation_prompt_v2(rubric.full_name, rubric.content, task)

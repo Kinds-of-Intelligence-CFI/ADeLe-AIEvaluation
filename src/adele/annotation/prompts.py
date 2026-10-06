@@ -78,6 +78,32 @@ Before giving a level, write a short assessment of the task against the rubric: 
 The level of {demand} demanded by this task is: N"""
 
 
+PROMPT_V2_NOREASON = PROMPT_V2.replace(
+    "Before giving a level, write a short assessment of the task against the rubric: what the task requires, which "
+    "level's conditions it meets, and what keeps it below the next level. Compare the task with the rubric's examples "
+    "at the levels you consider. Base the level on the conditions the rubric states, not on how long or easy the work "
+    "looks. If the task genuinely fits two adjacent levels, choose the lower one. Give the level that this assessment "
+    "supports. End with this sentence, with the level as a single digit:",
+    "Give the level directly, without any assessment, explanation or other text. Base the level on the conditions the "
+    "rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent levels, choose the "
+    "lower one. Answer with only this sentence, with the level as a single digit:",
+)
+assert PROMPT_V2_NOREASON != PROMPT_V2
+
+
+def build_annotation_prompt_v2_noreason(
+    demand_name: str,
+    rubric_content: str,
+    task_instance: str,
+) -> str:
+    """The v2 prompt without written reasoning: the judge states the level only.
+
+    Identical to :func:`build_annotation_prompt_v2` except the final instruction, which drops the assessment and the
+    comparison with the rubric's examples. Built for the no-reasoning ablation (``experiments/benchmarks/noreason``).
+    """
+    return PROMPT_V2_NOREASON.format(demand=demand_name, rubric=rubric_content, task=task_instance)
+
+
 def build_annotation_prompt_v2(
     demand_name: str,
     rubric_content: str,
