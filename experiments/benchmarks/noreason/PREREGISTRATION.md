@@ -125,3 +125,22 @@ The decision rule and the predictions above are unchanged and still apply to the
 report agreement with the released labels, level counts and, where `ms-benchmarks` defines an outcome, ρ. These are
 secondary. Pablo asked to run until the weekly quota runs out. Order: `noreason-ms` and `noreason-pl` first, then the
 social sets, `noreason-long` and `noreason-ms-rest`.
+
+## Amendment 3 (2026-10-06, before the decision rule is applied; 2,800 of 7,595 no-reasoning cells labelled)
+
+1. **Reference labels for the social sets.**
+   - `release.current_labels` covers only the agentic sets, so the analysis had no reasoning labels for EQ-Bench 4,
+     CooperBench and Game Arena.
+   - `analysis/analyse.py` now also reads those sets' relabel-v2 runs. relabel-v3 overrides take precedence, as in
+     the releases.
+   - No decision rule changes. The social sets stay secondary.
+2. **Cost per label, a secondary analysis at Pablo's request ("cost vs precision").** `analysis/cost.py`:
+   - **Harness cost per label.**
+     - Input-side tokens come from the judge transcripts.
+     - Output is estimated from the written content at 3.6 characters per token. The transcripts' `output_tokens` are
+       a mid-stream snapshot and undercount.
+     - Priced at Opus 5.5 rates: $4, $5 cache write, $0.20 cache read and $20 per million tokens.
+   - **Wall-clock per judge call.**
+   - **A plain-API counterfactual:** the prompt plus the answer, at standard and batch prices.
+   - Reported for all cells and for matched cells, i.e. the reference subset judged in both arms.
+   - Results are reported next to the precision results. Nothing is decided on cost.

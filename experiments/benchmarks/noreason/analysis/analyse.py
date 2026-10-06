@@ -101,7 +101,12 @@ def boot(g: pd.DataFrame, n: int = 5000, seed: int = 0) -> list[float]:
 
 def main() -> None:
     sets = sorted(set(pd.read_csv(BENCH / "pls-relabel/subset.csv")["benchmark"])) + ["eqbench4", "cooperbench", "gamearena"]
-    rel = release.current_labels(sets, DIMS)[KEY + ["level"]].rename(columns={"level": "released"})
+    # Released labels as release.current_labels builds them, plus the social sets' own relabel-v2 runs, which the
+    # releases do not include (amendment 3). relabel-v3 overrides take precedence, as in current_labels.
+    social = {"relabel-v2-social": ["relabel-v2-eqbench4", "relabel-v2-cooperbench", "relabel-v2-gamearena"]}
+    rel = pd.concat([release._read(release.OVERRIDE, sets, DIMS), release._read(release.BASE, sets, DIMS),
+                     release._read(social, sets, DIMS)]).drop_duplicates(KEY, keep="first")
+    rel = rel[KEY + ["level"]].rename(columns={"level": "released"})
     rel["rubric"] = rel["rubric"].str.removeprefix("v2/")
     nr = run_labels(["noreason-pl", "noreason-ms", "noreason-ms-rest", "noreason-long", "noreason-eqbench4",
                      "noreason-cooperbench", "noreason-gamearena"], "nr")
