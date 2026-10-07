@@ -30,3 +30,18 @@
   - reference arm: 530/530.
 - **Amendment 3:** social-set reference labels and the cost analysis (`analysis/cost.py`). Interim cost on matched
   cells: harness $0.041 per label with reasoning against $0.032 without; median 11.0 s against 7.7 s per call.
+
+## 2026-10-07
+
+- **SNR complete:** 7,057 of 7,065 (df5792c). No-label cells: 3 PL and 3 Game Arena safeguard stops, 2 tau2 MS after a
+  fallback writer.
+- **SNR verdict mixed** once its PL labels were complete, which triggered SR (amendment 4b, 873c80c). SR prompts were
+  checked byte-identical to R′ on all 530 shared cells before launch.
+- **SR:** PL 3,045/3,048, tau2 MS 484/484, long 65/65, Game Arena 119/120 complete. Social sets (EQ-Bench 4,
+  CooperBench, ms-rest) partial and still running; they do not enter the verdict.
+- **Order of SR relays:** PL first (it carries the decision rule), other sets in spare slots; at most 5 relays at once
+  and `next --max` at most 4.
+- **Usage:** the 5-hour window went from 46% to about 90% over the night (SNR finish plus about 5,000 SR cells);
+  weekly from 30% to 40%.
+- **Results:** `RESULTS.md`. Verdicts: NR mixed (PLp −6 points on the subset only), SNR mixed, SR not usable.
+  Recommendation: NR for mass annotation.
