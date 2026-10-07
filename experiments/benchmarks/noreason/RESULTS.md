@@ -2,7 +2,7 @@
 
 Pre-registration: `PREREGISTRATION.md` (amendments 1–4b). Run log: `RUNLOG.md`. Numbers come from
 `analysis/analyse.py`, `analysis/arms.py`, `analysis/cost.py` and `analysis/tables.py` (outputs in `results/`).
-State: 2026-10-07, 01:50 UTC.
+State: 2026-10-07, 04:30 UTC. All four arms complete.
 
 ## Bottom line
 
@@ -30,7 +30,7 @@ All arms judge the same pinned prompts at effort low. Only the judge model and t
 | R′ | Opus 5.5 | reasoning, then digit | 530 (reference subset) | 530 |
 | NR | Opus 5.5 | bare digit | 7,065 | 7,057 |
 | SNR | Sonnet 5.5 | bare digit | 7,065 | 7,057 |
-| SR | Sonnet 5.5 | reasoning, then digit | 7,065 | 4,213 so far (all PL and tau2 MS; social sets partial) |
+| SR | Sonnet 5.5 | reasoning, then digit | 7,065 | 7,059 |
 
 - R′ is a same-day rerun of the released judge. Its agreement with the released labels is the yardstick: the noise
   of rerunning the same judge.
@@ -66,15 +66,16 @@ Exact agreement / mean level shift against the released labels. n ≈ 1,410 per 
 
 | rubric | NR | SNR | SR | SNR vs NR | SR vs SNR |
 |---|---|---|---|---|---|
-| PLp | 0.88 / −0.04 | 0.84 / +0.07 | 0.79 / −0.06 | 0.79 / +0.11 | 0.82 / −0.13 |
-| PLe | 0.92 / −0.02 | 0.84 / +0.04 | 0.87 / +0.04 | 0.83 / +0.06 | 0.91 / −0.05 |
-| PLs | 0.90 / −0.00 | 0.75 / −0.21 | 0.78 / −0.16 | 0.76 / −0.21 | 0.82 / +0.00 |
-| MSm | 0.92 / −0.04 | 0.80 / −0.18 | 0.61 / −0.39 | 0.84 / −0.14 | 0.71 / −0.02 |
-| MSc | 0.98 / −0.00 | 0.97 / −0.00 | 0.89 / −0.04 | 0.97 / +0.00 | 0.92 / −0.07 |
+| PLp | 0.88 / −0.04 | 0.84 / +0.07 | 0.81 / −0.06 | 0.79 / +0.11 | 0.83 / −0.13 |
+| PLe | 0.92 / −0.02 | 0.84 / +0.04 | 0.85 / −0.01 | 0.83 / +0.06 | 0.92 / −0.05 |
+| PLs | 0.90 / −0.00 | 0.75 / −0.21 | 0.74 / −0.21 | 0.76 / −0.21 | 0.82 / +0.01 |
+| MSm | 0.92 / −0.04 | 0.80 / −0.18 | 0.84 / −0.15 | 0.84 / −0.14 | 0.88 / +0.03 |
+| MSc | 0.98 / −0.00 | 0.97 / −0.00 | 0.95 / −0.02 | 0.97 / +0.00 | 0.97 / −0.02 |
 
 - NR agrees with the released labels at the level of the yardstick on every rubric.
 - Sonnet rates PLs and MSm lower in both formats. That is a model effect, not a format effect.
-- SR's MS rows cover the tau2 sets and part of the social sets so far.
+- On MSm, about 900 of 1,412 cells are coding tasks with no other agent, rated 0 by every arm, so all-cell agreement
+  is high. The tau2 subset (n = 40) is where the arms differ most (SNR 0.40, SR 0.38, against R′ 0.78).
 
 ## Criterion validity
 
@@ -146,15 +147,15 @@ judge to drift upward. Neither happened.
 - NR: 8 cells without a label (classifier swaps to Opus 4.8 that stayed swapped on retry, and 2 Game Arena cells the
   API always refuses).
 - SNR: 8 cells without a label (3 PL and 3 Game Arena safeguard stops; 2 tau2 MS cells after a fallback writer).
-- SR: 3 PL cells without a label (fallback writer twice), 1 Game Arena safeguard stop.
+- SR: 6 cells without a label (3 PL after a fallback writer twice, 1 Game Arena safeguard stop, 2 tau2 MS).
 - Sonnet 5.5 has no fallback model, so a safeguard stop means no label. On these sets that cost 0.1%.
 
 ## Caveats
 
 - The harness cost is a model of what subagents cost, not a bill. The plan meters moved about 3% of the 5-hour
   window per 400 Sonnet cells with reasoning, which is consistent with Sonnet being cheap.
-- SR on the social sets (EQ-Bench 4, CooperBench, the rest of tau2 MS) is still running and does not enter any
-  verdict. This file will be updated when it finishes.
+- SR's social sets (EQ-Bench 4, CooperBench, the rest of tau2 MS) finished after the reset at 03:40 UTC. They do
+  not enter any verdict, which uses PL and the tau2 MS subset only.
 - Agreement is measured against labels from the same model family (Opus). A Sonnet judge could be "different but
   equally valid". Criterion validity is the check on that, and there Sonnet is weaker on ProgramBench and SR is
   weaker on SWE and ProgramBench.
