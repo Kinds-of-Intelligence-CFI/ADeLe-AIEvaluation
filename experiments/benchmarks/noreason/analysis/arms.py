@@ -1,9 +1,10 @@
-"""Amendment 4/4a analysis: every judge arm against the released labels and against each other. Writes results/arms.json.
+"""Amendment 4/4a/4b analysis: every judge arm against the released labels and against each other. Writes results/arms.json.
 
-Arms (PREREGISTRATION.md, amendments 4 and 4a):
+Arms (PREREGISTRATION.md, amendments 4, 4a and 4b):
     R'      Opus 5.5 low, written reasoning (v2)       noreason-ref, noreason-ref-ms             (reference subset)
     NR      Opus 5.5 low, no reasoning (v2-noreason)   noreason-{pl,ms,ms-rest,long,...}          (all cells)
     SNR     Sonnet 5.5 low, no reasoning               noreason-s-{pl,ms,ms-rest,long,...}        (all cells)
+    SR      Sonnet 5.5 low, written reasoning (v2)     noreason-sr-{pl,ms,ms-rest,long,...}       (all cells)
 Only valid answers written by the arm's requested model count. Incomplete runs are analysed as far as they go.
 
     python experiments/benchmarks/noreason/analysis/arms.py
@@ -23,7 +24,10 @@ ARMS = {
     "R'": (["noreason-ref", "noreason-ref-ms"], "claude-opus-5-5"),
     "NR": ([f"noreason-{s}" for s in NR_SETS], "claude-opus-5-5"),
     "SNR": ([f"noreason-s-{s}" for s in NR_SETS], "claude-sonnet-5-5"),
+    "SR": ([f"noreason-sr-{s}" for s in NR_SETS], "claude-sonnet-5-5"),
 }
+FULL = ["NR", "SNR", "SR"]  # arms that cover every cell
+DECIDE = {"SNR": ARMS["SNR"], "SR": (["noreason-sr-pl", "noreason-sr-ms"], "claude-sonnet-5-5")}  # 4b: PL and tau2 MS
 PL = ["PLp", "PLe", "PLs"]
 SIGNAL = ["swe-bench-verified/PLp", "programbench/PLp", "tau2/PLp"]
 
@@ -102,16 +106,16 @@ def main() -> None:
                                for (s, d), g in ref.groupby(["set", "rubric"]) if d == "PLp"}
 
     # 2. All cells: SNR and NR against the released labels and against each other; criterion validity; levels.
-    out["all_vs_released"] = {d: {a: A.agree(g[a], g["released"]) for a in ("NR", "SNR")}
-                              | {"SNR|NR": A.agree(g["SNR"], g["NR"])} for d, g in df.groupby("rubric")}
+    out["all_vs_released"] = {d: {a: A.agree(g[a], g["released"]) for a in FULL}
+                              | {f"{a}|{b}": A.agree(g[a], g[b]) for a, b in (("SNR", "NR"), ("SR", "SNR"), ("SR", "NR"))}
+                              for d, g in df.groupby("rubric")}
     out["criterion"] = {}
     for (s, d), g in df.groupby(["set", "rubric"]):
         k = f"{s}/{d}"
-        out["criterion"][k] = {a: A.crit(g, a) for a in ("released", "NR", "SNR")} | {
-            "n": int(g["outcome"].notna().sum())}
+        out["criterion"][k] = {a: A.crit(g, a) for a in ["released"] + FULL} | {"n": int(g["outcome"].notna().sum())}
         if k in SIGNAL:
-            out["criterion"][k]["SNR-released_ci95"] = boot_diff(g, "SNR", "released")
-            out["criterion"][k]["SNR-NR_ci95"] = boot_diff(g, "SNR", "NR")
+            for a, b in (("SNR", "released"), ("SNR", "NR"), ("SR", "released"), ("SR", "SNR")):
+                out["criterion"][k][f"{a}-{b}_ci95"] = boot_diff(g, a, b)
     out["levels"] = {d: {a: {str(int(k)): int(v) for k, v in g[a].value_counts().sort_index().items()} for a in cols}
                      for d, g in df.groupby("rubric")}
 
@@ -125,23 +129,24 @@ def main() -> None:
                                                                     / max(1, len(texts)), 3),
                                "median_chars": float(np.median([len(t) for t in texts])) if texts else None}
 
-    # 4. Decision rule for SNR (amendment 4). Cost condition (iv) comes from cost.py.
+    # 4. Decision rules for SNR (amendment 4) and SR (4b, on PL and tau2 MS). Cost condition (iv) comes from cost.py.
     ys = out["subset_vs_released"]
-    snr_gap = {d: round(ys[d]["SNR"].get("exact", np.nan) - ys[d]["R'"].get("exact", np.nan), 3) for d in PL if d in ys}
-    rho = {k: (out["criterion"].get(k, {}).get("SNR"), out["criterion"].get(k, {}).get("released")) for k in SIGNAL}
-    close = [k for k, (a, b) in rho.items() if a is not None and abs(a) >= abs(b) - 0.05]
-    weak = [k for k, (a, b) in rho.items() if a is not None and abs(a) <= abs(b) - 0.10]
-    cov = out["coverage"]["SNR"]["share"] or 0
-    usable_wo_cost = (len(snr_gap) == 3 and all(v >= -0.05 for v in snr_gap.values()) and len(close) >= 2
-                      and not weak and cov >= 0.95)
-    not_usable = sum(v <= -0.10 for v in snr_gap.values()) >= 2 or len(weak) >= 2 or cov < 0.90
-    out["snr_decision"] = {"agreement_gaps": snr_gap, "signal_close": close, "signal_weaker_0.10": weak,
-                           "coverage": cov, "verdict_before_cost": "not usable" if not_usable else
-                           "usable if cost condition holds" if usable_wo_cost else "mixed"}
+    for arm, (runs, model) in DECIDE.items():
+        gap = {d: round(ys[d][arm].get("exact", np.nan) - ys[d]["R'"].get("exact", np.nan), 3) for d in PL if d in ys}
+        rho = {k: (out["criterion"].get(k, {}).get(arm), out["criterion"].get(k, {}).get("released")) for k in SIGNAL}
+        close = [k for k, (a, b) in rho.items() if a is not None and abs(a) >= abs(b) - 0.05]
+        weak = [k for k, (a, b) in rho.items() if a is not None and abs(a) <= abs(b) - 0.10]
+        cov = coverage(runs, model)["share"] or 0
+        usable_wo_cost = (len(gap) == 3 and all(v >= -0.05 for v in gap.values()) and len(close) >= 2
+                          and not weak and cov >= 0.95)
+        not_usable = sum(v <= -0.10 for v in gap.values()) >= 2 or len(weak) >= 2 or cov < 0.90
+        out[f"{arm.lower()}_decision"] = {"agreement_gaps": gap, "signal_close": close, "signal_weaker_0.10": weak,
+                                          "coverage": cov, "verdict_before_cost": "not usable" if not_usable else
+                                          "usable if cost condition holds" if usable_wo_cost else "mixed"}
 
     (A.HERE / "results").mkdir(parents=True, exist_ok=True)
     (A.HERE / "results/arms.json").write_text(json.dumps(out, indent=2, default=float) + "\n")
-    print(json.dumps({k: out[k] for k in ("coverage", "snr_decision", "answers")}, indent=1))
+    print(json.dumps({k: out[k] for k in ("coverage", "snr_decision", "sr_decision", "answers")}, indent=1))
     for d in PL + ["MSm", "MSc"]:
         if d in ys:
             print(d, {a: (v.get("n"), v.get("exact"), v.get("mean_shift")) for a, v in ys[d].items()})

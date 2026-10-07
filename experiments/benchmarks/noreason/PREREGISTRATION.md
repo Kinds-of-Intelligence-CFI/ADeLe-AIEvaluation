@@ -241,7 +241,9 @@ labels) if the Sonnet no-reasoning arm turns out not good enough.
   - PL exact-agreement gaps against the yardstick are −8, −7 and −12 points;
   - ProgramBench PLp ρ is weaker than released by 0.10;
   - on the tau2 reference subset, SNR's MSm agreement is 0.40 (R′ 0.78).
-- **The arm, SR.** Runs `noreason-sr-{pl,ms,ms-rest,long,eqbench4,cooperbench,gamearena}`, 7,595 cells.
+- **The arm, SR.** Runs `noreason-sr-{pl,ms,ms-rest,long,eqbench4,cooperbench,gamearena}`, 7,065 cells.
+  (Count corrected the same night, before any SR label. 7,595, also given for SNR in amendment 4, adds the 530
+  reference cells of R′; the SNR and SR runs have 7,065.)
   - Each is the twin of `noreason-s-*` with builder `v2` instead of `v2-noreason`. Nothing else changes.
   - Prompt check at the pin: byte-identical to R′ (`noreason-ref`, `-ref-ms`) on all 530 shared cells.
   - Against the released runs they are identical for PLe, PLs and MSc. They differ for PLp and MSm wherever the

@@ -5,14 +5,14 @@ Two measures:
    cache reads) come from the `usage` that the judge transcripts log at the start of each assistant message. Those
    are reliable. The logged `output_tokens` are a mid-stream snapshot and undercount: a 1,090-character answer is
    logged as 47 tokens. So output is estimated from what the judge wrote (text, tool inputs, thinking), at 3.6
-   characters per token. Priced at Opus 5.5 rates: $4 input, $5 cache write, $0.20 cache read, $20 output per
-   million tokens. Wall-clock is the span from the transcript's first to its last timestamp. Every judge call
+   characters per token. Priced at the judge's rates per million tokens: Opus 5.5 $4 input, $5 cache write, $0.20
+   cache read, $20 output; Sonnet 5.5 $2, $2.50, $0.20, $10 (amendment 4). Wall-clock is the span from the transcript's first to its last timestamp. Every judge call
    counts, re-judged and rejected ones included; cost per label = total cost / labels collected.
 2. Plain API counterfactual: one Messages API call with the prompt file as the only input and the answer file as the
    output (3.6 characters per token), at standard and at batch (50%) prices, with no agent harness and no caching.
 
-Arms: R' = noreason-ref (+ -ms), NR = the noreason-* runs. Matched comparison: the 150 + 40 tasks of the reference
-subset, where both arms judged the same rubric and task.
+Arms: R' = noreason-ref (+ -ms), NR = the noreason-* runs (Opus); SNR = noreason-s-*, SR = noreason-sr-* (Sonnet).
+Matched comparison: the 150 + 40 tasks of the reference subset, where every arm judged the same rubric and task.
 
     python experiments/benchmarks/noreason/analysis/cost.py --transcripts <session>/subagents
 """
@@ -30,10 +30,15 @@ HERE = Path(__file__).resolve().parents[1]
 RUNS = HERE.parent / "mass-annotation/runs"
 IO = Path.home() / "Developer/ADELE/judge-io"
 CPT = 3.6
-PRICE = {"in": 4e-6, "cw": 5e-6, "cr": 0.2e-6, "out": 20e-6}
+PRICES = {"opus": {"in": 4e-6, "cw": 5e-6, "cr": 0.2e-6, "out": 20e-6},
+          "sonnet": {"in": 2e-6, "cw": 2.5e-6, "cr": 0.2e-6, "out": 10e-6}}
+SETS = ["ms", "pl", "ms-rest", "long", "eqbench4", "cooperbench", "gamearena"]
 ARMS = {"R'": ["noreason-ref", "noreason-ref-ms"],
-        "NR": ["noreason-ms", "noreason-pl", "noreason-ms-rest", "noreason-long", "noreason-eqbench4",
-               "noreason-cooperbench", "noreason-gamearena"]}
+        "NR": [f"noreason-{s}" for s in SETS],
+        "SNR": [f"noreason-s-{s}" for s in SETS],
+        "SR": [f"noreason-sr-{s}" for s in SETS]}
+MODEL = {"R'": "opus", "NR": "opus", "SNR": "sonnet", "SR": "sonnet"}
+RUN_MODEL = {r: MODEL[a] for a, runs in ARMS.items() for r in runs}
 REPIN_MS = "2026-10-06T18:11:37"  # noreason-ms transcripts before the re-pin belong to the aborted sentence format
 
 
@@ -68,7 +73,10 @@ def judge_calls(transcripts: Path) -> pd.DataFrame:
                      "out": chars / CPT,
                      "seconds": (pd.Timestamp(max(s)) - pd.Timestamp(min(s))).total_seconds() if s else np.nan})
     df = pd.DataFrame(rows)
-    df["usd"] = sum(df[k] * p for k, p in PRICE.items())
+    df = df[df.run.isin(RUN_MODEL)].copy()
+    price = df.run.map(RUN_MODEL).map(PRICES)
+    df["usd"] = sum(df[k] * price.map(lambda p: p[k]) for k in ("in", "cw", "cr", "out"))
+    df["usd_out"] = df["out"] * price.map(lambda p: p["out"])
     return df
 
 
@@ -76,7 +84,7 @@ def plain_api(run: str) -> pd.DataFrame:
     rows = []
     for p in glob.glob(str(IO / run / "prompts/*.txt")):
         cell = Path(p).stem
-        answers = glob.glob(str(IO / run / f"responses/opus-low*/{cell}.txt"))
+        answers = glob.glob(str(IO / run / f"responses/{RUN_MODEL[run]}-low*/{cell}.txt"))
         if answers:
             rows.append({"run": run, "cell_id": cell, "prompt_tok": len(open(p).read()) / CPT,
                          "answer_tok": len(open(answers[0]).read()) / CPT})
@@ -94,10 +102,13 @@ def main() -> None:
         c = calls[calls.run.isin(runs)]
         n_lab = sum(labels.get(r, 0) for r in runs)
         api = pd.concat([plain_api(r) for r in runs])
-        api_usd = api.prompt_tok * PRICE["in"] + api.answer_tok * PRICE["out"]
+        if api.empty or c.empty:
+            continue
+        price = PRICES[MODEL[arm]]
+        api_usd = api.prompt_tok * price["in"] + api.answer_tok * price["out"]
         out.append({"arm": arm, "judge_calls": len(c), "labels": n_lab,
                     "harness_usd_per_label": c.usd.sum() / max(n_lab, 1),
-                    "harness_output_share": (c.out * PRICE["out"]).sum() / c.usd.sum(),
+                    "harness_output_share": c.usd_out.sum() / c.usd.sum(),
                     "median_seconds_per_call": c.seconds.median(),
                     "api_usd_per_label": api_usd.mean(), "api_batch_usd_per_label": api_usd.mean() / 2,
                     "median_answer_tokens": api.answer_tok.median(), "median_prompt_tokens": api.prompt_tok.median()})
@@ -110,9 +121,11 @@ def main() -> None:
     for arm, runs in ARMS.items():
         c = calls_k[calls_k.run.isin(runs)].merge(ref_keys, on=key)
         c = c.sort_values("seconds").drop_duplicates(key)  # one call per matched cell
+        if c.empty:
+            continue
         out.append({"arm": arm + " (matched cells)", "judge_calls": len(c), "labels": len(c),
                     "harness_usd_per_label": c.usd.mean(),
-                    "harness_output_share": (c.out * PRICE["out"]).sum() / c.usd.sum(),
+                    "harness_output_share": c.usd_out.sum() / c.usd.sum(),
                     "median_seconds_per_call": c.seconds.median()})
     res = pd.DataFrame(out)
     (HERE / "results").mkdir(exist_ok=True)
