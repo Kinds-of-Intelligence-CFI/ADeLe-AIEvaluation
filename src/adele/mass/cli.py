@@ -294,3 +294,29 @@ def check_cmd(run_ref, transcripts, cwd):
     if not rep["ok"]:
         raise click.ClickException("check failed")
     click.echo("check OK")
+
+
+@mass.command("labelset")
+@click.argument("ref")
+@click.option("--out", type=click.Path(file_okay=False), default=None,
+              help="Write the set here (labels, labels_wide, rubrics, MANIFEST.tsv); without it, print a summary.")
+@click.option("--format", "fmt", type=click.Choice(["csv", "parquet"]), default="csv", show_default=True)
+@click.option("--benchmark", "benchmarks", multiple=True, help="Keep only these benchmarks (repeatable).")
+@click.option("--rubric", "rubrics", multiple=True, help="Keep only these rubric refs, e.g. v2/PLp (repeatable).")
+def labelset_cmd(ref, out, fmt, benchmarks, rubrics):
+    """Merge the runs of label set REF (a name under labelsets/ or a TOML path) and summarise or export it."""
+    from adele.mass.labelset import LabelSetError, export, labels, load_labelset
+
+    try:
+        ls = load_labelset(ref)
+        b, r = list(benchmarks) or None, list(rubrics) or None
+        lab = export(ls, Path(out), fmt, b, r) if out else labels(ls, b, r)
+    except LabelSetError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"label set {ls.name} ({ls.sha256[:12]}): {len(lab)} labels, "
+               f"{lab[['benchmark', 'instance_id']].drop_duplicates().shape[0]} tasks")
+    texts = lab.groupby("rubric")["rubric_sha256"].nunique()
+    for rubric, n in lab.groupby("rubric").size().items():
+        click.echo(f"  {rubric:<10} {n:>6}" + (f"  ({texts[rubric]} rubric texts)" if texts[rubric] > 1 else ""))
+    if out:
+        click.echo(f"written to {out}")

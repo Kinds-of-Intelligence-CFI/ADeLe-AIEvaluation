@@ -7,10 +7,10 @@
   release/rubrics.csv      one row per rubric text used: code, generation, name, file, sha256, and the runs that used it
   release/MANIFEST.tsv     sha256 of every file above
 
-Labels are the current ("merged") ones, the same for every release (`current_labels`): every rubric from relabel-v2
-(runs relabel-v2 and relabel-v2-long; the examples review of 2026-10-04, d4ec2ec), and where relabel-v3 re-judged a
-cell (PLp at 3-5 after the synthesis example moved to Level 4, d6cc9ca; MSm at 4-5 on the social sets), its label
-replaces the relabel-v2 one. The merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). So
+Labels are the current ("merged") ones, the same for every release (`current_labels`), as declared in the label set
+`mass-annotation/labelsets/current.toml`: every rubric from relabel-v2 (runs relabel-v2 and relabel-v2-long; the
+examples review of 2026-10-04, d4ec2ec), and where relabel-v3 re-judged a cell (PLp at 3-5 after the synthesis example
+moved to Level 4, d6cc9ca; MSm at 4-5 on the social sets), its label replaces the relabel-v2 one. The merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). So
 PLp comes from two texts; each label row names its run, and rubrics.csv names the runs of each text.
 
 Inputs are committed files only: the study's tasks.csv and the labels.csv and manifest.json of `adele mass` runs. Only
@@ -25,15 +25,17 @@ from pathlib import Path
 
 import pandas as pd
 
+from adele.mass.labelset import load_labelset, labels as labelset_labels
+
 BENCH = Path(__file__).resolve().parent
 ROOT = BENCH.parents[1]
 RUNS = BENCH / "mass-annotation/runs"
 MODEL = "claude-opus-5-5"
 FILES = ["README.md", "tasks.csv", "labels.csv", "labels_wide.csv", "rubrics.csv"]
-BASE = {"relabel-v2": ["relabel-v2", "relabel-v2-long"]}
-OVERRIDE = {"relabel-v3": ["relabel-v3-plp", "relabel-v3-plp-long", "relabel-v3-plp-eqbench4",
-                           "relabel-v3-plp-cooperbench", "relabel-v3-plp-gamearena", "relabel-v3-msm-eqbench4",
-                           "relabel-v3-msm-gamearena"]}
+LABELSET = "current"
+_LAYERS = dict(load_labelset(LABELSET).layers)
+BASE = {"relabel-v2": _LAYERS["relabel-v2"]}  # kept for the noreason analyses, which read the layers directly
+OVERRIDE = {"relabel-v3": _LAYERS["relabel-v3"]}
 KEY = ["benchmark", "instance_id", "rubric"]
 
 
@@ -72,8 +74,8 @@ def _read(studies: dict[str, list[str]], benchmarks: list[str], dims: list[str])
 def current_labels(benchmarks: list[str], dims: list[str]) -> pd.DataFrame:
     """The current label of every (benchmark, instance_id, rubric) cell: relabel-v3 where it re-judged the cell,
     relabel-v2 elsewhere. One row per cell, with provenance."""
-    out = pd.concat([_read(OVERRIDE, benchmarks, dims), _read(BASE, benchmarks, dims)], ignore_index=True)
-    return out.drop_duplicates(KEY, keep="first").sort_values(KEY).reset_index(drop=True)
+    lab = labelset_labels(load_labelset(LABELSET), benchmarks, [f"v2/{x}" for x in dims])
+    return lab.drop(columns=["rubric_sha256", "task_version"])
 
 
 def rubrics(lab: pd.DataFrame, dims: list[str]) -> pd.DataFrame:

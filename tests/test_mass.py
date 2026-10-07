@@ -722,3 +722,55 @@ def test_noreason_builder_differs_from_v2_only_in_the_instruction():
     assert BUILDERS["v2-noreason"] == "build_annotation_prompt_v2_noreason"
     j = judge_from_dict({"backend": "subagent", "model": "claude-opus-5-5", "effort": "low"}, "v2-noreason")
     assert j.relay["judge_agent"] == "adele-judge-v2-low"
+
+
+# ----------------------------------------------------------------------------- label sets
+
+def _labelset(path: Path, layers) -> Path:
+    body = "".join(f'[[layers]]\nname = "{n}"\nruns = [{", ".join(repr(r) for r in rs)}]\n'.replace("'", '"')
+                   for n, rs in layers)
+    path.write_text(f'name = "toy"\ndescription = "test"\nmodel = "{OPUS}"\n{body}')
+    return path
+
+
+def test_labelset_layers_versions_and_export(env):
+    from adele.mass.labelset import LabelSetError, export, labels, load_labelset
+
+    for name, refs in (("base", ("v1/AT", "v2/PLp")), ("over", ("v2/PLp",))):
+        run = pinned(env, name=name, refs=refs)
+        first = run.cells.index[0]
+        script = {(first, 1): "unparsed", (first, 2): "unparsed"} if name == "over" else {}
+        drain(run, FakeBackend(script=script), Ledger.load(run.dir))
+    ls = load_labelset(_labelset(env / "set.toml", [("v3", ["over"]), ("v2", ["base"])]), runs_root=env / "runs")
+    lab = labels(ls, runs_root=env / "runs")
+    # 3 tasks x {AT, PLp}; PLp comes from the first layer where it has a label, AT only exists in the base run.
+    assert len(lab) == 6 and not lab.duplicated(["benchmark", "instance_id", "rubric"]).any()
+    assert set(lab.loc[lab["rubric"] == "v1/AT", "run"]) == {"base"}
+    over_cells = set(load_run(env / "runs" / "over").cells["instance_id"])
+    plp = lab[lab["rubric"] == "v2/PLp"].set_index("instance_id")["run"]
+    unlabelled = load_run(env / "runs" / "over").cells.iloc[0]["instance_id"]  # no label in "over": falls back
+    assert plp[unlabelled] == "base" and (plp.drop(unlabelled) == "over").all() and len(over_cells) == 3
+    frozen = json.loads((env / "runs" / "base" / "manifest.json").read_text())["frozen"]
+    assert (lab["rubric_sha256"].isin({v["sha256"] for v in frozen["rubrics"].values()})).all()
+    assert (lab["task_version"] == frozen["tasks"]["benchmarks"]["swe-bench-verified"]["frame_sha256"]).all()
+    assert len(labels(ls, rubrics=["v1/AT"], runs_root=env / "runs")) == 3
+
+    out = env / "export"
+    export(ls, out, "parquet", runs_root=env / "runs")
+    assert {p.name for p in out.iterdir()} == {"labels.parquet", "labels_wide.parquet", "rubrics.parquet",
+                                               "MANIFEST.tsv"}
+    assert pd.read_parquet(out / "labels_wide.parquet").shape == (3, 4)
+    assert ls.sha256 in (out / "MANIFEST.tsv").read_text()
+
+    # The same run twice in one layer would give a cell two labels; a missing run is refused at load.
+    with pytest.raises(LabelSetError, match="listed twice"):
+        load_labelset(_labelset(env / "dup.toml", [("a", ["base", "base"])]), runs_root=env / "runs")
+    with pytest.raises(LabelSetError, match="without labels.csv"):
+        load_labelset(_labelset(env / "missing.toml", [("a", ["nope"])]), runs_root=env / "runs")
+
+
+def test_current_labelset_loads():
+    from adele.mass.labelset import load_labelset
+
+    ls = load_labelset("current")
+    assert [n for n, _ in ls.layers] == ["relabel-v3", "relabel-v2", "relabel-v2-social"]
