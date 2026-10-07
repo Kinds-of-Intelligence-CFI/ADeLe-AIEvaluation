@@ -232,3 +232,35 @@ both with our previous (released) labels.
     collected).
 - **Predictions:** the three about SR and R-high (model effect larger than reasoning effect; R-high agreement; R-high
   cost) are void. The others stand.
+
+### Amendment 4b (2026-10-07, before any Sonnet-reasoning label; SNR planning-rubric labels complete)
+
+Pablo's conditional instruction: run Sonnet 5.5 low with the v2 reasoning prompt (the prompt behind the released
+labels) if the Sonnet no-reasoning arm turns out not good enough.
+- **The trigger.** SNR's PL labels are complete (3,045 of 3,048). Its verdict before cost is **mixed**:
+  - PL exact-agreement gaps against the yardstick are −8, −7 and −12 points;
+  - ProgramBench PLp ρ is weaker than released by 0.10;
+  - on the tau2 reference subset, SNR's MSm agreement is 0.40 (R′ 0.78).
+- **The arm, SR.** Runs `noreason-sr-{pl,ms,ms-rest,long,eqbench4,cooperbench,gamearena}`, 7,595 cells.
+  - Each is the twin of `noreason-s-*` with builder `v2` instead of `v2-noreason`. Nothing else changes.
+  - Prompt check at the pin: byte-identical to R′ (`noreason-ref`, `-ref-ms`) on all 530 shared cells.
+  - Against the released runs they are identical for PLe, PLs and MSc. They differ for PLp and MSm wherever the
+    released label predates the current text, as already noted for NR.
+  - The 12 withdrawn answers of amendment 4a stay unused.
+- **Order.** `noreason-sr-pl` and `noreason-sr-ms` first; the decision rule uses only these. Then long, eqbench4,
+  gamearena, cooperbench and ms-rest, as quota allows. Same caps as before: stop launching at 95% of the 5-hour window
+  (Pablo's cap for this study) or 85% of the week. Any set not finished is reported as such.
+- **Analysis.** As for SNR, plus SR against SNR (the effect of written reasoning on Sonnet) and SR against R′ (the
+  model effect, with reasoning). The 2×2 of model × reasoning is now complete on the reference subset.
+- **Decision rule for SR.** The same as SNR's, with one change. Condition 4 compares with R′: SR's harness cost per
+  label on matched cells must be at least 30% below R′'s (Opus with reasoning), not NR's.
+
+**Predictions (sealed).**
+- SR verdict: usable 0.35, mixed 0.40, not usable 0.25.
+- SR PLs exact-agreement gap against the yardstick is smaller in size than SNR's (−12 points): 0.6.
+- On the tau2 reference subset, |SR MSm mean shift| < |SNR MSm mean shift| (0.55): 0.65.
+- SR coverage ≥ 95% on PL and tau2 MS: 0.7.
+- SR harness cost per label ≥ 30% below R′ on matched cells: 0.5.
+- SR harness cost per label is above NR's (Opus without reasoning): 0.5.
+- Revived from amendment 4: the model effect on PLp agreement with released is larger than the reasoning effect,
+  on the reference subset: 0.7.

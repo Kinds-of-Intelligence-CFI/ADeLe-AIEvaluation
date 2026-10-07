@@ -1,0 +1,32 @@
+# noreason amendment 4b: twin of noreason-s-long.toml with the v2 prompt (written reasoning, as in the released labels); nothing else changed.
+# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-long with the v2-noreason builder.
+# Relabel of all five v2 rubrics (experiments/benchmarks/relabel-v2) on ProgramBench's 13 long tasks (experiments/benchmarks/pls-relabel/subset_long.csv), whose
+# prompts are too long for one Read: same judge, reading in parts of 200 lines; the protocol check requires every prompt
+# line to come back. The other sets are in relabel-v2.toml.
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-long.toml
+name = "noreason-sr-long"
+
+[tasks]
+benchmarks = ["programbench"]
+subset = "experiments/benchmarks/pls-relabel/subset_long.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-sonnet-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low-chunked"
+judge_agent = "adele-judge-v2-low-chunked"
+model_alias = "sonnet"
+batch_size = 100
+chunk_lines = 200
