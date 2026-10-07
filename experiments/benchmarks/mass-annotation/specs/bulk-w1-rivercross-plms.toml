@@ -1,0 +1,18 @@
+# Bulk wave 1: the released PL and MS rubrics on rivercross-search, the one wave-1 set without them.
+name = "bulk-w1-rivercross-plms"
+
+[tasks]
+benchmarks = ["rivercross-search"]
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

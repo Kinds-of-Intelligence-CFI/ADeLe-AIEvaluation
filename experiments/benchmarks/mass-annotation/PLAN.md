@@ -1,5 +1,44 @@
 # Mass annotation — plan (draft, 2026-10-01, not pushed)
 
+## Update 2026-10-07 (supersedes the sections below where they differ)
+
+- **Judge:** Opus 5.5, effort low, bare-digit prompt (`builder = "v2-noreason"`), per `noreason/RESULTS.md`. It
+  costs 22% less per label and matches the reasoning judge on agreement and criterion validity.
+- **Route B (Anthropic Batch API) for the bulk.** The backend exists (`adele.mass.backends.anthropic_batch`). The bulk
+  would take more than a week of subscription quota, but about a day and $230 on the API. Subagents stay for small
+  studies.
+- **Scope:** `BENCHMARKS.md`.
+  - Wave 1 is the 1,466 tasks that already carry the released PL and MS labels, plus rivercross: 24,922 calls for
+    the 17 v1 rubrics.
+  - Wave 2 adds Terminal-Bench 2.1, Toolathlon-Verified, ARC-AGI-2, GPQA Diamond, ArXivMath and BrokenArXiv once
+    loaders exist.
+- **Specs, written but not pinned:**
+  - `gate-dryrun`: 221 calls;
+  - `gate-api-bridge`: 450 calls, API vs subagent on byte-identical prompts;
+  - `gate-v1-bridge`: 60 battery items × 18 v1 rubrics, after `subsets/make_v1_bridge.py`;
+  - `bulk-w1-v1`;
+  - `bulk-w1-rivercross-plms`;
+  - `bulk-w1-memory`, which waits for the team.
+- **Storage:**
+  - Runs stay as now: CSV in git, raw answers outside the repo.
+  - What makes up a set of labels is now declared in `labelsets/*.toml`, not in code. `adele mass labelset <name>
+    --out DIR --format parquet` exports a set with rubric-text and task-version hashes, in Hugging Face layout. The
+    export is the publication path; a Hugging Face upload needs Pablo's go.
+  - At wave 1+2 size, about 50,000 cells and 33 MB of run files (about 660 bytes per cell today), git is fine. Move bulk outputs to Parquet on Hugging Face
+    only if a later wave goes past about 200,000 labels.
+- **Order:**
+  1. gate-dryrun;
+  2. gate-api-bridge;
+  3. gate-v1-bridge and the memory gate;
+  4. pre-register the analyses (§4);
+  5. bulk-w1-v1 and bulk-w1-rivercross-plms;
+  6. noise and anchors;
+  7. a new label set, `wave1.toml`, and its export.
+- **Blocked on:**
+  - an API key and budget;
+  - a Hugging Face token for the gated battery (gate 2);
+  - the team, for the memory rubrics.
+
 **Goal.** Full demand profiles for the benchmarks we can join to per-task results: the v1 rubrics, the adopted
 v2 planning family, and the memory rubrics. Then the analyses that need them: demand profiles, SCCs and ability
 profiles, and above all incremental prediction (desideratum 9), which no v2 rubric has yet.

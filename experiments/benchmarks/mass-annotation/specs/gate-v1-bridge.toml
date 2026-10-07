@@ -1,0 +1,21 @@
+# Bulk gate 2 (PLAN.md §3): our judge on 60 ADeLe v1.0 battery items (3 per source benchmark) x the 18 v1 rubrics,
+# against the published GPT-4o labels. Needs subsets/make_v1_bridge.py first (the battery is gated). Not pinned yet.
+name = "gate-v1-bridge"
+
+[tasks]
+benchmarks = ["adele-battery-v1"]
+subset = "experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv"
+
+[rubrics]
+refs = ["v1/AS", "v1/AT", "v1/CEc", "v1/CEe", "v1/CL", "v1/KNa", "v1/KNc", "v1/KNf", "v1/KNn", "v1/KNs", "v1/MCr",
+        "v1/MCt", "v1/MCu", "v1/MSm", "v1/QLl", "v1/QLq", "v1/SNs", "v1/VO"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

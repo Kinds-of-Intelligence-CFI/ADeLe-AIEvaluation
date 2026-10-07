@@ -1,0 +1,21 @@
+# Bulk wave 1, memory rubrics (Marko's MMe, MMp, MMs). WAITING for the team and for gate 3 (PLAN.md §3): do not pin.
+name = "bulk-w1-memory"
+
+[tasks]
+benchmarks = ["cooperbench", "deepswe-v1.1", "eqbench4", "frontierswe-v2", "gamearena", "programbench", "rivercross-search",
+              "swe-bench-verified", "tau2-airline", "tau2-banking_knowledge", "tau2-retail", "terminal-bench-4.0.0",
+              "terminal-bench-science-0.1"]
+subset = "experiments/benchmarks/mass-annotation/subsets/wave1.csv"
+
+[rubrics]
+refs = ["v2/MMe", "v2/MMp", "v2/MMs"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }
