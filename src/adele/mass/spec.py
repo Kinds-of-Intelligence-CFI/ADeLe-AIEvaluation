@@ -11,7 +11,7 @@ the active v2 manifest, so ``v1/MSm`` and ``v2/MSm`` never collide), a prompt bu
     [rubrics]
     refs = ["v1/AT", "v2/MSm"]
     [prompt]
-    builder = "v2"
+    builder = "v2-noreason"   # default judge setting since 2026-10-07 (noreason/RESULTS.md); "v2" adds written reasoning
     [judge]
     backend = "subagent"
     model = "claude-opus-5-5"

@@ -40,7 +40,7 @@ subset = "solvable"                 # or a file of instance ids
 [rubrics]
 refs = ["v1/AS", "v1/AT", "...", "v2/MSm", "v2/MSc"]   # generation-qualified; memory added by editing this list
 [prompt]
-builder = "v2"
+builder = "v2-noreason"             # the default since 2026-10-07; "v2" for rubric pilots and audits
 [judge]
 backend = "subagent"               # or "anthropic-batch", "openai-batch", "litellm"
 model = "claude-opus-5-5"
@@ -101,7 +101,9 @@ and runs `collect` and `status` when they finish.
 
 - **Benchmark loaders:** rivercross (the states as instances, through `BENCH_LOADERS` and `CANONICALIZERS`); WeirdML v2's
   six public tasks if the team wants them; others as the team picks.
-- **Prompt option:** `prompt.builder = "v1" | "v2"`, resolved by name, so old runs stay reproducible.
+- **Prompt option:** `prompt.builder = "v1" | "v2" | "v2-noreason"`, resolved by name, so old runs stay reproducible.
+  Default for new runs since 2026-10-07: `v2-noreason` with Opus 5.5 at effort low (`experiments/benchmarks/noreason/RESULTS.md`).
+  Use `v2` (written reasoning) for rubric pilots and audits.
 - **Rubric refs:** `v1/<code>` and `v2/<code>` resolve against `data_v1` and the v2 manifest; `verify_manifest` runs at pin.
 
 ## Where it lives
