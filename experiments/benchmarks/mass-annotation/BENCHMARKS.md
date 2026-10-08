@@ -64,12 +64,20 @@ Left out of wave 1:
   - outcome ingestion: Harbor Hub job pages, the Toolathlon trajectories, the ARC dump, the Every Eval Ever datastore,
     the MathArena outputs.
 
+## Added 2026-10-08: Harbor-Adapter and HAL (Pablo: OK to use both)
+
+- **Harbor-Adapter** (`kendx/Harbor-Adapter`) becomes an outcome and trace source for wave 2. It holds traces and
+  verifier rewards for 15 G1 models on GPQA, ARC-AGI-2 and TB 2.0. Wave 2 already labels those tasks (TB 2.0 shares
+  TB 2.1's 89 task names), so this adds outcomes at no labelling cost. Download only those sets (about 6.5 GB) into
+  `data/`. Its Gaia2 set (100 tasks, 13 models, with traces) is a candidate addition. The author and licence are still
+  unknown, so we tell the author before we publish results that use it.
+- **HAL** becomes wave 3. About 1,000 tasks, G2 models only, so it adds an older generation. Its traces stay in
+  `data/` (they are what leaked on 2026-10-05). Cost to be planned with the bare-digit output size.
+- **Epoch** may share data (reply of 2026-10-08). Our ask is G0 outcomes.
+
 ## Not now, and why
 
-- **Harbor-Adapter.** The best trace source (60 sets, 15 G1 models), but the author and licence are unknown. Ask
-  before downloading. If cleared, it becomes wave 3: traces for GPQA, ARC-AGI-2 and TB 2.0, which wave 2 already labels.
 - **OpenHands GAIA.** Gated and older. Its SWE-bench Verified outcomes are used in wave 1 as results only.
-- **HAL.** G2 models only.
 - **Exgentic AppWorld.** G1 and G2 only. Keep it as a demands-to-go candidate.
 - **SWE-bench Pro, HLE and SimpleQA Verified.** Flawed, or no per-item data.
 - **METR.** Its task texts are private.
@@ -78,7 +86,7 @@ Left out of wave 1:
 ## Decisions taken here (Pablo can veto)
 
 1. Static sets get the v1 rubrics plus v2 MSm, not the PL rubrics.
-2. Harbor-Adapter waits until its licence is clear.
+2. Harbor-Adapter: only the sets wave 2 labels (GPQA, ARC-AGI-2, TB 2.0); Gaia2 later.
 3. ArXivMath and BrokenArXiv take every month that has model outputs, not only the latest.
 4. The Epoch request is narrowed to G0 outcomes: GPQA G1 is now covered by Every Eval Ever.
 
@@ -90,4 +98,3 @@ Left out of wave 1:
   - the gates, about $10.
 - A Hugging Face token with access to the gated v1 battery, for gate 2.
 - A Harbor Hub login, for bulk Terminal-Bench 2.1 trace downloads.
-- Whether to email the Harbor-Adapter author.
