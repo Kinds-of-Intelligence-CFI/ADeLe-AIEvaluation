@@ -1,0 +1,16 @@
+#!/bin/sh
+# Block commits that would leak benchmark content or agent traces (the repository is public).
+#   1. Refuse trace-like files: .jsonl, archives, traces/ or trajectories/ folders.
+#   2. Run experiments/benchmarks/contamination_check.py on the staged files: canary strings, and 12-word spans shared
+#      with the protected corpora in data/ (ZeroBench, HAL traces, every frozen task text in data/instances).
+# Install once per clone: sh scripts/install-hooks.sh. Never bypass it (--no-verify) without the maintainer's OK.
+ROOT=$(git rev-parse --show-toplevel)
+PY="${ADELE_PYTHON:-}"
+for c in "$ROOT/.venv/bin/python" "$HOME/Developer/ADELE/.venv-adele/bin/python" "$(command -v python3)"; do
+  [ -z "$PY" ] && [ -x "$c" ] && PY="$c"
+done
+bad=$(git diff --cached --name-only --diff-filter=AM | grep -E '\.(jsonl|tar\.gz|tgz|tar|zip)$|(^|/)(traces?|trajector(y|ies))/')
+if [ -n "$bad" ]; then
+  printf >&2 "pre-commit: trace-like files staged, refusing:\n%s\n" "$bad"; exit 1
+fi
+"$PY" "$ROOT/experiments/benchmarks/contamination_check.py" || { echo >&2 "pre-commit: contamination check failed"; exit 1; }

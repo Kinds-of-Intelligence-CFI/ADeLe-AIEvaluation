@@ -49,3 +49,28 @@ jobs:
           adele rubrics list
           if adele evaluate some/model mmlu-pro 2>out.txt; then exit 1; fi
           grep -q "pip install \"adele\[eval\]\"" out.txt
+
+  contamination:
+    # Pull requests must not add agent traces, archives or canary strings. The span corpora live in data/ and are not
+    # available here, so CI checks file types and canaries; the pre-commit hook does the full check locally.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pandas numpy pyarrow
+      - name: No traces or archives
+        run: |
+          bad=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD \
+                | grep -E '\.(jsonl|tar\.gz|tgz|tar|zip)$|(^|/)(traces?|trajector(y|ies))/' || true)
+          if [ -n "$bad" ]; then echo "trace-like files added:"; echo "$bad"; exit 1; fi
+      - name: No canaries
+        run: |
+          files=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD)
+          [ -z "$files" ] || python experiments/benchmarks/contamination_check.py $files

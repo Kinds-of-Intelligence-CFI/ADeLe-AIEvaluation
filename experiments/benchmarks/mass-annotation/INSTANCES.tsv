@@ -1,0 +1,16 @@
+benchmark	n_instances	sha256	loader	median_prompt_chars	max_prompt_chars	est_calls	est_tokens_in	warnings	file
+cooperbench	1956	3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7	registered	14404	25561	9780	49948456	7 prompts exceed 24000 chars (max 25561); consider a truncation decision	instances_cooperbench.parquet
+deepswe-v1.1	113	a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac	registered	2075	5484	791	1830683	-	instances_deepswe-v1.1.parquet
+eqbench4	120	d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4	registered	14104	23159	600	3274010	-	instances_eqbench4.parquet
+frontierswe-v2	34	af62cb1bf63e006fe9d649a9702ddfe26bf1c4fa28a5280323ff6f4ed354c325	registered	3100	9824	238	645571	-	instances_frontierswe-v2.parquet
+gamearena	24	753c4414d16caedf04af4f23f36c2f83133df97650630df766fbd41650893417	registered	2972	7740	120	306308	-	instances_gamearena.parquet
+programbench	200	1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308	registered	10215	360931	1400	12503540	36 prompts exceed 24000 chars (max 360931); consider a truncation decision	instances_programbench.parquet
+rivercross-search	54	922a9ba67bb9e00d21fc83e8fe5c71514cfa964b71753660a7ea1bd254eb09c2	registered	523	741	378	711320	-	instances_rivercross-search.parquet
+swe-bench-verified	500	f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f	swebench	1185	24770	4000	8699732	1 prompts exceed 24000 chars (max 24770); consider a truncation decision	instances_swe-bench-verified.parquet
+tau2-airline	50	5d51a59e061d005ef6c7d229052c37b9d600c349d96d088647ec1127732f7165	taubench	665	1503	350	675498	-	instances_tau2-airline.csv
+tau2-banking_knowledge	97	20bc6ba5dbbaf6abd30585345475da5f6be585f8dc7b3366d7c6ba3976992e00	taubench	3320	7442	679	1789854	-	instances_tau2-banking_knowledge.csv
+tau2-retail	114	6fecc25306f946cdc31287ffa6ce4156d9e24c24f52d86ceb5c4a2cf9bd16015	taubench	592	1346	798	1522991	-	instances_tau2-retail.csv
+tau2-telecom	2285	c6e613e297d0fbf7d7eb3922f718cc05e5683b1e4dbac65bd78b9d86c0a62fc1	taubench	1325	1657	15995	33442482	2280 instances share identical prompt text	instances_tau2-telecom.csv
+terminal-bench-4.0.0	66	66ccf094b35b3ce0e90115623ff4f762e0bba8ef0710711d738f4cf9419e26cd	terminalbench4	1622	6455	1650	3660756	-	instances_terminal-bench-4.0.0.parquet
+terminal-bench-science-0.1	70	0a32c66768dbac26bd8b87b4180276b12906ee423894d259e8a3f54f0aa3581d	registered	3607	13026	490	1400171	-	instances_terminal-bench-science-0.1.parquet
+weirdml-v2	4	037cce41e3cde29aec2a2bfb716042e048ee3e398c4b339ac9cdcfa710f29c98	registered	4085	4260	28	77451	-	instances_weirdml-v2.parquet

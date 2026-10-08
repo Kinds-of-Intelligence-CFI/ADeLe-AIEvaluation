@@ -350,6 +350,36 @@ def instances_register(file, benchmark, n_dimensions):
                f"warnings: {row['warnings']}")
 
 
+@instances.command("push")
+@click.option("--dir", "instances_dir", default="data/instances", show_default=True)
+@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or the CFI one).")
+@click.option("--benchmark", "benchmarks", multiple=True, help="Only these benchmarks (repeatable; default: all).")
+def instances_push(instances_dir, repo, benchmarks):
+    """Upload frozen instance files to a PRIVATE Hugging Face dataset and record them in the committed index."""
+    from adele.instance_store import INDEX, InstanceStoreError, push, repo_id
+
+    try:
+        done = push(instances_dir, repo, list(benchmarks) or None)
+    except InstanceStoreError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"pushed {len(done)} benchmarks to {repo_id(repo)} (private); commit {INDEX}")
+
+
+@instances.command("fetch")
+@click.option("--dir", "instances_dir", default="data/instances", show_default=True)
+@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or the CFI one).")
+@click.option("--benchmark", "benchmarks", multiple=True, help="Only these benchmarks (repeatable; default: all).")
+def instances_fetch(instances_dir, repo, benchmarks):
+    """Download frozen instance files from the private dataset, checked against the committed index."""
+    from adele.instance_store import InstanceStoreError, fetch, repo_id
+
+    try:
+        done = fetch(instances_dir, repo, list(benchmarks) or None)
+    except InstanceStoreError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"fetched {len(done)} benchmarks from {repo_id(repo)} into {instances_dir}, all hashes match")
+
+
 @instances.command("check-join")
 @click.argument("instances_dir")
 @click.argument("results_parquet")

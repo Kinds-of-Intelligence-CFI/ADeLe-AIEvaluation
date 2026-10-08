@@ -1,5 +1,7 @@
 # Mass annotation
 
+**To run annotation runs yourself, start with `RUNNING.md`.** Which tasks: `BENCHMARKS.md`.
+
 One runner (`adele mass`, code in `src/adele/mass/`) for any grid of benchmarks × rubrics with any judge.
 Design: `ARCHITECTURE.md`; plan and decisions: `PLAN.md`. Specs live in `specs/`, pinned runs in `runs/<name>/`
 (`manifest.json`, `cells.csv`, `ledger.csv`, `labels.csv`); prompts and raw answers in `$ADELE_JUDGE_IO/<name>/`
