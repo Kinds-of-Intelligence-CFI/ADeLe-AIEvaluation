@@ -69,8 +69,8 @@ Left out of wave 1:
 - **Harbor-Adapter** (`kendx/Harbor-Adapter`) becomes an outcome and trace source for wave 2. It holds traces and
   verifier rewards for 15 G1 models on GPQA, ARC-AGI-2 and TB 2.0. Wave 2 already labels those tasks (TB 2.0 shares
   TB 2.1's 89 task names), so this adds outcomes at no labelling cost. Download only those sets (about 6.5 GB) into
-  `data/`. Its Gaia2 set (100 tasks, 13 models, with traces) is a candidate addition. The author and licence are still
-  unknown, so we tell the author before we publish results that use it.
+  `data/`. Its Gaia2 set (100 tasks, 13 models, with traces) is a candidate addition. The licence is "other", with no
+  terms given. We use it for analysis, cite it, and never redistribute its traces.
 - **HAL** becomes wave 3. About 1,000 tasks, G2 models only, so it adds an older generation. Its traces stay in
   `data/` (they are what leaked on 2026-10-05). Cost to be planned with the bare-digit output size.
 - **Epoch** may share data (reply of 2026-10-08). Our ask is G0 outcomes.
