@@ -19,7 +19,7 @@ from adele.instances import MANIFEST_NAME, _frame_sha256, _merge_manifest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 INDEX = REPO_ROOT / "experiments" / "benchmarks" / "mass-annotation" / "INSTANCES.tsv"
-DEFAULT_REPO = "CFI-Kinds-of-Intelligence/adele-instances"
+DEFAULT_REPO = "adele-ai-evaluations/adele-instances"
 
 
 class InstanceStoreError(RuntimeError):

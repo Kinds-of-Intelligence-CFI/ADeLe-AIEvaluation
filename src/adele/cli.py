@@ -352,7 +352,7 @@ def instances_register(file, benchmark, n_dimensions):
 
 @instances.command("push")
 @click.option("--dir", "instances_dir", default="data/instances", show_default=True)
-@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or the CFI one).")
+@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or adele-ai-evaluations/adele-instances).")
 @click.option("--benchmark", "benchmarks", multiple=True, help="Only these benchmarks (repeatable; default: all).")
 def instances_push(instances_dir, repo, benchmarks):
     """Upload frozen instance files to a PRIVATE Hugging Face dataset and record them in the committed index."""
@@ -367,7 +367,7 @@ def instances_push(instances_dir, repo, benchmarks):
 
 @instances.command("fetch")
 @click.option("--dir", "instances_dir", default="data/instances", show_default=True)
-@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or the CFI one).")
+@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or adele-ai-evaluations/adele-instances).")
 @click.option("--benchmark", "benchmarks", multiple=True, help="Only these benchmarks (repeatable; default: all).")
 def instances_fetch(instances_dir, repo, benchmarks):
     """Download frozen instance files from the private dataset, checked against the committed index."""
