@@ -9,7 +9,7 @@ from pathlib import Path
 import click
 
 _EXTRAS = {"anthropic-batch": ("models", "anthropic"), "openai-batch": ("annotate", "openai"),
-           "litellm": ("annotate", "litellm")}
+           "litellm": ("annotate", "litellm"), "inspect": ("eval", "inspect_ai")}
 
 
 def _load(run_ref):

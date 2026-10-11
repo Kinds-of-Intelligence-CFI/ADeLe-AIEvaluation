@@ -106,6 +106,10 @@ def preview(run: Run, item: Item) -> Dict[str, Any]:
         from adele.mass.backends.anthropic_batch import build_request
     elif backend == "openai-batch":
         from adele.mass.backends.openai_batch import build_request
+    elif backend == "inspect":
+        from adele.mass.backends.inspect_backend import generate_config
+        return {"backend": backend, "model": run.judge.model, "config": generate_config(run.judge),
+                "input": f"<prompt {item[0]}: {len(run.prompt(item[0]))} chars>"}
     else:
         return {"backend": backend, "model": run.judge.model, "effort": run.judge.effort}
     req = build_request(run, *item)

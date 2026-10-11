@@ -17,6 +17,7 @@ from adele.cli import main
 from adele.instances import prepare
 from adele.mass.backends.anthropic_batch import AnthropicBatchBackend
 from adele.mass.backends.fake import FakeBackend
+from adele.mass.backends.inspect_backend import InspectBackend, generate_config
 from adele.mass.backends.litellm_backend import LiteLLMBackend
 from adele.mass.backends.openai_batch import OpenAIBatchBackend, build_request as openai_request
 from adele.mass.backends.subagent import SubagentBackend
@@ -673,6 +674,40 @@ def test_litellm_backend_records_the_handle_first_and_resumes(env):
     res = collect(run, backend, ledger)
     assert len(calls) == 5 and calls[0]["temperature"] == 0.0 and "reasoning_effort" not in calls[0]
     assert res["labels"] == 5 and res["no_label"] == 1
+
+
+def test_inspect_backend_runs_through_inspect_and_resumes(env):
+    from inspect_ai.model import ModelOutput, get_model
+
+    # The answers must come from the requested model, so the spec requests Inspect's mock model by name.
+    run = pinned(env, judge='backend = "inspect"\nmodel = "mockllm/model"\nretry = { error = 0 }')
+    assert run.judge.batch and generate_config(run.judge) == {"max_tokens": 16000, "max_retries": 5, "batch": True,
+                                                               "temperature": 0.0}
+    model = get_model("mockllm/model", custom_outputs=[ModelOutput.from_content("mockllm/model", answer_text(4))
+                                                       for _ in range(5)])
+    backend = InspectBackend(model=model)
+    ledger = Ledger.load(run.dir)
+    (handle, items), = submit_next(run, ledger, backend, batch_size=100)
+    assert not (run.io_dir / "inspect").exists()
+    # An earlier, interrupted pass already answered the first item: Inspect runs only the other five.
+    first = items[0]
+    (run.io_dir / "api" / f"{handle}.jsonl").write_text(json.dumps(
+        {"custom_id": f"{first[0]}-a{first[1]}", "text": answer_text(1), "model": "mockllm/model",
+         "tokens_in": 1, "tokens_out": 1}) + "\n")
+    res = collect(run, backend, ledger)
+    assert res["labels"] == 6 and len(list((run.io_dir / "inspect").glob("*.eval"))) == 1
+    levels = pd.read_csv(run.dir / "labels.csv")["level"]
+    assert sorted(levels) == [1, 4, 4, 4, 4, 4]
+
+
+def test_inspect_effort_goes_to_the_right_field(env):
+    run = pinned(env, name="t-claude", judge='backend = "inspect"\nmodel = "anthropic/claude-opus-5-5"\n'
+                                              'effort = "low"\nbatch = false')
+    assert generate_config(run.judge) == {"max_tokens": 16000, "max_retries": 5, "batch": False, "effort": "low"}
+    run = pinned(env, name="t-gpt", judge='backend = "inspect"\nmodel = "openai/gpt-5.5"\neffort = "low"')
+    assert generate_config(run.judge)["reasoning_effort"] == "low"
+    with pytest.raises(SpecError, match="only applies to the inspect backend"):
+        pinned(env, name="t-bad", judge='backend = "litellm"\nmodel = "x"\nbatch = true')
 
 
 # ----------------------------------------------------------------------------- the example specs

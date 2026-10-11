@@ -78,8 +78,13 @@ The runner is judge-agnostic.
 | `anthropic-batch` | Claude | `output_config.effort` |
 | `openai-batch` | OpenAI | `reasoning_effort` |
 | `litellm` | most others | `reasoning_effort` |
+| `inspect` | anything [Inspect](https://inspect.aisi.org.uk) supports, with the provider's batch API where it has one | `effort` (Claude), `reasoning_effort` (others) |
 
 Keep `builder = "v2-noreason"`: the bare-digit prompt works for any model.
+
+With `inspect`, `model` is an Inspect model name, such as `anthropic/claude-opus-5-5` or `openai/gpt-5.5`, and
+`batch = false` turns batching off for small runs. Inspect keeps its own log of every run in the judge-io folder, so
+`inspect view` can browse the answers there.
 
 A different judge labels differently, so its labels are never mixed with ours unchecked.
 
@@ -111,6 +116,32 @@ adele mass labelset current --out /tmp/x --format parquet     # export: long, wi
 
 Every label carries its run, judge, prompt hash, `rubric_sha256` (the rubric text judged) and `task_version` (the
 frozen task frame). To change what "current" means, edit the TOML in a pull request, not code.
+
+## 6. The production runs, in order
+
+Each step is one spec: pin it, run it, collect, check, then commit `runs/<name>/`. Go on only when the step before
+passes. The gates are described in `PLAN.md` §3; what each bulk spec covers is in `BENCHMARKS.md`.
+
+| step | spec | calls | ~cost | go on if |
+|---|---|---|---|---|
+| gate 1 | `gate-dryrun` | 221 | $2 | every cell parses; costs match the plan |
+| gate 2 | `gate-api-bridge` | 450 | $4 | API labels agree with the earlier subagent labels as well as two subagent runs agree |
+| gate 3 | `gate-v1-bridge` | 1,080 | $7 | per v1 rubric, within one level of the published labels ≥ 0.85 and mean shift ≤ 0.3; rubrics that miss are still run, marked not comparable with v1 |
+| wave 1 | `bulk-w1-v1`, `bulk-w1-rivercross-plms` | 25,192 | $230 | — |
+| wave 2 | `bulk-w2-static` | 16,434 | $113 | — |
+| later | `bulk-w1-memory` | 4,398 | $40 | the team has finalised the memory rubrics |
+
+For one spec:
+
+```
+S=gate-dryrun
+adele mass plan specs/$S.toml && adele mass pin specs/$S.toml
+adele mass run $S --dry-run      # one request shown, nothing sent
+adele mass run $S                # resumable: rerun after any stop
+adele mass collect $S && adele mass check $S
+```
+
+To run the same specs with another judge, copy them under new names and change only `[judge]` (section 4).
 
 ## Troubleshooting
 

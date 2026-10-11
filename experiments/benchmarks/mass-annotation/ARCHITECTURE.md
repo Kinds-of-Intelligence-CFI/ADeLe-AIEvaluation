@@ -1,7 +1,7 @@
 # Mass annotation runner — architecture (draft for approval, 2026-10-01)
 
 **Aim.** Launching an annotation run on any grid of (benchmarks × rubrics) is one command, with any judge
-(Claude Code subagents, Claude Code cloud sessions, Anthropic or OpenAI batch APIs, any litellm model), and every run
+(Claude Code subagents, Claude Code cloud sessions, Anthropic or OpenAI batch APIs, any litellm or Inspect model), and every run
 is resumable, auditable and produces labels in one schema. Nothing is run by this work; it only builds the machinery.
 
 ## Today
@@ -24,7 +24,7 @@ spec.toml ──plan──► cost/size report (no side effects)
                     ledger.parquet  (per cell and attempt: status, backend handle, writer model, reason)
               $ADELE_JUDGE_IO/run/prompts/<cell_id>.txt     (prompt text: outside the repo)
                     │
-        submit / poll / fetch   ◄── JudgeBackend (subagent | anthropic-batch | openai-batch | litellm)
+        submit / poll / fetch   ◄── JudgeBackend (subagent | anthropic-batch | openai-batch | litellm | inspect)
                     │
               collect ──► labels.parquet (one schema for every backend) ──► analyses
               check   ──► protocol and writer report
@@ -42,7 +42,7 @@ refs = ["v1/AS", "v1/AT", "...", "v2/MSm", "v2/MSc"]   # generation-qualified; m
 [prompt]
 builder = "v2-noreason"             # the default since 2026-10-07; "v2" for rubric pilots and audits
 [judge]
-backend = "subagent"               # or "anthropic-batch", "openai-batch", "litellm"
+backend = "subagent"               # or "anthropic-batch", "openai-batch", "litellm", "inspect"
 model = "claude-opus-5-5"
 effort = "low"
 repeats = 1
@@ -72,6 +72,7 @@ class JudgeBackend(Protocol):
 | `anthropic-batch` | Message Batches API | `model` field of each response | new; effort as an API parameter |
 | `openai-batch` | Batch API, reusing today's request builders | `model` field | job ids now persisted |
 | `litellm` | direct calls, any provider | `model` field | small runs and local models |
+| `inspect` | Inspect eval per group, provider batch API where available | `output.model` | any Inspect provider; standard logs |
 
 A judge change is a spec change, so a run with an OpenAI judge is the same command with a different `[judge]`.
 

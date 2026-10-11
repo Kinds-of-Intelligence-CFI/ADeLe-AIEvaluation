@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-BACKENDS = ("subagent", "anthropic-batch", "openai-batch", "litellm", "fake")
+BACKENDS = ("subagent", "anthropic-batch", "openai-batch", "litellm", "inspect", "fake")
 BUILDERS = {"v1": "build_annotation_prompt", "v2": "build_annotation_prompt_v2",
             "v2-noreason": "build_annotation_prompt_v2_noreason"}
 # Why an attempt can be rejected; each reason has its own retry budget (extra attempts). ``protocol``: the
@@ -41,7 +41,7 @@ _KEYS = {
     "tasks": {"benchmarks", "subset", "instances_dir"},
     "rubrics": {"refs"},
     "prompt": {"builder"},
-    "judge": {"backend", "model", "effort", "repeats", "retry", "max_tokens", "folder", "relay"},
+    "judge": {"backend", "model", "effort", "repeats", "retry", "max_tokens", "folder", "relay", "batch"},
     "relay": {"dispatcher", "judge_agent", "model_alias", "batch_size", "cwd", "chunk_lines"},
 }
 
@@ -63,7 +63,8 @@ class RubricRef:
 
 @dataclass(frozen=True)
 class JudgeSpec:
-    """Judge settings. ``relay`` holds the subagent-only settings (dispatcher, agents, batch size)."""
+    """Judge settings. ``relay`` holds the subagent-only settings (dispatcher, agents, batch size); ``batch`` is
+    the inspect backend's switch for the provider's batch API."""
     backend: str
     model: str
     effort: Optional[str] = None
@@ -72,6 +73,7 @@ class JudgeSpec:
     max_tokens: int = 16000
     folder: str = ""
     relay: Dict[str, Any] = field(default_factory=dict)
+    batch: bool = True
 
 
 @dataclass(frozen=True)
@@ -138,12 +140,17 @@ def judge_from_dict(d: Dict[str, Any], builder: str = "v2") -> JudgeSpec:
             raise SpecError("judge.relay.chunk_lines must be a positive integer")
     elif relay:
         raise SpecError("[judge.relay] only applies to the subagent backend")
+    batch = d.get("batch", True)
+    if "batch" in d and backend != "inspect":
+        raise SpecError("judge.batch only applies to the inspect backend (the batch backends always batch)")
+    if not isinstance(batch, bool):
+        raise SpecError("judge.batch must be true or false")
     short = relay.get("model_alias", model.replace("/", "-"))
     folder = d.get("folder") or (f"{short}-{effort}" if effort else short)
     if not SAFE_NAME.match(folder):
         raise SpecError(f"judge.folder {folder!r} is not a safe folder name")
     return JudgeSpec(backend=backend, model=model, effort=effort, repeats=repeats, retry=retry,
-                     max_tokens=int(d.get("max_tokens", 16000)), folder=folder, relay=relay)
+                     max_tokens=int(d.get("max_tokens", 16000)), folder=folder, relay=relay, batch=batch)
 
 
 def load_spec(path: str | Path, root: Optional[Path] = None) -> Spec:

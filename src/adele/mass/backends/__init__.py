@@ -1,4 +1,4 @@
-"""Judge backends: one small interface for Claude Code subagents, batch APIs, litellm and a test fake.
+"""Judge backends: one small interface for Claude Code subagents, batch APIs, litellm, Inspect and a test fake.
 
 A backend sends a group of (cell, attempt) items under one handle (a relay id or a batch id), says when a handle
 is finished, and returns one :class:`Answer` per item. The runner records handles and answers in the ledger.
@@ -71,6 +71,9 @@ def get_backend(name: str, **kwargs: Any) -> JudgeBackend:
     if name == "litellm":
         from adele.mass.backends.litellm_backend import LiteLLMBackend
         return LiteLLMBackend(**kwargs)
+    if name == "inspect":
+        from adele.mass.backends.inspect_backend import InspectBackend
+        return InspectBackend(**kwargs)
     if name == "fake":
         from adele.mass.backends.fake import FakeBackend
         return FakeBackend(**kwargs)
