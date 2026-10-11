@@ -64,6 +64,11 @@ Left out of wave 1:
   - outcome ingestion: Harbor Hub job pages, the Toolathlon trajectories, the ARC dump, the Every Eval Ever datastore,
     the MathArena outputs.
 
+**Status 2026-10-11.** The four static sets are loaded, in the private instance store and in one spec,
+`bulk-w2-static` (913 tasks × 17 v1 rubrics + v2 MSm = 16,434 calls, ~$113 at batch prices without caching). Loaders:
+`arcagi2-data/`, `gpqa-data/`, `matharena-data/`; Harbor-Adapter rewards: `harbor-adapter-data/`. Terminal-Bench 2.1
+(needs a Harbor Hub login) and Toolathlon-Verified (gated: Pablo accepts its terms) are not loaded yet.
+
 ## Added 2026-10-08: Harbor-Adapter and HAL (Pablo: OK to use both)
 
 - **Harbor-Adapter** (`kendx/Harbor-Adapter`) becomes an outcome and trace source for wave 2. It holds traces and

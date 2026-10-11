@@ -1,6 +1,8 @@
 benchmark	n_instances	sha256	loader	median_prompt_chars	max_prompt_chars	est_calls	est_tokens_in	warnings	file
 adele-battery-v1	60	3f151f763b0d26c8226d6eb66bc593712534afdb3b7179ea8092de05dd212afd	registered	751	6469	420	869429	-	instances_adele-battery-v1.parquet
 arc-agi-2	120	fabdd2b2f9590dcbe15f132d43a9bb63209cbe92777b8c12a5b22d2e027178a8	registered	8079	25495	2160	8454316	2 prompts exceed 24000 chars (max 25495); consider a truncation decision	instances_arc-agi-2.parquet
+arxivmath	287	631bd146418bff5be1f23bef97e6d367033289cd3019fe4c04f0261413a5cb8b	registered	513	3968	5166	9875632	-	instances_arxivmath.parquet
+brokenarxiv	308	e7b79bc4219c8d9469986d38475f62d3313d824e0c9e2f5f9f991722f486ccbc	registered	554	2235	5544	10565541	-	instances_brokenarxiv.parquet
 cooperbench	1956	3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7	registered	14404	25561	9780	49948456	7 prompts exceed 24000 chars (max 25561); consider a truncation decision	instances_cooperbench.parquet
 deepswe-v1.1	113	a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac	registered	2075	5484	791	1830683	-	instances_deepswe-v1.1.parquet
 eqbench4	120	d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4	registered	14104	23159	600	3274010	-	instances_eqbench4.parquet
