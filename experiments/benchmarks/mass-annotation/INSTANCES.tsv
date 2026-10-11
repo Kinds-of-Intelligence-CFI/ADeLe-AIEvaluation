@@ -1,9 +1,12 @@
 benchmark	n_instances	sha256	loader	median_prompt_chars	max_prompt_chars	est_calls	est_tokens_in	warnings	file
+adele-battery-v1	60	3f151f763b0d26c8226d6eb66bc593712534afdb3b7179ea8092de05dd212afd	registered	751	6469	420	869429	-	instances_adele-battery-v1.parquet
+arc-agi-2	120	fabdd2b2f9590dcbe15f132d43a9bb63209cbe92777b8c12a5b22d2e027178a8	registered	8079	25495	2160	8454316	2 prompts exceed 24000 chars (max 25495); consider a truncation decision	instances_arc-agi-2.parquet
 cooperbench	1956	3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7	registered	14404	25561	9780	49948456	7 prompts exceed 24000 chars (max 25561); consider a truncation decision	instances_cooperbench.parquet
 deepswe-v1.1	113	a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac	registered	2075	5484	791	1830683	-	instances_deepswe-v1.1.parquet
 eqbench4	120	d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4	registered	14104	23159	600	3274010	-	instances_eqbench4.parquet
 frontierswe-v2	34	af62cb1bf63e006fe9d649a9702ddfe26bf1c4fa28a5280323ff6f4ed354c325	registered	3100	9824	238	645571	-	instances_frontierswe-v2.parquet
 gamearena	24	753c4414d16caedf04af4f23f36c2f83133df97650630df766fbd41650893417	registered	2972	7740	120	306308	-	instances_gamearena.parquet
+gpqa-diamond	198	17b3f046c120eb2a1a4b2980896a5807a92f862f816b0402c3f444b3cfc8f2e1	registered	634	5690	3564	6852240	-	instances_gpqa-diamond.parquet
 programbench	200	1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308	registered	10215	360931	1400	12503540	36 prompts exceed 24000 chars (max 360931); consider a truncation decision	instances_programbench.parquet
 rivercross-search	54	922a9ba67bb9e00d21fc83e8fe5c71514cfa964b71753660a7ea1bd254eb09c2	registered	523	741	378	711320	-	instances_rivercross-search.parquet
 swe-bench-verified	500	f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f	swebench	1185	24770	4000	8699732	1 prompts exceed 24000 chars (max 24770); consider a truncation decision	instances_swe-bench-verified.parquet
