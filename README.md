@@ -1,6 +1,19 @@
-# [General scales unlock AI evaluation with explanatory and predictive power](https://www.nature.com/articles/s41586-026-10303-2)
+<h1 align="center">ADeLe</h1>
+
+<p align="center">
+  <strong>General scales unlock AI evaluation with explanatory and predictive power</strong>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2503.06378"><img src="https://img.shields.io/badge/arXiv_Paper-334155?style=flat-square" alt="arXiv Paper" height="24"></a>
+  <a href="https://www.nature.com/articles/s41586-026-10303-2"><img src="https://img.shields.io/badge/Nature_Paper-334155?style=flat-square" alt="Nature Paper" height="24"></a>
+  <a href="https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0"><img src="https://img.shields.io/badge/Dataset-334155?style=flat-square" alt="Dataset" height="24"></a>
+  <a href="https://x.com/lexin_zhou/status/2039474685776175245"><img src="https://img.shields.io/badge/X_Thread-334155?style=flat-square" alt="X Thread" height="24"></a>
+  <a href="https://lexzhou.github.io/assets/pdf/ADELE_technical_blog.pdf"><img src="https://img.shields.io/badge/Blog-334155?style=flat-square" alt="Blog" height="24"></a>
+</p>
 
 ## Paper Abstract
+
 Ensuring safe and effective use of artificial intelligence (AI) requires understanding and anticipating its performance on new tasks, from advanced scientific challenges to transformed workplace activities. So far, benchmarking has guided progress in AI but has offered limited explanatory and predictive power for general-purpose AI systems, attributed to limited transferability across specific tasks. Here we introduce general scales for AI evaluation that elicit demand profiles explaining what capabilities common AI benchmarks truly measure, extract ability profiles quantifying the general strengths and limits of AI systems and robustly predict AI performance for new task instances. Our fully automated methodology builds on 18 rubrics, capturing a broad range of cognitive and intellectual demands, which place different task instances on the same general scales, illustrated on 15 large language models (LLMs) and 63 tasks. Both the demand and the ability profiles on these scales bring new insights such as construct validity through benchmark sensitivity and specificity and explain conflicting claims about whether AI has reasoning capabilities. Ultimately, high predictive power at the instance level becomes possible using the general scales, providing superior estimates over strong black-box baseline predictors, especially in out-of-distribution settings (new tasks and benchmarks). The scales, rubrics, battery, techniques and results presented here constitute a solid foundation for a science of AI evaluation, underpinning the reliable deployment of AI in the years ahead.
 
 ## 🚀 Unified AI Evaluation with Explanatory & Predictive Power
