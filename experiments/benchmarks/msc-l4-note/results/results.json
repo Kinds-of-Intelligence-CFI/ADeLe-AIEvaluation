@@ -1,0 +1,271 @@
+{
+  "R": {
+    "P-MSc placement": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "F-on-MSc no leak": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "L r30 MSc minimal pairs": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "L r36 MSc pair": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "L r75 MSc ladder": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "L r70 human labels": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "B MSc high": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": false
+    },
+    "B MSc mid-band": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "B MSc anchors": {
+      "kind": "lab",
+      "holds_current": true,
+      "holds_candidate": true
+    },
+    "candidate_only_failures": [
+      "B MSc high"
+    ],
+    "confirmed": [
+      "B MSc high"
+    ],
+    "items_changed": {
+      "B-M01-on-MSc": {
+        "current": 4,
+        "candidate": 3
+      }
+    }
+  },
+  "M": {
+    "pairs": [
+      {
+        "pair": "1",
+        "A_current": 2,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "2",
+        "A_current": 3,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "3",
+        "A_current": 1,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "4",
+        "A_current": 3,
+        "A_candidate": 2,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "5",
+        "A_current": 2,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "6",
+        "A_current": 2,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "7",
+        "A_current": 2,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      },
+      {
+        "pair": "8",
+        "A_current": 1,
+        "A_candidate": 1,
+        "B_current": 4,
+        "B_candidate": 4
+      }
+    ],
+    "M1_B_at_4plus_candidate": "8/8",
+    "M2_A_below_B_candidate": "8/8",
+    "current_A_equals_B": "0/8",
+    "current_B_at_4plus": "8/8"
+  },
+  "H": {
+    "items": [
+      {
+        "item": "H-01",
+        "role": "fresh",
+        "pablo": 2,
+        "current": 2,
+        "candidate": 2
+      },
+      {
+        "item": "H-02",
+        "role": "fresh",
+        "pablo": 2,
+        "current": 4,
+        "candidate": 4
+      },
+      {
+        "item": "H-03",
+        "role": "fresh",
+        "pablo": 4,
+        "current": 4,
+        "candidate": 4
+      },
+      {
+        "item": "H-04",
+        "role": "fresh",
+        "pablo": 3,
+        "current": 3,
+        "candidate": 3
+      },
+      {
+        "item": "H-05",
+        "role": "fresh",
+        "pablo": 2,
+        "current": 2,
+        "candidate": 2
+      },
+      {
+        "item": "H-06",
+        "role": "fresh",
+        "pablo": 3,
+        "current": 4,
+        "candidate": 4
+      },
+      {
+        "item": "H-07",
+        "role": "fresh",
+        "pablo": 4,
+        "current": 2,
+        "candidate": 2
+      },
+      {
+        "item": "H-08",
+        "role": "fresh",
+        "pablo": 3,
+        "current": 3,
+        "candidate": 2
+      },
+      {
+        "item": "H-09",
+        "role": "fresh",
+        "pablo": 2,
+        "current": 4,
+        "candidate": 2
+      },
+      {
+        "item": "H-10",
+        "role": "fresh",
+        "pablo": 2,
+        "current": 2,
+        "candidate": 2
+      },
+      {
+        "item": "H-11",
+        "role": "dev",
+        "pablo": 4,
+        "current": 4,
+        "candidate": 3
+      },
+      {
+        "item": "H-12",
+        "role": "dev",
+        "pablo": 2,
+        "current": 2,
+        "candidate": 2
+      },
+      {
+        "item": "H-13",
+        "role": "dev",
+        "pablo": 2,
+        "current": 4,
+        "candidate": 3
+      },
+      {
+        "item": "H-14",
+        "role": "dev",
+        "pablo": 2,
+        "current": 2,
+        "candidate": 2
+      },
+      {
+        "item": "H-15",
+        "role": "dev",
+        "pablo": 4,
+        "current": 4,
+        "candidate": 4
+      }
+    ],
+    "fresh": {
+      "current": {
+        "n": 10,
+        "exact": 6,
+        "within1": 7,
+        "mean_shift_vs_pablo": 0.3
+      },
+      "candidate": {
+        "n": 10,
+        "exact": 6,
+        "within1": 8,
+        "mean_shift_vs_pablo": 0.0
+      }
+    },
+    "dev": {
+      "current": {
+        "n": 5,
+        "exact": 4,
+        "within1": 4,
+        "mean_shift_vs_pablo": 0.4
+      },
+      "candidate": {
+        "n": 5,
+        "exact": 3,
+        "within1": 5,
+        "mean_shift_vs_pablo": 0.0
+      }
+    },
+    "H2_items_worse": []
+  },
+  "rules": {
+    "R": false,
+    "M1": true,
+    "M2": true,
+    "H1": true,
+    "H2": true
+  },
+  "verdict": "fail"
+}

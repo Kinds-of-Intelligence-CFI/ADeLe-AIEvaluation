@@ -5,9 +5,12 @@ answered once and dropped, below Level 4. Current text and candidate are judged 
 regression's MSc items, eight minimal pairs and fifteen real tau2 tasks, ten of them labelled blind by Pablo.
 The rubric in `src/` does not change here.
 
+**Status (2026-10-14): done. Verdict fail** (one lab check lost, confirmed in pass 2). See `RESULTS.md`.
+
 | | |
 |---|---|
 | design, rules, predictions | `PREREGISTRATION.md` |
+| results | `RESULTS.md` |
 | candidate text | `MSc_candidate.txt` |
 | items | `items.csv` (tau2 texts blanked), `pairs.csv`, `human_items.csv` (ids only) |
 | Pablo's labels | `human_labels.csv` |
