@@ -104,3 +104,35 @@ means editing `MSc.txt`, a provenance entry and a relabel of MSc on the released
 
 756 Opus-low calls, plus up to about 60 in pass 2. Past runs: about 0.04% of a 5-hour window per call, so about 30%
 of a window and 5–6 weekly points.
+
+## Amendment 1 (2026-10-14, after the results): the C check
+
+**Context.** The candidate failed because battery M01 says nothing about how the colleague will respond, and the
+note read that silence as low demand. Two ways forward were considered:
+- **Rule B:** state the behaviour if the task gives it; otherwise assume the party pursues its aim.
+- **Skipping** tasks with too little information.
+
+Pablo ruled (2026-10-14):
+- **Keep a level for every task, plus an "underspecified" flag.** No skipping. Analyses run with and without
+  flagged tasks. The first flag is free: cells whose three repeats disagree.
+- **Run a cheap check first.** Does the current text already treat unstated behaviour as contested?
+
+**Rule B is shelved, not run.** It is built as `MSc_candidate_b.txt`, `make_prompts_b.py`, `analysis/analyse_b.py`,
+`human_items_b.csv` and `human_labels_b.csv` (510 calls).
+
+**The C check.** `pairs_c.csv` holds each pair's shared scenario, with nothing on how the other party responds. The
+8 C items are judged under the current text, with three repeats, in run `msc-l4c-1` (24 calls, `make_prompts_c.py`).
+No C item shares a 4-gram with an MSc example, the note or rule B.
+
+**Rule.** Count the C items whose median is 4 or more:
+- 6 or more of 8: the current text already applies rule B. Keep it, and add the flag.
+- 3 or fewer: it does not. An explicit clause is worth testing.
+- 4 or 5: mixed. Pablo decides.
+
+Also reported: A below C, using A's current labels from `msc-l4-1`.
+
+**Prediction (sealed).** At least 6 of 8 C items at 4 or more: 0.6.
+
+**Labels after calibration.** Pablo discussed his labels with Claude after the results. He mostly accepts three
+revisions: H-02 to 4, H-06 to 4, H-07 to 2. His blind labels stay in `human_labels.csv` as pre-registered. Revised
+labels, once he confirms them, go in a separate column and are reported only.
