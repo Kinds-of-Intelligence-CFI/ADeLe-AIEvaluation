@@ -82,3 +82,26 @@ Development items (reported only): exact 4 of 5 (current) and 3 of 5 (candidate)
 - The open question is how the judge should treat tasks that do not say how the other party will behave. The prompt's
   tie rule ("choose the lower") is the only rule today, and the judge uses it for missing information too.
 - The large human-judge gaps on tau2 (H-02, H-06, H-07) are not about this note.
+
+## Amendment 1: the C check (2026-10-14)
+
+**Result: 6 of 8 C items at 4 or more.** By the pre-registered rule, the current text already treats unstated
+counterpart behaviour as contested (rule B by default). Keep the text and add the "underspecified" flag. Rule B stays
+shelved. Prediction (≥ 6 of 8): 0.6, held.
+
+| pair | A (current, msc-l4-1) | C (current, repeats) | B (current, msc-l4-1) |
+|---|---|---|---|
+| 1 airline refund | 2 | 4 (3, 4, 4) | 4 |
+| 2 gym pause | 3 | 4 (3, 4, 4) | 4 |
+| 3 shop return | 1 | 3 (3, 3, 4) | 4 |
+| 4 admin rights | 3 | 3 (3, 3, 3) | 4 |
+| 5 curfew | 2 | 4 (4, 4, 4) | 4 |
+| 6 delivery fee | 2 | 4 (4, 4, 4) | 4 |
+| 7 builder deadline | 2 | 4 (4, 4, 4) | 4 |
+| 8 fee waiver | 1 | 4 (4, 4, 4) | 4 |
+
+A is below C on 7 of 8 pairs. The ordering A < C ≤ B holds on every pair.
+
+**The margin is thin.** The result sits exactly on the threshold. Three of the eight C items have split repeats. The
+two below 4 are policy refusals by a support agent (shop return, admin rights), the tau2 shape. So the default is
+weakest where tau2 needs it. All 24 answers were written by `claude-opus-5-5`.
