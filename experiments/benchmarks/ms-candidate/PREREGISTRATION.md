@@ -251,3 +251,24 @@ answers each objection, they place the task at 1, whether or not its purpose nee
 curfew comes from the parent's authority"; "what the task needs from the rep is already settled by the contract"). The
 purpose clause did not change that reading. The curfew is recorded as a known limit of v4: for an ungraded task
 whose purpose needs buy-in but whose position rests on authority or a rule, v4 can place it at 1.
+
+## Amendment 6 (2026-10-17): the frozen candidates without reasoning
+
+**Why.** Pablo chose v4 as the MSc text to freeze, with the MSm candidate. Every test so far used the reasoning
+prompt; production annotates with the bare digit (`build_annotation_prompt_v2_noreason`, the noreason study's
+recommendation). Freezing needs the same checks under the production prompt.
+
+**Run (`make_noreason.py`, `mscand-nr`).** Every prompt of MSc v4 (`mscand-v4`) and of the MSm candidate
+(`mscand-1`, arm candidate) turned into its bare-digit twin by the substitution that defines `PROMPT_V2_NOREASON`;
+rubric and task text byte-identical. 261 prompts (MSc 142, MSm 119), three repeats, 783 calls, same judge. Set H is
+judged and sealed with the rest.
+
+**Rules (`analysis/analyse_nr.py`).**
+- **N1:** every R check that holds with reasoning also holds without; losses go to pass 2 (`mscand-nr-2`, bare digit).
+- **N2 (MSc):** M-refusal holds without reasoning.
+- **N3:** per rubric, on the R and M items, bare-digit medians equal the reasoning medians on at least 80% and are
+  within one level on at least 97%.
+The text is frozen for production if N1 to N3 hold (and, once Pablo's labels are in, H1 and H2). Otherwise the
+failures go to Pablo.
+
+**Predictions (sealed).** N1 MSc: 0.7; N1 MSm: 0.75. N2: 0.7. N3 MSc: 0.75; N3 MSm: 0.8.
