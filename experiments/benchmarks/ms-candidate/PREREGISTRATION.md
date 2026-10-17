@@ -196,3 +196,27 @@ by themselves raise the demand." No new marker; nothing else changes.
 **Screen (`make_screen.py --version 3`, run `mscand-s2`).** The 16 pair items under v3, 48 calls. If M-refusal holds, the
 full v3 run (R-MSc and H on MSc) follows after Pablo has seen the wording. If it fails, wording iteration stops and the
 question goes to Pablo. Caveat as in amendment 2: these pairs are not fresh.
+
+## Amendment 4 (2026-10-17, before any v4 label; set H still sealed)
+
+**Why.** Pablo rejected v3's clause (it contradicts Level 4 and patches a special case) and asked what the levels
+should represent. Agreed framework: the demand is how hard it is to get from the other party what the task needs.
+Two questions: what the task needs from them (only what its success depends on, as stated or graded), and what stands
+in the way (its kind sets the level; amounts do not). A refusal's level follows what the task's success requires
+(answering only: 1; bringing them to accept an alternative: 3 or 4). Opposition without counter-moves still counts.
+
+**MSc v4 (`MSc_candidate_v4.txt`, `make_candidates.py`) replaces v1 to v3 as the MSc candidate.** New intro and level
+statements written from that framework; Level 3 wording from Pablo ("doubts to be overcome", parallel to Level 4's
+"opposition to be overcome"); v2's refund example; one new Level 1 example (a refused library patron, "answering their
+objections with the rule"); the original "does not cover" paragraph. MSm's candidate is unchanged.
+
+**Run (`make_v4.py`, `mscand-v4`).** Every MSc item of mscand-1 (R-MSc, M, H on MSc) plus the new example: 142 prompts,
+426 calls, candidate arm only. The current arm is mscand-1's (same day, same judge and prompt). Void items are the same
+as in mscand-1 (checked at build).
+
+**Rules (`analysis/analyse_v4.py`).** R as registered (X06R not ruled; the new example joins P-MSc placement). M as
+corrected in amendment 3. H1 to H3 once Pablo's labels are in, with v4 as the MSc candidate. If a check fails, the
+failures and the judges' reasons go to Pablo; no further wording change without him.
+
+**Predictions (sealed).** R holds after pass 2: 0.55. M-refusal holds: 0.6. Pairs 5 to 7 all at 4+: 0.65. Battery M01
+at 4+: 0.7.

@@ -1,0 +1,44 @@
+# Communication and social interaction
+
+This rubric assesses the difficulty level of tasks requiring another party to be steered. Steering covers choosing what to say so that another party comes to understand, accept or do what the task needs from them. A task needs something from them only if its success depends on it, as the task states it or as it is judged. The level is set by what stands in the way of getting it. It ranges from tasks that need nothing from anyone to those in which several parties in conflict must be brought along together.
+
+What this dimension does not cover. This dimension concerns steering an interaction rather than composing its messages or understanding its parties. How well content must be expressed, in vocabulary, genre, register, structure and fit to audience, does not raise this demand. Inferring what others believe, intend or feel is understanding them rather than steering them, and raises this demand only insofar as what is inferred must shape what is said next. Establishing the state of the non-social environment is not communication and makes no demand here. Note, mastering one's own impulses during the exchange is not scored either, since it describes the solver rather than a demand the task makes. The stakes of the situation and the number of people addressed do not by themselves raise the demand.
+
+Level 0: None. The task requires no communication. No other party has to be told, asked or answered.
+Examples:
+* Prove that there are infinitely many prime numbers.
+* Transcribe a recorded lecture into text.
+* Find the cheapest combination of flights for a fixed itinerary.
+
+Level 1: Very low. The task requires communication, but nothing stands in the way. What it needs from the other party is given on request, or it needs nothing from them, as when a message is sent or a request is turned down.
+Examples:
+* Order a coffee and a sandwich at a café counter.
+* Ask a librarian which shelf holds a book you can name.
+* Turn down a library patron's request to take a reference-only atlas home, answering their objections with the rule.
+* Message a dental practice to move an appointment from Tuesday to Thursday.
+* Write an 1,100-word newspaper column arguing for a national carbon tax.
+
+Level 2: Low. The task requires a willing party to be guided. They are glad to give what the task needs, but it must be drawn out turn by turn, each question set by their last answer.
+Examples:
+* Take a patient's history in a clinic, where each answer determines which symptom to ask about next.
+* Interview a job candidate about a project on their CV, following up on what they actually say.
+* Work out over a support chat which of six broadband plans suits a customer who is unsure how they use the internet at home.
+
+Level 3: Intermediate. The task requires doubts to be overcome. The other party hesitates to give what the task needs, and each doubt they raise sets the next move. However, they are open to being persuaded.
+Examples:
+* Tell a colleague that the section they wrote for a shared report has to be rewritten before submission, when they are proud of it but will hear you out.
+* Tell a patient, as their doctor, that they have a serious illness, and bring them to accept a treatment they are at first reluctant to start, working through each concern as it is raised.
+* Settle a dispute between two flatmates over the cleaning rota, where each arrived wanting a different split and both will accept whatever they come to see as fair.
+
+Level 4: High. The task requires opposition to be overcome. The other party works against what the task needs from them, so what is said must answer their resistance as they push back.
+Examples:
+* Persuade a landlord to release you from a lease six months early, when they have no reason to agree and would rather keep collecting the rent.
+* Bring a customer who is shouting for a refund the policy does not allow to accept the store credit it does offer.
+* Talk a co-founder out of a launch date they have staked their reputation on and still believe in.
+* Agree a price with a market trader who opens far above what you will pay and gives ground only when you start to walk away.
+
+Level 5: Very high. The task requires several parties in conflict to be brought along together. What the task needs from each cannot all be had at once, so winning one costs another. Critically, parties whose needed positions are compatible belong below, however many there are.
+Examples:
+* Negotiate a hostage release in which the captor, the police commander pressing to storm the building, and the hostages' families each demand a different course, and each of them reads what is conceded to the others. The tactical plan for the operation is settled and not yours to make.
+* Chair the closing night of a treaty negotiation where three delegations have stated public red lines that cannot all be honoured.
+* As mediator, settle the custody arrangement in a divorce where both parents want the child to live with them and each expects the other to exploit any concession.

@@ -116,9 +116,56 @@ def msc_v3() -> str:
     return v2.replace(STAKES_OLD, STAKES_V3)
 
 
+# v4 (2026-10-17, Pablo's framework): demand = what stands in the way of getting what the task needs from the other
+# party; only what its success depends on counts; levels are kinds of obstacle. Built on v2 (its refund example; the
+# original "does not cover" paragraph), with a new intro, new level statements and one new Level 1 example.
+MSC_INTRO_V4 = (
+    "This rubric assesses the difficulty level of tasks requiring another party to be steered. Steering covers choosing "
+    "what to say so that another party comes to understand, accept or do what the task needs from them. A task needs "
+    "something from them only if its success depends on it, as the task states it or as it is judged. The level is set "
+    "by what stands in the way of getting it. It ranges from tasks that need nothing from anyone to those in which "
+    "several parties in conflict must be brought along together.")
+MSC_LEVELS_V4 = {
+    0: "Level 0: None. The task requires no communication. No other party has to be told, asked or answered.",
+    1: "Level 1: Very low. The task requires communication, but nothing stands in the way. What it needs from the "
+       "other party is given on request, or it needs nothing from them, as when a message is sent or a request is "
+       "turned down.",
+    2: "Level 2: Low. The task requires a willing party to be guided. They are glad to give what the task needs, but it "
+       "must be drawn out turn by turn, each question set by their last answer.",
+    3: "Level 3: Intermediate. The task requires doubts to be overcome. The other party hesitates to give what the task "
+       "needs, and each doubt they raise sets the next move. However, they are open to being persuaded.",
+    4: "Level 4: High. The task requires opposition to be overcome. The other party works against what the task needs "
+       "from them, so what is said must answer their resistance as they push back.",
+    5: "Level 5: Very high. The task requires several parties in conflict to be brought along together. What the task "
+       "needs from each cannot all be had at once, so winning one costs another. Critically, parties whose needed "
+       "positions are compatible belong below, however many there are.",
+}
+L1_ANCHOR = "* Ask a librarian which shelf holds a book you can name."
+L1_REFUSAL_V4 = "* Turn down a library patron's request to take a reference-only atlas home, answering their objections with the rule."
+
+
+def msc_v4() -> str:
+    lines = msc_v2().split("\n")
+    out, changed = [], 0
+    for i, line in enumerate(lines):
+        if i == 2:
+            out.append(MSC_INTRO_V4)
+            changed += 1
+        elif line.startswith("Level "):
+            out.append(MSC_LEVELS_V4[int(line[6])])
+            changed += 1
+        else:
+            out.append(line)
+            if line == L1_ANCHOR:
+                out.append(L1_REFUSAL_V4)
+                changed += 1
+    assert changed == 8, changed
+    return "\n".join(out)
+
+
 def main() -> None:
     for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm()), ("MSc_candidate_v2.txt", msc_v2()),
-                       ("MSc_candidate_v3.txt", msc_v3())):
+                       ("MSc_candidate_v3.txt", msc_v3()), ("MSc_candidate_v4.txt", msc_v4())):
         (HERE / name).write_text(body, encoding="utf-8")
         src = SRC / (name.split("_")[0] + ".txt")
         print(f"{name}: {len(body.split())} words (src {len(src.read_text().split())})")
