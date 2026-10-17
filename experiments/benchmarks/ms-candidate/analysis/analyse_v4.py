@@ -6,8 +6,10 @@
   M  amendment 3's corrected rule: on refusal pairs 1, 2, 3, 4, 8, B at 3 or less on at least 4 of 5 and A, B within one
      level on at least 4 of 5; pairs 5, 6, 7 (B expected at 4+) reported.
 
-    uv run python experiments/benchmarks/ms-candidate/analysis/analyse_v4.py
+    uv run python experiments/benchmarks/ms-candidate/analysis/analyse_v4.py [--version 5]
 """
+
+import argparse
 
 import importlib.util
 import json
@@ -41,12 +43,16 @@ def rule_m(med: dict) -> dict:
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--version", type=int, default=4)
+    ver = ap.parse_args().version
+    run, arm = f"mscand-v{ver}", f"candidate_v{ver}"
     items = an.r_items()
     items = items[items["rubric"] == "MSc"].copy()
     atlas = items[items["item_id"] == "P-MSc-L1-1"].assign(item_id="P-MSc-L1-atlas", text="")
     items_v4 = pd.concat([items, atlas], ignore_index=True)
     cur = meds(HERE / "labels/mscand-1/labels_long.csv", "current")
-    v4 = meds(HERE / "labels/mscand-v4/labels_long.csv", "candidate_v4")
+    v4 = meds(HERE / f"labels/{run}/labels_long.csv", arm)
     names = an.RUBRIC_CHECKS["MSc"]
     c_cur = reg.evaluate(items, reg.resolve(items, cur))
     c_v4 = reg.evaluate(items_v4, reg.resolve(items_v4, v4))
@@ -64,17 +70,17 @@ def main() -> None:
         "rerun_in_pass2": sorted({i for n in lost for i in c_v4[n]["failing"] + c_v4[n]["unlabelled"]}),
         "H": "sealed",
     }
-    f2 = HERE / "labels/mscand-v4-2/labels_long.csv"
+    f2 = HERE / f"labels/{run}-2/labels_long.csv"
     if lost and f2.exists():  # pass 2: both texts on the items behind a loss
-        v4_2 = {**v4, **meds(f2, "candidate_v4")}
+        v4_2 = {**v4, **meds(f2, arm)}
         c2 = reg.evaluate(items_v4, reg.resolve(items_v4, v4_2))
         out["R"]["confirmed"] = [n for n in lost if not c2[n]["holds"]]
-        out["pass2"] = {i: {"current": meds(f2, "current").get(i), "v4": meds(f2, "candidate_v4").get(i)}
+        out["pass2"] = {i: {"current": meds(f2, "current").get(i), "v4": meds(f2, arm).get(i)}
                         for i in out["rerun_in_pass2"]}
     out["R"]["verdict"] = ("holds" if not lost else "pending pass 2" if "confirmed" not in out["R"]
                            else "fails" if out["R"]["confirmed"] else "holds")
     (HERE / "results").mkdir(exist_ok=True)
-    (HERE / "results/results_v4.json").write_text(json.dumps(out, indent=2, default=str) + "\n")
+    (HERE / f"results/results_v{ver}.json").write_text(json.dumps(out, indent=2, default=str) + "\n")
     print("R verdict:", out["R"]["verdict"], "| pass 2:", out.get("pass2"))
     print("R lost:", lost or "none", "| fail both:", out["R"]["fail_both"], "| gained:", out["R"]["gained"])
     for a in ("current", "v4"):

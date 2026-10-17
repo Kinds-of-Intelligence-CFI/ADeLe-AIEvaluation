@@ -1,12 +1,15 @@
-"""Amendment 4: MSc_candidate_v4.txt judged on every MSc item of mscand-1 (R-MSc, M, H on MSc), run mscand-v4.
+"""Amendments 4 and 5: an MSc candidate (v4 by default, --version 5 for v5) judged on every MSc item of mscand-1
+(R-MSc, M, H on MSc), run mscand-v<version>.
 
 Candidate arm only; the current arm is mscand-1's (same judge, prompt and repeats, judged 2026-10-17). Items, prompts
 and the 4-gram rule as make_prompts.py, with v4's bullets and new lines in the check. Set P: v4's examples keep the
 ids of the current examples they match (the refund example keeps P-MSc-L4-2); the new Level 1 refusal example is
 P-MSc-L1-atlas.
 
-    uv run --extra annotate python experiments/benchmarks/ms-candidate/make_v4.py
+    uv run --extra annotate python experiments/benchmarks/ms-candidate/make_v4.py [--version 5]
 """
+
+import argparse
 
 import importlib.util
 import random
@@ -21,11 +24,12 @@ cp = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(cp)
 mp = cp.mp
 RUN = "mscand-v4"
+VERSION = 4
 ATLAS = "P-MSc-L1-atlas"
 
 
 def v4_text() -> str:
-    return (HERE / "MSc_candidate_v4.txt").read_text(encoding="utf-8").split("\n", 1)[1].strip()
+    return (HERE / f"MSc_candidate_v{VERSION}.txt").read_text(encoding="utf-8").split("\n", 1)[1].strip()
 
 
 def p_ids(cur: str, v4: str) -> dict[str, str]:
@@ -46,6 +50,11 @@ def p_ids(cur: str, v4: str) -> dict[str, str]:
 
 
 def main() -> None:
+    global RUN, VERSION
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--version", type=int, default=4)
+    VERSION = ap.parse_args().version
+    RUN = f"mscand-v{VERSION}"
     catalog = cp.load_active_catalog()
     cur, v4 = catalog["MSc"].content, v4_text()
     arms = cp.texts()
@@ -64,12 +73,12 @@ def main() -> None:
     for r in rows:
         text = ptext[r.item_id] if r.set == "R-P" else r.text
         p = mp.prompt_for(cat, SimpleNamespace(rubric="MSc", set=r.set.removeprefix("R-"), text=text))
-        cells.append({"item_id": r.item_id, "set": r.set, "arm": "candidate_v4", "rubric": "MSc",
+        cells.append({"item_id": r.item_id, "set": r.set, "arm": f"candidate_v{VERSION}", "rubric": "MSc",
                       "prompt_sha256": mp.sha256(p.encode("utf-8")), "prompt": p})
     p = mp.prompt_for(cat, SimpleNamespace(rubric="MSc", set="P", text=ptext[ATLAS]))
-    cells.append({"item_id": ATLAS, "set": "R-P", "arm": "candidate_v4", "rubric": "MSc",
+    cells.append({"item_id": ATLAS, "set": "R-P", "arm": f"candidate_v{VERSION}", "rubric": "MSc",
                   "prompt_sha256": mp.sha256(p.encode("utf-8")), "prompt": p})
-    rng = random.Random(cp.SEED + 4)
+    rng = random.Random(cp.SEED + VERSION)
     rng.shuffle(cells)
     taken = set()
     for f in cp.ROOT.glob("experiments/benchmarks/*/labels/*/prompts_index.csv"):
@@ -80,8 +89,8 @@ def main() -> None:
         c["file_id"] = i
     cells = [{"file_id": c["file_id"], **{k: v for k, v in c.items() if k != "file_id"}} for c in cells]
     cp.RUN = RUN
-    cp.write_run(cells, {"pass": 1, "candidate_file": "ms-candidate/MSc_candidate_v4.txt",
-                         "rubric_sha256": mp.sha256(v4.encode("utf-8")), "amendment": 4,
+    cp.write_run(cells, {"pass": 1, "candidate_file": f"ms-candidate/MSc_candidate_v{VERSION}.txt",
+                         "rubric_sha256": mp.sha256(v4.encode("utf-8")), "amendment": VERSION,
                          "current_arm": "mscand-1"})
     print(pd.DataFrame(cells).groupby("set").size().to_string())
 

@@ -163,9 +163,23 @@ def msc_v4() -> str:
     return "\n".join(out)
 
 
+# v5 (amendment 5, Pablo's curfew ruling): where a task is not graded, the purpose of the exchange decides what it needs
+# from the other party. One clause of v4's intro changes; nothing else.
+NEEDS_V4 = "A task needs something from them only if its success depends on it, as the task states it or as it is judged."
+NEEDS_V5 = ("A task needs something from them only if its success depends on it: as it is judged, where it is judged, "
+            "and otherwise as its purpose implies.")
+
+
+def msc_v5() -> str:
+    v4 = msc_v4()
+    assert v4.count(NEEDS_V4) == 1
+    return v4.replace(NEEDS_V4, NEEDS_V5)
+
+
 def main() -> None:
     for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm()), ("MSc_candidate_v2.txt", msc_v2()),
-                       ("MSc_candidate_v3.txt", msc_v3()), ("MSc_candidate_v4.txt", msc_v4())):
+                       ("MSc_candidate_v3.txt", msc_v3()), ("MSc_candidate_v4.txt", msc_v4()),
+                       ("MSc_candidate_v5.txt", msc_v5())):
         (HERE / name).write_text(body, encoding="utf-8")
         src = SRC / (name.split("_")[0] + ".txt")
         print(f"{name}: {len(body.split())} words (src {len(src.read_text().split())})")

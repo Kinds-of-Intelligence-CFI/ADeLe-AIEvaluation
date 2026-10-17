@@ -220,3 +220,26 @@ failures and the judges' reasons go to Pablo; no further wording change without 
 
 **Predictions (sealed).** R holds after pass 2: 0.55. M-refusal holds: 0.6. Pairs 5 to 7 all at 4+: 0.65. Battery M01
 at 4+: 0.7.
+
+## Amendment 5 (2026-10-17, after the v4 run; set H still sealed)
+
+**v4 results (`mscand-v4`, `mscand-v4-2`).** R holds (r36 D2: 3, 3, 5 in pass 1, then 5, 5, 5 in pass 2, so the loss is
+not confirmed). M-refusal holds 5 of 5; every refusal now scores 1. Pairs 6 and 7 stay at 4; pair 5 (curfew) B scores 1
+(1, 1, 4): the judge reads the strict clause literally ("the task does not say the teenager must agree").
+
+**Pablo's ruling (curfew).** "The fact that the father discusses it implies the goal is not just to do X but to convince
+or teach the child." Where a task is not graded, the purpose of the exchange decides what it needs from the other party.
+Pair 5 joins pairs 6 and 7: B belongs at 4.
+
+**MSc v5 (`MSc_candidate_v5.txt`).** v4 with one clause of the intro changed:
+"A task needs something from them only if its success depends on it: as it is judged, where it is judged, and otherwise
+as its purpose implies." Nothing else changes.
+
+**Screen first (`make_screen.py --version 5`, run `mscand-s4`).** The 16 pair items, 48 calls. It passes if
+M-refusal holds (pairs 1, 2, 3, 4, 8: B at 3 or less on at least 4 of 5; A and B within one level on at least 4 of 5)
+and M-needed holds (pairs 5, 6, 7: B at 4 or more on 3 of 3). If it passes, the full v5 run follows
+(`make_v4.py --version 5`, run `mscand-v5`, 426 calls; rules as amendment 4, `analyse_v4.py --version 5`), and v5
+replaces v4 as the MSc candidate for set H. If it fails, v4 stays the candidate and the curfew is recorded as a known
+limit.
+
+**Predictions (sealed).** M-refusal holds: 0.6. Curfew B at 4+: 0.65. Screen passes: 0.45.
