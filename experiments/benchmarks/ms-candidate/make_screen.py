@@ -19,12 +19,17 @@ _spec = importlib.util.spec_from_file_location("cand_prompts", HERE / "make_prom
 cp = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(cp)
 mp = cp.mp
-RUN = "mscand-s1"
+RUN = "mscand-s1"  # --version 3 writes mscand-s2
 
 
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--version", type=int, default=2)
+    ver = ap.parse_args().version
+    run = RUN if ver == 2 else f"mscand-s{ver - 1}"
     catalog = cp.load_active_catalog()
-    v2 = (HERE / "MSc_candidate_v2.txt").read_text(encoding="utf-8").split("\n", 1)[1].strip()
+    v2 = (HERE / f"MSc_candidate_v{ver}.txt").read_text(encoding="utf-8").split("\n", 1)[1].strip()
     cur = catalog["MSc"].content
     pairs = pd.read_csv(cp.L4 / "pairs.csv", dtype={"pair": str})
     cells = []
@@ -35,9 +40,9 @@ def main() -> None:
         assert not shared, f"{item} shares {shared} with v2"
         cat = {"MSc": SimpleNamespace(content=v2, full_name=catalog["MSc"].full_name)}
         p = mp.prompt_for(cat, SimpleNamespace(rubric="MSc", set="M", text=r.text))
-        cells.append({"item_id": item, "set": "M", "arm": "candidate_v2", "rubric": "MSc",
+        cells.append({"item_id": item, "set": "M", "arm": f"candidate_v{ver}", "rubric": "MSc",
                       "prompt_sha256": mp.sha256(p.encode("utf-8")), "prompt": p})
-    rng = random.Random(cp.SEED + 3)
+    rng = random.Random(cp.SEED + 3 + (ver - 2))
     rng.shuffle(cells)
     taken = set()
     for f in cp.ROOT.glob("experiments/benchmarks/*/labels/*/prompts_index.csv"):
@@ -47,9 +52,9 @@ def main() -> None:
     for c, i in zip(cells, mp.opaque_ids(len(cells), rng, taken)):
         c["file_id"] = i
     cells = [{"file_id": c["file_id"], **{k: v for k, v in c.items() if k != "file_id"}} for c in cells]
-    cp.RUN = RUN
-    cp.write_run(cells, {"pass": "screen", "candidate_file": "ms-candidate/MSc_candidate_v2.txt",
-                         "rubric_sha256": mp.sha256(v2.encode("utf-8")), "amendment": 2})
+    cp.RUN = run
+    cp.write_run(cells, {"pass": "screen", "candidate_file": f"ms-candidate/MSc_candidate_v{ver}.txt",
+                         "rubric_sha256": mp.sha256(v2.encode("utf-8")), "amendment": ver})
 
 
 if __name__ == "__main__":

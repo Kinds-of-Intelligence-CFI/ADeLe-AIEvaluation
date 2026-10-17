@@ -171,3 +171,28 @@ registered. If M holds, the full v2 run (R-MSc and set H on MSc, candidate arm o
 follows after Pablo has seen the v2 wording. If M fails, v2 is dropped and Pablo decides on the next wording.
 Caveat: the screen re-uses the eight pairs that showed the problem, so a pass is weaker evidence than a fresh test;
 the full run's R checks guard against side effects.
+
+## Amendment 3 (2026-10-17, after the v2 screen; set H still sealed)
+
+**v2 screen (`mscand-s1`): rule M fails.** B at 4 on 8 of 8 pairs.
+
+**Correction to rule M (my error in the original registration).** Rule M assumed the task needs nothing from the other
+party in every pair. Read against Pablo's ruling, three pairs do need something: pair 5 (the teenager must be home by
+eleven), pair 6 (the rep must drop the charge to place the order at the agreed price) and pair 7 (the builder must
+finish by Friday). Their B versions belong at 4 under the ruling. Five pairs are pure refusals, done once the policy
+answer is given: 1, 2, 3, 4, 8. Rule M is now:
+- **M-refusal:** on pairs 1, 2, 3, 4 and 8, B is at 3 or less on at least 4 of 5, and A and B are within one level on at
+  least 4 of 5.
+- **M-needed (reported):** on pairs 5, 6 and 7, B is at 4 or more.
+Applied to the screens already run, v1 and v2 fail M-refusal (B at 4 on 5 of 5).
+
+**What the judges do.** On the refusal pairs they read the refusal itself as something the customer must accept ("the
+agent has to get a passenger to accept something they are working against: no refund").
+
+**MSc v3 (`MSc_candidate_v3.txt`).** v2 plus one clause in the existing last sentence of the "does not cover" paragraph:
+"The stakes of the situation, the number of people addressed, and how hard someone who is refused keeps pushing do not
+by themselves raise the demand." No new marker; nothing else changes.
+
+**Screen (`make_screen.py --version 3`, run `mscand-s2`).** The 16 pair items under v3, 48 calls. If M-refusal holds, the
+full v3 run (R-MSc and H on MSc) follows after Pablo has seen the wording. If it fails, wording iteration stops and the
+question goes to Pablo. Caveat as in amendment 2: these pairs are not fresh.

@@ -103,8 +103,22 @@ def msc_v2() -> str:
     return v1.replace(MSC_LEVELS[4], MSC_L4_V2).replace(REFUND_NEW, REFUND_V2)
 
 
+# v3 (amendment 3): v2 plus one clause in the "does not cover" paragraph's last sentence, after v2 still placed pure
+# refusals with a persistent party at 4 (judges read refusing as needing the party's acceptance).
+STAKES_OLD = "The stakes of the situation and the number of people addressed do not by themselves raise the demand."
+STAKES_V3 = ("The stakes of the situation, the number of people addressed, and how hard someone who is refused keeps "
+             "pushing do not by themselves raise the demand.")
+
+
+def msc_v3() -> str:
+    v2 = msc_v2()
+    assert v2.count(STAKES_OLD) == 1
+    return v2.replace(STAKES_OLD, STAKES_V3)
+
+
 def main() -> None:
-    for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm()), ("MSc_candidate_v2.txt", msc_v2())):
+    for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm()), ("MSc_candidate_v2.txt", msc_v2()),
+                       ("MSc_candidate_v3.txt", msc_v3())):
         (HERE / name).write_text(body, encoding="utf-8")
         src = SRC / (name.split("_")[0] + ".txt")
         print(f"{name}: {len(body.split())} words (src {len(src.read_text().split())})")
