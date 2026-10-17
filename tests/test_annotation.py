@@ -5,7 +5,7 @@ Tests for the annotation module (prompts, parsing, backend detection).
 import json
 import pytest
 import numpy as np
-from adele.annotation.prompts import build_annotation_prompt, build_batch_request
+from adele.annotation.prompts import build_annotation_prompt, build_annotation_prompt_v2, build_batch_request
 from adele.annotation.parsing import (
     extract_demand_level,
     parse_batch_output,
@@ -460,3 +460,110 @@ class TestAnnotateOrchestration:
         with pytest.raises(ValueError, match="bad_backend"):
             annotate(data=data, demands=["AS"], model="x",
                      backend="bad_backend", output_dir=str(tmp_path))
+
+
+class TestParseBatchOutputEdgeCases:
+    def test_empty_output_file_yields_empty_frame_with_schema(self, tmp_path):
+        from adele.annotation.parsing import parse_batch_output
+
+        empty = tmp_path / "output_AS.jsonl"
+        empty.write_text("")
+        df = parse_batch_output(empty)
+        assert len(df) == 0
+        assert list(df.columns) == [
+            "custom_id", "demand", "level", "finish_reason", "response",
+        ]
+
+
+class TestResume:
+    def test_load_prior_results_keeps_valid_latest_and_retries_invalid(self, tmp_path):
+        import json
+        from adele.annotation.annotator import _load_prior_results
+
+        raw = tmp_path / "raw_responses.jsonl"
+        lines = [
+            {"custom_id": "a", "demand": "PLp", "level": 2, "valid": True, "response": "r1"},
+            {"custom_id": "a", "demand": "PLp", "level": 3, "valid": True, "response": "r2"},
+            {"custom_id": "a", "demand": "PLe", "level": None, "valid": False, "response": ""},
+            {"custom_id": "b", "demand": "PLp", "level": 1, "valid": True, "response": "r3"},
+        ]
+        raw.write_text("\n".join(json.dumps(l) for l in lines) + '\n{"torn')
+        prior, done = _load_prior_results(raw)
+        assert done == {("a", "PLp"), ("b", "PLp")}      # invalid pair NOT done -> retried
+        by = {(r["custom_id"], r["demand"]): r for r in prior}
+        assert by[("a", "PLp")]["level"] == 3            # latest valid wins
+        assert len(prior) == 2
+
+    def test_load_prior_results_missing_file(self, tmp_path):
+        from adele.annotation.annotator import _load_prior_results
+        prior, done = _load_prior_results(tmp_path / "nope.jsonl")
+        assert prior == [] and done == set()
+
+    def test_load_prior_results_only_reuses_same_model(self, tmp_path):
+        import json
+        from adele.annotation.annotator import _load_prior_results
+
+        raw = tmp_path / "raw_responses.jsonl"
+        lines = [
+            {"custom_id": "a", "demand": "PLp", "model": "judge/a", "level": 2, "valid": True},
+            {"custom_id": "b", "demand": "PLp", "model": "judge/b", "level": 4, "valid": True},
+            {"custom_id": "c", "demand": "PLp", "level": 1, "valid": True},  # no model recorded
+        ]
+        raw.write_text("\n".join(json.dumps(l) for l in lines) + "\n")
+        prior, done = _load_prior_results(raw, "judge/a")
+        assert done == {("a", "PLp")}                    # b is another judge's; c is unattributed
+        assert [r["level"] for r in prior] == [2]
+
+    def test_second_judge_in_same_dir_is_not_skipped(self, monkeypatch, tmp_path):
+        """Two judges sharing an output dir (the CLI default) each get their own labels."""
+        import pandas as pd
+
+        data = pd.DataFrame({"prompt": ["What is 2+2?"], "custom_id": ["q1"]})
+        calls = []
+
+        def mock_completion(**kwargs):
+            calls.append(kwargs["model"])
+            level = 2 if kwargs["model"] == "judge/a" else 4
+
+            class MockResponse:
+                class Choice:
+                    class Message:
+                        content = f"Reasoning...\n\nThe level is: {level}"
+                    message = Message()
+                choices = [Choice()]
+            return MockResponse()
+
+        monkeypatch.setattr("litellm.completion", mock_completion)
+        kw = dict(data=data, demands=["AS"], backend="direct",
+                  output_dir=str(tmp_path), format="wide")
+        first = annotate(model="judge/a", **kw)
+        second = annotate(model="judge/b", **kw)
+        again = annotate(model="judge/a", **kw)          # resume: nothing re-paid
+
+        assert first["AS"].tolist() == [2.0]
+        assert second["AS"].tolist() == [4.0]            # was 2.0: judge/a's label reused
+        assert again["AS"].tolist() == [2.0]
+        assert calls == ["judge/a", "judge/b"]
+
+
+class TestBuildAnnotationPromptV2:
+    def test_same_as_tested_variant(self):
+        import importlib.util
+        from pathlib import Path
+        path = Path(__file__).resolve().parents[1] / "experiments/benchmarks/natural-prompt/prompt.py"
+        spec = importlib.util.spec_from_file_location("natural_prompt", path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        assert build_annotation_prompt_v2("Planning", "R", "T") == mod.build_natural_prompt_b("Planning", "R", "T")
+
+    def test_contents_and_no_chain_of_thought_wording(self):
+        prompt = build_annotation_prompt_v2("Planning", "<levels>", "Do the thing.")
+        assert "<rubric>\n<levels>\n</rubric>" in prompt
+        assert "<task>\nDo the thing.\n</task>" in prompt
+        assert "CHAIN" not in prompt and "step by step" not in prompt
+        assert prompt.endswith("The level of Planning demanded by this task is: N")
+
+    def test_answer_parses(self):
+        answer = "Assessment: a short fix.\n\nThe level of Planning demanded by this task is: 2"
+        assert extract_demand_level(answer) == (2.0, True)
+

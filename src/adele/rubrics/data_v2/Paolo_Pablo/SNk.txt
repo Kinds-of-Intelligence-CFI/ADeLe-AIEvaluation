@@ -1,0 +1,43 @@
+# Kinesthetic processing and proprioception
+
+This rubric assesses the ability to process, integrate and coordinate motor signals to execute goal-directed whole-body movements through an environment. It involves proprioception (sense of body position), vestibular balance, real-time feedback integration, motor planning, and the dynamic adjustment of trajectories in response to environmental perturbations. Difficulty increases with spatial complexity and dimensionality, external perturbations, the speed of environmental change, the latency or absence of sensory feedback, the irreversibility or risk of errors, and time pressure.
+
+Level 0: None. The task does not require any kinesthetic processing or proprioception.
+Examples:
+* Playing chess with a physical board and pieces.
+* Solving maths problems.
+* Shuffling a deck of cards.
+
+Level 1: Very low. The task requires only limited kinesthetic processing in simple, static, unperturbed (e.g., 1- or 2-D) environments. The task is a single action, so no feedback is necessary; actions are stable and safe.
+Examples:
+* Climb one step.
+* Walk on flat, dry pavement without falling.
+* Touch one's nose with the right hand.
+
+Level 2: Basic. The task requires implementing and coordinating sequences of low-accuracy movements with accurate real-time feedback in a static or slowly changing environment, possibly involving dynamic balance, higher speeds or simple tool-assisted navigation.
+Examples:
+* Riding a bicycle on a quiet street.
+* Driving a car in good weather and traffic conditions.
+* Standing on one leg for a few seconds.
+* Navigating a crowded room without bumping into people.
+
+Level 3: Intermediate. The task requires chaining an accurate string of carefully timed fast movements with high precision in fairly static, unperturbed environments with accurate real-time feedback, and potentially under time pressure, adapting to moderate perturbations.
+Examples:
+* Social dancing (e.g., salsa basics) or ballet.
+* Speed bouldering.
+* Playing table tennis at an amateur level.
+* Driving a car under windy, wet or snowy conditions.
+
+Level 4: Advanced. The task is characterised by fast dynamic changes of the environment, potentially irreversible actions, and high movement accuracy in 3-D space. Accurate real-time sensor data is available.
+Examples:
+* Formula 1 racing.
+* Landing a plane under high-wind conditions.
+* Walking a tightrope under high wind.
+* Professional ballet (e.g., sustaining a pirouette sequence).
+
+Level 5: Very advanced. The task takes place in a dynamic environment with high precision requirements, but additionally the sensor data is poor or with high latency, demanding elite-level proprioceptive accuracy in chaotic conditions with extreme perturbations.
+Examples:
+* Cirque du Soleil-level acrobatics (e.g., tightrope walking in wind).
+* Unassisted plane landing with no radar data, under poor visibility and high wind.
+* Formula 1 racing in heavy rain.
+* Juggling balls while balancing on a unicycle.

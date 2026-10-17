@@ -1,0 +1,28 @@
+# relabel-v3 (PLp, long): re-judges only the PLp cells whose relabel-v2 label is within one level of the
+# changed example (PLp Levels 3-5: the synthesis bullet moved from Level 5 to 4). See experiments/benchmarks/relabel-v3.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v3-plp-long.toml
+name = "relabel-v3-plp-long"
+
+[tasks]
+benchmarks = ["programbench"]
+subset = "experiments/benchmarks/relabel-v3/subsets/PLp_long.csv"
+
+[rubrics]
+refs = ["v2/PLp"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low-chunked"
+judge_agent = "adele-judge-v2-low-chunked"
+model_alias = "opus"
+batch_size = 100
+chunk_lines = 200

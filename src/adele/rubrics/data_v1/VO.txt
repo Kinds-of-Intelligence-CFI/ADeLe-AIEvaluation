@@ -1,3 +1,5 @@
+# Volume
+
 This rubric defines a scale that evaluates the task purely based on its *volume*, i.e., the time a fully competent, experienced and motivated human would need to both read and complete the task in ideal conditions, not counting breaks or interruptions, regardless of the difficulty or cognitive demands of the task. The scale ranges from tasks requiring less than a second to those requiring more than 16 hours (1,000 minutes), focusing purely on volume of work rather than cognitive complexity or skill requirements. Time estimates assume the task performer has all necessary information, tools, and skills readily available, but works autonomously without the assistance of other humans or AI tools.
 
 Level 0: None. Volume: Negligible, requiring less than 1 second.

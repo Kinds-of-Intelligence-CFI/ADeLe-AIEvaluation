@@ -1,0 +1,30 @@
+# PLs relabel on ProgramBench's 13 long tasks (experiments/benchmarks/pls-relabel/subset_long.csv), whose
+# prompts are too long for one Read: same judge, reading in parts of 200 lines; the protocol check requires every prompt
+# line to come back. The other sets are in pls-relabel.toml.
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/pls-relabel-long.toml
+name = "pls-relabel-long"
+
+[tasks]
+benchmarks = ["programbench"]
+subset = "experiments/benchmarks/pls-relabel/subset_long.csv"
+
+[rubrics]
+refs = ["v2/PLs"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low-chunked"
+judge_agent = "adele-judge-v2-low-chunked"
+model_alias = "opus"
+batch_size = 50
+chunk_lines = 200

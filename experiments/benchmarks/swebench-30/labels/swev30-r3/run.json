@@ -1,0 +1,205 @@
+{
+  "run_id": "swev30-r3",
+  "created_at": "2026-09-26T09:43:30+00:00",
+  "repo_commit": "67e9af98496e708a57ae4a1c5ae2d53520b2e508",
+  "repo_dirty_tracked_files": [],
+  "benchmark": "swe-bench-verified",
+  "instances": {
+    "source": "princeton-nlp/SWE-bench_Verified (HF), split test",
+    "hf_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+    "task_text": "problem_statement only (adele.agentic.benchmarks loader), as in the pilots",
+    "frozen_file_sha256": "f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f"
+  },
+  "outcomes": {
+    "source": "github.com/SWE-bench/experiments evaluation/verified/*/results/results.json",
+    "commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "entries": 135,
+    "universe": "official 500 ids (adele results fetch-swebench --instance-ids)"
+  },
+  "sample": {
+    "file": "sample.csv",
+    "seed": 20260926,
+    "design": "10 per solve-rate tercile + 14 pilot anchors",
+    "suspect_rule": "leaderboard solve rate < 0.05"
+  },
+  "design": {
+    "n_new": 30,
+    "n_anchor": 14,
+    "anchor_dims": [
+      "PLp",
+      "PLe",
+      "PLs"
+    ],
+    "n_prompts": 792,
+    "calls_per_judge": 792,
+    "judges": {
+      "sonnet": "Claude Code subagent 'adele-judge' (tools: Read, Write; omitClaudeMd; effort max), model alias 'sonnet'",
+      "opus": "Claude Code subagent 'adele-judge' (tools: Read, Write; omitClaudeMd; effort max), model alias 'opus'"
+    }
+  },
+  "rubrics": {
+    "AS": {
+      "name": "Attention and Scan",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/AS.txt",
+      "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776"
+    },
+    "AT": {
+      "name": "Atypicality",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/AT.txt",
+      "sha256": "5862dd72f661fb6ea0e08b66bc7a877de1951a9285ee6fdf3defd8dfa8602479"
+    },
+    "CEc": {
+      "name": "Verbal Comprehension",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/CEc.txt",
+      "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e"
+    },
+    "CEe": {
+      "name": "Verbal Expression",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/CEe.txt",
+      "sha256": "9014ce7264f4fb04d2614822228b3e3cf8698b576bd97b34cbb1511978961798"
+    },
+    "CL": {
+      "name": "Conceptualisation, Learning and Abstraction",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/CL.txt",
+      "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372"
+    },
+    "KNa": {
+      "name": "Knowledge of Applied Sciences",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/KNa.txt",
+      "sha256": "de9eacb9605178dd11ce97ae1d2b03a72e1f134646bc63b941af57c319920f54"
+    },
+    "KNc": {
+      "name": "Customary Everyday Knowledge",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/KNc.txt",
+      "sha256": "2c729cdea7233b214ec09b9c69eefa84c0379786620b48e5ad6301dc01ba2e8d"
+    },
+    "KNf": {
+      "name": "Knowledge of Formal Sciences",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/KNf.txt",
+      "sha256": "3811485eb0e14ae8b5879d295a84c030d4fad209c5030b2d41d7bdce90449cc5"
+    },
+    "KNn": {
+      "name": "Knowledge of Natural Sciences",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/KNn.txt",
+      "sha256": "0f8541e4d857a3db8386e4ba6ef41a516766f96b30d6867df736a1e19d14c145"
+    },
+    "KNs": {
+      "name": "Knowledge of Social Sciences",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/KNs.txt",
+      "sha256": "ee7169f687297b3eca44d632b3c2f5d9f3f14dbb49dbd4355e5d9e36abbd23fb"
+    },
+    "MCr": {
+      "name": "Identifying Relevant Information",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/MCr.txt",
+      "sha256": "340c9f2f77b6b61290713bc0ab2c23ac42e42a3fd12293a63c3e2a204d0cf390"
+    },
+    "MCt": {
+      "name": "Critical Thinking Processes",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/MCt.txt",
+      "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6"
+    },
+    "MCu": {
+      "name": "Calibrating Knowns and Unknowns",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/MCu.txt",
+      "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9"
+    },
+    "MMe": {
+      "name": "Episodic memory",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Marko/MMe.txt",
+      "sha256": "b17047c75eba6995bc7d98376fefa5a61dbd1c5c08faacb56e5336f5a2c88e21"
+    },
+    "MMp": {
+      "name": "Long-term procedural memory",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Marko/MMp.txt",
+      "sha256": "c2ce8586405f093b5249e90c5048cc2d07143ccd1c05673bc7d51717c5ddc25b"
+    },
+    "MMs": {
+      "name": "Working and short-term memory",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Marko/MMs.txt",
+      "sha256": "0e7a57f913af321646e47bbc2dd5143aa6b571a477b46e616636e6d4e3f21673"
+    },
+    "MSc": {
+      "name": "Communication and social interaction",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+      "sha256": "9c38881d4c2100ae01fad77935d17f24b75322c4d47f34af1411e7d49933f6a8"
+    },
+    "MSm": {
+      "name": "Mind Modelling and Social Cognition",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+      "sha256": "b8c3ec15643aa7e9ca114f983446abd0d27373d2b0df3b4296dad12937c2aae9"
+    },
+    "PLe": {
+      "name": "Action control and execution",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+      "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b"
+    },
+    "PLp": {
+      "name": "Planning",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+      "sha256": "de98ab35d80c7984a9a95ce1534797c630acdd4319e919571372d1f200398a03"
+    },
+    "PLs": {
+      "name": "Simulating",
+      "family": "v2",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+      "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e"
+    },
+    "QLl": {
+      "name": "Logical Reasoning",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/QLl.txt",
+      "sha256": "113b0a0203409f5c83b3c3d09345c0b71252e23098ef0de280ef6ae488bc89f2"
+    },
+    "QLq": {
+      "name": "Quantitative Reasoning",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/QLq.txt",
+      "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244"
+    },
+    "SNs": {
+      "name": "Spatio-physical Reasoning",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/SNs.txt",
+      "sha256": "e74180e3a2d77d28cfbf9e296b470df41cc763495f116b501a4bcf31b83d75d2"
+    },
+    "VO": {
+      "name": "Volume",
+      "family": "v1",
+      "file": "src/adele/rubrics/data_v1/VO.txt",
+      "sha256": "57e128551c7ef9fb8a3bbe944751ae5507d08c041a51569a93206efc1b2d4698"
+    }
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt",
+    "builder_file_sha256": "0670d8bbd7927561dbf66db43ec12fd275f8e3fa4e5274a0d2b19319bb7593a3",
+    "note": "shared agentic-v2 prompt for all 25 rubrics, incl. the 'demand is a property of the task; when in doubt assign the lower' sentence (not on main)"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/swebench-30/adele-judge.md",
+    "sha256": "fbd2dded132307508c5750f1914fd69893fa1a82563497ce05c79c019503060f"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "sampling": "harness defaults; temperature and snapshot cannot be pinned for subagents",
+  "unguessability": "UG = 100 for every task (open-ended); computed, not judged"
+}

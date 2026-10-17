@@ -1,0 +1,7 @@
+# Files reviewed as safe to share spans with the task-text corpus (data/instances). Canaries and the ZeroBench and HAL
+# corpora are still checked for these files. Add a line only after a human review; give the reason.
+path	reviewed	reason
+LICENSE	2026-10-08	MIT licence text, which also appears in task repositories
+experiments/benchmarks/cooperbench-data/fetch_tasks.py	2026-10-08	the public CooperBench harness templates every task text wraps; the loader that rebuilds the instances
+experiments/benchmarks/eqbench4-data/fetch_tasks.py	2026-10-08	the public EQ-Bench 4 prompt templates (BSD-3 + Commons Clause); the loader that rebuilds the instances
+experiments/benchmarks/gamearena-data/NOTES.md	2026-10-08	public Kaggle Game Arena rules quoted in the data notes

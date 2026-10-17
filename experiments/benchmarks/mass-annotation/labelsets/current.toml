@@ -1,0 +1,20 @@
+# The current (released) labels: relabel-v2 everywhere, and relabel-v3 where it re-judged a cell (PLp at 3-5 after the
+# synthesis example moved to Level 4, d6cc9ca; MSm at 4-5 on the social sets). The merge is one-sided: only cells at
+# 3-5 were re-judged (relabel-v3/RESULTS.md), so PLp and MSm come from two rubric texts. Each label names its run, and
+# its rubric_sha256 names the text. Change this file, not code, to change what "current" means.
+name = "current"
+description = "Released v2 labels: relabel-v2 (examples review of 2026-10-04, d4ec2ec) with relabel-v3 overrides."
+model = "claude-opus-5-5"
+
+[[layers]]
+name = "relabel-v3"
+runs = ["relabel-v3-plp", "relabel-v3-plp-long", "relabel-v3-plp-eqbench4", "relabel-v3-plp-cooperbench",
+        "relabel-v3-plp-gamearena", "relabel-v3-msm-eqbench4", "relabel-v3-msm-gamearena"]
+
+[[layers]]
+name = "relabel-v2"
+runs = ["relabel-v2", "relabel-v2-long"]
+
+[[layers]]
+name = "relabel-v2-social"
+runs = ["relabel-v2-eqbench4", "relabel-v2-cooperbench", "relabel-v2-gamearena"]

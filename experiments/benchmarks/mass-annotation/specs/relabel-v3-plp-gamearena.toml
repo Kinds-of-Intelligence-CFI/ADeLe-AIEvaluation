@@ -1,0 +1,27 @@
+# relabel-v3 (PLp, gamearena): re-judges only the PLp cells whose relabel-v2 label is within one level of the
+# changed example (PLp Levels 3-5: the synthesis bullet moved from Level 5 to 4). See experiments/benchmarks/relabel-v3.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v3-plp-gamearena.toml
+name = "relabel-v3-plp-gamearena"
+
+[tasks]
+benchmarks = ["gamearena"]
+subset = "experiments/benchmarks/relabel-v3/subsets/PLp_gamearena.csv"
+
+[rubrics]
+refs = ["v2/PLp"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 100

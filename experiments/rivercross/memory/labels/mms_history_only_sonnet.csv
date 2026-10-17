@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2__history_only,3,Three sequential moves with 3 items require updating and integrating state across steps
+chain-3-boat-2#s1__history_only,2,Single move with 3 items requires only brief simple state retention
+chain-3-boat-3#s0__history_only,2,Two moves with 3 items require small update
+chain-3-boat-4#s0__history_only,2,Two moves with 3 items require small update
+chain-4-boat-2#s1__history_only,2,Single move with 4 items requires brief simple retention
+chain-4-boat-3#s1__history_only,2,Single move with 4 items requires brief simple retention
+chain-4-boat-4#s0__history_only,2,Two moves with 4 items require modest update
+chain-5-boat-2#s2__history_only,4,Three moves with 5 items require substantial updating and integration
+chain-5-boat-3#s1__history_only,3,Single move but larger set of 5 items increases retention load
+chain-5-boat-4#s1__history_only,3,Single move but larger set of 5 items increases retention load
+chain-6-boat-3#s1__history_only,3,Single move with 6 items increases size of retained state
+chain-6-boat-4#s1__history_only,3,Single move with 6 items increases size of retained state
+star-3-boat-1#s2__history_only,3,Three sequential moves with 3 items require updating across steps
+star-3-boat-2#s1__history_only,2,Single move with 3 items requires brief simple retention
+star-3-boat-3#s0__history_only,2,Two moves with 3 items require small update
+star-3-boat-4#s0__history_only,2,Two moves with 3 items require small update
+star-4-boat-2#s2__history_only,2,Two moves with 4 items require modest update
+star-4-boat-3#s1__history_only,2,Single move with 4 items requires brief simple retention
+star-4-boat-4#s0__history_only,2,Two moves with 4 items require modest update
+star-5-boat-2#s2__history_only,4,Three moves with 5 items require substantial updating and integration
+star-5-boat-3#s1__history_only,4,Three moves with 5 items require substantial updating and integration
+star-5-boat-4#s1__history_only,3,Single move but larger set of 5 items increases retention load
+star-6-boat-2#s2__history_only,4,Four moves with 6 items require extensive state updating
+star-6-boat-3#s2__history_only,3,Two moves with 6 items require moderate updating of larger set
+star-6-boat-4#s1__history_only,4,Three moves with 6 items require substantial updating and integration
+cycle-3-boat-2#s1__history_only,2,Single move with 3 items requires brief simple retention
+cycle-3-boat-3#s0__history_only,2,Two moves with 3 items require small update
+cycle-3-boat-4#s0__history_only,2,Two moves with 3 items require small update
+cycle-4-boat-2#s1__history_only,2,Single move with 4 items requires brief simple retention
+cycle-4-boat-3#s1__history_only,2,Single move with 4 items requires brief simple retention
+cycle-4-boat-4#s0__history_only,2,Two moves with 4 items require modest update
+cycle-5-boat-3#s1__history_only,3,Single move but larger set of 5 items increases retention load
+cycle-5-boat-4#s1__history_only,3,Single move but larger set of 5 items increases retention load
+cycle-6-boat-3#s1__history_only,3,Single move with 6 items increases size of retained state
+cycle-6-boat-4#s1__history_only,3,Single move with 6 items increases size of retained state
+complete-3-boat-2#s1__history_only,2,Single move with 3 items requires brief simple retention
+complete-3-boat-3#s0__history_only,2,Two moves with 3 items require small update
+complete-3-boat-4#s0__history_only,2,Two moves with 3 items require small update
+complete-4-boat-3#s1__history_only,2,Single move with 4 items requires brief simple retention
+complete-4-boat-4#s0__history_only,2,Two moves with 4 items require modest update
+complete-5-boat-4#s1__history_only,3,Single move but larger set of 5 items increases retention load
+missionaries-cannibals-3#s2__history_only,4,Four moves tracking six entities' bank counts require extensive updating
+missionaries-cannibals-4#s2__history_only,4,Four moves tracking eight entities' bank counts require extensive updating

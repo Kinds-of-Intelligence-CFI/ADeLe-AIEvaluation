@@ -1,0 +1,809 @@
+{
+  "primary": "{dim}_vs_solve_rate_0.9 on clean",
+  "n": {
+    "clean": 130,
+    "clean_unflagged": 65,
+    "clean_no_docs_damaged": 74,
+    "clean_no_knowledge_gated": 117
+  },
+  "unlabelled": {
+    "PLp": [
+      "agourlay__zip-password-finder.704700d",
+      "filosottile__age.706dfc1"
+    ],
+    "PLe": [
+      "agourlay__zip-password-finder.704700d"
+    ],
+    "PLs": [
+      "agourlay__zip-password-finder.704700d"
+    ]
+  },
+  "levels": {
+    "clean": {
+      "PLp": {
+        "2": 24,
+        "3": 104
+      },
+      "PLe": {
+        "3": 116,
+        "4": 13
+      },
+      "PLs": {
+        "1": 114,
+        "2": 15
+      }
+    },
+    "clean_unflagged": {
+      "PLp": {
+        "2": 8,
+        "3": 56
+      },
+      "PLe": {
+        "3": 62,
+        "4": 2
+      },
+      "PLs": {
+        "1": 56,
+        "2": 8
+      }
+    },
+    "clean_no_docs_damaged": {
+      "PLp": {
+        "2": 10,
+        "3": 62
+      },
+      "PLe": {
+        "3": 67,
+        "4": 6
+      },
+      "PLs": {
+        "1": 63,
+        "2": 10
+      }
+    },
+    "clean_no_knowledge_gated": {
+      "PLp": {
+        "2": 22,
+        "3": 94
+      },
+      "PLe": {
+        "3": 108,
+        "4": 8
+      },
+      "PLs": {
+        "1": 104,
+        "2": 12
+      }
+    }
+  },
+  "spearman": {
+    "clean": {
+      "PLp_vs_solve_rate_0.9": {
+        "n": 128,
+        "n_off_mode": 24,
+        "rho": -0.479,
+        "p_two_sided": 1.04e-08,
+        "ci95": [
+          -0.609,
+          -0.325
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.75": {
+        "n": 128,
+        "n_off_mode": 24,
+        "rho": -0.423,
+        "p_two_sided": 6.37e-07,
+        "ci95": [
+          -0.561,
+          -0.263
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.5": {
+        "n": 128,
+        "n_off_mode": 24,
+        "rho": -0.397,
+        "p_two_sided": 3.45e-06,
+        "ci95": [
+          -0.539,
+          -0.234
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_mean_score": {
+        "n": 128,
+        "n_off_mode": 24,
+        "rho": -0.483,
+        "p_two_sided": 7.94e-09,
+        "ci95": [
+          -0.612,
+          -0.329
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_difficulty": {
+        "n": 120,
+        "n_off_mode": 23,
+        "rho": 0.194,
+        "p_two_sided": 0.0334,
+        "ci95": [
+          0.014,
+          0.363
+        ],
+        "predicted": "positive",
+        "supported": true
+      },
+      "PLe_vs_solve_rate_0.9": {
+        "n": 129,
+        "n_off_mode": 13,
+        "rho": -0.09,
+        "p_two_sided": 0.311,
+        "ci95": [
+          -0.259,
+          0.085
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.75": {
+        "n": 129,
+        "n_off_mode": 13,
+        "rho": -0.144,
+        "p_two_sided": 0.103,
+        "ci95": [
+          -0.31,
+          0.03
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.5": {
+        "n": 129,
+        "n_off_mode": 13,
+        "rho": -0.19,
+        "p_two_sided": 0.0312,
+        "ci95": [
+          -0.353,
+          -0.016
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLe_vs_mean_score": {
+        "n": 129,
+        "n_off_mode": 13,
+        "rho": -0.186,
+        "p_two_sided": 0.0345,
+        "ci95": [
+          -0.349,
+          -0.012
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLe_vs_difficulty": {
+        "n": 120,
+        "n_off_mode": 10,
+        "rho": 0.106,
+        "p_two_sided": 0.247,
+        "ci95": [
+          -0.075,
+          0.281
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.9": {
+        "n": 129,
+        "n_off_mode": 15,
+        "rho": -0.143,
+        "p_two_sided": 0.105,
+        "ci95": [
+          -0.309,
+          0.031
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.75": {
+        "n": 129,
+        "n_off_mode": 15,
+        "rho": -0.16,
+        "p_two_sided": 0.0696,
+        "ci95": [
+          -0.325,
+          0.014
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.5": {
+        "n": 129,
+        "n_off_mode": 15,
+        "rho": -0.125,
+        "p_two_sided": 0.157,
+        "ci95": [
+          -0.293,
+          0.049
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_mean_score": {
+        "n": 129,
+        "n_off_mode": 15,
+        "rho": -0.165,
+        "p_two_sided": 0.0612,
+        "ci95": [
+          -0.33,
+          0.009
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_difficulty": {
+        "n": 120,
+        "n_off_mode": 14,
+        "rho": 0.143,
+        "p_two_sided": 0.12,
+        "ci95": [
+          -0.039,
+          0.315
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    },
+    "clean_unflagged": {
+      "PLp_vs_solve_rate_0.9": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.298,
+        "p_two_sided": 0.0166,
+        "ci95": [
+          -0.511,
+          -0.051
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.75": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.263,
+        "p_two_sided": 0.036,
+        "ci95": [
+          -0.481,
+          -0.014
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.5": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.373,
+        "p_two_sided": 0.00243,
+        "ci95": [
+          -0.572,
+          -0.131
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_mean_score": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.343,
+        "p_two_sided": 0.00557,
+        "ci95": [
+          -0.548,
+          -0.099
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_difficulty": {
+        "n": 60,
+        "n_off_mode": 8,
+        "rho": 0.149,
+        "p_two_sided": 0.257,
+        "ci95": [
+          -0.111,
+          0.389
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.9": {
+        "n": 64,
+        "n_off_mode": 2,
+        "rho": 0.12,
+        "p_two_sided": 0.344,
+        "ci95": [
+          -0.13,
+          0.356
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.75": {
+        "n": 64,
+        "n_off_mode": 2,
+        "rho": 0.005,
+        "p_two_sided": 0.97,
+        "ci95": [
+          -0.241,
+          0.25
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.5": {
+        "n": 64,
+        "n_off_mode": 2,
+        "rho": -0.066,
+        "p_two_sided": 0.605,
+        "ci95": [
+          -0.307,
+          0.183
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_mean_score": {
+        "n": 64,
+        "n_off_mode": 2,
+        "rho": 0.034,
+        "p_two_sided": 0.79,
+        "ci95": [
+          -0.214,
+          0.278
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_difficulty": {
+        "n": 60,
+        "n_off_mode": 2,
+        "rho": -0.19,
+        "p_two_sided": 0.145,
+        "ci95": [
+          -0.426,
+          0.069
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.9": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.257,
+        "p_two_sided": 0.0403,
+        "ci95": [
+          -0.476,
+          -0.008
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLs_vs_solve_rate_0.75": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.304,
+        "p_two_sided": 0.0147,
+        "ci95": [
+          -0.515,
+          -0.057
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLs_vs_solve_rate_0.5": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.134,
+        "p_two_sided": 0.293,
+        "ci95": [
+          -0.368,
+          0.117
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_mean_score": {
+        "n": 64,
+        "n_off_mode": 8,
+        "rho": -0.243,
+        "p_two_sided": 0.053,
+        "ci95": [
+          -0.464,
+          0.007
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_difficulty": {
+        "n": 60,
+        "n_off_mode": 8,
+        "rho": 0.105,
+        "p_two_sided": 0.425,
+        "ci95": [
+          -0.154,
+          0.35
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    },
+    "clean_no_docs_damaged": {
+      "PLp_vs_solve_rate_0.9": {
+        "n": 72,
+        "n_off_mode": 10,
+        "rho": -0.385,
+        "p_two_sided": 0.000829,
+        "ci95": [
+          -0.572,
+          -0.16
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.75": {
+        "n": 72,
+        "n_off_mode": 10,
+        "rho": -0.34,
+        "p_two_sided": 0.00351,
+        "ci95": [
+          -0.534,
+          -0.111
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.5": {
+        "n": 72,
+        "n_off_mode": 10,
+        "rho": -0.413,
+        "p_two_sided": 0.000306,
+        "ci95": [
+          -0.595,
+          -0.192
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_mean_score": {
+        "n": 72,
+        "n_off_mode": 10,
+        "rho": -0.41,
+        "p_two_sided": 0.000352,
+        "ci95": [
+          -0.592,
+          -0.187
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_difficulty": {
+        "n": 65,
+        "n_off_mode": 9,
+        "rho": 0.184,
+        "p_two_sided": 0.141,
+        "ci95": [
+          -0.064,
+          0.412
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.9": {
+        "n": 73,
+        "n_off_mode": 6,
+        "rho": -0.023,
+        "p_two_sided": 0.849,
+        "ci95": [
+          -0.252,
+          0.208
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.75": {
+        "n": 73,
+        "n_off_mode": 6,
+        "rho": -0.104,
+        "p_two_sided": 0.38,
+        "ci95": [
+          -0.327,
+          0.129
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.5": {
+        "n": 73,
+        "n_off_mode": 6,
+        "rho": -0.166,
+        "p_two_sided": 0.159,
+        "ci95": [
+          -0.383,
+          0.068
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_mean_score": {
+        "n": 73,
+        "n_off_mode": 6,
+        "rho": -0.116,
+        "p_two_sided": 0.328,
+        "ci95": [
+          -0.338,
+          0.118
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_difficulty": {
+        "n": 65,
+        "n_off_mode": 3,
+        "rho": -0.101,
+        "p_two_sided": 0.422,
+        "ci95": [
+          -0.337,
+          0.147
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.9": {
+        "n": 73,
+        "n_off_mode": 10,
+        "rho": -0.213,
+        "p_two_sided": 0.0704,
+        "ci95": [
+          -0.425,
+          0.021
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.75": {
+        "n": 73,
+        "n_off_mode": 10,
+        "rho": -0.216,
+        "p_two_sided": 0.0666,
+        "ci95": [
+          -0.427,
+          0.018
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.5": {
+        "n": 73,
+        "n_off_mode": 10,
+        "rho": -0.11,
+        "p_two_sided": 0.354,
+        "ci95": [
+          -0.332,
+          0.124
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_mean_score": {
+        "n": 73,
+        "n_off_mode": 10,
+        "rho": -0.193,
+        "p_two_sided": 0.102,
+        "ci95": [
+          -0.407,
+          0.041
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_difficulty": {
+        "n": 65,
+        "n_off_mode": 9,
+        "rho": 0.138,
+        "p_two_sided": 0.272,
+        "ci95": [
+          -0.11,
+          0.371
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    },
+    "clean_no_knowledge_gated": {
+      "PLp_vs_solve_rate_0.9": {
+        "n": 116,
+        "n_off_mode": 22,
+        "rho": -0.449,
+        "p_two_sided": 4.38e-07,
+        "ci95": [
+          -0.589,
+          -0.282
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.75": {
+        "n": 116,
+        "n_off_mode": 22,
+        "rho": -0.393,
+        "p_two_sided": 1.3e-05,
+        "ci95": [
+          -0.542,
+          -0.22
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_0.5": {
+        "n": 116,
+        "n_off_mode": 22,
+        "rho": -0.374,
+        "p_two_sided": 3.52e-05,
+        "ci95": [
+          -0.525,
+          -0.2
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_mean_score": {
+        "n": 116,
+        "n_off_mode": 22,
+        "rho": -0.457,
+        "p_two_sided": 2.5e-07,
+        "ci95": [
+          -0.596,
+          -0.291
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_difficulty": {
+        "n": 111,
+        "n_off_mode": 22,
+        "rho": 0.206,
+        "p_two_sided": 0.0303,
+        "ci95": [
+          0.018,
+          0.379
+        ],
+        "predicted": "positive",
+        "supported": true
+      },
+      "PLe_vs_solve_rate_0.9": {
+        "n": 116,
+        "n_off_mode": 8,
+        "rho": -0.023,
+        "p_two_sided": 0.81,
+        "ci95": [
+          -0.204,
+          0.16
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.75": {
+        "n": 116,
+        "n_off_mode": 8,
+        "rho": -0.061,
+        "p_two_sided": 0.515,
+        "ci95": [
+          -0.241,
+          0.123
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_0.5": {
+        "n": 116,
+        "n_off_mode": 8,
+        "rho": -0.116,
+        "p_two_sided": 0.214,
+        "ci95": [
+          -0.293,
+          0.068
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_mean_score": {
+        "n": 116,
+        "n_off_mode": 8,
+        "rho": -0.099,
+        "p_two_sided": 0.29,
+        "ci95": [
+          -0.277,
+          0.085
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_difficulty": {
+        "n": 111,
+        "n_off_mode": 8,
+        "rho": 0.016,
+        "p_two_sided": 0.87,
+        "ci95": [
+          -0.171,
+          0.202
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.9": {
+        "n": 116,
+        "n_off_mode": 12,
+        "rho": -0.136,
+        "p_two_sided": 0.146,
+        "ci95": [
+          -0.311,
+          0.048
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.75": {
+        "n": 116,
+        "n_off_mode": 12,
+        "rho": -0.174,
+        "p_two_sided": 0.0611,
+        "ci95": [
+          -0.347,
+          0.01
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_0.5": {
+        "n": 116,
+        "n_off_mode": 12,
+        "rho": -0.117,
+        "p_two_sided": 0.212,
+        "ci95": [
+          -0.293,
+          0.068
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_mean_score": {
+        "n": 116,
+        "n_off_mode": 12,
+        "rho": -0.164,
+        "p_two_sided": 0.0778,
+        "ci95": [
+          -0.338,
+          0.02
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_difficulty": {
+        "n": 111,
+        "n_off_mode": 12,
+        "rho": 0.126,
+        "p_two_sided": 0.189,
+        "ci95": [
+          -0.063,
+          0.305
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    }
+  }
+}

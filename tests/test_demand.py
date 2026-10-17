@@ -5,7 +5,8 @@ Tests for the demand profiling module.
 import pytest
 import numpy as np
 import pandas as pd
-import matplotlib
+
+matplotlib = pytest.importorskip("matplotlib", reason="needs the [analysis] extra")
 matplotlib.use("Agg")
 
 from adele.analysis.demand import compute_demand_profile, plot_demand_profile

@@ -1,0 +1,103 @@
+{
+  "run": "noreason-sr-eqbench4",
+  "created_at": "2026-10-07T00:08:05+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/noreason-sr-eqbench4.toml",
+  "git": {
+    "commit": "a5d03f003d1b578d3c9faa4aeef858c33d17f75f",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/noreason-s-cooperbench/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-eqbench4/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-gamearena/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-long/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-ms-rest/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-pl/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-pl/ledger.csv",
+      " M experiments/benchmarks/noreason/results/arms.json"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "a5ebf11c0ae4772cc459eec30f086b16cff24c160b2d021c8edb975b82699ba6",
+      "content": "# noreason amendment 4b: twin of noreason-s-eqbench4.toml with the v2 prompt (written reasoning, as in the released labels); nothing else changed.\n# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-eqbench4 with the v2-noreason builder.\n# relabel-v2-eqbench4 (relabel after the 2026-10-04 examples review; experiments/benchmarks/relabel-v2): the planning (PLp text O, PLe, PLs) and social (MSm, MSc) rubrics on all 120 EQ-Bench 4 persona\n# scenarios. Prompt = what the tested model sees at the start, then the persona simulator's hidden brief (as for tau2).\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-eqbench4.toml\nname = \"noreason-sr-eqbench4\"\n\n[tasks]\nbenchmarks = [\"eqbench4\"]\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-sonnet-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"sonnet\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "eqbench4": {
+          "file": "instances_eqbench4.parquet",
+          "file_sha256": "2d690e9279eda9be3e1db73ca8087fb2f71fb163c7add1a634715e5243b672cd",
+          "frame_sha256": "d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4",
+          "n_selected": 120
+        }
+      },
+      "subset": null
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "dd130fcea382645ea3c1b294a2264a4aa1e8f605b197a1193ba8c156bb3c8ce2",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "sonnet-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "sonnet",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 600,
+      "sha256": "86598c822d8fbcd6a5f8ff377a8a5c4beba9c6d0ab7f3dfaac47fc9bd35703ea"
+    }
+  }
+}

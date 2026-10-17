@@ -1,0 +1,16 @@
+cell_id,benchmark,instance_id,rubric_ref,generation,code,repeat,prompt_sha256
+v2PLp-950f3f6ae4717938,frontierswe-v2,cranelift-codegen-opt,v2/PLp,v2,PLp,1,752af867b8a6b339018f41e7aa3ebdf11a2431eabbff6dee7f4b9d107f8e8a6f
+v2PLp-1eb3c6042280873b,frontierswe-v2,ffmpeg-libswscale-optimization,v2/PLp,v2,PLp,1,4df5908bad532c666e6153778bff56dc14517915f6bf08e9b98e957125f762bf
+v2PLp-a9e9d4c861d28b8e,frontierswe-v2,fitness-recap-video-in-remotion,v2/PLp,v2,PLp,1,71ae3c70a6d6ebec87bf42e4a0cc7020c38bd55991cdb1dc1ebb10251c0fa43e
+v2PLp-54806988fb578150,frontierswe-v2,libexpat-optimization,v2/PLp,v2,PLp,1,87297b3fd10659e3cc8771bd9d6aaa6976b20eff3aef0edb44efe2bb88d12fd0
+v2PLp-a5b45e110a0ea3fa,frontierswe-v2,medium-range-weather-forecast,v2/PLp,v2,PLp,1,79034669fba4941a6a26509b0dc73b793883f100f6f8ee9bcceeea5a8c6fb555
+v2PLp-9986de7f30402fcf,frontierswe-v2,meg-speech-decoding,v2/PLp,v2,PLp,1,558d8c869b0aae197d9bc8ceaa52fbd09a352d3bcceca2b4ff5e344e8d20bcde
+v2PLp-4174981208cca85b,frontierswe-v2,msms-denovo-generation,v2/PLp,v2,PLp,1,642d8a40c6b6f8e4d81388ca132a423237a7f2b9a8ddf33d6966c9f11478c5f0
+v2PLp-6ad7fe26bf7db631,frontierswe-v2,multi-gpu-efficient-finetuning,v2/PLp,v2,PLp,1,a18e76e82b44c86ad6b7b6856cca1517ff1284f21952fa3964ef6db19cef9a39
+v2PLp-6c414afebb9d7ae1,frontierswe-v2,notebook-compression,v2/PLp,v2,PLp,1,975c2b66fa5d3feff96182057b33c440fe9c717c2e55fca8e7f6936bc5546c2f
+v2PLp-6a95642993b26991,frontierswe-v2,optimizer-design,v2/PLp,v2,PLp,1,23a642c9a8066ba4bf5177c5417fba8e627a5db966e9d1ffb78b541e6e4736e2
+v2PLp-78041aa468d14ec9,frontierswe-v2,postgresql-18-on-sqlite,v2/PLp,v2,PLp,1,3369240d94c1606a04d6632d7671d1e92cfeee4f08e371341ab060ede6bd40b4
+v2PLp-dea0e34037caabb4,frontierswe-v2,sglang-inference-system-optimization,v2/PLp,v2,PLp,1,748fe40504dfc88bd8ad097615c9fd7ca0bdfbb4d529cfc281fe02add6303a01
+v2PLp-3669e1308aa11b27,frontierswe-v2,snooker-prediction,v2/PLp,v2,PLp,1,3a5df993a5dbbdd7568ecf66a41118a1d4d2f1c17b4bde3f02154bf7adcb039b
+v2PLp-8b1be774217d9e26,frontierswe-v2,synthetic-music-diarization,v2/PLp,v2,PLp,1,3228b07c14ff7550ce7ee0784f2784ed6f33b97cb9f1b08b092619f527988247
+v2PLp-4120fb8506cd304a,frontierswe-v2,vision-only-torcs-racing-bot,v2/PLp,v2,PLp,1,b6af5ecdac104354773284968dddc9daf93dac05b75e17ecb0f107f84913ab38

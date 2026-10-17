@@ -1,0 +1,88 @@
+{
+  "run": "programbench-pl",
+  "created_at": "2026-10-01T18:18:46+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/programbench-pl.toml",
+  "git": {
+    "commit": "838da3fc8f64f3e417c3ac8e4be915fcd99f1992",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "1046b5cc9d97899cf00d6486e39fb88dbfba12d1903ec5f7fb33f1848b8e387c",
+      "content": "# The clean ProgramBench tasks (experiments/benchmarks/programbench-pl, keep == True: some run reaches score 0.9) whose\n# judge prompts fit one Read call (subset_single.csv, from programbench-pl/route.py; the rest: programbench-pl-long)\n# on the adopted v2 planning family (PLp = text O, PLe, PLs). Prompt = agent instruction + workspace file listing +\n# documentation files in full, no truncation (programbench-data/NOTES.md).\n# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting).\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/programbench-pl.toml\nname = \"programbench-pl\"\n\n[tasks]\nbenchmarks = [\"programbench\"]\nsubset = \"experiments/benchmarks/programbench-pl/subset_single.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 50\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 117
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/programbench-pl/subset_single.csv",
+        "sha256": "345355adef65159ab9a2d9aa2265b4a11fb4294c1c34588290b941b195df8657",
+        "n_ids": 117
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "322674efb257df4fbb1c93415cd903d554c62b510623846148d635309ad4194f",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e",
+        "full_name": "Simulating"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 50
+      }
+    },
+    "cells": {
+      "n": 351,
+      "sha256": "6484f3a4fd8e236239ed2b2d1503d757cde983f6c7f7acccc6e6d9e9dbeba953"
+    }
+  }
+}

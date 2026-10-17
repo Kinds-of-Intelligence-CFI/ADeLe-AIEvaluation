@@ -1,3 +1,5 @@
+# Conceptualisation, Learning and Abstraction
+
 This rubric assesses the difficulty level of tasks requiring conceptualization, learning, and abstraction during the completion of tasks. It evaluates the extent to which a task necessitates the formation of new concepts, engagement in inductive and analogical reasoning, mapping of relationships between domains, and the generation of abstractions from concrete examples. Higher levels on this scale represent increasing demands for real-time learning, pattern identification, hypothesis formation, analogical transfer, and the contrast of knowledge across diverse domains.
 
 Level 0: None. The task requires no conceptualization, learning, abstraction, inductive or analogical reasoning. It involves applying well-established procedures or recalling known information, even for complex tasks. No new abstractions, analogies, or learning occur during task execution.

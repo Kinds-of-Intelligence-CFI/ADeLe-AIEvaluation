@@ -1,0 +1,867 @@
+{
+  "verdict": "fail",
+  "checks_pass1": {
+    "P-MSm placement": {
+      "kind": "new",
+      "rule": "every MSm example within 1 of its level, examples stripped (no stored result for these examples)",
+      "items": 19,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "P-MSc placement": {
+      "kind": "lab",
+      "rule": "every MSc example within 1 of its level, examples stripped (r34: all within 1, older text)",
+      "items": 20,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "F-on-MSc no leak": {
+      "kind": "lab",
+      "rule": "no PL example at Levels 3-5 scores 3+ on MSc (r34)",
+      "items": 33,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "F-on-MSm no leak": {
+      "kind": "new",
+      "rule": "no PL example at Levels 3-5 scores 3+ on MSm",
+      "items": 33,
+      "holds": false,
+      "failing": [
+        "F-PLs-L5-2-on-MSm",
+        "F-PLs-L5-3-on-MSm"
+      ],
+      "unlabelled": []
+    },
+    "L r30 MSc minimal pairs": {
+      "kind": "lab",
+      "rule": "r30 H7: at least 3 contrasts as MSc's text predicts (stakes S3-S4: no change; resistance R1-R2: a rise; parties A1-A2: no change); S1-S2 is void, so all three must hold; r33 found 4 of 4",
+      "items": 6,
+      "holds": true,
+      "failing": [],
+      "unlabelled": [],
+      "void_contrasts": [
+        "L-r30-S1->L-r30-S2"
+      ],
+      "contrasts": {
+        "L-r30-S3->L-r30-S4": {
+          "low": 3,
+          "high": 3,
+          "predicted": "same",
+          "as_predicted": true
+        },
+        "L-r30-R1->L-r30-R2": {
+          "low": 1,
+          "high": 4,
+          "predicted": "rise",
+          "as_predicted": true
+        },
+        "L-r30-A1->L-r30-A2": {
+          "low": 1,
+          "high": 1,
+          "predicted": "same",
+          "as_predicted": true
+        }
+      }
+    },
+    "L r36 MSc pair": {
+      "kind": "lab",
+      "rule": "D1 and D2 within 1 of r36's MSc medians (4, 5); rebuilt items",
+      "items": 2,
+      "holds": false,
+      "failing": [
+        "L-r36-D2"
+      ],
+      "unlabelled": []
+    },
+    "L r60 stated-stance carve": {
+      "kind": "lab",
+      "rule": "r60 rule 2: B1 <= 1 and B2 >= 3",
+      "items": 2,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "L r60 anti-count guard": {
+      "kind": "lab",
+      "rule": "r60 rule 3: B3 <= 3",
+      "items": 1,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "L r60/r69 Level 4/5 boundary": {
+      "kind": "lab",
+      "rule": "single nesting stays at 4 (B4 = 4), a three-way interlock reaches 5 (M5 = 5)",
+      "items": 2,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "L r75 MSc ladder": {
+      "kind": "lab",
+      "rule": "r75 rule 1: all nine medians equal to r61's",
+      "items": 9,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "L r70 human labels": {
+      "kind": "lab",
+      "rule": "all seven within 1 of Pablo's label (r70: 6 of 7 exact, 7 of 7 within 1)",
+      "items": 7,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "B MSc high": {
+      "kind": "lab",
+      "rule": "pure and co-occurring MSc items at 4 or more (battery-v1 H1, H2)",
+      "items": 7,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "B MSc mid-band": {
+      "kind": "lab",
+      "rule": "MSc mid-band items within 1 of their registered level (battery-v1 H4)",
+      "items": 2,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "B MSc anchors": {
+      "kind": "lab",
+      "rule": "anchors at 1 or less (battery-v1 H3)",
+      "items": 4,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "B MSm low": {
+      "kind": "new",
+      "rule": "anchors and pure PL items at 1 or less on MSm",
+      "items": 16,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    },
+    "B MSm on pure MSc items": {
+      "kind": "new",
+      "rule": "M01 and M04 (stated stance with reasons) at 2 or less, M02 at 3 or less, M03 (reasons unstated) within 1 of 3 (battery_targets.csv)",
+      "items": 4,
+      "holds": true,
+      "failing": [],
+      "unlabelled": []
+    }
+  },
+  "failed_pass1": [
+    "F-on-MSm no leak",
+    "L r36 MSc pair"
+  ],
+  "rerun_in_pass2": [
+    "F-PLs-L5-2-on-MSm",
+    "F-PLs-L5-3-on-MSm",
+    "L-r36-D2"
+  ],
+  "pass2_medians": {
+    "F-PLs-L5-2-on-MSm": {
+      "pass1": 4,
+      "pass2": 4
+    },
+    "F-PLs-L5-3-on-MSm": {
+      "pass1": 4,
+      "pass2": 4
+    },
+    "L-r36-D2": {
+      "pass1": 3,
+      "pass2": 3
+    }
+  },
+  "confirmed_failures": [
+    {
+      "check": "F-on-MSm no leak",
+      "kind": "new"
+    },
+    {
+      "check": "L r36 MSc pair",
+      "kind": "lab"
+    }
+  ],
+  "rates_pass1": {
+    "B-MSc": {
+      "items": 13,
+      "labelled": 13,
+      "exact": 12,
+      "within_1": 13
+    },
+    "B-MSm": {
+      "items": 20,
+      "labelled": 20,
+      "exact": 15,
+      "within_1": 20
+    },
+    "F-MSc": {
+      "items": 33,
+      "labelled": 33,
+      "exact": 0,
+      "within_1": 3,
+      "leaks_3plus": []
+    },
+    "F-MSm": {
+      "items": 33,
+      "labelled": 33,
+      "exact": 3,
+      "within_1": 4,
+      "leaks_3plus": [
+        "F-PLs-L5-2-on-MSm",
+        "F-PLs-L5-3-on-MSm"
+      ]
+    },
+    "L-MSc": {
+      "items": 17,
+      "labelled": 17,
+      "exact": 15,
+      "within_1": 16
+    },
+    "L-MSm": {
+      "items": 5,
+      "labelled": 5,
+      "exact": 4,
+      "within_1": 5
+    },
+    "P-MSc": {
+      "items": 20,
+      "labelled": 20,
+      "exact": 19,
+      "within_1": 20
+    },
+    "P-MSm": {
+      "items": 19,
+      "labelled": 19,
+      "exact": 15,
+      "within_1": 19
+    }
+  },
+  "human_labelled": {
+    "L-r70-C1": {
+      "pablo": 0,
+      "judges_now": 0,
+      "judges_r61": 0
+    },
+    "L-r70-C2": {
+      "pablo": 1,
+      "judges_now": 1,
+      "judges_r61": 1
+    },
+    "L-r70-C3": {
+      "pablo": 2,
+      "judges_now": 2,
+      "judges_r61": 2
+    },
+    "L-r70-C4": {
+      "pablo": 3,
+      "judges_now": 3,
+      "judges_r61": 3
+    },
+    "L-r70-C5": {
+      "pablo": 4,
+      "judges_now": 4,
+      "judges_r61": 4
+    },
+    "L-r70-C6": {
+      "pablo": 5,
+      "judges_now": 5,
+      "judges_r61": 5
+    },
+    "L-r70-C7": {
+      "pablo": 2,
+      "judges_now": 1,
+      "judges_r61": 1
+    },
+    "exact": 6,
+    "within_1": 7
+  },
+  "S_cross_loading": [
+    {
+      "item_id": "S-MSm-L3-1-on-MSc",
+      "own": "MSm L3",
+      "judged_on": "MSc",
+      "median": 1,
+      "labels": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "item_id": "S-MSm-L3-2-on-MSc",
+      "own": "MSm L3",
+      "judged_on": "MSc",
+      "median": 0,
+      "labels": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "item_id": "S-MSm-L3-3-on-MSc",
+      "own": "MSm L3",
+      "judged_on": "MSc",
+      "median": 0,
+      "labels": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "item_id": "S-MSm-L4-1-on-MSc",
+      "own": "MSm L4",
+      "judged_on": "MSc",
+      "median": 0,
+      "labels": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "item_id": "S-MSm-L4-2-on-MSc",
+      "own": "MSm L4",
+      "judged_on": "MSc",
+      "median": 0,
+      "labels": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "item_id": "S-MSm-L4-3-on-MSc",
+      "own": "MSm L4",
+      "judged_on": "MSc",
+      "median": 1,
+      "labels": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "item_id": "S-MSm-L5-1-on-MSc",
+      "own": "MSm L5",
+      "judged_on": "MSc",
+      "median": 0,
+      "labels": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "item_id": "S-MSm-L5-2-on-MSc",
+      "own": "MSm L5",
+      "judged_on": "MSc",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSm-L5-3-on-MSc",
+      "own": "MSm L5",
+      "judged_on": "MSc",
+      "median": 5,
+      "labels": [
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "item_id": "S-MSm-L5-4-on-MSc",
+      "own": "MSm L5",
+      "judged_on": "MSc",
+      "median": 0,
+      "labels": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "item_id": "S-MSc-L3-1-on-MSm",
+      "own": "MSc L3",
+      "judged_on": "MSm",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L3-2-on-MSm",
+      "own": "MSc L3",
+      "judged_on": "MSm",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L3-3-on-MSm",
+      "own": "MSc L3",
+      "judged_on": "MSm",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L3-4-on-MSm",
+      "own": "MSc L3",
+      "judged_on": "MSm",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L4-1-on-MSm",
+      "own": "MSc L4",
+      "judged_on": "MSm",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L4-2-on-MSm",
+      "own": "MSc L4",
+      "judged_on": "MSm",
+      "median": 2,
+      "labels": [
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L4-3-on-MSm",
+      "own": "MSc L4",
+      "judged_on": "MSm",
+      "median": 3,
+      "labels": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "item_id": "S-MSc-L5-1-on-MSm",
+      "own": "MSc L5",
+      "judged_on": "MSm",
+      "median": 5,
+      "labels": [
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "item_id": "S-MSc-L5-2-on-MSm",
+      "own": "MSc L5",
+      "judged_on": "MSm",
+      "median": 4,
+      "labels": [
+        4,
+        4,
+        5
+      ]
+    },
+    {
+      "item_id": "S-MSc-L5-3-on-MSm",
+      "own": "MSc L5",
+      "judged_on": "MSm",
+      "median": 4,
+      "labels": [
+        4,
+        4,
+        4
+      ]
+    }
+  ],
+  "stored_lab_medians_vs_now": {
+    "L-r36-D1": {
+      "stored": 4,
+      "now": 3
+    },
+    "L-r36-D2": {
+      "stored": 5,
+      "now": 3
+    },
+    "L-r60-B1": {
+      "stored": 0,
+      "now": 1
+    },
+    "L-r60-B2": {
+      "stored": 5,
+      "now": 4
+    },
+    "L-r60-B3": {
+      "stored": 0,
+      "now": 0
+    },
+    "L-r60-B4": {
+      "stored": 4,
+      "now": 4
+    },
+    "L-r69-M5": {
+      "stored": 5,
+      "now": 5
+    },
+    "L-r75-R1": {
+      "stored": 0,
+      "now": 0
+    },
+    "L-r75-R2": {
+      "stored": 1,
+      "now": 1
+    },
+    "L-r75-R3": {
+      "stored": 2,
+      "now": 2
+    },
+    "L-r75-R4": {
+      "stored": 3,
+      "now": 3
+    },
+    "L-r75-R5": {
+      "stored": 4,
+      "now": 4
+    },
+    "L-r75-R6": {
+      "stored": 5,
+      "now": 5
+    },
+    "L-r75-R7": {
+      "stored": 1,
+      "now": 1
+    },
+    "L-r75-R8": {
+      "stored": 1,
+      "now": 1
+    },
+    "L-r75-R9": {
+      "stored": 0,
+      "now": 0
+    },
+    "L-r30-S3": {
+      "stored": 3,
+      "now": 3
+    },
+    "L-r30-S4": {
+      "stored": 3,
+      "now": 3
+    },
+    "L-r30-R1": {
+      "stored": 1,
+      "now": 1
+    },
+    "L-r30-R2": {
+      "stored": 4,
+      "now": 4
+    },
+    "L-r30-A1": {
+      "stored": 1,
+      "now": 1
+    },
+    "L-r30-A2": {
+      "stored": 1,
+      "now": 1
+    },
+    "B-M01-on-MSc": {
+      "stored": 4,
+      "now": 4
+    },
+    "B-M02-on-MSc": {
+      "stored": 5,
+      "now": 5
+    },
+    "B-M03-on-MSc": {
+      "stored": 4,
+      "now": 4
+    },
+    "B-M04-on-MSc": {
+      "stored": 4,
+      "now": 4
+    },
+    "B-X03-on-MSc": {
+      "stored": 5,
+      "now": 5
+    },
+    "B-X05-on-MSc": {
+      "stored": 4,
+      "now": 4
+    },
+    "B-X06R-on-MSc": {
+      "stored": 5,
+      "now": 5
+    },
+    "B-D04-on-MSc": {
+      "stored": 2,
+      "now": 2
+    },
+    "B-D07-on-MSc": {
+      "stored": 2,
+      "now": 1
+    },
+    "B-L01-on-MSc": {
+      "stored": 0,
+      "now": 0
+    },
+    "B-L02-on-MSc": {
+      "stored": 0,
+      "now": 0
+    },
+    "B-L03-on-MSc": {
+      "stored": 0,
+      "now": 0
+    },
+    "B-L04-on-MSc": {
+      "stored": 0,
+      "now": 0
+    },
+    "exact": 30,
+    "n": 35
+  },
+  "repeat_agreement_all_three_equal": 0.95,
+  "labels": {
+    "answers": 540,
+    "counted": 540,
+    "set_aside_not_opus_or_unparsed": 0
+  },
+  "level_counts": {
+    "MSc": {
+      "0": 46,
+      "1": 18,
+      "2": 6,
+      "3": 10,
+      "4": 11,
+      "5": 9
+    },
+    "MSm": {
+      "0": 45,
+      "1": 6,
+      "2": 10,
+      "3": 10,
+      "4": 11,
+      "5": 5
+    }
+  },
+  "medians_pass1": {
+    "B-D04-on-MSc": 2,
+    "B-D07-on-MSc": 1,
+    "B-E01-on-MSm": 0,
+    "B-E02-on-MSm": 0,
+    "B-E03-on-MSm": 0,
+    "B-E04-on-MSm": 0,
+    "B-L01-on-MSc": 0,
+    "B-L01-on-MSm": 0,
+    "B-L02-on-MSc": 0,
+    "B-L02-on-MSm": 0,
+    "B-L03-on-MSc": 0,
+    "B-L03-on-MSm": 0,
+    "B-L04-on-MSc": 0,
+    "B-L04-on-MSm": 0,
+    "B-M01-on-MSc": 4,
+    "B-M01-on-MSm": 2,
+    "B-M02-on-MSc": 5,
+    "B-M02-on-MSm": 3,
+    "B-M03-on-MSc": 4,
+    "B-M03-on-MSm": 2,
+    "B-M04-on-MSc": 4,
+    "B-M04-on-MSm": 2,
+    "B-P01-on-MSm": 0,
+    "B-P02-on-MSm": 0,
+    "B-P03-on-MSm": 0,
+    "B-P04-on-MSm": 0,
+    "B-S01-on-MSm": 1,
+    "B-S02-on-MSm": 1,
+    "B-S03-on-MSm": 0,
+    "B-S04-on-MSm": 0,
+    "B-X03-on-MSc": 5,
+    "B-X05-on-MSc": 4,
+    "B-X06R-on-MSc": 5,
+    "F-PLe-L3-1-on-MSc": 1,
+    "F-PLe-L3-1-on-MSm": 2,
+    "F-PLe-L3-2-on-MSc": 0,
+    "F-PLe-L3-2-on-MSm": 0,
+    "F-PLe-L3-3-on-MSc": 1,
+    "F-PLe-L3-3-on-MSm": 2,
+    "F-PLe-L4-1-on-MSc": 0,
+    "F-PLe-L4-1-on-MSm": 0,
+    "F-PLe-L4-2-on-MSc": 0,
+    "F-PLe-L4-2-on-MSm": 0,
+    "F-PLe-L4-3-on-MSc": 0,
+    "F-PLe-L4-3-on-MSm": 0,
+    "F-PLe-L5-1-on-MSc": 0,
+    "F-PLe-L5-1-on-MSm": 0,
+    "F-PLe-L5-2-on-MSc": 0,
+    "F-PLe-L5-2-on-MSm": 0,
+    "F-PLe-L5-3-on-MSc": 0,
+    "F-PLe-L5-3-on-MSm": 0,
+    "F-PLp-L3-1-on-MSc": 0,
+    "F-PLp-L3-1-on-MSm": 0,
+    "F-PLp-L3-2-on-MSc": 0,
+    "F-PLp-L3-2-on-MSm": 0,
+    "F-PLp-L3-3-on-MSc": 0,
+    "F-PLp-L3-3-on-MSm": 0,
+    "F-PLp-L3-4-on-MSc": 0,
+    "F-PLp-L3-4-on-MSm": 0,
+    "F-PLp-L4-1-on-MSc": 0,
+    "F-PLp-L4-1-on-MSm": 1,
+    "F-PLp-L4-2-on-MSc": 0,
+    "F-PLp-L4-2-on-MSm": 0,
+    "F-PLp-L4-3-on-MSc": 0,
+    "F-PLp-L4-3-on-MSm": 0,
+    "F-PLp-L4-4-on-MSc": 0,
+    "F-PLp-L4-4-on-MSm": 0,
+    "F-PLp-L5-1-on-MSc": 0,
+    "F-PLp-L5-1-on-MSm": 0,
+    "F-PLp-L5-2-on-MSc": 0,
+    "F-PLp-L5-2-on-MSm": 0,
+    "F-PLp-L5-3-on-MSc": 1,
+    "F-PLp-L5-3-on-MSm": 0,
+    "F-PLs-L3-1-on-MSc": 0,
+    "F-PLs-L3-1-on-MSm": 0,
+    "F-PLs-L3-2-on-MSc": 0,
+    "F-PLs-L3-2-on-MSm": 0,
+    "F-PLs-L3-3-on-MSc": 0,
+    "F-PLs-L3-3-on-MSm": 0,
+    "F-PLs-L3-4-on-MSc": 0,
+    "F-PLs-L3-4-on-MSm": 0,
+    "F-PLs-L4-1-on-MSc": 0,
+    "F-PLs-L4-1-on-MSm": 0,
+    "F-PLs-L4-2-on-MSc": 0,
+    "F-PLs-L4-2-on-MSm": 0,
+    "F-PLs-L4-3-on-MSc": 0,
+    "F-PLs-L4-3-on-MSm": 0,
+    "F-PLs-L4-4-on-MSc": 0,
+    "F-PLs-L4-4-on-MSm": 0,
+    "F-PLs-L4-5-on-MSc": 0,
+    "F-PLs-L4-5-on-MSm": 0,
+    "F-PLs-L5-1-on-MSc": 0,
+    "F-PLs-L5-1-on-MSm": 0,
+    "F-PLs-L5-2-on-MSc": 0,
+    "F-PLs-L5-2-on-MSm": 4,
+    "F-PLs-L5-3-on-MSc": 0,
+    "F-PLs-L5-3-on-MSm": 4,
+    "F-PLs-L5-4-on-MSc": 0,
+    "F-PLs-L5-4-on-MSm": 2,
+    "L-r30-A1": 1,
+    "L-r30-A2": 1,
+    "L-r30-R1": 1,
+    "L-r30-R2": 4,
+    "L-r30-S3": 3,
+    "L-r30-S4": 3,
+    "L-r36-D1": 3,
+    "L-r36-D2": 3,
+    "L-r60-B1": 1,
+    "L-r60-B2": 4,
+    "L-r60-B3": 0,
+    "L-r60-B4": 4,
+    "L-r69-M5": 5,
+    "L-r70-C1": 0,
+    "L-r70-C2": 1,
+    "L-r70-C3": 2,
+    "L-r70-C4": 3,
+    "L-r70-C5": 4,
+    "L-r70-C6": 5,
+    "L-r70-C7": 1,
+    "L-r75-R1": 0,
+    "L-r75-R2": 1,
+    "L-r75-R3": 2,
+    "L-r75-R4": 3,
+    "L-r75-R5": 4,
+    "L-r75-R6": 5,
+    "L-r75-R7": 1,
+    "L-r75-R8": 1,
+    "L-r75-R9": 0,
+    "P-MSc-L0-1": 0,
+    "P-MSc-L0-2": 0,
+    "P-MSc-L0-3": 0,
+    "P-MSc-L1-1": 1,
+    "P-MSc-L1-2": 1,
+    "P-MSc-L1-3": 1,
+    "P-MSc-L1-4": 1,
+    "P-MSc-L2-1": 2,
+    "P-MSc-L2-2": 2,
+    "P-MSc-L2-3": 2,
+    "P-MSc-L3-1": 3,
+    "P-MSc-L3-2": 3,
+    "P-MSc-L3-3": 3,
+    "P-MSc-L3-4": 4,
+    "P-MSc-L4-1": 4,
+    "P-MSc-L4-2": 4,
+    "P-MSc-L4-3": 4,
+    "P-MSc-L5-1": 5,
+    "P-MSc-L5-2": 5,
+    "P-MSc-L5-3": 5,
+    "P-MSm-L0-1": 0,
+    "P-MSm-L0-2": 0,
+    "P-MSm-L0-3": 0,
+    "P-MSm-L1-1": 1,
+    "P-MSm-L1-2": 2,
+    "P-MSm-L1-3": 1,
+    "P-MSm-L2-1": 3,
+    "P-MSm-L2-2": 2,
+    "P-MSm-L2-3": 2,
+    "P-MSm-L3-1": 3,
+    "P-MSm-L3-2": 4,
+    "P-MSm-L3-3": 3,
+    "P-MSm-L4-1": 4,
+    "P-MSm-L4-2": 4,
+    "P-MSm-L4-3": 4,
+    "P-MSm-L5-1": 5,
+    "P-MSm-L5-2": 4,
+    "P-MSm-L5-3": 5,
+    "P-MSm-L5-4": 5,
+    "S-MSc-L3-1-on-MSm": 3,
+    "S-MSc-L3-2-on-MSm": 3,
+    "S-MSc-L3-3-on-MSm": 3,
+    "S-MSc-L3-4-on-MSm": 3,
+    "S-MSc-L4-1-on-MSm": 3,
+    "S-MSc-L4-2-on-MSm": 2,
+    "S-MSc-L4-3-on-MSm": 3,
+    "S-MSc-L5-1-on-MSm": 5,
+    "S-MSc-L5-2-on-MSm": 4,
+    "S-MSc-L5-3-on-MSm": 4,
+    "S-MSm-L3-1-on-MSc": 1,
+    "S-MSm-L3-2-on-MSc": 0,
+    "S-MSm-L3-3-on-MSc": 0,
+    "S-MSm-L4-1-on-MSc": 0,
+    "S-MSm-L4-2-on-MSc": 0,
+    "S-MSm-L4-3-on-MSc": 1,
+    "S-MSm-L5-1-on-MSc": 0,
+    "S-MSm-L5-2-on-MSc": 3,
+    "S-MSm-L5-3-on-MSc": 5,
+    "S-MSm-L5-4-on-MSc": 0
+  }
+}

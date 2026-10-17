@@ -34,6 +34,10 @@ def extract_demand_level(response: str) -> tuple[float, bool]:
     if not response or not response.strip():
         return float("nan"), False
 
+    # A bare digit is the whole answer (the v2-noreason prompt asks for exactly that).
+    if re.fullmatch(r"\s*[0-5]\s*", response):
+        return float(response.strip()), True
+
     # First try: look for the structured conclusion pattern
     # "the level of *X* demanded by the given TASK INSTANCE is: SCORE"
     # Match the full number (\d+) so a stray multi-digit value like "is: 12"
@@ -185,7 +189,12 @@ def parse_batch_output(
                 "response": response_text,
             })
 
-    df = pd.DataFrame(results)
+    # Explicit columns so an empty (or all-malformed) output file yields an
+    # empty frame with the expected schema instead of a KeyError downstream.
+    df = pd.DataFrame(
+        results,
+        columns=["custom_id", "demand", "level", "finish_reason", "response"],
+    )
     n_success = df["level"].notna().sum()
     logger.info(
         "Parsed %d annotations from %s (%d successful, %d failed)",

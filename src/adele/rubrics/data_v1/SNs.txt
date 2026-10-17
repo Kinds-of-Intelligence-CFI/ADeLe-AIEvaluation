@@ -1,3 +1,5 @@
+# Spatio-physical Reasoning
+
 This rubric assesses the complexity of spatial and physical understanding and reasoning required by a task. More specifically, the level represents the extent to which the task requires understanding spatial relationships between objects and predicting physical interactions, ranging from simple recognition of static relationships to complex mental manipulations involving multiple objects, transformations, and physical predictions across different dimensions. Notably, this should focus on the minimum way of solving the task since many tasks do not actually require spatio-physical reasoning to be successfully solved, even though spatio-physical reasoning may help.
 
 Level 0: None. Tasks at this level do not require spatial reasoning or physical intuition. There is no need to manipulate or visualize spatial relationships.

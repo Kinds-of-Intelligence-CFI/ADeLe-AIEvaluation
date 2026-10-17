@@ -7,10 +7,41 @@ Usage:
     adele profile <annotations_csv> [options]
     adele rubrics list
     adele benchmarks list
+    adele mass plan|pin|status|next|run|collect|check ...
 """
 
+import importlib
 import logging
 import click
+
+
+def _ensure_parent(path):
+    """Create the parent directory of an output path (data/ layout defaults)."""
+    import os
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    return path
+
+
+def _require(extra: str, *modules: str) -> None:
+    """Fail with an actionable message when an optional extra is missing.
+
+    Each workflow command imports heavy dependencies lazily; without this
+    guard a missing extra surfaces as a raw ``ModuleNotFoundError`` traceback.
+    """
+    missing = []
+    for m in modules:
+        try:
+            importlib.import_module(m)
+        except ImportError:
+            missing.append(m)
+    if missing:
+        raise click.ClickException(
+            f"this command needs the '{extra}' extra "
+            f"(missing: {', '.join(missing)}). Install it with:\n"
+            f'  pip install "adele[{extra}]"'
+        )
 
 
 @click.group()
@@ -22,6 +53,12 @@ def main(verbose):
     A unified toolkit for demand-level annotation, model evaluation,
     and ability profiling of AI systems.
     """
+    # Load API keys and tokens from a local .env, matching Inspect's own
+    # behaviour, so `adele annotate/evaluate` and `inspect eval` see the
+    # same environment.
+    from dotenv import load_dotenv
+    load_dotenv()
+
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -90,15 +127,18 @@ def benchmarks_list():
 @click.option("--max-samples", "-n", type=int, default=None, help="Max samples to annotate.")
 @click.option("--max-completion-tokens", type=int, default=1000, help="Max tokens per annotation response.")
 @click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
-@click.option("--output-dir", "-o", default="./adele_annotations", help="Output directory.")
+@click.option("--output-dir", "-o", default="data/annotations", help="Output directory.")
 @click.option("--format", "fmt", type=click.Choice(["wide", "long"]), default="wide")
+@click.option("--rubrics", "rubrics_folder", default=None,
+              help="Folder of custom rubric .txt files (default: bundled v1.0 rubrics).")
 def annotate(dataset, demands, model, backend, split, max_samples,
-             max_completion_tokens, hf_token, output_dir, fmt):
+             max_completion_tokens, hf_token, output_dir, fmt, rubrics_folder):
     """Annotate demand levels for a benchmark dataset.
 
     DATASET can be a registered benchmark name (e.g. 'mmlu-pro') or a
     HuggingFace dataset ID (e.g. 'cais/mmlu').
     """
+    _require("annotate", "litellm", "openai", "tenacity", "datasets")
     from adele.data import load_benchmark
     from adele.annotation import annotate as run_annotate
 
@@ -121,6 +161,7 @@ def annotate(dataset, demands, model, backend, split, max_samples,
     result = run_annotate(
         data=data,
         demands=demand_list,
+        rubrics_folder=rubrics_folder,
         model=model,
         backend=backend,
         max_completion_tokens=max_completion_tokens,
@@ -128,6 +169,378 @@ def annotate(dataset, demands, model, backend, split, max_samples,
         format=fmt,
     )
     click.echo(f"Annotation complete! {len(result)} results saved to {output_dir}")
+
+
+# =========================================================================
+# Agentic (v2 rubric library + whole-task rubric validation)
+# =========================================================================
+
+@main.group()
+def agentic():
+    """v2 agentic rubrics and whole-task rubric validation."""
+    pass
+
+
+@agentic.command("rubrics")
+def agentic_rubrics():
+    """List the active v2 agentic rubric set and its sources."""
+    from adele.agentic import read_manifest, verify_manifest
+
+    entries = read_manifest()
+    click.echo(f"\n{'Code':<6}{'Source':<8}{'Full name':<46}Doc heading")
+    click.echo("-" * 96)
+    for e in entries:
+        click.echo(f"  {e.code:<6}{e.source:<8}{e.full_name:<44}{e.source_heading}")
+    problems = verify_manifest()
+    click.echo(f"\n{len(entries)} active rubrics."
+               + (" Manifest OK.\n" if not problems else f" DRIFT: {problems}\n"))
+
+
+@agentic.command("template")
+@click.argument("tasks")
+@click.option("--output", "-o", default="human_template.csv", help="Output CSV path.")
+def agentic_template(tasks, output):
+    """Emit a blank human-annotation sheet for TASKS (a .csv/.jsonl of whole tasks)."""
+    from adele.agentic import active_demands
+    from adele.agentic.hal import load_tasks, human_label_template
+
+    frame = load_tasks(tasks)
+    sheet = human_label_template(frame, active_demands())
+    sheet.to_csv(output, index=False)
+    click.echo(f"Wrote {len(sheet)} rows × {len(active_demands())} demands to {output}")
+
+
+@agentic.command("pilot")
+@click.option("--benchmarks", "-b", multiple=True,
+              default=("swebench", "assistantbench", "usaco", "taubench"),
+              help="Benchmarks to sample (default: the 4-benchmark pilot set).")
+@click.option("--n-per", "-n", type=int, default=5, help="Tasks per benchmark.")
+@click.option("--seed", type=int, default=0, help="Random seed (reproducible).")
+@click.option("--output-dir", "-o", default="./experiments/benchmarks/pilot", help="Output directory.")
+def agentic_pilot(benchmarks, n_per, seed, output_dir):
+    """Sample whole tasks across benchmarks → tasks.csv + a blank human sheet.
+
+    Downloads task inputs (not rollouts) from HuggingFace; no LLM calls.
+    """
+    _require("agentic", "datasets", "huggingface_hub")
+    import os
+    from adele.agentic import active_demands
+    from adele.agentic.benchmarks import sample_pilot
+    from adele.agentic.hal import human_label_template
+
+    click.echo(f"Sampling {n_per} tasks each from: {', '.join(benchmarks)} (seed={seed})")
+    tasks = sample_pilot(list(benchmarks), n_per=n_per, seed=seed)
+    os.makedirs(output_dir, exist_ok=True)
+    tasks_path = os.path.join(output_dir, "tasks.csv")
+    template_path = os.path.join(output_dir, "human_template.csv")
+    tasks.to_csv(tasks_path, index=False)
+    human_label_template(tasks, active_demands()).to_csv(template_path, index=False)
+    click.echo(f"Wrote {len(tasks)} tasks to {tasks_path}")
+    click.echo(f"Blank annotation sheet ({len(active_demands())} demands) → {template_path}")
+    click.echo("\nPer benchmark:\n" + tasks["benchmark"].value_counts().to_string())
+
+
+@agentic.command("judge")
+@click.argument("tasks")
+@click.option("--model", "-m", default="gpt-5.2", show_default=True,
+              help="Judge model (litellm id). One call per task × demand; dry-run first.")
+@click.option("--backend", type=click.Choice(["batch", "direct"]), default="direct",
+              show_default=True,
+              help="Judging uses direct one-call-per-item by design (the validation "
+                   "protocol forbids batching; batch also breaks '__' instance ids).")
+@click.option("--max-samples", "-n", type=int, default=None,
+              help="Judge only the first N tasks (dry runs / cost control).")
+@click.option("--output", "-o", default="data/annotations/judge_labels.csv", show_default=True)
+@click.option("--output-dir", default="data/annotations", show_default=True,
+              help="Working dir for raw responses + run_info.json provenance.")
+@click.option("--resume/--no-resume", default=True, show_default=True,
+              help="Skip (task, demand) pairs already answered in output-dir — "
+                   "interrupted runs keep what was paid for.")
+def agentic_judge(tasks, model, backend, max_samples, output, output_dir, resume):
+    """Annotate whole tasks on the active v2 rubric set with an LLM judge.
+
+    TASKS is a .csv/.jsonl with custom_id + prompt columns (e.g. the files the
+    instance loaders write, or pilot/tasks.csv). Output: wide CSV, one 0-5
+    column per active demand — the same schema as the human template, so
+    `adele agentic validate` can compare them directly.
+    """
+    _require("annotate", "litellm", "openai", "tenacity")
+    from adele.agentic import active_demands
+    from adele.agentic.hal import load_tasks, run_judge
+
+    frame = load_tasks(tasks)
+    if max_samples is not None:
+        frame = frame.head(max_samples)
+    n_calls = len(frame) * len(active_demands())
+    click.echo(f"Judging {len(frame)} tasks × {len(active_demands())} demands "
+               f"= {n_calls} calls with {model}...")
+    labels = run_judge(frame, model=model, backend=backend, output_dir=output_dir,
+                       resume=resume)
+    labels.to_csv(_ensure_parent(output), index=False)
+    click.echo(f"Wrote {len(labels)} labelled tasks → {output} "
+               f"(raw responses + provenance in {output_dir})")
+
+
+@agentic.command("validate")
+@click.argument("judge_csv")
+@click.argument("human_csv")
+def agentic_validate(judge_csv, human_csv):
+    """Report judge-vs-human agreement from two wide label CSVs (custom_id + demands)."""
+    _require("agentic", "numpy", "scipy", "sklearn")
+    import pandas as pd
+    from adele.agentic.validation import rubric_agreement
+
+    report = rubric_agreement(pd.read_csv(judge_csv), pd.read_csv(human_csv))
+    if not report.dimensions:
+        click.echo("No overlapping demand columns / instances to compare.")
+        return
+    click.echo("\n" + str(report) + "\n")
+
+
+# =========================================================================
+# Instances (frozen annotation inputs)
+# =========================================================================
+
+@main.group()
+def instances():
+    """Prepare and verify frozen instance sets for annotation."""
+    pass
+
+
+@instances.command("prepare")
+@click.option("--benchmarks", "-b", multiple=True,
+              default=("swebench", "terminalbench", "aime"),
+              show_default=True, help="Instance loaders to run.")
+@click.option("--out-dir", "-o", default="data/instances", show_default=True)
+@click.option("--n-dimensions", type=int, default=None,
+              help="Planned demand dimensions (for the cost estimate). "
+                   "Default: the size of the active v2 set.")
+@click.option("--sample", "-n", type=int, default=None,
+              help="Per-benchmark random sample (seeded) instead of the full set.")
+@click.option("--seed", type=int, default=0, show_default=True)
+def instances_prepare(benchmarks, out_dir, n_dimensions, sample, seed):
+    """Fetch, canonicalize, validate and freeze instance sets + manifest."""
+    _require("annotate", "datasets")
+    from adele.instances import prepare
+
+    if n_dimensions is None:
+        from adele.agentic import active_demands
+        n_dimensions = len(active_demands())
+    manifest = prepare(benchmarks, out_dir, n_dimensions=n_dimensions,
+                       sample=sample, seed=seed)
+    click.echo(manifest.to_string(index=False))
+    click.echo(f"\nFrozen {int(manifest['n_instances'].sum())} instances; "
+               f"~{manifest['est_tokens_in'].sum()/1e6:.1f}M input tokens for "
+               f"{n_dimensions} dimensions. Manifest: {out_dir}/INSTANCES.tsv")
+
+
+@instances.command("register")
+@click.argument("file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--benchmark", "-b", required=True, help="Canonical benchmark slug of every row in FILE.")
+@click.option("--n-dimensions", type=int, default=7, show_default=True, help="For the cost estimate.")
+def instances_register(file, benchmark, n_dimensions):
+    """Validate an already-frozen FILE and add it to the INSTANCES.tsv next to it (no loader)."""
+    from adele.instances import register
+
+    try:
+        row = register(file, benchmark, n_dimensions=n_dimensions)
+    except ValueError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"{benchmark}: {row['n_instances']} instances, sha256 {row['sha256'][:12]}…, "
+               f"warnings: {row['warnings']}")
+
+
+@instances.command("push")
+@click.option("--dir", "instances_dir", default="data/instances", show_default=True)
+@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or adele-ai-evaluations/adele-instances).")
+@click.option("--benchmark", "benchmarks", multiple=True, help="Only these benchmarks (repeatable; default: all).")
+def instances_push(instances_dir, repo, benchmarks):
+    """Upload frozen instance files to a PRIVATE Hugging Face dataset and record them in the committed index."""
+    from adele.instance_store import INDEX, InstanceStoreError, push, repo_id
+
+    try:
+        done = push(instances_dir, repo, list(benchmarks) or None)
+    except InstanceStoreError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"pushed {len(done)} benchmarks to {repo_id(repo)} (private); commit {INDEX}")
+
+
+@instances.command("fetch")
+@click.option("--dir", "instances_dir", default="data/instances", show_default=True)
+@click.option("--repo", default=None, help="Private HF dataset (default: $ADELE_INSTANCES_REPO or adele-ai-evaluations/adele-instances).")
+@click.option("--benchmark", "benchmarks", multiple=True, help="Only these benchmarks (repeatable; default: all).")
+def instances_fetch(instances_dir, repo, benchmarks):
+    """Download frozen instance files from the private dataset, checked against the committed index."""
+    from adele.instance_store import InstanceStoreError, fetch, repo_id
+
+    try:
+        done = fetch(instances_dir, repo, list(benchmarks) or None)
+    except InstanceStoreError as exc:
+        raise click.ClickException(str(exc))
+    click.echo(f"fetched {len(done)} benchmarks from {repo_id(repo)} into {instances_dir}, all hashes match")
+
+
+@instances.command("check-join")
+@click.argument("instances_dir")
+@click.argument("results_parquet")
+def instances_check_join(instances_dir, results_parquet):
+    """Verify instance ids join the results matrix BEFORE spending on judges."""
+    from adele.instances import check_join
+
+    report = check_join(instances_dir, results_parquet)
+    click.echo(report.to_string(index=False))
+    bad = report[(report["results_side_ids"] > 0) & (report["match_rate"] < 0.9)]
+    if len(bad):
+        raise click.ClickException(
+            f"low join rates for: {', '.join(bad['benchmark'])} — fix "
+            "canonicalization before annotating"
+        )
+    click.echo("\nAll join rates OK.")
+
+
+# =========================================================================
+# Results (public per-instance success/failure matrix)
+# =========================================================================
+
+@main.group()
+def results():
+    """Fetch and join public per-instance model results."""
+    pass
+
+
+@results.command("fetch-swebench")
+@click.argument("experiments_dir")
+@click.option("--split", default="verified", help="Leaderboard split (default: verified).")
+@click.option("--instance-ids", type=click.Path(exists=True, dir_okay=False), default=None,
+              help="Official instance list: a .parquet/.csv with an instance_id column "
+                   "(e.g. the frozen instances file) or one id per line. Without it the "
+                   "universe is the union of ids some entry resolved, so tasks no entry "
+                   "solved are silently missing from the matrix.")
+@click.option("--output", "-o", default="data/results/swebench.parquet", show_default=True)
+def results_swebench(experiments_dir, split, instance_ids, output):
+    """Per-instance resolution flags from a SWE-bench/experiments checkout."""
+    from adele.results.sources import swebench
+
+    ids = None
+    if instance_ids is not None:
+        import os
+        import pandas as pd
+        suffix = os.path.splitext(instance_ids)[1]
+        if suffix in (".parquet", ".csv"):
+            frame = (pd.read_parquet(instance_ids) if suffix == ".parquet"
+                     else pd.read_csv(instance_ids, dtype={"instance_id": str}))
+            ids = frame["instance_id"].astype(str).tolist()
+        else:
+            with open(instance_ids) as f:
+                ids = [line.strip() for line in f if line.strip()]
+    else:
+        click.echo("note: no --instance-ids; tasks that no entry resolved will be missing")
+    df = swebench.fetch(experiments_dir, split=split, instance_ids=ids)
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows ({df['instance_id'].nunique()} instances × "
+               f"{df.groupby(['model', 'scaffold']).ngroups} model/scaffold pairs) → {output}")
+
+
+@results.command("fetch-tau2")
+@click.option("--entry", "entries", multiple=True,
+              help="Only these submissions (bucket folder names); default: every text-track one.")
+@click.option("--instances-dir", default="data/instances", show_default=True,
+              help="Frozen tau2 instances to check each task's text against, by prompt hash.")
+@click.option("--cache-dir", default="data/downloads/tau2-cache", show_default=True,
+              help="Parsed rows per results file, reused on reruns (small).")
+@click.option("--output", "-o", default="data/results/tau2.parquet", show_default=True)
+def results_tau2(entries, instances_dir, cache_dir, output):
+    """Per-task rewards from Sierra's public tau2 bucket (streams ~6 GB, keeps only rewards)."""
+    import glob
+    import logging
+
+    import pandas as pd
+
+    from adele.results.sources import tau2
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
+    df = tau2.fetch_instances(entries=list(entries) or None, cache_dir=cache_dir)
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows ({df.groupby(['model', 'scaffold']).ngroups} model/scaffold "
+               f"pairs) → {output}")
+    paths = glob.glob(f"{instances_dir}/instances_tau2-*.csv")
+    if not paths:
+        click.echo(f"no frozen tau2 instances in {instances_dir}; text not checked")
+        return
+    frozen = pd.concat(pd.read_csv(p, dtype={"instance_id": str}) for p in paths)
+    j = df.merge(frozen[["benchmark", "instance_id", "prompt_sha12"]],
+                 on=["benchmark", "instance_id"], how="left")
+    j["joined"] = j["prompt_sha12"].notna()
+    j["same_text"] = j["task_prompt_sha12"] == j["prompt_sha12"]
+    report = j.groupby(["run", "benchmark"]).agg(
+        tasks=("instance_id", "size"), joined=("joined", "sum"), same_text=("same_text", "sum"))
+    click.echo("\nTask ids found among the frozen instances, and tasks whose text matches them:")
+    click.echo(report.to_string())
+
+
+@results.command("fetch-matharena")
+@click.option("--dataset", default="MathArena/aime_2026_outputs", show_default=True)
+@click.option("--local-path", default=None, help="Local parquet copy (skips the Hub).")
+@click.option("--output", "-o", default="data/results/matharena.parquet", show_default=True)
+def results_matharena(dataset, local_path, output):
+    """Per-problem correctness from MathArena output dumps."""
+    _require("annotate", "datasets") if not local_path else None
+    from adele.results.sources import matharena
+
+    df = matharena.fetch(dataset, local_path=local_path)
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows → {output}")
+
+
+@results.command("fetch-arcprize")
+@click.argument("slugs", nargs=-1, required=True)
+@click.option("--benchmark", default="arc-agi-2", show_default=True)
+@click.option("--output", "-o", default="data/results/arcprize.parquet", show_default=True)
+def results_arcprize(slugs, benchmark, output):
+    """Scrape per-task results pages (e.g. anthropic-claude-opus-5)."""
+    from adele.results.sources import arcprize
+
+    df = arcprize.fetch(slugs, benchmark=benchmark)
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows from {len(slugs)} model pages → {output}")
+
+
+@results.command("ingest-scores")
+@click.argument("csv_path")
+@click.option("--scaffold", default="none", show_default=True)
+@click.option("--source", default="partner-extract", show_default=True)
+@click.option("--output", "-o", default="data/results/ingested.parquet", show_default=True)
+def results_ingest(csv_path, scaffold, source, output):
+    """Ingest a partner CSV made by scripts/extract_scores_standalone.py."""
+    from adele.results.sources import inspect_scores
+
+    df = inspect_scores.from_csv(csv_path, scaffold=scaffold, source=source)
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows → {output}")
+
+
+@results.command("join")
+@click.argument("parquets", nargs=-1, required=True)
+@click.option("--output", "-o", default="data/results/matrix.parquet", show_default=True)
+def results_join(parquets, output):
+    """Concatenate fetched frames and report coverage."""
+    import pandas as pd
+    from adele.results import concat_results
+    from adele.results.join import coverage_report
+
+    df = concat_results([pd.read_parquet(p) for p in parquets])
+    df.to_parquet(_ensure_parent(output))
+    click.echo(f"{len(df)} rows → {output}\n\nCoverage (instances per benchmark × model/scaffold):")
+    click.echo(coverage_report(df).to_string())
+
+
+# =========================================================================
+# Mass annotation runs (adele.mass; heavy imports stay inside the commands)
+# =========================================================================
+
+from adele.mass.cli import mass  # noqa: E402
+
+main.add_command(mass)
 
 
 # =========================================================================
@@ -139,8 +552,11 @@ def annotate(dataset, demands, model, backend, split, max_samples,
 @click.argument("dataset")
 @click.option("--split", "-s", default=None, help="Dataset split.")
 @click.option("--max-samples", "-n", type=int, default=None, help="Max samples.")
-@click.option("--task-type", type=click.Choice(["open-ended", "multiple-choice"]),
-              default="open-ended")
+@click.option("--task-type", type=click.Choice(["auto", "open-ended", "multiple-choice"]),
+              default="auto",
+              help="Scoring mode. 'auto' (default) infers from the data: "
+                   "multiple-choice when the benchmark provides options, "
+                   "open-ended (exact match) otherwise.")
 @click.option("--hf-token", default=None, help="HuggingFace token for gated datasets (default: HF_TOKEN env).")
 @click.option("--output-dir", "-o", default="./adele_results", help="Output directory.")
 def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_dir):
@@ -149,6 +565,7 @@ def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_
     MODEL_ID is the model identifier (e.g. 'openai/gpt-4o').
     DATASET is a benchmark name or HuggingFace dataset ID.
     """
+    _require("eval", "inspect_ai", "datasets")
     from adele.data import load_benchmark
     from adele.evaluation import evaluate_model
     import os
@@ -164,6 +581,13 @@ def evaluate(model_id, dataset, split, max_samples, task_type, hf_token, output_
 
     data = load_benchmark(dataset, **kwargs)
     click.echo(f"Loaded {len(data)} instances.")
+
+    if task_type == "auto":
+        has_choices = "choices" in data.columns and data["choices"].notna().any()
+        task_type = "multiple-choice" if has_choices else "open-ended"
+        click.echo(f"Inferred task type: {task_type} "
+                   f"({'options present' if has_choices else 'no options column'}; "
+                   "override with --task-type).")
 
     click.echo(f"Evaluating {model_id}...")
     # max_samples already applied at load time, so no need to re-pass it.
@@ -194,6 +618,7 @@ def profile(annotations_csv, title, output, color):
     ANNOTATIONS_CSV should be a CSV file with a custom_id column and
     demand-level columns (AS, CEc, CEe, ...).
     """
+    _require("analysis", "numpy", "matplotlib", "scienceplots")
     from adele.analysis.demand import plot_from_csv
 
     click.echo(f"Generating demand profile from {annotations_csv}...")

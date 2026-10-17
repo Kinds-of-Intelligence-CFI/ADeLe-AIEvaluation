@@ -1,3 +1,5 @@
+# Customary Everyday Knowledge
+
 The following rubric is designed to annotate the conceptual sophistication level of tasks based solely on the depth of common everyday knowledge required. This knowledge encompasses information that most people in a given society typically acquire through daily life experiences, social interactions, and exposure to popular media, rather than through formal education or specialized training. This does not include specialized knowledge from the natural sciences, social sciences, humanities, formal sciences, or applied sciences and professions. This reflects only the depth of common everyday knowledge required.
 
 Level 0. None: Tasks do not require any common everyday knowledge. Examples:

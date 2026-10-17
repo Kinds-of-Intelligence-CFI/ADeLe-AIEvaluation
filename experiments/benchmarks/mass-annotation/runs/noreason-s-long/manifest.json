@@ -1,0 +1,112 @@
+{
+  "run": "noreason-s-long",
+  "created_at": "2026-10-06T21:37:34+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/noreason-s-long.toml",
+  "git": {
+    "commit": "9b5293083bc3c52de91218ec27475b7dad3a0f8e",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/noreason-cooperbench/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-cooperbench/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-eqbench4/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-eqbench4/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-long/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-long/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-ms-rest/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-ms-rest/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-pl/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-pl/ledger.csv",
+      " M experiments/benchmarks/noreason/PREREGISTRATION.md",
+      " M experiments/benchmarks/noreason/results/cost.csv"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low-chunked.md",
+      "sha256": "d63ca13de36bf5099656a569d0e54a410416546adfea22ea6d401afa777bb5c3"
+    },
+    "adele-judge-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low-chunked.md",
+      "sha256": "3f99cedcf760eeeeda20dff6b4c47b83c5ce25035be3aba22e5ad7b9d436e5a7"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "417179725cfc5e23c9ee0461d1cb319705e6ac9ea967036466e25875566563f4",
+      "content": "# noreason amendment 4: twin of noreason-long.toml with Sonnet 5.5 (effort low) as the judge; nothing else changed.\n# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-long with the v2-noreason builder.\n# Relabel of all five v2 rubrics (experiments/benchmarks/relabel-v2) on ProgramBench's 13 long tasks (experiments/benchmarks/pls-relabel/subset_long.csv), whose\n# prompts are too long for one Read: same judge, reading in parts of 200 lines; the protocol check requires every prompt\n# line to come back. The other sets are in relabel-v2.toml.\n# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-long.toml\nname = \"noreason-s-long\"\n\n[tasks]\nbenchmarks = [\"programbench\"]\nsubset = \"experiments/benchmarks/pls-relabel/subset_long.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-sonnet-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low-chunked\"\njudge_agent = \"adele-judge-v2-low-chunked\"\nmodel_alias = \"sonnet\"\nbatch_size = 100\nchunk_lines = 200\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 13
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/pls-relabel/subset_long.csv",
+        "sha256": "b5557a314cc56b973ac1f884682b78f44fe85eb86fc20a1970bc55fccbf2cb58",
+        "n_ids": 13
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "dd130fcea382645ea3c1b294a2264a4aa1e8f605b197a1193ba8c156bb3c8ce2",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "sonnet-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low-chunked",
+        "judge_agent": "adele-judge-v2-low-chunked",
+        "model_alias": "sonnet",
+        "batch_size": 100,
+        "chunk_lines": 200
+      }
+    },
+    "cells": {
+      "n": 65,
+      "sha256": "b84dcbc285c81cd5635d85a9ec74441d4c332246d95c6ee7660fd610b561e9e7"
+    }
+  }
+}

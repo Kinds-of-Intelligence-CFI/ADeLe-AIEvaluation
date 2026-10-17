@@ -1,0 +1,26 @@
+# No-reasoning ablation (experiments/benchmarks/noreason): same-day reference WITH reasoning (v2 prompt), current texts, 150 tasks, PL rubrics.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/noreason-ref.toml
+name = "noreason-ref"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "tau2-airline", "tau2-retail", "tau2-banking_knowledge", "terminal-bench-4.0.0", "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench"]
+subset = "experiments/benchmarks/noreason/refresh_subset.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 100

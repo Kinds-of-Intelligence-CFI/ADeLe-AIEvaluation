@@ -1,0 +1,4 @@
+cell_id,attempt,status,backend,handle,writer_model,level,reason,response_sha256,tokens_in,tokens_out,returns,protocol,created_at,updated_at
+v2MSm-6ca4e712559d9727,1,parsed,subagent,relay-20261004T192901-01,claude-opus-5-5,3,,8ddc033dae11167ec664ab87630ec8602699c7abdab29c8f60736640b2ef304c,,,,ok,2026-10-04T19:06:25+00:00,2026-10-04T19:29:31+00:00
+v2MSm-6f7c201eced5509f,1,parsed,subagent,relay-20261004T192901-01,claude-opus-5-5,4,,a1e4345a909d54cb5f2826e335ff2bbea8cfd31e1adb2ae0d5ab9f69cf49751c,,,,ok,2026-10-04T19:06:25+00:00,2026-10-04T19:29:31+00:00
+v2MSm-0f9b3eaded306552,1,parsed,subagent,relay-20261004T192901-01,claude-opus-5-5,3,,2a89aa2d902f1f101087b1f6a37cf2eda77d2bd0b2fafe28d7f79c04dfc03d1e,,,,ok,2026-10-04T19:06:25+00:00,2026-10-04T19:29:31+00:00

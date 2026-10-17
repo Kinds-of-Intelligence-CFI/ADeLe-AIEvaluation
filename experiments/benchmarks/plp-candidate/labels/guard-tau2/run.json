@@ -1,0 +1,50 @@
+{
+  "run_id": "guard-tau2",
+  "created_at": "2026-09-28T09:50:24+00:00",
+  "repo_commit": "c508bdbdaa355120a0811a474ea995b31c9b9eee",
+  "repo_dirty_tracked_files": [
+    "M experiments/benchmarks/plp-candidate/PREREGISTRATION.md",
+    " M experiments/benchmarks/plp-candidate/analysis/compare.py",
+    " M experiments/benchmarks/plp-candidate/make_prompts.py",
+    " M experiments/benchmarks/plp-candidate/results/compare.json"
+  ],
+  "benchmark": [
+    "tau2-airline",
+    "tau2-banking_knowledge",
+    "tau2-retail"
+  ],
+  "sample": {
+    "file": "sample.csv",
+    "rows": "run == 'guard-tau2'"
+  },
+  "design": {
+    "n_tasks": 232,
+    "dims": [
+      "PLp"
+    ],
+    "n_prompts": 232,
+    "judges": {
+      "opus-low": "Claude Code subagent 'adele-judge-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'opus'"
+    }
+  },
+  "rubric": {
+    "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+    "sha256": "de98ab35d80c7984a9a95ce1534797c630acdd4319e919571372d1f200398a03",
+    "candidate": "plp-candidate/PLp_candidate_b.txt",
+    "candidate_sha256": "59290a534993a8b0ea42682714bcd92b7e5f8590d8c0c465df6d1dbdd6a23e72",
+    "inserted_after": "An option that looks good locally can be wrong because of its consequences several steps later, so alternatives must be compared by looking ahead before committing.",
+    "inserted_sentence": "Critically, a poor option that a standard choice avoids does not make the decisions interact."
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt",
+    "builder_file_sha256": "0670d8bbd7927561dbf66db43ec12fd275f8e3fa4e5274a0d2b19319bb7593a3"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/swebench-pl/adele-judge-low.md",
+    "sha256": "327f106871353325972dca5646710a272603a3cf6b2401cb72dbfb232dc83eac"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/guard-tau2",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}
