@@ -13,8 +13,11 @@ a candidate's new sentences, are void in both arms (real tau2 tasks are reported
 Writes labels/mscand-1/{prompts_index.csv, relays.csv, run.json} and items.csv (tau2 texts blanked); prompts and relays
 go to $ADELE_JUDGE_IO/mscand-1/ (never committed).
 
-    uv run --extra annotate python experiments/benchmarks/ms-candidate/make_prompts.py
+    uv run --extra annotate python experiments/benchmarks/ms-candidate/make_prompts.py                         # mscand-1
+    uv run --extra annotate python experiments/benchmarks/ms-candidate/make_prompts.py --replicate ITEM [...]  # mscand-2
 """
+
+import argparse
 
 import json
 import os
@@ -35,7 +38,7 @@ from adele.agentic import load_active_catalog  # noqa: E402
 ROOT, JUDGE_IO = mp.ROOT, mp.JUDGE_IO
 L4 = HERE.parent / "msc-l4-note"
 WORKSHEETS = Path("~/Developer/ADELE/worksheets/tau2-agent-side-2026-10-17").expanduser()
-RUN = "mscand-1"
+RUN = "mscand-1"  # pass 2 sets this to "mscand-2"
 SEED = 20261017
 ARMS = ("current", "candidate")
 TAU2 = ("tau2-airline", "tau2-retail", "tau2-banking_knowledge")
@@ -166,7 +169,32 @@ def write_run(cells: list[dict], note: dict) -> None:
           f"in {len(relays)} relays of at most {mp.RELAY_MAX} cells ({io_dir / 'relays'})")
 
 
+def replicate(item_ids: list[str]) -> None:
+    """Pass 2: the pass-1 prompts of the listed items, both arms, under new ids."""
+    global RUN
+    r1 = pd.read_csv(HERE / "labels/mscand-1/prompts_index.csv")
+    todo = r1[r1["item_id"].isin(item_ids)]
+    assert set(todo["item_id"]) == set(item_ids), "unknown or unjudged item"
+    RUN = "mscand-2"
+    rng = random.Random(SEED + 2)
+    taken = set(r1["file_id"])
+    cells = []
+    for r, new in zip(todo.sample(frac=1, random_state=SEED + 2).itertuples(index=False),
+                      mp.opaque_ids(len(todo), rng, taken)):
+        p = (JUDGE_IO / "mscand-1/prompts" / f"{r.file_id}@{r.rubric}.txt").read_text(encoding="utf-8")
+        assert mp.sha256(p.encode("utf-8")) == r.prompt_sha256
+        cells.append({"file_id": new, "item_id": r.item_id, "set": r.set, "arm": r.arm, "rubric": r.rubric,
+                      "prompt_sha256": r.prompt_sha256, "pass1_file_id": r.file_id, "prompt": p})
+    write_run(cells, {"pass": 2, "replicates": "mscand-1"})
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--replicate", nargs="+", metavar="ITEM", help="write pass 2 (mscand-2): both arms of each item")
+    args = ap.parse_args()
+    if args.replicate:
+        replicate(args.replicate)
+        return
     arms = texts()
     catalog = load_active_catalog()
     items = build_items(arms)

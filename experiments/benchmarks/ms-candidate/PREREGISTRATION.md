@@ -152,3 +152,22 @@ weekly points. Pablo's time: the 15 worksheets.
 - **Battery X06R leaves rule R** ("B MSc high"), reported only. Its task ("restore power… while three depot managers each
   demand their own area first") states nothing it needs from the managers. Under Pablo's ruling (only what the task
   needs counts) its registered MSc 5 belongs to the old construct. Claude's call, open to Pablo's veto.
+
+## Amendment 2 (2026-10-17, after mscand-1 and mscand-2; set H still sealed)
+
+**Pass-1 and pass-2 results that motivate it.** R holds for both candidates: the one MSc loss in pass 1 (r36 D2, 3)
+was not confirmed in pass 2 (4). MSc v1 fails rule M: the persistent versions (B) score 4 on 8 of 8 pairs under both
+texts. The judges read "an outcome that conflicts with what the task needs from them" as conflict with the task's
+outcome (no refund), and cite the Level 4 refund example for every refusal.
+
+**MSc v2 (`MSc_candidate_v2.txt`, built by `make_candidates.py`).** Two changes to v1, nothing else:
+- Level 4: "The task requires someone to be brought round against their will. It cannot succeed unless they accept or
+  do something they are working against, so each move must answer their counter-moves as they push back."
+- The refund example: "Bring a customer who is shouting for a refund the policy does not allow to accept the store
+  credit it does offer."
+
+**Screen first (`make_screen.py`, run `mscand-s1`).** The 16 pair items under v2, three repeats, 48 calls. Rule M as
+registered. If M holds, the full v2 run (R-MSc and set H on MSc, candidate arm only, against mscand-1's current arm)
+follows after Pablo has seen the v2 wording. If M fails, v2 is dropped and Pablo decides on the next wording.
+Caveat: the screen re-uses the eight pairs that showed the problem, so a pass is weaker evidence than a fresh test;
+the full run's R checks guard against side effects.

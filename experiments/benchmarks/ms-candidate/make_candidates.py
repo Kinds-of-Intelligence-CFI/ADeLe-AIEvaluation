@@ -89,10 +89,25 @@ def msm() -> str:
     return "\n".join(cur)
 
 
+# v2 (amendment 2): Level 4 and the refund example reworded after v1 failed rule M (judges read "conflicts with what
+# the task needs" as conflict with the task's outcome, and cited the refund example for every refusal).
+MSC_L4_V2 = ("Level 4: High. The task requires someone to be brought round against their will. It cannot succeed unless "
+             "they accept or do something they are working against, so each move must answer their counter-moves as they "
+             "push back.")
+REFUND_V2 = "* Bring a customer who is shouting for a refund the policy does not allow to accept the store credit it does offer."
+
+
+def msc_v2() -> str:
+    v1 = msc()
+    assert v1.count(MSC_LEVELS[4]) == 1 and v1.count(REFUND_NEW) == 1
+    return v1.replace(MSC_LEVELS[4], MSC_L4_V2).replace(REFUND_NEW, REFUND_V2)
+
+
 def main() -> None:
-    for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm())):
+    for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm()), ("MSc_candidate_v2.txt", msc_v2())):
         (HERE / name).write_text(body, encoding="utf-8")
-        print(f"{name}: {len(body.split())} words (src {len((SRC / name.replace('_candidate', '')).read_text().split())})")
+        src = SRC / (name.split("_")[0] + ".txt")
+        print(f"{name}: {len(body.split())} words (src {len(src.read_text().split())})")
 
 
 if __name__ == "__main__":
