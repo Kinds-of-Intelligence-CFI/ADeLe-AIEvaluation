@@ -4,8 +4,9 @@ Owner: Pablo. Tests two candidate texts against the current ones: MSc rewritten 
 from the other party), in MSm's style; MSm brought back toward v1 MS. Judged on the MS lab regression, msc-l4-note's
 minimal pairs and 15 tau2 tasks that Pablo labels from the agent's side. `src/` does not change here.
 
-**Status (2026-10-17): pre-registration drafted for Pablo to read. Nothing built, labelled or judged.** Rule M follows
-his ruling of the same day: only what the task needs from the other party counts.
+**Status (2026-10-17): sets R and M done, set H judged and sealed.** MSm candidate: R holds. MSc v4 (amendment 4,
+the agreed framework): R holds (r36 D2 loss not confirmed in pass 2), M-refusal holds 5/5. v1 to v3 superseded.
+Waiting on Pablo's 15 agent-side labels, then set H is unsealed (`analysis/analyse_h.py`).
 
 | | |
 |---|---|
