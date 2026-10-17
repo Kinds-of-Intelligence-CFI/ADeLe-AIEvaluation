@@ -272,3 +272,11 @@ The text is frozen for production if N1 to N3 hold (and, once Pablo's labels are
 failures go to Pablo.
 
 **Predictions (sealed).** N1 MSc: 0.7; N1 MSm: 0.75. N2: 0.7. N3 MSc: 0.75; N3 MSm: 0.8.
+
+**Amendment 6 result (`mscand-nr`, `mscand-nr-2`): N1 to N3 hold for both rubrics.** 783 calls, all written by
+Opus 5.5, every answer a bare digit.
+- MSc v4: N3 98.2% exact, 100% within one (two items differ: battery M04 4→3, r36 D2 5→4). N1: one pass-1 loss
+  (B MSc high: M04 at 3, 3, 3); pass 2 gave 4, 3, 4, so not confirmed. M04 is fragile without reasoning. N2: the
+  five refusal pairs at 1; supplier and builder at 4.
+- MSm candidate: N3 89.9% exact, 100% within one (nine items differ by one, in both directions). N1 holds.
+Set H is judged and sealed under the bare-digit prompt too.
