@@ -5,6 +5,7 @@ sealed. Items he marks enough_info = no leave the rules and are reported.
   H1 (per rubric, full-task input): candidate exact matches >= current exact matches
   H2 (per rubric, full-task input): no item 2+ from Pablo under the candidate while within 1 under the current text
   H3 (current text): full-task exact matches >= script exact matches (finding for the input decision)
+The MSc candidate is v4 (amendment 4, run mscand-v4); MSm's candidate is mscand-1's.
 MSm rules apply only with at least 10 MSm labels.
 
     uv run python experiments/benchmarks/ms-candidate/analysis/analyse_h.py
@@ -29,6 +30,9 @@ def main() -> None:
     human = pd.read_csv(HERE / "human_labels.csv", dtype=str, keep_default_na=False).set_index("item_id")
     assert (human[["msc"]] != "").all().all(), "Pablo's MSc labels are not all in; set H stays sealed"
     lab = pd.read_csv(ROOT / "data/annotations/mscand-1/sealed_H.csv")
+    # Amendment 4: the MSc candidate is v4 (mscand-v4); mscand-1's MSc candidate arm (v1) is superseded.
+    v4 = pd.read_csv(ROOT / "data/annotations/mscand-v4/sealed_H.csv").assign(arm="candidate")
+    lab = pd.concat([lab[~((lab["rubric"] == "MSc") & (lab["arm"] == "candidate"))], v4], ignore_index=True)
     lab = lab[lab["valid"].astype(bool) & lab["writer_model"].astype(str).str.startswith(OPUS)]
     parts = lab["item_id"].str.extract(r"^(H-\d+)-(script|full)-on-(MSc|MSm)$")
     lab = lab.assign(task=parts[0], input=parts[1])
