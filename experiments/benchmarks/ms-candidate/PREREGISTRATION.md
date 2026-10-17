@@ -1,7 +1,7 @@
 # MSc and MSm candidates of 2026-10-17 — pre-registration
 
-Drafted 2026-10-17 at Pablo's request. Approved by Pablo on 2026-10-17. Pushed before any label; prompts built (`make_prompts.py`, run `mscand-1`), nothing
-judged. Judging waits for Pablo's 15 labels.
+Drafted 2026-10-17 at Pablo's request. Approved by Pablo on 2026-10-17. Pushed before any label; prompts built (`make_prompts.py`, run `mscand-1`). See
+amendment 1 for the order of work.
 
 **Question.** Do the two candidates keep every lab result the current texts hold, and do they match Pablo's
 agent-side labels on real tau2 tasks at least as well?
@@ -141,3 +141,14 @@ for MSm. Then Pablo decides on adoption: edit `src/`, a provenance entry, and a 
 
 1,560 Opus-low calls plus pass 2. Earlier rounds used about 2 to 3 weekly points per 300 calls, so about 10 to 15
 weekly points. Pablo's time: the 15 worksheets.
+
+## Amendment 1 (2026-10-17, before any judging)
+
+- **Order of work (Pablo: do everything that does not need him first).** All 520 prompts are judged now. Sets R and M
+  are analysed at once (`analysis/analyse.py`). Set H stays sealed: `collect.py` writes its labels only to the gitignored
+  `data/annotations/mscand-1/sealed_H.csv`, and nothing about them is read or shown until Pablo's labels are in
+  `human_labels.csv`. If a candidate loses a lab check, its wording may be revised and re-tested (a new amendment and
+  run) before Pablo labels, so that he labels the final text once.
+- **Battery X06R leaves rule R** ("B MSc high"), reported only. Its task ("restore power… while three depot managers each
+  demand their own area first") states nothing it needs from the managers. Under Pablo's ruling (only what the task
+  needs counts) its registered MSc 5 belongs to the old construct. Claude's call, open to Pablo's veto.
