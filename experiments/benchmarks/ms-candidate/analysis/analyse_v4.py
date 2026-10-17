@@ -64,8 +64,18 @@ def main() -> None:
         "rerun_in_pass2": sorted({i for n in lost for i in c_v4[n]["failing"] + c_v4[n]["unlabelled"]}),
         "H": "sealed",
     }
+    f2 = HERE / "labels/mscand-v4-2/labels_long.csv"
+    if lost and f2.exists():  # pass 2: both texts on the items behind a loss
+        v4_2 = {**v4, **meds(f2, "candidate_v4")}
+        c2 = reg.evaluate(items_v4, reg.resolve(items_v4, v4_2))
+        out["R"]["confirmed"] = [n for n in lost if not c2[n]["holds"]]
+        out["pass2"] = {i: {"current": meds(f2, "current").get(i), "v4": meds(f2, "candidate_v4").get(i)}
+                        for i in out["rerun_in_pass2"]}
+    out["R"]["verdict"] = ("holds" if not lost else "pending pass 2" if "confirmed" not in out["R"]
+                           else "fails" if out["R"]["confirmed"] else "holds")
     (HERE / "results").mkdir(exist_ok=True)
     (HERE / "results/results_v4.json").write_text(json.dumps(out, indent=2, default=str) + "\n")
+    print("R verdict:", out["R"]["verdict"], "| pass 2:", out.get("pass2"))
     print("R lost:", lost or "none", "| fail both:", out["R"]["fail_both"], "| gained:", out["R"]["gained"])
     for a in ("current", "v4"):
         m = out["M"][a]
