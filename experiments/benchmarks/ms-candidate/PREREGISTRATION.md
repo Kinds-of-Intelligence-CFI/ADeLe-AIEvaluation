@@ -243,3 +243,11 @@ replaces v4 as the MSc candidate for set H. If it fails, v4 stays the candidate 
 limit.
 
 **Predictions (sealed).** M-refusal holds: 0.6. Curfew B at 4+: 0.65. Screen passes: 0.45.
+
+**Amendment 5 result (`mscand-s4`): the screen fails; v4 stays the MSc candidate.** M-refusal holds (all refusals at
+1), but M-needed fails 1 of 3: curfew B 1, 1, 1; supplier B 1, 1, 4 (v4 had it at 4); builder B 4, 4, 4. The judges
+anchor on the new Level 1 example ("answering their objections with the rule"): wherever a fixed rule or contract
+answers each objection, they place the task at 1, whether or not its purpose needs the other party's buy-in ("the
+curfew comes from the parent's authority"; "what the task needs from the rep is already settled by the contract"). The
+purpose clause did not change that reading. The curfew is recorded as a known limit of v4: for an ungraded task
+whose purpose needs buy-in but whose position rests on authority or a rule, v4 can place it at 1.
