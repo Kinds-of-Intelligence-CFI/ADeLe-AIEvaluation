@@ -96,8 +96,9 @@ def test_MSm_keeps_the_carve_outs_that_stop_double_counting():
     * L2 — a puzzle whose characters are stipulated truth-tellers and liars is
       deduction over given rules, so it scores 0 rather than 2. (v1's
       knights-and-knaves example was removed from L2 for contradicting this.)
-    * L4 — a stance stated outright has already been inferred for you, so moving the
-      other party off it is interaction work, which MSc scores (labs/rubric-qa/r31).
+    * Stated stance — a stance stated outright has already been inferred for you, unless the
+      task gives reason to doubt it (labs/rubric-qa/r31). Since 2026-10-25 (ms-candidate) this
+      lives in the "does not cover" Note, and Level 4 is v1 word for word.
     * L5 — the number of minds does not place a task here by itself.
 
     Matched on the load-bearing clause rather than the whole paragraph, so rewording
@@ -106,7 +107,8 @@ def test_MSm_keeps_the_carve_outs_that_stop_double_counting():
     b = _levels(load_active_catalog()["MSm"].content)
     assert "deduction over given rules" in b[2] and "scores 0 here" in b[2]
     assert "knights and knaves" not in b[2]
-    assert "is interaction work, not mind modelling" in b[4]
+    content = load_active_catalog()["MSm"].content
+    assert "does not have to be modelled unless the task gives reason to doubt it" in content.split("Level 0")[0]
     assert "the number of minds involved does not place a task here by itself" in b[5]
 
 

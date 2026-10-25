@@ -32,3 +32,14 @@ Pablo's decision on a flagged item of the examples review. The Level 5 seller's 
 route, ruling of 2026-08-20) is cut from 69 to 47 words: the closing gloss ("Only two parties are involved, and …") is
 removed and "knows" is used only for the stated fact. The three interlocking attributions are kept (her real limit,
 what she thinks he already suspects, what she wants him to conclude). Relabelled in `experiments/benchmarks/relabel-v3`.
+
+## 2026-10-25 — back toward v1 MS (ms-candidate)
+
+At Pablo's direction (keep MSm as close to the original as possible). Three edits: the v1 opener restored (the
+2026-08-25 rewording rested on a false claim that no other v1 file opens "This criterion assesses"; AS and QLq do);
+the "does not cover" Note gains the sincerity condition ("…unless the task gives reason to doubt it"); the Level 4
+stated-stance passage removed, since the Note says it, so Level 4 is v1 word for word. Level 2 (truth-teller routing)
+and Level 5 (interlock rule) keep their tested v2 text.
+Measured (experiments/benchmarks/ms-candidate, runs mscand-1 and mscand-nr): every MSm lab check that held still holds,
+with reasoning and bare digit (bare digit against reasoning: 90% exact, 100% within one); F-on-MSm fails under both
+texts on the two PLs Level 5 examples, the overlap Pablo accepted on 2026-10-02. No human MSm labels yet.
