@@ -1,0 +1,143 @@
+{
+  "excluded_not_enough_info": [],
+  "rubrics": {
+    "MSc": {
+      "n": 15,
+      "rules_apply": true,
+      "exact": {
+        "script/current": "6",
+        "script/candidate": "12",
+        "full/current": "6",
+        "full/candidate": "13"
+      },
+      "H1": "True",
+      "H2": false,
+      "H2_items": [
+        "H-08"
+      ],
+      "H3": "True",
+      "per_item": {
+        "H-01": {
+          "pablo": 2,
+          "script/current": "2",
+          "script/candidate": "2",
+          "full/current": "2",
+          "full/candidate": "2"
+        },
+        "H-02": {
+          "pablo": 1,
+          "script/current": "4",
+          "script/candidate": "1",
+          "full/current": "4",
+          "full/candidate": "1"
+        },
+        "H-03": {
+          "pablo": 1,
+          "script/current": "4",
+          "script/candidate": "1",
+          "full/current": "4",
+          "full/candidate": "1"
+        },
+        "H-04": {
+          "pablo": 1,
+          "script/current": "3",
+          "script/candidate": "3",
+          "full/current": "3",
+          "full/candidate": "1"
+        },
+        "H-05": {
+          "pablo": 2,
+          "script/current": "2",
+          "script/candidate": "2",
+          "full/current": "2",
+          "full/candidate": "2"
+        },
+        "H-06": {
+          "pablo": 1,
+          "script/current": "4",
+          "script/candidate": "1",
+          "full/current": "2",
+          "full/candidate": "1"
+        },
+        "H-07": {
+          "pablo": 1,
+          "script/current": "2",
+          "script/candidate": "1",
+          "full/current": "3",
+          "full/candidate": "1"
+        },
+        "H-08": {
+          "pablo": 3,
+          "script/current": "3",
+          "script/candidate": "2",
+          "full/current": "3",
+          "full/candidate": "1"
+        },
+        "H-09": {
+          "pablo": 1,
+          "script/current": "3",
+          "script/candidate": "1",
+          "full/current": "3",
+          "full/candidate": "1"
+        },
+        "H-10": {
+          "pablo": 2,
+          "script/current": "2",
+          "script/candidate": "2",
+          "full/current": "2",
+          "full/candidate": "2"
+        },
+        "H-11": {
+          "pablo": 1,
+          "script/current": "4",
+          "script/candidate": "1",
+          "full/current": "3",
+          "full/candidate": "1"
+        },
+        "H-12": {
+          "pablo": 2,
+          "script/current": "2",
+          "script/candidate": "1",
+          "full/current": "2",
+          "full/candidate": "1"
+        },
+        "H-13": {
+          "pablo": 1,
+          "script/current": "4",
+          "script/candidate": "1",
+          "full/current": "3",
+          "full/candidate": "1"
+        },
+        "H-14": {
+          "pablo": 2,
+          "script/current": "2",
+          "script/candidate": "2",
+          "full/current": "2",
+          "full/candidate": "2"
+        },
+        "H-15": {
+          "pablo": 1,
+          "script/current": "4",
+          "script/candidate": "1",
+          "full/current": "4",
+          "full/candidate": "1"
+        }
+      }
+    },
+    "MSm": {
+      "n": 0,
+      "rules_apply": false,
+      "exact": {
+        "script/current": 0,
+        "script/candidate": 0,
+        "full/current": 0,
+        "full/candidate": 0
+      },
+      "H1": null,
+      "H2": null,
+      "H2_items": [],
+      "H3": null,
+      "per_item": {}
+    }
+  }
+}
