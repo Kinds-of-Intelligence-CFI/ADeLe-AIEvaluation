@@ -43,7 +43,7 @@ def p_ids(cur: str, v4: str) -> dict[str, str]:
             unmatched.append((level, text))
     missing = sorted(set(cur_ids.values()) - set(out))
     assert len(missing) == 1 and missing[0] == "P-MSc-L4-2", missing
-    assert len(unmatched) == 2 and {lvl for lvl, _ in unmatched} == {1, 4}, unmatched
+    assert {lvl for lvl, _ in unmatched} <= {1, 4} and 4 in {lvl for lvl, _ in unmatched}, unmatched
     for level, text in unmatched:
         out["P-MSc-L4-2" if level == 4 else ATLAS] = text
     return out
@@ -52,7 +52,7 @@ def p_ids(cur: str, v4: str) -> dict[str, str]:
 def main() -> None:
     global RUN, VERSION
     ap = argparse.ArgumentParser()
-    ap.add_argument("--version", type=int, default=4)
+    ap.add_argument("--version", default="4")
     VERSION = ap.parse_args().version
     RUN = f"mscand-v{VERSION}"
     catalog = cp.load_active_catalog()
@@ -75,10 +75,11 @@ def main() -> None:
         p = mp.prompt_for(cat, SimpleNamespace(rubric="MSc", set=r.set.removeprefix("R-"), text=text))
         cells.append({"item_id": r.item_id, "set": r.set, "arm": f"candidate_v{VERSION}", "rubric": "MSc",
                       "prompt_sha256": mp.sha256(p.encode("utf-8")), "prompt": p})
-    p = mp.prompt_for(cat, SimpleNamespace(rubric="MSc", set="P", text=ptext[ATLAS]))
-    cells.append({"item_id": ATLAS, "set": "R-P", "arm": f"candidate_v{VERSION}", "rubric": "MSc",
-                  "prompt_sha256": mp.sha256(p.encode("utf-8")), "prompt": p})
-    rng = random.Random(cp.SEED + VERSION)
+    p = mp.prompt_for(cat, SimpleNamespace(rubric="MSc", set="P", text=ptext[ATLAS])) if ATLAS in ptext else None
+    if p is not None:
+      cells.append({"item_id": ATLAS, "set": "R-P", "arm": f"candidate_v{VERSION}", "rubric": "MSc",
+                    "prompt_sha256": mp.sha256(p.encode("utf-8")), "prompt": p})
+    rng = random.Random(cp.SEED + {"4": 4, "5": 5, "4b": 8}[str(VERSION)])
     rng.shuffle(cells)
     taken = set()
     for f in cp.ROOT.glob("experiments/benchmarks/*/labels/*/prompts_index.csv"):
@@ -90,7 +91,7 @@ def main() -> None:
     cells = [{"file_id": c["file_id"], **{k: v for k, v in c.items() if k != "file_id"}} for c in cells]
     cp.RUN = RUN
     cp.write_run(cells, {"pass": 1, "candidate_file": f"ms-candidate/MSc_candidate_v{VERSION}.txt",
-                         "rubric_sha256": mp.sha256(v4.encode("utf-8")), "amendment": VERSION,
+                         "rubric_sha256": mp.sha256(v4.encode("utf-8")), "amendment": {"4": 4, "5": 5, "4b": 7}[str(VERSION)],
                          "current_arm": "mscand-1"})
     print(pd.DataFrame(cells).groupby("set").size().to_string())
 

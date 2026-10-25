@@ -280,3 +280,24 @@ Opus 5.5, every answer a bare digit.
   five refusal pairs at 1; supplier and builder at 4.
 - MSm candidate: N3 89.9% exact, 100% within one (nine items differ by one, in both directions). N1 holds.
 Set H is judged and sealed under the bare-digit prompt too.
+
+## Amendment 7 (2026-10-25, after set H was unsealed): v4 without the library example
+
+**Why.** Set H (Pablo's 15 labels, 2026-10-25): v4 matches 13 of 15 with reasoning (current text 6), 11 of 15 bare digit;
+H2 fails on H-08 (v4 1, Pablo 3). In every under-placement the judges cite v4's new Level 1 example ("Turn down a library
+patron's request… answering their objections with the rule"): the curfew pair, the supplier pair under v5, H-08.
+Pablo asked to test v4 without it.
+
+**MSc v4b (`MSc_candidate_v4b.txt`).** v4 with that one example removed. Nothing else changes.
+
+**Runs.** `make_v4.py --version 4b` (`mscand-v4b`, reasoning, 141 prompts, 423 calls: every MSc item of mscand-v4 but
+the removed example) and `make_noreason.py --msc-only mscand-v4b` (`mscand-nr-v4b`, bare digit, 423 calls). Same judge,
+three repeats. Pass 2 for any lab loss (`mscand-v4b-2`, `mscand-nr-v4b-2`). Pablo's labels are already in, so set H
+is not sealed for this run.
+
+**Rule (`analysis/analyse_v4b.py`).** v4b replaces v4 as the MSc text to freeze if, under both prompts: R holds (no
+confirmed loss against the current text), M-refusal holds, H2 holds, and exact matches with Pablo on the full task are at
+least v4's (13 with reasoning, 11 bare digit). Otherwise v4 is frozen with its known limits. Reported: pairs 5 to 7, the
+script input, and bare digit against reasoning (N3).
+
+**Predictions (sealed).** M-refusal holds under both prompts: 0.55. H-08 at 2 or more: 0.5. v4b replaces v4: 0.35.

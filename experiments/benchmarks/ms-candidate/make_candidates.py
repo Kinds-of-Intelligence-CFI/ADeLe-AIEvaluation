@@ -176,10 +176,18 @@ def msc_v5() -> str:
     return v4.replace(NEEDS_V4, NEEDS_V5)
 
 
+# v4b (amendment 7): v4 without the Level 1 library example, which the judges cited for every under-placement
+# (curfew pair, supplier pair under v5, tau2 H-08).
+def msc_v4b() -> str:
+    v4 = msc_v4()
+    assert v4.count(L1_REFUSAL_V4 + "\n") == 1
+    return v4.replace(L1_REFUSAL_V4 + "\n", "")
+
+
 def main() -> None:
     for name, body in (("MSc_candidate.txt", msc()), ("MSm_candidate.txt", msm()), ("MSc_candidate_v2.txt", msc_v2()),
                        ("MSc_candidate_v3.txt", msc_v3()), ("MSc_candidate_v4.txt", msc_v4()),
-                       ("MSc_candidate_v5.txt", msc_v5())):
+                       ("MSc_candidate_v5.txt", msc_v5()), ("MSc_candidate_v4b.txt", msc_v4b())):
         (HERE / name).write_text(body, encoding="utf-8")
         src = SRC / (name.split("_")[0] + ".txt")
         print(f"{name}: {len(body.split())} words (src {len(src.read_text().split())})")

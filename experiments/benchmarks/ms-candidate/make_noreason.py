@@ -21,7 +21,7 @@ _spec = importlib.util.spec_from_file_location("cand_prompts", HERE / "make_prom
 cp = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(cp)
 mp = cp.mp
-RUN = "mscand-nr"
+RUN = "mscand-nr"  # --msc-only RUN writes mscand-nr-<RUN> for that MSc run only
 INSTR_R = P.PROMPT_V2.split("Before giving a level, ")[1].split("\nThe level of {demand}")[0]
 INSTR_R = "Before giving a level, " + INSTR_R
 INSTR_NR = P.PROMPT_V2_NOREASON.split("not any particular solver's attempt at it.\n\n")[1]
@@ -37,7 +37,15 @@ def to_noreason(prompt: str, rubric: str) -> str:
 
 
 def main() -> None:
+    import argparse
+    global RUN
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--msc-only", help="an MSc run, e.g. mscand-v4b")
+    a = ap.parse_args()
     sources = [("mscand-v4", "MSc", "candidate_v4", "v4_nr"), ("mscand-1", "MSm", "candidate", "msm_cand_nr")]
+    if a.msc_only:
+        ver = a.msc_only.removeprefix("mscand-v")
+        sources, RUN = [(a.msc_only, "MSc", f"candidate_v{ver}", f"v{ver}_nr")], f"mscand-nr-v{ver}"
     cells = []
     for run, rubric, arm, new_arm in sources:
         idx = pd.read_csv(HERE / f"labels/{run}/prompts_index.csv")
@@ -49,7 +57,7 @@ def main() -> None:
             cells.append({"item_id": r.item_id, "set": r.set, "arm": new_arm, "rubric": rubric,
                           "prompt_sha256": mp.sha256(q.encode("utf-8")), "source_run": run,
                           "source_file_id": r.file_id, "prompt": q})
-    rng = random.Random(cp.SEED + 6)
+    rng = random.Random(cp.SEED + (6 if RUN == "mscand-nr" else 9))
     rng.shuffle(cells)
     taken = set()
     for f in cp.ROOT.glob("experiments/benchmarks/*/labels/*/prompts_index.csv"):
