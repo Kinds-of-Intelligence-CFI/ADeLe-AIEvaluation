@@ -301,3 +301,11 @@ least v4's (13 with reasoning, 11 bare digit). Otherwise v4 is frozen with its k
 script input, and bare digit against reasoning (N3).
 
 **Predictions (sealed).** M-refusal holds under both prompts: 0.55. H-08 at 2 or more: 0.5. v4b replaces v4: 0.35.
+
+**Amendment 7 result (`mscand-v4b`, `mscand-nr-v4b`, `mscand-v4b-2`): v4b replaces v4 as the MSc text to freeze.** 849
+calls, all by Opus 5.5. Under both prompts: R holds (r36 D2 at 3 in pass 1, 4, 4, 4 in pass 2); M-refusal holds (4 of
+5 at 3 or less; the gym pair B is at 4); pairs 5 to 7 all at 4 (the curfew pair now included); H2 holds; exact
+matches with Pablo on the full task 13 of 15 with reasoning (v4: 13) and 13 of 15 bare digit (v4: 11). Bare digit
+against reasoning: 98.2% exact, 99.1% within one. On the script input v4b matches less often (9 of 15).
+Pablo revised two labels after discussion on 2026-10-25 (H-08 3→2, H-12 2→1; column `msc_revised`); the rules use his
+original labels. Against the revised labels, v4b matches 15 of 15 under both prompts (v4: 14 with reasoning, 12 bare digit).

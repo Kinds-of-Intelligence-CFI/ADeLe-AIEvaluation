@@ -1,6 +1,6 @@
 # Adoption draft (not applied): provenance entries and team note
 
-Drafted 2026-10-17 for Pablo. Nothing here is applied. Adoption means copying `MSc_candidate_v4.txt` to
+Drafted 2026-10-17 for Pablo. Nothing here is applied. Adoption means copying `MSc_candidate_v4b.txt` (amendment 7; v4 without the Level 1 library example) to
 `src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt` and `MSm_candidate.txt` to `.../MSm.txt`, appending the entries below
 to `docs/rubric-provenance/MSc.md` and `MSm.md`, and relabelling both rubrics on the released sets. It waits for
 Pablo's OK, his 15 agent-side labels (set H) and the no-reasoning check (amendment 6).

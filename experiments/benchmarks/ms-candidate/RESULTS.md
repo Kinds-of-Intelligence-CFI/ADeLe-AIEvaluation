@@ -51,3 +51,22 @@ the same items scored 2 to 4.
   worksheets, with Claude's neutral summary of the goal and the customer's behaviour for each.
 - The minimal pairs were reused across screens; they are not fresh.
 - Battery M04 and r36 D2 are noisy (each moved between pass 1 and pass 2).
+
+## Update 2026-10-25: v4b replaces v4 (amendment 7)
+
+v4b is v4 without the Level 1 library example. Under both prompts it keeps every lab check (r36 D2 noisy again: 3,
+then 4, 4, 4), holds the refusal rule (4 of 5; the gym pair B at 4), places all three "needed" pairs at 4 (the curfew
+included), and passes H1 and H2.
+
+| | v4 reasoning | v4 bare digit | **v4b reasoning** | **v4b bare digit** |
+|---|---|---|---|---|
+| exact vs Pablo's labels (full task) | 13 | 11 | **13** | **13** |
+| exact vs his revised labels (H-08 2, H-12 1) | 14 | 12 | **15** | **15** |
+| H2 | fails (H-08) | fails (H-08) | holds | holds |
+| curfew pair B | 1 | 1 | **4** | **4** |
+| refusal pairs at 3 or less | 5 | 5 | 4 | 4 |
+
+Reading: removing the example fixes the over-reach without bringing back the old refusal problem, and it makes the
+bare-digit judge (the production setting) agree with the reasoning judge on the tau2 tasks. One cost: the gym
+refusal pair (a member disputing a paid pause) goes back to 4. On the script input, v4b matches less often (9 of 15)
+than on the full task, so the full task is the better input for MSc.
