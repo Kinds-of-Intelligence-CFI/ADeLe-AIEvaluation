@@ -37,13 +37,14 @@ Opus 5.5, effort low, bare-digit prompt (`v2-noreason`), one repeat, rubric text
 
 25,192 calls, about 102M input tokens, about 125 weekly points: more than one week of the Max plan. Runs go in this
 order: `w1v1-swe` (38), `w1v1-tau2` (19), `w1v1-tau2-long` (1), `w1v1-code` (28), `w1v1-code-long` (1), `w1v1-other`
-(37), `bulk-w1-rivercross-plms` (1). Rounds stop at 85% weekly or 90% of the 5-hour window and resume after the reset.
+(37), `bulk-w1-rivercross-plms` (1). Rounds stop at 95% weekly (Pablo, 2026-10-27: "I think you could go up to 95%, do
+not be shy") or 90% of the 5-hour window, and resume after the reset.
 At the Batch API this would be about $170.
 
 ## Minor calls (Pablo can veto)
 
-1. Canonical v1 rubric texts, not the unadopted `v1-upgrade` candidate. This keeps the labels comparable with the v1
-   paper.
+1. Canonical v1 rubric texts, not the unadopted `v1-upgrade` candidate. Pablo ruled this on 2026-10-27: "I think we
+   want the canonical, Jose Orallo preferred keeping those dimensions identical to what they were."
 2. Gates: `gate-dryrun` is replaced by the first relay (parsing, sizes, refusals). `gate-api-bridge` is moot (no API).
    `gate-v1-bridge` still needs the HF token; until it runs, these v1 labels are not claimed comparable to the
    published GPT-4o labels.
