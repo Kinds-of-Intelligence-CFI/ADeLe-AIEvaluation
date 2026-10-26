@@ -55,3 +55,9 @@ rough share, not a test. Reported for all five rubrics, decided on PLp and MSc.
 ## Then
 
 The result goes to Pablo with the decision rule's reading. The label set and the release do not change before his OK.
+
+## Superseded (2026-10-26), never run
+
+Pablo stopped this check before any label: the judge should see the goal. He chose instead to keep the goal and drop
+only the grader's expected-action list (`../tau2-goal`). The runs `tau2-nogoal` and `tau2-nogoal-long` stay pinned
+with no labels; four relays were recorded and released without launching.
