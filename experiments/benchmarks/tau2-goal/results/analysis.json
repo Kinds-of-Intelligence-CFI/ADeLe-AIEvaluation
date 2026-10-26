@@ -1,0 +1,1033 @@
+{
+  "n": {
+    "tau2-airline/MSc": {
+      "released": 49,
+      "full": 49,
+      "new": 49
+    },
+    "tau2-airline/MSm": {
+      "released": 49,
+      "full": 49,
+      "new": 49
+    },
+    "tau2-airline/PLe": {
+      "released": 49,
+      "full": 49,
+      "new": 49
+    },
+    "tau2-airline/PLp": {
+      "released": 49,
+      "full": 49,
+      "new": 49
+    },
+    "tau2-airline/PLs": {
+      "released": 49,
+      "full": 49,
+      "new": 49
+    },
+    "tau2-banking_knowledge/MSc": {
+      "released": 79,
+      "full": 79,
+      "new": 79
+    },
+    "tau2-banking_knowledge/MSm": {
+      "released": 79,
+      "full": 79,
+      "new": 79
+    },
+    "tau2-banking_knowledge/PLe": {
+      "released": 79,
+      "full": 78,
+      "new": 79
+    },
+    "tau2-banking_knowledge/PLp": {
+      "released": 79,
+      "full": 79,
+      "new": 79
+    },
+    "tau2-banking_knowledge/PLs": {
+      "released": 79,
+      "full": 78,
+      "new": 79
+    },
+    "tau2-retail/MSc": {
+      "released": 114,
+      "full": 114,
+      "new": 114
+    },
+    "tau2-retail/MSm": {
+      "released": 114,
+      "full": 114,
+      "new": 114
+    },
+    "tau2-retail/PLe": {
+      "released": 114,
+      "full": 114,
+      "new": 114
+    },
+    "tau2-retail/PLp": {
+      "released": 114,
+      "full": 114,
+      "new": 114
+    },
+    "tau2-retail/PLs": {
+      "released": 114,
+      "full": 114,
+      "new": 114
+    },
+    "tau2/MSc": {
+      "released": 242,
+      "full": 242,
+      "new": 242
+    },
+    "tau2/MSm": {
+      "released": 242,
+      "full": 242,
+      "new": 242
+    },
+    "tau2/PLe": {
+      "released": 242,
+      "full": 241,
+      "new": 242
+    },
+    "tau2/PLp": {
+      "released": 242,
+      "full": 242,
+      "new": 242
+    },
+    "tau2/PLs": {
+      "released": 242,
+      "full": 241,
+      "new": 242
+    }
+  },
+  "levels": {
+    "tau2-airline/MSc": {
+      "released": {
+        "2": 27,
+        "3": 6,
+        "4": 16
+      },
+      "full": {
+        "1": 35,
+        "2": 14
+      },
+      "new": {
+        "1": 33,
+        "2": 16
+      }
+    },
+    "tau2-airline/MSm": {
+      "released": {
+        "1": 2,
+        "2": 44,
+        "3": 3
+      },
+      "full": {
+        "1": 17,
+        "2": 32
+      },
+      "new": {
+        "1": 21,
+        "2": 28
+      }
+    },
+    "tau2-airline/PLe": {
+      "released": {
+        "1": 47,
+        "2": 2
+      },
+      "full": {
+        "1": 43,
+        "2": 6
+      },
+      "new": {
+        "1": 43,
+        "2": 6
+      }
+    },
+    "tau2-airline/PLp": {
+      "released": {
+        "1": 10,
+        "2": 39
+      },
+      "full": {
+        "1": 20,
+        "2": 26,
+        "3": 3
+      },
+      "new": {
+        "1": 20,
+        "2": 26,
+        "3": 3
+      }
+    },
+    "tau2-airline/PLs": {
+      "released": {
+        "0": 1,
+        "1": 3,
+        "2": 45
+      },
+      "full": {
+        "0": 2,
+        "1": 20,
+        "2": 27
+      },
+      "new": {
+        "0": 3,
+        "1": 16,
+        "2": 30
+      }
+    },
+    "tau2-banking_knowledge/MSc": {
+      "released": {
+        "1": 2,
+        "2": 65,
+        "3": 6,
+        "4": 6
+      },
+      "full": {
+        "1": 40,
+        "2": 35,
+        "3": 4
+      },
+      "new": {
+        "1": 36,
+        "2": 39,
+        "3": 4
+      }
+    },
+    "tau2-banking_knowledge/MSm": {
+      "released": {
+        "1": 20,
+        "2": 53,
+        "3": 6
+      },
+      "full": {
+        "1": 24,
+        "2": 53,
+        "3": 2
+      },
+      "new": {
+        "1": 17,
+        "2": 60,
+        "3": 2
+      }
+    },
+    "tau2-banking_knowledge/PLe": {
+      "released": {
+        "1": 26,
+        "2": 33,
+        "3": 20
+      },
+      "full": {
+        "1": 14,
+        "2": 38,
+        "3": 26
+      },
+      "new": {
+        "1": 14,
+        "2": 38,
+        "3": 27
+      }
+    },
+    "tau2-banking_knowledge/PLp": {
+      "released": {
+        "1": 8,
+        "2": 70,
+        "3": 1
+      },
+      "full": {
+        "1": 5,
+        "2": 61,
+        "3": 13
+      },
+      "new": {
+        "1": 5,
+        "2": 60,
+        "3": 14
+      }
+    },
+    "tau2-banking_knowledge/PLs": {
+      "released": {
+        "0": 2,
+        "1": 9,
+        "2": 68
+      },
+      "full": {
+        "0": 3,
+        "1": 15,
+        "2": 60
+      },
+      "new": {
+        "0": 2,
+        "1": 13,
+        "2": 64
+      }
+    },
+    "tau2-retail/MSc": {
+      "released": {
+        "2": 111,
+        "3": 1,
+        "4": 2
+      },
+      "full": {
+        "1": 16,
+        "2": 98
+      },
+      "new": {
+        "1": 22,
+        "2": 91,
+        "3": 1
+      }
+    },
+    "tau2-retail/MSm": {
+      "released": {
+        "1": 2,
+        "2": 97,
+        "3": 15
+      },
+      "full": {
+        "1": 25,
+        "2": 89
+      },
+      "new": {
+        "1": 10,
+        "2": 104
+      }
+    },
+    "tau2-retail/PLe": {
+      "released": {
+        "1": 113,
+        "2": 1
+      },
+      "full": {
+        "1": 112,
+        "2": 2
+      },
+      "new": {
+        "1": 111,
+        "2": 3
+      }
+    },
+    "tau2-retail/PLp": {
+      "released": {
+        "1": 10,
+        "2": 104
+      },
+      "full": {
+        "1": 37,
+        "2": 76,
+        "3": 1
+      },
+      "new": {
+        "1": 29,
+        "2": 83,
+        "3": 2
+      }
+    },
+    "tau2-retail/PLs": {
+      "released": {
+        "0": 2,
+        "1": 4,
+        "2": 108
+      },
+      "full": {
+        "0": 2,
+        "1": 14,
+        "2": 98
+      },
+      "new": {
+        "0": 2,
+        "1": 8,
+        "2": 104
+      }
+    },
+    "tau2/MSc": {
+      "released": {
+        "1": 2,
+        "2": 203,
+        "3": 13,
+        "4": 24
+      },
+      "full": {
+        "1": 91,
+        "2": 147,
+        "3": 4
+      },
+      "new": {
+        "1": 91,
+        "2": 146,
+        "3": 5
+      }
+    },
+    "tau2/MSm": {
+      "released": {
+        "1": 24,
+        "2": 194,
+        "3": 24
+      },
+      "full": {
+        "1": 66,
+        "2": 174,
+        "3": 2
+      },
+      "new": {
+        "1": 48,
+        "2": 192,
+        "3": 2
+      }
+    },
+    "tau2/PLe": {
+      "released": {
+        "1": 186,
+        "2": 36,
+        "3": 20
+      },
+      "full": {
+        "1": 169,
+        "2": 46,
+        "3": 26
+      },
+      "new": {
+        "1": 168,
+        "2": 47,
+        "3": 27
+      }
+    },
+    "tau2/PLp": {
+      "released": {
+        "1": 28,
+        "2": 213,
+        "3": 1
+      },
+      "full": {
+        "1": 62,
+        "2": 163,
+        "3": 17
+      },
+      "new": {
+        "1": 54,
+        "2": 169,
+        "3": 19
+      }
+    },
+    "tau2/PLs": {
+      "released": {
+        "0": 5,
+        "1": 16,
+        "2": 221
+      },
+      "full": {
+        "0": 7,
+        "1": 49,
+        "2": 185
+      },
+      "new": {
+        "0": 7,
+        "1": 37,
+        "2": 198
+      }
+    }
+  },
+  "vs_released": {
+    "tau2-airline/MSc": {
+      "n": 49,
+      "exact": 0.265,
+      "within_one": 0.551,
+      "mean_shift": -1.449
+    },
+    "tau2-airline/MSm": {
+      "n": 49,
+      "exact": 0.51,
+      "within_one": 1.0,
+      "mean_shift": -0.449
+    },
+    "tau2-airline/PLe": {
+      "n": 49,
+      "exact": 0.918,
+      "within_one": 1.0,
+      "mean_shift": 0.082
+    },
+    "tau2-airline/PLp": {
+      "n": 49,
+      "exact": 0.735,
+      "within_one": 1.0,
+      "mean_shift": -0.143
+    },
+    "tau2-airline/PLs": {
+      "n": 49,
+      "exact": 0.673,
+      "within_one": 0.98,
+      "mean_shift": -0.347
+    },
+    "tau2-banking_knowledge/MSc": {
+      "n": 79,
+      "exact": 0.557,
+      "within_one": 0.899,
+      "mean_shift": -0.608
+    },
+    "tau2-banking_knowledge/MSm": {
+      "n": 79,
+      "exact": 0.595,
+      "within_one": 0.987,
+      "mean_shift": -0.013
+    },
+    "tau2-banking_knowledge/PLe": {
+      "n": 79,
+      "exact": 0.481,
+      "within_one": 0.975,
+      "mean_shift": 0.241
+    },
+    "tau2-banking_knowledge/PLp": {
+      "n": 79,
+      "exact": 0.747,
+      "within_one": 1.0,
+      "mean_shift": 0.203
+    },
+    "tau2-banking_knowledge/PLs": {
+      "n": 79,
+      "exact": 0.899,
+      "within_one": 1.0,
+      "mean_shift": -0.051
+    },
+    "tau2-retail/MSc": {
+      "n": 114,
+      "exact": 0.798,
+      "within_one": 0.982,
+      "mean_shift": -0.228
+    },
+    "tau2-retail/MSm": {
+      "n": 114,
+      "exact": 0.763,
+      "within_one": 1.0,
+      "mean_shift": -0.202
+    },
+    "tau2-retail/PLe": {
+      "n": 114,
+      "exact": 0.965,
+      "within_one": 1.0,
+      "mean_shift": 0.018
+    },
+    "tau2-retail/PLp": {
+      "n": 114,
+      "exact": 0.798,
+      "within_one": 1.0,
+      "mean_shift": -0.149
+    },
+    "tau2-retail/PLs": {
+      "n": 114,
+      "exact": 0.947,
+      "within_one": 1.0,
+      "mean_shift": -0.035
+    },
+    "tau2/MSc": {
+      "n": 242,
+      "exact": 0.612,
+      "within_one": 0.868,
+      "mean_shift": -0.599
+    },
+    "tau2/MSm": {
+      "n": 242,
+      "exact": 0.657,
+      "within_one": 0.996,
+      "mean_shift": -0.19
+    },
+    "tau2/PLe": {
+      "n": 242,
+      "exact": 0.798,
+      "within_one": 0.992,
+      "mean_shift": 0.103
+    },
+    "tau2/PLp": {
+      "n": 242,
+      "exact": 0.769,
+      "within_one": 1.0,
+      "mean_shift": -0.033
+    },
+    "tau2/PLs": {
+      "n": 242,
+      "exact": 0.876,
+      "within_one": 0.996,
+      "mean_shift": -0.103
+    }
+  },
+  "vs_full": {
+    "tau2-airline/MSc": {
+      "n": 49,
+      "exact": 0.878,
+      "within_one": 1.0,
+      "mean_shift": 0.041
+    },
+    "tau2-airline/MSm": {
+      "n": 49,
+      "exact": 0.796,
+      "within_one": 1.0,
+      "mean_shift": -0.082
+    },
+    "tau2-airline/PLe": {
+      "n": 49,
+      "exact": 0.918,
+      "within_one": 1.0,
+      "mean_shift": 0.0
+    },
+    "tau2-airline/PLp": {
+      "n": 49,
+      "exact": 0.918,
+      "within_one": 1.0,
+      "mean_shift": 0.0
+    },
+    "tau2-airline/PLs": {
+      "n": 49,
+      "exact": 0.878,
+      "within_one": 1.0,
+      "mean_shift": 0.041
+    },
+    "tau2-banking_knowledge/MSc": {
+      "n": 79,
+      "exact": 0.81,
+      "within_one": 0.987,
+      "mean_shift": 0.051
+    },
+    "tau2-banking_knowledge/MSm": {
+      "n": 79,
+      "exact": 0.785,
+      "within_one": 1.0,
+      "mean_shift": 0.089
+    },
+    "tau2-banking_knowledge/PLe": {
+      "n": 78,
+      "exact": 0.795,
+      "within_one": 1.0,
+      "mean_shift": 0.026
+    },
+    "tau2-banking_knowledge/PLp": {
+      "n": 79,
+      "exact": 0.937,
+      "within_one": 1.0,
+      "mean_shift": 0.013
+    },
+    "tau2-banking_knowledge/PLs": {
+      "n": 78,
+      "exact": 0.859,
+      "within_one": 0.987,
+      "mean_shift": 0.051
+    },
+    "tau2-retail/MSc": {
+      "n": 114,
+      "exact": 0.868,
+      "within_one": 1.0,
+      "mean_shift": -0.044
+    },
+    "tau2-retail/MSm": {
+      "n": 114,
+      "exact": 0.851,
+      "within_one": 1.0,
+      "mean_shift": 0.132
+    },
+    "tau2-retail/PLe": {
+      "n": 114,
+      "exact": 0.956,
+      "within_one": 1.0,
+      "mean_shift": 0.009
+    },
+    "tau2-retail/PLp": {
+      "n": 114,
+      "exact": 0.886,
+      "within_one": 1.0,
+      "mean_shift": 0.079
+    },
+    "tau2-retail/PLs": {
+      "n": 114,
+      "exact": 0.93,
+      "within_one": 1.0,
+      "mean_shift": 0.053
+    },
+    "tau2/MSc": {
+      "n": 242,
+      "exact": 0.851,
+      "within_one": 0.996,
+      "mean_shift": 0.004
+    },
+    "tau2/MSm": {
+      "n": 242,
+      "exact": 0.818,
+      "within_one": 1.0,
+      "mean_shift": 0.074
+    },
+    "tau2/PLe": {
+      "n": 241,
+      "exact": 0.896,
+      "within_one": 1.0,
+      "mean_shift": 0.012
+    },
+    "tau2/PLp": {
+      "n": 242,
+      "exact": 0.909,
+      "within_one": 1.0,
+      "mean_shift": 0.041
+    },
+    "tau2/PLs": {
+      "n": 241,
+      "exact": 0.896,
+      "within_one": 0.996,
+      "mean_shift": 0.05
+    }
+  },
+  "spearman": {
+    "MSc": {
+      "released": {
+        "domains": 3,
+        "n": 242,
+        "rho": 0.1,
+        "p_two_sided": 0.129,
+        "ci95": [
+          -0.029,
+          0.226
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "full": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.319,
+        "p_two_sided": 9.07e-07,
+        "ci95": [
+          -0.432,
+          -0.196
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.272,
+        "p_two_sided": 2.96e-05,
+        "ci95": [
+          -0.388,
+          -0.147
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    },
+    "MSm": {
+      "released": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.118,
+        "p_two_sided": 0.0731,
+        "ci95": [
+          -0.244,
+          0.011
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "full": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.208,
+        "p_two_sided": 0.00142,
+        "ci95": [
+          -0.328,
+          -0.081
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.146,
+        "p_two_sided": 0.0253,
+        "ci95": [
+          -0.27,
+          -0.018
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    },
+    "PLe": {
+      "released": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.141,
+        "p_two_sided": 0.0312,
+        "ci95": [
+          -0.265,
+          -0.013
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "full": {
+        "domains": 3,
+        "n": 241,
+        "rho": -0.203,
+        "p_two_sided": 0.002,
+        "ci95": [
+          -0.324,
+          -0.075
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.153,
+        "p_two_sided": 0.0195,
+        "ci95": [
+          -0.277,
+          -0.025
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    },
+    "PLp": {
+      "released": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.282,
+        "p_two_sided": 1.51e-05,
+        "ci95": [
+          -0.398,
+          -0.157
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "full": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.484,
+        "p_two_sided": 2.47e-14,
+        "ci95": [
+          -0.581,
+          -0.373
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.409,
+        "p_two_sided": 1.9e-10,
+        "ci95": [
+          -0.514,
+          -0.292
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    },
+    "PLs": {
+      "released": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.145,
+        "p_two_sided": 0.0266,
+        "ci95": [
+          -0.269,
+          -0.017
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "full": {
+        "domains": 3,
+        "n": 241,
+        "rho": -0.344,
+        "p_two_sided": 1.14e-07,
+        "ci95": [
+          -0.456,
+          -0.223
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.32,
+        "p_two_sided": 8.43e-07,
+        "ci95": [
+          -0.434,
+          -0.197
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    }
+  },
+  "no_new_label": [],
+  "human_tau2_msc": {
+    "items": [
+      {
+        "item_id": "H-01",
+        "benchmark": "tau2-retail",
+        "instance_id": "0",
+        "pablo": 2.0,
+        "released": 2,
+        "full": 2.0,
+        "new": 2
+      },
+      {
+        "item_id": "H-02",
+        "benchmark": "tau2-airline",
+        "instance_id": "6",
+        "pablo": 1.0,
+        "released": 4,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-03",
+        "benchmark": "tau2-airline",
+        "instance_id": "45",
+        "pablo": 1.0,
+        "released": 4,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-04",
+        "benchmark": "tau2-airline",
+        "instance_id": "38",
+        "pablo": 1.0,
+        "released": 3,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-05",
+        "benchmark": "tau2-retail",
+        "instance_id": "7",
+        "pablo": 2.0,
+        "released": 2,
+        "full": 2.0,
+        "new": 2
+      },
+      {
+        "item_id": "H-06",
+        "benchmark": "tau2-airline",
+        "instance_id": "46",
+        "pablo": 1.0,
+        "released": 4,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-07",
+        "benchmark": "tau2-airline",
+        "instance_id": "43",
+        "pablo": 1.0,
+        "released": 3,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-08",
+        "benchmark": "tau2-retail",
+        "instance_id": "11",
+        "pablo": 2.0,
+        "released": 3,
+        "full": 2.0,
+        "new": 3
+      },
+      {
+        "item_id": "H-09",
+        "benchmark": "tau2-airline",
+        "instance_id": "1",
+        "pablo": 1.0,
+        "released": 4,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-10",
+        "benchmark": "tau2-retail",
+        "instance_id": "9",
+        "pablo": 2.0,
+        "released": 2,
+        "full": 2.0,
+        "new": 2
+      },
+      {
+        "item_id": "H-11",
+        "benchmark": "tau2-airline",
+        "instance_id": "27",
+        "pablo": 1.0,
+        "released": 3,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-12",
+        "benchmark": "tau2-banking_knowledge",
+        "instance_id": "task_006",
+        "pablo": 1.0,
+        "released": 1,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-13",
+        "benchmark": "tau2-airline",
+        "instance_id": "0",
+        "pablo": 1.0,
+        "released": 4,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-14",
+        "benchmark": "tau2-airline",
+        "instance_id": "22",
+        "pablo": 2.0,
+        "released": 2,
+        "full": 1.0,
+        "new": 1
+      },
+      {
+        "item_id": "H-15",
+        "benchmark": "tau2-airline",
+        "instance_id": "4",
+        "pablo": 1.0,
+        "released": 4,
+        "full": 1.0,
+        "new": 1
+      }
+    ],
+    "released": {
+      "exact": 5,
+      "within_one": 6,
+      "mean_diff": 1.67,
+      "n": 15
+    },
+    "full": {
+      "exact": 14,
+      "within_one": 15,
+      "mean_diff": -0.07,
+      "n": 15
+    },
+    "new": {
+      "exact": 13,
+      "within_one": 15,
+      "mean_diff": 0.0,
+      "n": 15
+    }
+  },
+  "pooled_exact_vs_full": 0.874,
+  "predictions": {
+    "MSc exact vs Pablo >= 12 of 15 (0.65)": true,
+    "PLp negative within-domain signal, p < 0.05 (0.8)": true,
+    "pooled exact vs tau2-full >= 80% (0.6)": true
+  }
+}
