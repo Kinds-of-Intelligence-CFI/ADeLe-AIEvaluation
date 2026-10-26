@@ -60,6 +60,9 @@ best run of any model.
   label replaces the old one. Every clean task was at PLp 3–5 in relabel-v2, so every PLp label here comes from
   relabel-v3. Each row of `labels.csv` names its run. The merge is one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
   ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **MSm and MSc** come instead from relabel-v4-ms, made after both were adopted on 2026-10-25 (`b05ddf3`), with
+  the bare-digit prompt (`build_annotation_prompt_v2_noreason`: the level only, no written assessment)
+  ([relabel-v4-ms/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v4-ms/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and what the agent sees (`instruction.md`, plus the README it

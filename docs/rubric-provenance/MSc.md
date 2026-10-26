@@ -49,3 +49,15 @@ refusal pairs score 1 except the gym pair (4); the curfew, supplier and builder 
 agreement, score 4; on 15 tau2 tasks labelled by Pablo from the agent's side, 13 exact under both prompts (current
 text 6), 15 of 15 against his two post-discussion revisions. Bare digit against reasoning: 98% exact.
 Superseded attempts: v1 to v3, v4 (with a Level 1 library example that judges over-applied), v5 (purpose clause).
+
+## 2026-10-26 — frozen (Pablo's ruling)
+
+v4b is frozen: `src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt` at `b05ddf3`, sha256 `3410930631535d8f…`. Change it
+only with a new provenance entry and a relabel. Evidence at the freeze: the lab checks above; the full relabel of
+released tasks (`experiments/benchmarks/relabel-v4-ms`); and the tau2 production input, the full task with its goal
+but not the grader's expected actions (`experiments/benchmarks/tau2-goal`). On that input MSc matches Pablo's 15
+agent-side labels 13 times (15 within one) and falls with solve rate within domain (ρ −0.27, p < 0.001; released
+labels +0.10). Pablo confirmed his H-01 and H-02 labels as MSc. Known limits: all agent-side evidence comes from tau2,
+15 items, one rater; MSc is 0 on every coding and terminal set; the social sets have no solve rate. Incremental
+prediction over the other rubrics was not tested: Pablo judged tau2 a weak test of it, since most tau2 goals do not
+require satisfying the client.

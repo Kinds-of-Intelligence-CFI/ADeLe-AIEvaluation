@@ -20,7 +20,7 @@ configs:
 # ADeLe — DeepSWE v1.1 with demand labels
 
 All 113 tasks of DeepSWE v1.1, with per-task solve rates, external defect flags, and ADeLe demand labels on the
-90 clean tasks. 450 labels (PLp 90, PLe 90, PLs 90, MSm 90, MSc 90). Built at commit `b528ffa` of
+90 clean tasks. 450 labels (PLp 90, PLe 90, PLs 90, MSm 90, MSc 90). Built at commit `1b7b5ff` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/deepswe-clean/`).
 
@@ -58,6 +58,9 @@ missing, not failures. `solve_rate_pre_timeout` drops the 8 configurations run a
   label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
   one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
   ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **MSm and MSc** come instead from relabel-v4-ms, made after both were adopted on 2026-10-25 (`b05ddf3`), with
+  the bare-digit prompt (`build_annotation_prompt_v2_noreason`: the level only, no written assessment)
+  ([relabel-v4-ms/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v4-ms/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
 - **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction (verbatim, as the agent sees it), a

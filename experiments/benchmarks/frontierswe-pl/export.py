@@ -2,7 +2,8 @@
 
 Labels (PLp, PLe, PLs, MSm, MSc on the 19 clean tasks): all from relabel-v2 (examples review of 2026-10-04, d4ec2ec),
 with PLp re-judged in relabel-v3 for cells at PLp 3-5 after the synthesis example moved to Level 4 (d6cc9ca). The
-merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). The 15 dropped tasks have no current
+merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). MSm and MSc come instead from relabel-v4-ms (adopted
+texts, b05ddf3; bare-digit prompt). The 15 dropped tasks have no current
 labels; their PLp labels under an earlier text (amendment 1, run frontierswe-pl-dropped) are not released. The card's
 PLp levels and correlation are computed here from the released labels, with the study's statistic (swebench-pl's
 `rho`) on the clean set. No task text (the task repository has no licence).

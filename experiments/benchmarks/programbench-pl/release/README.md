@@ -20,7 +20,7 @@ configs:
 # ADeLe — ProgramBench with demand labels
 
 All 200 tasks of ProgramBench v1.2.5, with per-task outcomes, flags, and ADeLe demand labels on the 130
-clean tasks. 645 labels (PLp 129, PLe 129, PLs 129, MSm 129, MSc 129). Built at commit `b528ffa` of
+clean tasks. 645 labels (PLp 129, PLe 129, PLs 129, MSm 129, MSc 129). Built at commit `1b7b5ff` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/programbench-pl/`).
 
@@ -64,6 +64,9 @@ runs. `difficulty` is ProgramBench's own label.
   label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
   one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
   ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **MSm and MSc** come instead from relabel-v4-ms, made after both were adopted on 2026-10-25 (`b05ddf3`), with
+  the bare-digit prompt (`build_annotation_prompt_v2_noreason`: the level only, no written assessment)
+  ([relabel-v4-ms/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v4-ms/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept. Prompts too long for one read (13 tasks) were read in 200-line parts by the same
   model, and a check required every line to come back.

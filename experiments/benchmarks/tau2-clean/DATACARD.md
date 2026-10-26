@@ -34,9 +34,9 @@ labels for every task. {n_kept} tasks, {n_labels} labels. Built at commit `{comm
 | `rubrics.csv` | rubric text | code, name, generation, file, sha256 of the exact text, and the runs that used it |
 
 A task is `(benchmark, instance_id)`: ids repeat across domains (`0` is an airline and a retail task). Task text is
-not included. It is the user scenario of `data/tau2/domains/<domain>/tasks.json` in
-[`sierra-research/tau2-bench`](https://github.com/sierra-research/tau2-bench), rendered by ADeLe's tau2 loader;
-`prompt_sha12` pins the exact text, since tau2 revised some tasks between versions.
+not included. The task is defined by `data/tau2/domains/<domain>/` in
+[`sierra-research/tau2-bench`](https://github.com/sierra-research/tau2-bench); `prompt_sha12` pins the user scenario
+(the simulated customer's script, rendered by ADeLe's tau2 loader), since tau2 revised some tasks between versions.
 
 ## How the set was built
 
@@ -63,15 +63,19 @@ task of the domain (airline 7, retail 8, banking 10). `solve_rate_all` uses ever
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating). Each
   is a 0–5 scale; `rubrics.csv` pins the exact text by sha256.
-- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
-  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
-  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
-  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
-  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **Runs.** All labels come from tau2-goal (2026-10-26), one run over every clean task and rubric
+  ([tau2-goal/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tau2-goal/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
-- **Prompt.** ADeLe's v2 annotation prompt (`build_annotation_prompt_v2`): the rubric and the task, a short written
-  assessment, then the level. The judge sees only the user scenario, never the expected actions or any agent's attempt.
+- **What the judge reads.** The full task from the agent's side: the domain policy, the agent's tools, the database
+  records the task touches, the simulated customer's script and standing rules, and the goal (what the agent must
+  tell the customer, the outcome checks, what the reward is based on). It does not see the grader's list of expected
+  actions or any agent's attempt. Until 2026-10-26 the judge read only the customer's script; on that input MSc and
+  the PL rubrics tracked solve rate less well
+  ([tau2-full/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/tau2-full/RESULTS.md)).
+  Built by `experiments/benchmarks/tau2-goal/build.py`.
+- **Prompt.** ADeLe's v2 annotation prompt without the written assessment (`build_annotation_prompt_v2_noreason`): the
+  rubric and the task, then the level as a bare digit.
 
 ## What the labels show
 

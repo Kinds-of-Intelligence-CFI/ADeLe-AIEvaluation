@@ -2,7 +2,8 @@
 
 Labels (PLp, PLe, PLs, MSm, MSc on the 90 clean tasks): all from relabel-v2 (examples review of 2026-10-04, d4ec2ec),
 with PLp re-judged in relabel-v3 for cells at PLp 3-5 after the synthesis example moved to Level 4 (d6cc9ca). The
-merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). The card's correlations are computed
+merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). MSm and MSc come instead from relabel-v4-ms (adopted
+texts, b05ddf3; bare-digit prompt). The card's correlations are computed
 here from the released labels, with the study's statistic (swebench-pl's `rho`) on the clean set. No task text (the
 DeepSWE site carries a no-training canary); no trial data (no terms, deep-swe #94).
 

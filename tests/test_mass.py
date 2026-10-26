@@ -808,4 +808,4 @@ def test_current_labelset_loads():
     from adele.mass.labelset import load_labelset
 
     ls = load_labelset("current")
-    assert [n for n, _ in ls.layers] == ["relabel-v3", "relabel-v2", "relabel-v2-social"]
+    assert [n for n, _ in ls.layers] == ["tau2-goal", "relabel-v4-ms", "relabel-v3", "relabel-v2", "relabel-v2-social"]
