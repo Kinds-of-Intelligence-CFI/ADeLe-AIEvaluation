@@ -107,3 +107,14 @@ releases are rebuilt. Nothing changes before his OK. Launching waits for his go.
   used for the outcomes.
 - No separate gate before the full run: there are no human labels for these sets to gate on.
 - Whole tasks, not single cells, are routed to the chunked judge, so all five rubrics of a task use the same judge.
+
+## Amendment: PL freeze bar (2026-10-26, set before any result was looked at)
+
+Pablo: "Ok, run those things so we can freeze them." PLp, PLe and PLs are frozen at their current text (sha256
+`b1c3712b…`, `ab994dd7…`, `26e29e64…`, unchanged since `01018cf`) if this study meets all three:
+1. **Run health.** Every PL cell has a label, or each missing one is explained (for example, safety-classifier stops).
+2. **PLp** has a negative within-set link with solve rate on SWE-bench Verified, p < 0.05 (released: about −0.55).
+3. **No new failure.** No PL rubric has a significantly positive link (p < 0.05, the wrong direction) on any set.
+If all three hold: the freezes are recorded in `docs/rubric-provenance/`, label set `current` gets a `goal-visible`
+layer under `tau2-goal`, and the six releases are rebuilt (Pablo's OK, 2026-10-26). If any fails, nothing is frozen
+and the result goes to Pablo first.
