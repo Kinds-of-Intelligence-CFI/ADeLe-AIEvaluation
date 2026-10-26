@@ -1,0 +1,111 @@
+{
+  "run": "tau2-nogoal",
+  "created_at": "2026-10-26T12:30:04+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/tau2-nogoal.toml",
+  "git": {
+    "commit": "6e453b99bacc7959437e1134472db61d631a5f5d",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "2cabc30f9477278b627abf9971008f4dc2c2c8fb28b2ff8ae94e4e6c038d2c97",
+      "content": "# tau2-nogoal: as tau2-full, without part 3 of the task (how the run is graded), on the same 242 tau2 tasks, rubrics and\n# judge (Pablo, 2026-10-26). Instance texts from experiments/benchmarks/tau2-nogoal/build.py\n# (data/instances-tau2-nogoal, gitignored). Tasks whose prompts fit one Read; the rest are in tau2-nogoal-long.toml.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/tau2-nogoal.toml\nname = \"tau2-nogoal\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-retail\", \"tau2-banking_knowledge\"]\nsubset = \"experiments/benchmarks/tau2-nogoal/subset.csv\"\ninstances_dir = \"data/instances-tau2-nogoal\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "40ff022e36be741f1a8faadf905e6f236f5f8bf92505944dc3d1e9aac1b563ac",
+          "frame_sha256": "a08c6911857beb28a35ee677520f3f749012c7c713bc031d2bb42cc37e9f2dc3",
+          "n_selected": 49
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "4832310df5c786970d823f97bf4e9d42bd2353b99cf92081816c8b40325f9318",
+          "frame_sha256": "d2965e8288b7c4e7c5f6e8450c2fa7982e3d32542fc346603dea229fd6fa51ff",
+          "n_selected": 114
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "11d0bc919c67b479f4a852e5d05f25d90b6bc01644116843ec47448192678ab5",
+          "frame_sha256": "11d0bc919c67b479f4a852e5d05f25d90b6bc01644116843ec47448192678ab5",
+          "n_selected": 64
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/tau2-nogoal/subset.csv",
+        "sha256": "73a9ec0782b7616205c7568466b4aae07c9a1f1efa79fe695ab85f2510716d55",
+        "n_ids": 227
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "9579f3ea29debec754a55c23ae7cd1d4b4aa496ee12c4c11088a46b3074d8f81",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "3410930631535d8f24f60928caf70362fecda555d96b146d97369eae76780bc0",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      },
+      "batch": true
+    },
+    "cells": {
+      "n": 1135,
+      "sha256": "ea975abfb2e27cc695dc6dfa05eb0cef478217bd06d069cd475bc371020b8dda"
+    }
+  }
+}
