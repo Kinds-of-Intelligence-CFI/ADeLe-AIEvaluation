@@ -13,6 +13,11 @@ experiment folder follows.
 
 ## Reference, once you need it
 
+**Judging**
+
+- [`judge-input.md`](judge-input.md) — what the judge sees for each task: what the agent gets, the setting, and the
+  goal; never tests or solutions.
+
 **Rubrics — how they got this way**
 
 - [`agentic-rubric-redesign.md`](agentic-rubric-redesign.md) — the full account of
