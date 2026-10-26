@@ -46,3 +46,12 @@ This is a production relabel, with no pass/fail rule.
 
 If Pablo agrees, label set `current` gets a `tau2-goal` layer for the three tau2 benchmarks and five rubrics, and the
 tau2 release is rebuilt. `tau2-full` stays as the record of the full-grader input.
+
+## Note before launch (2026-10-26)
+
+- Pablo confirmed H-01 and H-02 as MSc labels (`../ms-candidate/human_labels.csv`).
+- No incremental-prediction test for MSc here. Pablo: in most tau2 tasks the client does not need to be satisfied in
+  any meaningful way; it is not in the goals, so it mostly gets ignored. tau2 is a weak place to test whether MSc adds
+  prediction beyond the other rubrics.
+- This run is the last check before freezing MSc: it should still match Pablo on about 12 of 15 or more and keep a
+  negative link with solve rate.
