@@ -1,0 +1,1 @@
+run,cell_id,benchmark,instance_id,rubric_ref,generation,repeat,backend,model_requested,writer_model,effort,prompt_builder,prompt_sha256,level,valid,response_sha256,attempt,protocol_ok

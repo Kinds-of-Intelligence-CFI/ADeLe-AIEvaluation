@@ -1,0 +1,30 @@
+# tau2-full-banking (amendment 1): tau2-full on its 79 banking tasks, re-judged after the documents were rewritten as plain
+# text (as JSON, a document body was one line longer than the Read tool shows).
+# Instance texts from experiments/benchmarks/tau2-full/build.py (data/instances-tau2-full-v2, gitignored). Tasks whose
+# prompts fit one Read; the rest are in tau2-full-banking-long.toml. See experiments/benchmarks/tau2-full.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/tau2-full-banking.toml
+name = "tau2-full-banking"
+
+[tasks]
+benchmarks = ["tau2-banking_knowledge"]
+subset = "experiments/benchmarks/tau2-full/subset_banking.csv"
+instances_dir = "data/instances-tau2-full-v2"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 100

@@ -12,9 +12,12 @@ banking_knowledge has no single policy file. Its policy here is the two componen
 tau2-bench shares (`prompts/components/policy_header.md` and `additional_instructions.md`), plus a line on the
 knowledge base; the worksheets had only that line. The records are the task's required documents, as before.
 
-Writes data/instances-tau2-full/instances_<slug>.csv and its INSTANCES.tsv (gitignored: task text). Every script is
-checked against the frozen hash of data/instances/, and for the airline and retail worksheet items the text is
-checked against ms-candidate's full_task.
+Amendment 1 (2026-10-26): banking documents are written as plain text, not JSON, and no line may exceed 2,000 chars
+(the Read tool cuts longer lines). Writes data/instances-tau2-full-v2/instances_<slug>.csv and its INSTANCES.tsv
+(gitignored: task text); data/instances-tau2-full/ keeps the first build. Every script is checked against the frozen
+hash of data/instances/. Airline and retail are copied from the first build (the judged text; a rebuild can order
+records differently, because the worksheet's `records` collects ids in a set), and their worksheet items are checked
+against ms-candidate's full_task.
 
     uv run python experiments/benchmarks/tau2-full/build.py
 """
@@ -33,8 +36,10 @@ from adele.instances import register
 HERE = Path(__file__).resolve().parent
 BENCH = HERE.parent
 ROOT = BENCH.parents[1]
-OUT = ROOT / "data/instances-tau2-full"
+OUT = ROOT / "data/instances-tau2-full-v2"
+FIRST = ROOT / "data/instances-tau2-full"  # the first build (banking documents as JSON); airline and retail must match it
 DOMAINS = ("airline", "retail", "banking_knowledge")
+MAX_LINE = 2000  # the Read tool cuts longer lines
 
 
 def load(name: str, path: Path):
@@ -58,10 +63,18 @@ def policy(domain: str) -> str:
                         f"(Knowledge base: {n} documents. How the agent searches it depends on the retrieval set-up.)"])
 
 
+def record(domain: str, obj) -> str:
+    """A record as the judge reads it. Banking documents are plain text: as JSON, a document's body is one line,
+    longer than the Read tool shows (amendment 1)."""
+    if domain != "banking_knowledge":
+        return ws.block(obj)
+    return f"```text\nid: {obj['id']}\ntitle: {obj['title']}\n\n{obj['content'].strip()}\n```"
+
+
 def full_task(domain: str, task: dict, script: str, rules: str) -> str:
     """The worksheet's parts 1 to 3 for one task, in the form ms-candidate's full_task gives them."""
     tool_list = ", ".join(f"`{n}` ({t.lower()})" for t, n in ws.tools(domain))
-    recs = "\n\n".join(f"**{title}**\n\n{ws.block(obj)}" for title, obj in ws.records(domain, task, script))
+    recs = "\n\n".join(f"**{title}**\n\n{record(domain, obj)}" for title, obj in ws.records(domain, task, script))
     user_tools = task.get("user_tools") or []
     return f"""# Task
 
@@ -111,6 +124,18 @@ def main() -> None:
     texts = {}
     for domain in DOMAINS:
         slug = f"tau2-{domain}"
+        if domain != "banking_knowledge" and (FIRST / f"instances_{slug}.csv").exists():
+            # Keep the judged text. A rebuild may order records differently: `records` collects ids in a set.
+            path = OUT / f"instances_{slug}.csv"
+            path.write_bytes((FIRST / f"instances_{slug}.csv").read_bytes())
+            row = register(path, slug)
+            first = pd.read_csv(FIRST / "INSTANCES.tsv", sep="\t").set_index("benchmark").loc[slug, "sha256"]
+            assert row["sha256"] == first, f"{slug}: copy differs from the first build"
+            df = pd.read_csv(path, dtype={"instance_id": str})
+            assert df["prompt"].map(lambda t: max(map(len, t.split("\n")))).max() <= MAX_LINE, f"{slug}: long line"
+            texts.update({(slug, t.instance_id): t.prompt for t in df.itertuples()})
+            print(f"{slug}: kept from the first build, sha {row['sha256'][:12]}")
+            continue
         frozen = pd.read_csv(ROOT / f"data/instances/instances_{slug}.csv", dtype={"instance_id": str}) \
             .set_index("instance_id")["prompt_sha12"]
         tasks = json.loads((ws.DOMAINS / domain / "tasks.json").read_text(encoding="utf-8"))
@@ -121,6 +146,7 @@ def main() -> None:
             assert hashlib.sha256(script.encode()).hexdigest()[:12] == frozen[tid], f"{slug}/{tid}: script changed"
             text = full_task(domain, t, script, rules)
             assert "{{" not in text and "](" not in text, f"{slug}/{tid}: unresolved template or link"
+            assert max(map(len, text.split("\n"))) <= MAX_LINE, f"{slug}/{tid}: a line over {MAX_LINE} chars"
             rows.append({"benchmark": slug, "instance_id": tid, "prompt": text})
             texts[(slug, tid)] = text
         assert len(rows) == len(frozen), f"{slug}: {len(rows)} tasks, {len(frozen)} frozen"

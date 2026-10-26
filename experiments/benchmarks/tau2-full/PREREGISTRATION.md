@@ -63,6 +63,25 @@ tau2 is the one agentic set whose judge sees the grader.
 If Pablo agrees: label set `current` gets a `tau2-full` layer on top for the three tau2 benchmarks and five rubrics,
 and the tau2 release is rebuilt. Nothing changes before his OK.
 
+## Amendment 1 (2026-10-26, after the first labels): banking re-judged as plain text
+
+**What happened.** The build wrote each banking knowledge-base document as JSON, so a document's body sat on one
+line, up to 6,414 chars. The judges read prompts with the Read tool, which cuts lines over 2,000 chars, so they saw
+only the start of those documents. The chunked judge's check caught it: all 125 `tau2-full-long` answers were
+rejected. The single-read check does not look at line length, so 185 `tau2-full` cells (37 banking tasks) were
+labelled on cut text and passed. Airline and retail have no line over 2,000 chars; their 690 labels stand.
+
+**Change (Pablo: "rebuild banking with the documents as plain text, add a long-line check to the builder, amend the
+pre-registration, and re-judge all 79 banking tasks").** Banking documents are now plain text (id, title, body with
+real line breaks; same content; longest line 1,380 chars). The builder fails on any line over 2,000 chars. The new
+texts are in `data/instances-tau2-full-v2/`; airline and retail there are byte copies of the first build (a rebuild
+could order records differently, because the worksheet code collects ids in a set). All 79 banking tasks are
+re-judged in `tau2-full-banking` (55 tasks, 275 cells) and `tau2-full-banking-long` (24 tasks, 120 cells, chunked
+judge), split by the same rule. Every `tau2-full` banking label and the `tau2-full-long` run are set aside.
+
+**Labels used.** Airline and retail from `tau2-full`; banking from the two new runs. Designs, reports and sealed
+predictions are unchanged.
+
 ## Calls made without asking (for veto)
 
 - No separate 15-item gate before the full run. The MSc inputs for 14 of the 15 items are already proven identical
