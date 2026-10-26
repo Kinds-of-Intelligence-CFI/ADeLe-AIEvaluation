@@ -1,3 +1,5 @@
+# Superseded 2026-10-27 by the subagent runs w1v1-swe, w1v1-tau2(-long), w1v1-code(-long) and w1v1-other
+# (experiments/benchmarks/wave1-v1/PREREGISTRATION.md). Kept for the Batch API route.
 # Bulk wave 1 (BENCHMARKS.md): the 17 judged v1 rubrics on every wave-1 task. v1 MSm is left out (v2 MSm replaces it,
 # decision 3 of 2026-10-01); UG is computed, not judged. Launch only after the gates pass and with Pablo's go.
 name = "bulk-w1-v1"
