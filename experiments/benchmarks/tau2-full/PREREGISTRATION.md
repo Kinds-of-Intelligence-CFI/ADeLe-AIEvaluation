@@ -25,9 +25,11 @@ set-up shares (`policy_header.md`, `additional_instructions.md`), plus a line on
 records are the task's required documents, as in the worksheets. (The one banking worksheet item, H-12, had only
 the knowledge-base line, so its text differs from ms-candidate's.)
 
-**What the judge now sees that it did not.** The expected solution (part 3). SWE-bench and Terminal-Bench judges do
-not see their gold patches or hidden tests. This is Pablo's choice; it makes tau2 the one agentic set whose judge
-sees the grader.
+**What the judge now sees that it did not.** The goal and how it is graded (part 3), for every rubric. Pablo,
+2026-10-26: "the judge should see the goal in all benchmarks too, if available (perhaps with access to the tests,
+although I do not think they are strictly needed)." The coding and terminal sets do not yet show their goal (their
+judges see the problem statement or `instruction.md` only); bringing them in line is a separate study. Until then
+tau2 is the one agentic set whose judge sees the grader.
 
 ## Design
 
