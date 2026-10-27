@@ -48,3 +48,15 @@ Pablo's decision on a flagged item of the examples review. The synthesis-route b
 Level 4: planning a synthesis is established work (retrosynthetic analysis), so the Level 5 Note ("where … the kind of
 work is itself established, the task belongs at the level below") places it at 4, and the judge already read it as 4.
 Level 5 keeps two examples (proof strategy, research programme). Relabelled in `experiments/benchmarks/relabel-v3`.
+
+## 2026-10-27 — frozen (Pablo's ruling)
+
+PLp is frozen: `src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt` at `01018cf`, sha256 `b1c3712bfe571baf…`. Change it
+only with a new provenance entry and a relabel. Evidence at the freeze comes from the two production inputs, where the judge sees the goal but no tests,
+solutions or expected actions (`docs/judge-input.md`): `experiments/benchmarks/tau2-goal` (242 clean tau2 tasks) and
+`experiments/benchmarks/goal-visible` (six coding and terminal sets, 787 tasks). The freeze bar was set before the
+goal-visible results (its PREREGISTRATION.md, amendment `97cda10`) and holds: every PL cell labelled or explained, PLp
+negative on SWE-bench Verified, and no PL rubric significantly positive on any set.
+Signals (Spearman with solve rate): tau2 −0.41; SWE-bench Verified −0.59; ProgramBench −0.47.
+DeepSWE, FrontierSWE, Terminal-Bench 4.0 and TB-Science show no significant link either way. Known limits: no human
+label above Level 3, and Level 5 may be unreachable on current benchmarks.

@@ -61,3 +61,15 @@ Example bullets only; no level statement, Note or scope text changed. Reviewed a
 desiderata (`experiments/benchmarks/examples-review/PLs/REVIEW.md`); each new or reworded bullet was placement-checked
 with itself removed from the rubric (run `exrev-1`; all within one level of target). Adopted under Pablo's standing
 approval for example-only changes. Flagged items are listed in the review.
+
+## 2026-10-27 — frozen (Pablo's ruling)
+
+PLs is frozen: `src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt` at `7acbcee`, sha256 `26e29e6458e64cc5…`. Change it
+only with a new provenance entry and a relabel. Evidence at the freeze comes from the two production inputs, where the judge sees the goal but no tests,
+solutions or expected actions (`docs/judge-input.md`): `experiments/benchmarks/tau2-goal` (242 clean tau2 tasks) and
+`experiments/benchmarks/goal-visible` (six coding and terminal sets, 787 tasks). The freeze bar was set before the
+goal-visible results (its PREREGISTRATION.md, amendment `97cda10`) and holds: every PL cell labelled or explained, PLp
+negative on SWE-bench Verified, and no PL rubric significantly positive on any set.
+Signals (Spearman with solve rate): tau2 −0.32. No significant link on the coding and
+terminal sets; on SWE-bench Verified PLs takes one level only, so it is not testable there. Known limits: the evidence
+is weak outside tau2.

@@ -1,10 +1,8 @@
 """Build the shareable release of the Terminal-Bench 4.0.0 clean set (release/, Hugging Face layout) and a short
 descriptive summary (results/clean.json).
 
-Labels (PLp, PLe, PLs; ../release.py `current_labels`): all from relabel-v2 (examples review of 2026-10-04, d4ec2ec),
-with PLp re-judged in relabel-v3 for cells at PLp 3-5 after the synthesis example moved to Level 4 (d6cc9ca). The
-merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). All are Opus 5.5 at effort low with the
-v2 prompt. Only answers written by claude-opus-5-5 are exported; a clean task without such an answer is listed as
+Labels (PLp, PLe, PLs; ../release.py `current_labels`): from goal-visible (the judge sees the goal; frozen PL texts, MSm and
+MSc as adopted in b05ddf3; bare-digit prompt; goal-visible/RESULTS.md). Only answers written by claude-opus-5-5 are exported; a clean task without such an answer is listed as
 unlabelled. No task text (Terminal-Bench tasks carry a no-training canary).
 
 The summary is descriptive, not a pre-registered test: earlier labels and these outcomes were already analysed on the

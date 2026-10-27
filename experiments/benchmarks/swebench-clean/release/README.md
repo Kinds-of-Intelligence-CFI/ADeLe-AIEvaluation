@@ -20,7 +20,7 @@ configs:
 # ADeLe — SWE-bench Verified clean set with demand labels
 
 A subset of SWE-bench Verified that drops tasks known or likely to be broken, with ADeLe demand labels for every task.
-443 tasks, 1329 labels. Built at commit `b528ffa` of
+443 tasks, 1329 labels. Built at commit `4b584d2` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/swebench-clean/`).
 
@@ -61,20 +61,19 @@ are hard: only 1 to 6 of the 135 entries solve them. They are kept because some 
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating). Each
   is a 0–5 scale; `rubrics.csv` pins the exact text by sha256.
-- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
-  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
-  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
-  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
-  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **Runs.** All labels come from goal-visible (2026-10-27): the frozen PL texts, and MSm and MSc as adopted on
+  2026-10-25 (`b05ddf3`). Where goal-visible has no label, the label set falls back to an earlier run. Each row of
+  `labels.csv` names its run ([goal-visible/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/goal-visible/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept: when a safety classifier hands a call to another model, that answer is discarded.
-- **Prompt.** ADeLe's v2 annotation prompt (`build_annotation_prompt_v2`): the rubric and the task, a short written
-  assessment, then the level. The judge sees only the issue text, never the tests, the patch or any agent's attempt.
+- **Prompt.** ADeLe's bare-digit v2 prompt (`build_annotation_prompt_v2_noreason`): the rubric, the issue text and the repository name, and
+  the goal (a goal statement for the set, written from the benchmark's public docs). The judge answers with the level only. It never sees tests,
+  solutions or agent attempts ([docs/judge-input.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/docs/judge-input.md)).
 
 ## What the labels show
 
-On the 443 tasks, PLp falls with solve rate (Spearman ρ = -0.55) and rises with the human time-to-fix
-estimate (ρ = +0.41). The 35 hard tasks average PLp 1.97, against 1.64 for the rest. PLe and PLs
+On the 443 tasks, PLp falls with solve rate (Spearman ρ = -0.59) and rises with the human time-to-fix
+estimate (ρ = +0.42). The 35 hard tasks average PLp 1.83, against 1.39 for the rest. PLe and PLs
 barely vary on this benchmark: almost every task is PLe 3 and PLs 1. Details:
 [`RESULTS.md`](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/swebench-clean/RESULTS.md).
 

@@ -20,7 +20,7 @@ configs:
 # ADeLe — Terminal-Bench 4.0.0 clean set with demand labels
 
 A subset of Terminal-Bench 4.0.0 that drops the tasks an external review found defective, and the tasks no current
-agent solves, with ADeLe demand labels. 35 tasks, 105 labels. Built at commit `b528ffa` of
+agent solves, with ADeLe demand labels. 35 tasks, 105 labels. Built at commit `4b584d2` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tb4-clean/`).
 
@@ -54,21 +54,20 @@ each). **Expert hours** is the task author's estimate from each task's `task.tom
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating), each a
   0–5 scale; `rubrics.csv` pins the exact text by sha256.
-- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
-  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
-  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
-  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
-  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **Runs.** All labels come from goal-visible (2026-10-27): the frozen PL texts, and MSm and MSc as adopted on
+  2026-10-25 (`b05ddf3`). Where goal-visible has no label, the label set falls back to an earlier run. Each row of
+  `labels.csv` names its run ([goal-visible/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/goal-visible/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
-- **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
-  level. The judge never sees tests, solutions or agent attempts.
+- **Prompt.** ADeLe's bare-digit v2 prompt (`build_annotation_prompt_v2_noreason`): the rubric, the task instruction, and
+  the goal (a goal statement for the set, written from the benchmark's public docs). The judge answers with the level only. It never sees tests,
+  solutions or agent attempts ([docs/judge-input.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/docs/judge-input.md)).
 - **Missing labels:** none. 35 of 35 tasks have all three labels.
 
 ## What the labels show (descriptive)
 
-On the fully labelled clean tasks, PLp against solve rate: ρ = +0.21 (p = 0.22); against expert hours:
-ρ = +0.16 (p = 0.36). As on the full benchmark, PLp does not track Terminal-Bench difficulty: most tasks sit
+On the fully labelled clean tasks, PLp against solve rate: ρ = +0.00 (p = 0.99); against expert hours:
+ρ = +0.27 (p = 0.12). As on the full benchmark, PLp does not track Terminal-Bench difficulty: most tasks sit
 at PLp 3. PLp was already analysed on all 66 tasks with earlier labels, so this is a description, not a new test.
 
 ## Limits

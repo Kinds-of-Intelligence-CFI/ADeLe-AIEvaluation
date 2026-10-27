@@ -9,10 +9,11 @@
 
 Labels are the current ("merged") ones, the same for every release (`current_labels`), as declared in the label set
 `mass-annotation/labelsets/current.toml`, earlier layers winning: tau2-goal (all five rubrics on tau2, full task with
-its goal), relabel-v4-ms (MSm and MSc after their adoption, b05ddf3), relabel-v3 (PLp at 3-5 after the synthesis
+its goal), goal-visible (all five rubrics on the six coding and terminal sets, with the goal
+in the input), relabel-v4-ms (MSm and MSc after their adoption, b05ddf3), relabel-v3 (PLp at 3-5 after the synthesis
 example moved to Level 4, d6cc9ca), and relabel-v2 elsewhere (runs relabel-v2 and relabel-v2-long; the examples review
 of 2026-10-04, d4ec2ec). The relabel-v3 merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md).
-So PLp comes from two texts outside tau2; each label row names its run, and rubrics.csv names the runs of each text.
+So PLp comes from two texts on the social sets; each label row names its run, and rubrics.csv names the runs of each text.
 
 Inputs are committed files only: the study's tasks.csv and the labels.csv and manifest.json of `adele mass` runs. Only
 valid answers written by claude-opus-5-5 are exported. No task text. `build` is used by deepswe-clean, frontierswe-pl

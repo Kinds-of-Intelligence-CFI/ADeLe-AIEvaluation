@@ -7,9 +7,8 @@
   release/rubrics.csv      one row per rubric text used: code, generation, name, file, sha256, and the runs that used it
   release/MANIFEST.tsv     sha256 of every file above
 
-Labels (PLp, PLe, PLs; ../release.py `current_labels`): all from relabel-v2 (examples review of 2026-10-04, d4ec2ec),
-with PLp re-judged in relabel-v3 for cells at PLp 3-5 after the synthesis example moved to Level 4 (d6cc9ca). The
-merge is one-sided: only cells at 3-5 were re-judged (relabel-v3/RESULTS.md). Inputs are committed files only
+Labels (PLp, PLe, PLs; ../release.py `current_labels`): from goal-visible (the judge sees the goal; frozen PL texts, MSm and
+MSc as adopted in b05ddf3; bare-digit prompt; goal-visible/RESULTS.md). Inputs are committed files only
 (tasks.csv and the labels.csv and manifest.json of those mass runs), so the release can be rebuilt at any commit. Only
 answers written by claude-opus-5-5 are exported. The card's numbers on labels are computed here from the released
 labels, as in analysis/analyse.py (swebench-pl's `rho` on the clean tasks). No task text.

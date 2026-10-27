@@ -22,7 +22,7 @@ configs:
 # ADeLe — Terminal-Bench Science 0.1 with demand labels
 
 All 70 tasks of Terminal-Bench Science 0.1, with ADeLe demand labels and flags for tasks that may be broken.
-207 labels. Built at commit `b528ffa` of
+207 labels. Built at commit `4b584d2` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/tbsci-pl/`).
 
@@ -60,23 +60,22 @@ Every task is kept. Two flags let users filter:
 
 - **Rubrics.** ADeLe v2 planning family: PLp (Planning), PLe (Action control and execution), PLs (Simulating), each a
   0–5 scale; `rubrics.csv` pins the exact text by sha256.
-- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
-  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
-  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
-  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
-  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
+- **Runs.** All labels come from goal-visible (2026-10-27): the frozen PL texts, and MSm and MSc as adopted on
+  2026-10-25 (`b05ddf3`). Where goal-visible has no label, the label set falls back to an earlier run. Each row of
+  `labels.csv` names its run ([goal-visible/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/goal-visible/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
-- **Prompt.** ADeLe's v2 annotation prompt: the rubric and the task instruction, a short written assessment, then the
-  level. The judge never sees tests, solutions or agent attempts.
+- **Prompt.** ADeLe's bare-digit v2 prompt (`build_annotation_prompt_v2_noreason`): the rubric, the task instruction, and
+  the goal (a goal statement for the set, written from the benchmark's public docs). The judge answers with the level only. It never sees tests,
+  solutions or agent attempts ([docs/judge-input.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/docs/judge-input.md)).
 - **Missing labels:** `protein-active-learning (PLp)`, `protein-active-learning (PLe)`, `protein-active-learning (PLs)`. A safety classifier handed the judge's calls on this task to another model, and
   those answers were discarded.
 
 ## What the labels show
 
-PLp against solve rate: ρ = +0.28 (p = 0.022) on all tasks; +0.47 (p = 0.0065) on the
-solved tasks without an open issue. PLp against expert hours: ρ = +0.41 (p = 0.00055) on all tasks;
-+0.49 (p = 0.004) on the solved tasks without an open issue. Spearman, two-sided.
+PLp against solve rate: ρ = +0.09 (p = 0.48) on all tasks; +0.22 (p = 0.23) on the
+solved tasks without an open issue. PLp against expert hours: ρ = +0.32 (p = 0.008) on all tasks;
++0.40 (p = 0.022) on the solved tasks without an open issue. Spearman, two-sided.
 
 ## Limits
 

@@ -59,20 +59,16 @@ runs. `difficulty` is ProgramBench's own label.
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
-- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
-  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
-  label replaces the old one. So PLp comes from two texts, and each row of `labels.csv` names its run. The merge is
-  one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
-  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
-- **MSm and MSc** come instead from relabel-v4-ms, made after both were adopted on 2026-10-25 (`b05ddf3`), with
-  the bare-digit prompt (`build_annotation_prompt_v2_noreason`: the level only, no written assessment)
-  ([relabel-v4-ms/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v4-ms/RESULTS.md)).
+- **Runs.** All labels come from goal-visible (2026-10-27): the frozen PL texts, and MSm and MSc as adopted on
+  2026-10-25 (`b05ddf3`). Where goal-visible has no label, the label set falls back to an earlier run. Each row of
+  `labels.csv` names its run ([goal-visible/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/goal-visible/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept. Prompts too long for one read (13 tasks) were read in 200-line parts by the same
   model, and a check required every line to come back.
-- **Prompt.** ADeLe's v2 annotation prompt: the rubric and what the agent sees (the agent instruction, the workspace
-  file listing and the full documentation), a short written assessment, then the level. The judge never sees tests,
-  solutions or agent attempts.
+- **Prompt.** ADeLe's bare-digit v2 prompt (`build_annotation_prompt_v2_noreason`): the rubric, what the agent sees (the agent instruction, the workspace
+  file listing and the full documentation), and
+  the goal (a goal statement for the set, written from the benchmark's public docs). The judge answers with the level only. It never sees tests,
+  solutions or agent attempts ([docs/judge-input.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/docs/judge-input.md)).
 - **Missing labels:** {unlabelled}. A safety classifier handed every attempt on this task to another model.
 
 ## What the labels show

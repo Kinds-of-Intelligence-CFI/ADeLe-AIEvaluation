@@ -20,7 +20,7 @@ configs:
 # ADeLe — FrontierSWE v2 with demand labels
 
 All 34 tasks of FrontierSWE v2, with per-task outcomes, flags and ADeLe demand labels on the 19 clean
-tasks. 95 labels (PLp 19, PLe 19, PLs 19, MSm 19, MSc 19). Built at commit `1b7b5ff` of
+tasks. 95 labels (PLp 19, PLe 19, PLs 19, MSm 19, MSc 19). Built at commit `4b584d2` of
 [ADeLe-AIEvaluation](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation) (branch `agentic-v2`,
 `experiments/benchmarks/frontierswe-pl/`).
 
@@ -55,26 +55,22 @@ best run of any model.
 
 - **Rubrics.** ADeLe v2: PLp (Planning), PLe (Action control and execution), PLs (Simulating), MSm (Mind modelling and
   social cognition), MSc (Communication and social interaction); each a 0–5 scale. `rubrics.csv` pins the exact text.
-- **Runs.** All labels come from relabel-v2, made after the examples review of 2026-10-04 (`d4ec2ec`). PLp cells at
-  Levels 3–5 were then re-judged in relabel-v3, after the synthesis example moved to Level 4 (`d6cc9ca`); the new
-  label replaces the old one. Every clean task was at PLp 3–5 in relabel-v2, so every PLp label here comes from
-  relabel-v3. Each row of `labels.csv` names its run. The merge is one-sided: only cells at 3–5 were re-judged, so PLp leans slightly down
-  ([relabel-v3/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v3/RESULTS.md)).
-- **MSm and MSc** come instead from relabel-v4-ms, made after both were adopted on 2026-10-25 (`b05ddf3`), with
-  the bare-digit prompt (`build_annotation_prompt_v2_noreason`: the level only, no written assessment)
-  ([relabel-v4-ms/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/relabel-v4-ms/RESULTS.md)).
+- **Runs.** All labels come from goal-visible (2026-10-27): the frozen PL texts, and MSm and MSc as adopted on
+  2026-10-25 (`b05ddf3`). Where goal-visible has no label, the label set falls back to an earlier run. Each row of
+  `labels.csv` names its run ([goal-visible/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/goal-visible/RESULTS.md)).
 - **Judge.** Claude Opus 5.5 at effort low, run as a Claude Code subagent, one call per task and rubric. Only answers
   written by that model are kept.
-- **Prompt.** ADeLe's v2 annotation prompt: the rubric and what the agent sees (`instruction.md`, plus the README it
-  cites), a short written assessment, then the level. The judge never sees tests, solutions or agent attempts.
+- **Prompt.** ADeLe's bare-digit v2 prompt (`build_annotation_prompt_v2_noreason`): the rubric, what the agent sees (`instruction.md`, plus the README it cites), and
+  the goal (the task's public Task and Verification sections). The judge answers with the level only. It never sees tests,
+  solutions or agent attempts ([docs/judge-input.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/docs/judge-input.md)).
 - **Missing labels:** none on the clean tasks. The 15 dropped tasks have no labels here. Their PLp was labelled
   with an earlier text (amendment 1 of the study, in RESULTS.md); those labels were not relabelled and are not
   released.
 
 ## What the labels show
 
-PLp on the 19 clean tasks: Level 3 on 19 of 19. With so little spread, PLp cannot be tested against solve rate
-here (one level: not testable). MSm is 0 on 18 of the 19 clean tasks and MSc on all 19: FrontierSWE involves no other
+PLp on the 19 clean tasks: Level 3 on 16 of 19, Level 4 on 3 of 19. PLp barely varies, so its link with solve rate is weak
+evidence either way (ρ = -0.32 (p = 0.18, n = 19)). MSm is 0 on 18 of the 19 clean tasks and MSc on all 19: FrontierSWE involves no other
 party. Full results:
 [frontierswe-pl/RESULTS.md](https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation/blob/agentic-v2/experiments/benchmarks/frontierswe-pl/RESULTS.md).
 
