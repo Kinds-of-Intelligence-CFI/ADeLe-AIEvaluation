@@ -1,0 +1,313 @@
+{
+  "n": {
+    "pairs": 120,
+    "unflagged": 88,
+    "labelled": {
+      "MSc_coop": 120,
+      "MSc_solo": 120,
+      "MSm_coop": 120,
+      "MSm_solo": 120,
+      "PLe_coop": 120,
+      "PLe_solo": 120,
+      "PLp_coop": 120,
+      "PLp_solo": 120,
+      "PLs_coop": 120,
+      "PLs_solo": 120
+    }
+  },
+  "levels": {
+    "MSc_coop": {
+      "2": 120
+    },
+    "MSc_solo": {
+      "0": 100,
+      "1": 20
+    },
+    "MSm_coop": {
+      "2": 13,
+      "3": 106,
+      "4": 1
+    },
+    "MSm_solo": {
+      "0": 120
+    },
+    "PLe_coop": {
+      "3": 70,
+      "4": 50
+    },
+    "PLe_solo": {
+      "3": 120
+    },
+    "PLp_coop": {
+      "2": 83,
+      "3": 37
+    },
+    "PLp_solo": {
+      "1": 2,
+      "2": 112,
+      "3": 6
+    },
+    "PLs_coop": {
+      "1": 24,
+      "2": 95,
+      "3": 1
+    },
+    "PLs_solo": {
+      "1": 91,
+      "2": 29
+    }
+  },
+  "coop_above_solo": {
+    "PLp": 0.275,
+    "PLe": 0.417,
+    "PLs": 0.6,
+    "MSm": 1.0,
+    "MSc": 1.0
+  },
+  "outcomes": {
+    "solo_rate": {
+      "count": 120.0,
+      "mean": 0.492,
+      "std": 0.403,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.333,
+      "75%": 1.0,
+      "max": 1.0
+    },
+    "coop_rate": {
+      "count": 120.0,
+      "mean": 0.331,
+      "std": 0.331,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.333,
+      "75%": 0.667,
+      "max": 1.0
+    },
+    "drop": {
+      "count": 120.0,
+      "mean": 0.161,
+      "std": 0.309,
+      "min": -0.667,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 0.333,
+      "max": 1.0
+    }
+  },
+  "primary": {
+    "MSc": {
+      "n": 120,
+      "note": "constant: not testable"
+    },
+    "MSm": {
+      "n": 120,
+      "n_off_mode": 14,
+      "rho": 0.025,
+      "p_two_sided": 0.789,
+      "ci95": [
+        -0.155,
+        0.203
+      ],
+      "predicted": "positive",
+      "supported": false
+    }
+  },
+  "secondary": {
+    "PLp_diff_vs_drop": {
+      "n": 120,
+      "n_off_mode": 33,
+      "rho": -0.053,
+      "p_two_sided": 0.562,
+      "ci95": [
+        -0.231,
+        0.127
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "PLp_solo_vs_solo_rate": {
+      "n": 120,
+      "n_off_mode": 8,
+      "rho": -0.184,
+      "p_two_sided": 0.0443,
+      "ci95": [
+        -0.353,
+        -0.003
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "PLp_coop_vs_coop_rate": {
+      "n": 120,
+      "n_off_mode": 37,
+      "rho": -0.176,
+      "p_two_sided": 0.0544,
+      "ci95": [
+        -0.346,
+        0.005
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "PLe_diff_vs_drop": {
+      "n": 120,
+      "n_off_mode": 50,
+      "rho": -0.14,
+      "p_two_sided": 0.127,
+      "ci95": [
+        -0.312,
+        0.041
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "PLe_solo_vs_solo_rate": {
+      "n": 120,
+      "note": "constant: not testable"
+    },
+    "PLe_coop_vs_coop_rate": {
+      "n": 120,
+      "n_off_mode": 50,
+      "rho": -0.118,
+      "p_two_sided": 0.201,
+      "ci95": [
+        -0.291,
+        0.064
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "PLs_diff_vs_drop": {
+      "n": 120,
+      "n_off_mode": 48,
+      "rho": -0.139,
+      "p_two_sided": 0.13,
+      "ci95": [
+        -0.311,
+        0.042
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "PLs_solo_vs_solo_rate": {
+      "n": 120,
+      "n_off_mode": 29,
+      "rho": 0.071,
+      "p_two_sided": 0.438,
+      "ci95": [
+        -0.109,
+        0.248
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "PLs_coop_vs_coop_rate": {
+      "n": 120,
+      "n_off_mode": 25,
+      "rho": 0.097,
+      "p_two_sided": 0.29,
+      "ci95": [
+        -0.084,
+        0.272
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "MSm_diff_vs_drop": {
+      "n": 120,
+      "n_off_mode": 14,
+      "rho": 0.025,
+      "p_two_sided": 0.789,
+      "ci95": [
+        -0.155,
+        0.203
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "MSm_solo_vs_solo_rate": {
+      "n": 120,
+      "note": "constant: not testable"
+    },
+    "MSm_coop_vs_coop_rate": {
+      "n": 120,
+      "n_off_mode": 14,
+      "rho": -0.079,
+      "p_two_sided": 0.393,
+      "ci95": [
+        -0.255,
+        0.102
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "MSc_diff_vs_drop": {
+      "n": 120,
+      "n_off_mode": 20,
+      "rho": 0.113,
+      "p_two_sided": 0.22,
+      "ci95": [
+        -0.068,
+        0.287
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "MSc_solo_vs_solo_rate": {
+      "n": 120,
+      "n_off_mode": 20,
+      "rho": -0.118,
+      "p_two_sided": 0.197,
+      "ci95": [
+        -0.292,
+        0.063
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "MSc_coop_vs_coop_rate": {
+      "n": 120,
+      "note": "constant: not testable"
+    }
+  },
+  "sensitivity": {
+    "unflagged": {
+      "MSc": {
+        "n": 88,
+        "note": "constant: not testable"
+      },
+      "MSm": {
+        "n": 88,
+        "n_off_mode": 9,
+        "rho": -0.048,
+        "p_two_sided": 0.656,
+        "ci95": [
+          -0.255,
+          0.163
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    },
+    "site_coop": {
+      "MSc": {
+        "n": 120,
+        "note": "constant: not testable"
+      },
+      "MSm": {
+        "n": 120,
+        "n_off_mode": 14,
+        "rho": 0.078,
+        "p_two_sided": 0.396,
+        "ci95": [
+          -0.103,
+          0.254
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    }
+  }
+}

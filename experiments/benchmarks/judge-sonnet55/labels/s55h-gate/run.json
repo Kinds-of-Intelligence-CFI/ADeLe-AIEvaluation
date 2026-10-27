@@ -1,0 +1,29 @@
+{
+  "run_id": "s55h-gate",
+  "created_at": "2026-09-29T10:40:46+00:00",
+  "repo_commit": "a6935a9e07307152140f2b4902eb697bbd105bd7",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "swe-bench-verified"
+  ],
+  "design": {
+    "n_tasks": 44,
+    "dims": [
+      "PLp",
+      "PLe"
+    ],
+    "n_prompts": 88,
+    "judges": {
+      "sonnet55-high": "Claude Code subagent 'adele-judge-high' (tools: Read, Write; omitClaudeMd; effort high), model alias 'sonnet', which gave claude-sonnet-5-5 in a probe on 2026-09-29"
+    }
+  },
+  "prompts_from": "swebench-pl/labels/swepl-gate (byte-identical, hash-checked)",
+  "judge_agent": {
+    "file": "experiments/benchmarks/judge-sonnet55/adele-judge-high.md",
+    "sha256": "bb904a6a3b6735bce18469741db3f5b5e3f14fb45021bf4980f25eab96e3e891"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/s55h-gate",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

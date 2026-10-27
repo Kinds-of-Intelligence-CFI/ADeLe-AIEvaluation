@@ -1,0 +1,64 @@
+{
+  "run_id": "ms-labreg2",
+  "created_at": "2026-10-02T14:51:07+00:00",
+  "repo_commit": "8bacd8eb72a5a1f7dd20062a92c363c643db3e1b",
+  "repo_dirty_tracked_files": [],
+  "design": {
+    "n_cells": 3,
+    "dims": [
+      "MSm",
+      "MSc"
+    ],
+    "judges": {
+      "opus-low-r1": "adele-judge-v2-low, model alias 'opus'; repeat 1",
+      "opus-low-r2": "adele-judge-v2-low, model alias 'opus'; repeat 2",
+      "opus-low-r3": "adele-judge-v2-low, model alias 'opus'; repeat 3"
+    },
+    "n_calls": 9,
+    "relays": 3,
+    "relay_max_cells": 50
+  },
+  "rubrics": {
+    "MSm": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+      "sha256": "b8c3ec15643aa7e9ca114f983446abd0d27373d2b0df3b4296dad12937c2aae9"
+    },
+    "MSc": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+      "sha256": "9c38881d4c2100ae01fad77935d17f24b75322c4d47f34af1411e7d49933f6a8"
+    },
+    "PLp": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+      "sha256": "322674efb257df4fbb1c93415cd903d554c62b510623846148d635309ad4194f"
+    },
+    "PLe": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+      "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b"
+    },
+    "PLs": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+      "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e"
+    }
+  },
+  "set_P": "every Examples block stripped from the rubric shown (r25 design)",
+  "items": "ms-lab-regression/items.csv",
+  "lab_record_commit": "7159671",
+  "pass": 2,
+  "replicates": "ms-labreg1",
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "dispatcher_agent": {
+    "file": "experiments/benchmarks/natural-prompt/judge-dispatcher-v2-low.md",
+    "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/ms-labreg2",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

@@ -1,3 +1,5 @@
+# Identifying Relevant Information
+
 This rubric assesses the difficulty of the metacognitive processing required by the respondent to identify the information necessary during the process of solving the task with a given set of information. More concretely, it involves the respondent's ability to recognize what information helps solve the task or does not, and how this recognition process unfolds as they work toward the solution.
 
 Level 0: None. All necessary information is immediately apparent and directly applicable to solving the task, or no information is provided and none is needed. No metacognitive processing is required to identify relevant information during problem-solving. Examples: 

@@ -1,0 +1,445 @@
+{
+  "instances": {
+    "bargaining@player": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 3,
+      "MSc": 4
+    },
+    "checkers@player": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 1,
+      "MSc": 0
+    },
+    "chess-text-openings@player": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 0,
+      "MSc": 0
+    },
+    "chess-text@player": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 0,
+      "MSc": 0
+    },
+    "clobber@player": {
+      "PLp": 3,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 0,
+      "MSc": 0
+    },
+    "coin-game@player": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 3,
+      "MSc": 0
+    },
+    "dark-hex@player": {
+      "PLp": 3,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 3,
+      "MSc": 0
+    },
+    "dots-and-boxes@player": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 1,
+      "MSm": 1,
+      "MSc": 0
+    },
+    "five-in-a-row@player": {
+      "PLp": 3,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 0,
+      "MSc": 0
+    },
+    "four-in-a-row@player": {
+      "PLp": 3,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 1,
+      "MSc": 0
+    },
+    "go@player": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 0,
+      "MSc": 0
+    },
+    "lines-of-action@player": {
+      "PLp": 3,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 2,
+      "MSc": 0
+    },
+    "nine-mens-morris@player": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 2,
+      "MSc": 0
+    },
+    "poker-heads-up@player": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 1,
+      "MSm": 2,
+      "MSc": 0
+    },
+    "reversi@player": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 0,
+      "MSc": 0
+    },
+    "ultimate-tic-tac-toe@player": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 2,
+      "MSc": 0
+    },
+    "werewolf@doctor": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 3,
+      "MSm": 4,
+      "MSc": 4
+    },
+    "werewolf@seer": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 3,
+      "MSm": 4,
+      "MSc": 4
+    },
+    "werewolf@villager": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 2,
+      "MSm": 4,
+      "MSc": 4
+    },
+    "werewolf@werewolf": {
+      "PLp": 0,
+      "PLe": 0,
+      "PLs": 1,
+      "MSm": 2,
+      "MSc": 0
+    },
+    "word-art@artist": {
+      "PLp": 2,
+      "PLe": 3,
+      "PLs": 1,
+      "MSm": 3,
+      "MSc": 1
+    },
+    "word-art@guesser": {
+      "PLp": 1,
+      "PLe": 0,
+      "PLs": 0,
+      "MSm": 3,
+      "MSc": 1
+    },
+    "word-association@cluemaster": {
+      "PLp": 2,
+      "PLe": 0,
+      "PLs": 1,
+      "MSm": 3,
+      "MSc": 1
+    },
+    "word-association@guesser": {
+      "PLp": 0,
+      "PLe": 0,
+      "PLs": 1,
+      "MSm": 2,
+      "MSc": 1
+    }
+  },
+  "games": {
+    "bargaining": {
+      "PLp": 2.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 3.0,
+      "MSc": 4.0,
+      "social": 3.5
+    },
+    "checkers": {
+      "PLp": 2.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 1.0,
+      "MSc": 0.0,
+      "social": 0.5
+    },
+    "chess-text": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 0.0,
+      "MSc": 0.0,
+      "social": 0.0
+    },
+    "chess-text-openings": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 0.0,
+      "MSc": 0.0,
+      "social": 0.0
+    },
+    "clobber": {
+      "PLp": 3.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 0.0,
+      "MSc": 0.0,
+      "social": 0.0
+    },
+    "coin-game": {
+      "PLp": 2.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 3.0,
+      "MSc": 0.0,
+      "social": 1.5
+    },
+    "dark-hex": {
+      "PLp": 3.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 3.0,
+      "MSc": 0.0,
+      "social": 1.5
+    },
+    "dots-and-boxes": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 1.0,
+      "MSm": 1.0,
+      "MSc": 0.0,
+      "social": 0.5
+    },
+    "five-in-a-row": {
+      "PLp": 3.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 0.0,
+      "MSc": 0.0,
+      "social": 0.0
+    },
+    "four-in-a-row": {
+      "PLp": 3.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 1.0,
+      "MSc": 0.0,
+      "social": 0.5
+    },
+    "go": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 0.0,
+      "MSc": 0.0,
+      "social": 0.0
+    },
+    "lines-of-action": {
+      "PLp": 3.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 2.0,
+      "MSc": 0.0,
+      "social": 1.0
+    },
+    "nine-mens-morris": {
+      "PLp": 2.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 2.0,
+      "MSc": 0.0,
+      "social": 1.0
+    },
+    "poker-heads-up": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 1.0,
+      "MSm": 2.0,
+      "MSc": 0.0,
+      "social": 1.0
+    },
+    "reversi": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 0.0,
+      "MSc": 0.0,
+      "social": 0.0
+    },
+    "ultimate-tic-tac-toe": {
+      "PLp": 2.0,
+      "PLe": 0.0,
+      "PLs": 2.0,
+      "MSm": 2.0,
+      "MSc": 0.0,
+      "social": 1.0
+    },
+    "werewolf": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 2.25,
+      "MSm": 3.5,
+      "MSc": 3.0,
+      "social": 3.25
+    },
+    "word-art": {
+      "PLp": 1.5,
+      "PLe": 1.5,
+      "PLs": 0.5,
+      "MSm": 3.0,
+      "MSc": 1.0,
+      "social": 2.0
+    },
+    "word-association": {
+      "PLp": 1.0,
+      "PLe": 0.0,
+      "PLs": 1.0,
+      "MSm": 2.5,
+      "MSc": 1.0,
+      "social": 1.75
+    }
+  },
+  "ability_test": {
+    "games": [
+      "bargaining",
+      "checkers",
+      "chess-text",
+      "clobber",
+      "coin-game",
+      "dark-hex",
+      "dots-and-boxes",
+      "five-in-a-row",
+      "four-in-a-row",
+      "go",
+      "lines-of-action",
+      "nine-mens-morris",
+      "poker-heads-up",
+      "reversi",
+      "ultimate-tic-tac-toe",
+      "word-art",
+      "word-association"
+    ],
+    "n_models_with_edge": 28,
+    "n_models_on_both": 14,
+    "primary_social_edge_vs_eq4_elo": {
+      "n": 14,
+      "n_off_mode": 13,
+      "rho": 0.007,
+      "p_two_sided": 0.982,
+      "ci95": [
+        -0.526,
+        0.535
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "secondary_nonsocial_z_vs_eq4_elo": {
+      "n": 14,
+      "n_off_mode": 13,
+      "rho": 0.451,
+      "p_two_sided": 0.106,
+      "ci95": [
+        -0.134,
+        0.803
+      ],
+      "predicted": "positive",
+      "supported": false
+    },
+    "models": {
+      "Claude Opus 4.6": {
+        "social_edge": 0.346,
+        "nonsocial_mean_z": -1.106,
+        "eq4_elo": 1222.7
+      },
+      "Claude Opus 4.7": {
+        "social_edge": -0.043,
+        "nonsocial_mean_z": -0.478,
+        "eq4_elo": 1311.3
+      },
+      "Claude Opus 4.8": {
+        "social_edge": -0.115,
+        "nonsocial_mean_z": -0.393,
+        "eq4_elo": 1281.4
+      },
+      "Claude Opus 5": {
+        "social_edge": -0.417,
+        "nonsocial_mean_z": 1.367,
+        "eq4_elo": 1385.0
+      },
+      "Claude Sonnet 4.6": {
+        "social_edge": 0.432,
+        "nonsocial_mean_z": -1.501,
+        "eq4_elo": 1206.5
+      },
+      "Claude Sonnet 5": {
+        "social_edge": -0.655,
+        "nonsocial_mean_z": 0.343,
+        "eq4_elo": 1236.0
+      },
+      "GPT-5.4": {
+        "social_edge": -0.343,
+        "nonsocial_mean_z": 0.935,
+        "eq4_elo": 1271.8
+      },
+      "GPT-5.5": {
+        "social_edge": 0.61,
+        "nonsocial_mean_z": 1.17,
+        "eq4_elo": 1314.8
+      },
+      "GPT-5.6 Luna": {
+        "social_edge": 0.174,
+        "nonsocial_mean_z": -0.584,
+        "eq4_elo": 1156.3
+      },
+      "GPT-5.6 Sol": {
+        "social_edge": 0.64,
+        "nonsocial_mean_z": 0.778,
+        "eq4_elo": 1250.3
+      },
+      "GPT-5.6 Terra": {
+        "social_edge": -0.18,
+        "nonsocial_mean_z": -0.253,
+        "eq4_elo": 1234.0
+      },
+      "Gemini 3.1 Pro Preview": {
+        "social_edge": -0.435,
+        "nonsocial_mean_z": 1.364,
+        "eq4_elo": 1142.3
+      },
+      "Gemini 3.5 Flash": {
+        "social_edge": -0.088,
+        "nonsocial_mean_z": 0.185,
+        "eq4_elo": 1087.2
+      },
+      "Grok 4.3": {
+        "social_edge": -0.1,
+        "nonsocial_mean_z": -0.813,
+        "eq4_elo": 1074.8
+      }
+    }
+  }
+}

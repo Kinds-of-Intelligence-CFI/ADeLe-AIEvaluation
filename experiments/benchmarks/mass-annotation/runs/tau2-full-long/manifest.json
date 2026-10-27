@@ -1,0 +1,100 @@
+{
+  "run": "tau2-full-long",
+  "created_at": "2026-10-26T09:33:52+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/tau2-full-long.toml",
+  "git": {
+    "commit": "36ffbe3e525938d895c9f852f7692e5e0bb4bf1f",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low-chunked.md",
+      "sha256": "d63ca13de36bf5099656a569d0e54a410416546adfea22ea6d401afa777bb5c3"
+    },
+    "adele-judge-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low-chunked.md",
+      "sha256": "3f99cedcf760eeeeda20dff6b4c47b83c5ce25035be3aba22e5ad7b9d436e5a7"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "88133c0165e80dd5d2648fe33ab97d747e2295ddbcb19c3fc736b1975802218a",
+      "content": "# tau2-full-long: as tau2-full.toml, for the 25 banking tasks whose prompt exceeds 50,000 chars or 1,500 lines under at\n# least one rubric (the programbench-pl rule); all five rubrics of those tasks use the chunked-read judge.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/tau2-full-long.toml\nname = \"tau2-full-long\"\n\n[tasks]\nbenchmarks = [\"tau2-banking_knowledge\"]\nsubset = \"experiments/benchmarks/tau2-full/subset_long.csv\"\ninstances_dir = \"data/instances-tau2-full\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low-chunked\"\njudge_agent = \"adele-judge-v2-low-chunked\"\nmodel_alias = \"opus\"\nbatch_size = 100\nchunk_lines = 200\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "6cd04643198827611d565e6c7a78bbf42822218a296fee18f235b7e854bd0b6d",
+          "frame_sha256": "6cd04643198827611d565e6c7a78bbf42822218a296fee18f235b7e854bd0b6d",
+          "n_selected": 25
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/tau2-full/subset_long.csv",
+        "sha256": "4e8e7d2e86e16d29214828f6059b5abd8624226c050b1ee9238780f924292eb8",
+        "n_ids": 25
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "9579f3ea29debec754a55c23ae7cd1d4b4aa496ee12c4c11088a46b3074d8f81",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "3410930631535d8f24f60928caf70362fecda555d96b146d97369eae76780bc0",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low-chunked",
+        "judge_agent": "adele-judge-v2-low-chunked",
+        "model_alias": "opus",
+        "batch_size": 100,
+        "chunk_lines": 200
+      },
+      "batch": true
+    },
+    "cells": {
+      "n": 125,
+      "sha256": "8c40dea578759b77e6c6d0a933f95f58b2ca4c0bff5afd030050e33b73cdd451"
+    }
+  }
+}

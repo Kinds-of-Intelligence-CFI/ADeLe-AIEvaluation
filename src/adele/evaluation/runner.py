@@ -175,6 +175,15 @@ def adele_battery(
         max_samples=limit,
         csv_path=csv_path,
     )
+    n_open = int((data["answer_format"] == "Open-ended").sum())
+    if n_open and judge_model is None:
+        logger.warning(
+            "%d Open-ended samples but no judge_model: they will all score "
+            "NOANSWER and DEFLATE the reported accuracy. Pass "
+            "-T judge_model=<model> to score them, or -T answer_format=MC "
+            "to run the multiple-choice subset only.",
+            n_open,
+        )
     return create_task(data, name="adele_battery", judge_model=judge_model)
 
 

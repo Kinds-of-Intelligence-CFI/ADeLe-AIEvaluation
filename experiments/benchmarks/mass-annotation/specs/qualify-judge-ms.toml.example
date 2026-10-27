@@ -1,0 +1,22 @@
+# Qualify a new judge, part 2 of 2: the 40-task tau2 reference subset x MSm, MSc (80 calls). Copy this file to
+# specs/qualify-<judge>-ms.toml, set a unique name and the [judge] table, then plan, pin, run and collect it, and run
+#   python experiments/benchmarks/mass-annotation/qualify_judge.py qualify-<judge>-pl qualify-<judge>-ms
+# See RUNNING.md, "Qualify a new judge". The tasks, rubrics and prompt must stay as they are.
+name = "qualify-CHANGE-ME-ms"
+
+[tasks]
+benchmarks = ["tau2-airline", "tau2-retail", "tau2-banking_knowledge"]
+subset = "experiments/benchmarks/noreason/refresh_tau2_subset.csv"
+
+[rubrics]
+refs = ["v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "openai-batch"        # or "anthropic-batch", "litellm"
+model = "CHANGE-ME"             # the provider's model id
+effort = "low"                  # sent as reasoning_effort to OpenAI / litellm; omit for models without it
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

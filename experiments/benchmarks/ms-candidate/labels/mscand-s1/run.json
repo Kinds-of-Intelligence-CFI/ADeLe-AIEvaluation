@@ -1,0 +1,47 @@
+{
+  "run_id": "mscand-s1",
+  "created_at": "2026-10-17T16:14:51+00:00",
+  "repo_commit": "f2f2a4159213a9db06c7a8eae33906fcca2acc9d",
+  "repo_dirty_tracked_files": [
+    " M experiments/benchmarks/ms-candidate/make_candidates.py",
+    " M experiments/benchmarks/ms-candidate/make_prompts.py"
+  ],
+  "design": {
+    "n_cells": 16,
+    "dims": [
+      "MSm",
+      "MSc"
+    ],
+    "arms": [
+      "current",
+      "candidate"
+    ],
+    "judges": {
+      "opus-low-r1": "adele-judge-v2-low, model alias 'opus'; repeat 1",
+      "opus-low-r2": "adele-judge-v2-low, model alias 'opus'; repeat 2",
+      "opus-low-r3": "adele-judge-v2-low, model alias 'opus'; repeat 3"
+    },
+    "n_calls": 48,
+    "relays": 3,
+    "relay_max_cells": 50
+  },
+  "pass": "screen",
+  "candidate_file": "ms-candidate/MSc_candidate_v2.txt",
+  "rubric_sha256": "0458094421fd717c4a11ef2c1272389785772aaf630fbbd6064f9a15182cbc5a",
+  "amendment": 2,
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "dispatcher_agent": {
+    "file": "experiments/benchmarks/natural-prompt/judge-dispatcher-v2-low.md",
+    "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/mscand-s1",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

@@ -1,0 +1,101 @@
+{
+  "n_tasks": 435,
+  "agreement_all": {
+    "n": 1305,
+    "exact": 0.884,
+    "within1": 1.0,
+    "qwk": 0.923,
+    "mean_shift_low_minus_medium": 0.059
+  },
+  "agreement_by_rubric": {
+    "PLp": {
+      "n": 435,
+      "exact": 0.857,
+      "within1": 1.0,
+      "qwk": 0.784,
+      "mean_shift_low_minus_medium": 0.087
+    },
+    "PLe": {
+      "n": 435,
+      "exact": 0.818,
+      "within1": 1.0,
+      "qwk": 0.609,
+      "mean_shift_low_minus_medium": 0.071
+    },
+    "PLs": {
+      "n": 435,
+      "exact": 0.977,
+      "within1": 1.0,
+      "qwk": 0.167,
+      "mean_shift_low_minus_medium": 0.018
+    }
+  },
+  "levels_low": {
+    "PLp": {
+      "0": 15,
+      "1": 241,
+      "2": 176,
+      "3": 3
+    },
+    "PLe": {
+      "1": 3,
+      "2": 93,
+      "3": 339
+    },
+    "PLs": {
+      "0": 1,
+      "1": 425,
+      "2": 9
+    }
+  },
+  "questions_on_low_labels": {
+    "Q1_PLp_vs_solve_rate": {
+      "n": 435,
+      "n_off_mode": 194,
+      "rho": -0.573,
+      "p_two_sided": 2.59e-39,
+      "ci95": [
+        -0.637,
+        -0.501
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q1_PLe_vs_solve_rate": {
+      "n": 435,
+      "n_off_mode": 96,
+      "rho": -0.455,
+      "p_two_sided": 1.38e-23,
+      "ci95": [
+        -0.53,
+        -0.373
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q1_PLs_vs_solve_rate": {
+      "n": 435,
+      "n_off_mode": 10,
+      "rho": -0.137,
+      "p_two_sided": 0.0042,
+      "ci95": [
+        -0.229,
+        -0.043
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q2_PLp_vs_time_to_fix": {
+      "n": 435,
+      "n_off_mode": 194,
+      "rho": 0.453,
+      "p_two_sided": 1.99e-23,
+      "ci95": [
+        0.371,
+        0.528
+      ],
+      "predicted": "positive",
+      "supported": true
+    }
+  }
+}

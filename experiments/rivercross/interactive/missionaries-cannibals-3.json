@@ -1,0 +1,214 @@
+{
+  "trajectory": [
+    {
+      "left": [
+        "C1",
+        "C2",
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "R",
+      "reason": "Starting with two cannibals to the right bank to establish a safe position. This leaves M1, M2, M3, C3 on the left."
+    },
+    {
+      "left": [
+        "C1",
+        "C3",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L",
+      "reason": "One cannibal returns so we can bring missionaries over. Right bank: M1, M2, M3, C3 can be safely managed with just C2."
+    },
+    {
+      "left": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "R",
+      "reason": "Sending two cannibals right. Left bank becomes M1, M2, M3 (all missionaries, safe). Right bank: C1, C2, C3."
+    },
+    {
+      "left": [
+        "C1",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "boat": "L",
+      "reason": "One cannibal returns left. Right bank: C2, C3 (no missionaries, so the constraint is not active)."
+    },
+    {
+      "left": [
+        "C1",
+        "M3"
+      ],
+      "boat": "R",
+      "reason": "Two missionaries go right. Left bank: C1, M3 (1 cannibal, 1 missionary, balanced). Right bank: M1, M2, C2, C3."
+    },
+    {
+      "left": [
+        "C1",
+        "C2",
+        "M1",
+        "M3"
+      ],
+      "boat": "L",
+      "reason": "Cannibal and missionary return. Left bank: C1, C2, M1, M3 (2 cannibals, 2 missionaries, balanced). Right bank: C3, M2."
+    },
+    {
+      "left": [
+        "C1",
+        "C2"
+      ],
+      "boat": "R",
+      "reason": "Both remaining missionaries go right. Left bank: C1, C2 (only cannibals, safe). Right bank: C1, C2, C3, M1, M2, M3."
+    },
+    {
+      "left": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "boat": "L",
+      "reason": "One cannibal returns. Left bank: C1, C2, C3. Right bank: M1, M2, M3."
+    },
+    {
+      "left": [
+        "C3"
+      ],
+      "boat": "R",
+      "reason": "Final two cannibals go right. Left bank: empty. Right bank: all 6 people."
+    },
+    {
+      "left": [
+        "C1",
+        "C3"
+      ],
+      "boat": "L",
+      "reason": "One cannibal returns to fetch the last one. Right bank: C2, M1, M2, M3. Left bank: C1, C3."
+    },
+    {
+      "left": [],
+      "boat": "R",
+      "reason": "Final two cannibals cross. All people reach the right bank."
+    }
+  ],
+  "attempts": [
+    {
+      "load": [
+        "C1",
+        "C2"
+      ],
+      "legal": true,
+      "reason": "Starting with two cannibals to the right bank to establish a safe position. This leaves M1, M2, M3, C3 on the left."
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": true,
+      "reason": "One cannibal returns so we can bring missionaries over. Right bank: M1, M2, M3, C3 can be safely managed with just C2."
+    },
+    {
+      "load": [
+        "M1",
+        "M2"
+      ],
+      "legal": false,
+      "reason": "Two missionaries go right. Left bank now has C1, C3, M3 (1 missionary and 2 cannibals, so cannibals do not outnumber missionaries). Right bank: M1, M2, C2."
+    },
+    {
+      "load": [
+        "C1",
+        "C3"
+      ],
+      "legal": true,
+      "reason": "Sending two cannibals right. Left bank becomes M1, M2, M3 (all missionaries, safe). Right bank: C1, C2, C3."
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": true,
+      "reason": "One cannibal returns left. Right bank: C2, C3 (no missionaries, so the constraint is not active)."
+    },
+    {
+      "load": [
+        "M1",
+        "M2"
+      ],
+      "legal": true,
+      "reason": "Two missionaries go right. Left bank: C1, M3 (1 cannibal, 1 missionary, balanced). Right bank: M1, M2, C2, C3."
+    },
+    {
+      "load": [
+        "C2",
+        "M1"
+      ],
+      "legal": true,
+      "reason": "Cannibal and missionary return. Left bank: C1, C2, M1, M3 (2 cannibals, 2 missionaries, balanced). Right bank: C3, M2."
+    },
+    {
+      "load": [
+        "C1",
+        "C2"
+      ],
+      "legal": false,
+      "reason": "Two cannibals go right. Left bank: M1, M3 (both missionaries). Right bank: C1, C2, C3, M2."
+    },
+    {
+      "load": [
+        "M1",
+        "M3"
+      ],
+      "legal": true,
+      "reason": "Both remaining missionaries go right. Left bank: C1, C2 (only cannibals, safe). Right bank: C1, C2, C3, M1, M2, M3."
+    },
+    {
+      "load": [
+        "C3"
+      ],
+      "legal": true,
+      "reason": "One cannibal returns. Left bank: C1, C2, C3. Right bank: M1, M2, M3."
+    },
+    {
+      "load": [
+        "C1",
+        "C2"
+      ],
+      "legal": true,
+      "reason": "Final two cannibals go right. Left bank: empty. Right bank: all 6 people."
+    },
+    {
+      "load": [
+        "C1"
+      ],
+      "legal": true,
+      "reason": "One cannibal returns to fetch the last one. Right bank: C2, M1, M2, M3. Left bank: C1, C3."
+    },
+    {
+      "load": [
+        "C1",
+        "C3"
+      ],
+      "legal": true,
+      "reason": "Final two cannibals cross. All people reach the right bank."
+    }
+  ],
+  "consec_illegal": 0,
+  "status": "solved"
+}

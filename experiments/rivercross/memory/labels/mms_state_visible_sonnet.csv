@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2,2,Small state with 3 items
+chain-3-boat-2#s1,2,Small state with 3 items
+chain-3-boat-3#s0,2,Small state with 3 items
+chain-3-boat-4#s0,2,Small state with 3 items
+chain-4-boat-2#s1,2,Four items form small list to update across moves
+chain-4-boat-3#s1,2,Four items form small list to update across moves
+chain-4-boat-4#s0,2,Four items form small list to update across moves
+chain-5-boat-2#s2,3,Five items require larger list held and updated
+chain-5-boat-3#s1,3,Five items require larger list held and updated
+chain-5-boat-4#s1,3,Five items require larger list held and updated
+chain-6-boat-3#s1,3,Six items require larger detailed list tracked
+chain-6-boat-4#s1,3,Six items require larger detailed list tracked
+star-3-boat-1#s2,2,Small state with 3 items
+star-3-boat-2#s1,2,Small state with 3 items
+star-3-boat-3#s0,2,Small state with 3 items
+star-3-boat-4#s0,2,Small state with 3 items
+star-4-boat-2#s2,2,Four items form small list to update across moves
+star-4-boat-3#s1,2,Four items form small list to update across moves
+star-4-boat-4#s0,2,Four items form small list to update across moves
+star-5-boat-2#s2,3,Five items require larger list held and updated
+star-5-boat-3#s1,3,Five items require larger list held and updated
+star-5-boat-4#s1,3,Five items require larger list held and updated
+star-6-boat-2#s2,3,Six items require larger detailed list tracked
+star-6-boat-3#s2,3,Six items require larger detailed list tracked
+star-6-boat-4#s1,3,Six items require larger detailed list tracked
+cycle-3-boat-2#s1,2,Small state with 3 items
+cycle-3-boat-3#s0,2,Small state with 3 items
+cycle-3-boat-4#s0,2,Small state with 3 items
+cycle-4-boat-2#s1,2,Four items form small list to update across moves
+cycle-4-boat-3#s1,2,Four items form small list to update across moves
+cycle-4-boat-4#s0,2,Four items form small list to update across moves
+cycle-5-boat-3#s1,3,Five items require larger list held and updated
+cycle-5-boat-4#s1,3,Five items require larger list held and updated
+cycle-6-boat-3#s1,3,Six items require larger detailed list tracked
+cycle-6-boat-4#s1,3,Six items require larger detailed list tracked
+complete-3-boat-2#s1,2,Small state with 3 items
+complete-3-boat-3#s0,2,Small state with 3 items
+complete-3-boat-4#s0,2,Small state with 3 items
+complete-4-boat-3#s1,2,Four items form small list to update across moves
+complete-4-boat-4#s0,2,Four items form small list to update across moves
+complete-5-boat-4#s1,3,Five items require larger list held and updated
+missionaries-cannibals-3#s2,2,Three pairs of counts tracked as small list
+missionaries-cannibals-4#s2,3,Four pairs of counts require larger list tracked

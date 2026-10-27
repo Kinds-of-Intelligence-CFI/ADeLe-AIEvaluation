@@ -1,0 +1,28 @@
+# noreason amendment 4b: twin of noreason-s-eqbench4.toml with the v2 prompt (written reasoning, as in the released labels); nothing else changed.
+# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-eqbench4 with the v2-noreason builder.
+# relabel-v2-eqbench4 (relabel after the 2026-10-04 examples review; experiments/benchmarks/relabel-v2): the planning (PLp text O, PLe, PLs) and social (MSm, MSc) rubrics on all 120 EQ-Bench 4 persona
+# scenarios. Prompt = what the tested model sees at the start, then the persona simulator's hidden brief (as for tau2).
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-eqbench4.toml
+name = "noreason-sr-eqbench4"
+
+[tasks]
+benchmarks = ["eqbench4"]
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-sonnet-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "sonnet"
+batch_size = 100

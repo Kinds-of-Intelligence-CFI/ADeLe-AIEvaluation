@@ -1,0 +1,7 @@
+pair_id,underlying_state_id,contrast_level,custom_id_state_visible,custom_id_history_only,puzzle_id,step_idx,trace_idx,true_left,true_right,true_boat,cost_to_go,history_length,boat_side_updates,object_location_updates,num_unique_objects_moved,num_reversals,interference_count,object_complexity,num_object_moves,num_location_updates,num_repeated_moves
+memv-L3-vlow-01,memc-L3-low-01,verbose-low,memc-L3-low-01__state_visible,memv-L3-vlow-01__history_only,chain-3-boat-2,3,1,item1;item3,farmer;item2,right,2,3,3,1,1,0,0,1,1,7,2
+memv-L3-vlow-02,memc-L3-low-02,verbose-low,memc-L3-low-02__state_visible,memv-L3-vlow-02__history_only,chain-3-boat-3,3,2,item1;item3,farmer;item2,right,2,3,3,1,1,0,0,1,1,7,2
+memv-L4-vlow-01,memc-L4-low-01,verbose-low,memc-L4-low-01__state_visible,memv-L4-vlow-01__history_only,chain-3-boat-2,4,1,farmer;item1;item3,item2,left,1,4,4,1,1,0,0,1,1,9,3
+memv-L4-vlow-02,memc-L4-low-02,verbose-low,memc-L4-low-02__state_visible,memv-L4-vlow-02__history_only,chain-3-boat-3,4,2,farmer;item1;item3,item2,left,1,4,4,1,1,0,0,1,1,9,3
+memv-L5-vlow-01,memc-L5-low-01,verbose-low,memc-L5-low-01__state_visible,memv-L5-vlow-01__history_only,chain-3-boat-2,5,1,item1;item3,farmer;item2,right,2,5,5,1,1,0,0,1,1,11,4
+memv-L5-vlow-02,memc-L5-low-02,verbose-low,memc-L5-low-02__state_visible,memv-L5-vlow-02__history_only,chain-3-boat-3,5,2,item1;item3,farmer;item2,right,2,5,5,1,1,0,0,1,1,11,4

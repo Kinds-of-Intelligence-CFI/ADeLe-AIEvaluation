@@ -127,3 +127,39 @@ class TestLoadFromFile:
         from adele.data.loader import load_from_file
         with pytest.raises(ValueError, match="Unsupported"):
             load_from_file(str(bad_path))
+
+
+class TestBatteryGuards:
+    """Failure modes of load_battery: git-lfs pointers and the gated download."""
+
+    def test_lfs_pointer_is_detected(self, tmp_path):
+        from adele.data.battery import load_battery
+
+        pointer = tmp_path / "battery.csv"
+        pointer.write_text(
+            "version https://git-lfs.github.com/spec/v1\n"
+            "oid sha256:deadbeef\nsize 42\n"
+        )
+        with pytest.raises(RuntimeError, match="git lfs pull"):
+            load_battery(csv_path=str(pointer))
+
+    def test_gated_download_failure_names_the_remedies(self, monkeypatch):
+        import sys
+        import types
+        from adele.data import battery
+
+        fake = types.ModuleType("huggingface_hub")
+
+        def _denied(**kwargs):
+            raise OSError("401 Client Error: gated repo")
+
+        fake.hf_hub_download = _denied
+        monkeypatch.setitem(sys.modules, "huggingface_hub", fake)
+        monkeypatch.delenv("ADELE_BATTERY_CSV", raising=False)
+        with pytest.raises(RuntimeError) as err:
+            battery.load_battery()
+        msg = str(err.value)
+        assert "request access" in msg
+        assert "ADELE_BATTERY_CSV" in msg
+        assert "csv_path" in msg
+        assert "git lfs pull" in msg

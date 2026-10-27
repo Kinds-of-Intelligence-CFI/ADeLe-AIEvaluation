@@ -1,0 +1,32 @@
+# Wave 1 (BENCHMARKS.md) on Claude Code subagents: the 17 judged v1 rubrics on this group's wave-1 tasks, the tasks
+# whose prompt exceeds 50,000 chars or 1,500 lines under at least one rubric; all 17 rubrics of those tasks use the
+# chunked-read judge.
+# Input per docs/judge-input.md (data/instances-goal). Routed by
+# experiments/benchmarks/wave1-v1/route.py. See experiments/benchmarks/wave1-v1/PREREGISTRATION.md.
+name = "w1v1-code-long"
+
+[tasks]
+benchmarks = ["deepswe-v1.1", "frontierswe-v2", "programbench", "terminal-bench-4.0.0", "terminal-bench-science-0.1"]
+subset = "experiments/benchmarks/wave1-v1/subset_code_long.csv"
+instances_dir = "data/instances-goal"
+
+[rubrics]
+refs = ["v1/AS", "v1/AT", "v1/CEc", "v1/CEe", "v1/CL", "v1/KNa", "v1/KNc", "v1/KNf", "v1/KNn", "v1/KNs", "v1/MCr", "v1/MCt",
+        "v1/MCu", "v1/QLl", "v1/QLq", "v1/SNs", "v1/VO"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low-chunked"
+judge_agent = "adele-judge-v2-low-chunked"
+model_alias = "opus"
+batch_size = 100
+chunk_lines = 200

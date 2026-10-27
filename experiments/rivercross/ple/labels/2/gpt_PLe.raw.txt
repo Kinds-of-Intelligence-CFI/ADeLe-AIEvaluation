@@ -1,0 +1,51 @@
+```csv
+custom_id,level,reason
+chain-3-boat-1#t1,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+chain-3-boat-1#t2,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-3-boat-1#t3,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-3-boat-1#t4,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+chain-3-boat-1#t5,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-3-boat-1#t6,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-3-boat-1#t7,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-5-boat-2#t1,1,Multiple illegal attempts corrected via immediate feedback; no subtasks; static environment.
+chain-5-boat-2#t2,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-5-boat-2#t3,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-5-boat-2#t4,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+chain-5-boat-2#t5,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-5-boat-2#t6,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+chain-5-boat-2#t7,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-5-boat-2#t8,1,Multiple illegal attempts corrected via immediate feedback; no subtasks; static environment.
+chain-5-boat-2#t9,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+chain-5-boat-2#t10,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+chain-5-boat-2#t11,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t1,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+complete-4-boat-3#t2,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t3,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t4,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t5,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t6,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t7,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t8,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+complete-4-boat-3#t9,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+cycle-4-boat-2#t1,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+cycle-4-boat-2#t2,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+cycle-4-boat-2#t3,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+cycle-4-boat-2#t4,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+cycle-4-boat-2#t5,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+star-4-boat-2#t1,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+star-4-boat-2#t2,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+star-4-boat-2#t3,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+star-4-boat-2#t4,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+star-4-boat-2#t5,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t1,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t2,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t3,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+missionaries-cannibals-3#t4,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t5,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t6,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t7,1,Illegal attempt corrected using immediate feedback; no subtasks; static environment.
+missionaries-cannibals-3#t8,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t9,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t10,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+missionaries-cannibals-3#t11,0,Single atomic move; immediate feedback; no plan adjustment or subtasks.
+```

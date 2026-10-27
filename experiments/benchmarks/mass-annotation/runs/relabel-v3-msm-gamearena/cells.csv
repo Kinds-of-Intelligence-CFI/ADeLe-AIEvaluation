@@ -1,0 +1,4 @@
+cell_id,benchmark,instance_id,rubric_ref,generation,code,repeat,prompt_sha256
+v2MSm-6ca4e712559d9727,gamearena,werewolf@doctor,v2/MSm,v2,MSm,1,e5c3f471d37da0e97adfc61b2ef3898e7ea0a154bbc61e634b7bcbdd5b9ef1a1
+v2MSm-6f7c201eced5509f,gamearena,werewolf@seer,v2/MSm,v2,MSm,1,fed31b81af5e76a3defaf4344088fb1809fe80cba1ff8a964d2b9a3645ad7664
+v2MSm-0f9b3eaded306552,gamearena,werewolf@villager,v2/MSm,v2,MSm,1,77da1dbfbe71fe007ea5396f92ddb295c863656a3896d64303c9de7ede952919

@@ -1,0 +1,101 @@
+{
+  "run": "noreason-cooperbench",
+  "created_at": "2026-10-06T18:17:24+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/noreason-cooperbench.toml",
+  "git": {
+    "commit": "4a626f0c42b1044795d1d0612d5fb362a588217c",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/noreason/PREREGISTRATION.md",
+      " M experiments/benchmarks/noreason/analysis/analyse.py"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "9856f940a6e95e3ecb323a0e60b3b1c65d9358fdb7bfcfd029345b778803dd2d",
+      "content": "# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-cooperbench with the v2-noreason builder.\n# relabel-v2-cooperbench (relabel after the 2026-10-04 examples review; experiments/benchmarks/relabel-v2): the planning (PLp text O, PLe, PLs) and social (MSm, MSc) rubrics on 120 sampled CooperBench\n# feature pairs, each as solo and coop (make_set.py). Prompt = what the agent(s) see, both agents for coop.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-cooperbench.toml\nname = \"noreason-cooperbench\"\n\n[tasks]\nbenchmarks = [\"cooperbench\"]\nsubset = \"experiments/benchmarks/cooperbench-plms/subset.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "cooperbench": {
+          "file": "instances_cooperbench.parquet",
+          "file_sha256": "8f2b875b4c39cc6c885def320181b24d3aa3494caf606410916e29d37fa42691",
+          "frame_sha256": "3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7",
+          "n_selected": 240
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/cooperbench-plms/subset.csv",
+        "sha256": "5fe44f27b6d65c3630af5b6951468e2cb918d1364a518ee3e64a01720b50bee3",
+        "n_ids": 240
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "dd130fcea382645ea3c1b294a2264a4aa1e8f605b197a1193ba8c156bb3c8ce2",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 1200,
+      "sha256": "1433b7c19ab8fcbc0a85e393955b0e580e38998ddfcc15edba816944ffb1c523"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+item_id,set,tests,pred_cur,pred_cand,pair,text
+L-V0,L,no image,0,0,,A table gives the monthly rainfall of four towns. Which town had the wettest March?
+L-V1,L,read off,1,1,,"A sharp close-up photograph shows a price tag on a shelf, printed in large black type on white. What price does it show?"
+L-V2s,L,fineness: small but whole,1,2,,"A sharp photograph of a bottle shows a batch code printed along its side in letters about one millimetre high. Every letter is crisp, but they are so small that the photo must be enlarged to read them. What is the batch code?"
+L-V2f,L,fineness: faint but whole,1,2,,A photograph of a shop sign taken at dusk shows its name painted in a grey only slightly darker than the board. Every letter is complete and in focus. What is the shop called?
+L-V2o,L,"overlay, whole",2,2,,"A photograph of a shop window shows a printed notice behind the glass, with the reflection of the street lying over it. Every word of the notice is intact. What does the notice say?"
+L-V3o,L,occlusion,3,3,,A photograph of a parked bus shows its destination board with a lamppost hiding the middle letters. What is the destination?
+L-V3r,L,below resolution,3,3,,"A frame from a distant security camera shows a street-name plate whose letters are each only two or three pixels wide, so some strokes have merged. What does the plate say?"
+L-V4,L,combine,4,4,,"Two aerial photographs of a car park were taken minutes apart from different heights, and how they overlap is not recorded. Neither shows the whole of a painted bay number. Which number is painted on the bay?"
+L-V5,L,invert,5,5,,"A photograph shows only a white wall lit by a television that faces away from the camera, its light changing colour across the wall. Which of four named programmes was on the television?"
+L-AG,L,aggregation: hardest piece,3,3,,"A photograph of a receipt shows the shop name in large clear letters at the top, and the total near the bottom where a coffee stain has wiped out two of its digits. What is the shop name, and what was the total?"
+L-C1,L,search carve,1,1,,"A sharp photograph of a stadium crowd holds one person in a yellow scarf, plainly visible once spotted. Point to that person."
+L-C2,L,counting carve,1,1,,"A sharp overhead photograph shows forty apples spread apart on a table, none touching. How many apples are there?"
+L-C3,L,meaning carve,1,1,,A sharp photograph shows a protest banner with a short slogan in large letters. What historical event does the slogan allude to?
+L-C4,L,transformation carve,1,1,,Two clean line drawings each show a block made of ten cubes. Is the second drawing the first block turned around?
+L-C5,L,induction carve (ARC),1,1,,A clean grid of coloured squares shows three input and output pairs of a puzzle. What output does the hidden rule give for a fourth input?
+L-C6,L,generation carve,0,0,,Paint a lighthouse at sunset in a watercolour style.
+M1a,M,size: large,1,1,M1,A sharp photograph of a medicine box shows its expiry date printed in large bold figures across the front. What is the expiry date?
+M1b,M,size: tiny but crisp,1,2,M1,"A sharp photograph of a medicine box, taken from across a room, shows its expiry date in figures so small that the photo must be enlarged to read them, though each figure is crisp. What is the expiry date?"
+M2a,M,"blur: soft, all distinct",3,2,M2,A slightly out-of-focus photograph of a poster shows a phone number whose digits are soft-edged but each still clearly distinct. What is the number?
+M2b,M,blur: digits merged,3,3,M2,A badly out-of-focus photograph of a poster shows a phone number in which some neighbouring digits have run together into blobs. What is the number?
+M3a,M,contrast: strong,1,1,M3,A photograph of a whiteboard shows a word written in thick black marker. What is the word?
+M3b,M,"contrast: faint ghost, whole",1,2,M3,"A photograph of a whiteboard shows a word that was wiped off, leaving every stroke as a faint grey ghost. What was the word?"
+M4a,M,"overlay, whole",2,2,M4,"A scanned page has a pale stamp printed across a paragraph, with every word beneath it still complete. What does the paragraph say?"
+M4b,M,part hidden,3,3,M4,"A scanned page has a sticker pasted over part of a paragraph, hiding about a fifth of its words. What does the paragraph say?"
+M5a,M,"one view, completable",3,3,M5,A single photograph shows a wall slogan with a parked van covering its last few letters. What is the slogan?
+M5b,M,"several views, relation unknown",4,4,M5,"Three photographs taken from a moving train each show a different stretch of a long wall slogan, and where each stretch begins is not known. What is the full slogan?"

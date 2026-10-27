@@ -1,0 +1,23 @@
+You are an ADeLe demand-level annotator. For each of the {{N}} tasks below, assign a single demand level (an integer 0-5) for ONE dimension: {{CODE}} - {{NAME}}.
+
+The level is a property of the presented task state: how much working or short-term memory is required to maintain, update, or reconstruct the relevant river-crossing state information needed to continue correctly. It is independent of how skilled any particular solver is.
+
+Score using ONLY the rubric provided below. Assign levels by elimination against the rubric's stated conditions, not by an overall impression of how hard or tricky the puzzle feels.
+
+For this pilot, focus only on memory state tracking:
+1. Score demand from information that must be maintained, updated, or reconstructed across the presented history.
+2. Do not score planning difficulty, search depth, action execution difficulty, legality checking, or overall puzzle difficulty.
+3. Do not let the number of remaining optimal steps raise the level unless it creates memory-maintenance demand under the rubric.
+4. If the current state is directly visible in the task text, treat that information as perceptually available and do not count it as memory demand.
+5. If the task gives only an initial state and move history, assume the solver must infer the present configuration from that history.
+
+=== {{CODE}} RUBRIC ===
+{{RUBRIC}}
+
+=== {{N}} TASKS (custom_id ||| situation) ===
+{{ITEMS}}
+
+=== OUTPUT ===
+Return ONLY a CSV inside a single code block. Header exactly:
+custom_id,level,reason
+then EXACTLY {{N}} data rows, one per task in the given order. level must be an integer 0-5. reason must be 15 words or fewer and name the memory-tracking condition that decided the level. Output nothing before or after the code block.

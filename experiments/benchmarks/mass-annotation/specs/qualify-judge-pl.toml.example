@@ -1,0 +1,23 @@
+# Qualify a new judge, part 1 of 2: the 150-task reference subset x PLp, PLe, PLs (450 calls). Copy this file to
+# specs/qualify-<judge>-pl.toml, set a unique name and the [judge] table, then plan, pin, run and collect it, and run
+#   python experiments/benchmarks/mass-annotation/qualify_judge.py qualify-<judge>-pl qualify-<judge>-ms
+# See RUNNING.md, "Qualify a new judge". The tasks, rubrics and prompt must stay as they are.
+name = "qualify-CHANGE-ME-pl"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "tau2-airline", "tau2-retail", "tau2-banking_knowledge", "terminal-bench-4.0.0",
+              "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench"]
+subset = "experiments/benchmarks/noreason/refresh_subset.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "openai-batch"        # or "anthropic-batch", "litellm"
+model = "CHANGE-ME"             # the provider's model id
+effort = "low"                  # sent as reasoning_effort to OpenAI / litellm; omit for models without it
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

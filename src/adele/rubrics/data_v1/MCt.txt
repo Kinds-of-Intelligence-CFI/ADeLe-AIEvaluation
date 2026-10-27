@@ -1,3 +1,5 @@
+# Critical Thinking Processes
+
 This rubric assesses the difficulty level of metacognitive engagement required by the question. More concretely, the level represents the extent to which the question requires the respondent to monitor or regulate multiple thought processes to answer the question effectively, ranging from simple recall to high-level critical thinking.
 
 Level 0: None. No critical thinking or analysis is needed. 

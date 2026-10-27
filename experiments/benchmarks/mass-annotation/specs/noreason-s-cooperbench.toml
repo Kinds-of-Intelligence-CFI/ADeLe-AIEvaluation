@@ -1,0 +1,29 @@
+# noreason amendment 4: twin of noreason-cooperbench.toml with Sonnet 5.5 (effort low) as the judge; nothing else changed.
+# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-cooperbench with the v2-noreason builder.
+# relabel-v2-cooperbench (relabel after the 2026-10-04 examples review; experiments/benchmarks/relabel-v2): the planning (PLp text O, PLe, PLs) and social (MSm, MSc) rubrics on 120 sampled CooperBench
+# feature pairs, each as solo and coop (make_set.py). Prompt = what the agent(s) see, both agents for coop.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-cooperbench.toml
+name = "noreason-s-cooperbench"
+
+[tasks]
+benchmarks = ["cooperbench"]
+subset = "experiments/benchmarks/cooperbench-plms/subset.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-sonnet-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "sonnet"
+batch_size = 100

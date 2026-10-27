@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2__history_only,2,Must remember item2 and item3 moved right; no items returned.
+chain-3-boat-2#s1__history_only,2,Track item1 and item3 now on right after one move.
+chain-3-boat-3#s0__history_only,2,Track item1 and item3 remain right after farmer-only return.
+chain-3-boat-4#s0__history_only,2,Remember item1 and item3 right; farmer-only move back irrelevant.
+chain-4-boat-2#s1__history_only,2,Track item2 and item4 now on right; single update.
+chain-4-boat-3#s1__history_only,2,Remember item2 and item4 moved right; no reversals.
+chain-4-boat-4#s0__history_only,2,Remember item2 and item4 stay right after farmer-only return.
+chain-5-boat-2#s2__history_only,3,Disentangle reversal: item4 returned left; item2
+chain-5-boat-3#s1__history_only,2,Remember item1
+chain-5-boat-4#s1__history_only,2,Remember item1
+chain-6-boat-3#s1__history_only,2,Remember item2
+chain-6-boat-4#s1__history_only,2,Remember item2
+star-3-boat-1#s2__history_only,2,Track item1 and item3 now right; no reversals.
+star-3-boat-2#s1__history_only,2,Remember item2 and item3 moved right; single update.
+star-3-boat-3#s0__history_only,2,Item2 and item3 remain right after farmer-only return.
+star-3-boat-4#s0__history_only,2,Item2 and item3 remain right after farmer-only return.
+star-4-boat-2#s2__history_only,3,Reversal: item1 returned left; item4 stayed right.
+star-4-boat-3#s1__history_only,2,Remember item2
+star-4-boat-4#s0__history_only,2,Item2
+star-5-boat-2#s2__history_only,2,Track item1
+star-5-boat-3#s1__history_only,3,Reversal: item1 back left; item2
+star-5-boat-4#s1__history_only,2,Remember item2
+star-6-boat-2#s2__history_only,3,Reversal: item1 returned left; item5 and item6 stayed right.
+star-6-boat-3#s2__history_only,3,Reversal: item1 returned left; item5 and item6 remained right.
+star-6-boat-4#s1__history_only,3,Reversal: item1 back left; item2
+cycle-3-boat-2#s1__history_only,2,Remember item1 and item3 moved right; no reversals.
+cycle-3-boat-3#s0__history_only,3,Reversal: item1 returned left; item3 stayed right.
+cycle-3-boat-4#s0__history_only,3,Reversal: item1 returned left; item3 stayed right.
+cycle-4-boat-2#s1__history_only,2,Remember item2 and item4 moved right; single update.
+cycle-4-boat-3#s1__history_only,2,Remember item2 and item4 moved right; no reversals.
+cycle-4-boat-4#s0__history_only,2,Item2 and item4 remain right after farmer-only return.
+cycle-5-boat-3#s1__history_only,2,Remember item1
+cycle-5-boat-4#s1__history_only,2,Remember item1
+cycle-6-boat-3#s1__history_only,2,Remember item2
+cycle-6-boat-4#s1__history_only,2,Remember item2
+complete-3-boat-2#s1__history_only,2,Item1 and item3 moved right; no reversals.
+complete-3-boat-3#s0__history_only,3,Reversal: item1 returned left; item3 remained right.
+complete-3-boat-4#s0__history_only,3,Reversal: item1 returned left; item3 remained right.
+complete-4-boat-3#s1__history_only,2,Remember item1
+complete-4-boat-4#s0__history_only,4,Several reversals: items1 and 2 returned left; item4 stayed right.
+complete-5-boat-4#s1__history_only,2,Remember item1
+missionaries-cannibals-3#s2__history_only,4,Several reversals: C1 toggled twice
+missionaries-cannibals-4#s2__history_only,4,Several reversals: C1

@@ -1,0 +1,26 @@
+{
+  "run_id": "s-swe-gate",
+  "created_at": "2026-09-30T21:30:27+00:00",
+  "repo_commit": "b5d1174d34fe0a60380e34762b33e42136629247",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "swe-bench-verified"
+  ],
+  "baseline": "natural-prompt/labels/npb-gate-opuslow (current text, same builder and judge)",
+  "rubric": {
+    "candidate": "experiments/benchmarks/plp-b2/PLp_S.txt",
+    "candidate_sha256": "76a88e7870cd5d007280bdbda6b9e6c6a665ce17bbcbd28f7acdcb12e49ddacd"
+  },
+  "design": {
+    "n_prompts": 44,
+    "judges": {
+      "opus-low": "adele-judge-v2-low, model alias 'opus'"
+    }
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/s-swe-gate",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

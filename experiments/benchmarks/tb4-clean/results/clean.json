@@ -1,0 +1,53 @@
+{
+  "n_clean": 35,
+  "n_fully_labelled": 35,
+  "unlabelled": [],
+  "levels": {
+    "PLp": {
+      "2": 7,
+      "3": 24,
+      "4": 4
+    },
+    "PLe": {
+      "3": 18,
+      "4": 17
+    },
+    "PLs": {
+      "0": 10,
+      "1": 13,
+      "2": 12
+    }
+  },
+  "spearman": {
+    "PLp_vs_solve_rate": {
+      "rho": 0.002,
+      "p": 0.993,
+      "n": 35
+    },
+    "PLp_vs_expert_hours": {
+      "rho": 0.267,
+      "p": 0.12,
+      "n": 35
+    },
+    "PLe_vs_solve_rate": {
+      "rho": -0.238,
+      "p": 0.169,
+      "n": 35
+    },
+    "PLe_vs_expert_hours": {
+      "rho": 0.333,
+      "p": 0.0505,
+      "n": 35
+    },
+    "PLs_vs_solve_rate": {
+      "rho": -0.025,
+      "p": 0.885,
+      "n": 35
+    },
+    "PLs_vs_expert_hours": {
+      "rho": 0.086,
+      "p": 0.624,
+      "n": 35
+    }
+  }
+}

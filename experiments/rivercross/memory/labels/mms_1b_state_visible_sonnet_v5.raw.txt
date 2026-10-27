@@ -1,0 +1,46 @@
+```csv
+custom_id,level,reason
+chain-3-boat-1#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-3-boat-2#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-3-boat-3#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-3-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-4-boat-2#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-4-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-4-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-5-boat-2#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-5-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-5-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-6-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+chain-6-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+star-3-boat-1#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+star-3-boat-2#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+star-3-boat-3#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+star-3-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+star-4-boat-2#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+star-4-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+star-4-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+star-5-boat-2#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+star-5-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+star-5-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+star-6-boat-2#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+star-6-boat-3#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+star-6-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-3-boat-2#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-3-boat-3#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-3-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-4-boat-2#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-4-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-4-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-5-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-5-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-6-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+cycle-6-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+complete-3-boat-2#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+complete-3-boat-3#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+complete-3-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+complete-4-boat-3#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+complete-4-boat-4#s0,0,Current bank contents and boat side fully visible, no hidden history needed
+complete-5-boat-4#s1,0,Current bank contents and boat side fully visible, no hidden history needed
+missionaries-cannibals-3#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+missionaries-cannibals-4#s2,0,Current bank contents and boat side fully visible, no hidden history needed
+```

@@ -1,0 +1,139 @@
+{
+  "analysis_set": {
+    "n": 435,
+    "from_step1": 37,
+    "from_step2": 398
+  },
+  "levels": {
+    "PLp": {
+      "0": 23,
+      "1": 264,
+      "2": 144,
+      "3": 4,
+      "4": 0,
+      "5": 0
+    },
+    "PLe": {
+      "0": 0,
+      "1": 13,
+      "2": 104,
+      "3": 318,
+      "4": 0,
+      "5": 0
+    },
+    "PLs": {
+      "0": 1,
+      "1": 433,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    }
+  },
+  "rubrics_tested_in_Q1": [
+    "PLp",
+    "PLe",
+    "PLs"
+  ],
+  "main": {
+    "Q1_PLp_vs_solve_rate": {
+      "n": 435,
+      "n_off_mode": 171,
+      "rho": -0.63,
+      "p_two_sided": 1.82e-49,
+      "ci95": [
+        -0.688,
+        -0.564
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q1_PLe_vs_solve_rate": {
+      "n": 435,
+      "n_off_mode": 117,
+      "rho": -0.533,
+      "p_two_sided": 3.02e-33,
+      "ci95": [
+        -0.601,
+        -0.457
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q1_PLs_vs_solve_rate": {
+      "n": 435,
+      "n_off_mode": 2,
+      "rho": -0.089,
+      "p_two_sided": 0.0634,
+      "ci95": [
+        -0.182,
+        0.005
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "Q2_PLp_vs_time_to_fix": {
+      "n": 435,
+      "n_off_mode": 171,
+      "rho": 0.445,
+      "p_two_sided": 1.57e-22,
+      "ci95": [
+        0.362,
+        0.521
+      ],
+      "predicted": "positive",
+      "supported": true
+    }
+  },
+  "robustness_without_step1": {
+    "Q1_PLp_vs_solve_rate": {
+      "n": 398,
+      "n_off_mode": 156,
+      "rho": -0.627,
+      "p_two_sided": 7.67e-45,
+      "ci95": [
+        -0.688,
+        -0.557
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q1_PLe_vs_solve_rate": {
+      "n": 398,
+      "n_off_mode": 107,
+      "rho": -0.527,
+      "p_two_sided": 8.73e-30,
+      "ci95": [
+        -0.598,
+        -0.446
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "Q1_PLs_vs_solve_rate": {
+      "n": 398,
+      "n_off_mode": 2,
+      "rho": -0.093,
+      "p_two_sided": 0.0651,
+      "ci95": [
+        -0.189,
+        0.006
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "Q2_PLp_vs_time_to_fix": {
+      "n": 398,
+      "n_off_mode": 156,
+      "rho": 0.444,
+      "p_two_sided": 1.27e-20,
+      "ci95": [
+        0.357,
+        0.523
+      ],
+      "predicted": "positive",
+      "supported": true
+    }
+  },
+  "robustness_without_audit_flags": "pending: the test-validity audit has not run"
+}

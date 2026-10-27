@@ -1,0 +1,25 @@
+```csv
+custom_id,level,reason
+memw-L7-nrev-01__history_only,2,Two items moved right one-way plus later item3; several updates, no reversal
+memw-L7-nrev-02__history_only,1,Three items moved right once, no reversals; single one-way update block
+memw-L7-rev-01__history_only,3,item2 shuttled back and forth repeatedly; reversals must be tracked
+memw-L7-rev-02__history_only,3,item1 shuttled multiple times; reversals must be disentangled to final side
+memw-L3-low-01__history_only,1,Single item2 moved right, short history, no reversal
+memw-L3-low-02__history_only,1,Single item1 moved right, short history, no reversal
+memw-L3-medium-01__history_only,2,Four items moved right one-way over short history, no reversals
+memw-L3-medium-02__history_only,2,Four items moved right one-way, short history, no reversals
+memw-L3-high-01__history_only,3,Four items shuttled fully back and forth; reversal tracking required
+memw-L3-high-02__history_only,3,Three items shuttled fully back and forth; reversal tracking required
+memw-L7-low-01__history_only,1,Single item2 moved right, farmer shuffling only afterward
+memw-L7-low-02__history_only,2,item2 right early, item1 right late; two updates over long history
+memw-L7-medium-01__history_only,3,items2/3 reversed, item1 moved; multiple updates with reversals to disentangle
+memw-L7-medium-02__history_only,3,items1/3 moved, item2 shuttled with reversals; disentangle multiple updates
+memw-L7-high-01__history_only,4,Many item updates with several reversals across long interfering history
+memw-L7-high-02__history_only,4,Many M/C moves with repeated reversals requiring interference tracking
+memw-L10-low-01__history_only,1,Single item2 moved right, rest farmer-only shuffling
+memw-L10-low-02__history_only,3,item2 right, item3 right, item2 back; reversals over long history
+memw-L10-medium-01__history_only,4,Multiple items repeatedly shuttled with several reversals over ten moves
+memw-L10-medium-02__history_only,4,Four items updated many times with several reversals to disentangle
+memw-L10-high-01__history_only,4,Many item updates with repeated reversals across ten interfering moves
+memw-L10-high-02__history_only,4,Many item updates with multiple reversals over long interfering history
+```

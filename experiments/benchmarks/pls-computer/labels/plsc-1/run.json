@@ -1,0 +1,32 @@
+{
+  "run_id": "plsc-1",
+  "created_at": "2026-10-04T10:36:31+00:00",
+  "repo_commit": "590f986cc049e9533d16f9a84f3ac6495932adf8",
+  "design": {
+    "n_cells": 209,
+    "dims": [
+      "PLs"
+    ],
+    "judges": {
+      "opus-low": "Claude Code subagent 'adele-judge-v2-low' (Read, Write; omitClaudeMd; effort low), model alias 'opus', relayed by 'judge-dispatcher-v2-low'"
+    }
+  },
+  "rubric": {
+    "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+    "sha256": "abfe535d88bc390d398ce011cbde1a4cb84e1a82f694ab1ad0b3dc9e9831321c",
+    "candidate": "pls-computer/PLs_candidate.txt",
+    "candidate_sha256": "a1ea828a30cffd4bcbb0b4ed8963740cfc585312c9d62a4a310bba8b387f5ab2"
+  },
+  "lab_record_commit": "7159671",
+  "pass": 1,
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "judge_agent": {
+    "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/plsc-1"
+}

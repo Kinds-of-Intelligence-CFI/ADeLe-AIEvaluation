@@ -1,0 +1,46 @@
+```csv
+custom_id,level,reason
+chain-3-boat-1#s2__history_only,2,Two items moved one-way to right bank, no reversal needed
+chain-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing, no reversal
+chain-3-boat-3#s0__history_only,2,Two items moved one-way, farmer solo return, no reversal
+chain-3-boat-4#s0__history_only,2,Two items moved one-way, farmer solo return, no reversal
+chain-4-boat-2#s1__history_only,2,Two items moved one-way to right bank, no reversal
+chain-4-boat-3#s1__history_only,2,Two items moved one-way to right bank, no reversal
+chain-4-boat-4#s0__history_only,2,Two items moved one-way, farmer solo return, no reversal
+chain-5-boat-2#s2__history_only,3,Item4 moved right then back left, reversal must be tracked
+chain-5-boat-3#s1__history_only,2,Three items moved one-way, no reversal
+chain-5-boat-4#s1__history_only,2,Three items moved one-way, no reversal
+chain-6-boat-3#s1__history_only,2,Three items moved one-way, no reversal
+chain-6-boat-4#s1__history_only,2,Three items moved one-way, no reversal
+star-3-boat-1#s2__history_only,2,Two items moved one-way across separate crossings, no reversal
+star-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing, no reversal
+star-3-boat-3#s0__history_only,2,Two items moved one-way, farmer solo return, no reversal
+star-3-boat-4#s0__history_only,2,Two items moved one-way, farmer solo return, no reversal
+star-4-boat-2#s2__history_only,3,Item1 moved right then back left, reversal tracked with item4
+star-4-boat-3#s1__history_only,2,Three items moved one-way, no reversal
+star-4-boat-4#s0__history_only,2,Three items moved one-way, farmer solo return, no reversal
+star-5-boat-2#s2__history_only,2,Three items moved one-way across separate crossings, no reversal
+star-5-boat-3#s1__history_only,3,Item1 reversed back left while four other items stay right
+star-5-boat-4#s1__history_only,2,Four items moved one-way in single crossing, no reversal
+star-6-boat-2#s2__history_only,3,Item1 moved right then left again, reversal amid other items
+star-6-boat-3#s2__history_only,3,Item1 moved right then reversed left, others stay one-way
+star-6-boat-4#s1__history_only,3,Item1 reversed left while five other items stay right
+cycle-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing, no reversal
+cycle-3-boat-3#s0__history_only,3,Item1 reversed back left while item3 stays right
+cycle-3-boat-4#s0__history_only,3,Item1 reversed back left while item3 stays right
+cycle-4-boat-2#s1__history_only,2,Two items moved one-way to right bank, no reversal
+cycle-4-boat-3#s1__history_only,2,Two items moved one-way to right bank, no reversal
+cycle-4-boat-4#s0__history_only,2,Two items moved one-way, farmer solo return, no reversal
+cycle-5-boat-3#s1__history_only,2,Three items moved one-way to right bank, no reversal
+cycle-5-boat-4#s1__history_only,2,Three items moved one-way to right bank, no reversal
+cycle-6-boat-3#s1__history_only,2,Three items moved one-way to right bank, no reversal
+cycle-6-boat-4#s1__history_only,2,Three items moved one-way to right bank, no reversal
+complete-3-boat-2#s1__history_only,2,Two items moved one-way in single crossing, no reversal
+complete-3-boat-3#s0__history_only,3,Item1 reversed back left while item3 stays right
+complete-3-boat-4#s0__history_only,3,Item1 reversed back left while item3 stays right
+complete-4-boat-3#s1__history_only,2,Three items moved one-way to right bank, no reversal
+complete-4-boat-4#s0__history_only,3,Item1 and item2 reversed back left while item4 stays right
+complete-5-boat-4#s1__history_only,2,Four items moved one-way in single crossing, no reversal
+missionaries-cannibals-3#s2__history_only,4,C1 and C3 both moved right then reversed left, multiple interference
+missionaries-cannibals-4#s2__history_only,4,C1, C2, and M1 each reversed direction, multiple interference cases
+```
