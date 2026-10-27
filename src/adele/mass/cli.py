@@ -120,8 +120,8 @@ def status(run_ref):
 
 @mass.command("next")
 @click.argument("run_ref")
-@click.option("--max", "max_relays", type=click.IntRange(1, 4), default=4, show_default=True,
-              help="Relays to emit (never more than 4 run at once).")
+@click.option("--max", "max_relays", type=click.IntRange(1, 5), default=4, show_default=True,
+              help="Relays to emit (never more than 5 run at once: 4 subagents each, 20 per session).")
 @click.option("--batch-size", type=int, default=None, help="Cells per relay (default: the spec's relay.batch_size).")
 def next_cmd(run_ref, max_relays, batch_size):
     """Subagent runs: record and print the next relay messages for judge-dispatcher.
