@@ -169,6 +169,7 @@ def route() -> None:
 
 
 def main() -> None:
+    long_lines = set()
     OUT.mkdir(parents=True, exist_ok=True)
     for slug in SETTING:
         frozen = pd.read_parquet(ROOT / f"data/instances/instances_{slug}.parquet")
@@ -179,6 +180,8 @@ def main() -> None:
             setting, goal = parts[r.instance_id]
             text = goal_task(slug, r.prompt, goal, setting)
             assert r.prompt in text and goal in text, f"{slug}/{r.instance_id}: text not contained"
+            if max(map(len, text.split("\n"))) > 2000:
+                long_lines.add((slug, r.instance_id))
             rows.append({"benchmark": slug, "instance_id": r.instance_id, "prompt": text})
         path = OUT / f"instances_{slug}.parquet"
         pd.DataFrame(rows).to_parquet(path, index=False)
@@ -186,6 +189,10 @@ def main() -> None:
         print(f"{slug}: {row['n_instances']} tasks, median {row['median_prompt_chars']} chars, "
               f"max {row['max_prompt_chars']}, sha {row['sha256'][:12]}")
     route()
+    # The judges' Read tool cuts lines over 2,000 chars (tau2-full amendment 1); no released task may have one.
+    released = set(map(tuple, pd.concat([pd.read_csv(HERE / f"{f}.csv") for f in ("subset", "subset_long")]).values))
+    assert not long_lines & released, f"released tasks with a line over 2,000 chars: {sorted(long_lines & released)}"
+    print("tasks with a line over 2,000 chars (none released):", sorted(long_lines))
 
 
 if __name__ == "__main__":
