@@ -10,7 +10,7 @@ Pablo asked for the exact list. This builds on `reports/Benchmarks to annotate.m
 
 Dimension fit comes last. Multimodal and robotic benchmarks are out.
 
-All runs use the default judge: Opus 5.5, effort low, bare-digit prompt (`v2-noreason`), through the Anthropic Batch
+All runs use the default judge: Opus 5.5, effort low, the production prompt (`v1-layout-noreason` since 2026-11-02; `v2-noreason` before; `docs/judge-prompt.md`), through the Anthropic Batch
 API. Costs below are `adele mass plan` estimates at batch prices.
 
 ## Wave 1: decided, ready to run after the gates

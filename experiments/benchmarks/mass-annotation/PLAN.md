@@ -2,7 +2,7 @@
 
 ## Update 2026-10-07 (supersedes the sections below where they differ)
 
-- **Judge:** Opus 5.5, effort low, bare-digit prompt (`builder = "v2-noreason"`), per `noreason/RESULTS.md`. It
+- **Judge:** Opus 5.5, effort low. Prompt since 2026-11-02: `builder = "v1-layout-noreason"` (`docs/judge-prompt.md`); before, the bare-digit `v2-noreason`, per `noreason/RESULTS.md`. It
   costs 22% less per label and matches the reasoning judge on agreement and criterion validity.
 - **Route B (Anthropic Batch API) for the bulk.** The backend exists (`adele.mass.backends.anthropic_batch`). The bulk
   would take more than a week of subscription quota, but about a day and $230 on the API. Subagents stay for small

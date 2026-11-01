@@ -80,7 +80,7 @@ The runner is judge-agnostic.
 | `litellm` | most others | `reasoning_effort` |
 | `inspect` | anything [Inspect](https://inspect.aisi.org.uk) supports, with the provider's batch API where it has one | `effort` (Claude), `reasoning_effort` (others) |
 
-Keep `builder = "v2-noreason"`: the bare-digit prompt works for any model.
+Use `builder = "v1-layout-noreason"`, the production prompt since 2026-11-02 (`docs/judge-prompt.md`). With `backend = "anthropic-batch"`, add `harness = "subagent-v2-low"` so the labels pool with subagent labels.
 
 With `inspect`, `model` is an Inspect model name, such as `anthropic/claude-opus-5-5` or `openai/gpt-5.5`, and
 `batch = false` turns batching off for small runs. Inspect keeps its own log of every run in the judge-io folder, so
