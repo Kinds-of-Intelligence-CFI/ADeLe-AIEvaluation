@@ -55,3 +55,29 @@ Both arms: 1,080 of 1,080 labelled by `claude-opus-5-5` (`analyse_gates.py v1 <r
 
 **Rank agreement** with GPT-4o stays modest for AT, KNc and MCu (ρ 0.31–0.43). **Next, per the rule:** a small human
 check on MCu, KNc, KNa and CL, to see which judge humans side with. No relabel.
+
+## Why Opus reads differently (exploratory, 2026-11-02)
+
+Production judge (arm A) against GPT-4o over all 18 rubrics: **57% exact, 88% within 1**.
+
+**Opus's written reasoning (arm B) on the cells 2+ levels below GPT-4o** shows one pattern per rubric:
+- **KNa:** Opus files chemistry, meteoritics and similar under the natural sciences, and gives applied sciences 0.
+  GPT-4o gave up to 5 on the same items.
+- **KNc:** everyday framing a solution does not need ("could be worded with any substances") scores 0–1.
+- **CL:** applying known procedures or templates (IUPAC naming, retrosynthesis, deduction) scores 1–2. Higher levels
+  are kept for forming new concepts.
+- **MCu:** low unless the task makes the solver weigh their own uncertainty. A clear-cut answer, or no confidence
+  asked for, scores 1–2.
+
+**One test of the halo explanation** (GPT-4o tracking overall difficulty and topic across rubrics):
+
+| judge | mean inter-rubric ρ | items with ≥ 2 knowledge rubrics at ≥ 2 |
+|---|---|---|
+| GPT-4o | **+0.24** | **68%** |
+| Opus A | +0.09 | 20% |
+| Opus B | +0.09 | 27% |
+
+**Reading:** GPT-4o's levels are more alike across rubrics, and it counts the same knowledge in several domains. Opus
+scores each construct more narrowly, and only what the solution needs. That is closer to desideratum 2
+(disentangled dimensions) and to the ruling "demand is what the task requires". It is not proof that Opus is right:
+the paper validated GPT-4o against humans. Only 60 items. The human check on MCu, KNc, KNa and CL decides.
