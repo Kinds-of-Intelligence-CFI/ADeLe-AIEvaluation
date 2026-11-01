@@ -69,15 +69,34 @@ Production judge (arm A) against GPT-4o over all 18 rubrics: **57% exact, 88% wi
 - **MCu:** low unless the task makes the solver weigh their own uncertainty. A clear-cut answer, or no confidence
   asked for, scores 1–2.
 
-**One test of the halo explanation** (GPT-4o tracking overall difficulty and topic across rubrics):
+**Inter-rubric correlations** (`inter_rubric.py`, 2026-11-02). This repeats the paper's Figure 4 analysis: the
+Spearman matrix of levels over every rubric pair. Figure: `inter_rubric.png`. Numbers: `inter_rubric.json`.
+- **Reproduction.** GPT-4o on the full battery (16,108 items) gives the paper's picture. The pairs above 0.8 are
+  CL–MCt 0.83, CL–QLl 0.82 and MCt–QLl 0.81. The paper reports two above 0.8, both on CL; the third pair is 0.81.
+- **The 60 items stand in well.** GPT-4o's 60-item matrix tracks its full-battery matrix (r = 0.94).
+- **CEe is dropped** for every judge. Opus A gives it 0 on all 60 items, so its correlations are undefined.
 
-| judge | mean inter-rubric ρ | items with ≥ 2 knowledge rubrics at ≥ 2 |
-|---|---|---|
-| GPT-4o | **+0.24** | **68%** |
-| Opus A | +0.09 | 20% |
-| Opus B | +0.09 | 27% |
+| judge (60 items, 17 rubrics) | mean ρ | mean \|ρ\| | first-eigenvector share | reasoning block | AS, CEc, AT, VO × block |
+|---|---|---|---|---|---|
+| GPT-4o | +0.26 | 0.34 | 0.41 | 0.82 | 0.59 |
+| Opus A | +0.09 | 0.26 | 0.26 | 0.58 | 0.32 |
+| Opus B | +0.10 | 0.26 | 0.27 | 0.63 | 0.31 |
 
-**Reading:** GPT-4o's levels are more alike across rubrics, and it counts the same knowledge in several domains. Opus
-scores each construct more narrowly, and only what the solution needs. That is closer to desideratum 2
-(disentangled dimensions) and to the ruling "demand is what the task requires". It is not proof that Opus is right:
-the paper validated GPT-4o against humans. Only 60 items. The human check on MCu, KNc, KNa and CL decides.
+Reasoning block = CL, MCr, MCt, MCu, QLl (mean ρ within it). GPT-4o minus Opus A, bootstrap over items (95%): mean
+ρ +0.17 [0.12, 0.21]; mean |ρ| +0.08 [0.03, 0.12]; first-eigenvector share +0.15 [0.07, 0.19]. Arm B is the same.
+
+- **Same structure, weaker.** The two matrices correlate at r ≈ 0.8. GPT-4o's ρ is higher on 110 of 136 pairs.
+- **Where they differ.** For GPT-4o, AS, CEc, AT and VO rise with the reasoning block. For Opus they mostly do not.
+- **Not the spread.** Opus's levels spread less on every rubric. Squeezing GPT-4o's levels into Opus's per-rubric
+  distribution, keeping its item order, leaves mean ρ at +0.24 and the eigenvector share at 0.36–0.37.
+- **Knowledge double-counting** (separate count): items with 2+ knowledge rubrics at ≥ 2 are 68% for GPT-4o,
+  20% for Opus A and 27% for Opus B.
+
+**Reading.** GPT-4o's levels share more of a common factor, mostly through attention, comprehension, atypicality and
+volume moving with reasoning. Two explanations fit:
+1. GPT-4o has a halo: one overall-difficulty impression leaks into several rubrics.
+2. Opus under-links demands that really do go together.
+
+The paper itself says such correlations depend on which benchmarks are chosen. Two cautions: the data cannot tell
+the two explanations apart, and lower reliability would also weaken correlations (we know Opus's test-retest, 0.93–0.95
+exact, but not GPT-4o's). Only 60 items. The human check on MCu, KNc, KNa and CL decides.
