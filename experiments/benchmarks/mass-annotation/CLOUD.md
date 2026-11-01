@@ -7,10 +7,9 @@ The same judges as on the Mac (`.claude/agents/`, byte-identical to the pinned f
 
 1. **Repository.** This repo, or a fork under your own account if the org has not approved the Claude GitHub app.
    A fork of this public repo is public too; nothing secret is ever committed (labels, ledgers, scripts only).
-2. **Environment variables:**
-   - `HF_TOKEN`: a read-only, fine-grained Hugging Face token for `adele-ai-evaluations/adele-instances` (make a
-     new one for the cloud; do not reuse the write token).
-   - `ADELE_JUDGE_IO=/root/judge-io` (any folder outside the repo; judges must not see a CLAUDE.md).
+2. **Environment variable** `HF_TOKEN`: a read-only, fine-grained Hugging Face token for
+   `adele-ai-evaluations/adele-instances` (make a new one for the cloud; do not reuse the write token). The judge
+   I/O folder defaults to `~/judge-io`, outside the repo (judges must not see a CLAUDE.md).
 3. **Network access:** allow `huggingface.co`, `*.hf.co` (file downloads), `pypi.org`, `files.pythonhosted.org`
    and `github.com`.
 
