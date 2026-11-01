@@ -75,3 +75,17 @@ same model alias (`opus`), same two lines. `adele mass check` audits every judge
 Only the launcher changes. State moves through the private HF dataset (`mass-annotation/CLOUD.md`). Approved by
 Pablo, 2026-11-01. `w1v1-code` stays on the Mac's subagents. The API is not used for wave 1, because
 `gate-api-bridge` found that PLp labels shift across backends.
+
+## Amendment 2 (2026-11-02): the rest of `w1v1-code` through the API, with the subagent harness
+
+**Why.** The harness bridges showed that API labels with `judge.harness = "subagent-v2-low"` match the subagent
+labels (`harness-emulation`):
+- PL: PLp 0.90 exact;
+- v1, on 1,445 wave-1 cells: exact 0.93, within 1 1.00, every |shift| ≤ 0.15.
+
+The API costs about $39 here, against ~13 weekly points and a session Pablo would start.
+
+**Change.** `w1v1-code` (subagents) stops at its 3,000 labels; no more relays go to it. Run `w1v1-code-api` judges
+the rest: its 153 untouched tasks plus the one partial task (8 of whose cells are then judged twice; the first
+label counts). The prompts are byte-identical (2,618 of 2,618). Labels carry their backend. Decided under Pablo's
+delegation of 2026-11-01 ("I trust you to optimize and decide").

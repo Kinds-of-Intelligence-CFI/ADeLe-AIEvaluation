@@ -1,5 +1,5 @@
-# wave1-v1 amendment 1: the rest of w1v1-code (its untouched tasks plus one partial task) through the Batch API, after
-# gate-api-bridge. Prompts are byte-identical to w1v1-code. See experiments/benchmarks/wave1-v1/PREREGISTRATION.md.
+# wave1-v1 amendment 2: the rest of w1v1-code (its untouched tasks plus one partial task) through the Batch API, after
+# the harness bridges (harness-emulation). Prompts are byte-identical to w1v1-code. See experiments/benchmarks/wave1-v1/PREREGISTRATION.md.
 name = "w1v1-code-api"
 
 [tasks]
@@ -18,5 +18,6 @@ builder = "v2-noreason"
 backend = "anthropic-batch"
 model = "claude-opus-5-5"
 effort = "low"
+harness = "subagent-v2-low"   # pools with the subagent labels (harness-emulation, v1 bridge)
 repeats = 1
 retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }
