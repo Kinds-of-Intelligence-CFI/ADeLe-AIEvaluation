@@ -27,3 +27,27 @@ items. A step **moves the labels** if |mean change| ≥ 0.10, its CI excludes 0,
 (about +0.10 on these rubrics); the gap shows the interaction.
 
 **Cost:** about $23 from the December grant.
+
+## Result (2026-11-02)
+
+All four arms: 480 of 480 labelled by `claude-opus-5-5`. `analyse.py`, 60 items × 8 rubrics:
+
+| step | mean change | 95% CI | cells changed (up / down) |
+|---|---|---|---|
+| noise (A′ − A) | +0.00 | [−0.02, +0.02] | 5% (2 / 2) |
+| **tie rule** (S1 − A) | **+0.08** | [+0.06, +0.11] | 9% (9 / 1) |
+| length clause (S2 − S1) | +0.01 | [−0.01, +0.03] | 6% (3 / 3) |
+| layout (S3 − S2) | −0.02 | [−0.04, +0.01] | 8% (3 / 5) |
+| **reasoning** (B − S3) | **+0.05** | [+0.03, +0.09] | 12% (9 / 4) |
+| all (B − A) | +0.13 | [+0.09, +0.16] | 18% (15 / 3) |
+
+**By the pre-set rule, no single step "moves the labels":** none reaches |0.10|.
+- **Two steps have real, one-directional effects,** with CIs that exclude 0:
+  - the **tie rule**, about two thirds of the A-to-B difference. It is largest on AS +0.17, MCu +0.13 and QLq +0.13.
+  - **written reasoning**, the other third. It is largest on KNc +0.13 and MCt +0.10.
+- **The length clause and the layout do nothing.**
+- **The steps add up:** their sum is +0.124, against +0.125 for B − A, so there is no interaction.
+
+**In context:** all prompt effects together are +0.13 on these rubrics. The gap with GPT-4o is −0.26 overall, and
+−0.6 to −0.9 on KNa, KNc and CL, where the prompt does almost nothing. The prompt is a minor part; the model is the
+major one.
