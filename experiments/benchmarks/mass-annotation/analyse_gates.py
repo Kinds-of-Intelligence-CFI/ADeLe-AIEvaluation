@@ -2,6 +2,7 @@
 
     python experiments/benchmarks/mass-annotation/analyse_gates.py api     # GATE-API-BRIDGE.md
     python experiments/benchmarks/mass-annotation/analyse_gates.py v1      # PLAN.md section 3, gate 2
+    python experiments/benchmarks/mass-annotation/analyse_gates.py v1 RUN  # same, for another run (v1-prompt-bridge arms)
 
 api: API labels (run gate-api-bridge) against the subagent labels on byte-identical prompts (run noreason-pl).
 v1:  our v1 labels (run gate-v1-bridge) against the published GPT-4o levels (data/instances/v1_bridge_reference.csv).
@@ -53,8 +54,13 @@ def api() -> None:
     print(f"verdict: {verdict}")
 
 
-def v1() -> None:
-    ours, n = valid("gate-v1-bridge")
+EIGHT = ["AS", "AT", "CL", "KNa", "KNc", "KNf", "KNn", "MCu"]  # not comparable in gate-v1-bridge (v1-prompt-bridge)
+
+
+def v1(run: str = "gate-v1-bridge") -> None:
+    from scipy.stats import spearmanr
+
+    ours, n = valid(run)
     ref = pd.read_csv(REPO / "data" / "instances" / "v1_bridge_reference.csv", dtype={"instance_id": str})
     ref = ref.drop(columns=["source"]).melt(id_vars="instance_id", var_name="code", value_name="level_ref")
     ours["code"] = ours["rubric_ref"].str.split("/").str[1]
@@ -66,10 +72,12 @@ def v1() -> None:
         within, shift = (d.abs() <= 1).mean(), d.mean()
         ok = within >= 0.85 and abs(shift) <= 0.3
         miss += [] if ok else [code]
-        print(f"{code}: n {len(g)}, exact {(d == 0).mean():.3f}, within 1 {within:.3f}, shift {shift:+.2f}"
+        rho = spearmanr(g["level"], g["level_ref"]).statistic
+        print(f"{code}: n {len(g)}, exact {(d == 0).mean():.3f}, within 1 {within:.3f}, shift {shift:+.2f}, rho {rho:.2f}"
               f" -> {'comparable' if ok else 'NOT comparable to the v1 battery'}")
     print(f"not comparable: {', '.join(miss) or 'none'}")
+    print(f"of the eight: {sum(c not in miss for c in EIGHT)} comparable")
 
 
 if __name__ == "__main__":
-    {"api": api, "v1": v1}[sys.argv[1] if len(sys.argv) > 1 else "api"]()
+    {"api": api, "v1": v1}[sys.argv[1] if len(sys.argv) > 1 else "api"](*sys.argv[2:])

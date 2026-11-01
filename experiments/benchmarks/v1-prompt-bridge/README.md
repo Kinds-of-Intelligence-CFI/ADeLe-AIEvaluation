@@ -32,3 +32,26 @@ is now builder `v1-published`, verbatim.
 - **Model:** a small human check on MCu, KNc, KNa and CL.
 
 **Cost:** about $13 per arm. Arm B writes chain-of-thought, so it has more output.
+
+## Result (2026-11-02): the model explains the gap
+
+Both arms: 1,080 of 1,080 labelled by `claude-opus-5-5` (`analyse_gates.py v1 <run>`).
+
+| rubric | gate (plain API, v2) shift / within 1 | A (harness, v2) | B (harness, published v1) |
+|---|---|---|---|
+| AS | −0.33 / 0.88 | −0.25 / 0.90 ✓ | −0.02 / 0.92 ✓ |
+| AT | −0.32 / 0.83 | −0.30 / 0.80 | −0.23 / 0.87 ✓ |
+| CL | −0.78 / 0.70 | −0.60 / 0.77 | −0.57 / 0.73 |
+| KNa | −0.95 / 0.70 | −0.88 / 0.70 | −0.88 / 0.72 |
+| KNc | −1.00 / 0.62 | −0.92 / 0.65 | −0.72 / 0.73 |
+| KNf | −0.38 / 0.85 | −0.32 / 0.88 | −0.32 / 0.87 |
+| KNn | −0.32 / 0.92 | −0.28 / 0.93 ✓ | −0.22 / 0.95 ✓ |
+| MCu | −0.75 / 0.67 | −0.45 / 0.87 | −0.32 / 0.80 |
+
+(✓ = comparable.) Of the eight, A makes 2 comparable and B makes 3. **Reading: the model explains the gap.**
+- **The published prompt helps** on AS and MCu.
+- **The core shifts stay under either prompt:** KNa, KNc, CL, KNf.
+- **MCr now reads higher** than GPT-4o: +0.35 in A, +0.43 in B. It is not comparable in either arm.
+
+**Rank agreement** with GPT-4o stays modest for AT, KNc and MCu (ρ 0.31–0.43). **Next, per the rule:** a small human
+check on MCu, KNc, KNa and CL, to see which judge humans side with. No relabel.
