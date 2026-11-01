@@ -123,7 +123,8 @@ def status(run_ref):
 @click.option("--max", "max_relays", type=click.IntRange(1, 10), default=4, show_default=True,
               help="Relays to emit (never more than 10 run at once: 4 subagents each, 40 per session).")
 @click.option("--batch-size", type=int, default=None, help="Cells per relay (default: the spec's relay.batch_size).")
-def next_cmd(run_ref, max_relays, batch_size):
+@click.option("--cwd", default=None, help="Expected judge working directory (default: the spec's or ~/Developer/ADELE).")
+def next_cmd(run_ref, max_relays, batch_size, cwd):
     """Subagent runs: record and print the next relay messages for judge-dispatcher.
 
     Refuses while earlier relays are outstanding, when this process's working directory (which the judges
@@ -137,7 +138,7 @@ def next_cmd(run_ref, max_relays, batch_size):
     run = _load(run_ref)
     if run.judge.backend != "subagent":
         raise click.ClickException(f"this run uses {run.judge.backend}: use `adele mass run`")
-    want = expected_cwd(run)
+    want = expected_cwd(run, cwd)
     click.echo(f"cwd: {os.getcwd()} (expected: {want})")
     if Path(os.getcwd()).resolve() != Path(want).resolve():
         raise click.ClickException(f"the session's working directory must be {want}: the judges inherit it")

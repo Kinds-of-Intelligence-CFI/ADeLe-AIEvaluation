@@ -5,6 +5,7 @@ Nothing here calls a judge, an API or the network.
 
 import hashlib
 import json
+import os
 import re
 from pathlib import Path
 from types import SimpleNamespace
@@ -359,6 +360,8 @@ def test_subagent_next_message_format(env, monkeypatch):
     assert all(ledger.rows[it]["handle"] == handle for it in items)
     out = CliRunner().invoke(main, ["mass", "next", str(run.dir)])
     assert out.exit_code != 0 and "must be" in out.output  # the test's cwd is not the run's
+    out = CliRunner().invoke(main, ["mass", "next", str(run.dir), "--cwd", os.getcwd()])
+    assert out.exit_code != 0 and "still submitted" in out.output  # --cwd overrides the spec's (e.g. a cloud VM)
     monkeypatch.chdir(env)
     out = CliRunner().invoke(main, ["mass", "next", str(run.dir)])
     assert out.exit_code != 0 and "still submitted" in out.output and f"cwd: {env}" in out.output
