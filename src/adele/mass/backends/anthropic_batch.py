@@ -10,13 +10,18 @@ unrecorded batch. Expired or canceled requests never reached the model, so they 
 from typing import Any, Dict, List
 
 from adele.mass.backends import Answer, Item, custom_id, parse_custom_id
+from adele.mass.backends.harness import answer_text, subagent_params
 
 
 def build_request(run: Any, cell: str, attempt: int) -> Dict[str, Any]:
     """One Message Batches request for an item."""
     judge = run.judge
-    params: Dict[str, Any] = {"model": judge.model, "max_tokens": judge.max_tokens,
-                              "messages": [{"role": "user", "content": run.prompt(cell)}]}
+    params: Dict[str, Any] = {"model": judge.model, "max_tokens": judge.max_tokens}
+    if judge.harness:
+        params.update(subagent_params(run.prompt(cell), str(run.prompt_path(cell)),
+                                      str(run.response_path(cell, attempt))))
+    else:
+        params["messages"] = [{"role": "user", "content": run.prompt(cell)}]
     if judge.effort:
         params["output_config"] = {"effort": judge.effort}
     return {"custom_id": custom_id(cell, attempt), "params": params}
@@ -56,6 +61,7 @@ class AnthropicBatchBackend:
             if msg.stop_reason == "refusal":
                 got[(cell, attempt)] = Answer(cell, attempt, None, msg.model, reason="refusal", **tokens)
                 continue
-            text = "".join(b.text for b in msg.content if b.type == "text")
+            text = answer_text(msg.content) if run.judge.harness else \
+                "".join(b.text for b in msg.content if b.type == "text")
             got[(cell, attempt)] = Answer(cell, attempt, text, msg.model, **tokens)
         return [got.get((c, a), Answer(c, a, None, reason="error")) for c, a in items]

@@ -601,6 +601,29 @@ def test_anthropic_batch_backend(env):
     assert len(expired) == 1 and expired[0]["returns"] == "1" and expired[0]["attempt"] == "1"
 
 
+def test_anthropic_batch_subagent_harness(env):
+    from adele.mass.backends.harness import SUBAGENT_V2_LOW_SYSTEM, answer_text
+    run = pinned(env, judge='backend = "anthropic-batch"\nmodel = "claude-opus-5-5"\neffort = "low"\n'
+                            'harness = "subagent-v2-low"')
+    assert run.judge.harness == "subagent-v2-low" and run.manifest["frozen"]["judge"]["harness"] == "subagent-v2-low"
+    client = FakeAnthropic()
+    submit_next(run, Ledger.load(run.dir), AnthropicBatchBackend(client=client), batch_size=100)
+    p = client.requests[0]["params"]
+    cell = client.requests[0]["custom_id"].rsplit("-a", 1)[0]
+    assert [s["text"] for s in p["system"]] == SUBAGENT_V2_LOW_SYSTEM and "cache_control" in p["system"][-1]
+    assert [t["name"] for t in p["tools"]] == ["Read", "Write", "SubagentHandback"]
+    first, read, result = p["messages"]
+    assert first["content"][0]["text"] == f"Prompt file: {run.prompt_path(cell)}\nResponse file: {run.response_path(cell, 1)}"
+    assert read["content"][0]["input"] == {"file_path": str(run.prompt_path(cell))}
+    lines = run.prompt(cell).rstrip("\n").split("\n")
+    assert result["content"][0]["content"].split("\n")[0] == f"1\t{lines[0]}"
+    write = SimpleNamespace(type="tool_use", name="Write", input={"file_path": "x", "content": "4"})
+    note = SimpleNamespace(type="text", text="Likely 3.")
+    assert answer_text([note, write]) == "4" and answer_text([note]) == "Likely 3."
+    with pytest.raises(SpecError):
+        pinned(env, judge='backend = "subagent"\nmodel = "claude-opus-5-5"\neffort = "low"\nharness = "subagent-v2-low"')
+
+
 def openai_client(uploaded, status="completed", models=None):
     def files_create(file, purpose):
         uploaded["lines"] = [json.loads(x) for x in file[1].decode().splitlines()]

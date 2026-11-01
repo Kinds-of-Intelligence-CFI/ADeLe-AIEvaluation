@@ -41,7 +41,7 @@ _KEYS = {
     "tasks": {"benchmarks", "subset", "instances_dir"},
     "rubrics": {"refs"},
     "prompt": {"builder"},
-    "judge": {"backend", "model", "effort", "repeats", "retry", "max_tokens", "folder", "relay", "batch"},
+    "judge": {"backend", "model", "effort", "repeats", "retry", "max_tokens", "folder", "relay", "batch", "harness"},
     "relay": {"dispatcher", "judge_agent", "model_alias", "batch_size", "cwd", "chunk_lines"},
 }
 
@@ -64,7 +64,8 @@ class RubricRef:
 @dataclass(frozen=True)
 class JudgeSpec:
     """Judge settings. ``relay`` holds the subagent-only settings (dispatcher, agents, batch size); ``batch`` is
-    the inspect backend's switch for the provider's batch API."""
+    the inspect backend's switch for the provider's batch API; ``harness`` (anthropic-batch only) sends each prompt in
+    the context a Claude Code subagent judge sees (:mod:`adele.mass.backends.harness`)."""
     backend: str
     model: str
     effort: Optional[str] = None
@@ -74,6 +75,7 @@ class JudgeSpec:
     folder: str = ""
     relay: Dict[str, Any] = field(default_factory=dict)
     batch: bool = True
+    harness: Optional[str] = None
 
 
 @dataclass(frozen=True)
@@ -145,12 +147,20 @@ def judge_from_dict(d: Dict[str, Any], builder: str = "v2") -> JudgeSpec:
         raise SpecError("judge.batch only applies to the inspect backend (the batch backends always batch)")
     if not isinstance(batch, bool):
         raise SpecError("judge.batch must be true or false")
+    harness = d.get("harness")
+    if harness is not None:
+        from adele.mass.backends.harness import HARNESSES
+        if backend != "anthropic-batch":
+            raise SpecError("judge.harness only applies to the anthropic-batch backend")
+        if harness not in HARNESSES:
+            raise SpecError(f"judge.harness must be one of {HARNESSES}")
     short = relay.get("model_alias", model.replace("/", "-"))
     folder = d.get("folder") or (f"{short}-{effort}" if effort else short)
     if not SAFE_NAME.match(folder):
         raise SpecError(f"judge.folder {folder!r} is not a safe folder name")
     return JudgeSpec(backend=backend, model=model, effort=effort, repeats=repeats, retry=retry,
-                     max_tokens=int(d.get("max_tokens", 16000)), folder=folder, relay=relay, batch=batch)
+                     max_tokens=int(d.get("max_tokens", 16000)), folder=folder, relay=relay, batch=batch,
+                     harness=harness)
 
 
 def load_spec(path: str | Path, root: Optional[Path] = None) -> Spec:

@@ -32,3 +32,19 @@ answers with the digit directly.
   each v1 rubric's backend shift.
 
 **Cost:** about $6.
+
+## Result (2026-11-01): E qualifies
+
+600 requests, all answered by `claude-opus-5-5` (`run.py analyse`):
+
+| arm | against | PLp exact / shift | PLe exact / shift | PLs exact / shift |
+|---|---|---|---|---|
+| E, emulated | subagent (`noreason-pl`) | **0.900 / −0.05** | 0.893 / −0.04 | 0.960 / −0.03 |
+| R, plain repeat | first API run (`gate-api-bridge`) | 0.947 / +0.01 | — | — |
+| R, plain repeat | subagent | 0.807 / −0.17 | — | — |
+
+**The plain API is stable but offset; emulation removes the offset.** In E, the judge wrote a short note before its
+Write in 36% of calls. An E call is about 5,900 tokens in and 155 out, roughly $0.013 at batch prices.
+
+**Decision, by the rule above:** the emulated request is the API judge setting, as `judge.harness = "subagent-v2-low"`
+(`src/adele/mass/backends/harness.py`, verified identical to this test's requests). The wave-2 specs use it.

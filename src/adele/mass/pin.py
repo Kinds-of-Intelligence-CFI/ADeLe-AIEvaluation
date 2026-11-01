@@ -188,7 +188,8 @@ def plan_cells(spec: Spec) -> Tuple[List[Dict[str, Any]], Dict[str, str], Dict[s
                             "full_name": r.full_name} for r in rubrics},
         "prompt": {"builder": spec.builder, "function": f"adele.annotation.prompts.{BUILDERS[spec.builder]}",
                    "source_file": _rel(PROMPTS_FILE), "source_sha256": sha256(PROMPTS_FILE.read_bytes())},
-        "judge": asdict(spec.judge),
+        # Runs pinned before ``harness`` existed have no such key; leave it out unless set, so they re-pin.
+        "judge": {k: v for k, v in asdict(spec.judge).items() if not (k == "harness" and v is None)},
     }
     return cells, prompts, frozen
 

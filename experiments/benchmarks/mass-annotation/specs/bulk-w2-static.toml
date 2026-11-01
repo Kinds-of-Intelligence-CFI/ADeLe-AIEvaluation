@@ -18,5 +18,6 @@ builder = "v2-noreason"
 backend = "anthropic-batch"
 model = "claude-opus-5-5"
 effort = "low"
+harness = "subagent-v2-low"   # the subagent judge's context (harness-emulation; gate-api-bridge failed without it)
 repeats = 1
 retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

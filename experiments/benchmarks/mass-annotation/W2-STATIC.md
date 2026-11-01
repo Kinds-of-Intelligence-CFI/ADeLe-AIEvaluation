@@ -10,9 +10,9 @@ come from `BENCHMARKS.md`, decision 1: the static sets get no PL rubrics.
 
 So the judge never sees an answer (`docs/judge-input.md`).
 
-**Judge.** Opus 5.5, effort low, bare-digit prompt, through the Anthropic Batch API. Retries: one each for a
+**Judge.** Opus 5.5, effort low, bare-digit prompt, through the Anthropic Batch API in the subagent judge's context (`judge.harness = "subagent-v2-low"`; `harness-emulation` result), so its labels pool with the subagent labels. Retries: one each for a
 fallback writer and an unparsed answer, and up to two for API errors. Sent only if `gate-api-bridge` passes
-(`GATE-API-BRIDGE.md`).
+(`GATE-API-BRIDGE.md`), which failed for the plain request; the harness passed (`harness-emulation`).
 
 **Noise floor.** Run `bulk-w2-static-rejudge` re-judges a 3% stratified sample: 7 tasks per set × 18 rubrics = 504
 cells. It reports exact agreement and mean shift per rubric against the first labels. It is descriptive and doesn't
