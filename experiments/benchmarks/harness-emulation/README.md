@@ -48,3 +48,15 @@ Write in 36% of calls. An E call is about 5,900 tokens in and 155 out, roughly $
 
 **Decision, by the rule above:** the emulated request is the API judge setting, as `judge.harness = "subagent-v2-low"`
 (`src/adele/mass/backends/harness.py`, verified identical to this test's requests). The wave-2 specs use it.
+
+## v1 bridge (2026-11-02): the harness also matches the subagent on the v1 rubrics
+
+Runs `w1-rejudge-goal` and `w1-rejudge-tau2` cover 10% of the finished wave-1 tasks (85 tasks: SWE 44, code 18,
+tau2 23) × 17 v1 rubrics = 1,445 cells. They go through the API with the harness, on prompts byte-identical to the
+subagent judgements, and every cell was labelled by `claude-opus-5-5`. Against the subagent labels:
+- **Overall:** exact 0.931, within 1 1.000, mean shift +0.03.
+- **Per rubric:** exact 0.85–0.99, every |shift| ≤ 0.15. The largest gap is AS (exact 0.85, shift +0.15); next are
+  QLq (0.91, −0.05) and AT (0.88, +0.02).
+
+So wave 2's v1 labels (API with the harness) pool with wave 1's (subagents). The run also gives a per-rubric
+reliability estimate for wave 1. Cost ≈ $19.
