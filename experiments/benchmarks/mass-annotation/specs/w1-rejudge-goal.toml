@@ -1,0 +1,23 @@
+# Harness bridge for the v1 rubrics, and reliability re-judge, 10% of the finished wave-1 SWE and code tasks (stratified by benchmark,
+# seed 20261101), all 17 v1 rubrics, through the Batch API. Prompts are byte-identical to the first judgement.
+name = "w1-rejudge-goal"
+
+[tasks]
+benchmarks = ["deepswe-v1.1", "frontierswe-v2", "programbench", "swe-bench-verified"]
+subset = "experiments/benchmarks/mass-annotation/subsets/w1_rejudge_goal.csv"
+instances_dir = "data/instances-goal"
+
+[rubrics]
+refs = ["v1/AS", "v1/AT", "v1/CEc", "v1/CEe", "v1/CL", "v1/KNa", "v1/KNc", "v1/KNf", "v1/KNn", "v1/KNs", "v1/MCr", "v1/MCt",
+        "v1/MCu", "v1/QLl", "v1/QLq", "v1/SNs", "v1/VO"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }
