@@ -31,7 +31,8 @@ from typing import Any, Dict, List, Optional
 REPO_ROOT = Path(__file__).resolve().parents[3]
 BACKENDS = ("subagent", "anthropic-batch", "openai-batch", "litellm", "inspect", "fake")
 BUILDERS = {"v1": "build_annotation_prompt", "v2": "build_annotation_prompt_v2",
-            "v2-noreason": "build_annotation_prompt_v2_noreason"}
+            "v2-noreason": "build_annotation_prompt_v2_noreason",
+            "v1-published": "build_annotation_prompt_v1_published"}
 # Why an attempt can be rejected; each reason has its own retry budget (extra attempts). ``protocol``: the
 # subagent judge's transcript broke the protocol (see adele.mass.backends.subagent.transcript_problems).
 REASONS = ("fallback_writer", "unparsed", "refusal", "error", "protocol")
@@ -238,4 +239,6 @@ def build_prompt(builder: str, rubric: RubricRef, task: str) -> str:
                                                task_instance=task)
     if builder == "v2-noreason":
         return prompts.build_annotation_prompt_v2_noreason(rubric.full_name, rubric.content, task)
+    if builder == "v1-published":
+        return prompts.build_annotation_prompt_v1_published(rubric.full_name, rubric.content, task)
     return prompts.build_annotation_prompt_v2(rubric.full_name, rubric.content, task)

@@ -840,3 +840,11 @@ def test_current_labelset_loads():
 
     ls = load_labelset("current")
     assert [n for n, _ in ls.layers] == ["tau2-goal", "goal-visible", "relabel-v4-ms", "relabel-v3", "relabel-v2", "relabel-v2-social"]
+
+
+def test_v1_published_builder_matches_delean():
+    from adele.annotation.prompts import build_annotation_prompt_v1_published
+    p = build_annotation_prompt_v1_published("Attention and Scan", "RUBRIC", "TASK")
+    assert p.startswith("The following rubric describes six distinct levels of *Attention and Scan* required by different "
+                        "tasks:\nRUBRIC\n\nTASK INSTANCE: TASK\n\nINSTRUCTION: Score the level")
+    assert "lower" not in p and p.endswith("demanded by the given TASK INSTANCE above:")

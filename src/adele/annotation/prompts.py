@@ -91,6 +91,29 @@ PROMPT_V2_NOREASON = PROMPT_V2.replace(
 assert PROMPT_V2_NOREASON != PROMPT_V2
 
 
+def build_annotation_prompt_v1_published(
+    demand_name: str,
+    rubric_content: str,
+    task_instance: str,
+) -> str:
+    """The prompt of the published ADeLe v1.0 annotations, verbatim from delean-batch-manager
+    (``src/delean_batch_manager/core/batching/files.py``, checked 2026-11-02). Unlike :func:`build_annotation_prompt`,
+    it has no tie rule ("when in doubt ... assign the lower"), which entered that builder on 2026-07-26."""
+    instruction = (
+        'INSTRUCTION: '
+        f'Score the level of *{demand_name}* demanded by the given TASK INSTANCE using a discrete value from 0 to 5. '
+        'Use CHAIN-OF-THOUGHTS REASONING to reason step by step before assigning the score. '
+        'After the CHAIN-OF-THOUGHTS REASONING STEPS, conclude your assessment with the statement: '
+        f'"Thus, the level of *{demand_name}* demanded by the given TASK INSTANCE is: SCORE"'
+        ', where SCORE is an integer score you have determined.')
+    return (
+        f"The following rubric describes six distinct levels of *{demand_name}* required by different tasks:"
+        f"\n{rubric_content}\n\nTASK INSTANCE: {task_instance}"
+        f"\n\n{instruction}"
+        f'\n\nCHAIN-OF-THOUGHTS REASONING STEPS to score the level of *{demand_name}* demanded by the given TASK INSTANCE above:'
+    )
+
+
 def build_annotation_prompt_v2_noreason(
     demand_name: str,
     rubric_content: str,

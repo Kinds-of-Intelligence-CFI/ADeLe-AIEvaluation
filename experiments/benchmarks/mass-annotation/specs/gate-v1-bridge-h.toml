@@ -1,0 +1,22 @@
+# v1-prompt-bridge (experiments/benchmarks/v1-prompt-bridge), arm A: today's production judge (harness + bare-digit v2 prompt).
+# Same 60 battery items x 18 v1 rubrics as gate-v1-bridge, against the published GPT-4o levels.
+name = "gate-v1-bridge-h"
+
+[tasks]
+benchmarks = ["adele-battery-v1"]
+subset = "experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv"
+
+[rubrics]
+refs = ["v1/AS", "v1/AT", "v1/CEc", "v1/CEe", "v1/CL", "v1/KNa", "v1/KNc", "v1/KNf", "v1/KNn", "v1/KNs", "v1/MCr",
+        "v1/MCt", "v1/MCu", "v1/MSm", "v1/QLl", "v1/QLq", "v1/SNs", "v1/VO"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }
