@@ -100,3 +100,25 @@ volume moving with reasoning. Two explanations fit:
 The paper itself says such correlations depend on which benchmarks are chosen. Two cautions: the data cannot tell
 the two explanations apart, and lower reliability would also weaken correlations (we know Opus's test-retest, 0.93–0.95
 exact, but not GPT-4o's). Only 60 items. The human check on MCu, KNc, KNa and CL decides.
+
+## rWG: does the paper's agreement index tell judges apart? (exploratory, 2026-11-02)
+
+The paper validated GPT-4o with rWG (Table 7): Delphi consensus vs GPT-4o 0.86, humans among themselves 0.83. Opus vs
+GPT-4o on our 60 items and 18 rubrics is also 0.86. To see whether that means anything, we ran Sonnet 5.5 low and Haiku
+5.5 low (`rwg-sonnet-low`, `rwg-haiku-low`, API with the subagent harness, ~$4) on the 8 rubrics of `abl-s3`, with the
+same prompt as Opus (`v1-layout-noreason`). Script `rwg.py`, numbers `rwg.json`.
+
+| judge (60 items, 8 rubrics) | labelled | rWG | exact | within 1 | shift vs GPT-4o |
+|---|---|---|---|---|---|
+| Opus 5.5 low (`abl-s3`) | 480 | 0.82 | 0.47 | 0.86 | −0.34 |
+| Sonnet 5.5 low | 480 | 0.81 | 0.47 | 0.83 | −0.35 |
+| Haiku 5.5 low | 452* | 0.79 | 0.46 | 0.77 | −0.50 |
+
+\* 28 cells unparsed after one retry (Haiku re-calls Read, as in judge-choice).
+
+- **rWG does not tell the judges apart.** The three differ by at most 0.03. So Opus matching the human level (0.86)
+  is weak evidence: Sonnet and Haiku would likely match it too.
+- **All three Claude models read lower than GPT-4o.** The downward shift is not specific to Opus.
+- Per rubric, no judge wins everywhere. Sonnet is closest to GPT-4o on KNa and KNc; Opus on CL and MCu.
+- Telling judges apart needs other evidence: human labels with exact agreement and shift (the paper's Delphi labels
+  are not public), or validity checks such as judge-choice's.
