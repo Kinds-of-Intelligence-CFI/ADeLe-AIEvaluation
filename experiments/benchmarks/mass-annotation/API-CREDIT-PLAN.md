@@ -1,5 +1,18 @@
 # Plan for the API and cloud credits (drafted 2026-11-01)
 
+> **Update 3, 2026-11-01 evening: the allocation as decided** (Pablo: "I trust you to optimize and decide").
+> - **API, the November grant:**
+>   - gates, ~$8: the API bridge failed on PLp, and the v1 bridge has 8 of 18 rubrics not comparable;
+>   - harness emulation, ~$7: passed, so API labels now pool with subagent labels;
+>   - `bulk-w2-static` + re-judge, sent: ~$113–187, any overflow falling on the December grant.
+> - **Cloud, $250:** `w1v1-other` judged from cloud sessions, with the session starting the judges itself (`wave1-v1`
+>   amendment 1). Pilot first. Pablo starts each session with `drafts/cloud-pilot-prompt.md`, about 1,000 cells per
+>   session.
+> - **Subscription:** `w1v1-code` on the Mac (subagents), using the weekly points left before the Nov 3 reset, then
+>   after it.
+> - **API, the December grant:** the memory validity package, `bulk-w1-memory` (team), TB 2.1, Toolathlon, and any
+>   wave-1 cells the cloud can't finish (with the harness, so they pool).
+
 > **Update 2, 2026-11-01: the Console $400 is two grants.**
 > - **$200, expires 2026-11-04.** Granted 2026-10-28.
 > - **$200, expires 2026-12-04.** Granted 2026-11-01.
