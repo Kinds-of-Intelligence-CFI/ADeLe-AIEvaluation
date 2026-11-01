@@ -91,6 +91,30 @@ PROMPT_V2_NOREASON = PROMPT_V2.replace(
 assert PROMPT_V2_NOREASON != PROMPT_V2
 
 
+# Ablation steps from the bare-digit v2 prompt towards the published v1.0 prompt (experiments/benchmarks/prompt-ablation),
+# each removing one difference.
+TIE_RULE = " If the task genuinely fits two adjacent levels, choose the lower one."
+LENGTH_CLAUSE = " Base the level on the conditions the rubric states, not on how long or easy the work looks."
+PROMPT_V2_NOREASON_NOTIE = PROMPT_V2_NOREASON.replace(TIE_RULE, "")
+PROMPT_V2_NOREASON_NOTIE_NOCLAUSE = PROMPT_V2_NOREASON_NOTIE.replace(LENGTH_CLAUSE, "")
+assert PROMPT_V2_NOREASON_NOTIE != PROMPT_V2_NOREASON != PROMPT_V2_NOREASON_NOTIE_NOCLAUSE
+assert PROMPT_V2_NOREASON_NOTIE_NOCLAUSE != PROMPT_V2_NOREASON_NOTIE
+
+
+def build_annotation_prompt_v1_layout_noreason(demand_name: str, rubric_content: str, task_instance: str) -> str:
+    """The published v1.0 layout and wording, but asking for the bare digit (the ablation's layout step): the
+    chain-of-thought instruction and closing line are replaced by the v2 bare-digit request."""
+    instruction = (
+        'INSTRUCTION: '
+        f'Score the level of *{demand_name}* demanded by the given TASK INSTANCE using a discrete value from 0 to 5. '
+        'Answer with the level alone, as a single digit from 0 to 5, and nothing else.')
+    return (
+        f"The following rubric describes six distinct levels of *{demand_name}* required by different tasks:"
+        f"\n{rubric_content}\n\nTASK INSTANCE: {task_instance}"
+        f"\n\n{instruction}"
+    )
+
+
 def build_annotation_prompt_v1_published(
     demand_name: str,
     rubric_content: str,

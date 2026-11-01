@@ -32,7 +32,10 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 BACKENDS = ("subagent", "anthropic-batch", "openai-batch", "litellm", "inspect", "fake")
 BUILDERS = {"v1": "build_annotation_prompt", "v2": "build_annotation_prompt_v2",
             "v2-noreason": "build_annotation_prompt_v2_noreason",
-            "v1-published": "build_annotation_prompt_v1_published"}
+            "v1-published": "build_annotation_prompt_v1_published",
+            "v2-noreason-notie": "PROMPT_V2_NOREASON_NOTIE",
+            "v2-noreason-notie-noclause": "PROMPT_V2_NOREASON_NOTIE_NOCLAUSE",
+            "v1-layout-noreason": "build_annotation_prompt_v1_layout_noreason"}
 # Why an attempt can be rejected; each reason has its own retry budget (extra attempts). ``protocol``: the
 # subagent judge's transcript broke the protocol (see adele.mass.backends.subagent.transcript_problems).
 REASONS = ("fallback_writer", "unparsed", "refusal", "error", "protocol")
@@ -241,4 +244,10 @@ def build_prompt(builder: str, rubric: RubricRef, task: str) -> str:
         return prompts.build_annotation_prompt_v2_noreason(rubric.full_name, rubric.content, task)
     if builder == "v1-published":
         return prompts.build_annotation_prompt_v1_published(rubric.full_name, rubric.content, task)
+    if builder == "v1-layout-noreason":
+        return prompts.build_annotation_prompt_v1_layout_noreason(rubric.full_name, rubric.content, task)
+    if builder == "v2-noreason-notie":
+        return prompts.PROMPT_V2_NOREASON_NOTIE.format(demand=rubric.full_name, rubric=rubric.content, task=task)
+    if builder == "v2-noreason-notie-noclause":
+        return prompts.PROMPT_V2_NOREASON_NOTIE_NOCLAUSE.format(demand=rubric.full_name, rubric=rubric.content, task=task)
     return prompts.build_annotation_prompt_v2(rubric.full_name, rubric.content, task)

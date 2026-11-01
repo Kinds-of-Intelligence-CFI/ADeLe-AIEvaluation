@@ -848,3 +848,15 @@ def test_v1_published_builder_matches_delean():
     assert p.startswith("The following rubric describes six distinct levels of *Attention and Scan* required by different "
                         "tasks:\nRUBRIC\n\nTASK INSTANCE: TASK\n\nINSTRUCTION: Score the level")
     assert "lower" not in p and p.endswith("demanded by the given TASK INSTANCE above:")
+
+
+def test_prompt_ablation_builders_differ_by_one_sentence():
+    from adele.annotation import prompts as P
+    base = P.build_annotation_prompt_v2_noreason("X", "R", "T")
+    notie = P.PROMPT_V2_NOREASON_NOTIE.format(demand="X", rubric="R", task="T")
+    noclause = P.PROMPT_V2_NOREASON_NOTIE_NOCLAUSE.format(demand="X", rubric="R", task="T")
+    assert base.replace(P.TIE_RULE, "") == notie and notie.replace(P.LENGTH_CLAUSE, "") == noclause
+    layout = P.build_annotation_prompt_v1_layout_noreason("X", "R", "T")
+    published = P.build_annotation_prompt_v1_published("X", "R", "T")
+    assert layout.split("INSTRUCTION: ")[0] == published.split("INSTRUCTION: ")[0] and "CHAIN" not in layout
+    assert "lower" not in layout and "how long" not in layout

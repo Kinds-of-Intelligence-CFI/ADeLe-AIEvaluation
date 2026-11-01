@@ -1,0 +1,105 @@
+{
+  "run": "abl-s1",
+  "created_at": "2026-11-01T17:33:28+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/abl-s1.toml",
+  "git": {
+    "commit": "eb2a63a850d8907db7457f2b478d6fccd47b1432",
+    "dirty_tracked_files": [
+      "M src/adele/annotation/prompts.py",
+      " M src/adele/mass/spec.py",
+      " M tests/test_mass.py"
+    ]
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "edcdc931d96d946a169aa8c88bb4b9ddc23397f6785648bc439367749dea805e",
+      "content": "# prompt-ablation (experiments/benchmarks/prompt-ablation), arm s1: builder v2-noreason-notie.\n# The 60 bridge items x 8 rubrics, through the API with the subagent harness.\nname = \"abl-s1\"\n\n[tasks]\nbenchmarks = [\"adele-battery-v1\"]\nsubset = \"experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv\"\n\n[rubrics]\nrefs = [\"v1/AS\", \"v1/CEc\", \"v1/CL\", \"v1/KNa\", \"v1/KNc\", \"v1/MCt\", \"v1/MCu\", \"v1/QLq\"]\n\n[prompt]\nbuilder = \"v2-noreason-notie\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "adele-battery-v1": {
+          "file": "instances_adele-battery-v1.parquet",
+          "file_sha256": "0d0fcc04c4ea610ebadc186cd3b7a7bb83498e98e645a96c8ab25f046a64b1f3",
+          "frame_sha256": "3f151f763b0d26c8226d6eb66bc593712534afdb3b7179ea8092de05dd212afd",
+          "n_selected": 60
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv",
+        "sha256": "1bd5dc2ff58d016a1204dd867d9109cef28aadea3f6a379af5b0b9f289dea306",
+        "n_ids": 60
+      }
+    },
+    "rubrics": {
+      "v1/AS": {
+        "file": "src/adele/rubrics/data_v1/AS.txt",
+        "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776",
+        "full_name": "Attention and Scan"
+      },
+      "v1/CEc": {
+        "file": "src/adele/rubrics/data_v1/CEc.txt",
+        "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e",
+        "full_name": "Verbal Comprehension"
+      },
+      "v1/CL": {
+        "file": "src/adele/rubrics/data_v1/CL.txt",
+        "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372",
+        "full_name": "Conceptualisation, Learning and Abstraction"
+      },
+      "v1/KNa": {
+        "file": "src/adele/rubrics/data_v1/KNa.txt",
+        "sha256": "de9eacb9605178dd11ce97ae1d2b03a72e1f134646bc63b941af57c319920f54",
+        "full_name": "Knowledge of Applied Sciences"
+      },
+      "v1/KNc": {
+        "file": "src/adele/rubrics/data_v1/KNc.txt",
+        "sha256": "2c729cdea7233b214ec09b9c69eefa84c0379786620b48e5ad6301dc01ba2e8d",
+        "full_name": "Customary Everyday Knowledge"
+      },
+      "v1/MCt": {
+        "file": "src/adele/rubrics/data_v1/MCt.txt",
+        "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6",
+        "full_name": "Critical Thinking Processes"
+      },
+      "v1/MCu": {
+        "file": "src/adele/rubrics/data_v1/MCu.txt",
+        "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9",
+        "full_name": "Calibrating Knowns and Unknowns"
+      },
+      "v1/QLq": {
+        "file": "src/adele/rubrics/data_v1/QLq.txt",
+        "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244",
+        "full_name": "Quantitative Reasoning"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason-notie",
+      "function": "adele.annotation.prompts.PROMPT_V2_NOREASON_NOTIE",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-opus-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 480,
+      "sha256": "2e71f69d018b00591b6c404e87244d1bcf530f7282e98c0c57492acceca141ae"
+    }
+  }
+}
