@@ -1,0 +1,178 @@
+{
+  "run": "jc-v1mem-inst-haiku-low",
+  "created_at": "2026-11-01T19:34:03+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-v1mem-inst-haiku-low.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "1830a810daf5bde57a431ee40b893f5d5ec9f86767b853b1f6f35de6bb5e4178",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block v1mem, inputs data/instances, arm haiku-low.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-v1mem-inst-haiku-low\"\n\n[tasks]\nbenchmarks = [\"arc-agi-2\", \"arxivmath\", \"brokenarxiv\", \"cooperbench\", \"eqbench4\", \"gamearena\", \"gpqa-diamond\", \"rivercross-search\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_v1mem_inst.csv\"\ninstances_dir = \"data/instances\"\n\n[rubrics]\nrefs = [\"v1/AS\", \"v1/AT\", \"v1/CEc\", \"v1/CEe\", \"v1/CL\", \"v1/MCr\", \"v1/MCt\", \"v1/MCu\", \"v1/QLl\", \"v1/QLq\", \"v1/SNs\", \"v1/VO\", \"v2/MMe\", \"v2/MMp\", \"v2/MMs\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-haiku-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "arc-agi-2": {
+          "file": "instances_arc-agi-2.parquet",
+          "file_sha256": "d2bfedf15197cbd552d0c420fef89c54e32e72511e9b2eec315218580594f3f7",
+          "frame_sha256": "fabdd2b2f9590dcbe15f132d43a9bb63209cbe92777b8c12a5b22d2e027178a8",
+          "n_selected": 2
+        },
+        "arxivmath": {
+          "file": "instances_arxivmath.parquet",
+          "file_sha256": "6b93c1f02ce127712565617657e9db69efd78eb044c9e5753fa3588167fc906c",
+          "frame_sha256": "631bd146418bff5be1f23bef97e6d367033289cd3019fe4c04f0261413a5cb8b",
+          "n_selected": 3
+        },
+        "brokenarxiv": {
+          "file": "instances_brokenarxiv.parquet",
+          "file_sha256": "b9f4f2475ed96ac8f98f9dcba83c29c28abacb9222d6f45b7fe3b43a575d9373",
+          "frame_sha256": "e7b79bc4219c8d9469986d38475f62d3313d824e0c9e2f5f9f991722f486ccbc",
+          "n_selected": 3
+        },
+        "cooperbench": {
+          "file": "instances_cooperbench.parquet",
+          "file_sha256": "8f2b875b4c39cc6c885def320181b24d3aa3494caf606410916e29d37fa42691",
+          "frame_sha256": "3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7",
+          "n_selected": 3
+        },
+        "eqbench4": {
+          "file": "instances_eqbench4.parquet",
+          "file_sha256": "2d690e9279eda9be3e1db73ca8087fb2f71fb163c7add1a634715e5243b672cd",
+          "frame_sha256": "d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4",
+          "n_selected": 2
+        },
+        "gamearena": {
+          "file": "instances_gamearena.parquet",
+          "file_sha256": "2888480d269ceae9614edb1cfb591ca87e00d4e1f862c15769c6e6c559fe4205",
+          "frame_sha256": "753c4414d16caedf04af4f23f36c2f83133df97650630df766fbd41650893417",
+          "n_selected": 2
+        },
+        "gpqa-diamond": {
+          "file": "instances_gpqa-diamond.parquet",
+          "file_sha256": "94a9012821796bfc07c495436090a6734433effbe726d3ca14f4e04ff00b2ccc",
+          "frame_sha256": "17b3f046c120eb2a1a4b2980896a5807a92f862f816b0402c3f444b3cfc8f2e1",
+          "n_selected": 2
+        },
+        "rivercross-search": {
+          "file": "instances_rivercross-search.parquet",
+          "file_sha256": "0585aa9462a6642207c6060c1f3e3e3f0d9611f7b15d9e1a6bb859a6c47f4684",
+          "frame_sha256": "922a9ba67bb9e00d21fc83e8fe5c71514cfa964b71753660a7ea1bd254eb09c2",
+          "n_selected": 2
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_v1mem_inst.csv",
+        "sha256": "30e5002c88b09d91bb5e6113963b0eb1e45845f946224783502f7bbd3e02bf81",
+        "n_ids": 19
+      }
+    },
+    "rubrics": {
+      "v1/AS": {
+        "file": "src/adele/rubrics/data_v1/AS.txt",
+        "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776",
+        "full_name": "Attention and Scan"
+      },
+      "v1/AT": {
+        "file": "src/adele/rubrics/data_v1/AT.txt",
+        "sha256": "5862dd72f661fb6ea0e08b66bc7a877de1951a9285ee6fdf3defd8dfa8602479",
+        "full_name": "Atypicality"
+      },
+      "v1/CEc": {
+        "file": "src/adele/rubrics/data_v1/CEc.txt",
+        "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e",
+        "full_name": "Verbal Comprehension"
+      },
+      "v1/CEe": {
+        "file": "src/adele/rubrics/data_v1/CEe.txt",
+        "sha256": "9014ce7264f4fb04d2614822228b3e3cf8698b576bd97b34cbb1511978961798",
+        "full_name": "Verbal Expression"
+      },
+      "v1/CL": {
+        "file": "src/adele/rubrics/data_v1/CL.txt",
+        "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372",
+        "full_name": "Conceptualisation, Learning and Abstraction"
+      },
+      "v1/MCr": {
+        "file": "src/adele/rubrics/data_v1/MCr.txt",
+        "sha256": "340c9f2f77b6b61290713bc0ab2c23ac42e42a3fd12293a63c3e2a204d0cf390",
+        "full_name": "Identifying Relevant Information"
+      },
+      "v1/MCt": {
+        "file": "src/adele/rubrics/data_v1/MCt.txt",
+        "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6",
+        "full_name": "Critical Thinking Processes"
+      },
+      "v1/MCu": {
+        "file": "src/adele/rubrics/data_v1/MCu.txt",
+        "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9",
+        "full_name": "Calibrating Knowns and Unknowns"
+      },
+      "v1/QLl": {
+        "file": "src/adele/rubrics/data_v1/QLl.txt",
+        "sha256": "113b0a0203409f5c83b3c3d09345c0b71252e23098ef0de280ef6ae488bc89f2",
+        "full_name": "Logical Reasoning"
+      },
+      "v1/QLq": {
+        "file": "src/adele/rubrics/data_v1/QLq.txt",
+        "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244",
+        "full_name": "Quantitative Reasoning"
+      },
+      "v1/SNs": {
+        "file": "src/adele/rubrics/data_v1/SNs.txt",
+        "sha256": "e74180e3a2d77d28cfbf9e296b470df41cc763495f116b501a4bcf31b83d75d2",
+        "full_name": "Spatio-physical Reasoning"
+      },
+      "v1/VO": {
+        "file": "src/adele/rubrics/data_v1/VO.txt",
+        "sha256": "57e128551c7ef9fb8a3bbe944751ae5507d08c041a51569a93206efc1b2d4698",
+        "full_name": "Volume"
+      },
+      "v2/MMe": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMe.txt",
+        "sha256": "b17047c75eba6995bc7d98376fefa5a61dbd1c5c08faacb56e5336f5a2c88e21",
+        "full_name": "Episodic memory"
+      },
+      "v2/MMp": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMp.txt",
+        "sha256": "c2ce8586405f093b5249e90c5048cc2d07143ccd1c05673bc7d51717c5ddc25b",
+        "full_name": "Long-term procedural memory"
+      },
+      "v2/MMs": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMs.txt",
+        "sha256": "0e7a57f913af321646e47bbc2dd5143aa6b571a477b46e616636e6d4e3f21673",
+        "full_name": "Working and short-term memory"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-haiku-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-haiku-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 285,
+      "sha256": "b1c58dc2941ae19980ea826ef8eaca8b5272f1952338b1dca7e4794db575e9df"
+    }
+  }
+}

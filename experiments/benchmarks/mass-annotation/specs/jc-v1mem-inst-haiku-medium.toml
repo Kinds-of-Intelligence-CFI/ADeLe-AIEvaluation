@@ -1,0 +1,22 @@
+# judge-choice (experiments/benchmarks/judge-choice): block v1mem, inputs data/instances, arm haiku-medium.
+# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.
+name = "jc-v1mem-inst-haiku-medium"
+
+[tasks]
+benchmarks = ["arc-agi-2", "arxivmath", "brokenarxiv", "cooperbench", "eqbench4", "gamearena", "gpqa-diamond", "rivercross-search"]
+subset = "experiments/benchmarks/judge-choice/subset_v1mem_inst.csv"
+instances_dir = "data/instances"
+
+[rubrics]
+refs = ["v1/AS", "v1/AT", "v1/CEc", "v1/CEe", "v1/CL", "v1/MCr", "v1/MCt", "v1/MCu", "v1/QLl", "v1/QLq", "v1/SNs", "v1/VO", "v2/MMe", "v2/MMp", "v2/MMs"]
+
+[prompt]
+builder = "v1-layout-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-haiku-5-5"
+effort = "medium"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }
