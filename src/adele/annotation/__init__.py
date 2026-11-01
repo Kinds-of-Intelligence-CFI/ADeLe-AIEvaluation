@@ -12,7 +12,7 @@ the light helpers from it, no longer requires those packages installed.
 
 import importlib
 
-from adele.annotation.prompts import build_annotation_prompt, build_batch_request
+from adele.annotation.prompts import build_annotation_prompt, build_annotation_prompt_v2, build_batch_request
 from adele.annotation.parsing import (
     extract_demand_level,
     parse_batch_output,
@@ -27,6 +27,7 @@ _LAZY = {"annotate": "adele.annotation.annotator"}
 __all__ = [
     "annotate",
     "build_annotation_prompt",
+    "build_annotation_prompt_v2",
     "build_batch_request",
     "extract_demand_level",
     "parse_batch_output",

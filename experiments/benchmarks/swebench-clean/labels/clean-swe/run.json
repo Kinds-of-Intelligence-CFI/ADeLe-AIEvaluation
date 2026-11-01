@@ -1,0 +1,60 @@
+{
+  "run_id": "clean-swe",
+  "created_at": "2026-10-01T13:17:45+00:00",
+  "repo_commit": "5d4a8ef8414d2aa6d32a18125468527e571e3402",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "swe-bench-verified"
+  ],
+  "design": {
+    "n_tasks": 30,
+    "dims": [
+      "PLp",
+      "PLe",
+      "PLs"
+    ],
+    "n_prompts": 90,
+    "judges": {
+      "opus-low": "Claude Code subagent 'adele-judge-v2-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'opus'"
+    }
+  },
+  "rubrics": {
+    "PLp": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+      "sha256": "322674efb257df4fbb1c93415cd903d554c62b510623846148d635309ad4194f"
+    },
+    "PLe": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+      "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b"
+    },
+    "PLs": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+      "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e"
+    }
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9",
+    "existing_prompts_checked_against": {
+      "PLp": [
+        "plp-o-relabel/labels/o-swe",
+        "plp-b2/labels/o-swe-gate"
+      ],
+      "PLe": [
+        "pl-relabel-v2/labels/v2-swe",
+        "natural-prompt/labels/npb-gate-opuslow"
+      ],
+      "PLs": [
+        "pl-relabel-v2/labels/v2-swe",
+        "natural-prompt/labels/npb-gate-opuslow"
+      ]
+    }
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/clean-swe",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

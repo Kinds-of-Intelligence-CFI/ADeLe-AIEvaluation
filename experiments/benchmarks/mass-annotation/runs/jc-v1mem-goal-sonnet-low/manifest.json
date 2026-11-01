@@ -1,0 +1,166 @@
+{
+  "run": "jc-v1mem-goal-sonnet-low",
+  "created_at": "2026-11-01T19:34:02+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-v1mem-goal-sonnet-low.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "b5e70571e5ca8798c9a9e0407b76e3ee832a3e3138e3a0193e9c47069f272e1a",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block v1mem, inputs data/instances-goal, arm sonnet-low.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-v1mem-goal-sonnet-low\"\n\n[tasks]\nbenchmarks = [\"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\", \"swe-bench-verified\", \"terminal-bench-4.0.0\", \"terminal-bench-science-0.1\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_v1mem_goal.csv\"\ninstances_dir = \"data/instances-goal\"\n\n[rubrics]\nrefs = [\"v1/AS\", \"v1/AT\", \"v1/CEc\", \"v1/CEe\", \"v1/CL\", \"v1/MCr\", \"v1/MCt\", \"v1/MCu\", \"v1/QLl\", \"v1/QLq\", \"v1/SNs\", \"v1/VO\", \"v2/MMe\", \"v2/MMp\", \"v2/MMs\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-sonnet-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "942dc409f08268bff83f9cf97b31cd044c38220089ad1d6041918b0916835035",
+          "frame_sha256": "273b679d008890636e07ffba86bcc43609a3ce30a23ac68a3d70f64d4fa921cc",
+          "n_selected": 2
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "2e814d80439e70818673b561d3e107dfd5c955c0b27d965331995b8f2a09a2ac",
+          "frame_sha256": "0168a7ee23b6dd8c13f06401ee7f183d09b9bce35e6ad34fa4821be8754392e2",
+          "n_selected": 2
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "961814724fd8de17c7094e073639f09315c9fe22bd28b319a5a237181b2dacae",
+          "frame_sha256": "7611ed07ea4727482b9cc497b10394b4493aff3bfce87899ffa38c496674fa67",
+          "n_selected": 3
+        },
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "9dd3f2770cfadb35cd11ab7915d01e546d6736b1f0ccb8049bf913269e212203",
+          "frame_sha256": "1c38f928c845bd70532c15da211ddbeef98289665d4d0f91ae60cfffde336b10",
+          "n_selected": 3
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "9060474c7e7ee053181ab852c2c8c952ce80245df285764ba70cecadb07b3fa2",
+          "frame_sha256": "3b67f438d314f862eeb4b272854a7a0422097ef82438142d8a3bdb609f9413c8",
+          "n_selected": 2
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "6488d3c849e5bdc9577a1e5c9c4a3407a6003e396d568357ad84b4194ca47a76",
+          "frame_sha256": "d122361335c4d0a89cb59c80e36ff407d690a17b0ce6c5772ad0df872d999c18",
+          "n_selected": 2
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_v1mem_goal.csv",
+        "sha256": "b690a168c0f3217bdaf24e1112607f5d0aa0826293f6724b13ccb9da2e9ece07",
+        "n_ids": 14
+      }
+    },
+    "rubrics": {
+      "v1/AS": {
+        "file": "src/adele/rubrics/data_v1/AS.txt",
+        "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776",
+        "full_name": "Attention and Scan"
+      },
+      "v1/AT": {
+        "file": "src/adele/rubrics/data_v1/AT.txt",
+        "sha256": "5862dd72f661fb6ea0e08b66bc7a877de1951a9285ee6fdf3defd8dfa8602479",
+        "full_name": "Atypicality"
+      },
+      "v1/CEc": {
+        "file": "src/adele/rubrics/data_v1/CEc.txt",
+        "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e",
+        "full_name": "Verbal Comprehension"
+      },
+      "v1/CEe": {
+        "file": "src/adele/rubrics/data_v1/CEe.txt",
+        "sha256": "9014ce7264f4fb04d2614822228b3e3cf8698b576bd97b34cbb1511978961798",
+        "full_name": "Verbal Expression"
+      },
+      "v1/CL": {
+        "file": "src/adele/rubrics/data_v1/CL.txt",
+        "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372",
+        "full_name": "Conceptualisation, Learning and Abstraction"
+      },
+      "v1/MCr": {
+        "file": "src/adele/rubrics/data_v1/MCr.txt",
+        "sha256": "340c9f2f77b6b61290713bc0ab2c23ac42e42a3fd12293a63c3e2a204d0cf390",
+        "full_name": "Identifying Relevant Information"
+      },
+      "v1/MCt": {
+        "file": "src/adele/rubrics/data_v1/MCt.txt",
+        "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6",
+        "full_name": "Critical Thinking Processes"
+      },
+      "v1/MCu": {
+        "file": "src/adele/rubrics/data_v1/MCu.txt",
+        "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9",
+        "full_name": "Calibrating Knowns and Unknowns"
+      },
+      "v1/QLl": {
+        "file": "src/adele/rubrics/data_v1/QLl.txt",
+        "sha256": "113b0a0203409f5c83b3c3d09345c0b71252e23098ef0de280ef6ae488bc89f2",
+        "full_name": "Logical Reasoning"
+      },
+      "v1/QLq": {
+        "file": "src/adele/rubrics/data_v1/QLq.txt",
+        "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244",
+        "full_name": "Quantitative Reasoning"
+      },
+      "v1/SNs": {
+        "file": "src/adele/rubrics/data_v1/SNs.txt",
+        "sha256": "e74180e3a2d77d28cfbf9e296b470df41cc763495f116b501a4bcf31b83d75d2",
+        "full_name": "Spatio-physical Reasoning"
+      },
+      "v1/VO": {
+        "file": "src/adele/rubrics/data_v1/VO.txt",
+        "sha256": "57e128551c7ef9fb8a3bbe944751ae5507d08c041a51569a93206efc1b2d4698",
+        "full_name": "Volume"
+      },
+      "v2/MMe": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMe.txt",
+        "sha256": "b17047c75eba6995bc7d98376fefa5a61dbd1c5c08faacb56e5336f5a2c88e21",
+        "full_name": "Episodic memory"
+      },
+      "v2/MMp": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMp.txt",
+        "sha256": "c2ce8586405f093b5249e90c5048cc2d07143ccd1c05673bc7d51717c5ddc25b",
+        "full_name": "Long-term procedural memory"
+      },
+      "v2/MMs": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMs.txt",
+        "sha256": "0e7a57f913af321646e47bbc2dd5143aa6b571a477b46e616636e6d4e3f21673",
+        "full_name": "Working and short-term memory"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-sonnet-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 210,
+      "sha256": "ae75625c3f9ca204cb84a9c91822832ac2be6ca833242974937f1faf38ec9023"
+    }
+  }
+}

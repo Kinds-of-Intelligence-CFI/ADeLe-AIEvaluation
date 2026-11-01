@@ -1,0 +1,104 @@
+{
+  "run": "noreason-sr-ms",
+  "created_at": "2026-10-07T00:08:04+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/noreason-sr-ms.toml",
+  "git": {
+    "commit": "a5d03f003d1b578d3c9faa4aeef858c33d17f75f",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/noreason-s-cooperbench/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-eqbench4/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-gamearena/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-long/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-ms-rest/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-pl/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-pl/ledger.csv",
+      " M experiments/benchmarks/noreason/results/arms.json"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "6bc76cd5690e50ababac9aca0c3a921d29b3fe59235160e71e5a395aab85c334",
+      "content": "# noreason amendment 4b: twin of noreason-s-ms.toml with the v2 prompt (written reasoning, as in the released labels); nothing else changed.\n# No-reasoning ablation (experiments/benchmarks/noreason): MS rubrics without written reasoning, on tau2 (the only clean set where MS varies).\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/noreason-ms.toml\nname = \"noreason-sr-ms\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-retail\", \"tau2-banking_knowledge\"]\nsubset = \"experiments/benchmarks/noreason/tau2_subset.csv\"\n\n[rubrics]\nrefs = [\"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-sonnet-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"sonnet\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "217187f31c08f389196d73251cecf55ee8414427ac4d170422db699d69a7b0d0",
+          "frame_sha256": "5d51a59e061d005ef6c7d229052c37b9d600c349d96d088647ec1127732f7165",
+          "n_selected": 49
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "ef0dc74a178d950cbbf3abe2d71c40026ef51993699adf2e74bea6e7c523b6cd",
+          "frame_sha256": "6fecc25306f946cdc31287ffa6ce4156d9e24c24f52d86ceb5c4a2cf9bd16015",
+          "n_selected": 114
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "b9e101ef4070fb6e6f249ea4081e60fee646cb93fad7a1eea9f2ee2d879088fb",
+          "frame_sha256": "20bc6ba5dbbaf6abd30585345475da5f6be585f8dc7b3366d7c6ba3976992e00",
+          "n_selected": 79
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/noreason/tau2_subset.csv",
+        "sha256": "519140fee6300f4db75e530a45c1834ec4296b77c4ee73449abbe0c6ba530f2d",
+        "n_ids": 242
+      }
+    },
+    "rubrics": {
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "dd130fcea382645ea3c1b294a2264a4aa1e8f605b197a1193ba8c156bb3c8ce2",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "sonnet-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "sonnet",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 484,
+      "sha256": "ac404cf407fe30988673f818c6faa0e3a8ea7b139a9a4f7f21285353488a44e7"
+    }
+  }
+}

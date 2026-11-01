@@ -1,0 +1,107 @@
+{
+  "trajectory": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1",
+        "item3"
+      ],
+      "boat": "R",
+      "reason": "Taking two items that can safely be left together: item2 and item4. This leaves item1 and item3 on the left, which are compatible."
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3",
+        "item4"
+      ],
+      "boat": "L",
+      "reason": "Returning with item4 to help transport the remaining items. This repositions item4 to enable safe crossings of item1 and item3."
+    },
+    {
+      "left": [
+        "item4"
+      ],
+      "boat": "R",
+      "reason": "Taking the two remaining compatible items across. This leaves item4 alone on the left, which is safe."
+    },
+    {
+      "left": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "boat": "L",
+      "reason": "Returning with item2 to avoid leaving forbidden combinations. Item2 leaving means item1 and item3 remain on the right, which is a safe pair."
+    },
+    {
+      "left": [],
+      "boat": "R",
+      "reason": "Taking both item2 and item4 across again. They form a compatible pair, and item1 and item3 will remain safe on the right."
+    }
+  ],
+  "attempts": [
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Taking two items that can safely be left together: item2 and item4. This leaves item1 and item3 on the left, which are compatible."
+    },
+    {
+      "load": [
+        "farmer",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Returning with item4 to help transport the remaining items. This repositions item4 to enable safe crossings of item1 and item3."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "legal": true,
+      "reason": "Taking the two remaining compatible items across. This leaves item4 alone on the left, which is safe."
+    },
+    {
+      "load": [
+        "farmer"
+      ],
+      "legal": false,
+      "reason": "Returning to the left bank to collect the final item. All items on the right are compatible pairs, so they can be left safely."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2"
+      ],
+      "legal": true,
+      "reason": "Returning with item2 to avoid leaving forbidden combinations. Item2 leaving means item1 and item3 remain on the right, which is a safe pair."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Taking both item2 and item4 across again. They form a compatible pair, and item1 and item3 will remain safe on the right."
+    }
+  ],
+  "consec_illegal": 0,
+  "status": "solved"
+}

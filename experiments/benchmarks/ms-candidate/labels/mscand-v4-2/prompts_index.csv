@@ -1,0 +1,3 @@
+file_id,item_id,set,arm,rubric,prompt_sha256,pass1_file_id,pass1_run
+ynvk6,L-r36-D2,R-L,current,MSc,f30e4185f3691a71fccacfe1f413f7f33396304e22c45d5cd484f79f48b0d257,vbwxz,mscand-1
+fb95h,L-r36-D2,R-L,candidate_v4,MSc,513389d473051f003d48efc99c1189b3f4d852714038f449eb8db7a5bbcf97a3,mcx7r,mscand-v4

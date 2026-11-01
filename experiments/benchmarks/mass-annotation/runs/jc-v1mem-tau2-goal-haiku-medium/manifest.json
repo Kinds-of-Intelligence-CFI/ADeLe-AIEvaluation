@@ -1,0 +1,148 @@
+{
+  "run": "jc-v1mem-tau2-goal-haiku-medium",
+  "created_at": "2026-11-01T19:34:09+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-v1mem-tau2-goal-haiku-medium.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "d66ae11e0f455934962d90c9f48e5238f0f0f2957e72608b3b26727a6b48b53c",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block v1mem, inputs data/instances-tau2-goal, arm haiku-medium.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-v1mem-tau2-goal-haiku-medium\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-banking_knowledge\", \"tau2-retail\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_v1mem_tau2-goal.csv\"\ninstances_dir = \"data/instances-tau2-goal\"\n\n[rubrics]\nrefs = [\"v1/AS\", \"v1/AT\", \"v1/CEc\", \"v1/CEe\", \"v1/CL\", \"v1/MCr\", \"v1/MCt\", \"v1/MCu\", \"v1/QLl\", \"v1/QLq\", \"v1/SNs\", \"v1/VO\", \"v2/MMe\", \"v2/MMp\", \"v2/MMs\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-haiku-5-5\"\neffort = \"medium\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "d35bad3b5e0fa686b7801f4357092440a98d23599948f2cdd0e1a56026800925",
+          "frame_sha256": "1fa01e9b322fe5e30754acf521e1f664a0a1f8f0b7424eea0a4441b38c8843ce",
+          "n_selected": 2
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "f048db72be0227a1555533acf5cc22383dd43ea00401e6a1407f45ea9bca9f29",
+          "frame_sha256": "f048db72be0227a1555533acf5cc22383dd43ea00401e6a1407f45ea9bca9f29",
+          "n_selected": 2
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "26c2a789370e4925d2619672c5b4d5e4b3c20ec3e81fa2bb1ed797a92531bbe8",
+          "frame_sha256": "186fec273d8814911b7f5213683e207872943421bb07d0c02da8f332026b8177",
+          "n_selected": 3
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_v1mem_tau2-goal.csv",
+        "sha256": "a616a276027f77612ca1a1a234845942b5af72d8ed9895dfbc04f4ed89a6f08e",
+        "n_ids": 7
+      }
+    },
+    "rubrics": {
+      "v1/AS": {
+        "file": "src/adele/rubrics/data_v1/AS.txt",
+        "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776",
+        "full_name": "Attention and Scan"
+      },
+      "v1/AT": {
+        "file": "src/adele/rubrics/data_v1/AT.txt",
+        "sha256": "5862dd72f661fb6ea0e08b66bc7a877de1951a9285ee6fdf3defd8dfa8602479",
+        "full_name": "Atypicality"
+      },
+      "v1/CEc": {
+        "file": "src/adele/rubrics/data_v1/CEc.txt",
+        "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e",
+        "full_name": "Verbal Comprehension"
+      },
+      "v1/CEe": {
+        "file": "src/adele/rubrics/data_v1/CEe.txt",
+        "sha256": "9014ce7264f4fb04d2614822228b3e3cf8698b576bd97b34cbb1511978961798",
+        "full_name": "Verbal Expression"
+      },
+      "v1/CL": {
+        "file": "src/adele/rubrics/data_v1/CL.txt",
+        "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372",
+        "full_name": "Conceptualisation, Learning and Abstraction"
+      },
+      "v1/MCr": {
+        "file": "src/adele/rubrics/data_v1/MCr.txt",
+        "sha256": "340c9f2f77b6b61290713bc0ab2c23ac42e42a3fd12293a63c3e2a204d0cf390",
+        "full_name": "Identifying Relevant Information"
+      },
+      "v1/MCt": {
+        "file": "src/adele/rubrics/data_v1/MCt.txt",
+        "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6",
+        "full_name": "Critical Thinking Processes"
+      },
+      "v1/MCu": {
+        "file": "src/adele/rubrics/data_v1/MCu.txt",
+        "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9",
+        "full_name": "Calibrating Knowns and Unknowns"
+      },
+      "v1/QLl": {
+        "file": "src/adele/rubrics/data_v1/QLl.txt",
+        "sha256": "113b0a0203409f5c83b3c3d09345c0b71252e23098ef0de280ef6ae488bc89f2",
+        "full_name": "Logical Reasoning"
+      },
+      "v1/QLq": {
+        "file": "src/adele/rubrics/data_v1/QLq.txt",
+        "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244",
+        "full_name": "Quantitative Reasoning"
+      },
+      "v1/SNs": {
+        "file": "src/adele/rubrics/data_v1/SNs.txt",
+        "sha256": "e74180e3a2d77d28cfbf9e296b470df41cc763495f116b501a4bcf31b83d75d2",
+        "full_name": "Spatio-physical Reasoning"
+      },
+      "v1/VO": {
+        "file": "src/adele/rubrics/data_v1/VO.txt",
+        "sha256": "57e128551c7ef9fb8a3bbe944751ae5507d08c041a51569a93206efc1b2d4698",
+        "full_name": "Volume"
+      },
+      "v2/MMe": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMe.txt",
+        "sha256": "b17047c75eba6995bc7d98376fefa5a61dbd1c5c08faacb56e5336f5a2c88e21",
+        "full_name": "Episodic memory"
+      },
+      "v2/MMp": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMp.txt",
+        "sha256": "c2ce8586405f093b5249e90c5048cc2d07143ccd1c05673bc7d51717c5ddc25b",
+        "full_name": "Long-term procedural memory"
+      },
+      "v2/MMs": {
+        "file": "src/adele/rubrics/data_v2/Marko/MMs.txt",
+        "sha256": "0e7a57f913af321646e47bbc2dd5143aa6b571a477b46e616636e6d4e3f21673",
+        "full_name": "Working and short-term memory"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-haiku-5-5",
+      "effort": "medium",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-haiku-5-5-medium",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 105,
+      "sha256": "bac9c16d0a00df58171879f71f9c238e9d53122ed91201dd790a20ffb7766a96"
+    }
+  }
+}

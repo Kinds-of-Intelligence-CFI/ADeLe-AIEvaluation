@@ -1,0 +1,27 @@
+# noreason amendment 4: twin of noreason-ms-rest.toml with Sonnet 5.5 (effort low) as the judge; nothing else changed.
+# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): MS rubrics on the six non-tau2 single-read sets.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/noreason-ms.toml
+name = "noreason-s-ms-rest"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "terminal-bench-4.0.0", "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench"]
+subset = "experiments/benchmarks/noreason/nontau2_subset.csv"
+
+[rubrics]
+refs = ["v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-sonnet-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "sonnet"
+batch_size = 100

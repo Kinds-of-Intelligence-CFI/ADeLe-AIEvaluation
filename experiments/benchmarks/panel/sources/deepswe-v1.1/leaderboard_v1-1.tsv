@@ -1,0 +1,71 @@
+row_id	model	provider	harness	effort	metrics_source	accuracy	pass_at_1	pass_at_4	n_passed	n_attempted	n_tasks_passed_any	ci_half	first_started	last_finished
+mini_swe_agent_gpt_6_astra_xhigh	gpt-6-astra	openai	mini-swe-agent	xhigh	verified_openai_handoff	74.1	0.7412	0.8053	335	452	91	0.0287	2026-08-31	2026-09-01
+mini_swe_agent_gemini_3_8_flash_high	gemini-3-8-flash		mini-swe-agent	high	trial_summary	73.8	0.7383	0.8584	330	447	97	0.0142	2026-08-29	2026-08-29
+mini_swe_agent_claude_opus_5_max	claude-opus-5		mini-swe-agent	max	trial_summary	73.6	0.7365	0.885	327	444	100	0.0387	2026-07-24	2026-07-25
+mini_swe_agent_gpt_6_astra_high	gpt-6-astra	openai	mini-swe-agent	high	verified_openai_handoff	73.2	0.7323	0.823	331	452	93	0.0342	2026-08-31	2026-09-01
+mini_swe_agent_gpt_6_astra_max	gpt-6-astra	openai	mini-swe-agent	max	verified_openai_handoff	73.2	0.7323	0.7965	331	452	90	0.0083	2026-08-31	2026-09-01
+mini_swe_agent_claude_opus_5_xhigh	claude-opus-5		mini-swe-agent	xhigh	trial_summary	73.2	0.7315	0.8584	327	447	97	0.0306	2026-07-24	2026-07-25
+mini_swe_agent_claude_opus_5_high	claude-opus-5		mini-swe-agent	high	trial_summary	72.8	0.7283	0.8761	327	449	99	0.0195	2026-07-24	2026-07-25
+mini_swe_agent_gpt_6_astra_medium	gpt-6-astra	openai	mini-swe-agent	medium	verified_openai_handoff	72.8	0.7279	0.823	329	452	93	0.0259	2026-08-31	2026-09-01
+mini_swe_agent_gpt_5_6_sol_max	gpt-5-6-sol		mini-swe-agent	max	trial_summary	72.7	0.7267	0.8584	327	450	97	0.0283	2026-07-06	2026-07-06
+mini_swe_agent_gemini_3_8_flash_medium	gemini-3-8-flash		mini-swe-agent	medium	trial_summary	71.0	0.7102	0.8319	321	452	94	0.0228	2026-09-01	2026-09-01
+mini_swe_agent_gpt_5_6_sol_xhigh	gpt-5-6-sol		mini-swe-agent	xhigh	trial_summary	70.7	0.7073	0.8584	319	451	97	0.0082	2026-07-06	2026-07-06
+mini_swe_agent_claude_fable_5_xhigh	claude-fable-5		mini-swe-agent	xhigh	trial_summary	69.9	0.6991	0.885	316	452	100	0.0324	2026-06-12	2026-06-12
+mini_swe_agent_claude_fable_5_max	claude-fable-5		mini-swe-agent	max	trial_summary	69.7	0.6972	0.8407	304	436	95	0.0403	2026-06-12	2026-06-13
+mini_swe_agent_gpt_5_6_terra_max	gpt-5-6-terra		mini-swe-agent	max	trial_summary	69.6	0.6962	0.885	314	451	100	0.0256	2026-07-07	2026-07-07
+mini_swe_agent_gpt_5_6_sol_high	gpt-5-6-sol		mini-swe-agent	high	trial_summary	69.4	0.694	0.8673	313	451	98	0.0143	2026-07-06	2026-07-06
+mini_swe_agent_glm_5_3_max	glm-5-3		mini-swe-agent	max	trial_summary	69.0	0.6896	0.8761	311	451	99	0.0302	2026-08-19	2026-08-20
+mini_swe_agent_claude_opus_5_medium	claude-opus-5		mini-swe-agent	medium	trial_summary	68.9	0.689	0.8938	308	447	101	0.0117	2026-07-24	2026-07-25
+mini_swe_agent_claude_fable_5_high	claude-fable-5		mini-swe-agent	high	trial_summary	68.6	0.686	0.8673	295	430	98	0.0112	2026-06-12	2026-06-13
+mini_swe_agent_kimi_k3_max	kimi-k3		mini-swe-agent	max	trial_summary	68.5	0.6851	0.8938	309	451	101	0.0454	2026-07-16	2026-07-17
+mini_swe_agent_grok_4_6_medium	grok-4-6		mini-swe-agent	medium	trial_summary	67.5	0.6748	0.8407	305	452	95	0.0228	2026-08-12	2026-08-13
+mini_swe_agent_gpt_5_6_luna_max	gpt-5-6-luna		mini-swe-agent	max	trial_summary	67.2	0.6719	0.9027	301	448	102	0.0399	2026-07-07	2026-07-07
+mini_swe_agent_gpt_5_5_xhigh	gpt-5-5		mini-swe-agent	xhigh	trial_summary	67.0	0.6704	0.885	303	452	100	0.0647	2026-06-12	2026-06-13
+mini_swe_agent_gpt_6_astra_low	gpt-6-astra	openai	mini-swe-agent	low	verified_openai_handoff	67.0	0.6704	0.7965	303	452	90	0.013	2026-08-31	2026-09-01
+mini_swe_agent_grok_4_6_xhigh	grok-4-6		mini-swe-agent	xhigh	trial_summary	66.7	0.6674	0.8496	301	451	96	0.0218	2026-08-12	2026-08-13
+mini_swe_agent_gemini_3_7_flash_medium	gemini-3-7-flash		mini-swe-agent	medium	trial_summary	65.5	0.6549	0.8319	296	452	94	0.0309	2026-08-12	2026-08-12
+mini_swe_agent_claude_fable_5_medium	claude-fable-5		mini-swe-agent	medium	trial_summary	65.4	0.6537	0.8319	285	436	94	0.0442	2026-06-12	2026-06-13
+mini_swe_agent_gemini_3_7_flash_high	gemini-3-7-flash		mini-swe-agent	high	trial_summary	65.3	0.6527	0.823	295	452	93	0.0179	2026-08-08	2026-08-09
+mini_swe_agent_grok_4_6_high	grok-4-6		mini-swe-agent	high	trial_summary	65.2	0.6519	0.8496	294	451	96	0.0153	2026-08-12	2026-08-13
+mini_swe_agent_gpt_5_5_high	gpt-5-5		mini-swe-agent	high	trial_summary	64.4	0.6438	0.9027	291	452	102	0.0312	2026-06-12	2026-06-13
+mini_swe_agent_glm_5_3_flash_max	glm-5-3-flash		mini-swe-agent	max	trial_summary	63.4	0.6339	0.8496	284	448	96	0.0438	2026-08-26	2026-08-26
+mini_swe_agent_deepseek_v4_pro_max	deepseek-v4-pro		mini-swe-agent	max	trial_summary	62.8	0.6283	0.885	284	452	100	0.0633	2026-08-12	2026-08-13
+mini_swe_agent_gpt_5_6_sol_medium	gpt-5-6-sol		mini-swe-agent	medium	trial_summary	61.1	0.6106	0.8053	276	452	91	0.0158	2026-07-06	2026-07-06
+mini_swe_agent_gpt_5_6_terra_xhigh	gpt-5-6-terra		mini-swe-agent	xhigh	trial_summary	60.2	0.6018	0.8053	272	452	91	0.0212	2026-07-07	2026-07-07
+mini_swe_agent_claude_fable_5_low	claude-fable-5		mini-swe-agent	low	trial_summary	59.6	0.5958	0.8142	258	433	92	0.0279	2026-06-12	2026-06-13
+mini_swe_agent_claude_opus_4_8_max	claude-opus-4-8		mini-swe-agent	max	trial_summary	59.0	0.5897	0.7928	253	429	88	0.0176	2026-06-12	2026-06-13
+mini_swe_agent_claude_opus_5_low	claude-opus-5		mini-swe-agent	low	trial_summary	58.1	0.5813	0.8496	261	449	96	0.0233	2026-07-24	2026-07-25
+mini_swe_agent_qwen3_8_max_xhigh	qwen3-8-max		mini-swe-agent	xhigh	trial_summary	57.5	0.5746	0.8319	258	449	94	0.0266	2026-08-03	2026-08-04
+mini_swe_agent_gpt_5_6_luna_xhigh	gpt-5-6-luna		mini-swe-agent	xhigh	trial_summary	56.9	0.5686	0.7876	257	452	89	0.0217	2026-07-07	2026-07-07
+mini_swe_agent_muse_spark_1_2_xhigh	muse-spark-1-2		mini-swe-agent	xhigh	trial_summary	54.9	0.5487	0.8142	248	452	92	0.0212	2026-08-06	2026-08-07
+mini_swe_agent_claude_opus_4_8_xhigh	claude-opus-4-8		mini-swe-agent	xhigh	trial_summary	54.4	0.5436	0.8053	243	447	91	0.0371	2026-06-12	2026-06-14
+mini_swe_agent_gpt_5_5_medium	gpt-5-5		mini-swe-agent	medium	trial_summary	54.0	0.5398	0.7788	244	452	88	0.0255	2026-06-12	2026-06-13
+mini_swe_agent_claude_sonnet_5_max	claude-sonnet-5		mini-swe-agent	max	trial_summary	53.8	0.5385	0.7876	238	442	89	0.0424	2026-06-30	2026-07-01
+mini_swe_agent_gpt_5_6_terra_high	gpt-5-6-terra		mini-swe-agent	high	trial_summary	53.8	0.5376	0.8053	243	452	91	0.0433	2026-07-07	2026-07-07
+mini_swe_agent_grok_4_5_high	grok-4-5		mini-swe-agent	high	trial_summary	53.8	0.5376	0.7788	243	452	88	0.0228	2026-07-13	2026-07-13
+mini_swe_agent_gemini_3_7_flash_low	gemini-3-7-flash		mini-swe-agent	low	trial_summary	53.8	0.5376	0.7788	243	452	88	0.0259	2026-08-06	2026-08-08
+mini_swe_agent_deepseek_v4_flash_max	deepseek-v4-flash		mini-swe-agent	max	trial_summary	53.3	0.5332	0.8053	241	452	91	0.0357	2026-08-05	2026-08-06
+mini_swe_agent_muse_spark_1_1_xhigh	muse-spark-1-1		mini-swe-agent	xhigh	trial_summary	53.3	0.5332	0.7965	241	452	90	0.0304	2026-07-12	2026-07-13
+mini_swe_agent_claude_opus_4_8_high	claude-opus-4-8		mini-swe-agent	high	trial_summary	51.8	0.5177	0.7788	234	452	88	0.0456	2026-06-12	2026-06-13
+mini_swe_agent_gpt_5_4_xhigh	gpt-5-4		mini-swe-agent	xhigh	trial_summary	51.8	0.5177	0.7788	234	452	88	0.015	2026-06-12	2026-06-13
+mini_swe_agent_claude_sonnet_5_xhigh	claude-sonnet-5		mini-swe-agent	xhigh	trial_summary	49.7	0.4967	0.7522	224	451	85	0.0345	2026-06-30	2026-07-01
+mini_swe_agent_claude_opus_4_8_medium	claude-opus-4-8		mini-swe-agent	medium	trial_summary	48.7	0.4867	0.7611	220	452	86	0.0224	2026-06-12	2026-06-13
+mini_swe_agent_claude_sonnet_5_high	claude-sonnet-5		mini-swe-agent	high	trial_summary	48.2	0.4823	0.7965	218	452	90	0.0451	2026-06-30	2026-07-01
+mini_swe_agent_gemini_3_6_flash_high	gemini-3-6-flash		mini-swe-agent	high	trial_summary	46.7	0.4668	0.7522	211	452	85	0.037	2026-08-12	2026-08-13
+mini_swe_agent_gpt_5_6_sol_low	gpt-5-6-sol		mini-swe-agent	low	trial_summary	45.4	0.4535	0.7168	205	452	81	0.0239	2026-07-06	2026-07-06
+mini_swe_agent_gpt_5_6_luna_high	gpt-5-6-luna		mini-swe-agent	high	trial_summary	44.2	0.4425	0.7522	200	452	85	0.0292	2026-07-07	2026-07-07
+mini_swe_agent_glm_5_2_max	glm-5-2		mini-swe-agent	max	trial_summary	43.8	0.4378	0.7699	197	450	87	0.0173	2026-06-20	2026-06-20
+mini_swe_agent_grok_4_6_low	grok-4-6		mini-swe-agent	low	trial_summary	41.6	0.4165	0.6903	187	449	78	0.0232	2026-08-12	2026-08-13
+mini_swe_agent_claude_opus_4_8_low	claude-opus-4-8		mini-swe-agent	low	trial_summary	40.8	0.408	0.6814	184	451	77	0.0146	2026-06-12	2026-06-13
+mini_swe_agent_claude_sonnet_5_medium	claude-sonnet-5		mini-swe-agent	medium	trial_summary	39.8	0.3978	0.646	179	450	73	0.0313	2026-06-30	2026-07-01
+mini_swe_agent_glm_5_2_high	glm-5-2		mini-swe-agent	high	trial_summary	36.3	0.3628	0.6814	164	452	77	0.0475	2026-06-22	2026-06-23
+mini_swe_agent_gemini_3_5_flash_high	gemini-3-5-flash		mini-swe-agent	high	trial_summary	36.1	0.3606	0.6372	163	452	72	0.0397	2026-08-12	2026-08-13
+mini_swe_agent_gpt_5_6_terra_medium	gpt-5-6-terra		mini-swe-agent	medium	trial_summary	35.1	0.3511	0.6018	158	450	68	0.0338	2026-07-07	2026-07-07
+mini_swe_agent_kimi_k2_7_code_default	kimi-k2-7-code		mini-swe-agent		trial_summary	30.5	0.3053	0.6106	138	452	69	0.005	2026-06-13	2026-06-13
+mini_swe_agent_claude_sonnet_5_low	claude-sonnet-5		mini-swe-agent	low	trial_summary	30.5	0.3051	0.5752	137	449	65	0.0113	2026-06-30	2026-07-01
+mini_swe_agent_claude_sonnet_4_6_high	claude-sonnet-4-6		mini-swe-agent	high	trial_summary	29.9	0.2993	0.5664	135	451	64	0.0409	2026-06-12	2026-06-14
+mini_swe_agent_gpt_5_5_low	gpt-5-5		mini-swe-agent	low	trial_summary	27.0	0.2699	0.4779	122	452	54	0.0229	2026-06-12	2026-06-13
+mini_swe_agent_gpt_5_6_terra_low	gpt-5-6-terra		mini-swe-agent	low	trial_summary	24.1	0.2405	0.4425	108	449	50	0.0078	2026-07-07	2026-07-07
+mini_swe_agent_gemini_3_1_pro_preview_high	gemini-3-1-pro-preview		mini-swe-agent	high	trial_summary	11.7	0.1173	0.2832	53	452	32	0.0148	2026-08-12	2026-08-13
+mini_swe_agent_gpt_5_6_luna_medium	gpt-5-6-luna		mini-swe-agent	medium	trial_summary	11.3	0.1128	0.2743	51	452	31	0.0083	2026-07-07	2026-07-07
+mini_swe_agent_gpt_5_6_luna_low	gpt-5-6-luna		mini-swe-agent	low	trial_summary	1.5	0.0155	0.0442	7	452	5	0.0083	2026-07-07	2026-07-07

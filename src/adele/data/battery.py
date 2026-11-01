@@ -24,7 +24,7 @@ from typing import Optional
 
 import pandas as pd
 
-from adele.constants import DEMAND_ORDER
+from adele.constants import DEMAND_ORDER, LEGACY_DEMAND_ALIASES
 
 logger = logging.getLogger(__name__)
 
@@ -35,6 +35,19 @@ HF_FILE = "ADeLe_batterry_v1dot0.csv"  # upstream filename spelling
 DEMAND_COLS = DEMAND_ORDER
 
 
+_GATED_HELP = (
+    "Could not download the ADeLe battery from HuggingFace ({repo}).\n"
+    "The dataset is GATED: you must (1) request access at\n"
+    "https://huggingface.co/datasets/{repo} with your HF account, and\n"
+    "(2) provide a token for that account via hf_token= or the HF_TOKEN env var.\n"
+    "Alternatively, use a local copy of the battery CSV:\n"
+    "  - pass csv_path=... (Inspect: -T csv_path=...), or\n"
+    "  - set the ADELE_BATTERY_CSV env var, or\n"
+    "  - use the copy shipped in the repo at ADeLe_battery_data/ (run `git lfs pull` first).\n"
+    "Original error: {err}"
+)
+
+
 def _resolve_csv_path(csv_path: Optional[str], hf_token: Optional[str]) -> str:
     """Local path > ADELE_BATTERY_CSV env > download from HuggingFace."""
     path = csv_path or os.environ.get("ADELE_BATTERY_CSV")
@@ -43,12 +56,35 @@ def _resolve_csv_path(csv_path: Optional[str], hf_token: Optional[str]) -> str:
     from huggingface_hub import hf_hub_download  # lazy import
 
     logger.info("Downloading ADeLe battery from HuggingFace (%s)", HF_REPO)
-    return hf_hub_download(
-        repo_id=HF_REPO,
-        filename=HF_FILE,
-        repo_type="dataset",
-        token=hf_token or os.environ.get("HF_TOKEN"),
-    )
+    try:
+        return hf_hub_download(
+            repo_id=HF_REPO,
+            filename=HF_FILE,
+            repo_type="dataset",
+            token=hf_token or os.environ.get("HF_TOKEN"),
+        )
+    except Exception as err:  # gated-repo / auth / network errors alike
+        raise RuntimeError(_GATED_HELP.format(repo=HF_REPO, err=err)) from err
+
+
+def _check_not_lfs_pointer(path: str) -> None:
+    """Fail fast (and helpfully) when ``path`` is a git-lfs pointer, not the CSV.
+
+    The in-repo battery CSV is stored with git-lfs; without ``git lfs pull`` the
+    file on disk is a 3-line pointer whose text would otherwise be parsed as a
+    one-column CSV and die much later with a confusing ``KeyError``.
+    """
+    try:
+        with open(path, encoding="utf-8", errors="ignore") as f:
+            head = f.read(64)
+    except OSError:
+        return  # let pd.read_csv raise its own, clearer file error
+    if head.startswith("version https://git-lfs"):
+        raise RuntimeError(
+            f"{path} is a git-lfs POINTER, not the battery CSV. "
+            "Run `git lfs install && git lfs pull` in the repository "
+            "(or download the CSV from HuggingFace) and try again."
+        )
 
 
 def load_battery(
@@ -74,6 +110,7 @@ def load_battery(
         ``verification_final``, and the 18 demand columns.
     """
     path = _resolve_csv_path(csv_path, hf_token)
+    _check_not_lfs_pointer(path)
     df = pd.read_csv(path)
 
     if answer_format is not None:
@@ -83,6 +120,9 @@ def load_battery(
 
     # Map to the toolkit's uniform schema (prompt/custom_id/target).
     df = df.rename(columns={"instance_id": "custom_id", "groundtruth": "target"})
+    # The released battery predates the MS -> MSm rename; map it on load so the
+    # published CSV keeps working untouched. See adele.constants.LEGACY_DEMAND_ALIASES.
+    df = df.rename(columns={k: v for k, v in LEGACY_DEMAND_ALIASES.items() if k in df.columns})
 
     keep = [
         "custom_id", "prompt", "target", "answer_format",

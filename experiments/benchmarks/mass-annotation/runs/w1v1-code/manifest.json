@@ -1,0 +1,189 @@
+{
+  "run": "w1v1-code",
+  "created_at": "2026-10-26T23:32:56+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/w1v1-code.toml",
+  "git": {
+    "commit": "97cda1070df2a2d70b8fa8620997089c4fb99b5d",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/goal-visible/build.py",
+      " M experiments/benchmarks/mass-annotation/runs/goal-visible-long/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/goal-visible/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/specs/bulk-w1-rivercross-plms.toml",
+      " M experiments/benchmarks/mass-annotation/specs/bulk-w1-v1.toml"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "99309bb6fec9ac5eb2ad0faa3ce6aea142eb00fd73cac51c22bed7cfc33e319e",
+      "content": "# Wave 1 (BENCHMARKS.md) on Claude Code subagents: the 17 judged v1 rubrics on this group's wave-1 tasks, the tasks\n# whose prompts fit one Read; the rest are in w1v1-code-long.toml.\n# Input per docs/judge-input.md (data/instances-goal). Routed by\n# experiments/benchmarks/wave1-v1/route.py. See experiments/benchmarks/wave1-v1/PREREGISTRATION.md.\nname = \"w1v1-code\"\n\n[tasks]\nbenchmarks = [\"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\", \"terminal-bench-4.0.0\", \"terminal-bench-science-0.1\"]\nsubset = \"experiments/benchmarks/wave1-v1/subset_code.csv\"\ninstances_dir = \"data/instances-goal\"\n\n[rubrics]\nrefs = [\"v1/AS\", \"v1/AT\", \"v1/CEc\", \"v1/CEe\", \"v1/CL\", \"v1/KNa\", \"v1/KNc\", \"v1/KNf\", \"v1/KNn\", \"v1/KNs\", \"v1/MCr\", \"v1/MCt\",\n        \"v1/MCu\", \"v1/QLl\", \"v1/QLq\", \"v1/SNs\", \"v1/VO\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "942dc409f08268bff83f9cf97b31cd044c38220089ad1d6041918b0916835035",
+          "frame_sha256": "273b679d008890636e07ffba86bcc43609a3ce30a23ac68a3d70f64d4fa921cc",
+          "n_selected": 90
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "2e814d80439e70818673b561d3e107dfd5c955c0b27d965331995b8f2a09a2ac",
+          "frame_sha256": "0168a7ee23b6dd8c13f06401ee7f183d09b9bce35e6ad34fa4821be8754392e2",
+          "n_selected": 19
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "961814724fd8de17c7094e073639f09315c9fe22bd28b319a5a237181b2dacae",
+          "frame_sha256": "7611ed07ea4727482b9cc497b10394b4493aff3bfce87899ffa38c496674fa67",
+          "n_selected": 116
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "9060474c7e7ee053181ab852c2c8c952ce80245df285764ba70cecadb07b3fa2",
+          "frame_sha256": "3b67f438d314f862eeb4b272854a7a0422097ef82438142d8a3bdb609f9413c8",
+          "n_selected": 35
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "6488d3c849e5bdc9577a1e5c9c4a3407a6003e396d568357ad84b4194ca47a76",
+          "frame_sha256": "d122361335c4d0a89cb59c80e36ff407d690a17b0ce6c5772ad0df872d999c18",
+          "n_selected": 70
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/wave1-v1/subset_code.csv",
+        "sha256": "fcbf58893cec04b701d46f4925ec16ce2fb4c0d5a02f62776c5cc49550624a9a",
+        "n_ids": 330
+      }
+    },
+    "rubrics": {
+      "v1/AS": {
+        "file": "src/adele/rubrics/data_v1/AS.txt",
+        "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776",
+        "full_name": "Attention and Scan"
+      },
+      "v1/AT": {
+        "file": "src/adele/rubrics/data_v1/AT.txt",
+        "sha256": "5862dd72f661fb6ea0e08b66bc7a877de1951a9285ee6fdf3defd8dfa8602479",
+        "full_name": "Atypicality"
+      },
+      "v1/CEc": {
+        "file": "src/adele/rubrics/data_v1/CEc.txt",
+        "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e",
+        "full_name": "Verbal Comprehension"
+      },
+      "v1/CEe": {
+        "file": "src/adele/rubrics/data_v1/CEe.txt",
+        "sha256": "9014ce7264f4fb04d2614822228b3e3cf8698b576bd97b34cbb1511978961798",
+        "full_name": "Verbal Expression"
+      },
+      "v1/CL": {
+        "file": "src/adele/rubrics/data_v1/CL.txt",
+        "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372",
+        "full_name": "Conceptualisation, Learning and Abstraction"
+      },
+      "v1/KNa": {
+        "file": "src/adele/rubrics/data_v1/KNa.txt",
+        "sha256": "de9eacb9605178dd11ce97ae1d2b03a72e1f134646bc63b941af57c319920f54",
+        "full_name": "Knowledge of Applied Sciences"
+      },
+      "v1/KNc": {
+        "file": "src/adele/rubrics/data_v1/KNc.txt",
+        "sha256": "2c729cdea7233b214ec09b9c69eefa84c0379786620b48e5ad6301dc01ba2e8d",
+        "full_name": "Customary Everyday Knowledge"
+      },
+      "v1/KNf": {
+        "file": "src/adele/rubrics/data_v1/KNf.txt",
+        "sha256": "3811485eb0e14ae8b5879d295a84c030d4fad209c5030b2d41d7bdce90449cc5",
+        "full_name": "Knowledge of Formal Sciences"
+      },
+      "v1/KNn": {
+        "file": "src/adele/rubrics/data_v1/KNn.txt",
+        "sha256": "0f8541e4d857a3db8386e4ba6ef41a516766f96b30d6867df736a1e19d14c145",
+        "full_name": "Knowledge of Natural Sciences"
+      },
+      "v1/KNs": {
+        "file": "src/adele/rubrics/data_v1/KNs.txt",
+        "sha256": "ee7169f687297b3eca44d632b3c2f5d9f3f14dbb49dbd4355e5d9e36abbd23fb",
+        "full_name": "Knowledge of Social Sciences"
+      },
+      "v1/MCr": {
+        "file": "src/adele/rubrics/data_v1/MCr.txt",
+        "sha256": "340c9f2f77b6b61290713bc0ab2c23ac42e42a3fd12293a63c3e2a204d0cf390",
+        "full_name": "Identifying Relevant Information"
+      },
+      "v1/MCt": {
+        "file": "src/adele/rubrics/data_v1/MCt.txt",
+        "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6",
+        "full_name": "Critical Thinking Processes"
+      },
+      "v1/MCu": {
+        "file": "src/adele/rubrics/data_v1/MCu.txt",
+        "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9",
+        "full_name": "Calibrating Knowns and Unknowns"
+      },
+      "v1/QLl": {
+        "file": "src/adele/rubrics/data_v1/QLl.txt",
+        "sha256": "113b0a0203409f5c83b3c3d09345c0b71252e23098ef0de280ef6ae488bc89f2",
+        "full_name": "Logical Reasoning"
+      },
+      "v1/QLq": {
+        "file": "src/adele/rubrics/data_v1/QLq.txt",
+        "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244",
+        "full_name": "Quantitative Reasoning"
+      },
+      "v1/SNs": {
+        "file": "src/adele/rubrics/data_v1/SNs.txt",
+        "sha256": "e74180e3a2d77d28cfbf9e296b470df41cc763495f116b501a4bcf31b83d75d2",
+        "full_name": "Spatio-physical Reasoning"
+      },
+      "v1/VO": {
+        "file": "src/adele/rubrics/data_v1/VO.txt",
+        "sha256": "57e128551c7ef9fb8a3bbe944751ae5507d08c041a51569a93206efc1b2d4698",
+        "full_name": "Volume"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      },
+      "batch": true
+    },
+    "cells": {
+      "n": 5610,
+      "sha256": "ddab710aa9dbcdf8c57fe58478e05e2f678543044d5d5460f77a6b9daa7d3081"
+    }
+  }
+}

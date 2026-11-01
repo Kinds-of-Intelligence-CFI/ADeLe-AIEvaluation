@@ -1,0 +1,45 @@
+instance_id,role,stratum,repo,difficulty,solve_rate,suspect,prompt_chars,prompt_sha12
+django__django-15629,new,low,django/django,1-4 hours,0.0,True,2395,f0d48bfd8344
+astropy__astropy-14182,new,low,astropy/astropy,15 min - 1 hour,0.0593,False,1871,2f743a72613a
+django__django-13195,new,low,django/django,15 min - 1 hour,0.0148,True,2402,0e4d0ef4cd6f
+pylint-dev__pylint-4551,new,low,pylint-dev/pylint,1-4 hours,0.0,True,777,28e19b9ac4f2
+sympy__sympy-20916,new,low,sympy/sympy,<15 min fix,0.0444,True,143,728c710a38f3
+django__django-14631,new,low,django/django,1-4 hours,0.3556,False,1399,1d3f964a6347
+django__django-15916,new,low,django/django,15 min - 1 hour,0.2593,False,1744,561a7dff2336
+sphinx-doc__sphinx-9230,new,low,sphinx-doc/sphinx,<15 min fix,0.3259,False,1237,e814405fe088
+sympy__sympy-15976,new,low,sympy/sympy,15 min - 1 hour,0.2,False,1053,2b1a85414c4d
+django__django-11433,new,low,django/django,<15 min fix,0.1259,False,586,65f0d2e3b24a
+django__django-15382,new,mid,django/django,15 min - 1 hour,0.6222,False,407,edcce7a405fe
+astropy__astropy-14508,new,mid,astropy/astropy,15 min - 1 hour,0.563,False,2629,d08eb8c70acd
+django__django-13449,new,mid,django/django,1-4 hours,0.5481,False,6278,b082782316bb
+pylint-dev__pylint-6528,new,mid,pylint-dev/pylint,15 min - 1 hour,0.4074,False,2359,b11d702c9bf1
+sympy__sympy-20801,new,mid,sympy/sympy,15 min - 1 hour,0.6444,False,509,d97c4296d41c
+django__django-14608,new,mid,django/django,<15 min fix,0.7185,False,605,28120c6f6a8b
+django__django-15930,new,mid,django/django,<15 min fix,0.5852,False,689,e2c63560dec8
+sphinx-doc__sphinx-8459,new,mid,sphinx-doc/sphinx,<15 min fix,0.4963,False,1335,5a7af9900152
+sympy__sympy-17139,new,mid,sympy/sympy,<15 min fix,0.637,False,1916,17e532f00dac
+django__django-12754,new,mid,django/django,15 min - 1 hour,0.4222,False,860,096b0804a84a
+django__django-15499,new,high,django/django,<15 min fix,0.8444,False,263,5b157eb69d1b
+django__django-10880,new,high,django/django,<15 min fix,0.7407,False,278,d554ba8ef84e
+django__django-13741,new,high,django/django,<15 min fix,0.9259,False,1020,649548e0c7ba
+pydata__xarray-3151,new,high,pydata/xarray,15 min - 1 hour,0.763,False,2326,abcd2e1b10d6
+sympy__sympy-23824,new,high,sympy/sympy,15 min - 1 hour,0.8148,False,2103,6e2c57adb3bb
+django__django-14787,new,high,django/django,<15 min fix,0.7778,False,745,b52409ced83e
+django__django-15572,new,high,django/django,<15 min fix,0.7556,False,1388,f9d1889009c4
+scikit-learn__scikit-learn-14894,new,high,scikit-learn/scikit-learn,15 min - 1 hour,0.9333,False,1716,0cf2009aebab
+sympy__sympy-19346,new,high,sympy/sympy,15 min - 1 hour,0.7926,False,480,beaf218a0d5d
+django__django-12143,new,high,django/django,15 min - 1 hour,0.9333,False,1437,ea44d6cab195
+astropy__astropy-7671,anchor,,astropy/astropy,15 min - 1 hour,0.8444,False,1916,90a901a7b3d5
+django__django-11451,anchor,,django/django,<15 min fix,0.7852,False,2067,3b394ef33a4c
+django__django-12858,anchor,,django/django,15 min - 1 hour,0.6593,False,794,9f760a512438
+django__django-13343,anchor,,django/django,15 min - 1 hour,0.6889,False,1260,e105d6198bfc
+django__django-13568,anchor,,django/django,15 min - 1 hour,0.3926,False,765,919d7cd6597b
+django__django-13820,anchor,,django/django,15 min - 1 hour,0.9037,False,2102,8448b0b82597
+django__django-16032,anchor,,django/django,15 min - 1 hour,0.5407,False,778,a6962d82b410
+matplotlib__matplotlib-25960,anchor,,matplotlib/matplotlib,15 min - 1 hour,0.0815,False,788,97c83d815bdd
+matplotlib__matplotlib-26208,anchor,,matplotlib/matplotlib,<15 min fix,0.0148,True,2079,6c2b512012bf
+scikit-learn__scikit-learn-25102,anchor,,scikit-learn/scikit-learn,1-4 hours,0.3111,False,2534,1a82e3a4fceb
+sphinx-doc__sphinx-10435,anchor,,sphinx-doc/sphinx,<15 min fix,0.0222,True,2182,a7667cf5cb9c
+sphinx-doc__sphinx-8593,anchor,,sphinx-doc/sphinx,15 min - 1 hour,0.437,False,638,d7a0b222ecda
+sympy__sympy-13372,anchor,,sympy/sympy,<15 min fix,0.8074,False,1183,fea79ea0704f
+sympy__sympy-17630,anchor,,sympy/sympy,1-4 hours,0.0222,True,3430,1edfd6e1183b

@@ -1,0 +1,4 @@
+file_id,item_id,set,arm,rubric,judge,writer_model,level,valid,prompt_sha256,response_sha256
+vf2ck,B-M04-on-MSc,R-B,v4_nr,MSc,opus-low-r1,claude-opus-5-5,4.0,True,52f99b695572d59ea73d7b582b8c22bf6791c90278d9a2e1222548064ea267d2,4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a
+vf2ck,B-M04-on-MSc,R-B,v4_nr,MSc,opus-low-r2,claude-opus-5-5,3.0,True,52f99b695572d59ea73d7b582b8c22bf6791c90278d9a2e1222548064ea267d2,4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce
+vf2ck,B-M04-on-MSc,R-B,v4_nr,MSc,opus-low-r3,claude-opus-5-5,4.0,True,52f99b695572d59ea73d7b582b8c22bf6791c90278d9a2e1222548064ea267d2,4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a

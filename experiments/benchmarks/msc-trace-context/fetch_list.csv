@@ -1,0 +1,18 @@
+domain,entry,model,submission_date,key,size,MB
+airline,claude-3-7-sonnet_anthropic_2024-06-20,Claude-3.7-Sonnet,2025-06-09,submissions/claude-3-7-sonnet_anthropic_2024-06-20/trajectories/claude-3-7-sonnet-20250219_airline_default_gpt-4.1-2025-04-14_4trials.json,10551448,10.6
+airline,gemini-3-flash_sierra_2026-03-02,Gemini 3 Flash,2026-03-02,submissions/gemini-3-flash_sierra_2026-03-02/trajectories/geminiflash-airline.json,32180641,32.2
+airline,gpt-4-1-mini_openai_2024-06-20,GPT-4.1-mini,2025-06-09,submissions/gpt-4-1-mini_openai_2024-06-20/trajectories/gpt-4.1-mini-2025-04-14_airline_base_gpt-4.1-2025-04-14_4trials.json,9781836,9.8
+airline,gpt-4-1_openai_2024-06-20,GPT-4.1,2025-06-09,submissions/gpt-4-1_openai_2024-06-20/trajectories/gpt-4.1-2025-04-14_airline_default_gpt-4.1-2025-04-14_4trials.json,8790399,8.8
+airline,gpt-5_sierra_2025-08-09,GPT-5,2025-10-02,submissions/gpt-5_sierra_2025-08-09/trajectories/gpt-5_airline_default_gpt-4.1-2025-04-14_4trials.json,7608642,7.6
+airline,o4-mini_openai_2024-06-20,o4-mini,2025-06-09,submissions/o4-mini_openai_2024-06-20/trajectories/o4-mini-2025-04-16_airline_default_gpt-4.1-2025-04-14_4trials.json,7599444,7.6
+airline,qwen3-max_qwen_2025-10-30,Qwen3-Max-Thinking-Preview,2025-11-01,submissions/qwen3-max_qwen_2025-10-30/trajectories/airline_llm_agent_qwen3-max-2025-10-30_user_simulator_gpt-4.1-2025-04-14.json,12092879,12.1
+airline,qwen3-max_qwen_2026-01-23,Qwen3-Max-Thinking,2026-01-26,submissions/qwen3-max_qwen_2026-01-23/trajectories/airline_llm_agent_qwen3-max-2026-01-23_user_simulator_gpt-4.1-2025-04-14.json,14240802,14.2
+airline,toolorchestra_nvidia_2025-12-02,Nemotron-Orchestrator-8B,2025-12-18,submissions/toolorchestra_nvidia_2025-12-02/trajectories/toolorchestra_airline_gpt-5_1trial.json,1706580,1.7
+retail,claude-3-7-sonnet_anthropic_2024-06-20,Claude-3.7-Sonnet,2025-06-09,submissions/claude-3-7-sonnet_anthropic_2024-06-20/trajectories/claude-3-7-sonnet-20250219_retail_default_gpt-4.1-2025-04-14_4trials.json,24908843,24.9
+retail,gpt-4-1-mini_openai_2024-06-20,GPT-4.1-mini,2025-06-09,submissions/gpt-4-1-mini_openai_2024-06-20/trajectories/gpt-4.1-mini-2025-04-14_retail_base_gpt-4.1-2025-04-14_4trials.json,23697012,23.7
+retail,gpt-4-1_openai_2024-06-20,GPT-4.1,2025-06-09,submissions/gpt-4-1_openai_2024-06-20/trajectories/gpt-4.1-2025-04-14_retail_default_gpt-4.1-2025-04-14_4trials.json,22044059,22.0
+retail,gpt-5_sierra_2025-08-09,GPT-5,2025-10-02,submissions/gpt-5_sierra_2025-08-09/trajectories/gpt-5_retail_default_gpt-4.1-2025-04-14_4trials.json,18299436,18.3
+retail,o4-mini_openai_2024-06-20,o4-mini,2025-06-09,submissions/o4-mini_openai_2024-06-20/trajectories/o4-mini-2025-04-16_retail_default_gpt-4.1-2025-04-14_4trials.json,22066527,22.1
+retail,qwen3-max_qwen_2025-10-30,Qwen3-Max-Thinking-Preview,2025-11-01,submissions/qwen3-max_qwen_2025-10-30/trajectories/retail_llm_agent_qwen3-max-2025-10-30_user_simulator_gpt-4.1-2025-04-14.json,25052685,25.1
+retail,qwen3-max_qwen_2026-01-23,Qwen3-Max-Thinking,2026-01-26,submissions/qwen3-max_qwen_2026-01-23/trajectories/retail_llm_agent_qwen3-max-2026-01-23_user_simulator_gpt-4.1-2025-04-14.json,27890267,27.9
+retail,toolorchestra_nvidia_2025-12-02,Nemotron-Orchestrator-8B,2025-12-18,submissions/toolorchestra_nvidia_2025-12-02/trajectories/toolorchestra_retail_gpt-5_1trial.json,3367192,3.4

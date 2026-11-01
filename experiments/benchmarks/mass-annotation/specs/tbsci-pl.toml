@@ -1,0 +1,26 @@
+# Terminal-Bench Science 0.1 (70 tasks) on the adopted v2 planning family (PLp = text O, PLe, PLs), as in the PL relabel runs.
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt. Not pinned or run yet.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/tbsci-pl.toml
+name = "tbsci-pl"
+
+[tasks]
+benchmarks = ["terminal-bench-science-0.1"]
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 50

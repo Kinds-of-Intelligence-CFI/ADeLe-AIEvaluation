@@ -1,0 +1,47 @@
+{
+  "run_id": "mscand-nr",
+  "created_at": "2026-10-17T19:19:09+00:00",
+  "repo_commit": "c6c4a9495cfcb78d89c9c7a2d5caf60eea6d04b2",
+  "repo_dirty_tracked_files": [],
+  "design": {
+    "n_cells": 261,
+    "dims": [
+      "MSm",
+      "MSc"
+    ],
+    "arms": [
+      "current",
+      "candidate"
+    ],
+    "judges": {
+      "opus-low-r1": "adele-judge-v2-low, model alias 'opus'; repeat 1",
+      "opus-low-r2": "adele-judge-v2-low, model alias 'opus'; repeat 2",
+      "opus-low-r3": "adele-judge-v2-low, model alias 'opus'; repeat 3"
+    },
+    "n_calls": 783,
+    "relays": 18,
+    "relay_max_cells": 50
+  },
+  "pass": 1,
+  "amendment": 6,
+  "answer_format": "bare digit (PROMPT_V2_NOREASON substitution)",
+  "sources": {
+    "MSc": "mscand-v4 candidate_v4",
+    "MSm": "mscand-1 candidate"
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "dispatcher_agent": {
+    "file": "experiments/benchmarks/natural-prompt/judge-dispatcher-v2-low.md",
+    "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/mscand-nr",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

@@ -1,0 +1,89 @@
+{
+  "run": "jc-pl-inst-sonnet-low",
+  "created_at": "2026-11-01T19:33:56+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-pl-inst-sonnet-low.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "6a6bcc2e2dc554a6b5509b6d5ac1635bc3ddde3a07faf73e1a72a9f1ecf017e5",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block pl, inputs data/instances, arm sonnet-low.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-pl-inst-sonnet-low\"\n\n[tasks]\nbenchmarks = [\"cooperbench\", \"eqbench4\", \"gamearena\", \"rivercross-search\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_pl_inst.csv\"\ninstances_dir = \"data/instances\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-sonnet-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "cooperbench": {
+          "file": "instances_cooperbench.parquet",
+          "file_sha256": "8f2b875b4c39cc6c885def320181b24d3aa3494caf606410916e29d37fa42691",
+          "frame_sha256": "3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7",
+          "n_selected": 12
+        },
+        "eqbench4": {
+          "file": "instances_eqbench4.parquet",
+          "file_sha256": "2d690e9279eda9be3e1db73ca8087fb2f71fb163c7add1a634715e5243b672cd",
+          "frame_sha256": "d0a3ac4fa926012095644406791a54e501c1ef619f3a842abc3883655615eae4",
+          "n_selected": 12
+        },
+        "gamearena": {
+          "file": "instances_gamearena.parquet",
+          "file_sha256": "2888480d269ceae9614edb1cfb591ca87e00d4e1f862c15769c6e6c559fe4205",
+          "frame_sha256": "753c4414d16caedf04af4f23f36c2f83133df97650630df766fbd41650893417",
+          "n_selected": 12
+        },
+        "rivercross-search": {
+          "file": "instances_rivercross-search.parquet",
+          "file_sha256": "0585aa9462a6642207c6060c1f3e3e3f0d9611f7b15d9e1a6bb859a6c47f4684",
+          "frame_sha256": "922a9ba67bb9e00d21fc83e8fe5c71514cfa964b71753660a7ea1bd254eb09c2",
+          "n_selected": 12
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_pl_inst.csv",
+        "sha256": "35f8e5144f23e75fb96d0f0cafbd46d0d44569b655b89b5fb85332bf1ceca88a",
+        "n_ids": 48
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-sonnet-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 96,
+      "sha256": "8c870524a9f210aa4b41df2932ca15b719a2e7cda9d20a3fdc428b9977925b08"
+    }
+  }
+}

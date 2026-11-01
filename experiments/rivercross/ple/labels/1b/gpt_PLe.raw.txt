@@ -1,0 +1,52 @@
+```csv
+custom_id,level,reason
+chain-3-boat-1#s0,2,2 to 10 actions remain; sparse reward; static environment.
+chain-3-boat-1#s1,2,2 to 10 actions remain; sparse reward; static environment.
+chain-3-boat-1#s2,2,2 to 10 actions remain; sparse reward; static environment.
+chain-3-boat-1#s3,2,2 to 10 actions remain; sparse reward; static environment.
+chain-3-boat-1#s4,2,2 to 10 actions remain; sparse reward; static environment.
+chain-3-boat-1#s5,2,2 to 10 actions remain; sparse reward; static environment.
+chain-3-boat-1#s6,0,One action remains; atomic; no monitoring needed.
+chain-5-boat-2#s0,3,More than 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s1,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s2,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s3,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s4,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s5,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s6,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s7,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s8,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s9,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s10,2,2 to 10 actions remain; sparse reward; static environment.
+chain-5-boat-2#s11,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s0,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s1,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s2,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s3,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s4,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s5,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s6,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s7,2,2 to 10 actions remain; sparse reward; static environment.
+complete-4-boat-3#s8,2,2 to 10 actions remain; sparse reward; static environment.
+cycle-4-boat-2#s0,2,2 to 10 actions remain; sparse reward; static environment.
+cycle-4-boat-2#s1,2,2 to 10 actions remain; sparse reward; static environment.
+cycle-4-boat-2#s2,2,2 to 10 actions remain; sparse reward; static environment.
+cycle-4-boat-2#s3,2,2 to 10 actions remain; sparse reward; static environment.
+cycle-4-boat-2#s4,2,2 to 10 actions remain; sparse reward; static environment.
+star-4-boat-2#s0,2,2 to 10 actions remain; sparse reward; static environment.
+star-4-boat-2#s1,2,2 to 10 actions remain; sparse reward; static environment.
+star-4-boat-2#s2,2,2 to 10 actions remain; sparse reward; static environment.
+star-4-boat-2#s3,2,2 to 10 actions remain; sparse reward; static environment.
+star-4-boat-2#s4,0,One action remains; atomic; no monitoring needed.
+missionaries-cannibals-3#s0,3,More than 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s1,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s2,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s3,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s4,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s5,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s6,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s7,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s8,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s9,2,2 to 10 actions remain; sparse reward; static environment.
+missionaries-cannibals-3#s10,0,One action remains; atomic; no monitoring needed.
+```

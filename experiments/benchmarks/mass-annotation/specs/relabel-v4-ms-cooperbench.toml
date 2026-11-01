@@ -1,0 +1,27 @@
+# relabel-v4-ms: MSm and MSc relabelled after their adoption on 2026-10-25 (experiments/benchmarks/ms-candidate; b05ddf3),
+# on the same tasks as relabel-v2-cooperbench.toml, with the bare-digit prompt (production setting). See experiments/benchmarks/relabel-v4-ms.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v4-ms-cooperbench.toml
+name = "relabel-v4-ms-cooperbench"
+
+[tasks]
+benchmarks = ["cooperbench"]
+subset = "experiments/benchmarks/cooperbench-plms/subset.csv"
+
+[rubrics]
+refs = ["v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 100

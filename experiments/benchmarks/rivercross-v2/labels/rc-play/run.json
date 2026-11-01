@@ -1,0 +1,38 @@
+{
+  "run_id": "rc-play",
+  "created_at": "2026-09-30T12:08:46+00:00",
+  "repo_commit": "b07f993c327cd7865a8eede625e94bce79e740a6",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "rivercross"
+  ],
+  "frame": {
+    "file": "experiments/rivercross/ple/frame_PLe_1b.csv",
+    "sha256": "cc0f2d1726167d087cffd2d16c84cc31e688b40d49cbe4923e80ea3d2b41873c"
+  },
+  "design": {
+    "n_states": 49,
+    "dims": [
+      "PLe"
+    ],
+    "n_prompts": 49,
+    "judges": {
+      "opus-low": "Claude Code subagent 'adele-judge-v2-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'opus'"
+    }
+  },
+  "rubrics_sha256": {
+    "PLe": "6403b373d0919df5ebd2b94f58b61a4b3d93b5e8474213e81fbd6a908eb25ed8"
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/rc-play",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

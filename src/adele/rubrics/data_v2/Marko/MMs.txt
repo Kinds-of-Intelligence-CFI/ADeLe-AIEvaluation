@@ -1,0 +1,39 @@
+# Working and short-term memory
+
+This rubric assesses working memory, the capacity to hold information temporarily and use it in reasoning or action. Tasks may require maintaining details that are no longer perceptually available, manipulating them or integrating them with new inputs. Difficulty rises from tasks that need no maintenance at all, through simple short-span retention, to those that demand continuous updating and the flexible transformation of multiple interdependent representations.
+
+Level 0: None. No active maintenance of information is required. The response acts directly on what is in current perception or on highly automatised recall of learned facts, without holding information across a delay.
+Examples:
+* Reading a word that is in front of you.
+* Identifying features of an object that is currently visible.
+* Responding "dog" when shown a picture of a dog.
+
+Level 1: Very low. Tasks require briefly holding a single, simple piece of information from recent experience so it can be retrieved or acted on after a short delay. No manipulation, transformation or integration with other information is needed; the demand is limited to maintenance.
+Examples:
+* Copy the word "elephant" from one document into another after viewing it briefly.
+* Carry out a simple instruction, such as adding a full stop at the end of a sentence, after reading it once.
+* Write down a two-digit number that was shown in a chat window but has since disappeared.
+
+Level 2: Low. Tasks require holding a small set of simple items (e.g., words, numbers, locations) in memory for a short delay, typically under 30 seconds. The information must be accessible for recognition or recall, but no manipulation or transformation is required.
+Examples:
+* Repeat back two 3-digit codes 30 seconds after hearing them.
+* Hold a number from one spreadsheet in memory long enough to check it against a figure in another sheet that must be opened afterward.
+* Recall a short list of three unrelated words (e.g., "dog, chair, blue") after a 20-second delay.
+
+Level 3: Intermediate. Tasks require holding a larger amount or more detailed information in memory (e.g., several words, a sentence or a short list) beyond immediate perception. The retained material may need to be manipulated (e.g., reversed, rotated, reordered) or integrated with new input.
+Examples:
+* Repeat a 2–4 digit code in reverse order, 30 seconds after hearing it.
+* Identify which of several shapes matches a previously seen example after it has been rotated, when both cannot be viewed at the same time.
+* Compare a list of seven names from one document with a new list in another document and state which name is missing.
+
+Level 4: High. Tasks require holding a substantial amount of recently presented information that is no longer perceptually available, and manipulating it in complex ways — reordering long sequences, updating and revising earlier memories in light of new input, or integrating remembered details with current perceptions and background knowledge.
+Examples:
+* View a list of 20 names in one document, close it, then open another document and type out the names with their ages in alphabetical order.
+* Study a static image of a complex scene with moving elements, then redraw the scene from a new angle as if 30 seconds had passed and each element continued along its trajectory.
+* Listen to a 5-minute chronological description of a five-generation family tree, then answer questions about specific relationships across generations.
+
+Level 5: Very high. Tasks require holding an exceptionally large amount of recently presented information that is no longer perceptually available and applying highly sophisticated operations to it — maintaining long sequences or richly detailed structures, performing multiple layers of manipulation, and integrating remembered content with knowledge and new perceptual input in complex, interdependent ways.
+Examples:
+* After a single read of a 10-page legal document, answer detailed questions about its content without being able to reconsult the text.
+* Tour a large complex building once, then give directions between any two locations, report the placement of furniture and recall details such as the number of rooms and wall colours.
+* Skim 15 function prototypes with one-line docstrings, then with the prototypes hidden, check a 25-line integration snippet and highlight every function call whose argument order or required keyword is inconsistent with the memorised signatures.

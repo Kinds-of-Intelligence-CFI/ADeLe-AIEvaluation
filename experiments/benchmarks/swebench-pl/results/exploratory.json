@@ -1,0 +1,71 @@
+{
+  "n": 435,
+  "spearman": {
+    "time_to_fix_vs_solve_rate": {
+      "rho": -0.401,
+      "p": 2.8e-18
+    },
+    "statement_chars_vs_solve_rate": {
+      "rho": -0.103,
+      "p": 0.032
+    },
+    "patch_lines_vs_solve_rate": {
+      "rho": -0.314,
+      "p": 1.9e-11
+    },
+    "PLp_vs_statement_chars": {
+      "rho": 0.18,
+      "p": 0.00016
+    },
+    "PLp_vs_patch_lines": {
+      "rho": 0.348,
+      "p": 7.4e-14
+    }
+  },
+  "partial_PLp_vs_solve_rate_given": {
+    "statement_chars": -0.625,
+    "time_to_fix": -0.55,
+    "patch_lines": -0.585,
+    "statement_chars+time_to_fix+patch_lines": -0.536
+  },
+  "solve_rate_by_PLp": {
+    "0": {
+      "n": 23,
+      "mean": 0.923
+    },
+    "1": {
+      "n": 264,
+      "mean": 0.681
+    },
+    "2": {
+      "n": 144,
+      "mean": 0.387
+    },
+    "3": {
+      "n": 4,
+      "mean": 0.143
+    }
+  },
+  "PLp_vs_solve_rate_by_repo": {
+    "django/django": {
+      "n": 204,
+      "rho": -0.629
+    },
+    "matplotlib/matplotlib": {
+      "n": 27,
+      "rho": -0.752
+    },
+    "scikit-learn/scikit-learn": {
+      "n": 31,
+      "rho": -0.656
+    },
+    "sphinx-doc/sphinx": {
+      "n": 35,
+      "rho": -0.67
+    },
+    "sympy/sympy": {
+      "n": 65,
+      "rho": -0.567
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "run_id": "labreg-r1",
+  "created_at": "2026-09-28T15:36:34+00:00",
+  "repo_commit": "c85545938790bb62b6408e6224634644cb0aa478",
+  "repo_dirty_tracked_files": [],
+  "design": {
+    "n_cells": 198,
+    "dims": [
+      "PLp"
+    ],
+    "arms": [
+      "cur",
+      "C"
+    ],
+    "judges": {
+      "haiku-low": "Claude Code subagent 'adele-judge-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'haiku'",
+      "sonnet-low": "Claude Code subagent 'adele-judge-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'sonnet'",
+      "opus-low": "Claude Code subagent 'adele-judge-low' (tools: Read, Write; omitClaudeMd; effort low), model alias 'opus'"
+    }
+  },
+  "rubric": {
+    "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+    "sha256": "de98ab35d80c7984a9a95ce1534797c630acdd4319e919571372d1f200398a03",
+    "candidate": "plp-candidate/PLp_candidate_c.txt",
+    "candidate_sha256": "937b0ad49b27e658d86df8699278c7eb7ea219bbc0eb7e8e3736d781d3a7bc00",
+    "inserted_after": "Note, such features raise this demand only insofar as they make a workable plan harder to find.",
+    "inserted_sentence": "Knowing the established method is knowledge rather than planning, so pitfalls that the method avoids do not raise this demand.",
+    "set_P": "every Examples block stripped from the rubric shown (r25 design)"
+  },
+  "items": "lab-regression/items.csv",
+  "lab_record_commit": "7159671",
+  "pass": 1,
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt",
+    "builder_file_sha256": "0670d8bbd7927561dbf66db43ec12fd275f8e3fa4e5274a0d2b19319bb7593a3"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/swebench-pl/adele-judge-low.md",
+    "sha256": "327f106871353325972dca5646710a272603a3cf6b2401cb72dbfb232dc83eac"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/labreg-r1",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

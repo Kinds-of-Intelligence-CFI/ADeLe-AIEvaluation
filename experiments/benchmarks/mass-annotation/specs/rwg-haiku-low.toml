@@ -1,0 +1,21 @@
+# rWG check (experiments/benchmarks/v1-prompt-bridge, 2026-11-02): Haiku 5.5 low against the published GPT-4o levels.
+# The 60 bridge items x the 8 rubrics of abl-s3 (Opus, same prompt), through the API with the subagent harness.
+name = "rwg-haiku-low"
+
+[tasks]
+benchmarks = ["adele-battery-v1"]
+subset = "experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv"
+
+[rubrics]
+refs = ["v1/AS", "v1/CEc", "v1/CL", "v1/KNa", "v1/KNc", "v1/MCt", "v1/MCu", "v1/QLq"]
+
+[prompt]
+builder = "v1-layout-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-haiku-5-5"
+effort = "low"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

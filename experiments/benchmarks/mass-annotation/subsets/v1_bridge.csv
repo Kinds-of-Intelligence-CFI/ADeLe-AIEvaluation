@@ -1,0 +1,61 @@
+benchmark,instance_id,source
+adele-battery-v1,ChemLLMBench-name_prediction-434,ChemLLMBench
+adele-battery-v1,ChemLLMBench-retrosynthesis-406,ChemLLMBench
+adele-battery-v1,ChemLLMBench-retrosynthesis-588,ChemLLMBench
+adele-battery-v1,Civil Service Examination-LogiQA-en-112,Civil Service Examination
+adele-battery-v1,Civil Service Examination-LogiQA-en-625,Civil Service Examination
+adele-battery-v1,Civil Service Examination-LogiQA-en-627,Civil Service Examination
+adele-battery-v1,Data Analysis-cta-21,Data Analysis
+adele-battery-v1,Data Analysis-cta-25,Data Analysis
+adele-battery-v1,Data Analysis-cta-3,Data Analysis
+adele-battery-v1,Date Arithmetic-Date Arithmetic-169,Date Arithmetic
+adele-battery-v1,Date Arithmetic-Date Arithmetic-336,Date Arithmetic
+adele-battery-v1,Date Arithmetic-Date Arithmetic-417,Date Arithmetic
+adele-battery-v1,GRE & GMAT-AQuA-RAT-116,GRE & GMAT
+adele-battery-v1,GRE & GMAT-AQuA-RAT-142,GRE & GMAT
+adele-battery-v1,GRE & GMAT-AQuA-RAT-162,GRE & GMAT
+adele-battery-v1,LSAT-LSAT-AR-16,LSAT
+adele-battery-v1,LSAT-LSAT-LR-300,LSAT
+adele-battery-v1,LSAT-LSAT-RC-163,LSAT
+adele-battery-v1,Language-connections-7,Language
+adele-battery-v1,Language-connections-8,Language
+adele-battery-v1,Language-connections-9,Language
+adele-battery-v1,MCTACO-MCTACO-1,MCTACO
+adele-battery-v1,MCTACO-MCTACO-471,MCTACO
+adele-battery-v1,MCTACO-MCTACO-698,MCTACO
+adele-battery-v1,MMLU-Pro-chemistry-352,MMLU-Pro
+adele-battery-v1,MMLU-Pro-economics-335,MMLU-Pro
+adele-battery-v1,MMLU-Pro-math-833,MMLU-Pro
+adele-battery-v1,Math-math_comp-50,Math
+adele-battery-v1,Math-math_comp-81,Math
+adele-battery-v1,Math-olympiad-16,Math
+adele-battery-v1,MedCalcBench-lab-128,MedCalcBench
+adele-battery-v1,MedCalcBench-physical-104,MedCalcBench
+adele-battery-v1,MedCalcBench-risk-29,MedCalcBench
+adele-battery-v1,MenatQA-MenatQA-Order-171,MenatQA
+adele-battery-v1,MenatQA-MenatQA-Order-66,MenatQA
+adele-battery-v1,MenatQA-MenatQA-Scope-344,MenatQA
+adele-battery-v1,OmniMath-Applied Mathematics-542,OmniMath
+adele-battery-v1,OmniMath-Geometry-287,OmniMath
+adele-battery-v1,OmniMath-Number Theory-248,OmniMath
+adele-battery-v1,Reasoning-spatial-34,Reasoning
+adele-battery-v1,Reasoning-zebra_puzzle-10,Reasoning
+adele-battery-v1,Reasoning-zebra_puzzle-40,Reasoning
+adele-battery-v1,SAT-SAT-En-155,SAT
+adele-battery-v1,SAT-SAT-En-57,SAT
+adele-battery-v1,SAT-SAT-Math-27,SAT
+adele-battery-v1,SciBench-Chemistry-150,SciBench
+adele-battery-v1,SciBench-Math-40,SciBench
+adele-battery-v1,SciBench-Physics-112,SciBench
+adele-battery-v1,TempReason-TempReason-L2-424,TempReason
+adele-battery-v1,TempReason-TempReason-L3-296,TempReason
+adele-battery-v1,TempReason-TempReason-L3-50,TempReason
+adele-battery-v1,TimeDial-TimeDial-209,TimeDial
+adele-battery-v1,TimeDial-TimeDial-26,TimeDial
+adele-battery-v1,TimeDial-TimeDial-306,TimeDial
+adele-battery-v1,TimeQA-TimeQA-explicit-120,TimeQA
+adele-battery-v1,TimeQA-TimeQA-explicit-278,TimeQA
+adele-battery-v1,TimeQA-TimeQA-implicit-92,TimeQA
+adele-battery-v1,TruthQuest-E-656,TruthQuest
+adele-battery-v1,TruthQuest-E-784,TruthQuest
+adele-battery-v1,TruthQuest-S-540,TruthQuest

@@ -1,0 +1,47 @@
+{
+  "run_id": "labreg-s1",
+  "created_at": "2026-09-30T21:48:16+00:00",
+  "repo_commit": "3168f2d67455cc5a56a63a05382b4faa45dc25d1",
+  "repo_dirty_tracked_files": [
+    " M experiments/benchmarks/plp-b2/PREREGISTRATION.md",
+    " M experiments/benchmarks/plp-candidate/lab-regression/PREREGISTRATION.md",
+    " M experiments/benchmarks/plp-candidate/lab-regression/writers.py"
+  ],
+  "design": {
+    "n_cells": 102,
+    "dims": [
+      "PLp"
+    ],
+    "arms": [
+      "S"
+    ],
+    "judges": {
+      "opus-low-r1": "adele-judge-v2-low, model alias 'opus'; repeat 1",
+      "opus-low-r2": "adele-judge-v2-low, model alias 'opus'; repeat 2",
+      "opus-low-r3": "adele-judge-v2-low, model alias 'opus'; repeat 3"
+    }
+  },
+  "rubric": {
+    "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+    "sha256": "de98ab35d80c7984a9a95ce1534797c630acdd4319e919571372d1f200398a03",
+    "candidate": "plp-b2/PLp_S.txt",
+    "candidate_sha256": "0bd5bbd388f1d0cbdd9f0f51f1233d58384b56cbe41d5bfb65ef93415c008e1f",
+    "set_P": "every Examples block stripped from the rubric shown (r25 design)"
+  },
+  "items": "lab-regression/items_s.csv",
+  "lab_record_commit": "7159671",
+  "pass": 1,
+  "reference": "labreg-r1, arm cur, judge opus-low (v1 prompt)",
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/labreg-s1",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

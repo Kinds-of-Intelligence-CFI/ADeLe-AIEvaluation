@@ -1,0 +1,25 @@
+```csv
+custom_id,level,reason
+memw-L7-nrev-01__state_visible,0,Current state fully visible; no hidden history to reconstruct.
+memw-L7-nrev-02__state_visible,0,Current state fully visible; no hidden state tracking required.
+memw-L7-rev-01__state_visible,0,Current state fully visible; no hidden history to maintain.
+memw-L7-rev-02__state_visible,0,Current state fully visible; no hidden object updates needed.
+memw-L3-low-01__state_visible,0,Current state directly shown; no hidden bookkeeping required.
+memw-L3-low-02__state_visible,0,Current state directly shown; no memory tracking required.
+memw-L3-medium-01__state_visible,0,Current banks fully visible; no hidden state reconstruction.
+memw-L3-medium-02__state_visible,0,Current banks fully visible; no hidden state reconstruction.
+memw-L3-high-01__state_visible,0,Current banks fully visible; no hidden tracking needed.
+memw-L3-high-02__state_visible,0,Current state directly shown; no hidden state maintenance.
+memw-L7-low-01__state_visible,0,Current state visible; no hidden object-location tracking.
+memw-L7-low-02__state_visible,0,Current state visible; no hidden history to maintain.
+memw-L7-medium-01__state_visible,0,Current state visible; no hidden bookkeeping required.
+memw-L7-medium-02__state_visible,0,Current state visible; no hidden object updates needed.
+memw-L7-high-01__state_visible,0,Current state visible; no hidden state reconstruction.
+memw-L7-high-02__state_visible,0,Current state directly shown; no hidden tracking.
+memw-L10-low-01__state_visible,0,Current state visible; no hidden history maintenance.
+memw-L10-low-02__state_visible,0,Current state visible; no hidden object tracking.
+memw-L10-medium-01__state_visible,0,Current state visible; no hidden bookkeeping needed.
+memw-L10-medium-02__state_visible,0,Current state visible; no hidden state reconstruction.
+memw-L10-high-01__state_visible,0,Current state visible; no hidden history to track.
+memw-L10-high-02__state_visible,0,Current state visible; no hidden object updates needed.
+```

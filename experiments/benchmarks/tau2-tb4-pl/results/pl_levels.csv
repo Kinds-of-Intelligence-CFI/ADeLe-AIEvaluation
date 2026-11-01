@@ -1,0 +1,127 @@
+set,demand,level,tasks
+tau2-airline,PLp,0,0
+tau2-airline,PLp,1,12
+tau2-airline,PLp,2,35
+tau2-airline,PLp,3,2
+tau2-airline,PLp,4,0
+tau2-airline,PLp,5,0
+tau2-airline,PLp,no_label,0
+tau2-airline,PLe,0,0
+tau2-airline,PLe,1,45
+tau2-airline,PLe,2,4
+tau2-airline,PLe,3,0
+tau2-airline,PLe,4,0
+tau2-airline,PLe,5,0
+tau2-airline,PLe,no_label,0
+tau2-airline,PLs,0,0
+tau2-airline,PLs,1,7
+tau2-airline,PLs,2,42
+tau2-airline,PLs,3,0
+tau2-airline,PLs,4,0
+tau2-airline,PLs,5,0
+tau2-airline,PLs,no_label,0
+tau2-banking_knowledge,PLp,0,0
+tau2-banking_knowledge,PLp,1,5
+tau2-banking_knowledge,PLp,2,59
+tau2-banking_knowledge,PLp,3,5
+tau2-banking_knowledge,PLp,4,0
+tau2-banking_knowledge,PLp,5,0
+tau2-banking_knowledge,PLp,no_label,0
+tau2-banking_knowledge,PLe,0,0
+tau2-banking_knowledge,PLe,1,12
+tau2-banking_knowledge,PLe,2,42
+tau2-banking_knowledge,PLe,3,15
+tau2-banking_knowledge,PLe,4,0
+tau2-banking_knowledge,PLe,5,0
+tau2-banking_knowledge,PLe,no_label,0
+tau2-banking_knowledge,PLs,0,2
+tau2-banking_knowledge,PLs,1,9
+tau2-banking_knowledge,PLs,2,58
+tau2-banking_knowledge,PLs,3,0
+tau2-banking_knowledge,PLs,4,0
+tau2-banking_knowledge,PLs,5,0
+tau2-banking_knowledge,PLs,no_label,0
+tau2-retail,PLp,0,0
+tau2-retail,PLp,1,8
+tau2-retail,PLp,2,104
+tau2-retail,PLp,3,2
+tau2-retail,PLp,4,0
+tau2-retail,PLp,5,0
+tau2-retail,PLp,no_label,0
+tau2-retail,PLe,0,0
+tau2-retail,PLe,1,114
+tau2-retail,PLe,2,0
+tau2-retail,PLe,3,0
+tau2-retail,PLe,4,0
+tau2-retail,PLe,5,0
+tau2-retail,PLe,no_label,0
+tau2-retail,PLs,0,2
+tau2-retail,PLs,1,5
+tau2-retail,PLs,2,107
+tau2-retail,PLs,3,0
+tau2-retail,PLs,4,0
+tau2-retail,PLs,5,0
+tau2-retail,PLs,no_label,0
+tau2 (3 domains),PLp,0,0
+tau2 (3 domains),PLp,1,25
+tau2 (3 domains),PLp,2,198
+tau2 (3 domains),PLp,3,9
+tau2 (3 domains),PLp,4,0
+tau2 (3 domains),PLp,5,0
+tau2 (3 domains),PLp,no_label,0
+tau2 (3 domains),PLe,0,0
+tau2 (3 domains),PLe,1,171
+tau2 (3 domains),PLe,2,46
+tau2 (3 domains),PLe,3,15
+tau2 (3 domains),PLe,4,0
+tau2 (3 domains),PLe,5,0
+tau2 (3 domains),PLe,no_label,0
+tau2 (3 domains),PLs,0,4
+tau2 (3 domains),PLs,1,21
+tau2 (3 domains),PLs,2,207
+tau2 (3 domains),PLs,3,0
+tau2 (3 domains),PLs,4,0
+tau2 (3 domains),PLs,5,0
+tau2 (3 domains),PLs,no_label,0
+terminal-bench-4.0.0 analysis set,PLp,0,0
+terminal-bench-4.0.0 analysis set,PLp,1,0
+terminal-bench-4.0.0 analysis set,PLp,2,4
+terminal-bench-4.0.0 analysis set,PLp,3,26
+terminal-bench-4.0.0 analysis set,PLp,4,3
+terminal-bench-4.0.0 analysis set,PLp,5,0
+terminal-bench-4.0.0 analysis set,PLp,no_label,1
+terminal-bench-4.0.0 analysis set,PLe,0,0
+terminal-bench-4.0.0 analysis set,PLe,1,0
+terminal-bench-4.0.0 analysis set,PLe,2,0
+terminal-bench-4.0.0 analysis set,PLe,3,17
+terminal-bench-4.0.0 analysis set,PLe,4,17
+terminal-bench-4.0.0 analysis set,PLe,5,0
+terminal-bench-4.0.0 analysis set,PLe,no_label,0
+terminal-bench-4.0.0 analysis set,PLs,0,9
+terminal-bench-4.0.0 analysis set,PLs,1,9
+terminal-bench-4.0.0 analysis set,PLs,2,15
+terminal-bench-4.0.0 analysis set,PLs,3,1
+terminal-bench-4.0.0 analysis set,PLs,4,0
+terminal-bench-4.0.0 analysis set,PLs,5,0
+terminal-bench-4.0.0 analysis set,PLs,no_label,0
+terminal-bench-4.0.0 other 32,PLp,0,0
+terminal-bench-4.0.0 other 32,PLp,1,0
+terminal-bench-4.0.0 other 32,PLp,2,6
+terminal-bench-4.0.0 other 32,PLp,3,25
+terminal-bench-4.0.0 other 32,PLp,4,1
+terminal-bench-4.0.0 other 32,PLp,5,0
+terminal-bench-4.0.0 other 32,PLp,no_label,0
+terminal-bench-4.0.0 other 32,PLe,0,0
+terminal-bench-4.0.0 other 32,PLe,1,0
+terminal-bench-4.0.0 other 32,PLe,2,0
+terminal-bench-4.0.0 other 32,PLe,3,15
+terminal-bench-4.0.0 other 32,PLe,4,17
+terminal-bench-4.0.0 other 32,PLe,5,0
+terminal-bench-4.0.0 other 32,PLe,no_label,0
+terminal-bench-4.0.0 other 32,PLs,0,8
+terminal-bench-4.0.0 other 32,PLs,1,13
+terminal-bench-4.0.0 other 32,PLs,2,11
+terminal-bench-4.0.0 other 32,PLs,3,0
+terminal-bench-4.0.0 other 32,PLs,4,0
+terminal-bench-4.0.0 other 32,PLs,5,0
+terminal-bench-4.0.0 other 32,PLs,no_label,0

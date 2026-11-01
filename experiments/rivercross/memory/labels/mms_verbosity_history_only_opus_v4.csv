@@ -1,0 +1,19 @@
+custom_id,level,reason
+memc-L3-high-01__history_only,3,Four items moved right then reversed back then right again; disentangle undone updates.
+memc-L3-high-02__history_only,3,Four items moved right
+memc-L3-medium-01__history_only,2,Several items moved mostly one-way; item1 crossed once
+memc-L3-medium-02__history_only,2,Several items moved mostly one-way; little reversal to disentangle.
+memc-L4-high-01__history_only,3,Four items shuttled right-left-right-left; multiple reversals net to original positions.
+memc-L4-high-02__history_only,3,Four items shuttled back and forth; multiple reversals to disentangle.
+memc-L4-medium-01__history_only,2,Four items moved once; farmer-only shuttles add no object updates.
+memc-L4-medium-02__history_only,2,Three items moved once; farmer-only moves change nothing.
+memc-L5-high-01__history_only,3,Four items shuttled five times; several reversals net to right bank.
+memc-L5-high-02__history_only,3,Four items shuttled five times with reversals to disentangle.
+memc-L5-medium-01__history_only,2,Items moved mostly one-way; interspersed farmer-only moves add no updates.
+memc-L5-medium-02__history_only,2,Items moved mostly one-way; farmer-only shuttles do not change locations.
+memv-L3-vlow-01__history_only,1,Only item2 moved once; farmer-only shuttles change no object location.
+memv-L3-vlow-02__history_only,1,Single item2 update; other moves are farmer-only
+memv-L4-vlow-01__history_only,1,One item update; extra farmer-only shuttle changes no object.
+memv-L4-vlow-02__history_only,1,One item2 move; remaining farmer-only moves add no location updates.
+memv-L5-vlow-01__history_only,1,Single item2 update despite many farmer-only shuttles changing nothing.
+memv-L5-vlow-02__history_only,1,Only item2 moved; all other moves farmer-only

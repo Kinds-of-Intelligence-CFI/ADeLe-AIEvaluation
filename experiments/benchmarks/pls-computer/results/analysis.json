@@ -1,0 +1,187 @@
+{
+  "n_labels": {
+    "plsc-1": 209,
+    "plsc-2": 6
+  },
+  "P": {
+    "P-L3": {
+      "labels": [
+        3,
+        3,
+        3
+      ],
+      "median": 3,
+      "target": 3,
+      "verdict": "exact"
+    },
+    "P-L4": {
+      "labels": [
+        3,
+        3,
+        4
+      ],
+      "median": 3,
+      "target": 4,
+      "verdict": "within 1"
+    },
+    "P-L5": {
+      "labels": [
+        5,
+        5,
+        5
+      ],
+      "median": 5,
+      "target": 5,
+      "verdict": "exact"
+    }
+  },
+  "M": {
+    "M1": {
+      "medians": {
+        "M1a": {
+          "cur": 1,
+          "cand": 1
+        },
+        "M1b": {
+          "cur": 3,
+          "cand": 3
+        }
+      },
+      "holds_cur": true,
+      "holds_cand": true,
+      "pass1": "no change"
+    },
+    "M2": {
+      "medians": {
+        "M2a": {
+          "cur": 1,
+          "cand": 1
+        },
+        "M2b": {
+          "cur": 4,
+          "cand": 4
+        }
+      },
+      "holds_cur": true,
+      "holds_cand": true,
+      "pass1": "no change"
+    },
+    "M3": {
+      "medians": {
+        "M3a": {
+          "cur": 2,
+          "cand": 2
+        },
+        "M3b": {
+          "cur": 2,
+          "cand": 2
+        }
+      },
+      "holds_cur": false,
+      "holds_cand": false,
+      "pass1": "no change"
+    },
+    "M4": {
+      "medians": {
+        "M4a": {
+          "cur": 2,
+          "cand": 2
+        },
+        "M4b": {
+          "cur": 1,
+          "cand": 1
+        }
+      },
+      "holds_cur": true,
+      "holds_cand": true,
+      "pass1": "no change"
+    }
+  },
+  "B": {
+    "n": 36,
+    "same": 27,
+    "up": 4,
+    "down": 5,
+    "sign_test_p": 1.0,
+    "moves_2plus": [
+      {
+        "item_id": "B-D02",
+        "ref": 0,
+        "cand": 2,
+        "move": 2,
+        "pass2": {
+          "cur": 0,
+          "cand": 0
+        },
+        "confirmed": false
+      }
+    ]
+  },
+  "R": {
+    "all": {
+      "n": 60,
+      "same": 38,
+      "up": 6,
+      "down": 16,
+      "sign_test_p": 0.0525,
+      "moves_2plus": []
+    },
+    "noise_cur_vs_released": {
+      "n": 20,
+      "same": 14,
+      "up": 3,
+      "down": 3,
+      "sign_test_p": 1.0,
+      "moves_2plus": []
+    },
+    "by_benchmark": {
+      "SWE-bench Verified": {
+        "n": 20,
+        "same": 18,
+        "up": 0,
+        "down": 2,
+        "sign_test_p": 0.5,
+        "moves_2plus": []
+      },
+      "DeepSWE": {
+        "n": 20,
+        "same": 4,
+        "up": 4,
+        "down": 12,
+        "sign_test_p": 0.0768,
+        "moves_2plus": []
+      },
+      "TB 4.0": {
+        "n": 20,
+        "same": 16,
+        "up": 2,
+        "down": 2,
+        "sign_test_p": 1.0,
+        "moves_2plus": []
+      }
+    },
+    "levels_cand": {
+      "0": 5,
+      "1": 40,
+      "2": 15
+    },
+    "levels_released": {
+      "0": 5,
+      "1": 30,
+      "2": 25
+    },
+    "drift": false
+  },
+  "pass2_needed": [],
+  "verdict": "pass",
+  "examples_kept": [
+    "P-L3",
+    "P-L4",
+    "P-L5"
+  ],
+  "quotes_new_examples": {
+    "M": 0.208,
+    "B": 0.028,
+    "R": 0.0
+  }
+}

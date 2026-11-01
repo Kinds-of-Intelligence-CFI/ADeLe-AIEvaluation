@@ -1,3 +1,5 @@
+# Quantitative Reasoning
+
 This criterion assesses the difficulty level of a task in requiring working with and reasoning about quantities, numbers, and numerical relationships. More specifically, the level represents the complexity of numerical operations and quantitative concepts needed to solve the task, ranging from simple counting and arithmetic to sophisticated analysis involving multiple quantitative variables, relationships, and transformations. The scale's difficulty increases based on factors such as the number of quantities involved, the complexity of numerical relationships, and how much quantitative information must be derived.
 
 Level 0: None. The task does not require quantitative reasoning.

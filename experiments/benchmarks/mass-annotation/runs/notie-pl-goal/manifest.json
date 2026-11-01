@@ -1,0 +1,106 @@
+{
+  "run": "notie-pl-goal",
+  "created_at": "2026-11-01T17:55:36+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/notie-pl-goal.toml",
+  "git": {
+    "commit": "e7c302cd68765719a91b9924ce49978f1916874b",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "041a173dce58eb6a9d27b9f66b428924e2c8a96dcd3ed314bd9f899c0c746b2c",
+      "content": "# tie-rule-freeze (experiments/benchmarks/tie-rule-freeze): PL on the goal-visible inputs without the tie rule, regular\n# and long inputs in one run (the API reads whole prompts), through the API with the subagent harness.\nname = \"notie-pl-goal\"\n\n[tasks]\nbenchmarks = [\"swe-bench-verified\", \"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\", \"terminal-bench-4.0.0\",\n              \"terminal-bench-science-0.1\"]\nsubset = \"experiments/benchmarks/tie-rule-freeze/subset_goal.csv\"\ninstances_dir = \"data/instances-goal\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\"]\n\n[prompt]\nbuilder = \"v2-noreason-notie\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "9dd3f2770cfadb35cd11ab7915d01e546d6736b1f0ccb8049bf913269e212203",
+          "frame_sha256": "1c38f928c845bd70532c15da211ddbeef98289665d4d0f91ae60cfffde336b10",
+          "n_selected": 443
+        },
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "942dc409f08268bff83f9cf97b31cd044c38220089ad1d6041918b0916835035",
+          "frame_sha256": "273b679d008890636e07ffba86bcc43609a3ce30a23ac68a3d70f64d4fa921cc",
+          "n_selected": 90
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "2e814d80439e70818673b561d3e107dfd5c955c0b27d965331995b8f2a09a2ac",
+          "frame_sha256": "0168a7ee23b6dd8c13f06401ee7f183d09b9bce35e6ad34fa4821be8754392e2",
+          "n_selected": 19
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "961814724fd8de17c7094e073639f09315c9fe22bd28b319a5a237181b2dacae",
+          "frame_sha256": "7611ed07ea4727482b9cc497b10394b4493aff3bfce87899ffa38c496674fa67",
+          "n_selected": 130
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "9060474c7e7ee053181ab852c2c8c952ce80245df285764ba70cecadb07b3fa2",
+          "frame_sha256": "3b67f438d314f862eeb4b272854a7a0422097ef82438142d8a3bdb609f9413c8",
+          "n_selected": 35
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "6488d3c849e5bdc9577a1e5c9c4a3407a6003e396d568357ad84b4194ca47a76",
+          "frame_sha256": "d122361335c4d0a89cb59c80e36ff407d690a17b0ce6c5772ad0df872d999c18",
+          "n_selected": 70
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/tie-rule-freeze/subset_goal.csv",
+        "sha256": "2a3d23de68e16eeb7b508c41cce4d60f9e5aa06e9c57843b63d3d5b359d711dd",
+        "n_ids": 787
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason-notie",
+      "function": "adele.annotation.prompts.PROMPT_V2_NOREASON_NOTIE",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-opus-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 2361,
+      "sha256": "114c024b5d7a817f2e2a7371df572adac5896fa6f2b8d97a56ac53349e8f5ac5"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "run": "relabel-v4-ms-cooperbench",
+  "created_at": "2026-10-25T22:10:45+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/relabel-v4-ms-cooperbench.toml",
+  "git": {
+    "commit": "b05ddf376f550d1c1b1cdf41074d552055f8d216",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "a271a49559eb927be3f88b07c86f10355e1bf882efa1b9c0fc7c967bdb28ce42",
+      "content": "# relabel-v4-ms: MSm and MSc relabelled after their adoption on 2026-10-25 (experiments/benchmarks/ms-candidate; b05ddf3),\n# on the same tasks as relabel-v2-cooperbench.toml, with the bare-digit prompt (production setting). See experiments/benchmarks/relabel-v4-ms.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v4-ms-cooperbench.toml\nname = \"relabel-v4-ms-cooperbench\"\n\n[tasks]\nbenchmarks = [\"cooperbench\"]\nsubset = \"experiments/benchmarks/cooperbench-plms/subset.csv\"\n\n[rubrics]\nrefs = [\"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "cooperbench": {
+          "file": "instances_cooperbench.parquet",
+          "file_sha256": "8f2b875b4c39cc6c885def320181b24d3aa3494caf606410916e29d37fa42691",
+          "frame_sha256": "3e9b03240d853d3b15f5a3ee941dcb2b5221c7697e2ec7ad1da9ad94a51941f7",
+          "n_selected": 240
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/cooperbench-plms/subset.csv",
+        "sha256": "5fe44f27b6d65c3630af5b6951468e2cb918d1364a518ee3e64a01720b50bee3",
+        "n_ids": 240
+      }
+    },
+    "rubrics": {
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "9579f3ea29debec754a55c23ae7cd1d4b4aa496ee12c4c11088a46b3074d8f81",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "3410930631535d8f24f60928caf70362fecda555d96b146d97369eae76780bc0",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      },
+      "batch": true
+    },
+    "cells": {
+      "n": 480,
+      "sha256": "3b27fdaa42b808b59f408fbcabc83d303511e71fecfd3927522fbc2c99bf9877"
+    }
+  }
+}

@@ -171,3 +171,26 @@ coverage/
 *.tar
 *.zip
 
+# scratch: this mount cannot unlink, so removals are staged here
+_to_delete/
+
+# Frozen benchmark instance data and annotation outputs: data artifacts, not
+# source - several benchmarks (Terminal-Bench) carry no-training-corpora canary
+# strings and must never land in a public repo.
+instances/
+adele_annotations/
+
+# Local benchmark-data downloads (HF dumps etc.) - data, never source
+data/
+
+# Local API key files (never commit)
+local_*_key.txt
+
+# Agent traces and archives must never be committed (public repo; see experiments/benchmarks/contamination_check.py).
+experiments/**/*.jsonl
+experiments/**/*.tar.gz
+experiments/**/*.tgz
+experiments/**/*.tar
+experiments/**/*.zip
+experiments/**/traces/
+experiments/**/trajectories/

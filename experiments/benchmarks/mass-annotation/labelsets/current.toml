@@ -1,0 +1,41 @@
+# The current (released) labels, by layer (earlier layers win):
+# - tau2-goal: all five rubrics on the 242 tau2 tasks, judged on the full task with its goal but without the grader's
+#   expected actions (tau2-goal/RESULTS.md; Pablo, 2026-10-26).
+# - goal-visible: all five rubrics on the six coding and terminal sets, judged with the goal written into the input
+#   (goal-visible/RESULTS.md; PL freeze, 2026-10-27). Its 8 unlabelled cells fall through to the layers below.
+# - relabel-v4-ms: MSm and MSc on every released task after their adoption (b05ddf3; relabel-v4-ms/RESULTS.md).
+# - relabel-v3: where it re-judged a cell (PLp at 3-5 after the synthesis example moved to Level 4, d6cc9ca; MSm at
+#   4-5 on the social sets, now overridden by relabel-v4-ms). One-sided: only cells at 3-5 were re-judged.
+# - relabel-v2 everywhere else.
+# The layers mix prompts (v2 with reasoning; bare digit in relabel-v4-ms, tau2-goal and goal-visible) and, on tau2, task inputs.
+# Each label names its run; its rubric_sha256 names the text and task_version the input. Change this file, not code,
+# to change what "current" means.
+name = "current"
+description = "Released v2 labels: relabel-v2 (d4ec2ec), relabel-v3 overrides, MSm and MSc from relabel-v4-ms, tau2 from tau2-goal, and the coding and terminal sets from goal-visible."
+model = "claude-opus-5-5"
+
+[[layers]]
+name = "tau2-goal"
+runs = ["tau2-goal", "tau2-goal-long"]
+
+[[layers]]
+name = "goal-visible"
+runs = ["goal-visible", "goal-visible-long"]
+
+[[layers]]
+name = "relabel-v4-ms"
+runs = ["relabel-v4-ms", "relabel-v4-ms-long", "relabel-v4-ms-eqbench4", "relabel-v4-ms-cooperbench",
+        "relabel-v4-ms-gamearena"]
+
+[[layers]]
+name = "relabel-v3"
+runs = ["relabel-v3-plp", "relabel-v3-plp-long", "relabel-v3-plp-eqbench4", "relabel-v3-plp-cooperbench",
+        "relabel-v3-plp-gamearena", "relabel-v3-msm-eqbench4", "relabel-v3-msm-gamearena"]
+
+[[layers]]
+name = "relabel-v2"
+runs = ["relabel-v2", "relabel-v2-long"]
+
+[[layers]]
+name = "relabel-v2-social"
+runs = ["relabel-v2-eqbench4", "relabel-v2-cooperbench", "relabel-v2-gamearena"]

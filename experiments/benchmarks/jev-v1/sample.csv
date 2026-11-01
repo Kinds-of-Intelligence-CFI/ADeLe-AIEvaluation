@@ -1,0 +1,1002 @@
+benchmark,instance_id,core,AS,CEc,CEe,CL,KNn,KNa,KNc,KNf,KNs,MCt,MCu,MCr,MS,QLq,QLl,SNs,VO,AT
+MMLU-Pro,MMLU-Pro-economics-765,True,3,3,1,2,0,4,4,3,4,2,3,2,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-physics-654,True,1,2,1,3,3,3,0,3,0,3,3,2,0,3,3,3,2,2
+MMLU-Pro,MMLU-Pro-health-80,True,3,2,1,0,3,3,3,0,0,2,2,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-biology-432,False,3,2,1,0,4,3,0,0,0,1,2,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-chemistry-874,False,3,2,1,2,4,4,0,4,0,2,3,1,0,2,2,0,2,2
+MMLU-Pro,MMLU-Pro-law-115,False,3,4,1,4,0,5,4,0,4,5,4,4,3,0,3,0,3,3
+MMLU-Pro,MMLU-Pro-psychology-409,False,1,2,1,1,0,4,4,4,3,3,3,1,0,0,1,0,2,1
+MMLU-Pro,MMLU-Pro-health-370,False,3,2,1,3,4,5,0,0,0,3,4,3,0,1,2,1,2,3
+MMLU-Pro,MMLU-Pro-other-669,False,2,3,1,2,0,5,5,0,5,2,3,3,0,0,2,0,1,3
+MMLU-Pro,MMLU-Pro-computer science-83,False,0,1,1,0,0,0,0,3,0,1,1,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-philosophy-481,False,2,1,1,0,0,4,3,0,3,1,1,0,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-physics-584,False,3,3,1,3,4,4,0,4,0,3,3,3,0,3,3,2,2,3
+MMLU-Pro,MMLU-Pro-chemistry-750,False,3,3,1,3,4,4,0,3,0,3,3,3,0,2,3,0,3,3
+MMLU-Pro,MMLU-Pro-math-645,False,2,3,1,2,4,4,0,4,0,3,3,1,0,3,1,0,2,2
+MMLU-Pro,MMLU-Pro-law-372,False,3,4,1,4,0,4,4,0,4,4,4,4,3,1,4,0,3,3
+MMLU-Pro,MMLU-Pro-psychology-788,False,2,2,1,2,0,4,3,0,4,2,3,1,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-other-142,False,3,2,1,0,0,4,3,0,3,1,2,2,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-history-102,False,3,3,1,3,0,0,5,0,3,2,3,3,0,0,1,0,2,4
+MMLU-Pro,MMLU-Pro-health-216,False,3,3,1,2,3,3,0,0,0,3,3,2,0,2,2,0,2,2
+MMLU-Pro,MMLU-Pro-business-598,False,1,2,1,0,0,2,2,2,0,2,1,1,0,2,1,0,2,1
+MMLU-Pro,MMLU-Pro-biology-168,False,2,3,1,3,3,3,4,0,3,3,2,2,3,0,1,1,2,3
+MMLU-Pro,MMLU-Pro-law-454,False,3,3,1,3,0,3,3,0,4,3,4,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-business-222,False,3,3,1,3,0,4,3,4,0,3,3,3,0,3,3,0,3,3
+MMLU-Pro,MMLU-Pro-law-674,False,3,4,1,3,0,5,4,0,4,4,4,3,3,0,4,0,3,3
+MMLU-Pro,MMLU-Pro-engineering-186,False,1,3,1,2,4,4,0,4,0,3,4,3,0,4,4,2,3,3
+MMLU-Pro,MMLU-Pro-computer science-40,False,2,1,1,0,0,4,0,4,0,1,1,2,0,0,0,0,1,2
+MMLU-Pro,MMLU-Pro-psychology-191,False,3,2,1,0,0,4,0,4,4,1,3,2,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-physics-312,False,2,2,1,2,4,4,0,4,0,3,3,1,0,3,3,2,2,2
+MMLU-Pro,MMLU-Pro-health-109,False,3,3,1,3,4,4,0,4,2,4,4,3,2,3,3,0,3,4
+MMLU-Pro,MMLU-Pro-biology-686,False,2,3,1,3,4,4,0,0,0,3,3,2,0,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-law-319,False,3,3,1,4,0,5,3,0,4,3,4,3,3,0,4,0,3,3
+MMLU-Pro,MMLU-Pro-business-434,False,2,2,0,2,0,4,4,3,3,3,2,2,0,3,2,0,2,2
+MMLU-Pro,MMLU-Pro-philosophy-6,False,3,3,2,2,0,0,0,4,0,3,3,3,0,1,3,0,2,2
+MMLU-Pro,MMLU-Pro-history-112,False,3,3,1,3,5,5,0,0,4,1,4,3,0,1,2,0,1,4
+MMLU-Pro,MMLU-Pro-chemistry-177,False,2,2,1,0,3,3,0,3,0,2,2,1,0,2,2,0,2,1
+MMLU-Pro,MMLU-Pro-other-339,False,2,3,1,0,0,0,3,0,3,3,2,2,2,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-philosophy-243,False,3,4,1,0,0,0,0,0,4,1,3,3,0,0,0,0,1,3
+MMLU-Pro,MMLU-Pro-engineering-607,False,3,3,1,3,4,4,0,4,0,4,4,2,0,4,3,2,3,4
+MMLU-Pro,MMLU-Pro-computer science-293,False,0,3,1,2,0,4,0,4,0,3,3,2,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-biology-400,False,3,2,1,0,4,4,0,0,0,3,3,3,0,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-physics-216,False,2,3,1,3,3,3,0,3,0,3,3,3,0,3,3,2,2,2
+MMLU-Pro,MMLU-Pro-psychology-98,False,3,3,1,2,0,4,0,0,4,3,2,2,3,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-chemistry-98,False,2,2,1,0,3,3,0,0,0,1,2,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-math-71,False,2,3,1,3,0,0,0,4,0,3,3,1,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-665,False,2,2,1,0,4,4,0,4,0,2,3,2,0,3,2,0,2,1
+MMLU-Pro,MMLU-Pro-philosophy-218,False,3,3,1,2,0,3,4,0,4,1,3,1,2,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-math-372,False,1,2,1,1,0,0,0,3,0,2,2,1,0,3,1,0,2,2
+MMLU-Pro,MMLU-Pro-biology-713,False,3,3,1,3,4,4,0,0,0,2,3,2,0,0,2,1,2,3
+MMLU-Pro,MMLU-Pro-computer science-152,False,2,1,0,0,0,0,0,2,0,2,1,1,0,2,1,0,1,1
+MMLU-Pro,MMLU-Pro-physics-75,False,3,3,1,4,3,4,0,4,0,4,3,3,0,3,3,4,3,3
+MMLU-Pro,MMLU-Pro-math-901,False,2,2,1,2,3,4,3,4,0,3,2,2,0,3,2,0,2,3
+MMLU-Pro,MMLU-Pro-health-627,False,2,1,1,0,4,4,0,0,0,1,2,2,0,1,0,0,1,2
+MMLU-Pro,MMLU-Pro-chemistry-838,False,0,2,1,3,4,5,0,4,0,3,3,1,0,3,1,0,1,3
+MMLU-Pro,MMLU-Pro-economics-668,False,3,4,1,4,0,5,0,5,4,3,4,3,0,4,3,0,3,4
+MMLU-Pro,MMLU-Pro-business-449,False,3,2,1,0,0,4,4,3,0,2,2,1,0,2,2,0,2,1
+MMLU-Pro,MMLU-Pro-computer science-12,False,2,2,1,3,0,4,0,4,0,3,3,2,0,1,2,0,1,3
+MMLU-Pro,MMLU-Pro-business-371,False,1,2,1,1,0,4,0,4,4,1,2,1,0,2,2,0,1,2
+MMLU-Pro,MMLU-Pro-other-251,False,3,2,1,0,0,4,5,0,4,2,3,3,0,0,0,0,2,3
+MMLU-Pro,MMLU-Pro-business-306,False,0,1,1,0,0,2,2,2,0,2,1,1,0,2,1,0,1,1
+MMLU-Pro,MMLU-Pro-economics-825,False,3,3,1,3,0,4,4,0,4,4,3,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-law-784,False,2,3,1,3,0,5,0,0,5,3,3,2,0,0,2,0,1,3
+MMLU-Pro,MMLU-Pro-psychology-159,False,2,1,1,0,0,4,0,0,3,1,2,1,0,0,0,0,1,2
+MMLU-Pro,MMLU-Pro-health-433,False,3,3,1,3,4,5,0,0,0,3,3,3,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-philosophy-468,False,3,3,1,1,0,0,4,4,4,3,2,3,0,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-psychology-29,False,3,2,1,0,0,3,3,0,4,1,3,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-other-427,False,2,2,1,0,0,4,4,0,4,2,1,1,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-56,False,3,3,1,2,0,4,4,0,4,2,2,2,3,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-computer science-126,False,2,2,1,2,0,4,0,4,0,3,3,2,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-math-960,False,2,2,1,2,0,4,0,4,0,3,3,1,0,3,2,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-301,False,3,3,1,3,3,4,3,3,0,4,4,2,0,3,3,0,3,3
+MMLU-Pro,MMLU-Pro-history-196,False,2,2,1,2,4,4,4,0,4,1,3,2,0,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-business-355,False,0,2,1,0,0,2,2,2,0,1,1,1,0,2,1,0,1,1
+MMLU-Pro,MMLU-Pro-math-134,False,0,4,1,4,0,0,0,4,0,3,4,2,0,4,3,0,2,4
+MMLU-Pro,MMLU-Pro-computer science-352,False,3,2,1,1,0,0,0,3,0,2,2,2,0,1,2,0,2,2
+MMLU-Pro,MMLU-Pro-computer science-215,False,1,2,1,0,0,4,0,4,0,2,3,1,0,3,1,1,1,1
+MMLU-Pro,MMLU-Pro-business-293,False,3,3,1,1,0,0,4,0,4,2,2,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-math-85,False,3,2,1,3,0,0,0,3,0,3,2,1,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-368,False,3,1,1,2,0,3,0,0,4,2,3,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-law-896,False,3,4,3,4,0,4,4,0,4,5,4,3,3,0,4,0,2,3
+MMLU-Pro,MMLU-Pro-health-258,False,3,1,1,0,3,3,0,0,0,1,2,2,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-history-73,False,2,3,1,3,0,3,4,0,4,3,3,3,3,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-history-160,False,2,3,1,3,1,0,4,0,3,3,3,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-physics-339,False,3,2,1,2,4,3,0,0,0,2,3,3,0,0,2,0,1,1
+MMLU-Pro,MMLU-Pro-law-484,False,2,3,1,3,0,4,0,0,4,3,3,2,0,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-computer science-252,False,3,3,1,3,0,0,0,5,0,3,3,2,0,4,4,0,1,4
+MMLU-Pro,MMLU-Pro-psychology-523,False,2,2,1,2,0,5,4,0,4,2,3,1,4,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-biology-108,False,3,3,1,3,4,4,0,0,0,3,3,2,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-physics-165,False,2,3,1,3,3,3,0,4,0,3,3,2,0,3,3,2,2,3
+MMLU-Pro,MMLU-Pro-business-646,False,1,3,1,2,0,3,3,3,0,3,3,2,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-health-582,False,3,1,1,0,4,5,0,0,0,1,3,2,0,0,0,0,1,3
+MMLU-Pro,MMLU-Pro-math-339,False,2,3,1,3,4,4,0,4,0,3,3,1,0,4,3,0,3,2
+MMLU-Pro,MMLU-Pro-economics-731,False,2,2,1,2,0,4,0,4,4,2,3,1,0,2,1,0,1,1
+MMLU-Pro,MMLU-Pro-engineering-544,False,3,1,1,3,4,4,0,4,0,3,3,2,0,3,3,0,3,3
+MMLU-Pro,MMLU-Pro-law-939,False,2,3,1,3,0,5,0,0,4,3,3,2,0,0,3,0,1,4
+MMLU-Pro,MMLU-Pro-computer science-168,False,3,3,1,3,0,0,0,4,0,3,3,3,0,3,4,0,2,3
+MMLU-Pro,MMLU-Pro-physics-320,False,1,3,1,3,4,4,0,4,0,3,3,1,0,3,3,0,2,4
+MMLU-Pro,MMLU-Pro-law-590,False,3,4,1,4,0,5,3,0,4,4,4,3,4,0,4,0,3,4
+MMLU-Pro,MMLU-Pro-law-56,False,3,2,1,0,0,3,4,0,4,2,3,1,0,0,2,0,1,2
+MMLU-Pro,MMLU-Pro-psychology-550,False,3,3,1,3,0,4,3,0,4,4,3,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-law-790,False,3,4,1,4,0,5,0,0,4,4,4,4,0,0,4,0,3,4
+MMLU-Pro,MMLU-Pro-math-591,False,3,3,1,2,0,3,0,3,0,2,2,2,0,2,1,0,2,1
+MMLU-Pro,MMLU-Pro-biology-579,False,2,2,1,2,3,3,0,0,0,2,2,1,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-economics-325,False,1,2,1,2,0,3,3,0,3,2,3,1,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-psychology-754,False,3,2,1,2,0,5,0,4,4,3,3,2,0,2,1,0,1,3
+MMLU-Pro,MMLU-Pro-biology-189,False,2,3,1,2,3,4,0,0,0,3,3,3,0,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-other-108,False,2,1,1,0,0,3,4,0,3,1,1,0,0,0,0,0,0,1
+MMLU-Pro,MMLU-Pro-other-64,False,2,3,1,2,0,4,0,4,0,3,3,2,2,0,3,0,2,2
+MMLU-Pro,MMLU-Pro-biology-26,False,2,2,1,3,4,4,0,0,0,2,2,1,0,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-computer science-94,False,2,3,1,3,0,4,0,4,0,3,3,2,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-computer science-14,False,1,2,1,0,0,4,3,4,0,1,2,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-business-114,False,0,2,1,1,0,4,0,4,0,3,3,2,0,3,2,0,2,2
+MMLU-Pro,MMLU-Pro-chemistry-186,False,2,3,1,0,4,4,0,4,0,2,3,1,0,2,2,0,2,3
+MMLU-Pro,MMLU-Pro-other-741,False,2,1,1,0,3,3,4,0,3,1,1,0,0,0,0,0,1,2
+MMLU-Pro,MMLU-Pro-computer science-31,False,1,1,1,0,0,0,0,3,0,2,1,1,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-math-355,False,1,1,1,0,0,0,0,1,0,1,1,0,0,1,1,0,0,0
+MMLU-Pro,MMLU-Pro-chemistry-418,False,2,3,1,2,3,4,0,3,0,2,3,2,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-health-66,False,1,1,1,0,4,5,0,4,0,1,3,1,0,0,0,0,1,4
+MMLU-Pro,MMLU-Pro-physics-697,False,3,3,1,3,4,3,0,3,0,3,3,3,0,3,3,3,2,3
+MMLU-Pro,MMLU-Pro-history-126,False,3,4,1,3,0,0,4,0,4,3,3,3,3,0,2,0,3,3
+MMLU-Pro,MMLU-Pro-law-24,False,2,3,1,3,0,5,4,0,4,4,4,3,3,0,3,0,3,3
+MMLU-Pro,MMLU-Pro-history-350,False,3,3,1,3,0,0,3,0,4,3,3,3,2,0,3,0,2,4
+MMLU-Pro,MMLU-Pro-business-216,False,0,1,1,0,0,2,3,1,0,2,1,1,0,2,1,0,1,1
+MMLU-Pro,MMLU-Pro-computer science-52,False,3,2,1,1,0,0,0,3,0,3,2,2,0,2,3,0,2,2
+MMLU-Pro,MMLU-Pro-other-248,False,1,1,1,0,0,3,0,0,4,1,3,0,0,1,0,0,1,2
+MMLU-Pro,MMLU-Pro-chemistry-55,False,2,2,1,2,4,4,0,4,0,2,2,1,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-engineering-755,False,3,2,1,2,4,4,0,4,0,2,3,1,0,3,3,0,3,3
+MMLU-Pro,MMLU-Pro-history-373,False,3,3,2,3,0,3,3,0,4,3,3,2,2,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-math-582,False,2,2,1,1,4,4,0,4,0,3,2,1,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-biology-626,False,3,3,1,2,3,4,0,0,1,3,3,2,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-other-507,False,1,2,1,0,0,3,3,1,0,2,2,1,0,2,1,0,2,1
+MMLU-Pro,MMLU-Pro-business-185,False,1,1,1,0,0,3,3,1,0,1,1,1,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-philosophy-494,False,3,4,1,3,0,0,5,0,4,3,3,3,0,0,3,0,2,4
+MMLU-Pro,MMLU-Pro-other-141,False,2,2,1,0,0,4,4,0,4,1,2,3,0,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-history-174,False,3,3,1,2,0,0,4,0,3,3,3,3,0,0,2,0,3,1
+MMLU-Pro,MMLU-Pro-biology-151,False,4,3,1,3,4,4,0,0,0,3,3,3,0,0,3,0,1,2
+MMLU-Pro,MMLU-Pro-economics-272,False,1,2,1,1,0,4,0,0,4,2,2,2,0,0,2,0,1,1
+MMLU-Pro,MMLU-Pro-philosophy-237,False,3,3,1,4,0,0,0,0,4,4,3,3,0,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-computer science-392,False,3,3,1,3,0,0,0,4,0,4,3,3,0,3,4,0,3,3
+MMLU-Pro,MMLU-Pro-chemistry-209,False,2,2,1,1,4,4,0,4,0,1,3,2,0,1,1,0,1,2
+MMLU-Pro,MMLU-Pro-physics-817,False,2,2,1,0,3,3,0,3,0,2,1,1,0,2,2,2,2,2
+MMLU-Pro,MMLU-Pro-health-30,False,3,1,1,0,4,4,0,0,0,1,3,2,0,0,0,1,1,3
+MMLU-Pro,MMLU-Pro-computer science-224,False,2,2,1,1,0,3,3,0,0,3,2,1,3,0,1,0,3,1
+MMLU-Pro,MMLU-Pro-computer science-369,False,1,3,1,3,0,5,0,4,0,3,3,2,0,3,3,0,1,3
+MMLU-Pro,MMLU-Pro-physics-56,False,2,2,1,0,4,4,0,0,0,1,3,2,0,0,0,0,1,3
+MMLU-Pro,MMLU-Pro-engineering-425,False,3,3,1,3,4,4,0,4,0,3,3,3,0,3,3,3,3,3
+MMLU-Pro,MMLU-Pro-math-425,False,2,1,1,0,0,0,2,1,0,1,1,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-economics-315,False,3,3,1,3,2,4,3,3,4,3,4,2,0,0,2,0,1,2
+MMLU-Pro,MMLU-Pro-philosophy-475,False,2,3,2,2,0,0,0,3,0,3,3,2,0,2,3,0,3,2
+MMLU-Pro,MMLU-Pro-chemistry-697,False,2,2,1,1,3,3,0,3,0,2,2,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-biology-186,False,2,2,1,0,3,4,0,0,0,3,2,1,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-computer science-38,False,2,1,1,0,0,3,4,4,0,1,2,1,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-business-102,False,1,2,1,1,0,3,4,3,0,2,3,1,0,3,2,0,2,2
+MMLU-Pro,MMLU-Pro-business-770,False,1,2,1,1,0,2,2,2,0,2,1,1,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-chemistry-136,False,2,2,1,3,3,4,0,3,0,3,3,1,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-chemistry-245,False,2,3,1,2,4,4,0,4,0,3,3,2,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-732,False,3,2,1,1,3,3,0,3,0,2,2,1,0,2,2,0,2,2
+MMLU-Pro,MMLU-Pro-philosophy-457,False,3,2,1,0,0,0,0,0,4,1,3,2,0,0,0,0,1,4
+MMLU-Pro,MMLU-Pro-psychology-319,False,3,3,1,3,0,4,4,0,3,3,4,3,3,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-chemistry-589,False,3,2,1,2,3,3,0,3,0,3,3,2,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-physics-729,False,0,2,1,0,3,3,0,2,0,2,1,1,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-biology-433,False,3,3,1,3,4,4,0,3,0,3,3,3,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-biology-508,False,2,2,1,2,3,4,4,0,0,3,3,2,0,1,2,0,2,2
+MMLU-Pro,MMLU-Pro-math-893,False,1,1,1,1,0,1,1,2,0,2,1,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-economics-619,False,2,2,1,0,0,3,3,3,4,2,2,2,0,2,2,0,2,3
+MMLU-Pro,MMLU-Pro-math-273,False,2,2,1,2,0,3,0,3,0,3,3,2,0,2,3,0,2,2
+MMLU-Pro,MMLU-Pro-business-68,False,0,2,1,2,0,3,3,3,0,2,3,1,0,3,2,0,2,2
+MMLU-Pro,MMLU-Pro-computer science-132,False,2,3,1,3,0,5,0,4,0,3,3,2,0,1,2,0,1,3
+MMLU-Pro,MMLU-Pro-physics-976,False,0,2,1,3,3,3,0,3,0,3,3,3,0,3,3,2,3,2
+MMLU-Pro,MMLU-Pro-business-210,False,3,2,1,3,0,3,0,3,0,3,2,1,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-11,False,3,2,1,0,0,4,3,3,4,2,2,2,0,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-philosophy-465,False,2,3,1,2,0,0,4,3,4,1,3,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-computer science-271,False,1,3,1,3,0,4,0,4,0,3,3,2,0,3,1,0,1,3
+MMLU-Pro,MMLU-Pro-health-513,False,1,3,1,0,4,4,0,0,0,1,2,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-physics-145,False,3,2,1,3,3,3,0,3,0,3,3,2,0,3,3,1,2,2
+MMLU-Pro,MMLU-Pro-history-3,False,3,1,1,0,0,0,0,0,4,1,3,1,0,1,0,0,1,4
+MMLU-Pro,MMLU-Pro-computer science-375,False,3,1,1,0,0,4,0,4,0,1,2,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-health-526,False,1,1,1,2,3,4,3,0,4,2,3,2,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-math-630,False,3,3,1,3,0,0,0,4,0,3,3,2,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-psychology-197,False,1,2,1,0,0,2,2,2,0,2,2,1,0,2,1,0,2,1
+MMLU-Pro,MMLU-Pro-psychology-713,False,3,2,1,2,0,0,0,0,4,1,3,3,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-computer science-240,False,2,2,1,0,0,4,0,4,0,1,3,1,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-economics-491,False,3,3,1,3,0,4,4,0,4,3,4,1,0,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-engineering-451,False,2,1,1,0,0,0,3,1,0,1,1,1,0,1,1,1,1,1
+MMLU-Pro,MMLU-Pro-biology-591,False,3,2,1,3,3,3,0,3,0,3,2,2,0,2,3,0,2,2
+MMLU-Pro,MMLU-Pro-engineering-405,False,3,3,1,4,4,4,0,4,0,3,3,3,0,4,4,2,3,3
+MMLU-Pro,MMLU-Pro-psychology-133,False,2,2,1,2,0,4,4,0,3,2,3,2,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-law-394,False,3,4,1,4,0,4,3,0,5,5,4,3,3,0,4,0,3,4
+MMLU-Pro,MMLU-Pro-math-519,False,1,2,1,2,3,4,4,4,0,3,1,1,0,2,2,0,2,3
+MMLU-Pro,MMLU-Pro-physics-824,False,2,2,1,1,3,3,3,3,0,3,2,1,0,3,2,2,2,2
+MMLU-Pro,MMLU-Pro-engineering-681,False,2,2,1,0,0,4,4,4,0,1,1,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-economics-586,False,2,2,1,2,0,4,4,0,4,3,1,1,3,0,2,0,2,1
+MMLU-Pro,MMLU-Pro-other-586,False,3,2,1,0,0,3,3,0,3,1,2,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-other-600,False,2,2,1,1,0,0,3,0,3,1,3,1,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-business-496,False,2,2,1,0,0,4,0,0,4,1,3,2,0,0,0,0,1,2
+MMLU-Pro,MMLU-Pro-computer science-289,False,0,1,1,0,0,0,0,2,0,1,0,0,0,1,1,0,1,0
+MMLU-Pro,MMLU-Pro-engineering-312,False,3,2,1,3,3,3,0,4,0,3,3,2,0,3,3,4,2,3
+MMLU-Pro,MMLU-Pro-computer science-319,False,3,2,1,3,0,3,2,3,0,3,1,1,0,2,1,0,2,2
+MMLU-Pro,MMLU-Pro-biology-570,False,3,3,1,3,3,3,4,0,0,3,3,3,0,0,3,1,3,3
+MMLU-Pro,MMLU-Pro-computer science-136,False,2,4,1,3,0,0,0,4,0,4,3,2,0,3,2,0,2,4
+MMLU-Pro,MMLU-Pro-economics-739,False,2,2,1,1,0,4,0,0,3,3,2,2,0,0,2,0,1,1
+MMLU-Pro,MMLU-Pro-philosophy-467,False,3,4,1,2,0,0,4,0,5,2,3,3,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-economics-353,False,3,3,1,3,0,4,0,4,4,3,3,2,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-math-515,False,0,1,1,0,0,0,1,1,0,2,0,1,0,2,1,0,1,0
+MMLU-Pro,MMLU-Pro-engineering-968,False,3,2,1,0,4,4,0,4,0,3,4,2,0,4,3,2,3,3
+MMLU-Pro,MMLU-Pro-psychology-696,False,3,4,1,3,0,4,0,0,4,4,4,3,4,0,4,0,2,3
+MMLU-Pro,MMLU-Pro-biology-365,False,3,3,1,3,3,4,0,0,0,3,3,1,0,0,3,2,2,2
+MMLU-Pro,MMLU-Pro-other-676,False,2,2,1,0,3,3,0,0,0,1,2,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-math-989,False,0,2,1,2,0,0,0,3,0,2,2,1,0,2,2,0,2,3
+MMLU-Pro,MMLU-Pro-biology-345,False,3,2,1,2,3,4,0,3,0,3,3,2,0,2,2,0,2,2
+MMLU-Pro,MMLU-Pro-economics-366,False,3,3,1,3,3,4,0,4,4,3,3,2,0,3,3,0,3,2
+MMLU-Pro,MMLU-Pro-psychology-313,False,2,3,1,3,0,4,3,0,4,4,3,3,4,0,3,0,2,2
+MMLU-Pro,MMLU-Pro-history-234,False,2,3,1,2,3,0,0,0,4,3,3,2,0,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-health-519,False,3,1,1,0,3,3,0,0,0,1,1,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-philosophy-259,False,3,3,1,3,0,4,3,0,4,3,3,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-health-102,False,3,3,1,3,4,5,0,0,0,3,4,3,0,1,3,0,3,4
+MMLU-Pro,MMLU-Pro-health-69,False,3,2,1,0,4,4,0,0,0,2,3,2,0,0,2,0,1,4
+MMLU-Pro,MMLU-Pro-psychology-91,False,2,3,1,2,0,4,4,0,4,3,2,2,0,0,3,0,1,2
+MMLU-Pro,MMLU-Pro-health-714,False,2,3,1,2,4,4,0,0,0,2,3,3,0,0,0,0,1,3
+MMLU-Pro,MMLU-Pro-psychology-714,False,2,3,1,1,0,4,3,0,4,3,3,1,2,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-math-695,False,1,4,1,3,0,0,0,5,0,4,3,3,0,4,3,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-533,False,2,3,1,3,3,4,0,3,0,3,3,3,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-biology-120,False,2,3,1,3,3,3,0,0,0,3,3,2,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-psychology-154,False,3,2,1,1,0,4,0,4,4,3,2,2,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-computer science-205,False,1,1,1,0,0,3,3,4,0,2,1,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-biology-440,False,3,2,1,0,3,2,0,0,0,2,2,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-engineering-810,False,3,3,1,3,4,4,0,4,0,3,3,1,0,3,3,2,2,3
+MMLU-Pro,MMLU-Pro-computer science-194,False,3,4,1,3,0,0,0,4,0,3,3,2,0,3,3,0,3,3
+MMLU-Pro,MMLU-Pro-other-194,False,2,3,1,3,0,0,3,0,3,3,3,2,3,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-biology-536,False,2,2,1,0,3,3,4,3,0,2,1,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-philosophy-79,False,2,3,1,3,0,0,3,4,4,2,3,3,3,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-biology-560,False,3,3,1,2,3,4,0,0,0,3,3,2,0,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-math-589,False,0,3,1,3,0,0,0,4,0,3,3,3,0,4,2,0,2,2
+MMLU-Pro,MMLU-Pro-law-25,False,3,3,1,4,0,5,0,0,4,4,4,4,4,0,4,0,3,4
+MMLU-Pro,MMLU-Pro-business-178,False,2,3,1,0,0,4,0,3,0,3,3,1,0,3,3,0,2,2
+MMLU-Pro,MMLU-Pro-economics-235,False,1,1,1,1,0,4,0,4,4,1,1,0,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-business-11,False,2,2,1,0,0,4,3,0,4,2,2,2,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-biology-518,False,2,2,1,3,3,4,0,0,0,3,3,1,0,0,1,0,1,3
+MMLU-Pro,MMLU-Pro-health-446,False,2,3,1,3,4,4,0,4,0,3,4,1,0,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-engineering-62,False,3,3,1,3,4,4,0,4,0,3,4,3,0,3,3,1,2,3
+MMLU-Pro,MMLU-Pro-psychology-406,False,3,2,1,2,3,4,0,3,3,1,2,2,0,1,1,0,2,1
+MMLU-Pro,MMLU-Pro-health-7,False,2,2,1,0,4,4,0,0,0,2,3,2,0,1,1,0,1,3
+MMLU-Pro,MMLU-Pro-philosophy-94,False,3,3,1,2,0,0,4,0,4,3,3,2,0,0,1,0,1,4
+MMLU-Pro,MMLU-Pro-psychology-125,False,2,2,1,3,0,4,3,0,4,3,3,2,3,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-law-758,False,2,4,1,3,0,4,3,0,4,4,4,3,2,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-computer science-388,False,1,1,1,0,0,0,3,3,0,2,1,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-engineering-34,False,2,2,1,2,4,4,0,4,0,3,3,1,0,3,2,0,2,3
+MMLU-Pro,MMLU-Pro-engineering-789,False,3,3,1,4,4,4,0,4,0,3,4,2,0,4,4,2,2,4
+MMLU-Pro,MMLU-Pro-other-434,False,2,3,1,3,0,3,3,0,3,3,4,3,4,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-other-222,False,2,1,1,0,0,0,3,0,3,1,2,2,0,0,0,0,1,2
+MMLU-Pro,MMLU-Pro-philosophy-70,False,3,3,1,3,0,0,4,2,4,3,3,3,0,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-philosophy-123,False,3,2,1,3,0,0,0,4,0,3,3,2,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-psychology-32,False,2,2,1,0,0,3,4,0,3,2,2,2,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-health-657,False,3,2,1,0,4,4,0,0,0,1,3,1,0,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-law-57,False,3,2,1,1,0,3,4,0,3,1,2,2,0,0,1,0,2,1
+MMLU-Pro,MMLU-Pro-philosophy-116,False,2,3,1,0,0,0,4,0,4,1,3,2,0,0,2,0,1,4
+MMLU-Pro,MMLU-Pro-biology-531,False,2,2,1,2,3,3,2,0,0,3,2,1,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-204,False,2,3,1,3,0,4,4,0,4,3,3,3,4,0,4,0,2,3
+MMLU-Pro,MMLU-Pro-business-174,False,4,4,1,3,0,4,3,4,3,4,4,3,0,3,4,0,3,4
+MMLU-Pro,MMLU-Pro-other-109,False,1,2,1,1,0,3,2,2,0,2,1,1,0,2,2,0,2,1
+MMLU-Pro,MMLU-Pro-physics-871,False,2,2,1,2,4,4,0,3,0,3,3,1,0,3,1,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-549,False,1,2,1,2,3,3,0,3,0,3,2,1,0,3,2,0,2,2
+MMLU-Pro,MMLU-Pro-business-719,False,0,2,1,0,0,3,0,3,0,2,2,2,0,3,1,0,2,2
+MMLU-Pro,MMLU-Pro-math-301,False,1,1,1,0,0,0,2,1,0,2,1,0,0,1,1,0,0,0
+MMLU-Pro,MMLU-Pro-philosophy-96,False,3,3,1,3,0,0,3,0,4,4,3,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-313,False,0,2,1,2,3,3,0,3,0,2,2,1,0,3,2,0,2,1
+MMLU-Pro,MMLU-Pro-biology-594,False,0,2,1,2,3,3,0,3,0,2,2,1,0,3,1,0,2,3
+MMLU-Pro,MMLU-Pro-other-114,False,2,1,1,0,0,0,3,0,0,0,1,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-economics-193,False,2,2,1,0,0,3,4,0,3,1,2,1,0,0,0,0,2,1
+MMLU-Pro,MMLU-Pro-chemistry-236,False,2,2,1,1,3,3,0,4,0,3,3,2,0,3,1,0,1,3
+MMLU-Pro,MMLU-Pro-philosophy-400,False,3,4,1,3,0,0,0,0,4,3,3,1,0,0,2,0,1,3
+MMLU-Pro,MMLU-Pro-economics-305,False,2,2,1,1,0,2,3,0,3,1,2,2,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-health-293,False,2,1,1,0,4,4,0,0,0,1,1,0,0,0,0,0,1,2
+MMLU-Pro,MMLU-Pro-history-288,False,2,2,1,0,0,3,3,0,4,1,3,1,0,0,0,0,2,3
+MMLU-Pro,MMLU-Pro-health-715,False,2,2,1,0,3,3,2,0,0,2,2,1,0,0,1,1,1,1
+MMLU-Pro,MMLU-Pro-law-343,False,3,4,1,3,0,4,4,0,4,4,4,3,2,0,3,0,3,3
+MMLU-Pro,MMLU-Pro-health-291,False,2,2,1,1,3,4,0,0,4,3,3,1,0,1,1,0,1,3
+MMLU-Pro,MMLU-Pro-history-210,False,2,3,1,3,0,4,4,0,3,3,3,3,3,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-other-875,False,2,1,1,0,0,4,4,0,4,0,1,1,0,0,1,0,1,4
+MMLU-Pro,MMLU-Pro-economics-679,False,3,3,2,3,0,3,4,3,3,3,3,1,0,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-538,False,3,2,1,2,0,0,3,0,3,2,2,1,2,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-other-693,False,1,2,1,0,0,2,3,0,2,1,1,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-engineering-1,False,0,2,1,0,2,3,3,2,0,2,1,1,0,2,1,0,2,2
+MMLU-Pro,MMLU-Pro-computer science-363,False,2,2,1,2,0,0,0,3,0,2,2,1,0,2,2,0,1,2
+MMLU-Pro,MMLU-Pro-philosophy-338,False,3,2,1,2,0,0,0,3,0,2,2,1,0,0,2,0,1,2
+MMLU-Pro,MMLU-Pro-economics-471,False,3,2,1,1,0,3,0,4,3,2,2,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-other-311,False,2,3,1,3,0,4,4,0,4,3,3,2,4,0,2,0,1,2
+MMLU-Pro,MMLU-Pro-economics-821,False,2,2,1,2,0,3,0,3,4,2,2,1,0,2,2,0,3,2
+MMLU-Pro,MMLU-Pro-health-443,False,2,3,1,2,4,4,4,0,0,3,4,2,0,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-other-768,False,3,3,1,2,0,4,5,3,0,3,3,2,0,2,1,0,2,2
+MMLU-Pro,MMLU-Pro-math-450,False,3,4,1,4,0,0,0,4,0,3,3,2,0,4,3,0,3,3
+MMLU-Pro,MMLU-Pro-math-266,False,2,2,1,2,0,0,0,3,0,2,2,1,0,3,3,0,1,2
+MMLU-Pro,MMLU-Pro-computer science-262,False,2,3,1,3,0,0,0,4,0,3,3,3,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-psychology-738,False,2,2,1,1,0,2,2,2,0,2,1,1,0,2,1,0,2,2
+MMLU-Pro,MMLU-Pro-business-74,False,0,2,1,2,0,3,2,2,0,2,1,1,0,2,2,0,2,1
+MMLU-Pro,MMLU-Pro-psychology-447,False,3,3,1,2,4,4,0,4,0,4,3,1,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-238,False,3,3,1,3,4,4,0,4,0,3,3,3,0,2,3,0,2,3
+MMLU-Pro,MMLU-Pro-other-449,False,3,3,1,3,0,0,4,0,4,3,3,4,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-biology-717,False,2,2,1,0,3,3,3,0,0,1,2,2,0,0,0,0,2,1
+MMLU-Pro,MMLU-Pro-economics-287,False,3,2,1,0,0,4,0,4,4,3,2,1,0,2,2,0,1,2
+MMLU-Pro,MMLU-Pro-other-530,False,3,3,1,2,0,4,4,0,4,2,3,3,0,0,2,0,2,3
+MMLU-Pro,MMLU-Pro-business-212,False,0,2,1,0,0,2,2,1,0,2,1,1,0,2,1,0,2,1
+MMLU-Pro,MMLU-Pro-philosophy-99,False,2,2,1,0,0,0,4,0,3,1,2,3,2,0,0,0,1,3
+MMLU-Pro,MMLU-Pro-psychology-83,False,2,2,1,1,0,4,0,0,4,1,3,1,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-chemistry-395,False,2,2,0,1,4,4,0,4,0,3,3,1,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-other-836,False,2,2,1,2,0,4,0,4,0,3,3,1,0,2,2,0,2,2
+MMLU-Pro,MMLU-Pro-business-126,False,2,2,1,1,0,4,4,0,4,3,3,2,3,0,1,0,1,2
+MMLU-Pro,MMLU-Pro-philosophy-141,False,3,2,1,0,0,0,0,0,4,3,3,3,0,0,0,0,2,4
+MMLU-Pro,MMLU-Pro-physics-596,False,0,2,1,0,3,3,0,3,0,2,1,1,0,2,1,0,2,2
+MMLU-Pro,MMLU-Pro-engineering-228,False,3,3,1,3,4,4,0,4,0,3,3,1,0,3,4,2,3,3
+MMLU-Pro,MMLU-Pro-economics-177,False,3,3,1,2,0,4,4,0,3,3,3,1,0,0,1,0,2,2
+MMLU-Pro,MMLU-Pro-math-657,False,1,2,1,2,0,0,0,4,0,3,3,2,0,3,3,0,2,3
+MMLU-Pro,MMLU-Pro-economics-486,False,1,3,1,3,0,4,3,0,4,3,3,2,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-history-169,False,2,2,1,0,0,0,0,0,3,1,3,2,0,0,0,1,1,3
+MMLU-Pro,MMLU-Pro-economics-659,False,3,2,1,0,0,4,0,4,4,2,3,2,0,2,1,0,1,2
+MMLU-Pro,MMLU-Pro-psychology-341,False,2,2,1,0,0,2,0,2,0,2,1,1,0,1,1,0,1,2
+MMLU-Pro,MMLU-Pro-biology-431,False,3,3,3,4,4,4,0,3,0,4,4,3,0,3,4,0,3,4
+MMLU-Pro,MMLU-Pro-computer science-180,False,1,2,1,0,4,4,0,4,0,2,2,1,0,4,2,0,2,3
+MMLU-Pro,MMLU-Pro-history-303,False,3,3,1,2,0,0,4,0,3,2,3,3,2,0,1,0,2,3
+MMLU-Pro,MMLU-Pro-psychology-604,False,3,2,1,0,2,3,2,3,0,3,2,2,0,1,1,0,2,1
+MMLU-Pro,MMLU-Pro-other-363,False,2,2,1,0,0,4,4,0,4,1,2,1,0,0,0,0,1,3
+MMLU-Pro,MMLU-Pro-philosophy-78,False,2,1,1,0,0,0,0,0,4,1,3,1,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-chemistry-696,False,2,1,1,0,3,3,0,0,0,1,1,1,0,1,1,0,1,1
+MMLU-Pro,MMLU-Pro-philosophy-316,False,2,1,1,0,0,0,4,0,2,1,1,0,0,0,0,0,1,1
+MMLU-Pro,MMLU-Pro-business-149,False,3,2,1,0,0,4,4,0,4,1,2,1,0,0,1,0,1,1
+MMLU-Pro,MMLU-Pro-engineering-291,False,2,1,1,0,4,4,0,4,0,2,3,1,0,3,1,0,1,3
+MMLU-Pro,MMLU-Pro-math-569,False,3,3,1,3,0,0,0,4,0,3,3,2,0,3,3,2,2,3
+MMLU-Pro,MMLU-Pro-chemistry-12,False,2,3,1,2,4,4,0,5,0,3,4,2,0,3,3,2,3,4
+MMLU-Pro,MMLU-Pro-other-214,False,2,2,1,1,0,3,2,4,4,2,2,1,0,2,1,0,2,2
+MMLU-Pro,MMLU-Pro-economics-179,False,3,3,1,3,0,4,0,0,4,3,3,3,3,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-law-262,False,3,4,1,3,0,5,0,0,5,5,4,3,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-chemistry-903,False,2,2,1,1,4,4,0,4,0,2,3,2,0,3,1,0,2,2
+MMLU-Pro,MMLU-Pro-business-228,False,2,3,1,1,0,3,4,1,0,2,2,1,0,1,1,0,1,2
+MMLU-Pro,MMLU-Pro-health-529,False,2,2,1,0,4,4,0,0,0,1,3,1,0,0,0,1,1,3
+MMLU-Pro,MMLU-Pro-chemistry-616,False,2,3,1,2,4,4,0,3,0,2,3,2,0,2,2,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-642,False,3,3,1,3,0,4,4,0,4,3,3,2,2,0,2,0,2,2
+MMLU-Pro,MMLU-Pro-psychology-570,False,3,3,1,3,0,4,0,4,4,3,3,3,0,0,3,0,2,3
+MMLU-Pro,MMLU-Pro-physics-168,False,2,2,1,1,4,4,0,4,0,3,3,1,0,3,1,2,2,2
+ChemLLMBench,ChemLLMBench-reaction_prediction-260,True,0,2,1,3,4,4,0,4,0,3,4,3,0,1,3,2,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-121,True,4,1,1,4,4,4,0,4,0,3,4,4,0,3,4,1,2,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-555,True,4,2,1,3,5,5,0,5,0,3,4,4,0,1,5,1,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-89,False,4,1,1,4,4,4,0,4,0,3,4,3,0,3,4,3,3,4
+ChemLLMBench,ChemLLMBench-molecule_design-487,False,4,5,4,5,5,5,0,0,0,4,4,4,0,4,4,5,5,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-52,False,4,1,1,4,5,5,0,4,0,4,4,4,0,1,4,1,3,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-630,False,0,1,1,4,5,5,0,4,0,3,4,4,0,1,5,1,3,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-998,False,4,4,1,4,5,5,0,5,0,4,5,2,0,4,4,5,4,4
+ChemLLMBench,ChemLLMBench-molecule_captioning-943,False,3,2,4,4,4,4,0,4,0,3,4,1,0,1,1,4,3,2
+ChemLLMBench,ChemLLMBench-retrosynthesis-732,False,4,1,1,4,5,4,0,4,0,4,4,4,0,2,4,4,4,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-301,False,4,1,1,4,4,5,0,4,0,4,4,4,0,4,4,4,2,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-133,False,4,2,1,4,4,4,0,4,0,4,4,4,0,4,3,3,3,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-79,False,2,1,1,4,4,4,0,5,0,3,4,2,0,4,4,4,2,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-935,False,0,3,1,3,4,4,0,4,0,4,4,3,0,0,3,4,2,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-138,False,4,4,1,4,5,5,0,4,0,4,4,4,0,0,4,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-507,False,4,1,2,4,4,4,0,4,0,3,4,2,0,0,3,1,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-674,False,3,1,1,4,4,4,0,0,0,3,4,2,0,3,3,4,2,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-166,False,4,2,1,4,5,5,0,4,0,4,5,4,0,4,5,2,3,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-784,False,3,1,1,4,4,4,0,4,0,3,4,3,0,0,3,4,2,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-90,False,4,3,1,4,5,5,0,5,0,4,4,4,0,4,4,1,4,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-679,False,4,4,1,4,5,5,0,5,0,4,4,4,0,4,4,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-174,False,3,2,1,3,4,4,0,4,0,3,4,2,0,2,3,1,2,2
+ChemLLMBench,ChemLLMBench-reaction_prediction-827,False,3,1,1,4,5,4,0,4,0,3,4,4,0,0,4,3,3,3
+ChemLLMBench,ChemLLMBench-name_prediction-376,False,3,2,3,0,4,4,0,4,0,3,4,2,0,0,3,1,2,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-833,False,3,1,1,4,4,5,0,4,0,3,4,3,0,3,4,3,3,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-199,False,4,4,1,4,5,5,0,4,0,5,4,4,0,4,5,4,4,4
+ChemLLMBench,ChemLLMBench-name_prediction-232,False,3,2,2,4,4,4,0,0,0,3,4,1,0,1,3,1,2,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-267,False,0,2,1,4,4,4,0,4,0,4,4,4,0,3,4,4,2,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-962,False,3,1,1,4,4,4,0,4,0,3,4,3,0,3,4,3,3,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-922,False,4,4,1,4,4,5,0,5,0,4,4,4,0,4,5,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-74,False,3,3,1,4,4,4,0,4,0,3,4,0,0,2,3,2,2,3
+ChemLLMBench,ChemLLMBench-molecule_design-779,False,4,4,4,4,5,5,0,5,0,4,4,4,0,2,4,5,4,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-32,False,3,1,1,3,4,4,0,4,0,3,4,4,0,0,3,3,3,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-335,False,4,1,1,4,5,5,0,4,0,4,5,4,0,0,4,3,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-175,False,3,3,1,4,4,4,0,4,0,3,4,1,0,0,3,1,2,3
+ChemLLMBench,ChemLLMBench-molecule_captioning-32,False,2,1,3,3,4,4,0,4,0,3,3,2,0,1,3,4,3,2
+ChemLLMBench,ChemLLMBench-retrosynthesis-558,False,4,4,1,4,5,5,0,3,0,4,4,4,0,3,4,2,3,4
+ChemLLMBench,ChemLLMBench-molecule_design-361,False,3,4,3,4,5,5,0,5,0,4,4,4,0,3,4,4,4,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-343,False,4,2,1,4,5,5,0,4,0,4,5,4,0,2,4,4,3,3
+ChemLLMBench,ChemLLMBench-molecule_design-468,False,4,5,3,5,5,5,0,0,0,4,4,4,0,4,5,4,4,4
+ChemLLMBench,ChemLLMBench-name_prediction-665,False,3,3,3,4,4,4,0,4,0,3,4,3,0,0,4,1,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-522,False,3,2,1,3,4,4,0,4,0,3,4,2,0,3,3,0,2,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-520,False,3,1,1,3,5,4,0,4,0,4,4,3,0,4,3,3,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-581,False,3,1,1,4,4,5,0,5,0,4,4,5,0,4,4,2,4,4
+ChemLLMBench,ChemLLMBench-name_prediction-548,False,2,1,1,3,4,4,0,4,0,3,4,3,0,0,3,3,2,2
+ChemLLMBench,ChemLLMBench-molecule_design-389,False,4,5,4,4,4,5,0,5,0,4,4,4,0,4,4,5,4,4
+ChemLLMBench,ChemLLMBench-molecule_design-295,False,4,4,2,5,5,5,0,5,0,4,4,3,0,3,4,4,5,4
+ChemLLMBench,ChemLLMBench-name_prediction-991,False,3,2,1,4,4,4,0,0,0,3,4,3,0,0,3,3,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-528,False,3,1,1,4,4,4,0,4,0,3,4,3,0,0,3,1,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-494,False,4,3,1,4,4,4,0,4,0,3,4,3,0,0,4,4,2,4
+ChemLLMBench,ChemLLMBench-name_prediction-999,False,3,1,1,4,4,4,0,4,0,3,4,4,0,1,4,1,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-334,False,3,1,1,4,4,4,0,4,0,3,4,1,0,0,3,2,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-990,False,3,3,1,4,4,4,0,4,0,3,4,3,0,0,3,1,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-491,False,3,1,2,3,4,4,0,4,0,3,4,4,0,3,3,1,3,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-303,False,4,2,1,4,5,5,0,5,0,4,4,5,0,4,4,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-219,False,3,3,2,3,4,4,0,4,0,3,4,3,0,3,3,4,2,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-141,False,4,3,1,4,5,5,0,4,0,4,4,4,0,0,4,4,3,4
+ChemLLMBench,ChemLLMBench-molecule_captioning-636,False,0,1,3,0,4,4,0,4,0,2,4,0,0,0,1,1,2,2
+ChemLLMBench,ChemLLMBench-name_prediction-356,False,3,1,1,4,4,4,0,4,0,3,3,1,0,2,3,1,2,3
+ChemLLMBench,ChemLLMBench-molecule_design-213,False,3,4,4,4,5,5,0,4,0,4,4,4,0,4,4,5,4,4
+ChemLLMBench,ChemLLMBench-molecule_design-84,False,4,5,4,5,5,5,0,0,0,4,4,4,0,4,4,4,4,5
+ChemLLMBench,ChemLLMBench-retrosynthesis-962,False,4,3,1,4,5,5,0,4,0,4,4,4,0,1,3,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-362,False,4,1,1,4,4,4,0,4,0,3,4,4,0,0,4,3,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-990,False,4,1,1,4,4,5,0,4,0,4,4,4,0,3,4,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-765,False,2,2,1,3,4,4,0,0,0,3,3,1,0,3,3,4,1,2
+ChemLLMBench,ChemLLMBench-molecule_design-159,False,4,4,4,5,5,5,0,0,0,4,4,4,0,4,4,5,4,5
+ChemLLMBench,ChemLLMBench-reaction_prediction-423,False,4,2,1,4,4,4,0,4,0,4,4,3,0,4,3,4,2,3
+ChemLLMBench,ChemLLMBench-molecule_design-332,False,3,4,3,4,5,5,0,5,0,4,4,4,0,3,5,4,4,4
+ChemLLMBench,ChemLLMBench-molecule_captioning-904,False,3,3,4,4,4,4,0,4,0,3,4,1,0,1,3,4,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-818,False,3,2,1,3,4,4,0,4,0,3,4,3,0,3,4,2,2,4
+ChemLLMBench,ChemLLMBench-molecule_design-360,False,4,4,4,5,5,5,0,5,0,4,4,3,0,3,4,5,4,4
+ChemLLMBench,ChemLLMBench-reaction_prediction-452,False,4,2,1,4,4,5,0,5,0,4,4,4,0,3,3,2,3,4
+ChemLLMBench,ChemLLMBench-molecule_design-424,False,4,4,3,5,5,5,0,5,0,4,4,4,0,3,4,4,4,4
+ChemLLMBench,ChemLLMBench-molecule_captioning-67,False,4,1,4,4,4,4,0,4,0,3,4,4,0,1,3,5,3,3
+ChemLLMBench,ChemLLMBench-name_prediction-629,False,3,1,2,4,4,4,0,4,0,3,4,4,0,2,3,1,2,3
+ChemLLMBench,ChemLLMBench-molecule_captioning-228,False,0,2,2,2,4,4,0,0,0,3,2,1,0,1,1,1,2,2
+ChemLLMBench,ChemLLMBench-reaction_prediction-884,False,3,1,1,3,5,4,0,4,0,3,4,2,0,2,3,4,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-594,False,4,3,1,4,4,4,0,4,0,4,4,4,0,3,3,2,2,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-306,False,4,3,1,4,5,4,0,5,0,4,4,4,0,0,5,1,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-788,False,4,4,3,4,4,4,0,4,0,3,4,1,0,1,4,2,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-149,False,3,2,1,4,4,4,0,4,0,4,4,4,0,3,4,2,2,4
+ChemLLMBench,ChemLLMBench-molecule_design-50,False,4,4,4,4,5,5,0,5,0,4,4,4,0,3,3,5,4,4
+ChemLLMBench,ChemLLMBench-retrosynthesis-40,False,3,4,1,4,5,5,0,4,0,5,4,3,0,4,5,4,3,4
+ChemLLMBench,ChemLLMBench-name_prediction-205,False,3,1,1,3,4,4,0,4,0,4,4,4,0,0,3,3,2,2
+ChemLLMBench,ChemLLMBench-molecule_design-812,False,4,5,4,5,5,5,0,5,0,5,4,4,0,4,4,4,4,4
+ChemLLMBench,ChemLLMBench-molecule_design-175,False,4,4,3,4,4,5,0,4,0,4,4,3,0,3,4,4,4,4
+ChemLLMBench,ChemLLMBench-molecule_design-64,False,4,5,4,5,5,5,0,5,0,4,4,3,0,4,4,4,4,4
+ChemLLMBench,ChemLLMBench-molecule_captioning-389,False,2,3,3,3,4,4,0,4,0,3,3,3,0,1,3,5,3,3
+ChemLLMBench,ChemLLMBench-name_prediction-409,False,3,2,1,4,4,4,0,5,0,3,4,2,0,0,3,1,3,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-718,False,4,1,1,4,5,5,0,5,0,4,4,4,0,1,5,4,3,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-446,False,4,5,1,4,4,5,0,5,0,4,5,4,0,2,4,4,4,4
+ChemLLMBench,ChemLLMBench-name_prediction-884,False,3,3,1,3,4,4,0,4,0,3,3,2,0,1,3,0,2,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-463,False,1,3,1,3,5,5,0,4,0,4,4,4,0,1,4,2,2,4
+ChemLLMBench,ChemLLMBench-name_prediction-778,False,4,3,2,4,4,4,0,0,0,3,4,3,0,2,3,3,3,3
+ChemLLMBench,ChemLLMBench-molecule_captioning-276,False,0,1,2,0,4,4,0,4,0,1,3,0,0,0,1,3,2,2
+ChemLLMBench,ChemLLMBench-name_prediction-73,False,4,3,1,4,4,4,0,5,0,3,4,1,0,0,3,0,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-665,False,2,2,1,4,5,5,0,4,0,4,4,4,0,0,3,4,3,3
+ChemLLMBench,ChemLLMBench-name_prediction-31,False,4,2,1,4,4,4,0,4,0,3,4,1,0,1,3,4,2,4
+ChemLLMBench,ChemLLMBench-molecule_design-328,False,4,5,4,5,5,5,0,5,0,5,4,3,0,4,4,4,4,4
+ChemLLMBench,ChemLLMBench-name_prediction-52,False,2,2,1,4,4,4,0,0,0,3,4,3,0,1,3,4,2,2
+ChemLLMBench,ChemLLMBench-name_prediction-469,False,3,4,1,3,4,4,0,4,0,3,4,1,0,0,3,3,2,4
+ChemLLMBench,ChemLLMBench-molecule_design-394,False,4,5,4,4,4,5,0,5,0,5,5,4,0,3,4,5,4,4
+ChemLLMBench,ChemLLMBench-name_prediction-656,False,3,2,1,4,4,4,0,4,0,3,3,3,0,3,3,3,2,3
+ChemLLMBench,ChemLLMBench-name_prediction-177,False,4,3,2,3,4,4,0,4,0,3,3,1,0,1,3,2,2,3
+ChemLLMBench,ChemLLMBench-retrosynthesis-908,False,3,1,1,4,5,5,0,4,0,4,4,4,0,4,4,3,3,3
+ChemLLMBench,ChemLLMBench-reaction_prediction-345,False,3,2,1,4,4,4,0,4,0,3,4,3,0,4,4,3,3,3
+ChemLLMBench,ChemLLMBench-molecule_design-483,False,5,4,4,5,5,5,0,5,0,4,5,4,0,4,4,5,4,4
+OmniMath,OmniMath-Applied Mathematics-10,True,3,3,3,4,0,0,2,2,0,3,4,3,0,3,3,2,4,4
+OmniMath,OmniMath-Number Theory-333,True,3,3,0,3,0,0,0,4,0,3,3,4,0,4,4,0,4,3
+OmniMath,OmniMath-Discrete Mathematics-418,True,3,3,1,4,0,0,0,4,0,3,3,3,0,3,3,0,3,4
+OmniMath,OmniMath-Algebra-584,False,4,5,3,4,0,0,0,4,0,4,4,4,0,4,4,0,4,4
+OmniMath,OmniMath-Number Theory-512,False,3,2,3,3,0,0,0,3,0,3,3,2,0,3,3,0,3,3
+OmniMath,OmniMath-Discrete Mathematics-282,False,3,3,3,3,0,0,0,4,0,3,3,3,0,3,3,0,3,3
+OmniMath,OmniMath-Geometry-691,False,3,4,3,4,0,0,0,3,0,4,4,3,0,3,4,3,4,4
+OmniMath,OmniMath-Algebra-239,False,0,3,1,4,0,0,0,4,0,3,3,2,0,3,3,0,3,3
+OmniMath,OmniMath-Number Theory-515,False,3,3,3,4,0,0,0,4,0,4,4,4,0,3,3,0,4,4
+OmniMath,OmniMath-Algebra-229,False,3,3,2,4,0,0,0,3,0,3,3,2,0,3,3,0,4,4
+OmniMath,OmniMath-Geometry-133,False,3,4,3,4,0,0,0,4,0,3,4,1,0,3,3,3,3,4
+OmniMath,OmniMath-Algebra-902,False,0,3,1,2,0,0,0,3,0,3,3,0,0,3,3,0,2,2
+OmniMath,OmniMath-Geometry-256,False,3,3,2,4,0,0,0,4,0,3,4,3,0,4,3,3,3,4
+OmniMath,OmniMath-Discrete Mathematics-457,False,4,3,3,4,0,0,0,4,0,4,4,4,0,4,4,3,3,5
+OmniMath,OmniMath-Applied Mathematics-121,False,3,4,2,4,0,0,0,4,0,3,4,3,0,4,4,0,3,4
+OmniMath,OmniMath-Number Theory-166,False,3,2,2,3,0,0,0,3,0,3,3,1,0,3,3,0,3,3
+OmniMath,OmniMath-Discrete Mathematics-443,False,4,4,3,4,0,0,0,4,0,4,4,4,0,4,5,0,4,4
+OmniMath,OmniMath-Number Theory-165,False,0,4,4,4,0,0,0,4,0,4,4,2,0,4,5,0,3,4
+OmniMath,OmniMath-Number Theory-282,False,3,3,2,3,0,0,0,4,0,3,3,2,0,3,4,0,3,4
+OmniMath,OmniMath-Algebra-74,False,0,1,1,0,0,0,0,2,0,1,1,0,0,2,1,0,1,1
+OmniMath,OmniMath-Applied Mathematics-43,False,4,4,3,4,0,0,0,5,0,3,4,3,0,4,4,1,3,4
+OmniMath,OmniMath-Discrete Mathematics-174,False,4,4,3,4,0,0,0,4,0,4,4,4,0,4,5,0,4,4
+OmniMath,OmniMath-Algebra-585,False,1,3,1,3,0,0,0,4,0,3,3,1,0,3,3,0,2,3
+OmniMath,OmniMath-Number Theory-400,False,3,4,3,4,0,0,0,4,0,4,4,1,0,4,4,0,4,4
+OmniMath,OmniMath-Discrete Mathematics-528,False,3,4,3,4,0,0,0,5,0,4,4,3,0,4,5,2,3,4
+OmniMath,OmniMath-Geometry-381,False,3,4,3,4,0,0,0,4,0,3,4,3,0,4,4,4,3,4
+OmniMath,OmniMath-Applied Mathematics-191,False,0,3,2,3,0,0,3,3,0,3,2,3,0,3,3,0,3,3
+OmniMath,OmniMath-Geometry-39,False,4,4,4,4,0,0,0,4,0,4,4,4,0,4,4,4,4,4
+OmniMath,OmniMath-Number Theory-126,False,4,4,2,4,0,0,0,4,0,3,4,4,0,3,4,0,4,4
+OmniMath,OmniMath-Applied Mathematics-546,False,2,2,1,0,0,0,2,2,0,2,1,1,0,2,2,0,1,2
+OmniMath,OmniMath-Applied Mathematics-435,False,2,3,2,3,3,3,3,3,0,3,3,2,0,3,3,3,3,3
+OmniMath,OmniMath-Applied Mathematics-73,False,3,3,1,3,0,0,2,3,0,3,3,4,0,3,3,0,3,4
+OmniMath,OmniMath-Discrete Mathematics-34,False,3,4,3,3,0,0,0,4,0,4,3,3,0,3,3,0,3,4
+OmniMath,OmniMath-Discrete Mathematics-405,False,3,2,3,3,0,0,0,4,0,3,3,1,0,3,3,0,2,3
+OmniMath,OmniMath-Geometry-469,False,3,3,4,4,0,0,0,4,0,4,4,3,0,4,4,3,3,4
+OmniMath,OmniMath-Discrete Mathematics-104,False,3,3,2,3,0,0,2,3,0,3,3,3,0,3,3,2,3,4
+OmniMath,OmniMath-Geometry-10,False,3,3,3,3,0,0,0,4,0,3,4,4,0,4,3,3,3,4
+OmniMath,OmniMath-Discrete Mathematics-234,False,4,3,0,4,0,0,0,4,0,3,4,3,0,3,4,0,4,4
+OmniMath,OmniMath-Algebra-79,False,0,4,1,3,0,0,0,4,0,3,4,3,0,3,4,0,3,4
+OmniMath,OmniMath-Number Theory-110,False,3,2,3,3,0,0,0,4,0,3,3,3,0,3,3,0,3,4
+OmniMath,OmniMath-Number Theory-312,False,3,3,3,4,0,0,0,4,0,3,4,1,0,3,4,0,3,3
+OmniMath,OmniMath-Algebra-170,False,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,0
+OmniMath,OmniMath-Discrete Mathematics-95,False,2,3,3,4,0,0,0,4,0,3,3,3,0,3,4,0,3,4
+OmniMath,OmniMath-Number Theory-571,False,3,4,2,4,0,0,0,4,0,4,4,4,0,5,5,0,4,4
+OmniMath,OmniMath-Number Theory-375,False,3,3,4,4,0,0,0,4,0,3,3,3,0,3,4,0,4,4
+OmniMath,OmniMath-Number Theory-178,False,4,4,2,4,0,0,0,4,0,3,4,4,0,4,4,0,3,4
+OmniMath,OmniMath-Geometry-597,False,0,3,2,2,0,0,0,3,0,3,3,1,0,3,3,1,2,2
+OmniMath,OmniMath-Applied Mathematics-295,False,3,3,2,3,0,0,0,3,0,3,3,3,0,3,3,1,2,3
+OmniMath,OmniMath-Geometry-18,False,3,3,3,4,0,0,0,4,0,3,3,3,0,3,4,3,4,4
+OmniMath,OmniMath-Algebra-529,False,0,2,1,0,0,0,0,3,0,2,1,0,0,2,1,0,1,1
+OmniMath,OmniMath-Algebra-532,False,0,3,3,3,0,0,0,3,0,3,3,2,0,4,4,0,3,3
+OmniMath,OmniMath-Discrete Mathematics-30,False,4,4,3,4,0,0,2,4,0,4,4,4,0,3,4,3,3,4
+OmniMath,OmniMath-Number Theory-451,False,4,4,3,4,0,0,3,4,0,4,4,3,0,4,4,0,5,4
+OmniMath,OmniMath-Number Theory-506,False,3,3,3,3,0,0,0,4,0,4,3,2,0,4,4,0,4,4
+OmniMath,OmniMath-Algebra-790,False,2,3,2,3,0,0,0,4,0,3,3,3,0,3,3,0,3,3
+OmniMath,OmniMath-Number Theory-207,False,2,3,1,3,0,0,0,4,0,3,3,3,0,1,3,0,2,3
+OmniMath,OmniMath-Applied Mathematics-569,False,0,1,1,0,2,1,2,2,0,2,1,0,0,2,1,0,1,0
+OmniMath,OmniMath-Algebra-343,False,3,2,2,2,0,0,0,2,0,3,3,3,0,2,3,0,2,3
+OmniMath,OmniMath-Algebra-880,False,3,3,2,3,0,0,0,3,0,4,3,3,0,3,3,0,3,4
+OmniMath,OmniMath-Algebra-405,False,3,3,3,4,0,0,0,5,0,3,4,3,0,4,4,0,3,4
+OmniMath,OmniMath-Algebra-75,False,3,1,1,0,0,0,1,1,0,0,0,1,0,1,0,1,2,1
+OmniMath,OmniMath-Algebra-650,False,3,4,4,3,0,0,0,4,0,4,4,4,0,4,4,0,4,4
+OmniMath,OmniMath-Algebra-517,False,2,2,1,0,0,0,0,2,0,3,1,1,0,2,2,0,2,2
+OmniMath,OmniMath-Geometry-363,False,3,3,3,4,0,0,0,4,0,3,3,3,0,3,4,3,3,3
+OmniMath,OmniMath-Applied Mathematics-364,False,4,4,3,4,0,0,0,4,0,3,3,4,0,4,5,3,4,4
+OmniMath,OmniMath-Geometry-61,False,3,4,3,4,0,0,0,4,0,3,3,3,0,3,3,4,4,4
+OmniMath,OmniMath-Algebra-495,False,3,3,3,4,0,0,0,4,0,3,4,3,0,3,4,0,3,3
+OmniMath,OmniMath-Discrete Mathematics-115,False,4,5,3,4,0,0,0,4,0,4,4,4,0,5,5,0,3,4
+OmniMath,OmniMath-Geometry-101,False,3,3,3,3,0,0,0,4,0,3,3,3,0,4,3,3,3,4
+OmniMath,OmniMath-Geometry-32,False,3,3,2,4,0,0,0,4,0,3,3,3,0,3,3,3,3,4
+OmniMath,OmniMath-Algebra-995,False,3,3,1,4,0,0,0,3,0,3,3,3,0,3,4,0,3,4
+OmniMath,OmniMath-Discrete Mathematics-439,False,3,3,3,4,0,0,0,4,0,4,4,3,0,3,4,2,3,4
+OmniMath,OmniMath-Algebra-569,False,2,4,3,4,0,0,0,4,0,3,4,3,0,4,4,0,3,4
+OmniMath,OmniMath-Discrete Mathematics-357,False,3,4,3,4,0,0,0,4,0,4,4,4,0,4,5,4,5,4
+OmniMath,OmniMath-Number Theory-570,False,0,3,0,3,0,0,0,4,0,4,3,3,0,3,3,0,4,3
+OmniMath,OmniMath-Number Theory-102,False,0,3,3,4,0,0,0,4,0,3,3,3,0,3,3,0,3,4
+OmniMath,OmniMath-Algebra-457,False,3,4,3,4,0,0,0,4,0,3,4,3,0,4,3,0,3,4
+OmniMath,OmniMath-Applied Mathematics-611,False,3,3,3,3,0,0,0,3,0,3,3,3,0,3,3,2,3,4
+OmniMath,OmniMath-Number Theory-17,False,3,3,1,4,0,0,0,4,0,3,3,2,0,4,4,0,3,4
+OmniMath,OmniMath-Geometry-266,False,2,4,4,4,0,0,0,4,0,4,4,3,0,4,4,2,4,4
+OmniMath,OmniMath-Geometry-718,False,2,3,3,3,0,0,0,3,0,3,3,1,0,3,3,3,3,3
+OmniMath,OmniMath-Applied Mathematics-223,False,0,3,3,3,0,0,0,4,0,3,3,1,0,3,3,0,2,3
+OmniMath,OmniMath-Applied Mathematics-104,False,3,3,3,4,0,0,0,4,0,3,4,4,0,4,4,0,3,4
+OmniMath,OmniMath-Number Theory-47,False,2,4,3,4,0,0,0,4,0,3,4,3,0,3,4,0,3,4
+OmniMath,OmniMath-Number Theory-105,False,3,3,3,4,0,0,0,4,0,3,3,3,0,4,3,0,4,4
+OmniMath,OmniMath-Algebra-351,False,3,4,3,4,0,0,0,5,0,3,4,3,0,4,4,0,4,4
+OmniMath,OmniMath-Number Theory-342,False,2,2,1,0,0,0,2,2,0,2,1,1,0,2,2,0,1,2
+OmniMath,OmniMath-Discrete Mathematics-49,False,3,4,3,4,0,0,0,4,0,4,3,4,0,4,4,0,4,4
+OmniMath,OmniMath-Number Theory-276,False,3,3,3,4,0,0,0,4,0,3,3,3,0,3,3,0,3,4
+OmniMath,OmniMath-Geometry-17,False,3,3,3,4,0,0,0,4,0,4,4,3,0,4,4,3,3,4
+OmniMath,OmniMath-Discrete Mathematics-191,False,0,3,3,4,0,0,0,4,0,4,4,3,0,4,5,0,4,3
+OmniMath,OmniMath-Geometry-478,False,0,3,3,3,0,0,0,3,0,3,3,1,0,3,3,3,3,3
+OmniMath,OmniMath-Geometry-775,False,3,3,3,4,0,0,0,4,0,3,3,3,0,4,3,3,3,4
+OmniMath,OmniMath-Discrete Mathematics-330,False,3,3,3,3,0,0,0,4,0,3,3,2,0,3,3,0,3,3
+OmniMath,OmniMath-Discrete Mathematics-313,False,0,3,2,3,4,0,0,4,0,3,3,4,0,3,3,1,3,4
+OmniMath,OmniMath-Applied Mathematics-559,False,0,1,1,0,0,0,2,1,0,2,1,1,0,2,1,0,1,0
+OmniMath,OmniMath-Geometry-306,False,3,3,3,4,0,0,0,4,0,3,3,2,0,3,4,3,3,3
+OmniMath,OmniMath-Applied Mathematics-27,False,3,3,2,4,0,0,0,4,0,3,3,1,0,3,4,3,4,4
+OmniMath,OmniMath-Discrete Mathematics-147,False,3,3,3,4,0,0,0,4,0,3,4,4,0,3,3,3,3,4
+OmniMath,OmniMath-Algebra-549,False,1,2,1,1,0,0,2,2,0,2,1,2,0,2,2,0,2,2
+OmniMath,OmniMath-Geometry-705,False,3,4,3,4,0,0,0,4,0,3,3,3,0,3,4,3,3,3
+OmniMath,OmniMath-Number Theory-123,False,3,3,2,3,0,0,0,4,0,3,2,1,0,4,3,0,3,3
+OmniMath,OmniMath-Algebra-287,False,0,3,1,2,0,0,2,2,0,3,2,2,0,3,3,0,2,2
+TruthQuest,TruthQuest-S-975,True,3,3,2,3,0,0,1,3,0,3,3,4,2,3,3,0,2,3
+TruthQuest,TruthQuest-I-360,True,3,3,1,3,0,0,3,3,0,3,3,4,2,0,4,0,3,3
+TruthQuest,TruthQuest-I-355,True,3,3,2,3,0,0,2,3,0,3,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-S-960,False,2,3,2,3,0,0,0,3,0,3,3,4,2,0,3,0,2,2
+TruthQuest,TruthQuest-I-232,False,3,3,3,3,0,0,0,3,0,4,3,4,2,3,4,0,2,3
+TruthQuest,TruthQuest-I-366,False,2,2,2,3,0,0,0,3,0,3,3,3,2,1,4,0,2,3
+TruthQuest,TruthQuest-I-793,False,3,4,2,3,0,0,3,3,0,3,3,3,2,0,4,0,2,3
+TruthQuest,TruthQuest-S-89,False,2,3,2,3,0,0,2,3,0,3,3,4,2,0,4,0,2,4
+TruthQuest,TruthQuest-S-817,False,2,3,2,3,0,0,3,3,0,3,3,3,2,0,3,0,3,3
+TruthQuest,TruthQuest-I-637,False,3,3,2,3,0,0,2,3,0,4,3,4,2,0,4,0,2,4
+TruthQuest,TruthQuest-I-50,False,3,3,2,3,0,0,0,3,0,3,3,3,2,0,4,0,3,3
+TruthQuest,TruthQuest-I-62,False,3,3,1,3,0,0,3,3,0,4,3,4,2,0,4,0,3,3
+TruthQuest,TruthQuest-E-431,False,3,3,3,3,0,0,2,3,0,3,3,3,2,2,4,0,3,3
+TruthQuest,TruthQuest-I-251,False,3,3,2,3,0,0,3,3,0,3,3,4,2,0,4,0,3,4
+TruthQuest,TruthQuest-S-300,False,3,3,2,3,0,0,2,3,0,3,3,3,2,1,3,0,2,2
+TruthQuest,TruthQuest-E-732,False,3,3,2,3,0,0,2,3,0,3,3,3,2,3,4,0,2,3
+TruthQuest,TruthQuest-I-708,False,3,3,2,3,0,0,3,3,0,4,3,3,2,0,4,0,2,3
+TruthQuest,TruthQuest-S-7,False,3,3,1,3,0,0,3,3,0,3,3,4,2,0,3,0,2,3
+TruthQuest,TruthQuest-I-782,False,3,3,2,3,0,0,2,3,0,4,4,4,2,0,4,0,2,4
+TruthQuest,TruthQuest-I-32,False,3,3,2,3,0,0,0,3,0,4,3,4,2,3,4,0,3,4
+TruthQuest,TruthQuest-S-383,False,3,4,2,3,0,0,2,3,0,3,3,4,2,3,4,0,2,4
+TruthQuest,TruthQuest-I-412,False,3,4,3,3,0,0,3,3,0,3,3,3,2,0,4,0,2,3
+TruthQuest,TruthQuest-E-964,False,2,3,1,3,0,0,2,3,0,3,3,3,2,3,3,0,2,3
+TruthQuest,TruthQuest-S-491,False,2,3,1,3,0,0,2,3,0,3,3,3,2,0,3,0,2,2
+TruthQuest,TruthQuest-S-884,False,3,3,1,3,0,0,0,3,0,3,3,4,2,0,3,0,2,3
+TruthQuest,TruthQuest-E-698,False,3,3,2,3,0,0,3,3,0,3,3,3,3,0,4,0,2,4
+TruthQuest,TruthQuest-S-328,False,3,3,2,3,0,0,3,3,0,3,3,4,2,0,4,0,2,3
+TruthQuest,TruthQuest-I-11,False,3,3,2,3,0,0,0,3,0,4,3,4,2,3,4,0,3,4
+TruthQuest,TruthQuest-S-363,False,2,3,2,3,0,0,2,3,0,3,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-S-989,False,3,3,2,3,0,0,2,3,0,3,3,3,3,0,3,0,2,3
+TruthQuest,TruthQuest-E-310,False,3,3,2,3,0,0,2,3,0,4,3,3,2,0,4,0,2,3
+TruthQuest,TruthQuest-S-11,False,3,3,2,3,0,0,2,3,0,3,3,4,2,0,4,0,2,3
+TruthQuest,TruthQuest-E-927,False,2,3,3,3,0,0,2,3,0,3,3,3,2,2,3,0,2,4
+TruthQuest,TruthQuest-I-663,False,3,3,2,3,0,0,2,3,0,3,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-I-544,False,3,3,2,3,0,0,1,3,0,3,3,3,2,2,4,0,2,4
+TruthQuest,TruthQuest-I-880,False,3,3,2,3,0,0,3,3,0,4,3,4,2,2,4,0,3,3
+TruthQuest,TruthQuest-S-553,False,3,3,2,3,0,0,3,3,0,3,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-E-765,False,3,4,2,3,0,0,3,3,0,3,3,4,2,2,4,0,2,4
+TruthQuest,TruthQuest-S-265,False,2,3,2,2,0,0,2,3,0,3,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-E-251,False,3,3,2,3,0,0,1,3,0,4,3,4,2,2,4,0,3,3
+TruthQuest,TruthQuest-E-900,False,3,3,3,3,0,0,3,3,0,3,3,4,2,0,4,0,2,2
+TruthQuest,TruthQuest-I-248,False,3,3,2,3,0,0,2,3,0,3,3,3,2,0,4,0,2,3
+TruthQuest,TruthQuest-I-867,False,3,3,1,3,0,0,2,3,0,3,3,4,3,2,4,0,2,4
+TruthQuest,TruthQuest-E-542,False,3,3,2,3,0,0,3,3,0,3,3,3,2,3,4,0,3,3
+TruthQuest,TruthQuest-I-329,False,3,4,2,4,0,0,3,3,0,4,3,4,2,3,4,0,2,4
+TruthQuest,TruthQuest-I-114,False,3,3,2,3,0,0,1,3,0,3,3,4,2,0,4,0,2,3
+TruthQuest,TruthQuest-I-992,False,3,3,1,3,0,0,0,3,0,4,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-E-650,False,3,4,2,4,0,0,3,3,0,3,3,4,2,3,4,0,3,3
+TruthQuest,TruthQuest-S-166,False,2,3,2,3,0,0,2,3,0,3,3,4,2,2,4,0,2,4
+TruthQuest,TruthQuest-S-361,False,3,3,1,3,0,0,0,3,0,3,3,3,2,3,4,0,2,4
+TruthQuest,TruthQuest-I-433,False,3,3,1,3,0,0,2,3,0,3,3,4,2,0,4,0,2,3
+TruthQuest,TruthQuest-I-709,False,2,3,2,3,0,0,2,3,0,3,3,3,2,3,4,0,2,3
+TruthQuest,TruthQuest-E-529,False,3,4,2,4,0,0,1,3,0,4,3,4,2,2,4,0,3,4
+TruthQuest,TruthQuest-E-13,False,3,3,1,3,0,0,2,3,0,3,3,3,2,1,4,0,2,2
+TruthQuest,TruthQuest-E-62,False,4,3,2,4,0,0,0,3,0,4,3,3,2,3,4,0,3,4
+TruthQuest,TruthQuest-I-4,False,3,3,3,3,0,0,3,3,0,3,3,3,2,0,4,0,2,3
+TruthQuest,TruthQuest-E-589,False,3,4,2,4,0,0,3,4,0,3,3,4,2,0,4,0,3,3
+TruthQuest,TruthQuest-E-301,False,3,3,2,3,0,0,3,3,0,3,3,4,2,2,3,0,2,3
+TruthQuest,TruthQuest-I-971,False,3,3,2,3,0,0,0,3,0,3,3,3,2,3,4,0,2,3
+TruthQuest,TruthQuest-I-588,False,2,2,2,3,0,0,0,3,0,3,3,3,2,0,3,0,2,3
+TruthQuest,TruthQuest-I-514,False,3,3,3,3,0,0,3,3,0,3,3,4,2,2,4,0,3,4
+TruthQuest,TruthQuest-S-790,False,2,3,1,3,0,0,3,3,0,3,3,3,2,0,3,0,2,4
+TruthQuest,TruthQuest-S-452,False,2,3,2,2,0,0,3,3,0,3,2,3,2,0,3,0,2,2
+TruthQuest,TruthQuest-I-55,False,3,3,2,3,0,0,3,3,0,3,3,3,2,2,4,0,2,3
+TruthQuest,TruthQuest-E-894,False,3,3,2,3,0,0,3,3,0,3,3,4,2,0,4,0,2,3
+LSAT,LSAT-LSAT-RC-87,True,3,4,1,3,0,4,3,0,4,3,3,3,2,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-127,True,3,3,1,3,0,4,3,4,4,3,3,3,0,1,3,0,3,4
+LSAT,LSAT-LSAT-LR-223,True,2,3,1,3,0,4,3,4,3,3,3,2,0,0,3,0,2,3
+LSAT,LSAT-LSAT-AR-126,False,2,2,1,3,0,0,0,3,0,3,3,3,0,1,4,0,2,3
+LSAT,LSAT-LSAT-LR-100,False,2,3,1,3,0,4,3,1,3,3,3,3,2,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-239,False,3,3,1,3,4,4,0,4,4,3,3,3,2,0,3,0,2,2
+LSAT,LSAT-LSAT-RC-247,False,3,3,3,4,0,0,0,0,4,4,4,3,3,0,3,0,3,3
+LSAT,LSAT-LSAT-AR-119,False,3,3,1,3,0,0,3,3,0,3,3,3,0,3,4,2,3,3
+LSAT,LSAT-LSAT-LR-301,False,2,3,1,3,0,3,3,0,3,3,3,3,0,0,3,0,3,3
+LSAT,LSAT-LSAT-LR-126,False,3,3,3,3,0,4,4,2,3,4,3,3,2,0,3,0,2,3
+LSAT,LSAT-LSAT-AR-38,False,3,3,1,3,0,0,1,3,0,3,2,3,0,3,3,0,2,4
+LSAT,LSAT-LSAT-LR-7,False,2,2,1,1,0,0,3,3,0,3,2,1,0,0,2,0,2,1
+LSAT,LSAT-LSAT-LR-312,False,2,3,1,3,3,4,3,3,0,3,3,2,0,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-144,False,3,3,1,3,0,4,3,0,4,3,3,2,3,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-120,False,2,2,1,2,0,4,3,3,0,4,3,3,0,0,2,0,2,3
+LSAT,LSAT-LSAT-RC-114,False,3,3,1,3,0,0,4,0,4,3,3,3,3,0,3,0,3,3
+LSAT,LSAT-LSAT-LR-134,False,2,3,1,3,0,0,3,0,3,3,3,1,2,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-359,False,2,3,1,3,0,3,3,3,3,3,2,2,0,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-381,False,2,3,3,3,0,0,3,3,4,4,3,3,0,0,3,0,2,2
+LSAT,LSAT-LSAT-AR-3,False,3,3,1,3,0,0,3,3,0,3,3,3,0,3,4,0,2,3
+LSAT,LSAT-LSAT-LR-158,False,3,3,1,3,3,4,4,0,0,4,2,3,0,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-105,False,3,3,1,3,4,5,0,3,3,3,3,3,0,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-134,False,3,3,1,3,0,4,3,0,3,3,3,1,4,0,3,0,3,3
+LSAT,LSAT-LSAT-LR-441,False,2,3,1,3,0,4,3,0,4,3,3,2,4,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-372,False,3,3,1,2,0,2,3,0,4,3,2,1,3,0,2,0,2,3
+LSAT,LSAT-LSAT-LR-452,False,3,3,2,3,0,4,0,3,4,3,3,3,0,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-164,False,2,3,1,3,2,3,3,3,3,4,3,3,0,0,3,0,1,2
+LSAT,LSAT-LSAT-LR-75,False,3,3,1,3,2,4,3,3,3,3,3,3,3,1,3,0,2,3
+LSAT,LSAT-LSAT-LR-366,False,2,3,1,3,3,3,3,0,0,3,3,3,0,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-137,False,3,3,2,3,0,0,4,0,4,4,3,3,0,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-76,False,3,3,1,3,0,0,4,0,4,3,3,2,2,0,3,0,2,4
+LSAT,LSAT-LSAT-RC-116,False,3,2,1,2,3,3,4,0,0,2,3,2,2,0,1,0,2,3
+LSAT,LSAT-LSAT-RC-115,False,3,3,1,3,4,3,4,0,0,3,3,3,0,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-162,False,3,3,1,3,1,3,3,0,4,3,3,3,0,0,2,0,2,2
+LSAT,LSAT-LSAT-AR-136,False,3,3,1,3,0,0,2,3,0,3,3,3,0,2,3,0,3,3
+LSAT,LSAT-LSAT-RC-130,False,2,2,1,1,0,4,3,0,3,2,3,2,0,0,1,0,2,3
+LSAT,LSAT-LSAT-LR-443,False,2,3,1,3,0,4,3,3,3,3,3,3,2,1,3,0,3,3
+LSAT,LSAT-LSAT-RC-174,False,3,4,3,3,0,4,4,0,4,3,3,3,4,0,3,0,2,3
+LSAT,LSAT-LSAT-RC-55,False,2,3,3,2,0,5,4,0,4,3,3,3,3,0,2,0,3,3
+LSAT,LSAT-LSAT-AR-171,False,3,3,1,3,0,0,3,3,0,3,3,3,0,3,4,0,3,4
+LSAT,LSAT-LSAT-AR-8,False,3,3,1,3,0,0,2,3,0,3,3,4,0,3,4,0,3,3
+LSAT,LSAT-LSAT-AR-41,False,3,3,1,3,0,0,2,3,0,3,3,3,0,3,3,0,2,3
+LSAT,LSAT-LSAT-RC-14,False,3,4,1,3,0,0,4,0,4,3,3,3,2,0,3,0,2,4
+LSAT,LSAT-LSAT-RC-146,False,3,2,1,2,0,3,4,0,4,3,3,2,0,0,1,0,2,4
+LSAT,LSAT-LSAT-RC-9,False,3,3,1,3,0,4,5,0,4,3,3,3,4,0,3,0,3,3
+LSAT,LSAT-LSAT-AR-115,False,3,3,0,3,0,0,3,3,0,3,3,3,0,3,4,0,3,3
+LSAT,LSAT-LSAT-LR-146,False,3,3,1,3,3,4,4,0,0,3,3,3,0,2,3,0,2,3
+LSAT,LSAT-LSAT-RC-151,False,3,3,1,3,0,0,3,0,4,4,3,3,3,0,3,0,3,3
+LSAT,LSAT-LSAT-RC-150,False,3,3,3,3,0,0,3,0,4,3,3,3,3,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-502,False,3,3,1,3,0,4,4,3,3,4,3,3,0,0,3,0,2,2
+LSAT,LSAT-LSAT-RC-123,False,3,3,3,3,0,4,0,0,4,3,3,3,3,0,2,0,2,3
+LSAT,LSAT-LSAT-AR-134,False,3,3,1,3,0,0,2,3,0,3,3,3,0,2,4,0,2,3
+LSAT,LSAT-LSAT-LR-319,False,3,3,1,2,0,0,3,0,3,3,3,1,2,0,2,0,1,1
+LSAT,LSAT-LSAT-LR-93,False,2,2,1,2,0,0,2,0,0,3,2,2,0,0,2,0,1,3
+LSAT,LSAT-LSAT-RC-196,False,3,3,1,3,4,5,4,0,4,3,3,2,3,0,3,0,2,3
+LSAT,LSAT-LSAT-LR-278,False,3,3,1,3,0,0,4,3,4,4,3,3,4,0,4,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-188,True,2,2,1,0,0,0,3,0,3,1,1,2,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-50,True,3,2,1,0,0,3,4,0,3,2,1,1,0,1,2,0,1,3
+TimeQA,TimeQA-TimeQA-implicit-451,True,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,2,4
+TimeQA,TimeQA-TimeQA-implicit-394,False,1,2,1,0,0,0,2,0,0,2,1,1,0,1,1,0,1,2
+TimeQA,TimeQA-TimeQA-implicit-18,False,3,2,1,1,0,0,3,0,3,2,1,2,0,0,1,0,2,2
+TimeQA,TimeQA-TimeQA-explicit-96,False,3,2,1,0,0,0,0,0,3,2,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-224,False,3,2,1,1,0,3,4,0,3,2,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-119,False,2,1,1,0,0,0,3,0,2,1,1,0,0,0,0,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-3,False,2,1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,2,2
+TimeQA,TimeQA-TimeQA-implicit-460,False,2,2,1,0,0,0,3,0,0,1,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-156,False,3,2,1,0,0,3,4,0,3,2,1,2,0,1,2,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-7,False,3,2,1,0,0,0,3,0,0,2,0,2,0,1,1,0,2,2
+TimeQA,TimeQA-TimeQA-implicit-395,False,1,2,1,1,0,0,3,0,3,2,1,1,0,1,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-228,False,1,1,1,0,0,0,0,0,4,0,1,0,0,0,0,0,2,4
+TimeQA,TimeQA-TimeQA-implicit-478,False,3,2,1,0,0,0,2,0,0,2,0,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-160,False,2,2,1,0,0,0,0,0,2,1,0,1,0,0,0,0,2,2
+TimeQA,TimeQA-TimeQA-explicit-294,False,1,1,1,0,0,0,1,0,3,1,0,1,0,0,0,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-164,False,3,2,1,0,0,0,3,0,0,1,1,1,0,0,1,0,2,1
+TimeQA,TimeQA-TimeQA-implicit-77,False,3,2,1,2,0,0,2,0,0,2,2,2,0,1,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-26,False,3,2,1,0,0,0,3,0,0,2,1,1,0,0,1,0,2,2
+TimeQA,TimeQA-TimeQA-explicit-192,False,2,2,1,0,0,0,2,0,0,2,0,1,0,0,1,0,2,2
+TimeQA,TimeQA-TimeQA-explicit-360,False,2,1,1,0,0,0,2,0,0,1,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-49,False,2,2,1,1,0,0,3,0,0,1,1,2,0,0,0,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-383,False,2,2,1,0,0,0,2,0,0,1,1,1,0,1,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-63,False,3,2,1,0,0,0,3,0,1,2,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-492,False,3,2,1,0,0,3,2,0,3,2,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-225,False,0,2,1,0,0,0,0,0,4,0,2,1,0,0,1,0,1,4
+TimeQA,TimeQA-TimeQA-implicit-274,False,3,2,1,2,0,3,3,0,3,2,2,3,0,0,2,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-310,False,3,2,1,1,0,0,2,0,0,2,1,1,0,1,1,0,2,2
+TimeQA,TimeQA-TimeQA-explicit-325,False,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,4
+TimeQA,TimeQA-TimeQA-implicit-81,False,2,2,1,0,0,0,2,0,1,1,2,2,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-234,False,3,2,1,0,0,0,2,0,0,1,0,2,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-114,False,2,2,1,1,0,0,2,0,3,2,2,1,0,0,1,0,2,2
+TimeQA,TimeQA-TimeQA-implicit-304,False,3,2,1,0,0,0,2,0,0,1,0,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-103,False,3,2,1,0,0,0,3,0,3,1,3,0,0,0,0,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-319,False,2,2,1,0,0,0,3,0,3,2,1,0,0,0,0,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-442,False,2,2,1,1,0,0,3,0,0,2,1,1,0,1,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-67,False,2,1,1,0,0,0,2,0,2,2,1,1,0,1,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-430,False,2,2,1,0,0,0,1,0,0,1,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-324,False,2,2,1,0,0,0,2,0,0,2,1,2,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-213,False,2,2,1,0,0,0,2,0,0,2,0,2,0,1,1,0,1,1
+TimeQA,TimeQA-TimeQA-explicit-41,False,2,2,1,0,0,0,3,0,0,2,1,1,0,0,1,0,2,3
+TimeQA,TimeQA-TimeQA-explicit-126,False,2,2,1,0,0,0,0,0,0,1,0,2,0,0,0,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-457,False,1,2,1,1,0,0,2,0,1,1,1,1,0,1,1,0,2,3
+TimeQA,TimeQA-TimeQA-implicit-372,False,3,2,1,1,0,0,3,0,3,1,1,3,0,1,2,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-105,True,3,2,1,0,0,0,3,0,0,2,2,1,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Counterfactual-49,True,2,2,1,0,0,0,3,0,2,2,3,1,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Order-98,True,3,2,1,1,0,0,3,0,3,2,2,2,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-305,False,2,2,1,1,0,0,2,0,0,2,2,1,0,0,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-19,False,2,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,3
+MenatQA,MenatQA-MenatQA-Counterfactual-88,False,3,2,2,2,0,0,3,0,0,2,2,2,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Counterfactual-148,False,2,2,1,1,0,0,4,0,3,2,1,1,0,1,2,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-165,False,2,2,1,0,0,0,3,0,3,2,2,1,0,0,1,0,2,2
+MenatQA,MenatQA-MenatQA-Counterfactual-117,False,2,2,1,0,0,0,3,0,3,2,2,1,0,2,2,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-96,False,2,2,1,1,0,0,2,0,0,2,1,2,0,0,1,0,1,3
+MenatQA,MenatQA-MenatQA-Scope-43,False,3,2,1,2,0,0,4,0,2,2,3,3,0,1,2,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-179,False,2,2,1,0,0,0,4,0,3,2,2,2,0,0,1,0,1,3
+MenatQA,MenatQA-MenatQA-Scope-122,False,2,2,1,0,0,0,3,0,0,2,2,2,0,1,1,0,2,2
+MenatQA,MenatQA-MenatQA-Scope-267,False,3,2,2,1,0,0,3,0,3,2,3,3,0,0,2,0,2,3
+MenatQA,MenatQA-MenatQA-Counterfactual-3,False,2,2,1,2,0,0,1,0,1,2,2,1,0,1,1,0,2,2
+MenatQA,MenatQA-MenatQA-Counterfactual-11,False,3,2,1,1,0,0,2,0,1,2,1,1,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-390,False,3,2,2,1,0,0,3,0,0,3,2,2,0,1,2,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-296,False,3,2,1,0,0,0,2,0,0,2,1,2,0,0,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-211,False,2,2,1,1,0,0,3,0,0,2,1,2,0,0,1,0,2,1
+MenatQA,MenatQA-MenatQA-Scope-170,False,3,2,1,2,0,0,4,0,3,2,2,2,0,0,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-424,False,2,1,1,1,0,0,5,0,0,1,2,2,0,1,0,0,1,4
+MenatQA,MenatQA-MenatQA-Counterfactual-9,False,3,2,1,1,0,0,2,0,1,2,1,1,0,1,2,0,2,2
+MenatQA,MenatQA-MenatQA-Counterfactual-18,False,3,2,1,0,0,0,3,0,3,2,1,2,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Counterfactual-90,False,3,2,1,2,0,2,4,0,3,2,1,2,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-31,False,2,2,1,1,0,0,3,0,3,3,2,2,0,0,1,0,1,3
+MenatQA,MenatQA-MenatQA-Scope-409,False,2,2,1,0,0,0,2,0,0,2,1,1,0,1,1,0,1,3
+MenatQA,MenatQA-MenatQA-Scope-230,False,2,2,1,0,0,0,3,0,3,2,2,1,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-258,False,3,2,1,1,0,0,3,0,0,2,1,2,0,0,2,0,2,3
+MenatQA,MenatQA-MenatQA-Counterfactual-124,False,2,2,1,0,0,0,3,0,1,2,2,1,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Order-133,False,2,2,1,0,0,0,2,0,0,2,1,1,0,0,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-284,False,2,2,1,0,0,0,3,0,2,1,3,1,0,0,1,0,2,2
+MenatQA,MenatQA-MenatQA-Order-175,False,2,2,1,0,0,0,3,0,0,1,1,1,0,0,1,0,2,3
+MenatQA,MenatQA-MenatQA-Order-113,False,2,2,1,0,0,0,3,0,3,2,2,2,0,1,1,0,1,3
+MenatQA,MenatQA-MenatQA-Counterfactual-181,False,2,2,1,0,0,0,4,0,3,2,1,2,0,2,1,0,2,3
+MenatQA,MenatQA-MenatQA-Order-33,False,3,2,1,2,0,0,3,0,1,2,2,1,0,0,1,0,1,2
+MenatQA,MenatQA-MenatQA-Scope-489,False,3,3,1,1,0,0,0,0,3,2,1,2,0,0,1,0,2,2
+MenatQA,MenatQA-MenatQA-Scope-387,False,3,2,1,1,0,0,3,0,3,2,2,2,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Counterfactual-150,False,3,2,1,1,0,0,3,0,0,2,2,1,0,1,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-363,False,2,2,1,0,0,0,3,0,3,1,0,1,0,0,1,0,1,2
+MenatQA,MenatQA-MenatQA-Scope-233,False,3,2,1,2,0,0,3,0,0,1,3,2,0,0,1,0,2,3
+MenatQA,MenatQA-MenatQA-Scope-44,False,2,2,1,1,0,0,3,0,0,2,2,2,0,1,1,0,1,3
+MenatQA,MenatQA-MenatQA-Order-67,False,3,2,1,0,0,0,5,0,0,1,1,3,0,0,1,0,1,3
+TempReason,TempReason-TempReason-L3-300,True,3,2,1,0,0,0,3,0,0,1,0,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-443,True,3,2,1,0,0,0,3,0,3,3,1,2,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-66,True,3,1,1,0,0,4,5,0,4,0,1,3,0,0,0,0,2,4
+TempReason,TempReason-TempReason-L3-78,False,2,2,1,0,0,0,3,0,0,1,0,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-465,False,3,2,1,0,0,0,3,0,3,2,1,2,0,0,2,0,2,3
+TempReason,TempReason-TempReason-L3-90,False,2,2,1,1,0,0,3,0,3,1,2,2,0,0,0,0,2,2
+TempReason,TempReason-TempReason-L3-120,False,3,2,1,0,0,0,3,0,3,1,1,1,0,0,1,0,2,2
+TempReason,TempReason-TempReason-L2-128,False,3,2,1,0,0,3,3,0,3,2,1,2,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-373,False,2,2,1,0,0,0,2,0,0,2,1,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-91,False,3,2,1,1,0,0,0,0,1,1,1,3,0,0,0,0,3,3
+TempReason,TempReason-TempReason-L3-329,False,3,2,1,0,0,0,3,0,0,1,1,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-183,False,3,2,1,1,0,0,3,0,3,2,1,2,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-356,False,2,2,1,0,0,0,0,0,3,1,1,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-139,False,3,2,1,0,0,0,3,0,3,1,2,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-363,False,3,2,1,1,0,3,3,0,3,2,1,2,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-483,False,3,2,2,2,0,3,4,0,4,2,3,2,0,0,2,0,2,3
+TempReason,TempReason-TempReason-L2-111,False,2,2,1,0,0,0,3,0,0,2,1,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-187,False,3,1,1,0,0,4,4,0,5,1,1,3,0,0,0,0,2,4
+TempReason,TempReason-TempReason-L2-401,False,2,2,1,0,0,0,3,0,1,2,0,1,0,1,0,0,2,3
+TempReason,TempReason-TempReason-L2-220,False,3,2,1,0,0,0,4,0,3,2,2,3,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-146,False,2,1,1,0,0,0,3,0,1,1,0,1,0,0,0,0,2,1
+TempReason,TempReason-TempReason-L3-144,False,4,1,1,1,0,0,5,0,4,1,1,3,0,0,0,0,2,3
+TempReason,TempReason-TempReason-L2-192,False,3,2,1,0,0,0,0,0,3,0,1,2,0,0,0,0,2,4
+TempReason,TempReason-TempReason-L3-87,False,3,2,1,1,0,0,3,0,3,1,2,3,0,0,0,0,2,3
+TempReason,TempReason-TempReason-L3-374,False,3,1,1,0,0,2,4,0,4,1,3,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-369,False,2,2,1,0,0,0,3,0,0,2,1,1,0,1,1,0,2,3
+TempReason,TempReason-TempReason-L3-40,False,3,2,1,0,0,4,5,0,5,1,1,3,0,0,0,0,2,3
+TempReason,TempReason-TempReason-L2-277,False,3,1,1,0,0,0,0,0,0,1,2,3,0,0,0,0,2,4
+TempReason,TempReason-TempReason-L2-195,False,3,2,1,0,0,4,4,0,3,1,0,3,0,0,0,0,2,4
+TempReason,TempReason-TempReason-L2-319,False,2,2,1,0,0,0,2,0,0,2,0,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-24,False,3,2,1,0,0,0,3,0,2,2,0,2,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-1,False,3,2,1,0,0,0,3,0,3,2,2,2,0,0,2,0,2,2
+TempReason,TempReason-TempReason-L2-385,False,2,2,1,0,0,0,3,0,3,1,1,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-208,False,3,3,1,0,0,3,4,0,4,2,3,2,0,0,3,0,2,3
+TempReason,TempReason-TempReason-L2-169,False,2,2,1,0,0,0,3,0,3,2,2,2,0,0,2,0,2,3
+TempReason,TempReason-TempReason-L3-186,False,3,2,1,1,0,0,3,0,2,2,1,1,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L3-413,False,3,2,1,1,0,0,3,0,3,2,1,2,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-455,False,3,2,2,2,0,0,3,0,2,2,3,3,0,0,1,0,2,3
+TempReason,TempReason-TempReason-L2-468,False,3,1,1,0,0,0,0,0,3,1,1,3,0,0,0,0,2,3
+TempReason,TempReason-TempReason-L2-205,False,3,2,1,0,0,0,0,0,3,2,2,2,0,1,1,0,2,3
+TempReason,TempReason-TempReason-L3-221,False,3,0,1,0,0,0,0,0,2,0,3,3,0,0,0,0,2,3
+MedCalcBench,MedCalcBench-risk-18,True,3,3,1,1,4,4,0,1,0,2,3,2,0,2,2,0,3,3
+MedCalcBench,MedCalcBench-lab-31,True,3,3,1,3,4,5,0,3,0,2,3,2,0,4,3,0,3,3
+MedCalcBench,MedCalcBench-risk-30,True,3,4,2,2,4,5,0,1,0,3,3,2,0,2,2,0,3,3
+MedCalcBench,MedCalcBench-diagnosis-42,False,3,3,1,1,4,4,0,1,0,2,2,2,0,2,1,0,2,3
+MedCalcBench,MedCalcBench-lab-265,False,3,3,1,2,4,5,0,4,0,3,3,3,0,3,3,0,3,3
+MedCalcBench,MedCalcBench-dosage-10,False,3,3,1,0,4,5,0,1,0,2,1,3,0,2,1,0,1,2
+MedCalcBench,MedCalcBench-lab-134,False,3,3,1,0,4,4,4,3,0,2,3,3,0,3,2,0,3,3
+MedCalcBench,MedCalcBench-risk-81,False,3,4,3,3,4,5,0,1,0,3,4,3,0,2,3,0,3,3
+MedCalcBench,MedCalcBench-lab-312,False,3,4,1,3,4,5,0,2,0,3,4,3,0,3,2,0,3,4
+MedCalcBench,MedCalcBench-lab-156,False,3,3,1,1,4,5,0,2,0,3,3,1,0,3,2,0,3,3
+MedCalcBench,MedCalcBench-lab-260,False,3,3,1,2,4,5,0,2,0,3,3,3,0,3,3,0,3,4
+MedCalcBench,MedCalcBench-physical-171,False,0,2,1,0,4,4,0,2,0,2,2,0,0,2,1,0,1,3
+MedCalcBench,MedCalcBench-physical-212,False,3,3,0,2,4,4,0,2,0,2,3,2,0,3,3,0,2,3
+MedCalcBench,MedCalcBench-physical-178,False,3,2,1,1,4,4,0,2,0,2,1,0,0,2,1,0,3,1
+MedCalcBench,MedCalcBench-lab-268,False,3,3,2,2,4,5,0,3,0,3,3,2,0,3,3,0,2,2
+MedCalcBench,MedCalcBench-lab-52,False,3,3,1,0,4,5,0,2,0,2,1,2,0,2,1,0,3,3
+MedCalcBench,MedCalcBench-lab-90,False,2,3,1,0,5,5,0,2,0,2,3,2,0,2,1,0,2,3
+MedCalcBench,MedCalcBench-date-29,False,1,2,1,0,3,3,3,1,0,2,2,1,0,1,1,0,1,1
+MedCalcBench,MedCalcBench-physical-109,False,1,3,1,2,4,4,0,3,0,3,2,1,0,3,2,0,1,1
+MedCalcBench,MedCalcBench-physical-202,False,3,2,1,1,4,5,0,2,0,2,3,1,0,3,2,0,3,4
+MedCalcBench,MedCalcBench-date-47,False,0,2,1,0,3,4,3,1,0,2,1,0,0,2,2,0,1,1
+MedCalcBench,MedCalcBench-physical-120,False,0,2,1,0,4,4,0,3,0,2,1,0,0,2,2,0,1,1
+MedCalcBench,MedCalcBench-severity-43,False,3,3,1,2,4,5,0,2,0,3,4,3,0,2,3,0,2,3
+MedCalcBench,MedCalcBench-lab-257,False,3,4,1,2,4,5,0,4,0,3,3,3,0,3,2,0,3,3
+MedCalcBench,MedCalcBench-lab-293,False,3,4,1,0,4,5,0,4,0,3,3,3,0,3,2,0,3,4
+MedCalcBench,MedCalcBench-lab-264,False,3,4,2,3,4,5,0,3,0,3,3,3,0,3,3,0,3,3
+MedCalcBench,MedCalcBench-physical-165,False,0,2,1,0,4,4,0,4,0,2,2,0,0,2,2,0,1,3
+MedCalcBench,MedCalcBench-risk-100,False,3,3,2,3,4,4,0,0,0,3,3,3,0,2,3,1,2,3
+MedCalcBench,MedCalcBench-physical-107,False,0,2,1,2,3,5,0,3,0,2,1,1,0,2,2,0,1,2
+MedCalcBench,MedCalcBench-lab-284,False,3,3,2,1,4,5,0,3,0,3,2,1,0,3,2,0,2,3
+MedCalcBench,MedCalcBench-dosage-36,False,2,2,2,1,4,4,0,3,0,3,3,1,0,2,1,0,2,2
+MedCalcBench,MedCalcBench-physical-76,False,0,2,2,0,4,4,0,3,0,2,1,1,0,2,2,0,1,3
+MedCalcBench,MedCalcBench-risk-36,False,4,4,1,0,4,4,0,1,0,3,3,2,0,2,1,0,3,4
+MedCalcBench,MedCalcBench-lab-194,False,3,2,1,0,4,4,2,0,0,1,1,2,0,1,0,0,2,2
+MedCalcBench,MedCalcBench-severity-38,False,3,3,1,2,4,4,0,1,0,2,3,2,0,1,2,0,3,3
+Date Arithmetic,Date Arithmetic-Date Arithmetic-229,True,0,1,1,0,0,0,2,1,0,1,0,1,0,2,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-453,True,0,1,1,0,0,0,2,1,0,1,1,0,0,2,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-467,True,0,1,1,0,0,0,1,1,0,1,0,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-163,False,0,1,1,0,0,0,2,1,0,1,1,0,0,2,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-408,False,0,1,1,0,0,0,1,1,0,0,0,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-81,False,0,1,0,0,0,0,2,1,0,1,1,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-447,False,1,1,1,0,0,0,2,1,0,1,1,0,0,2,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-306,False,0,1,0,0,0,0,2,1,0,1,1,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-387,False,0,1,1,0,0,0,2,1,0,1,1,0,0,2,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-220,False,0,1,0,0,0,0,2,1,0,1,0,0,0,2,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-431,False,0,1,1,0,0,0,2,1,0,2,1,1,0,2,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-196,False,0,1,1,0,0,0,1,1,0,1,0,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-385,False,0,1,1,0,0,0,2,1,0,2,1,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-370,False,1,1,1,0,0,1,2,1,0,1,1,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-164,False,0,1,0,0,0,0,2,1,0,1,0,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-260,False,0,1,1,0,0,0,2,1,0,2,1,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-191,False,0,1,1,0,0,0,2,1,0,1,0,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-171,False,0,1,1,0,0,0,1,1,0,1,0,0,0,1,1,0,1,0
+Date Arithmetic,Date Arithmetic-Date Arithmetic-9,False,1,1,1,0,0,0,2,1,0,1,1,1,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-397,False,0,1,1,0,0,0,1,1,0,1,1,0,0,1,1,0,0,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-290,False,0,2,1,0,0,0,2,1,0,1,1,0,0,2,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-462,False,0,1,1,0,0,0,2,1,0,1,1,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-342,False,1,1,1,0,0,1,2,1,0,1,0,1,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-44,False,0,1,1,0,0,0,2,1,0,1,1,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-96,False,1,2,1,0,0,0,2,1,0,1,1,1,0,2,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-186,False,0,1,1,0,0,0,2,1,0,1,0,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-239,False,0,1,1,0,0,0,2,1,0,1,1,0,0,1,1,0,1,2
+Date Arithmetic,Date Arithmetic-Date Arithmetic-403,False,1,1,1,0,0,0,2,1,0,1,0,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-8,False,0,1,1,0,0,0,2,1,0,1,1,0,0,1,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-347,False,0,1,1,0,0,0,2,1,0,1,1,0,0,2,1,0,1,1
+Date Arithmetic,Date Arithmetic-Date Arithmetic-337,False,0,1,1,0,0,0,2,1,0,2,0,0,0,1,1,0,1,1
+SAT,SAT-SAT-Math-81,True,0,1,1,0,0,2,0,2,0,2,1,1,0,1,1,0,2,1
+SAT,SAT-SAT-En-150,True,3,2,1,2,3,3,3,2,4,3,2,3,0,0,2,0,2,2
+SAT,SAT-SAT-Math-191,True,2,2,1,2,0,0,0,3,0,2,1,1,0,2,2,1,2,1
+SAT,SAT-SAT-Math-85,False,0,2,1,0,0,2,0,2,0,2,1,1,0,2,1,0,2,1
+SAT,SAT-SAT-Math-133,False,0,2,1,2,0,0,0,3,0,2,2,2,0,3,3,1,2,1
+SAT,SAT-SAT-Math-63,False,0,1,1,2,0,0,0,2,0,2,1,0,0,2,1,0,2,1
+SAT,SAT-SAT-Math-179,False,0,2,1,2,0,0,0,2,0,1,0,0,0,2,1,0,1,1
+SAT,SAT-SAT-En-65,False,3,2,1,3,0,0,3,0,3,3,3,2,3,0,2,0,2,4
+SAT,SAT-SAT-En-122,False,3,3,2,3,0,4,3,3,4,3,3,3,0,2,3,0,2,4
+SAT,SAT-SAT-Math-84,False,1,2,1,1,0,2,2,2,0,2,1,1,0,2,1,0,1,1
+SAT,SAT-SAT-Math-50,False,2,2,1,2,0,3,0,3,0,2,2,1,0,3,1,0,2,2
+SAT,SAT-SAT-En-96,False,3,3,1,3,4,4,0,1,0,3,3,3,0,2,3,0,3,4
+SAT,SAT-SAT-Math-45,False,0,1,1,0,0,0,0,2,0,1,0,0,0,1,1,0,1,1
+SAT,SAT-SAT-Math-2,False,0,1,1,0,0,0,0,3,0,1,1,0,0,1,1,0,1,0
+SAT,SAT-SAT-Math-12,False,2,2,1,0,0,0,0,3,0,2,1,1,0,2,2,0,1,1
+SAT,SAT-SAT-En-2,False,3,3,3,3,0,0,4,0,3,3,3,3,5,0,1,0,2,3
+SAT,SAT-SAT-Math-78,False,1,2,1,2,2,2,0,2,0,3,1,2,0,3,2,0,2,2
+SAT,SAT-SAT-Math-13,False,2,3,1,2,0,0,0,3,0,2,1,1,0,2,3,0,2,2
+SAT,SAT-SAT-En-130,False,3,3,1,3,0,4,3,0,4,3,3,3,2,0,3,0,3,3
+SAT,SAT-SAT-En-71,False,3,3,1,3,4,4,4,0,4,3,3,3,0,0,1,2,2,4
+SAT,SAT-SAT-En-53,False,3,3,1,2,3,4,0,0,0,2,2,2,2,0,1,0,2,4
+SAT,SAT-SAT-Math-5,False,1,1,1,1,0,0,0,2,0,2,1,1,0,2,1,0,2,1
+SAT,SAT-SAT-Math-209,False,1,2,1,1,0,0,0,3,0,2,1,1,0,3,1,0,2,1
+SAT,SAT-SAT-En-20,False,2,2,1,1,0,0,3,0,2,3,3,1,3,0,1,0,2,3
+SAT,SAT-SAT-Math-107,False,0,2,1,1,0,2,0,3,0,2,1,1,0,2,1,2,2,2
+Civil Service Examination,Civil Service Examination-LogiQA-en-223,True,2,3,1,2,3,3,3,0,3,3,3,3,2,0,3,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-518,True,2,2,1,2,0,0,3,3,0,3,3,2,0,0,3,0,2,2
+Civil Service Examination,Civil Service Examination-LogiQA-en-308,True,3,3,1,3,0,0,4,0,4,3,3,2,3,0,3,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-487,False,2,3,1,3,4,4,0,4,4,3,4,3,0,0,4,0,2,4
+Civil Service Examination,Civil Service Examination-LogiQA-en-526,False,2,3,1,3,2,4,3,3,4,4,3,3,3,0,2,0,3,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-602,False,2,2,3,2,0,0,3,0,3,3,3,3,0,0,3,0,1,4
+Civil Service Examination,Civil Service Examination-LogiQA-en-389,False,2,2,1,1,0,0,3,3,0,2,3,1,0,0,2,0,2,4
+Civil Service Examination,Civil Service Examination-LogiQA-en-62,False,2,2,1,2,2,3,2,0,3,3,2,2,0,0,3,0,2,2
+Civil Service Examination,Civil Service Examination-LogiQA-en-570,False,2,2,1,2,3,3,4,0,0,3,2,2,0,0,1,0,2,2
+Civil Service Examination,Civil Service Examination-LogiQA-en-79,False,2,2,1,2,0,0,3,3,3,3,2,3,0,0,2,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-343,False,3,2,1,3,0,0,2,2,0,3,3,3,0,3,3,3,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-404,False,2,3,1,3,0,0,3,3,3,4,3,3,0,0,3,0,1,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-120,False,3,2,1,2,4,4,0,3,0,3,2,1,0,0,2,0,2,4
+Civil Service Examination,Civil Service Examination-LogiQA-en-285,False,3,2,1,2,0,0,2,3,0,3,2,2,0,1,3,3,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-361,False,3,2,2,2,1,0,4,3,0,3,3,3,0,0,2,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-391,False,3,2,2,2,2,3,2,2,0,3,3,2,3,2,3,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-43,False,2,2,1,3,4,4,4,0,4,3,3,2,0,0,3,2,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-286,False,3,2,1,2,0,0,2,2,0,3,3,3,0,2,3,2,2,2
+Civil Service Examination,Civil Service Examination-LogiQA-en-284,False,3,3,1,3,0,0,2,3,0,3,2,3,0,2,4,3,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-592,False,3,2,1,3,0,0,3,2,0,3,2,3,0,3,4,0,3,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-522,False,2,3,1,3,4,4,0,0,0,3,4,2,0,2,3,2,2,4
+Civil Service Examination,Civil Service Examination-LogiQA-en-1,False,2,2,1,2,0,2,2,3,0,3,3,3,0,1,3,3,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-622,False,2,3,1,2,3,3,4,3,3,3,3,2,0,0,2,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-216,False,2,3,1,1,3,5,0,0,4,3,3,3,0,0,3,0,2,3
+Civil Service Examination,Civil Service Examination-LogiQA-en-647,False,3,2,1,2,0,0,3,3,0,3,3,3,0,3,4,0,3,3
+SciBench,SciBench-Physics-148,True,0,3,1,3,5,5,0,4,0,3,3,1,0,3,3,2,3,4
+SciBench,SciBench-Chemistry-140,True,0,3,1,2,0,0,0,3,0,3,2,1,0,3,3,0,2,2
+SciBench,SciBench-Physics-90,True,1,3,3,0,4,4,0,4,0,3,3,2,0,3,3,2,3,2
+SciBench,SciBench-Chemistry-176,False,0,3,2,3,4,4,0,4,0,3,3,1,0,3,3,1,3,4
+SciBench,SciBench-Math-113,False,1,2,2,2,0,0,3,2,0,2,2,1,0,2,2,0,2,1
+SciBench,SciBench-Chemistry-33,False,1,3,1,0,4,4,0,4,0,2,1,2,0,3,1,0,2,2
+SciBench,SciBench-Chemistry-57,False,2,3,1,3,4,4,0,4,0,3,3,3,0,3,4,0,3,3
+SciBench,SciBench-Math-122,False,1,2,1,0,0,0,2,3,0,2,1,1,0,2,1,0,2,1
+SciBench,SciBench-Chemistry-2,False,3,3,2,3,4,4,0,4,0,3,4,2,0,2,2,0,3,2
+SciBench,SciBench-Physics-85,False,1,3,2,3,3,4,0,3,0,3,3,1,0,3,3,2,3,2
+SciBench,SciBench-Math-79,False,0,2,1,0,1,3,2,2,0,2,1,1,0,2,1,0,1,1
+SciBench,SciBench-Chemistry-236,False,1,2,1,1,4,3,0,4,0,2,2,1,0,2,2,0,2,1
+SciBench,SciBench-Math-22,False,2,3,3,3,0,0,0,4,0,3,3,3,0,4,3,0,3,2
+SciBench,SciBench-Chemistry-99,False,0,2,1,1,3,4,0,3,0,2,1,0,0,2,1,0,2,3
+SciBench,SciBench-Physics-191,False,2,3,3,3,4,4,0,4,0,3,2,1,0,3,3,0,2,2
+SciBench,SciBench-Math-119,False,0,1,2,0,0,0,0,3,0,2,1,0,0,2,1,0,2,2
+SciBench,SciBench-Physics-151,False,0,2,2,0,4,4,0,4,0,3,3,1,0,2,2,0,2,3
+SciBench,SciBench-Math-15,False,3,3,3,4,4,0,0,4,0,3,3,1,0,4,3,0,4,3
+SciBench,SciBench-Physics-91,False,0,2,3,2,4,4,0,4,0,2,1,1,0,3,1,2,2,3
+SciBench,SciBench-Chemistry-178,False,3,3,3,3,4,4,0,4,0,3,4,3,0,4,3,0,3,3
+SciBench,SciBench-Physics-183,False,1,3,2,3,4,4,0,4,0,3,3,1,0,3,2,0,2,3
+SciBench,SciBench-Math-11,False,3,3,3,3,4,4,0,4,0,3,3,3,0,4,4,0,3,3
+TimeDial,TimeDial-TimeDial-485,True,2,2,1,1,0,3,3,1,3,2,1,1,3,1,1,0,2,1
+TimeDial,TimeDial-TimeDial-388,True,2,2,1,1,0,4,2,1,0,2,2,1,0,2,1,0,1,2
+TimeDial,TimeDial-TimeDial-193,True,2,2,1,2,0,2,2,1,0,2,2,2,3,2,1,2,2,2
+TimeDial,TimeDial-TimeDial-239,False,2,2,1,1,0,0,2,0,0,2,1,1,1,0,1,0,2,1
+TimeDial,TimeDial-TimeDial-145,False,2,2,1,0,0,3,2,1,0,2,1,1,2,1,1,0,1,1
+TimeDial,TimeDial-TimeDial-101,False,2,2,1,0,0,2,2,1,0,2,1,1,0,1,1,0,2,2
+TimeDial,TimeDial-TimeDial-469,False,1,2,1,1,0,0,2,0,0,2,2,1,1,1,1,0,2,1
+TimeDial,TimeDial-TimeDial-369,False,1,2,1,0,0,1,3,0,1,2,1,1,0,1,1,0,1,1
+TimeDial,TimeDial-TimeDial-394,False,1,2,1,1,0,0,2,1,0,2,2,1,0,1,1,0,1,2
+TimeDial,TimeDial-TimeDial-295,False,1,2,1,1,0,0,3,1,0,2,1,1,0,1,1,0,2,1
+TimeDial,TimeDial-TimeDial-35,False,2,2,1,1,0,2,3,1,0,2,1,1,0,2,1,0,2,1
+TimeDial,TimeDial-TimeDial-74,False,1,2,1,1,0,1,2,1,0,1,1,1,2,2,1,0,2,1
+TimeDial,TimeDial-TimeDial-445,False,2,2,1,1,0,2,2,0,0,3,2,1,1,1,1,0,2,1
+TimeDial,TimeDial-TimeDial-230,False,2,2,1,1,0,0,2,1,1,2,1,1,3,1,1,0,1,2
+TimeDial,TimeDial-TimeDial-102,False,1,2,1,0,0,3,2,1,3,2,2,1,0,1,1,0,2,1
+TimeDial,TimeDial-TimeDial-456,False,2,2,1,1,0,0,2,0,0,2,1,1,2,1,1,0,2,2
+TimeDial,TimeDial-TimeDial-488,False,2,2,1,1,0,0,2,0,3,2,3,1,3,1,1,0,2,1
+TimeDial,TimeDial-TimeDial-14,False,1,2,1,1,0,0,2,1,0,2,1,1,1,1,1,0,1,1
+TimeDial,TimeDial-TimeDial-495,False,1,2,1,1,0,2,3,1,2,2,1,1,2,1,1,0,2,2
+TimeDial,TimeDial-TimeDial-474,False,2,2,1,2,0,0,2,1,0,2,1,1,2,1,1,0,1,1
+TimeDial,TimeDial-TimeDial-207,False,2,2,1,1,0,2,2,1,0,2,2,1,0,2,2,0,2,2
+MCTACO,MCTACO-MCTACO-249,True,1,2,1,1,0,4,3,0,2,2,2,1,2,0,1,0,1,1
+MCTACO,MCTACO-MCTACO-303,True,1,2,1,1,0,0,3,0,1,3,3,1,2,0,1,0,1,3
+MCTACO,MCTACO-MCTACO-782,True,2,2,1,1,0,0,3,0,3,2,2,1,2,1,1,0,1,2
+MCTACO,MCTACO-MCTACO-286,False,2,2,1,1,0,0,2,0,0,2,1,1,0,0,1,0,1,3
+MCTACO,MCTACO-MCTACO-699,False,0,2,1,1,2,2,2,0,1,1,1,1,0,0,1,2,1,1
+MCTACO,MCTACO-MCTACO-333,False,1,2,1,1,0,2,2,0,3,2,1,2,2,0,1,0,1,2
+MCTACO,MCTACO-MCTACO-747,False,1,2,1,0,2,3,3,1,0,2,3,1,0,1,0,0,1,2
+MCTACO,MCTACO-MCTACO-232,False,1,2,1,1,0,0,2,1,0,2,1,1,0,1,1,0,1,2
+MCTACO,MCTACO-MCTACO-444,False,2,2,1,1,0,0,2,0,0,2,2,2,0,1,1,0,1,2
+MCTACO,MCTACO-MCTACO-465,False,2,2,1,1,0,0,2,1,3,2,2,2,0,1,1,0,1,3
+MCTACO,MCTACO-MCTACO-1,False,1,1,1,1,0,0,2,0,0,2,1,1,2,0,1,0,1,2
+MCTACO,MCTACO-MCTACO-109,False,1,2,1,1,0,0,3,0,1,1,1,1,0,0,1,1,1,1
+MCTACO,MCTACO-MCTACO-372,False,1,1,1,0,0,0,2,0,0,0,1,1,0,1,1,0,1,3
+GRE & GMAT,GRE & GMAT-AQuA-RAT-52,True,1,2,1,1,0,2,2,2,0,2,1,1,0,2,2,0,2,1
+GRE & GMAT,GRE & GMAT-AQuA-RAT-2,True,1,2,1,2,0,2,3,2,0,2,2,2,0,3,2,0,2,3
+GRE & GMAT,GRE & GMAT-AQuA-RAT-162,True,0,2,1,2,2,2,2,3,0,3,2,2,0,3,3,0,2,2
+GRE & GMAT,GRE & GMAT-AQuA-RAT-109,False,1,3,1,2,0,0,0,3,0,2,3,1,0,2,2,1,1,3
+GRE & GMAT,GRE & GMAT-AQuA-RAT-31,False,2,2,1,0,0,3,2,2,0,2,2,1,0,2,2,0,2,1
+GRE & GMAT,GRE & GMAT-AQuA-RAT-179,False,1,2,1,0,0,2,2,2,0,2,1,0,0,2,2,1,1,1
+GRE & GMAT,GRE & GMAT-AQuA-RAT-72,False,2,2,1,2,0,0,2,2,0,2,2,1,0,2,2,0,2,2
+GRE & GMAT,GRE & GMAT-AQuA-RAT-75,False,2,2,1,2,0,2,2,3,0,2,1,1,0,2,2,1,2,1
+GRE & GMAT,GRE & GMAT-AQuA-RAT-128,False,1,1,1,0,0,0,2,2,0,2,1,1,0,2,1,0,1,1
+GRE & GMAT,GRE & GMAT-AQuA-RAT-84,False,1,2,1,0,0,3,2,3,0,3,1,2,0,3,3,2,2,2
+GRE & GMAT,GRE & GMAT-AQuA-RAT-197,False,0,2,1,1,0,0,2,1,0,3,3,1,0,1,1,0,1,2
+GRE & GMAT,GRE & GMAT-AQuA-RAT-73,False,0,1,1,0,0,1,2,1,0,1,0,0,0,1,1,0,1,0
+GRE & GMAT,GRE & GMAT-AQuA-RAT-130,False,0,1,1,0,2,1,0,2,0,2,1,0,0,2,1,0,1,1
+Math,Math-AMPS_Hard-40,True,0,2,2,2,0,0,0,4,0,3,3,2,0,3,3,0,2,2
+Math,Math-math_comp-29,True,0,2,1,0,0,2,1,2,0,2,1,1,0,2,1,0,2,2
+Math,Math-math_comp-83,True,0,2,1,0,0,0,0,3,0,3,1,2,0,2,3,0,2,3
+Math,Math-AMPS_Hard-137,False,2,2,1,3,0,0,0,4,0,3,3,0,0,3,3,0,3,2
+Math,Math-AMPS_Hard-71,False,3,2,1,0,0,0,0,4,0,3,3,0,0,3,3,0,3,2
+Math,Math-math_comp-2,False,2,2,2,2,0,0,3,2,0,3,2,1,0,3,2,0,2,2
+Math,Math-olympiad-35,False,3,3,2,4,0,0,0,4,0,4,3,3,0,4,4,0,3,4
+Math,Math-math_comp-3,False,2,2,1,2,0,0,0,2,0,2,1,1,0,2,2,0,2,3
+Math,Math-math_comp-26,False,0,2,1,2,0,0,0,2,0,2,1,1,0,3,1,0,1,1
+Math,Math-olympiad-32,False,3,3,3,3,0,0,0,4,0,3,4,3,0,3,5,0,3,4
+Math,Math-AMPS_Hard-15,False,0,2,2,0,0,0,0,3,0,2,2,0,0,3,2,0,2,2
+Reasoning,Reasoning-zebra_puzzle-1,True,3,3,1,3,0,0,3,3,0,3,3,3,0,3,4,3,3,4
+Reasoning,Reasoning-zebra_puzzle-10,True,3,3,1,4,0,0,2,3,0,4,4,4,0,3,4,3,3,4
+Reasoning,Reasoning-spatial-8,True,2,2,1,1,0,0,2,2,0,3,2,2,0,2,2,2,1,3
+Data Analysis,Data Analysis-cta-50,True,2,2,1,2,0,4,4,2,0,2,3,1,0,1,1,0,1,2
+Data Analysis,Data Analysis-cta-37,True,2,1,1,1,0,3,4,1,0,1,2,1,0,0,1,0,1,3
+Data Analysis,Data Analysis-cta-32,True,2,2,1,2,0,4,3,2,0,2,3,2,0,1,1,0,1,3
+Language,Language-connections-11,True,2,1,1,1,1,0,2,0,0,2,1,2,0,0,1,0,2,2
+Language,Language-connections-30,True,3,3,2,2,0,0,2,0,0,3,3,3,0,0,3,0,2,3
+Language,Language-connections-7,True,2,2,2,2,0,0,2,0,0,3,3,1,0,0,1,0,2,3

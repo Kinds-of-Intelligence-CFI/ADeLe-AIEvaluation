@@ -1,0 +1,39 @@
+# Episodic memory
+
+This rubric assesses episodic memory, the ability to retrieve information about specific past events or experiences that are no longer perceptually available. Tasks may involve recognising, recalling or reconstructing what happened, where and when, often after a delay beyond immediate working memory. Difficulty rises from recognising a single recently seen item with clear cues to freely recalling richly detailed, multi-component episodes across long retention intervals, with high interference, fine precision or shifting retrieval contexts.
+
+Level 0: None. The task does not require memory of a specific past event. It can be solved using immediate perception or general knowledge, without recalling when, where or how the information was acquired.
+Examples:
+* Learn which action is rewarded through trial and error, without recalling past episodes.
+* Read a word that is currently visible on the page.
+* Identify features of an object that is directly in view.
+
+Level 1: Very low. Tasks require recalling a very small amount of information from a recent past event, with limited span, scope or precision. This may involve remembering one or two items, locations or times after a short delay, typically with minimal interference or distraction and little or no integration required.
+Examples:
+* Recall a single word that was presented five minutes earlier, after a period with no distracting tasks or stimuli.
+* Recognise that the first image has reappeared when viewing a series of ten photos in sequence.
+* Remember the location of two objects placed in novel, unique locations (e.g., ball in a box; cup on a table).
+
+Level 2: Low. Tasks require remembering a small number of items, locations or actions over a delay of minutes to hours. They may involve a modest amount of interference, distraction or the need for moderate precision or integration, but demands remain limited in scope.
+Examples:
+* Recall a list of five words that was presented five minutes earlier, after completing an unrelated jigsaw puzzle during the interval.
+* Recognise in conversation that a person is repeating the same story they told two hours earlier.
+* Identify ten previously seen pictures from a lineup of nine similar distractors (e.g., distinguishing a black poodle from similar breeds) after a 30-minute delay.
+
+Level 3: Intermediate. Tasks require remembering a moderate number of items over delays of hours to days, or a larger number over shorter delays. They often involve notable interference or distraction, or demand a higher degree of precision, integration or flexibility in recall than at lower levels.
+Examples:
+* Recall a list of seven words presented briefly ten minutes earlier while performing a distracting task involving highly similar words.
+* Identify ten pictures seen thirty minutes ago from a lineup of twelve highly similar distractors.
+* Remember the locations of several personal items (e.g., keys, wallet, phone) placed in different spots this morning, when those locations differ from where they were placed yesterday.
+
+Level 4: High. Tasks require remembering a large number of elements after only brief exposure, often over delays ranging from hours to years. Successful performance must withstand substantial distraction and interference, or demand high precision and significant integration of details.
+Examples:
+* Spend a day watching every person who walks through an airport terminal, then recognise any of them the next day within a crowd of unfamiliar faces.
+* Recall the locations of around 10 items hidden across a large area after several hours, despite engaging in other activities in the meantime.
+* Remember the sequence of 12 cards dealt earlier in the day, even after using the same deck for other games in the interim.
+
+Level 5: Very high. Tasks require memory for an exceptionally large number of elements after only brief exposure, maintained across very long intervals with high precision and accurate binding of co-occurring details. Performance must remain robust despite substantial distraction and interference.
+Examples:
+* After reading a dense 50-page legal document once, accurately answer detailed questions about specific clauses and cross-references weeks later without review, including their relation to other statutes.
+* Search across all previous experiences to provide examples of every occasion when a particular object has been encountered and the contexts of those encounters.
+* Recall the order and content of 25 playing cards dealt in sequence a week earlier, despite having played multiple card games in the meantime.

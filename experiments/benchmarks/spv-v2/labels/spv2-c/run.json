@@ -1,0 +1,39 @@
+{
+  "run_id": "spv2-c",
+  "created_at": "2026-10-05T18:07:00+00:00",
+  "repo_commit": "23712f82ecb7b4988170e5f34eb280177c279477",
+  "pass": 1,
+  "design": {
+    "n_cells": 400,
+    "dims": [
+      "SPv"
+    ],
+    "judges": {
+      "opus-low": "Claude Code subagent 'adele-judge-v2-low-image' (Read, Write; omitClaudeMd; effort low), model alias 'opus', relayed by 'judge-dispatcher-v2-low-image'"
+    }
+  },
+  "texts": {
+    "cur": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/SPv.txt",
+      "sha256": "5eb7bfe84cc689572e5fc8de61046ae4459b405e338f9e06cfb28e24307ca213"
+    },
+    "cand": {
+      "file": "experiments/benchmarks/spv-v2/SPv_candidate.txt",
+      "sha256": "f0fed347e214c777a5ebcba192221e73743fa5b86ca3c566934b6bc3d2affbeb"
+    }
+  },
+  "data": {
+    "dataset": "jonathan-roberts1/zerobench (gated; answers not shared)",
+    "file_sha256": "d6e775b73e93e09eb9ef11f99c0f1e4083fcbf15c41886ae3f3e231c7d39e80a"
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "judge_agent": {
+    "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low-image.md",
+    "sha256": "9c4eb3b783d22ef4b5fa34c9d6150625652e3e10996a9a59b2568c7c02fbc9d9"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/spv2-c"
+}

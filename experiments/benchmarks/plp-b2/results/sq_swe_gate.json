@@ -1,0 +1,30 @@
+{
+  "n_tasks": 44,
+  "n_solvable": 37,
+  "S_vs_solve_rate": {
+    "rho": -0.724,
+    "p_one_sided": 2.06e-07
+  },
+  "current_vs_solve_rate": {
+    "rho": -0.554,
+    "p_one_sided": 0.000189
+  },
+  "S_modal_share": 0.682,
+  "checks": {
+    "G1_S_negative_p_lt_0.05": true,
+    "G2_at_most_0.15_weaker": true,
+    "G3_modal_share_le_0.85": true
+  },
+  "descriptive": {
+    "S_levels": {
+      "1": 14,
+      "2": 30
+    },
+    "current_levels": {
+      "1": 18,
+      "2": 26
+    },
+    "exact_S_vs_current": 0.864,
+    "mean_shift_S_minus_current": 0.091
+  }
+}

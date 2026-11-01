@@ -1,0 +1,38 @@
+You are an ADeLe demand-level annotator. For each of the {{N}} tasks below, assign a single demand level (an integer 0-5) for ONE dimension: {{CODE}} - {{NAME}}.
+
+The level is a property of the presented task state: how much working or short-term memory is required to maintain, update, or reconstruct relevant river-crossing state information that is not currently visible but is needed to continue correctly.
+
+Use this decision rule before assigning a level:
+1. First ask: What information needed for the current task state is no longer directly visible?
+2. If the answer is none, the MMs level should normally be 0.
+3. Only assign level greater than 0 when the task requires maintaining, updating, or reconstructing information that is not currently visible.
+
+Treat directly shown current-state information as external memory. Do not count the need to read, inspect, or keep visible object locations and boat side in mind as working-memory demand.
+
+This v3 contrast set is designed so multiple tasks may have the same number of history steps. Do NOT map the number of moves directly to the memory level. At the same move-history length, score higher only when more object locations must be updated, reversed, or disentangled.
+
+For this pilot, focus only on object-location bookkeeping:
+1. Farmer-only or boat-only crossings add little memory demand beyond boat-side tracking.
+2. A move that changes no object location is lower memory demand than a move that changes object locations.
+3. One-way object moves are lower demand than histories where an object moves, then later moves back or must be distinguished from other changed objects.
+4. Reversals and interference matter: score higher when the solver must remember that an earlier object update was undone or overwritten.
+5. Do not score planning difficulty, search depth, action execution difficulty, legality checking, rule complexity, object count by itself, or remaining optimal steps.
+
+Operational anchors for this rivercross pilot:
+- Level 0: the needed current state is directly visible; no hidden state tracking is required.
+- Level 1: a short hidden history with at most one simple object-location update and no reversals.
+- Level 2: several object locations must be updated, mostly one-way, with little/no reversal.
+- Level 3: multiple object locations must be updated and at least one update must be disentangled or reversed.
+- Level 4: many object-location updates with several reversals/interference cases.
+- Level 5: exceptionally large, long, or multi-layer hidden state tracking beyond this small pilot.
+
+=== {{CODE}} RUBRIC ===
+{{RUBRIC}}
+
+=== {{N}} TASKS (custom_id ||| situation) ===
+{{ITEMS}}
+
+=== OUTPUT ===
+Return ONLY a CSV inside a single code block. Header exactly:
+custom_id,level,reason
+then EXACTLY {{N}} data rows, one per task in the given order. level must be an integer 0-5. reason must be 15 words or fewer and name the hidden object-location tracking condition that decided the level. Output nothing before or after the code block.

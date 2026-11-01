@@ -1,0 +1,7 @@
+file_id,item_id,set,arm,demand,judge,writer_model,level,valid,prompt_sha256,response_sha256
+rpx2h,B-M01,B,cur,PLp,haiku-low,claude-haiku-4-5-20251001,3.0,True,87c0256a2d3dc16e7c7bf277ab5c97d7cf3c7f82f0c97027e3445064d977ff2c,19211c45f14a851b36b1cdae3cf05220bc430fea80691dc33c7149ff38e09c77
+ykxtz,B-M01,B,C,PLp,haiku-low,claude-haiku-4-5-20251001,3.0,True,65f979f4158269cfec1cb79bac1239c518ff982a722e2e0b8742a5bbab6c4438,536e96659841eb50a6cb875af1c3042a645c62781bb0b66bb00ace9ba5cc06c4
+rpx2h,B-M01,B,cur,PLp,sonnet-low,claude-sonnet-5,2.0,True,87c0256a2d3dc16e7c7bf277ab5c97d7cf3c7f82f0c97027e3445064d977ff2c,f037fa4816fab4f00fab3eaeaf6cfe703fe0601b7b5692e60aedd12fa00f269f
+ykxtz,B-M01,B,C,PLp,sonnet-low,claude-sonnet-5,2.0,True,65f979f4158269cfec1cb79bac1239c518ff982a722e2e0b8742a5bbab6c4438,799524c51c2524b7aef9b9830286d01f1d50208e7212d7030aed3949a7923960
+rpx2h,B-M01,B,cur,PLp,opus-low,claude-opus-5-5,2.0,True,87c0256a2d3dc16e7c7bf277ab5c97d7cf3c7f82f0c97027e3445064d977ff2c,08001aeea3bbcc4d8bc2143de1091bcd9b845401b9db2450b739a4e86cdb5e80
+ykxtz,B-M01,B,C,PLp,opus-low,claude-opus-5-5,2.0,True,65f979f4158269cfec1cb79bac1239c518ff982a722e2e0b8742a5bbab6c4438,daf1d91705137de178825646facf7f85a9a662261c192453ae2a6fccbb21237e

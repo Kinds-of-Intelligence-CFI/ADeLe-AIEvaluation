@@ -1,0 +1,15 @@
+benchmark,instance_id
+swe-bench-verified,astropy__astropy-8872
+swe-bench-verified,sympy__sympy-15976
+swe-bench-verified,sympy__sympy-17630
+deepswe-v1.1,aiomonitor-task-snapshots-diff
+deepswe-v1.1,tomlkit-toml-table-converters
+frontierswe-v2,crash-proof-flash-filesystem
+frontierswe-v2,spice-circuit-simulator-in-rust
+programbench,raviqqe__muffet.a882908
+programbench,segmentio__chamber.5f93f5f
+programbench,yaa110__nomino.f892499
+terminal-bench-4.0.0,layout-config-recreation
+terminal-bench-4.0.0,risk-scorer-replay
+terminal-bench-science-0.1,ankle-mri-findings
+terminal-bench-science-0.1,finite-free-stam

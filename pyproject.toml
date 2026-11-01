@@ -70,8 +70,9 @@ Repository = "https://github.com/Kinds-of-Intelligence-CFI/ADeLe-AIEvaluation.gi
 # ============================================================================
 [tool.hatch.build.targets.wheel]
 packages = ["src/adele"]
-# The rubric .txt files under src/adele/rubrics/data_v1 are picked up automatically
-# (hatchling ships all files inside the package), so no force-include is needed.
+# All package data under src/adele is picked up automatically (hatchling ships
+# every file inside the package): the v1.0 rubrics (rubrics/data_v1), the draft v2
+# agentic rubrics + MANIFEST.tsv (rubrics/data_v2), and py.typed.
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -97,6 +98,13 @@ annotate = [
     "tenacity>=8.2",
     "datasets>=2.14",          # load source benchmarks from HuggingFace
 ]
+# Non-OpenAI model providers (Claude Haiku, Gemini Flash, ...) for the agent
+# (Inspect) and the demand judge (litellm). Needs the matching API keys in the
+# environment: ANTHROPIC_API_KEY, GEMINI_API_KEY / GOOGLE_API_KEY.
+models = [
+    "anthropic>=0.40",
+    "google-generativeai>=0.8",
+]
 # Demand / ability profiling and predictive-power analysis.
 analysis = [
     "scikit-learn>=1.3",
@@ -105,9 +113,16 @@ analysis = [
     "matplotlib>=3.7",
     "scienceplots>=2.2",
 ]
+# Agentic evaluation: whole-task rubric validation (judge-vs-human agreement).
+# Reuses the analysis stack (scikit-learn/scipy); datasets feeds HAL task inputs.
+agentic = [
+    "adele[analysis]",
+    "datasets>=2.14",        # load HAL benchmark task inputs from HuggingFace
+    "huggingface_hub>=0.23",  # fetch τ-bench task files directly (hf_hub_download)
+]
 # Everything.
 all = [
-    "adele[eval,annotate,analysis]",
+    "adele[eval,annotate,analysis,agentic,models]",
 ]
 dev = [
     "adele[all]",

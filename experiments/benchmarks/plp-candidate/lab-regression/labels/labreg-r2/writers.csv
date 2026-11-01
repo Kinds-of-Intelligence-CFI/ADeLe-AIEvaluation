@@ -1,0 +1,7 @@
+judge,file_id,writer_model,calls,classifier_stops
+haiku-low,rpx2h,claude-haiku-4-5-20251001,1,0
+haiku-low,ykxtz,claude-haiku-4-5-20251001,1,0
+sonnet-low,rpx2h,claude-sonnet-5,1,0
+sonnet-low,ykxtz,claude-sonnet-5,1,0
+opus-low,rpx2h,claude-opus-5-5,1,0
+opus-low,ykxtz,claude-opus-5-5,1,1

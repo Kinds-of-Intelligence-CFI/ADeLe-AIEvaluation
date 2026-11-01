@@ -1,0 +1,71 @@
+{
+  "verdict": "fail",
+  "checks": {
+    "a_letter_at_2_in_at_most_2_of_6": false,
+    "b_placement_not_worse": false,
+    "c_no_move_of_two": true
+  },
+  "letter": {
+    "O2": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "O": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "placed_at_own_level": {
+    "O2": 16,
+    "O": 17,
+    "of": 23
+  },
+  "moves_O_to_O2": {
+    "P-L2-2": -1
+  },
+  "missed_under_O2": {
+    "P-L0-2": {
+      "target": 0,
+      "O2": 1,
+      "O": 1
+    },
+    "P-L0-4": {
+      "target": 0,
+      "O2": 3,
+      "O": 3
+    },
+    "P-L1-3": {
+      "target": 1,
+      "O2": 2,
+      "O": 2
+    },
+    "P-L2-2": {
+      "target": 2,
+      "O2": 1,
+      "O": 2
+    },
+    "P-L4-1": {
+      "target": 4,
+      "O2": 3,
+      "O": 3
+    },
+    "P-L5-1": {
+      "target": 5,
+      "O2": 4,
+      "O": 4
+    },
+    "P-L5-3": {
+      "target": 5,
+      "O2": 4,
+      "O": 4
+    }
+  }
+}

@@ -1,0 +1,67 @@
+instance_id,category,expert_hours,n_configs,n_trials,solved_trials,solve_rate,epoch_defect_type,excluded_by,keep
+atrx-vep-crispr,Science,7.0,27,135,51,0.3778,False Negative,epoch_defect,False
+batched-eval-parity,ML,24.0,27,135,68,0.5037,False Positive,epoch_defect,False
+biped-contact-dynamics,Science,5.0,27,135,59,0.437,,,True
+bun-sourcemap-leak,Software,1.5,27,135,0,0.0,False Positive,epoch_defect;never_solved,False
+cad-model,Hardware,2.0,27,135,68,0.5037,,,True
+cargo-flight-dispatch,Operations,2.5,27,134,0,0.0,False Negative,epoch_defect;never_solved,False
+coq-block-bound,Science,16.0,27,135,113,0.837,,,True
+ctr-optimization,Operations,4.8,27,135,34,0.2519,,,True
+cumulative-layout-shift,Software,6.0,27,135,103,0.763,False Negative,epoch_defect,False
+data-anonymization,Software,24.0,27,135,0,0.0,False Negative,epoch_defect;never_solved,False
+distributed-dedup,Software,10.0,27,133,64,0.4812,False Positive,epoch_defect,False
+embedding-drift-monitor,ML,5.0,27,135,85,0.6296,False Positive,epoch_defect,False
+fin-saccr-rwa,Operations,8.0,27,135,107,0.7926,,,True
+foodstuff-beta-activity,Science,1.5,27,135,0,0.0,False Negative,epoch_defect;never_solved,False
+formal-crypto,Security,3.0,27,135,77,0.5704,,,True
+fp8-rmsnorm-gemm,ML,12.0,27,134,101,0.7537,,,True
+freecad-impeller,Hardware,2.0,27,135,1,0.0074,False Positive,epoch_defect,False
+freecad-platform-drawing,Hardware,1.5,27,135,74,0.5481,False Negative,epoch_defect,False
+freecad-spring-clip,Hardware,2.0,27,135,55,0.4074,False Positive,epoch_defect,False
+freight-dispatch-shift,Operations,4.0,27,135,0,0.0,,never_solved,False
+glycan-ms2-elucidation,Science,5.0,27,135,0,0.0,False Negative,epoch_defect;never_solved,False
+gsea-proteomics,Science,4.0,27,135,37,0.2741,False Negative,epoch_defect,False
+heat-pump-warranty,Operations,4.0,27,135,59,0.437,,,True
+hof-topology-interpenetration,Science,8.0,27,134,87,0.6493,,,True
+html-js-filter,Security,0.75,27,135,31,0.2296,,,True
+interleaved-vigenere,Security,2.0,27,135,80,0.5926,False Positive,epoch_defect,False
+intrastat-meldung,Operations,3.0,27,135,55,0.4074,,,True
+jax-speedrun-gpu,ML,10.0,27,134,34,0.2537,False Positive,epoch_defect,False
+ks-solver-cpp,Science,10.0,27,130,36,0.2769,False Positive,epoch_defect,False
+kv-live-surgery,Software,4.0,27,135,58,0.4296,,,True
+lake-temp-glm,Science,8.0,27,135,29,0.2148,,,True
+layout-config-recreation,Media,2.0,27,135,18,0.1333,,,True
+layout-config-recreation2,Media,2.0,27,134,112,0.8358,,,True
+legacy-utility-triage,Operations,3.5,27,135,61,0.4519,False Negative,epoch_defect,False
+live-database-cutover,Software,8.0,27,134,54,0.403,,,True
+math-eval-grader,ML,6.0,27,135,39,0.2889,False Positive,epoch_defect,False
+medical-claims-processing,Operations,2.0,27,135,1,0.0074,,,True
+mp-checkpoint-consolidation,ML,6.0,27,135,114,0.8444,,,True
+music-harmony,Media,1.0,27,135,5,0.037,False Negative,epoch_defect,False
+mvcc-lsm-compaction,Software,4.0,27,135,67,0.4963,False Positive,epoch_defect,False
+nextjs-performance,Software,3.0,27,135,48,0.3556,False Negative,epoch_defect,False
+ontology-kg-querying,Software,20.0,27,135,0,0.0,False Positive,epoch_defect;never_solved,False
+payments-pipeline-fix,Software,2.0,27,135,94,0.6963,,,True
+photonic-waveguide-routing,Software,0.75,27,134,64,0.4776,,,True
+pretrain-shard-corruption,ML,2.0,27,135,68,0.5037,,,True
+production-planning,Operations,4.0,27,135,34,0.2519,,,True
+protein-autointerp-disulfide,Science,2.0,27,135,7,0.0519,,,True
+react-lead-form,Software,5.0,27,135,56,0.4148,,,True
+retro-console-soc,Hardware,10.0,27,135,96,0.7111,,,True
+risk-scorer-replay,ML,4.0,27,135,106,0.7852,,,True
+roy-polymorph-cn,Science,3.0,27,135,17,0.1259,,,True
+rs-archive-clone,Software,16.0,27,135,68,0.5037,,,True
+satb-audio-transcription,Media,8.0,27,135,65,0.4815,,,True
+session-window-debug,Software,8.0,27,135,20,0.1481,False Positive,epoch_defect,False
+sglang-qwen-burst,ML,2.0,27,135,16,0.1185,False Positive,epoch_defect,False
+shadow-relay,Security,3.0,27,135,116,0.8593,,,True
+sound-change-cascade,Science,4.0,27,135,93,0.6889,,,True
+takens-embedding-lean,Science,60.0,27,135,38,0.2815,False Positive,epoch_defect,False
+telecom-entity-resolution,Software,16.0,27,135,103,0.763,False Positive,epoch_defect,False
+uefi-bootkit,Security,2.0,27,135,100,0.7407,,,True
+vba-userform-port,Software,4.0,27,135,26,0.1926,,,True
+vf2-speedup-networkx,Software,4.0,27,135,48,0.3556,False Positive,epoch_defect,False
+vllm-deepseek-streaming,ML,2.0,27,135,8,0.0593,,,True
+vpp-loss-divergence,ML,2.0,27,135,74,0.5481,False Positive,epoch_defect,False
+wal-recovery-ordering,Software,6.0,27,135,53,0.3926,False Positive,epoch_defect,False
+wdm-design,Science,4.0,27,135,115,0.8519,,,True

@@ -1,0 +1,32 @@
+You are an ADeLe demand-level annotator. For each of the {{N}} tasks below, assign a single demand level (an integer 0-5) for ONE dimension: {{CODE}} - {{NAME}}.
+
+The level is a property of the presented task state: how much working or short-term memory is required to maintain, update, or reconstruct relevant river-crossing state information that is not currently visible but is needed to continue correctly.
+
+Use this decision rule before assigning a level:
+1. First ask: What information needed for the current task state is no longer directly visible?
+2. If the answer is none, the MMs level should normally be 0.
+3. Only assign level greater than 0 when the task requires maintaining, updating, or reconstructing information that is not currently visible.
+
+Treat directly shown current-state information as external memory. Do not count the need to read, inspect, or keep visible object locations and boat side in mind as working-memory demand. Visible state size is not memory demand.
+
+Score using ONLY the rubric provided below. Assign levels by elimination against the rubric's stated conditions, not by an overall impression of how hard or tricky the puzzle feels.
+
+For this pilot, focus only on memory state tracking:
+1. Score demand from information that must be maintained, updated, or reconstructed because it is no longer directly visible.
+2. Do not score planning difficulty, search depth, action execution difficulty, legality checking, rule complexity, or overall puzzle difficulty.
+3. Do not score the number of objects, the size of the visible state, or the number of puzzle rules by themselves.
+4. Do not score the length of the move history by itself. Score the need to maintain and update object locations that are no longer directly visible.
+5. Do not let the number of remaining optimal steps raise the level unless it creates memory-maintenance demand under the rubric.
+6. If the current state is directly visible in the task text, treat that information as externally available and normally assign Level 0 unless some other required information is hidden.
+7. If the task gives only an initial state and move history, assume the solver must infer the present configuration from that history.
+
+=== {{CODE}} RUBRIC ===
+{{RUBRIC}}
+
+=== {{N}} TASKS (custom_id ||| situation) ===
+{{ITEMS}}
+
+=== OUTPUT ===
+Return ONLY a CSV inside a single code block. Header exactly:
+custom_id,level,reason
+then EXACTLY {{N}} data rows, one per task in the given order. level must be an integer 0-5. reason must be 15 words or fewer and name the hidden-information memory-tracking condition that decided the level. Output nothing before or after the code block.

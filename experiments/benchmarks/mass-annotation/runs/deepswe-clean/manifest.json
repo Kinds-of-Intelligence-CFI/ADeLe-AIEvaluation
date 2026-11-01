@@ -1,0 +1,88 @@
+{
+  "run": "deepswe-clean",
+  "created_at": "2026-10-01T18:00:34+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/deepswe-clean.toml",
+  "git": {
+    "commit": "1175f1567f4a14075b571656b6a5e4fbcca856ce",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "ec6bd5ac262ee2107b0617d9e19fff9b4803a119242b5c9ec02f003808242fc3",
+      "content": "# DeepSWE v1.1 clean set (90 of 113 tasks: Epoch AI's 23 named defects dropped; experiments/benchmarks/deepswe-clean/)\n# on the adopted v2 planning family (PLp = text O, PLe, PLs). Prompt: instruction.md verbatim, closing branch line kept.\n# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting). Not pinned or run yet.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/deepswe-clean.toml\nname = \"deepswe-clean\"\n\n[tasks]\nbenchmarks = [\"deepswe-v1.1\"]\nsubset = \"experiments/benchmarks/deepswe-clean/tasks.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 50\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "eb250bb822880479180ae134ee6beb6c3c70b65316777dfc22cd0aac57b5dfd8",
+          "frame_sha256": "a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac",
+          "n_selected": 90
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/deepswe-clean/tasks.csv",
+        "sha256": "9f9edf46dfc2e37cda33a4148da96cc9296c247a03c809cd73a3d0a0a9c178d3",
+        "n_ids": 90
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "322674efb257df4fbb1c93415cd903d554c62b510623846148d635309ad4194f",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e",
+        "full_name": "Simulating"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 50
+      }
+    },
+    "cells": {
+      "n": 270,
+      "sha256": "bbf8b4feb72c31124c32d0ee2b46543e1734bd7be2e2e3aa431cbd62492f69e3"
+    }
+  }
+}

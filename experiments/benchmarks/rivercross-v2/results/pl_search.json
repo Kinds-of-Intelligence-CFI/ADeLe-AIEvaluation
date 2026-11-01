@@ -1,0 +1,115 @@
+{
+  "n": 54,
+  "unlabelled": {
+    "PLe": [],
+    "PLs": [],
+    "PLp": []
+  },
+  "levels": {
+    "PLe": {
+      "1": 2,
+      "3": 52
+    },
+    "PLs": {
+      "2": 54
+    },
+    "PLp": {
+      "0.0": 1,
+      "1.0": 4,
+      "2.0": 39,
+      "3.0": 10
+    }
+  },
+  "spearman": {
+    "PLe_vs_ctg": {
+      "n": 54,
+      "rho": 0.308,
+      "p": 0.0236
+    },
+    "PLe_vs_bits": {
+      "n": 54,
+      "rho": 0.252,
+      "p": 0.0663
+    },
+    "PLe_vs_opus_failure": {
+      "n": 54,
+      "rho": 0.055,
+      "p": 0.69
+    },
+    "PLe_vs_opus_non_optimal": {
+      "n": 54,
+      "rho": 0.115,
+      "p": 0.409
+    },
+    "PLe_vs_sonnet_failure": {
+      "n": 54,
+      "rho": 0.12,
+      "p": 0.388
+    },
+    "PLe_vs_sonnet_non_optimal": {
+      "n": 54,
+      "rho": 0.105,
+      "p": 0.45
+    },
+    "PLs_vs_ctg": {
+      "n": 54,
+      "rho": NaN,
+      "p": NaN
+    },
+    "PLs_vs_bits": {
+      "n": 54,
+      "rho": NaN,
+      "p": NaN
+    },
+    "PLs_vs_opus_failure": {
+      "n": 54,
+      "rho": NaN,
+      "p": NaN
+    },
+    "PLs_vs_opus_non_optimal": {
+      "n": 54,
+      "rho": NaN,
+      "p": NaN
+    },
+    "PLs_vs_sonnet_failure": {
+      "n": 54,
+      "rho": NaN,
+      "p": NaN
+    },
+    "PLs_vs_sonnet_non_optimal": {
+      "n": 54,
+      "rho": NaN,
+      "p": NaN
+    },
+    "PLp_vs_ctg": {
+      "n": 54,
+      "rho": 0.441,
+      "p": 0.000849
+    },
+    "PLp_vs_bits": {
+      "n": 54,
+      "rho": 0.404,
+      "p": 0.00242
+    },
+    "PLp_vs_opus_failure": {
+      "n": 54,
+      "rho": 0.225,
+      "p": 0.101
+    },
+    "PLp_vs_opus_non_optimal": {
+      "n": 54,
+      "rho": 0.294,
+      "p": 0.0308
+    },
+    "PLp_vs_sonnet_failure": {
+      "n": 54,
+      "rho": 0.171,
+      "p": 0.216
+    },
+    "PLp_vs_sonnet_non_optimal": {
+      "n": 54,
+      "rho": 0.19,
+      "p": 0.168
+    }
+  }
+}

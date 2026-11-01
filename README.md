@@ -16,6 +16,25 @@
 
 Ensuring safe and effective use of artificial intelligence (AI) requires understanding and anticipating its performance on new tasks, from advanced scientific challenges to transformed workplace activities. So far, benchmarking has guided progress in AI but has offered limited explanatory and predictive power for general-purpose AI systems, attributed to limited transferability across specific tasks. Here we introduce general scales for AI evaluation that elicit demand profiles explaining what capabilities common AI benchmarks truly measure, extract ability profiles quantifying the general strengths and limits of AI systems and robustly predict AI performance for new task instances. Our fully automated methodology builds on 18 rubrics, capturing a broad range of cognitive and intellectual demands, which place different task instances on the same general scales, illustrated on 15 large language models (LLMs) and 63 tasks. Both the demand and the ability profiles on these scales bring new insights such as construct validity through benchmark sensitivity and specificity and explain conflicting claims about whether AI has reasoning capabilities. Ultimately, high predictive power at the instance level becomes possible using the general scales, providing superior estimates over strong black-box baseline predictors, especially in out-of-distribution settings (new tasks and benchmarks). The scales, rubrics, battery, techniques and results presented here constitute a solid foundation for a science of AI evaluation, underpinning the reliable deployment of AI in the years ahead.
 
+## Working on the agentic extension? Start here
+
+This branch carries the **agentic** extension of ADeLe: demand annotation for
+tasks where a system acts over many steps. Read these three, in order:
+
+| | |
+|---|---|
+| [`docs/01-method.md`](docs/01-method.md) | what we annotate — demand-to-go — and which alternatives were tried and dropped |
+| [`docs/02-rubrics.md`](docs/02-rubrics.md) | the active dimension set, the one-driver principle, and what is still open |
+| [`docs/03-experiments.md`](docs/03-experiments.md) | the two experiments, what each claims, who owns what |
+
+Then: [`experiments/README.md`](experiments/README.md) for the shape every
+experiment folder follows and the three conventions we hold to.
+
+The rest of this file documents the v1 toolkit, which the agentic work builds on
+and does not change.
+
+---
+
 ## 🚀 Unified AI Evaluation with Explanatory & Predictive Power
 
 **ADeLe** (Annotated Demand Levels) is a comprehensive toolkit for evaluating AI systems not just on *performance* (correctness), but on *capability matching*. It breaks down benchmarks into 18 cognitive demand dimensions (e.g., Comprehension, Knowledge, Metacognition) and assesses how well a model's capabilities align with these demands.
@@ -71,7 +90,7 @@ export OPENROUTER_API_KEY="sk-or-..."     # OpenRouter (DeepSeek, Llama 3, etc.)
 
 The fastest way to see ADeLe work: run a model on the **pre-annotated v1.0 battery** and plot its
 capability profile. This reuses the published demand annotations, so it costs only model inference —
-no LLM-judge annotation. Needs `pip install -e ".[eval,analysis]"` and `HF_TOKEN` for the gated dataset.
+no LLM-judge annotation. Needs `pip install -e ".[eval,analysis]"` and access to the battery: either `HF_TOKEN` for the [gated dataset](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) (request access on that page first), or a local CSV via `csv_path=`/`ADELE_BATTERY_CSV` — the copy shipped in `ADeLe_battery_data/` works after `git lfs pull`.
 
 ```python
 from adele.data import load_battery
@@ -128,7 +147,7 @@ adele evaluate openai/gpt-4o mmlu-pro --output-dir ./results/mmlu
 
 #### Run the ADeLe v1.0 battery directly (Inspect task)
 
-The pre-annotated [ADeLe v1.0 battery](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) is registered as an Inspect task, so any model can be evaluated on it with one command (needs `pip install -e ".[eval]"` and `HF_TOKEN` for the gated dataset):
+The pre-annotated [ADeLe v1.0 battery](https://huggingface.co/datasets/CFI-Kinds-of-Intelligence/ADeLe_battery_v1dot0) is registered as an Inspect task, so any model can be evaluated on it with one command (needs `pip install -e ".[eval]"` and battery access — gated `HF_TOKEN` after requesting access on the dataset page, or `-T csv_path=...` with a local copy; the in-repo copy needs `git lfs pull`):
 
 ```bash
 # Multiple-choice subset — deterministic, no judge:
@@ -139,7 +158,7 @@ inspect eval adele/adele_battery --model openai/gpt-4o \
     -T answer_format=Open-ended -T judge_model=openai/gpt-4o
 ```
 
-Task params (`-T`): `answer_format` (`MC` | `Open-ended`), `benchmark`, `limit`, `judge_model`, `csv_path`.
+Task params (`-T`): `answer_format` (`MC` | `Open-ended`), `benchmark`, `limit`, `judge_model`, `csv_path`. **Open-ended samples need `-T judge_model=...`** — without a judge they score NOANSWER and drag the reported accuracy down.
 
 Scoring is faithful to the v1.0 verification conventions: **MC** by option-letter match, **Open-ended** by a model-graded judge (recorded in the result version). The 18 demand levels travel into the log via `Sample.metadata`. Explore a run with `inspect view`.
 
@@ -330,7 +349,7 @@ The file name (without `.txt`) becomes the dimension acronym. The `# Header` lin
 
 ### 1. Demand Profile (The "Problem Space")
 A **Demand Profile** visualizes what a benchmark *asks* of a model. It scores 18 dimensions (0–5 scale), grouped as in the paper (run `adele rubrics list` for the full names):
-- **Cognitive**: `AS` (Attention & Scan), `CEc` (Verbal Comprehension), `CEe` (Verbal Expression), `CL` (Conceptualisation/Learning), `MCr` (Identifying Relevant Information), `MCt` (Critical Thinking), `MCu` (Calibrating Knowns/Unknowns), `MS` (Mind Modelling), `QLl` (Logical Reasoning), `QLq` (Quantitative Reasoning), `SNs` (Spatio-physical Reasoning).
+- **Cognitive**: `AS` (Attention & Scan), `CEc` (Verbal Comprehension), `CEe` (Verbal Expression), `CL` (Conceptualisation/Learning), `MCr` (Identifying Relevant Information), `MCt` (Critical Thinking), `MCu` (Calibrating Knowns/Unknowns), `MSm` (Mind Modelling), `QLl` (Logical Reasoning), `QLq` (Quantitative Reasoning), `SNs` (Spatio-physical Reasoning).
 - **Knowledge**: `KNa` (Applied Sciences), `KNc` (Customary/Everyday), `KNf` (Formal Sciences), `KNn` (Natural Sciences), `KNs` (Social Sciences & Humanities).
 - **Extraneous**: `AT` (Atypicality), `VO` (Volume). Plus `UG` (Unguessability), computed from the answer format rather than via an LLM rubric.
 
@@ -380,3 +399,15 @@ We train a **Random Forest** classifier to predict *model correctness* solely fr
     - `demand.py`: Generates demand profile polar heatmaps (matplotlib).
     - `ability.py`: Computes ability scores (AUC) and Spearman correlations.
     - `prediction.py`: Random Forest analysis of predictive power.
+
+---
+
+## 📄 Reproducing the paper
+
+Figures and tables of ["General Scales Unlock AI Evaluation with Explanatory and Predictive Power"](https://arxiv.org/pdf/2503.06378) are reproduced by the notebooks in three top-level folders (each notebook lists its own dependencies):
+
+- **`demand_profiles/`** — demand profile figures.
+- **`ability_profiles/`** — `scc_and_ability_profiles.ipynb` produces the ability profiles (Figures 7–8).
+- **`predictive_power/`** — the predictive-power analysis.
+
+Tested on macOS 14, Ubuntu 22.04 and Windows 11 with Python 3.11. Typical notebook runtime is 1–5 minutes on a laptop CPU; demand annotation itself depends on the LLM judge (the OpenAI Batch API can take hours). The battery data in `ADeLe_battery_data/` is stored with git-lfs (`git lfs pull`) and licensed CC-BY-SA 4.0; the code is MIT.

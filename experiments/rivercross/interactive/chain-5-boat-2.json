@@ -1,0 +1,363 @@
+{
+  "trajectory": [
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5"
+      ],
+      "boat": "L"
+    },
+    {
+      "left": [
+        "item1",
+        "item3",
+        "item5"
+      ],
+      "boat": "R",
+      "reason": "Trying items 2 and 4, which skip item 3 between them."
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3",
+        "item5"
+      ],
+      "boat": "L",
+      "reason": "Farmer returns alone from the right bank. Items 1, 3, 5 (all odd) can be left together on the left since none are forbidden pairs."
+    },
+    {
+      "left": [
+        "item5"
+      ],
+      "boat": "R",
+      "reason": "Taking items 1 and 3, which are non-adjacent and can travel together."
+    },
+    {
+      "left": [
+        "farmer",
+        "item2",
+        "item4",
+        "item5"
+      ],
+      "boat": "L",
+      "reason": "Taking items 2 and 4 back to the left to meet item5. This leaves only item1 and item3 on the right (non-adjacent with the farmer)."
+    },
+    {
+      "left": [
+        "item4"
+      ],
+      "boat": "R",
+      "reason": "Taking items 2 and 5 to the right. They are non-adjacent in the chain."
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3",
+        "item4"
+      ],
+      "boat": "L",
+      "reason": "Taking items 1 and 3 back together (non-adjacent). This leaves items 2 and 5 on the right with the farmer (non-adjacent)."
+    },
+    {
+      "left": [
+        "item3"
+      ],
+      "boat": "R",
+      "reason": "Taking items 1 and 4 across. This leaves item3 alone on the left."
+    },
+    {
+      "left": [
+        "farmer",
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "boat": "L",
+      "reason": "Taking items 2 and 4 back (non-adjacent). This leaves items 1 and 5 on the right with the farmer."
+    },
+    {
+      "left": [
+        "item3"
+      ],
+      "boat": "R",
+      "reason": "Taking items 2 and 4 across. Item 3 stays on the left."
+    },
+    {
+      "left": [
+        "farmer",
+        "item1",
+        "item3",
+        "item5"
+      ],
+      "boat": "L",
+      "reason": "Taking items 1 and 5 back (non-adjacent). This leaves items 2 and 4 on the right with the farmer."
+    },
+    {
+      "left": [
+        "item5"
+      ],
+      "boat": "R",
+      "reason": "Taking items 1 and 3 (non-adjacent). Item 5 stays alone on the left."
+    }
+  ],
+  "attempts": [
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "legal": false,
+      "reason": "My strategy is to move non-adjacent items across first to avoid leaving forbidden pairs together. I'm starting with item1 and item3 since they don't conflict."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1"
+      ],
+      "legal": false,
+      "reason": "I realize taking two items may violate constraints I haven't accounted for. Moving a single item alone is always safe since it won't leave a forbidden pair unattended."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item3"
+      ],
+      "legal": false,
+      "reason": "Trying to move items 2 and 3 together. They are adjacent and forbidden to be left alone, so maybe I must move forbidden pairs together?"
+    },
+    {
+      "load": [
+        "farmer"
+      ],
+      "legal": false,
+      "reason": "Trying to move the farmer alone. If no move is possible with items, perhaps the farmer must travel alone to prepare the right bank."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item4"
+      ],
+      "legal": false,
+      "reason": "Trying items 1 and 4, which skip items 2 and 3 between them, so they should not be a forbidden pair."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item5"
+      ],
+      "legal": false,
+      "reason": "Trying the two endpoints of the chain, items 1 and 5, which are completely non-adjacent."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Trying items 2 and 4, which skip item 3 between them."
+    },
+    {
+      "load": [
+        "farmer"
+      ],
+      "legal": true,
+      "reason": "Farmer returns alone from the right bank. Items 1, 3, 5 (all odd) can be left together on the left since none are forbidden pairs."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "legal": true,
+      "reason": "Taking items 1 and 3, which are non-adjacent and can travel together."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1"
+      ],
+      "legal": false,
+      "reason": "Sending item1 back to accompany item5. Items 1 and 5 are far apart in the chain and can travel together."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Taking items 2 and 4 back to the left to meet item5. This leaves only item1 and item3 on the right (non-adjacent with the farmer)."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item5"
+      ],
+      "legal": true,
+      "reason": "Taking items 2 and 5 to the right. They are non-adjacent in the chain."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1"
+      ],
+      "legal": false,
+      "reason": "Sending item1 back to pick up item4. On the right, this would leave items 2, 3, 5 with the farmer (2-3 are adjacent, but farmer is there)."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "legal": true,
+      "reason": "Taking items 1 and 3 back together (non-adjacent). This leaves items 2 and 5 on the right with the farmer (non-adjacent)."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Taking items 1 and 4 across. This leaves item3 alone on the left."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2"
+      ],
+      "legal": false,
+      "reason": "Sending item2 back. On the right, this leaves items 1, 4, 5 with the farmer. Items 4-5 are adjacent, but the farmer is there."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item2"
+      ],
+      "legal": false,
+      "reason": "Taking items 1 and 2 back together. This leaves items 4 and 5 on the right with the farmer (they are adjacent, but farmer is present)."
+    },
+    {
+      "load": [
+        "farmer",
+        "item4",
+        "item5"
+      ],
+      "legal": false,
+      "reason": "Taking items 4 and 5 back. They are a forbidden pair, but maybe they can be together in the boat with the farmer?"
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Taking items 2 and 4 back (non-adjacent). This leaves items 1 and 5 on the right with the farmer."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item4"
+      ],
+      "legal": true,
+      "reason": "Taking items 2 and 4 across. Item 3 stays on the left."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1"
+      ],
+      "legal": false,
+      "reason": "Sending item1 back again to try a different sequence. This leaves items 2, 4, 5 on the right."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item5"
+      ],
+      "legal": true,
+      "reason": "Taking items 1 and 5 back (non-adjacent). This leaves items 2 and 4 on the right with the farmer."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item3"
+      ],
+      "legal": true,
+      "reason": "Taking items 1 and 3 (non-adjacent). Item 5 stays alone on the left."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item5"
+      ],
+      "legal": false,
+      "reason": "Taking items 1 and 5 (non-adjacent) back to the left. Wait, item 5 is already on the left. Let me correct: taking item 1 back alone to accompany item 5."
+    },
+    {
+      "load": [
+        "farmer",
+        "item3"
+      ],
+      "legal": false,
+      "reason": "Trying item 3 back. On the right, this leaves items 1, 2, 4 (with farmer present for the forbidden 1-2 pair)."
+    },
+    {
+      "load": [
+        "farmer",
+        "item3",
+        "item4"
+      ],
+      "legal": false,
+      "reason": "Trying items 3 and 4 (forbidden pair). They cannot be in the boat together, so this should fail, but let me test."
+    },
+    {
+      "load": [
+        "farmer",
+        "item1",
+        "item4"
+      ],
+      "legal": false,
+      "reason": "Taking items 1 and 4 back. On the right, this leaves items 2 and 3 with the farmer (2-3 forbidden, but farmer present)."
+    },
+    {
+      "load": [
+        "farmer",
+        "item2",
+        "item5"
+      ],
+      "legal": false,
+      "reason": "Taking items 2 and 5 back (non-adjacent). This leaves items 1 and 4 on the right with the farmer."
+    },
+    {
+      "load": [
+        "farmer",
+        "item5"
+      ],
+      "legal": false,
+      "reason": "Trying item 5 back with just the farmer (no second item). Item 5 is on the left, so this would bring the farmer back."
+    }
+  ],
+  "consec_illegal": 6,
+  "status": "ongoing"
+}

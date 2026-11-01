@@ -1,0 +1,114 @@
+instance_id,repository,language,category,n_configs,n_trials,solved_trials,solve_rate,solve_rate_pre_timeout,solve_rate_no_astra,epoch_defect_type,epoch_mechanism,community_issue,community_refs,excluded_by,keep
+abs-module-cache-flags,abs-lang/abs,go,enhancement,70,280,211,0.7536,0.7379,0.75,,,False,,,True
+abs-stepped-slices,abs-lang/abs,go,feature_request,70,280,205,0.7321,0.7056,0.7115,,,False,,,True
+actionlint-action-pinning-lint,rhysd/actionlint,go,feature_request,70,280,236,0.8429,0.8427,0.8385,False Negative,verifier_test_collision,False,,epoch_defect,False
+adaptix-name-mapping-aliases,reagento/adaptix,python,feature_request,70,280,200,0.7143,0.6855,0.7,,,False,,,True
+aiomonitor-task-snapshots-diff,aio-libs/aiomonitor,python,feature_request,70,278,212,0.7626,0.7439,0.7558,,,False,,,True
+anko-default-function-arguments,mattn/anko,go,feature_request,70,280,205,0.7321,0.6976,0.7115,,,False,,,True
+anko-typed-variable-bindings,mattn/anko,go,feature_request,70,280,144,0.5143,0.496,0.5077,False Negative,verifier_test_collision,False,,epoch_defect,False
+arcane-drift-detection-baselines,getarcaneapp/arcane,go,feature_request,70,279,204,0.7312,0.7368,0.7413,,,False,,,True
+arktype-json-schema-refs-dependencies,arktypeio/arktype,typescript,feature_request,70,280,109,0.3893,0.3911,0.3962,,,False,,,True
+awilix-async-container-initialization,jeffijoe/awilix,typescript,feature_request,70,276,82,0.2971,0.3033,0.2891,,,False,,,True
+bandit-incremental-cache-control,PyCQA/bandit,python,feature_request,70,280,149,0.5321,0.4839,0.5,,,False,,,True
+bandit-interprocedural-taint-checks,PyCQA/bandit,python,feature_request,70,278,143,0.5144,0.4959,0.4806,,,False,,,True
+bandit-structured-nosec-directives,PyCQA/bandit,python,feature_request,70,279,19,0.0681,0.0729,0.0734,,,True,13,,True
+boa-hierarchical-evaluation-cancellation,boa-dev/boa,rust,feature_request,70,275,153,0.5564,0.5144,0.5255,,,False,,,True
+cattrs-partial-structuring-recovery,python-attrs/cattrs,python,feature_request,70,280,187,0.6679,0.6371,0.6423,,,False,,,True
+clack-async-autocomplete-options,bombshell-dev/clack,typescript,feature_request,70,278,118,0.4245,0.378,0.3992,,,False,,,True
+claude-code-by-agents-recursive-delegation,baryhuang/claude-code-by-agents,typescript,feature_request,70,279,161,0.5771,0.5466,0.5444,,,False,,,True
+cliffy-config-file-parsing,c4spar/cliffy,typescript,feature_request,70,280,166,0.5929,0.5565,0.5615,,,False,,,True
+csstree-shorthand-expansion-compression,csstree/csstree,javascript,feature_request,70,277,95,0.343,0.3061,0.3191,,,True,52,,True
+dasel-html-document-format,TomWright/dasel,go,feature_request,70,276,155,0.5616,0.5041,0.5273,,,False,,,True
+dateutil-rfc5545-timezone-interop,dateutil/dateutil,python,enhancement,70,279,132,0.4731,0.4113,0.4324,,,False,,,True
+drizzle-orm-window-function-builders,drizzle-team/drizzle-orm,typescript,feature_request,70,280,251,0.8964,0.8871,0.8885,,,False,,,True
+dynamodb-toolbox-conditional-attribute-requirements,dynamodb-toolbox/dynamodb-toolbox,typescript,feature_request,70,278,218,0.7842,0.7602,0.7674,,,False,,,True
+dynamodb-toolbox-lazy-recursive-schemas,dynamodb-toolbox/dynamodb-toolbox,typescript,feature_request,70,275,202,0.7345,0.7037,0.7137,,,False,,,True
+effect-sse-httpapi-streaming,Effect-TS/effect,typescript,feature_request,70,280,52,0.1857,0.1573,0.1654,,,False,,,True
+eicrud-keyset-pagination-cursor,eicrud/eicrud,typescript,feature_request,70,276,113,0.4094,0.3648,0.3828,False Negative,stale_build_artifact,False,,epoch_defect,False
+etree-xml-diff-patch,beevik/etree,go,feature_request,70,278,184,0.6619,0.6585,0.6705,False Negative,verifier_test_collision,False,,epoch_defect,False
+expr-try-catch-errors,expr-lang/expr,go,feature_request,70,280,117,0.4179,0.3508,0.3769,,,False,,,True
+fastapi-deprecation-response-headers,fastapi/fastapi,python,feature_request,70,280,142,0.5071,0.4839,0.4731,,,False,,,True
+fastapi-implicit-head-options,fastapi/fastapi,python,feature_request,70,279,159,0.5699,0.5304,0.5405,,,False,,,True
+fd-deterministic-multi-key-sorting,sharkdp/fd,rust,feature_request,70,278,188,0.6763,0.6341,0.6512,,,False,,,True
+geo-shapeindex-serialization,golang/geo,go,feature_request,70,280,212,0.7571,0.7339,0.7462,False Negative,verifier_test_collision,False,,epoch_defect,False
+go-critic-doc-link-checker,go-critic/go-critic,go,feature_request,70,280,134,0.4786,0.4879,0.4923,False Negative,verifier_test_collision,False,,epoch_defect,False
+go-genai-streamed-function-args,googleapis/go-genai,go,feature_request,70,276,223,0.808,0.7828,0.793,,,False,,,True
+go-git-worktree-merge-conflicts,go-git/go-git,go,feature_request,70,280,199,0.7107,0.6815,0.6923,,,False,,,True
+goreleaser-retry-publish-auditing,goreleaser/goreleaser,go,feature_request,70,280,234,0.8357,0.8145,0.8231,,,False,,,True
+gql-incremental-graphql-delivery,graphql-python/gql,python,feature_request,70,278,10,0.036,0.0407,0.0388,,,True,13,,True
+happy-dom-abort-pending-body-reads,capricorn86/happy-dom,typescript,bugfix,70,280,253,0.9036,0.8992,0.9,,,False,,,True
+happy-dom-deterministic-intersectionobserver,capricorn86/happy-dom,typescript,feature_request,70,278,86,0.3094,0.3049,0.3333,,,False,,,True
+helm-array-merge-strategies,helm/helm,go,feature_request,70,279,56,0.2007,0.2146,0.2162,,,False,,,True
+helm-unified-manifest-stream,helm/helm,go,feature_request,70,279,229,0.8208,0.7976,0.8069,,,False,,,True
+httpx-deterministic-cookie-store,encode/httpx,python,feature_request,70,280,241,0.8607,0.8427,0.85,,,False,,,True
+httpx-multipart-response-parsing,encode/httpx,python,feature_request,70,280,174,0.6214,0.5927,0.5923,,,False,,,True
+httpx-streaming-json-iteration,encode/httpx,python,feature_request,70,280,122,0.4357,0.379,0.3923,,,False,,,True
+igel-persist-feature-schema,nidhaloff/igel,python,feature_request,70,277,123,0.444,0.4939,0.4786,,,False,,,True
+ink-grid-box-layout,vadimdemedes/ink,typescript,feature_request,70,278,73,0.2626,0.2927,0.2829,False Negative,underspecified_prompt,False,,epoch_defect,False
+ipython-session-bundle-replay,ipython/ipython,python,feature_request,70,279,178,0.638,0.5951,0.61,,,False,,,True
+katex-multicolumn-array-spans,KaTeX/KaTeX,javascript,feature_request,70,279,105,0.3763,0.3441,0.3359,,,False,,,True
+kcp-go-multiplexed-kcp-streams,xtaci/kcp-go,go,feature_request,70,268,200,0.7463,0.7553,0.75,False Negative,verifier_test_collision,False,,epoch_defect,False
+kea-atomic-signal-selectors,keajs/kea,typescript,feature_request,70,276,98,0.3551,0.3361,0.332,,,False,,,True
+kgateway-consistent-hash-policy,kgateway-dev/kgateway,go,feature_request,70,280,119,0.425,0.4234,0.4385,,,False,,,True
+kombu-single-active-consumer-priority,celery/kombu,python,feature_request,70,280,169,0.6036,0.5766,0.5885,,,False,,,True
+kombu-virtual-queue-dead-lettering,celery/kombu,python,feature_request,70,280,97,0.3464,0.2863,0.3038,,,False,,,True
+koota-composite-trait-aspects,pmndrs/koota,typescript,feature_request,70,260,105,0.4038,0.3537,0.375,,,False,,,True
+koota-deferred-mutation-buffer,pmndrs/koota,typescript,feature_request,70,277,96,0.3466,0.2816,0.2996,,,False,,,True
+koota-entity-snapshot-rollback,pmndrs/koota,typescript,feature_request,70,279,197,0.7061,0.7258,0.7259,,,False,,,True
+koota-pair-relation-tracking,pmndrs/koota,typescript,feature_request,70,280,68,0.2429,0.25,0.25,,,False,,,True
+koota-query-predicates,pmndrs/koota,typescript,feature_request,70,276,86,0.3116,0.2746,0.2812,,,False,,,True
+kysely-window-grouping-helpers,kysely-org/kysely,typescript,feature_request,70,278,194,0.6978,0.6707,0.6744,,,False,,,True
+langchain-request-coalescing,langchain-ai/langchain,python,feature_request,70,278,123,0.4424,0.378,0.3992,,,False,,,True
+mashumaro-flattened-dataclass-fields,Fatal1ty/mashumaro,python,feature_request,70,280,152,0.5429,0.504,0.5231,,,False,,,True
+meriyah-explicit-resource-declarations,meriyah/meriyah,typescript,feature_request,70,280,61,0.2179,0.2218,0.2269,,,False,,,True
+mnamer-daemon-watch-lifecycle,jkwill87/mnamer,python,feature_request,70,279,177,0.6344,0.587,0.6062,,,False,,,True
+mobly-grouped-test-barriers,google/mobly,python,feature_request,70,279,183,0.6559,0.6331,0.6293,,,False,,,True
+narwhals-rolling-window-suite,narwhals-dev/narwhals,python,feature_request,70,280,252,0.9,0.9032,0.8923,,,False,,,True
+numba-stencil-boundary-modes,numba/numba,python,feature_request,70,278,197,0.7086,0.6707,0.686,,,False,,,True
+obsidian-linter-auto-table-of-contents,platers/obsidian-linter,typescript,feature_request,70,280,7,0.025,0.0242,0.0269,False Negative,underspecified_prompt,True,75;93,epoch_defect,False
+obsidian-linter-link-format-conversion,platers/obsidian-linter,typescript,feature_request,70,280,69,0.2464,0.2661,0.2654,,,False,,,True
+obsidian-linter-scoped-ignore-markers,platers/obsidian-linter,typescript,feature_request,70,280,199,0.7107,0.6935,0.7077,,,False,,,True
+ofetch-per-origin-circuit-breaker,unjs/ofetch,typescript,feature_request,69,269,233,0.8662,0.8481,0.8554,,,False,,,True
+onedump-dump-encryption-pipeline,liweiyi88/onedump,go,feature_request,70,279,104,0.3728,0.3548,0.3707,False Negative,verifier_test_collision,True,76,epoch_defect,False
+opa-rego-rule-profiling,open-policy-agent/opa,go,feature_request,70,280,171,0.6107,0.5927,0.5962,,,False,,,True
+opa-template-string-reconstruction,open-policy-agent/opa,go,bugfix,70,279,187,0.6703,0.6316,0.6486,False Negative,verifier_test_collision,False,,epoch_defect,False
+optique-conditional-option-dependencies,dahlia/optique,typescript,feature_request,70,280,116,0.4143,0.379,0.3731,,,False,,,True
+oxvg-structural-selector-preservation,noahbald/oxvg,rust,enhancement,70,277,68,0.2455,0.1959,0.1946,,,False,,,True
+participle-grammar-conflict-analysis,alecthomas/participle,go,feature_request,70,276,99,0.3587,0.3648,0.3867,False Negative,verifier_test_collision,False,,epoch_defect,False
+pebble-durability-wait-apis,cockroachdb/pebble,go,feature_request,70,280,167,0.5964,0.5484,0.5654,,,False,,,True
+pest-character-class-coalescing,pest-parser/pest,rust,feature_request,70,280,58,0.2071,0.2218,0.2231,,,False,,,True
+prometheus-transactional-reload-status,prometheus/prometheus,go,feature_request,70,280,64,0.2286,0.2581,0.2462,False Negative,verifier_test_collision,True,45;52,epoch_defect,False
+prometheus-typed-label-sorting,prometheus/prometheus,go,bugfix,70,280,166,0.5929,0.5403,0.5615,,,False,,,True
+psd-tools-blend-range-api,psd-tools/psd-tools,python,feature_request,70,280,234,0.8357,0.8185,0.8231,,,False,,,True
+pwntools-tube-multiplexing,Gallopsled/pwntools,python,feature_request,70,267,112,0.4195,0.3797,0.4049,,,False,,,True
+python-statemachine-state-data-scoping,fgmacedo/python-statemachine,python,feature_request,70,280,100,0.3571,0.3669,0.3846,,,False,,,True
+query-persist-restored-query-state,TanStack/query,typescript,feature_request,70,280,197,0.7036,0.7218,0.7231,,,False,,,True
+quill-shared-toolbar-focus,slab/quill,typescript,feature_request,70,279,92,0.3297,0.2753,0.278,,,True,24,,True
+returns-validated-error-accumulation,dry-python/returns,python,feature_request,70,280,241,0.8607,0.8427,0.85,False Negative,verifier_test_collision,False,,epoch_defect,False
+scc-bounded-memory-spilling,boyter/scc,go,feature_request,70,278,171,0.6151,0.5772,0.5853,,,False,,,True
+scriggo-method-declarations,open2b/scriggo,go,feature_request,70,276,181,0.6558,0.6148,0.6289,,,False,,,True
+skrub-duration-encoding,skrub-data/skrub,python,feature_request,70,280,170,0.6071,0.5766,0.5769,False Negative,verifier_test_collision,False,,epoch_defect,False
+sql-formatter-bigquery-pipe-formatting,sql-formatter-org/sql-formatter,typescript,feature_request,70,280,240,0.8571,0.8387,0.8462,,,False,,,True
+sqlfmt-create-table-ddl-formatting,tconbeer/sqlfmt,python,feature_request,70,279,56,0.2007,0.2105,0.2124,False Negative,underspecified_prompt,False,,epoch_defect,False
+sqlite-utils-safe-import-checkpoints,simonw/sqlite-utils,python,feature_request,70,280,172,0.6143,0.5645,0.5846,,,False,,,True
+superjson-error-stack-serialization,flightcontrolhq/superjson,typescript,feature_request,69,274,100,0.365,0.3128,0.3268,,,False,,,True
+task-task-graph-export,go-task/task,go,feature_request,70,280,221,0.7893,0.7621,0.7731,False Negative,verifier_test_collision,False,,epoch_defect,False
+tengo-callable-instance-isolation,d5/tengo,go,bugfix,70,280,188,0.6714,0.6331,0.6462,,,False,,,True
+tengo-destructuring-bindings,d5/tengo,go,feature_request,70,280,176,0.6286,0.5887,0.6,False Negative,verifier_test_collision,False,,epoch_defect,False
+termenv-preserve-ansi-resets,muesli/termenv,go,feature_request,70,277,33,0.1191,0.1347,0.1284,,,False,,,True
+testem-bail-on-test-failure,testem/testem,javascript,feature_request,70,278,67,0.241,0.2398,0.2597,False Negative,underspecified_prompt,False,,epoch_defect,False
+testem-per-launcher-reports,testem/testem,javascript,feature_request,70,279,204,0.7312,0.7085,0.7181,,,False,,,True
+textual-kitty-key-phases,Textualize/textual,python,feature_request,70,280,120,0.4286,0.379,0.3885,,,False,,,True
+textual-richlog-follow-state,Textualize/textual,python,feature_request,70,280,195,0.6964,0.6653,0.6769,,,False,,,True
+tomlkit-toml-table-converters,python-poetry/tomlkit,python,feature_request,70,279,192,0.6882,0.6559,0.668,,,False,,,True
+true-myth-iterable-collection-combinators,true-myth/true-myth,typescript,feature_request,70,277,254,0.917,0.9061,0.9105,,,False,,,True
+ts-pattern-match-each,gvergnaud/ts-pattern,typescript,feature_request,70,280,178,0.6357,0.6935,0.6846,,,False,,,True
+updo-policy-alerting,Owloops/updo,go,feature_request,70,279,48,0.172,0.1377,0.1313,False Negative,verifier_test_collision,False,,epoch_defect,False
+valibot-recursive-schema-composition,open-circle/valibot,typescript,feature_request,70,278,196,0.705,0.6748,0.6822,,,False,,,True
+vitest-duration-sharding,vitest-dev/vitest,typescript,feature_request,70,280,219,0.7821,0.7581,0.7654,,,False,,,True
+vulture-persistent-analysis-cache,jendrikseipp/vulture,python,feature_request,70,279,87,0.3118,0.3401,0.3359,False Negative,verifier_test_collision,False,,epoch_defect,False
+wasmi-trap-coredumps,wasmi-labs/wasmi,rust,feature_request,70,280,210,0.75,0.7218,0.7308,,,False,,,True
+wazero-multi-module-snapshots,wazero/wazero,go,feature_request,70,278,213,0.7662,0.8252,0.8256,,,False,,,True
+yaegi-go-embed-directives,traefik/yaegi,go,feature_request,70,280,196,0.7,0.6653,0.6769,False Negative,verifier_test_collision,False,,epoch_defect,False
+yjs-map-conflict-detection,yjs/yjs,javascript,feature_request,70,280,230,0.8214,0.8065,0.8154,,,False,,,True
+ytt-jsonpath-query-api,carvel-dev/ytt,go,feature_request,70,276,225,0.8152,0.7951,0.8008,False Negative,verifier_test_collision,False,,epoch_defect,False

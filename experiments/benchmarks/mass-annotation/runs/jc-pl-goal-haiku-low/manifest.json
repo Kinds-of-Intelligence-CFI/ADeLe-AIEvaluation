@@ -1,0 +1,101 @@
+{
+  "run": "jc-pl-goal-haiku-low",
+  "created_at": "2026-11-01T19:33:49+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-pl-goal-haiku-low.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "a5d66246a5bd4422d331b07730feb4591cac5276d02f62a15baf175d3f63465f",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block pl, inputs data/instances-goal, arm haiku-low.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-pl-goal-haiku-low\"\n\n[tasks]\nbenchmarks = [\"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\", \"swe-bench-verified\", \"terminal-bench-4.0.0\", \"terminal-bench-science-0.1\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_pl_goal.csv\"\ninstances_dir = \"data/instances-goal\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-haiku-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "942dc409f08268bff83f9cf97b31cd044c38220089ad1d6041918b0916835035",
+          "frame_sha256": "273b679d008890636e07ffba86bcc43609a3ce30a23ac68a3d70f64d4fa921cc",
+          "n_selected": 12
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "2e814d80439e70818673b561d3e107dfd5c955c0b27d965331995b8f2a09a2ac",
+          "frame_sha256": "0168a7ee23b6dd8c13f06401ee7f183d09b9bce35e6ad34fa4821be8754392e2",
+          "n_selected": 12
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "961814724fd8de17c7094e073639f09315c9fe22bd28b319a5a237181b2dacae",
+          "frame_sha256": "7611ed07ea4727482b9cc497b10394b4493aff3bfce87899ffa38c496674fa67",
+          "n_selected": 12
+        },
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "9dd3f2770cfadb35cd11ab7915d01e546d6736b1f0ccb8049bf913269e212203",
+          "frame_sha256": "1c38f928c845bd70532c15da211ddbeef98289665d4d0f91ae60cfffde336b10",
+          "n_selected": 12
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "9060474c7e7ee053181ab852c2c8c952ce80245df285764ba70cecadb07b3fa2",
+          "frame_sha256": "3b67f438d314f862eeb4b272854a7a0422097ef82438142d8a3bdb609f9413c8",
+          "n_selected": 12
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "6488d3c849e5bdc9577a1e5c9c4a3407a6003e396d568357ad84b4194ca47a76",
+          "frame_sha256": "d122361335c4d0a89cb59c80e36ff407d690a17b0ce6c5772ad0df872d999c18",
+          "n_selected": 12
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_pl_goal.csv",
+        "sha256": "07b3e51b1bda180cf921a4b322043566b62b7c029e14cac2a495bd4136ae54f0",
+        "n_ids": 72
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-haiku-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-haiku-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 144,
+      "sha256": "2bc04a2ef29549d6c339163aeda0526f9a3433903049be31d5eb981063ae6521"
+    }
+  }
+}

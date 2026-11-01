@@ -37,6 +37,9 @@ def build_annotation_prompt(
         "INSTRUCTION: "
         f"Score the level of *{demand_name}* demanded by the given "
         "TASK INSTANCE using a discrete value from 0 to 5. "
+        "Demand is a property of the task, not of any particular solver's "
+        "behaviour; when in doubt between two adjacent levels, assign the "
+        "lower unless the higher level's requirement is clearly met. "
         "Use CHAIN-OF-THOUGHTS REASONING to reason step by step "
         "before assigning the score. "
         "After the CHAIN-OF-THOUGHTS REASONING STEPS, conclude your "
@@ -57,6 +60,113 @@ def build_annotation_prompt(
     )
 
     return full_prompt
+
+
+PROMPT_V2 = """We are annotating AI evaluation tasks for a research study on the cognitive demands that tasks make. Below are a rubric for {demand}, with levels from 0 to 5, and a task.
+
+<rubric>
+{rubric}
+</rubric>
+
+<task>
+{task}
+</task>
+
+Rate the task's demand for {demand} according to the rubric, not any particular solver's attempt at it.
+
+Before giving a level, write a short assessment of the task against the rubric: what the task requires, which level's conditions it meets, and what keeps it below the next level. Compare the task with the rubric's examples at the levels you consider. Base the level on the conditions the rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent levels, choose the lower one. Give the level that this assessment supports. End with this sentence, with the level as a single digit:
+The level of {demand} demanded by this task is: N"""
+
+
+PROMPT_V2_NOREASON = PROMPT_V2.replace(
+    "Before giving a level, write a short assessment of the task against the rubric: what the task requires, which "
+    "level's conditions it meets, and what keeps it below the next level. Compare the task with the rubric's examples "
+    "at the levels you consider. Base the level on the conditions the rubric states, not on how long or easy the work "
+    "looks. If the task genuinely fits two adjacent levels, choose the lower one. Give the level that this assessment "
+    "supports. End with this sentence, with the level as a single digit:",
+    "Give the level directly, without any assessment, explanation or other text. Base the level on the conditions the "
+    "rubric states, not on how long or easy the work looks. If the task genuinely fits two adjacent levels, choose the "
+    "lower one. Answer with the level alone, as a single digit from 0 to 5, and nothing else.",
+).replace("\nThe level of {demand} demanded by this task is: N", "")
+assert PROMPT_V2_NOREASON != PROMPT_V2
+
+
+# Ablation steps from the bare-digit v2 prompt towards the published v1.0 prompt (experiments/benchmarks/prompt-ablation),
+# each removing one difference.
+TIE_RULE = " If the task genuinely fits two adjacent levels, choose the lower one."
+LENGTH_CLAUSE = " Base the level on the conditions the rubric states, not on how long or easy the work looks."
+PROMPT_V2_NOREASON_NOTIE = PROMPT_V2_NOREASON.replace(TIE_RULE, "")
+PROMPT_V2_NOREASON_NOTIE_NOCLAUSE = PROMPT_V2_NOREASON_NOTIE.replace(LENGTH_CLAUSE, "")
+assert PROMPT_V2_NOREASON_NOTIE != PROMPT_V2_NOREASON != PROMPT_V2_NOREASON_NOTIE_NOCLAUSE
+assert PROMPT_V2_NOREASON_NOTIE_NOCLAUSE != PROMPT_V2_NOREASON_NOTIE
+
+
+def build_annotation_prompt_v1_layout_noreason(demand_name: str, rubric_content: str, task_instance: str) -> str:
+    """The published v1.0 layout and wording, but asking for the bare digit (the ablation's layout step): the
+    chain-of-thought instruction and closing line are replaced by the v2 bare-digit request."""
+    instruction = (
+        'INSTRUCTION: '
+        f'Score the level of *{demand_name}* demanded by the given TASK INSTANCE using a discrete value from 0 to 5. '
+        'Answer with the level alone, as a single digit from 0 to 5, and nothing else.')
+    return (
+        f"The following rubric describes six distinct levels of *{demand_name}* required by different tasks:"
+        f"\n{rubric_content}\n\nTASK INSTANCE: {task_instance}"
+        f"\n\n{instruction}"
+    )
+
+
+def build_annotation_prompt_v1_published(
+    demand_name: str,
+    rubric_content: str,
+    task_instance: str,
+) -> str:
+    """The prompt of the published ADeLe v1.0 annotations, verbatim from delean-batch-manager
+    (``src/delean_batch_manager/core/batching/files.py``, checked 2026-11-02). Unlike :func:`build_annotation_prompt`,
+    it has no tie rule ("when in doubt ... assign the lower"), which entered that builder on 2026-07-26."""
+    instruction = (
+        'INSTRUCTION: '
+        f'Score the level of *{demand_name}* demanded by the given TASK INSTANCE using a discrete value from 0 to 5. '
+        'Use CHAIN-OF-THOUGHTS REASONING to reason step by step before assigning the score. '
+        'After the CHAIN-OF-THOUGHTS REASONING STEPS, conclude your assessment with the statement: '
+        f'"Thus, the level of *{demand_name}* demanded by the given TASK INSTANCE is: SCORE"'
+        ', where SCORE is an integer score you have determined.')
+    return (
+        f"The following rubric describes six distinct levels of *{demand_name}* required by different tasks:"
+        f"\n{rubric_content}\n\nTASK INSTANCE: {task_instance}"
+        f"\n\n{instruction}"
+        f'\n\nCHAIN-OF-THOUGHTS REASONING STEPS to score the level of *{demand_name}* demanded by the given TASK INSTANCE above:'
+    )
+
+
+def build_annotation_prompt_v2_noreason(
+    demand_name: str,
+    rubric_content: str,
+    task_instance: str,
+) -> str:
+    """The v2 prompt without written reasoning: the judge states the level only.
+
+    Identical to :func:`build_annotation_prompt_v2` except the final instruction, which drops the assessment and the
+    comparison with the rubric's examples and asks for the bare digit (no closing sentence). Built for the
+    no-reasoning ablation (``experiments/benchmarks/noreason``).
+    """
+    return PROMPT_V2_NOREASON.format(demand=demand_name, rubric=rubric_content, task=task_instance)
+
+
+def build_annotation_prompt_v2(
+    demand_name: str,
+    rubric_content: str,
+    task_instance: str,
+) -> str:
+    """Build the v2 annotation prompt (adopted 2026-09-29).
+
+    Same inputs as :func:`build_annotation_prompt`, in plain wording. The v1
+    prompt asks for written "chain-of-thought" steps, which Sonnet 5.5's
+    safeguards block; this one asks for a short assessment before the level.
+    It was tested as variant B in ``experiments/benchmarks/natural-prompt``.
+    The answer ends with "... is: N", which :func:`extract_demand_level`
+    reads. The v1 builder stays for reproducing earlier runs.
+    """
+    return PROMPT_V2.format(demand=demand_name, rubric=rubric_content, task=task_instance)
 
 
 def build_batch_request(

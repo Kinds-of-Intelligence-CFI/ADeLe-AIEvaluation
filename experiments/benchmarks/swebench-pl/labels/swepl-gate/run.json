@@ -1,0 +1,63 @@
+{
+  "run_id": "swepl-gate",
+  "created_at": "2026-09-26T21:45:06+00:00",
+  "repo_commit": "0157be807c2af2215846c2dc6b56a63adbbcfc1b",
+  "repo_dirty_tracked_files": [],
+  "benchmark": "swe-bench-verified",
+  "instances": {
+    "source": "princeton-nlp/SWE-bench_Verified (HF), split test",
+    "hf_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+    "task_text": "problem_statement only (adele.agentic.benchmarks loader), as in swebench-30",
+    "frozen_file_sha256": "f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f"
+  },
+  "outcomes": {
+    "source": "github.com/SWE-bench/experiments evaluation/verified/*/results/results.json",
+    "commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "entries": 135
+  },
+  "sample": {
+    "file": "sample.csv",
+    "rule": "the 44 swebench-30 tasks (30 new, 14 anchors), all solve rates"
+  },
+  "design": {
+    "n_tasks": 44,
+    "dims": [
+      "PLp",
+      "PLe",
+      "PLs"
+    ],
+    "n_prompts": 132,
+    "judges": {
+      "opus-medium": "Claude Code subagent 'adele-judge-medium' (tools: Read, Write; omitClaudeMd; effort medium), model alias 'opus'"
+    }
+  },
+  "rubrics": {
+    "PLp": {
+      "name": "Planning",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+      "sha256": "de98ab35d80c7984a9a95ce1534797c630acdd4319e919571372d1f200398a03"
+    },
+    "PLe": {
+      "name": "Action control and execution",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+      "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b"
+    },
+    "PLs": {
+      "name": "Simulating",
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+      "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e"
+    }
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt",
+    "builder_file_sha256": "0670d8bbd7927561dbf66db43ec12fd275f8e3fa4e5274a0d2b19319bb7593a3"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/swebench-pl/adele-judge-medium.md",
+    "sha256": "086d81741f13fb8db67bd7cea1720c3ee6d13c381c01f80f368a61ee892e9f8c"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_instruction_sha256": "e09b077b77b76a15b6744345ac6a651887c0784895c163695ae27d21102c1d04",
+  "judge_io": "../../judge-io/swepl-gate",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort medium is set in the agent file"
+}

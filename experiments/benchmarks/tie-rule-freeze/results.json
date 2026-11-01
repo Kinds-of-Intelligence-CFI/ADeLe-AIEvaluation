@@ -1,0 +1,663 @@
+{
+ "PL": {
+  "PL1_labelled": "2359 of 2361",
+  "PL1_missing": [],
+  "shift": {
+   "PLp": {
+    "n": 785,
+    "exact": 0.882,
+    "mean_shift": 0.083,
+    "up": 0.101,
+    "down": 0.018
+   },
+   "PLe": {
+    "n": 785,
+    "exact": 0.927,
+    "mean_shift": 0.028,
+    "up": 0.051,
+    "down": 0.022
+   },
+   "PLs": {
+    "n": 785,
+    "exact": 0.894,
+    "mean_shift": 0.083,
+    "up": 0.094,
+    "down": 0.011
+   }
+  },
+  "rho": {
+   "notie/deepswe-v1.1/PLp": {
+    "n": 90,
+    "n_off_mode": 19,
+    "rho": -0.192,
+    "p_two_sided": 0.07,
+    "ci95": [
+     -0.385,
+     0.018
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/deepswe-v1.1/PLe": {
+    "n": 90,
+    "n_off_mode": 21,
+    "rho": -0.159,
+    "p_two_sided": 0.134,
+    "ci95": [
+     -0.356,
+     0.051
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/deepswe-v1.1/PLs": {
+    "n": 90,
+    "n_off_mode": 32,
+    "rho": -0.066,
+    "p_two_sided": 0.536,
+    "ci95": [
+     -0.27,
+     0.143
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/frontierswe-v2/PLp": {
+    "n": 19,
+    "n_off_mode": 7,
+    "rho": -0.192,
+    "p_two_sided": 0.432,
+    "ci95": [
+     -0.597,
+     0.292
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/frontierswe-v2/PLe": {
+    "n": 19,
+    "n_off_mode": 5,
+    "rho": 0.21,
+    "p_two_sided": 0.388,
+    "ci95": [
+     -0.275,
+     0.61
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/frontierswe-v2/PLs": {
+    "n": 19,
+    "n_off_mode": 10,
+    "rho": 0.009,
+    "p_two_sided": 0.971,
+    "ci95": [
+     -0.447,
+     0.461
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/programbench/PLp": {
+    "n": 130,
+    "n_off_mode": 24,
+    "rho": -0.442,
+    "p_two_sided": 1.38e-07,
+    "ci95": [
+     -0.577,
+     -0.285
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "notie/programbench/PLe": {
+    "n": 130,
+    "n_off_mode": 9,
+    "rho": -0.02,
+    "p_two_sided": 0.822,
+    "ci95": [
+     -0.192,
+     0.153
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/programbench/PLs": {
+    "n": 130,
+    "n_off_mode": 29,
+    "rho": -0.086,
+    "p_two_sided": 0.331,
+    "ci95": [
+     -0.255,
+     0.088
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/swe-bench-verified/PLp": {
+    "n": 443,
+    "n_off_mode": 218,
+    "rho": -0.6,
+    "p_two_sided": 1.36e-44,
+    "ci95": [
+     -0.661,
+     -0.531
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "notie/swe-bench-verified/PLe": {
+    "n": 443,
+    "n_off_mode": 18,
+    "rho": -0.283,
+    "p_two_sided": 1.41e-09,
+    "ci95": [
+     -0.368,
+     -0.193
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "notie/swe-bench-verified/PLs": {
+    "n": 443,
+    "note": "one level"
+   },
+   "notie/terminal-bench-4.0.0/PLp": {
+    "n": 35,
+    "n_off_mode": 10,
+    "rho": 0.23,
+    "p_two_sided": 0.185,
+    "ci95": [
+     -0.117,
+     0.526
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/terminal-bench-4.0.0/PLe": {
+    "n": 35,
+    "n_off_mode": 18,
+    "rho": -0.227,
+    "p_two_sided": 0.189,
+    "ci95": [
+     -0.524,
+     0.119
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/terminal-bench-4.0.0/PLs": {
+    "n": 35,
+    "n_off_mode": 20,
+    "rho": -0.07,
+    "p_two_sided": 0.691,
+    "ci95": [
+     -0.394,
+     0.27
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/terminal-bench-science-0.1/PLp": {
+    "n": 70,
+    "n_off_mode": 32,
+    "rho": 0.039,
+    "p_two_sided": 0.747,
+    "ci95": [
+     -0.198,
+     0.272
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/terminal-bench-science-0.1/PLe": {
+    "n": 69,
+    "n_off_mode": 20,
+    "rho": -0.128,
+    "p_two_sided": 0.296,
+    "ci95": [
+     -0.355,
+     0.113
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "notie/terminal-bench-science-0.1/PLs": {
+    "n": 69,
+    "n_off_mode": 43,
+    "rho": 0.052,
+    "p_two_sided": 0.674,
+    "ci95": [
+     -0.188,
+     0.285
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/deepswe-v1.1/PLp": {
+    "n": 90,
+    "n_off_mode": 28,
+    "rho": -0.168,
+    "p_two_sided": 0.114,
+    "ci95": [
+     -0.364,
+     0.042
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/deepswe-v1.1/PLe": {
+    "n": 90,
+    "n_off_mode": 13,
+    "rho": -0.093,
+    "p_two_sided": 0.383,
+    "ci95": [
+     -0.295,
+     0.117
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/deepswe-v1.1/PLs": {
+    "n": 90,
+    "n_off_mode": 12,
+    "rho": 0.021,
+    "p_two_sided": 0.846,
+    "ci95": [
+     -0.187,
+     0.227
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/frontierswe-v2/PLp": {
+    "n": 19,
+    "n_off_mode": 3,
+    "rho": -0.32,
+    "p_two_sided": 0.181,
+    "ci95": [
+     -0.683,
+     0.169
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/frontierswe-v2/PLe": {
+    "n": 19,
+    "n_off_mode": 4,
+    "rho": 0.143,
+    "p_two_sided": 0.558,
+    "ci95": [
+     -0.335,
+     0.563
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/frontierswe-v2/PLs": {
+    "n": 19,
+    "n_off_mode": 10,
+    "rho": 0.261,
+    "p_two_sided": 0.28,
+    "ci95": [
+     -0.227,
+     0.644
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/programbench/PLp": {
+    "n": 129,
+    "n_off_mode": 28,
+    "rho": -0.465,
+    "p_two_sided": 2.74e-08,
+    "ci95": [
+     -0.597,
+     -0.31
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "tie/programbench/PLe": {
+    "n": 129,
+    "n_off_mode": 1,
+    "rho": -0.081,
+    "p_two_sided": 0.359,
+    "ci95": [
+     -0.251,
+     0.093
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/programbench/PLs": {
+    "n": 129,
+    "n_off_mode": 6,
+    "rho": -0.136,
+    "p_two_sided": 0.125,
+    "ci95": [
+     -0.302,
+     0.039
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/swe-bench-verified/PLp": {
+    "n": 443,
+    "n_off_mode": 199,
+    "rho": -0.59,
+    "p_two_sided": 7.51e-43,
+    "ci95": [
+     -0.652,
+     -0.52
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "tie/swe-bench-verified/PLe": {
+    "n": 443,
+    "n_off_mode": 26,
+    "rho": -0.309,
+    "p_two_sided": 3.11e-11,
+    "ci95": [
+     -0.392,
+     -0.22
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "tie/swe-bench-verified/PLs": {
+    "n": 443,
+    "note": "one level"
+   },
+   "tie/terminal-bench-4.0.0/PLp": {
+    "n": 35,
+    "n_off_mode": 11,
+    "rho": 0.002,
+    "p_two_sided": 0.993,
+    "ci95": [
+     -0.332,
+     0.335
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/terminal-bench-4.0.0/PLe": {
+    "n": 35,
+    "n_off_mode": 17,
+    "rho": -0.238,
+    "p_two_sided": 0.169,
+    "ci95": [
+     -0.533,
+     0.108
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/terminal-bench-4.0.0/PLs": {
+    "n": 35,
+    "n_off_mode": 22,
+    "rho": -0.025,
+    "p_two_sided": 0.885,
+    "ci95": [
+     -0.356,
+     0.31
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/terminal-bench-science-0.1/PLp": {
+    "n": 69,
+    "n_off_mode": 24,
+    "rho": 0.086,
+    "p_two_sided": 0.485,
+    "ci95": [
+     -0.155,
+     0.316
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/terminal-bench-science-0.1/PLe": {
+    "n": 69,
+    "n_off_mode": 21,
+    "rho": -0.146,
+    "p_two_sided": 0.232,
+    "ci95": [
+     -0.371,
+     0.096
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "tie/terminal-bench-science-0.1/PLs": {
+    "n": 69,
+    "n_off_mode": 42,
+    "rho": 0.017,
+    "p_two_sided": 0.893,
+    "ci95": [
+     -0.221,
+     0.252
+    ],
+    "predicted": "negative",
+    "supported": false
+   }
+  },
+  "PL2_holds": true,
+  "PL3_wrong_direction": [],
+  "PL3_holds": true,
+  "human_tb_plp": {
+   "n": 6,
+   "tie": {
+    "exact": 3,
+    "within_1": 6
+   },
+   "notie": {
+    "exact": 2,
+    "within_1": 6
+   }
+  }
+ },
+ "MSc_tau2": {
+  "labelled": 242,
+  "shift": {
+   "n": 242,
+   "exact": 0.851,
+   "mean_shift": 0.058,
+   "up": 0.103,
+   "down": 0.045
+  },
+  "rho_notie": {
+   "domains": 3,
+   "n": 242,
+   "rho": -0.188,
+   "p_two_sided": 0.00404,
+   "ci95": [
+    -0.31,
+    -0.06
+   ],
+   "predicted": "negative",
+   "supported": true
+  },
+  "human_tau2_notie": {
+   "exact": 14,
+   "within_one": 15,
+   "mean_diff": 0.07,
+   "n": 15
+  },
+  "rho_tie": {
+   "domains": 3,
+   "n": 242,
+   "rho": -0.272,
+   "p_two_sided": 2.96e-05,
+   "ci95": [
+    -0.388,
+    -0.147
+   ],
+   "predicted": "negative",
+   "supported": true
+  },
+  "human_tau2_tie": {
+   "exact": 13,
+   "within_one": 15,
+   "mean_diff": 0.0,
+   "n": 15
+  },
+  "T1_holds": true
+ },
+ "lab": {
+  "MSc": {
+   "R_lost_pass1": [],
+   "R_confirmed": [],
+   "R_pass2_items": [],
+   "R_holds": true,
+   "shift": {
+    "n": 111,
+    "exact": 0.973,
+    "mean_shift": 0.009
+   },
+   "M": {
+    "refusal": {
+     "1": {
+      "A": 1,
+      "B": 1
+     },
+     "2": {
+      "A": 3,
+      "B": 4
+     },
+     "3": {
+      "A": 1,
+      "B": 1
+     },
+     "4": {
+      "A": 1,
+      "B": 1
+     },
+     "8": {
+      "A": 1,
+      "B": 1
+     }
+    },
+    "needed": {
+     "5": {
+      "A": 1,
+      "B": 4
+     },
+     "6": {
+      "A": 2,
+      "B": 4
+     },
+     "7": {
+      "A": 1,
+      "B": 4
+     }
+    },
+    "B_at_3_or_less": 4,
+    "A_B_within_1": 5,
+    "holds": true,
+    "needed_B_at_4_plus": 3
+   },
+   "H1_exact": {
+    "tie": 13,
+    "notie": 14
+   },
+   "H1_holds": true,
+   "H2_items": [],
+   "H2_holds": true,
+   "H_items": {
+    "H-01": [
+     2,
+     2,
+     2
+    ],
+    "H-02": [
+     1,
+     1,
+     1
+    ],
+    "H-03": [
+     1,
+     1,
+     1
+    ],
+    "H-04": [
+     1,
+     1,
+     1
+    ],
+    "H-05": [
+     2,
+     2,
+     2
+    ],
+    "H-06": [
+     1,
+     1,
+     1
+    ],
+    "H-07": [
+     1,
+     1,
+     1
+    ],
+    "H-08": [
+     3,
+     2,
+     3
+    ],
+    "H-09": [
+     1,
+     1,
+     1
+    ],
+    "H-10": [
+     2,
+     2,
+     2
+    ],
+    "H-11": [
+     1,
+     1,
+     1
+    ],
+    "H-12": [
+     2,
+     1,
+     1
+    ],
+    "H-13": [
+     1,
+     1,
+     1
+    ],
+    "H-14": [
+     2,
+     2,
+     2
+    ],
+    "H-15": [
+     1,
+     1,
+     1
+    ]
+   }
+  },
+  "MSm": {
+   "R_lost_pass1": [],
+   "R_confirmed": [],
+   "R_pass2_items": [],
+   "R_holds": true,
+   "shift": {
+    "n": 89,
+    "exact": 0.876,
+    "mean_shift": 0.079
+   }
+  }
+ },
+ "verdict": {
+  "PL stays frozen": true,
+  "MSc stays frozen": true,
+  "MSm stays frozen": true
+ }
+}

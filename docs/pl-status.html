@@ -1,0 +1,368 @@
+<title>PL Rubric Status Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root{
+    --ground:#F1F4F0;
+    --surface:#FAFBF9;
+    --surface-2:#E8ECE6;
+    --ink:#16201A;
+    --muted:#5B6A61;
+    --hair:#CBD3C8;
+    --accent:#0E6B5C;
+    --accent-soft:#D6E7E2;
+    --pass:#2F7D46;
+    --warn:#9A6B0B;
+    --fail:#A33030;
+    --shadow:0 1px 2px rgba(22,32,26,.06),0 8px 24px -16px rgba(22,32,26,.28);
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --sans:"Chivo","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#0F1411;
+      --surface:#171E19;
+      --surface-2:#1F2822;
+      --ink:#E4EAE2;
+      --muted:#93A399;
+      --hair:#2C382F;
+      --accent:#4FBFA5;
+      --accent-soft:#1B322C;
+      --pass:#5FBE7C;
+      --warn:#D2A03C;
+      --fail:#E0736B;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0F1411;
+    --surface:#171E19;
+    --surface-2:#1F2822;
+    --ink:#E4EAE2;
+    --muted:#93A399;
+    --hair:#2C382F;
+    --accent:#4FBFA5;
+    --accent-soft:#1B322C;
+    --pass:#5FBE7C;
+    --warn:#D2A03C;
+    --fail:#E0736B;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:16.5px;
+    line-height:1.6;
+    margin:0;
+    padding:clamp(20px,4vw,56px) clamp(16px,4vw,40px) 72px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1020px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:11.5px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    margin:0;
+  }
+  h1{
+    font-family:var(--sans);font-weight:900;font-size:clamp(30px,5vw,44px);
+    line-height:1.04;letter-spacing:-.02em;margin:10px 0 0;text-wrap:balance;
+  }
+  .lede{margin:14px 0 0;max-width:62ch;color:var(--muted);font-size:17px}
+  h2{
+    font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.04em;
+    text-transform:uppercase;margin:0 0 14px;color:var(--ink);
+    display:flex;align-items:baseline;gap:10px;
+  }
+  h2::after{content:"";flex:1;height:1px;background:var(--hair)}
+
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .stamp{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  }
+  .stamp b{color:var(--ink);font-weight:600}
+
+  /* status cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{
+    background:var(--surface);border:1px solid var(--hair);border-radius:3px;
+    box-shadow:var(--shadow);padding:18px 20px 20px;position:relative;
+    display:flex;flex-direction:column;gap:8px;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--stripe,var(--muted))}
+  .card.ok{--stripe:var(--pass)}
+  .card.mid{--stripe:var(--warn)}
+  .card.no{--stripe:var(--fail)}
+  .card .code{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);font-weight:600}
+  .card .name{font-family:var(--sans);font-weight:700;font-size:21px;line-height:1.15;letter-spacing:-.01em}
+  .card .verdict{font-family:var(--sans);font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--stripe,var(--muted))}
+  .card p{margin:2px 0 0;font-size:14.5px;color:var(--muted);line-height:1.5}
+  .metric{
+    margin-top:6px;padding-top:10px;border-top:1px solid var(--hair);
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:4px 14px;font-variant-numeric:tabular-nums;
+  }
+  .metric b{color:var(--ink);font-weight:600}
+
+  /* matrix */
+  .scroll{overflow-x:auto;border:1px solid var(--hair);border-radius:3px;background:var(--surface);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:600px}
+  caption{text-align:left;padding:14px 18px 0;font-size:14px;color:var(--muted);caption-side:top}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;background:var(--surface-2);border-bottom:1px solid var(--hair);
+    position:sticky;top:0;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.d{font-family:var(--mono);font-size:12px;color:var(--muted);width:2.4em;font-variant-numeric:tabular-nums}
+  td.label{font-size:15px;max-width:26ch}
+  td.cell{text-align:center;width:6.5em}
+  .chip{
+    display:inline-flex;align-items:center;gap:5px;padding:2px 9px 2px 7px;border-radius:2px;
+    font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.04em;
+    border:1px solid currentColor;
+  }
+  .chip.p{color:var(--pass)}
+  .chip.w{color:var(--warn)}
+  .chip.f{color:var(--fail)}
+  .chip .g{font-size:13px;line-height:1}
+
+  /* blocked panel */
+  .blocked{
+    background:var(--accent-soft);border:1px solid var(--accent);border-radius:3px;
+    padding:22px 24px;display:flex;flex-direction:column;gap:14px;
+  }
+  .blocked h2{color:var(--ink)}
+  .blocked h2::after{background:var(--accent)}
+  ol.asks{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:ask}
+  ol.asks li{
+    display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;
+    font-size:15.5px;line-height:1.5;
+  }
+  ol.asks li::before{
+    counter-increment:ask;content:counter(ask);
+    font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent);
+    border:1px solid var(--accent);border-radius:50%;width:20px;height:20px;
+    display:grid;place-items:center;margin-top:3px;
+  }
+  ol.asks b{font-family:var(--sans);font-weight:700}
+  .cost{font-family:var(--mono);font-size:11.5px;color:var(--muted);display:block;margin-top:2px}
+
+  /* open items */
+  .items{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--hair)}
+  .item{
+    display:grid;grid-template-columns:minmax(0,7em) 1fr;gap:6px 20px;
+    padding:16px 0;border-bottom:1px solid var(--hair);align-items:start;
+  }
+  .item .tag{
+    font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);padding-top:3px;
+  }
+  .item h3{font-family:var(--sans);font-size:16.5px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em}
+  .item p{margin:0;color:var(--muted);font-size:15px;max-width:68ch}
+
+  /* ledger */
+  .ledger{display:flex;flex-direction:column;gap:0}
+  .round{
+    display:grid;grid-template-columns:4.5em 1fr;gap:18px;padding:13px 0;
+    border-bottom:1px solid var(--hair);align-items:baseline;
+  }
+  .round:last-child{border-bottom:none}
+  .rid{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+  .rtext{font-size:15px;color:var(--muted);max-width:72ch}
+  .rtext b{color:var(--ink);font-family:var(--sans);font-weight:700;font-size:14.5px}
+
+  footer{border-top:1px solid var(--hair);padding-top:20px;font-size:14px;color:var(--muted);max-width:70ch}
+  footer code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+  a{color:var(--accent)}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">ADeLe v2 · rubrics/v2-improved</p>
+    <h1>PL Rubric Status Board</h1>
+    <p class="lede">Where the three planning-family dimensions stand, what each one still fails,
+    and the four decisions waiting on Pablo. Updated in place — this page is the state, not a report.</p>
+    <p class="stamp">Last updated <b>22 Aug 2026</b> · after round 44 · commit <b>0246962</b></p>
+  </header>
+
+  <section>
+    <h2>Dimension state</h2>
+    <div class="cards">
+
+      <article class="card ok">
+        <span class="code">PLe</span>
+        <span class="name">Action control &amp; execution</span>
+        <span class="verdict">Closed</span>
+        <p>Driver re-anchored to the availability of progress and correctness checking. Compressed
+        into the v1 shape range with every measured clause intact. Committed as v2-r44.</p>
+        <div class="metric"><span>α <b>0.967</b></span><span>regression <b>11/11</b> exact</span><span>rounds <b>r38–r44</b></span></div>
+      </article>
+
+      <article class="card mid">
+        <span class="code">PLs</span>
+        <span class="name">Simulating</span>
+        <span class="verdict">Not cleared</span>
+        <p>The fused driver survived all three of its falsifiers. One pre-registered rule failed
+        in the confirming round — because the probe was badly built, not the rubric.</p>
+        <div class="metric"><span>α <b>0.97</b></span><span>human labels <b>0</b></span><span>rounds <b>r40–r41</b></span></div>
+      </article>
+
+      <article class="card ok">
+        <span class="code">PLp</span>
+        <span class="name">Planning</span>
+        <span class="verdict">Cleared</span>
+        <p>The suspected lookahead defect did not survive measurement. Double dissociation from
+        PLs holds in both directions; the chess co-load is a property of chess. No edit applied.</p>
+        <div class="metric"><span>text <b>unchanged</b></span><span>diagonal <b>3/3</b></span><span>closed <b>r43</b></span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Against the nine desiderata</h2>
+    <div class="scroll">
+      <table>
+        <caption>Reading-only audit, 22 Aug 2026. Caveats and reasoning in <code>docs/PL-desiderata-audit.md</code>.</caption>
+        <thead>
+          <tr><th scope="col">#</th><th scope="col">Desideratum</th><th scope="col">PLp</th><th scope="col">PLe</th><th scope="col">PLs</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="d">1</td><td class="label">Taxonomy fit</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip w"><span class="g">◐</span>stale</span></td>
+            <td class="cell"><span class="chip f"><span class="g">○</span>none</span></td></tr>
+          <tr><td class="d">2</td><td class="label">Disentangles from siblings, measured</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td></tr>
+          <tr><td class="d">3</td><td class="label">Single driver</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip w"><span class="g">◐</span>fused</span></td></tr>
+          <tr><td class="d">4</td><td class="label">Intuitive</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td></tr>
+          <tr><td class="d">5</td><td class="label">Usability / annotatability</td>
+            <td class="cell"><span class="chip w"><span class="g">◐</span>resid</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip w"><span class="g">◐</span>1 open</span></td></tr>
+          <tr><td class="d">6</td><td class="label">Examples disentangle</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td></tr>
+          <tr><td class="d">7</td><td class="label">v1 shape and style</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>73w</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>117w</span></td>
+            <td class="cell"><span class="chip f"><span class="g">○</span>147w</span></td></tr>
+          <tr><td class="d">8</td><td class="label">Thoughtful</td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td>
+            <td class="cell"><span class="chip p"><span class="g">●</span>met</span></td></tr>
+          <tr><td class="d">9</td><td class="label">Empirical grounding</td>
+            <td class="cell"><span class="chip f"><span class="g">○</span>none</span></td>
+            <td class="cell"><span class="chip f"><span class="g">○</span>none</span></td>
+            <td class="cell"><span class="chip f"><span class="g">○</span>none</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="blocked">
+    <h2>Waiting on you</h2>
+    <ol class="asks">
+      <li><span><b>Ten blind labels on the r41 items.</b> PLs has no human anchor at all, and across
+        five rounds the anchor has been wrong every time the text was right.
+        <span class="cost">labs/rubric-qa/r41/ · ~20 minutes · unblocks PLs</span></span></li>
+      <li><span><b>A second labeller — Paolo?</b> Two independent anchors would fix the method's
+        weak point structurally instead of by exhortation.
+        <span class="cost">a decision, not a task</span></span></li>
+      <li><span><b>Who owns QLl, and is its text stable?</b> Needed before PLp's separation round
+        can be designed.
+        <span class="cost">blocks Stage 4</span></span></li>
+      <li><span><b>Stage 5 cost ruling.</b> Full protocol at 540 judge calls, or an opus-only
+        screen at 180 reported as a screen rather than a measurement.
+        <span class="cost">blocks Stage 5</span></span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Open items, in the order I would fix them</h2>
+    <div class="items">
+      <div class="item">
+        <span class="tag">PLs</span>
+        <div><h3>One six-item round to close the level boundary</h3>
+        <p>Mutual coupling versus sequential chain, coarse answers on both sides. Confirms A7 at 3
+        and replaces the domino probe that failed r41's rule 2.</p></div>
+      </div>
+      <div class="item">
+        <span class="tag">PLs · D7</span>
+        <div><h3>Compression pass on PLs</h3>
+        <p>147-word preamble against PLp's 73. PLe's pass reproduced all eleven regression items
+        exactly, so the same method applies — cut redundancy, keep every measured clause,
+        re-run the traps.</p></div>
+      </div>
+      <div class="item">
+        <span class="tag">D1</span>
+        <div><h3>Provenance entries</h3>
+        <p>PLs has none; PLe's describes a driver it no longer has. Writing, not measurement.</p></div>
+      </div>
+      <div class="item">
+        <span class="tag">D9</span>
+        <div><h3>Criterion validity</h3>
+        <p>All 41 rounds are internal. Solver outcomes joined to demand labels is the only thing
+        that closes this, and no further internal round can substitute for it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Round ledger</h2>
+    <div class="ledger">
+      <div class="round"><span class="rid">r37</span><span class="rtext"><b>PLe not ready.</b>
+        Judge offset dominated, α ≈ 0.12. Reported an irreversibility collapse that later proved
+        to be an artefact of model-made anchors.</span></div>
+      <div class="round"><span class="rid">r38</span><span class="rtext"><b>Rewrite adopted.</b>
+        Checking-availability driver. The stakes trap fell from 5 to 2; α 0.74. Generated the
+        L2/L3 hypothesis.</span></div>
+      <div class="round"><span class="rid">r39</span><span class="rtext"><b>PLe closed.</b>
+        Forced-versus-elected minimal pair separated in all 18 cells; levels 0 and 4 reachable;
+        α 0.967.</span></div>
+      <div class="round"><span class="rid">r40</span><span class="rtext"><b>PLs fusion survived.</b>
+        None of the three falsifiers fired; precision contrast separated by three levels on one
+        situation. Absent-referent defect found.</span></div>
+      <div class="round"><span class="rid">r41</span><span class="rtext"><b>PLs not cleared.</b>
+        The new L0 clause binds both ways; one pre-registered rule failed on a badly built probe.
+        Reported as a failure rather than reinterpreted.</span></div>
+      <div class="round"><span class="rid">r42</span><span class="rtext"><b>Family discriminates.</b>
+        Nine items scored on all three rubrics; diagonal held 8/9, one off-diagonal leak, and its
+        controls localised it to chess alone.</span></div>
+      <div class="round"><span class="rid">r43</span><span class="rtext"><b>PLp fix withdrawn.</b>
+        The drafted exclusion changed no score. Double dissociation measured in both directions,
+        so the text-read defect was a miss and the stopping rule holds.</span></div>
+      <div class="round"><span class="rid">r44</span><span class="rtext"><b>PLe compressed, PLp closed.</b>
+        All eleven regression items reproduced exactly after a 20% cut; PLp needed no text change,
+        its one residual accepted rather than fixed.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    Round records live in <code>labs/rubric-qa/</code>, which is gitignored — they exist on disk
+    only and are not citable until mirrored into <code>docs/</code>. Tracked companions to this
+    page: <code>docs/PL-family-completion-plan.md</code>, <code>docs/PL-boundary-table.md</code>,
+    <code>docs/PL-desiderata-audit.md</code>.
+  </footer>
+
+</div>

@@ -1,3 +1,5 @@
+# Calibrating Knowns and Unknowns
+
 This rubric assesses how difficult it is for the respondent to accurately evaluate whether they know or don't know something. It focuses on metacognitive assessment - the ability to recognize the boundaries of one's knowledge and confidently identify what one knows they know, knows they don't know, or is uncertain about.
 
 Level 0: None. The respondent can immediately and unambiguously determine whether they know something or know they don't know it. No metacognitive effort is required.

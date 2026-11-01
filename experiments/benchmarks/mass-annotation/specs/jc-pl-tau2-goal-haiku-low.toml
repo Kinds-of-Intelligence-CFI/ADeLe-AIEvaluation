@@ -1,0 +1,22 @@
+# judge-choice (experiments/benchmarks/judge-choice): block pl, inputs data/instances-tau2-goal, arm haiku-low.
+# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.
+name = "jc-pl-tau2-goal-haiku-low"
+
+[tasks]
+benchmarks = ["tau2-airline", "tau2-banking_knowledge", "tau2-retail"]
+subset = "experiments/benchmarks/judge-choice/subset_pl_tau2-goal.csv"
+instances_dir = "data/instances-tau2-goal"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe"]
+
+[prompt]
+builder = "v1-layout-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-haiku-5-5"
+effort = "low"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

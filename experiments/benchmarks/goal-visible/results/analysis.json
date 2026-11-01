@@ -1,0 +1,999 @@
+{
+  "n_cells": {
+    "new": 3927,
+    "control": 3930,
+    "released": 3927
+  },
+  "unlabelled_new": 8,
+  "spearman": {
+    "new/deepswe-v1.1/PLp": {
+      "n": 90,
+      "n_off_mode": 28,
+      "rho": -0.168,
+      "p_two_sided": 0.114,
+      "ci95": [
+        -0.364,
+        0.042
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/deepswe-v1.1/PLe": {
+      "n": 90,
+      "n_off_mode": 13,
+      "rho": -0.093,
+      "p_two_sided": 0.383,
+      "ci95": [
+        -0.295,
+        0.117
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/deepswe-v1.1/PLs": {
+      "n": 90,
+      "n_off_mode": 12,
+      "rho": 0.021,
+      "p_two_sided": 0.846,
+      "ci95": [
+        -0.187,
+        0.227
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/deepswe-v1.1/MSm": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "new/deepswe-v1.1/MSc": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "new/frontierswe-v2/PLp": {
+      "n": 19,
+      "n_off_mode": 3,
+      "rho": -0.32,
+      "p_two_sided": 0.181,
+      "ci95": [
+        -0.683,
+        0.169
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/frontierswe-v2/PLe": {
+      "n": 19,
+      "n_off_mode": 4,
+      "rho": 0.143,
+      "p_two_sided": 0.558,
+      "ci95": [
+        -0.335,
+        0.563
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/frontierswe-v2/PLs": {
+      "n": 19,
+      "n_off_mode": 10,
+      "rho": 0.261,
+      "p_two_sided": 0.28,
+      "ci95": [
+        -0.227,
+        0.644
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/frontierswe-v2/MSm": {
+      "n": 19,
+      "n_off_mode": 1,
+      "rho": 0.022,
+      "p_two_sided": 0.929,
+      "ci95": [
+        -0.437,
+        0.471
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/frontierswe-v2/MSc": {
+      "n": 19,
+      "note": "one level: not testable"
+    },
+    "new/programbench/PLp": {
+      "n": 129,
+      "n_off_mode": 28,
+      "rho": -0.465,
+      "p_two_sided": 2.74e-08,
+      "ci95": [
+        -0.597,
+        -0.31
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "new/programbench/PLe": {
+      "n": 129,
+      "n_off_mode": 1,
+      "rho": -0.081,
+      "p_two_sided": 0.359,
+      "ci95": [
+        -0.251,
+        0.093
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/programbench/PLs": {
+      "n": 129,
+      "n_off_mode": 6,
+      "rho": -0.136,
+      "p_two_sided": 0.125,
+      "ci95": [
+        -0.302,
+        0.039
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/programbench/MSm": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "new/programbench/MSc": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "new/swe-bench-verified/PLp": {
+      "n": 443,
+      "n_off_mode": 199,
+      "rho": -0.59,
+      "p_two_sided": 7.51e-43,
+      "ci95": [
+        -0.652,
+        -0.52
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "new/swe-bench-verified/PLe": {
+      "n": 443,
+      "n_off_mode": 26,
+      "rho": -0.309,
+      "p_two_sided": 3.11e-11,
+      "ci95": [
+        -0.392,
+        -0.22
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "new/swe-bench-verified/PLs": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "new/swe-bench-verified/MSm": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "new/swe-bench-verified/MSc": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "new/terminal-bench-4.0.0/PLp": {
+      "n": 35,
+      "n_off_mode": 11,
+      "rho": 0.002,
+      "p_two_sided": 0.993,
+      "ci95": [
+        -0.332,
+        0.335
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-4.0.0/PLe": {
+      "n": 35,
+      "n_off_mode": 17,
+      "rho": -0.238,
+      "p_two_sided": 0.169,
+      "ci95": [
+        -0.533,
+        0.108
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-4.0.0/PLs": {
+      "n": 35,
+      "n_off_mode": 22,
+      "rho": -0.025,
+      "p_two_sided": 0.885,
+      "ci95": [
+        -0.356,
+        0.31
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-4.0.0/MSm": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.144,
+      "p_two_sided": 0.408,
+      "ci95": [
+        -0.457,
+        0.2
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-4.0.0/MSc": {
+      "n": 35,
+      "note": "one level: not testable"
+    },
+    "new/terminal-bench-science-0.1/PLp": {
+      "n": 69,
+      "n_off_mode": 24,
+      "rho": 0.086,
+      "p_two_sided": 0.485,
+      "ci95": [
+        -0.155,
+        0.316
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-science-0.1/PLe": {
+      "n": 69,
+      "n_off_mode": 21,
+      "rho": -0.146,
+      "p_two_sided": 0.232,
+      "ci95": [
+        -0.371,
+        0.096
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-science-0.1/PLs": {
+      "n": 69,
+      "n_off_mode": 42,
+      "rho": 0.017,
+      "p_two_sided": 0.893,
+      "ci95": [
+        -0.221,
+        0.252
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-science-0.1/MSm": {
+      "n": 70,
+      "n_off_mode": 1,
+      "rho": 0.015,
+      "p_two_sided": 0.902,
+      "ci95": [
+        -0.221,
+        0.249
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "new/terminal-bench-science-0.1/MSc": {
+      "n": 70,
+      "note": "one level: not testable"
+    },
+    "control/deepswe-v1.1/PLp": {
+      "n": 90,
+      "n_off_mode": 41,
+      "rho": -0.067,
+      "p_two_sided": 0.53,
+      "ci95": [
+        -0.271,
+        0.142
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/deepswe-v1.1/PLe": {
+      "n": 90,
+      "n_off_mode": 1,
+      "rho": 0.112,
+      "p_two_sided": 0.292,
+      "ci95": [
+        -0.098,
+        0.313
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/deepswe-v1.1/PLs": {
+      "n": 90,
+      "n_off_mode": 15,
+      "rho": -0.138,
+      "p_two_sided": 0.196,
+      "ci95": [
+        -0.336,
+        0.072
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/deepswe-v1.1/MSm": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "control/deepswe-v1.1/MSc": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "control/frontierswe-v2/PLp": {
+      "n": 19,
+      "n_off_mode": 3,
+      "rho": -0.08,
+      "p_two_sided": 0.744,
+      "ci95": [
+        -0.516,
+        0.389
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/frontierswe-v2/PLe": {
+      "n": 19,
+      "n_off_mode": 3,
+      "rho": 0.521,
+      "p_two_sided": 0.0222,
+      "ci95": [
+        0.055,
+        0.8
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/frontierswe-v2/PLs": {
+      "n": 19,
+      "n_off_mode": 6,
+      "rho": 0.044,
+      "p_two_sided": 0.858,
+      "ci95": [
+        -0.419,
+        0.489
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/frontierswe-v2/MSm": {
+      "n": 19,
+      "n_off_mode": 1,
+      "rho": 0.022,
+      "p_two_sided": 0.929,
+      "ci95": [
+        -0.437,
+        0.471
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/frontierswe-v2/MSc": {
+      "n": 19,
+      "note": "one level: not testable"
+    },
+    "control/programbench/PLp": {
+      "n": 129,
+      "n_off_mode": 30,
+      "rho": -0.548,
+      "p_two_sided": 1.84e-11,
+      "ci95": [
+        -0.665,
+        -0.404
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "control/programbench/PLe": {
+      "n": 129,
+      "n_off_mode": 6,
+      "rho": -0.09,
+      "p_two_sided": 0.309,
+      "ci95": [
+        -0.259,
+        0.084
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/programbench/PLs": {
+      "n": 129,
+      "n_off_mode": 3,
+      "rho": 0.035,
+      "p_two_sided": 0.695,
+      "ci95": [
+        -0.139,
+        0.206
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/programbench/MSm": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "control/programbench/MSc": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "control/swe-bench-verified/PLp": {
+      "n": 443,
+      "n_off_mode": 208,
+      "rho": -0.561,
+      "p_two_sided": 4.5e-38,
+      "ci95": [
+        -0.626,
+        -0.488
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "control/swe-bench-verified/PLe": {
+      "n": 443,
+      "n_off_mode": 13,
+      "rho": -0.184,
+      "p_two_sided": 9.94e-05,
+      "ci95": [
+        -0.273,
+        -0.091
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "control/swe-bench-verified/PLs": {
+      "n": 443,
+      "n_off_mode": 3,
+      "rho": -0.071,
+      "p_two_sided": 0.138,
+      "ci95": [
+        -0.163,
+        0.023
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/swe-bench-verified/MSm": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "control/swe-bench-verified/MSc": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "control/terminal-bench-4.0.0/PLp": {
+      "n": 35,
+      "n_off_mode": 10,
+      "rho": -0.036,
+      "p_two_sided": 0.839,
+      "ci95": [
+        -0.365,
+        0.301
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-4.0.0/PLe": {
+      "n": 35,
+      "n_off_mode": 13,
+      "rho": -0.135,
+      "p_two_sided": 0.438,
+      "ci95": [
+        -0.45,
+        0.209
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-4.0.0/PLs": {
+      "n": 35,
+      "n_off_mode": 21,
+      "rho": -0.021,
+      "p_two_sided": 0.907,
+      "ci95": [
+        -0.351,
+        0.315
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-4.0.0/MSm": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.144,
+      "p_two_sided": 0.408,
+      "ci95": [
+        -0.457,
+        0.2
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-4.0.0/MSc": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.102,
+      "p_two_sided": 0.56,
+      "ci95": [
+        -0.422,
+        0.24
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-science-0.1/PLp": {
+      "n": 70,
+      "n_off_mode": 23,
+      "rho": 0.238,
+      "p_two_sided": 0.0471,
+      "ci95": [
+        0.0,
+        0.451
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-science-0.1/PLe": {
+      "n": 70,
+      "n_off_mode": 35,
+      "rho": -0.079,
+      "p_two_sided": 0.517,
+      "ci95": [
+        -0.308,
+        0.16
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-science-0.1/PLs": {
+      "n": 70,
+      "n_off_mode": 43,
+      "rho": 0.042,
+      "p_two_sided": 0.729,
+      "ci95": [
+        -0.195,
+        0.274
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-science-0.1/MSm": {
+      "n": 70,
+      "n_off_mode": 1,
+      "rho": 0.015,
+      "p_two_sided": 0.902,
+      "ci95": [
+        -0.221,
+        0.249
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "control/terminal-bench-science-0.1/MSc": {
+      "n": 70,
+      "note": "one level: not testable"
+    },
+    "released/deepswe-v1.1/PLp": {
+      "n": 90,
+      "n_off_mode": 39,
+      "rho": -0.084,
+      "p_two_sided": 0.433,
+      "ci95": [
+        -0.286,
+        0.126
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/deepswe-v1.1/PLe": {
+      "n": 90,
+      "n_off_mode": 3,
+      "rho": 0.044,
+      "p_two_sided": 0.68,
+      "ci95": [
+        -0.165,
+        0.249
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/deepswe-v1.1/PLs": {
+      "n": 90,
+      "n_off_mode": 24,
+      "rho": -0.13,
+      "p_two_sided": 0.223,
+      "ci95": [
+        -0.329,
+        0.081
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/deepswe-v1.1/MSm": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "released/deepswe-v1.1/MSc": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "released/frontierswe-v2/PLp": {
+      "n": 19,
+      "note": "one level: not testable"
+    },
+    "released/frontierswe-v2/PLe": {
+      "n": 19,
+      "n_off_mode": 4,
+      "rho": 0.418,
+      "p_two_sided": 0.0749,
+      "ci95": [
+        -0.066,
+        0.743
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/frontierswe-v2/PLs": {
+      "n": 19,
+      "n_off_mode": 6,
+      "rho": -0.042,
+      "p_two_sided": 0.865,
+      "ci95": [
+        -0.487,
+        0.42
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/frontierswe-v2/MSm": {
+      "n": 19,
+      "n_off_mode": 1,
+      "rho": 0.022,
+      "p_two_sided": 0.929,
+      "ci95": [
+        -0.437,
+        0.471
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/frontierswe-v2/MSc": {
+      "n": 19,
+      "note": "one level: not testable"
+    },
+    "released/programbench/PLp": {
+      "n": 129,
+      "n_off_mode": 35,
+      "rho": -0.488,
+      "p_two_sided": 4.43e-09,
+      "ci95": [
+        -0.616,
+        -0.335
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "released/programbench/PLe": {
+      "n": 129,
+      "n_off_mode": 3,
+      "rho": -0.121,
+      "p_two_sided": 0.174,
+      "ci95": [
+        -0.288,
+        0.054
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/programbench/PLs": {
+      "n": 129,
+      "n_off_mode": 4,
+      "rho": -0.147,
+      "p_two_sided": 0.096,
+      "ci95": [
+        -0.313,
+        0.027
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/programbench/MSm": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "released/programbench/MSc": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "released/swe-bench-verified/PLp": {
+      "n": 443,
+      "n_off_mode": 151,
+      "rho": -0.546,
+      "p_two_sided": 8.31e-36,
+      "ci95": [
+        -0.613,
+        -0.472
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "released/swe-bench-verified/PLe": {
+      "n": 443,
+      "n_off_mode": 13,
+      "rho": -0.262,
+      "p_two_sided": 2.05e-08,
+      "ci95": [
+        -0.349,
+        -0.172
+      ],
+      "predicted": "negative",
+      "supported": true
+    },
+    "released/swe-bench-verified/PLs": {
+      "n": 443,
+      "n_off_mode": 2,
+      "rho": -0.053,
+      "p_two_sided": 0.261,
+      "ci95": [
+        -0.146,
+        0.04
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/swe-bench-verified/MSm": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "released/swe-bench-verified/MSc": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "released/terminal-bench-4.0.0/PLp": {
+      "n": 35,
+      "n_off_mode": 11,
+      "rho": 0.214,
+      "p_two_sided": 0.216,
+      "ci95": [
+        -0.132,
+        0.514
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-4.0.0/PLe": {
+      "n": 35,
+      "n_off_mode": 14,
+      "rho": -0.014,
+      "p_two_sided": 0.935,
+      "ci95": [
+        -0.346,
+        0.321
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-4.0.0/PLs": {
+      "n": 35,
+      "n_off_mode": 22,
+      "rho": -0.085,
+      "p_two_sided": 0.629,
+      "ci95": [
+        -0.407,
+        0.256
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-4.0.0/MSm": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.144,
+      "p_two_sided": 0.408,
+      "ci95": [
+        -0.457,
+        0.2
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-4.0.0/MSc": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.102,
+      "p_two_sided": 0.56,
+      "ci95": [
+        -0.422,
+        0.24
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-science-0.1/PLp": {
+      "n": 69,
+      "n_off_mode": 16,
+      "rho": 0.275,
+      "p_two_sided": 0.0221,
+      "ci95": [
+        0.037,
+        0.484
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-science-0.1/PLe": {
+      "n": 69,
+      "n_off_mode": 27,
+      "rho": -0.033,
+      "p_two_sided": 0.789,
+      "ci95": [
+        -0.268,
+        0.205
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-science-0.1/PLs": {
+      "n": 69,
+      "n_off_mode": 39,
+      "rho": 0.055,
+      "p_two_sided": 0.653,
+      "ci95": [
+        -0.184,
+        0.288
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-science-0.1/MSm": {
+      "n": 70,
+      "n_off_mode": 1,
+      "rho": 0.015,
+      "p_two_sided": 0.902,
+      "ci95": [
+        -0.221,
+        0.249
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "released/terminal-bench-science-0.1/MSc": {
+      "n": 70,
+      "note": "one level: not testable"
+    }
+  },
+  "mean": {
+    "new/deepswe-v1.1/PLp": 2.711,
+    "new/deepswe-v1.1/PLe": 3.144,
+    "new/deepswe-v1.1/PLs": 1.133,
+    "new/deepswe-v1.1/MSm": 0.0,
+    "new/deepswe-v1.1/MSc": 0.0,
+    "new/frontierswe-v2/PLp": 3.158,
+    "new/frontierswe-v2/PLe": 3.211,
+    "new/frontierswe-v2/PLs": 1.421,
+    "new/frontierswe-v2/MSm": 0.053,
+    "new/frontierswe-v2/MSc": 0.0,
+    "new/programbench/PLp": 2.798,
+    "new/programbench/PLe": 3.008,
+    "new/programbench/PLs": 1.047,
+    "new/programbench/MSm": 0.0,
+    "new/programbench/MSc": 0.0,
+    "new/swe-bench-verified/PLp": 1.424,
+    "new/swe-bench-verified/PLe": 2.937,
+    "new/swe-bench-verified/PLs": 1.0,
+    "new/swe-bench-verified/MSm": 0.0,
+    "new/swe-bench-verified/MSc": 0.0,
+    "new/terminal-bench-4.0.0/PLp": 2.914,
+    "new/terminal-bench-4.0.0/PLe": 3.486,
+    "new/terminal-bench-4.0.0/PLs": 1.057,
+    "new/terminal-bench-4.0.0/MSm": 0.029,
+    "new/terminal-bench-4.0.0/MSc": 0.0,
+    "new/terminal-bench-science-0.1/PLp": 3.116,
+    "new/terminal-bench-science-0.1/PLe": 3.681,
+    "new/terminal-bench-science-0.1/PLs": 1.13,
+    "new/terminal-bench-science-0.1/MSm": 0.029,
+    "new/terminal-bench-science-0.1/MSc": 0.0,
+    "control/deepswe-v1.1/PLp": 2.544,
+    "control/deepswe-v1.1/PLe": 3.011,
+    "control/deepswe-v1.1/PLs": 1.167,
+    "control/deepswe-v1.1/MSm": 0.0,
+    "control/deepswe-v1.1/MSc": 0.0,
+    "control/frontierswe-v2/PLp": 3.158,
+    "control/frontierswe-v2/PLe": 3.158,
+    "control/frontierswe-v2/PLs": 1.263,
+    "control/frontierswe-v2/MSm": 0.105,
+    "control/frontierswe-v2/MSc": 0.0,
+    "control/programbench/PLp": 2.767,
+    "control/programbench/PLe": 3.047,
+    "control/programbench/PLs": 1.023,
+    "control/programbench/MSm": 0.0,
+    "control/programbench/MSc": 0.0,
+    "control/swe-bench-verified/PLp": 1.53,
+    "control/swe-bench-verified/PLe": 2.968,
+    "control/swe-bench-verified/PLs": 0.998,
+    "control/swe-bench-verified/MSm": 0.0,
+    "control/swe-bench-verified/MSc": 0.0,
+    "control/terminal-bench-4.0.0/PLp": 2.829,
+    "control/terminal-bench-4.0.0/PLe": 3.314,
+    "control/terminal-bench-4.0.0/PLs": 1.114,
+    "control/terminal-bench-4.0.0/MSm": 0.029,
+    "control/terminal-bench-4.0.0/MSc": 0.029,
+    "control/terminal-bench-science-0.1/PLp": 3.1,
+    "control/terminal-bench-science-0.1/PLe": 3.5,
+    "control/terminal-bench-science-0.1/PLs": 1.086,
+    "control/terminal-bench-science-0.1/MSm": 0.014,
+    "control/terminal-bench-science-0.1/MSc": 0.0,
+    "released/deepswe-v1.1/PLp": 2.567,
+    "released/deepswe-v1.1/PLe": 3.033,
+    "released/deepswe-v1.1/PLs": 1.267,
+    "released/deepswe-v1.1/MSm": 0.0,
+    "released/deepswe-v1.1/MSc": 0.0,
+    "released/frontierswe-v2/PLp": 3.0,
+    "released/frontierswe-v2/PLe": 3.211,
+    "released/frontierswe-v2/PLs": 1.316,
+    "released/frontierswe-v2/MSm": 0.105,
+    "released/frontierswe-v2/MSc": 0.0,
+    "released/programbench/PLp": 2.76,
+    "released/programbench/PLe": 3.023,
+    "released/programbench/PLs": 1.031,
+    "released/programbench/MSm": 0.0,
+    "released/programbench/MSc": 0.0,
+    "released/swe-bench-verified/PLp": 1.664,
+    "released/swe-bench-verified/PLe": 2.966,
+    "released/swe-bench-verified/PLs": 1.0,
+    "released/swe-bench-verified/MSm": 0.0,
+    "released/swe-bench-verified/MSc": 0.0,
+    "released/terminal-bench-4.0.0/PLp": 2.8,
+    "released/terminal-bench-4.0.0/PLe": 3.343,
+    "released/terminal-bench-4.0.0/PLs": 1.057,
+    "released/terminal-bench-4.0.0/MSm": 0.029,
+    "released/terminal-bench-4.0.0/MSc": 0.029,
+    "released/terminal-bench-science-0.1/PLp": 2.971,
+    "released/terminal-bench-science-0.1/PLe": 3.609,
+    "released/terminal-bench-science-0.1/PLs": 1.029,
+    "released/terminal-bench-science-0.1/MSm": 0.014,
+    "released/terminal-bench-science-0.1/MSc": 0.0
+  },
+  "predictions": {
+    "MS at Level 0 on >= 97% of tasks in every set": [
+      false,
+      {
+        "swe-bench-verified": 1.0,
+        "deepswe-v1.1": 1.0,
+        "frontierswe-v2": 0.9473684210526315,
+        "programbench": 1.0,
+        "terminal-bench-4.0.0": 0.9714285714285714,
+        "terminal-bench-science-0.1": 0.9857142857142858
+      }
+    ],
+    "SWE-bench Verified PLp rho <= -0.45": [
+      true,
+      -0.59
+    ],
+    "ProgramBench PLp rho <= -0.4": [
+      true,
+      -0.465
+    ],
+    "PLp exact agreement with control below 86%": [
+      false,
+      0.86
+    ],
+    "SWE-bench Verified mean PLp up >= 0.1 vs control": [
+      false,
+      -0.106
+    ],
+    "a set x rubric gains a negative p < 0.05 signal its control lacks": [
+      false,
+      []
+    ]
+  }
+}

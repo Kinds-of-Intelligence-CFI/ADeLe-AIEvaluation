@@ -1,0 +1,39 @@
+{
+  "run_id": "sq-search",
+  "created_at": "2026-10-01T08:07:04+00:00",
+  "repo_commit": "924cf3b1486621244cae702d75a8dc9ed53eba9a",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "rivercross"
+  ],
+  "frame": {
+    "file": "experiments/benchmarks/rivercross-v2/frames/search_frame.csv",
+    "sha256": "620097a8c2d0804387a16b771a1d68731fe78f0c3b357696337803a09ce0aaf1"
+  },
+  "rubric": {
+    "current": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+    "current_sha256": "6878b02e2ed8b0e40da493127d32986a1dd1364519624d500d25667673ed9bb8",
+    "candidate": "experiments/benchmarks/plp-b2/PLp_Sq.txt",
+    "candidate_sha256": "180bb9fdfbfcdfbfeaf7c62b2fe88b429a67c5fcb0b68a28763b990012bd65da",
+    "fourgrams_shared_with_frames": []
+  },
+  "design": {
+    "n_prompts": 54,
+    "judges": {
+      "opus-low-r1": "adele-judge-v2-low, model alias 'opus'; repeat 1",
+      "opus-low-r2": "adele-judge-v2-low, model alias 'opus'; repeat 2",
+      "opus-low-r3": "adele-judge-v2-low, model alias 'opus'; repeat 3"
+    }
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/sq-search",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

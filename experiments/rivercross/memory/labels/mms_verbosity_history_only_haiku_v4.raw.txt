@@ -1,0 +1,21 @@
+```csv
+custom_id,level,reason
+memc-L3-high-01__history_only,3,Five constraints; item5 location invisible; track four items across three reversals.
+memc-L3-high-02__history_only,3,Five constraints form chain; item5 invisible; multiple one-way moves with reversals.
+memc-L3-medium-01__history_only,2,Item1 moved right; item5 left invisible; three items moved once each; no reversals.
+memc-L3-medium-02__history_only,2,Same structure as L3-medium-01; boat capacity 3 vs 4 does not increase memory demand.
+memc-L4-high-01__history_only,4,Four constraints; four moves with double reversals; track item locations through cycles.
+memc-L4-high-02__history_only,4,Four constraints chain; four moves with reversals; interference between item-pair constraints.
+memc-L4-medium-01__history_only,3,Item1 invisible; item5 also invisible; track four items through four moves with reversals.
+memc-L4-medium-02__history_only,3,Item1 invisible; three constraints; four moves with reversals; track item-location changes.
+memc-L5-high-01__history_only,4,Five constraints; five moves with multiple reversals; track item1 and item5 across cycles.
+memc-L5-high-02__history_only,4,Five constraints chain; five moves; track five items with interference and reversals.
+memc-L5-medium-01__history_only,4,Item1 and item5 invisible; five moves with reversals; complex hidden state tracking needed.
+memc-L5-medium-02__history_only,4,Item1 and item5 invisible; five moves; capacity-3 constraint; reversals increase tracking demand.
+memv-L3-vlow-01__history_only,1,Item1 and item3 remain left; item2 right; three moves but only one item moved once.
+memv-L3-vlow-02__history_only,1,Item1 and item3 remain left; item2 right; three moves; single one-way move, no reversals.
+memv-L4-vlow-01__history_only,1,Item1 and item3 left invisible; item2 right; four moves but only one item ever moved.
+memv-L4-vlow-02__history_only,1,Item1 and item3 invisible; item2 right; four moves; single move persists, no reversals.
+memv-L5-vlow-01__history_only,1,Item1 and item3 left invisible; item2 right; five moves but only one-time move.
+memv-L5-vlow-02__history_only,1,Item1 and item3 invisible; item2 right; five moves; single move, no reversals or interference.
+```

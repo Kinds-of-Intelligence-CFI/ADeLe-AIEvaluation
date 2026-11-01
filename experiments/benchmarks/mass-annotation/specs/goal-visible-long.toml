@@ -1,0 +1,30 @@
+# goal-visible-long: as goal-visible.toml, for the released tasks whose prompt exceeds 50,000 chars or 1,500 lines under
+# at least one rubric (the programbench-pl rule); all five rubrics of those tasks use the chunked-read judge.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/goal-visible-long.toml
+name = "goal-visible-long"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "deepswe-v1.1", "frontierswe-v2", "programbench", "terminal-bench-4.0.0",
+              "terminal-bench-science-0.1"]
+subset = "experiments/benchmarks/goal-visible/subset_long.csv"
+instances_dir = "data/instances-goal"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low-chunked"
+judge_agent = "adele-judge-v2-low-chunked"
+model_alias = "opus"
+batch_size = 100
+chunk_lines = 200

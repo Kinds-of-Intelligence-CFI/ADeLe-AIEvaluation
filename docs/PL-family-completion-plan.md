@@ -1,0 +1,138 @@
+# Finishing the PL family — completion plan (drafted 2026-08-22)
+
+Scope: PLp (Planning), PLe (Action control and execution), PLs (Simulating).
+Status at drafting: **PLe closed** (v2-r39, rounds r38–r39). **PLs written, zero
+measurement.** **PLp validated in rounds 1–21, but against a catalogue that has since
+changed under it, with one known unmeasured claim.**
+
+The ordering below is chosen so that each stage can only be invalidated by a stage that
+comes later, not earlier — and so that the cheapest stages are the ones most likely to
+kill work before it is paid for.
+
+---
+
+## Stage 0 — Boundary consistency audit — ✅ DONE 2026-08-22 (`docs/PL-boundary-table.md`)
+
+**Outcome:** one material defect found, in a cell this plan did NOT flag. PLp's upper ladder
+(L3 "looking ahead", L4 "fail only once explored") is built on lookahead, which is now PLs's
+driver, and PLp contains no exclusion of it — so PLp and PLs co-vary by construction on
+exactly the items where PLp is highest. Fix drafted (`PLp_stage0_candidate.txt`) and
+deliberately deferred to Stage 4, which already pays for PLp's regression. The two cells this
+plan expected to break (PLp↔PLe both ways, after PLe's driver change) both survived.
+
+Original scope of the stage, for the record:
+
+The three rubrics were written at different times against different versions of each
+other. PLe's driver changed twice since PLp's exclusions were written. Before any judge
+call, produce a 3×3 boundary table: for each ordered pair (A, B), the sentence in A that
+excludes B's driver, and whether it still names the *current* B.
+
+Known live questions this must settle on paper:
+- PLp excludes "sustained execution, keeping the work on track" — written against the OLD
+  PLe (propagation/recovery). Does it still carve correctly against checking-availability?
+- PLs excludes "searching for or choosing among one's own actions… a candidate action
+  enters here only as a stipulated change" — is that mutually consistent with PLp's
+  "devising the revision does raise this demand"?
+- PLe excludes "the deliberation that finds or chooses a step" — does that phrase cover
+  *simulating consequences of a step*, which should route to PLs, not PLp?
+Output: `docs/PL-boundary-table.md`. Any contradiction found here is fixed in text before
+Stage 1, because it would otherwise be measured as judge noise.
+
+## Stage 1 — PLs levels, generating round — ✅ RUN 2026-08-22 as r40 (`labs/rubric-qa/r40/`)
+
+**Outcome: the fused driver survives all three of its falsifiers.** Precision does not act as
+a second axis (A4/A5 = 2 with exact answers); the fineness-not-count gate binds (A8 = 4); and
+the precision contrast separates by three levels on one and the same situation (A1/A2 = 2 vs
+A3 = 5). 18/19 within-1 of design intent, α = 0.971. Two departures: C1 (absent referent)
+scored 2 instead of 0 — a real annotatability defect — and A7 landed at 3 against an intent
+of 2, with the judges' reasoning indicating the design intent was wrong, not the text.
+**Protocol deviation, declared: run without Pablo's labels, so every anchor is
+construction-side.**
+
+Original scope of the stage, for the record:
+
+The battery already exists (`labs/PLs-preregistration-battery.md`): cells A1–A8 spanning
+the {few/many couplings} × {coarse/fine answer} grid, probes B1–B8 (B7 pure-execution
+ledger, B8 algorithmic tracing = the calculation-vs-simulation boundary), C1–C3 circularity.
+
+Required before any call: **Pablo labels the battery blind** — before seeing any proposal
+from Claude. This is not ceremony. Across r37–r39 the anchor was wrong three times and the
+rubric text was wrong zero times; anchors are now the weakest link in the method.
+
+Design: ~15 items × 3 judges × 3 seeds ≈ 135 calls. Sealed predictions before judging.
+The one design bet under test: **precision is a tolerance yardstick, not a second axis.**
+If A-grid cells {few couplings + fine answer} and {many couplings + coarse answer} do not
+separate as designed, the fused driver has failed and PLs needs re-drafting, not tuning.
+
+## Stage 2 — PLs confirming round — ⚠️ RUN 2026-08-22 as r41; ONE PRE-REGISTERED RULE FAILED
+
+The absent-referent clause binds in both directions (P1-absent = 0, P1-present = 2) and the
+deterministic-tracing boundary separates (4 vs 2). But the constitutive-vs-independent
+coupling pair did **not** separate (2 vs 2): the "constitutive" arm was built as a domino
+chain, which judges correctly identified as sequential one-directional causation rather than
+mutual influence. The probe was wrong, not the rubric — but the rule was pre-registered and
+it failed, so **PLs does not clear.** One short round (~6 items, mutual coupling vs
+sequential chain, all coarse answers) is what remains. α = 1.0 on the ten items run.
+
+Original scope of the stage, for the record:
+
+Whatever Stage 1 *generates* must be confirmed on fresh items with labels fixed in advance,
+including a purpose-built minimal pair for the boundary that moved. Lesson from r38→r39: a
+hypothesis generated by a round can never be scored on that same round. ~10–15 items.
+
+## Stage 3 — PL family discrimination (the test that has never been run)
+
+Every round so far has tested one rubric alone. This tests whether the family carves at
+joints. Nine designed items, three per dimension, each built to load heavily on exactly one
+PL driver and lightly on the other two; **each item scored on all three rubrics**.
+9 × 3 dims × 3 judges × 3 seeds ≈ 243 calls.
+
+Pre-registered pattern: each item ≥3 on its own dimension and ≤2 on the other two, i.e. a
+diagonal. Off-diagonal leakage of ≥2 levels on any cell is a boundary defect and names the
+pair that needs text work.
+
+## Stage 4 — PLp separation, the outstanding claim
+
+PLp × QLl separation is, in my own words from this project, "by construction, unverified."
+The design exists on paper: chess verify/find minimal pairs (proof-checking vs
+proof-finding) plus a reasoning-free ablation to test whether PLp scores track depth rather
+than plan-finding. ~12 items, plus a PLp regression against the current text.
+Prerequisite: confirm who owns QLl and that its current text is stable.
+
+## Stage 5 — Collinearity on real items (the stage that can kill a dimension)
+
+Rubric QA proves a rubric is *internally* sound. It cannot show the dimension earns its
+place in the battery. Annotate the 20-item pilot set on all three PL dimensions and inspect
+the correlation matrix. **If PLs correlates near-unity with PLp across realistic items, PLs
+does not earn its slot however clean its text is** — that is a finding, not a failure, and
+it is better found now than after the battery is annotated at scale.
+Cost note: full protocol (3 judges × 3 seeds × 3 dims × 20 items) = 540 calls. A defensible
+reduction is opus-only × 3 seeds = 180 calls, reported as a screen rather than a measurement.
+
+## Stage 6 — Close-out (no judging)
+
+- `docs/` provenance entries for r38, r39 and every stage above — **`labs/` is gitignored
+  (.gitignore:179), so the round records are on disk only and are not currently citable.**
+- MANIFEST rows and meta-line updates for PLs and PLp; PLe already stamped v2-r39.
+- The v1 comparability decision: PLe's driver changed, so historical PLe labels measure
+  something else. Someone must decide re-annotate vs. document-and-segregate.
+- Standing anchor correction: re-anchor tau-* to 1 in future comparison sets (r39 finding,
+  post-hoc, not evidence).
+
+---
+
+## What Claude needs from Pablo to start
+
+1. **Blind labels on the PLs battery** — the gate for Stage 1, and the item that will
+   otherwise stall everything.
+2. **A second independent labeller** (Paolo?) for at least the designed probes. Three
+   rounds of evidence say single-anchor labelling is the method's weak point; two
+   independent labellers would fix it structurally rather than by exhortation.
+3. **QLl ownership/stability**, for Stage 4.
+4. **A ruling on Stage 5's cost**: full protocol or opus-only screen.
+
+## Rough shape
+
+Stages 0 and 6 need no judge calls. Stages 1–5 total roughly 700 judge calls under the full
+protocol, ~500 with the Stage-5 screen. The critical path runs through Pablo's labels, not
+through compute.

@@ -1,0 +1,30 @@
+# tau2-goal-long: as tau2-full, with the goal but without the grader's expected-action list, on the same 242 tau2 tasks,
+# rubrics and judge (Pablo, 2026-10-26). Instance texts from experiments/benchmarks/tau2-goal/build.py
+# (data/instances-tau2-goal, gitignored). Tasks whose prompt exceeds 50,000 chars or 1,500 lines under any rubric; chunked-read judge.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/tau2-goal-long.toml
+name = "tau2-goal-long"
+
+[tasks]
+benchmarks = ["tau2-airline", "tau2-retail", "tau2-banking_knowledge"]
+subset = "experiments/benchmarks/tau2-goal/subset_long.csv"
+instances_dir = "data/instances-tau2-goal"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low-chunked"
+judge_agent = "adele-judge-v2-low-chunked"
+model_alias = "opus"
+batch_size = 100
+chunk_lines = 200
