@@ -35,25 +35,35 @@ one writer.
    - pulls the run's state from the dataset.
 2. `ADELE=.venv/bin/adele`, `PY=.venv/bin/python`, `REPO=$(git rev-parse --show-toplevel)`, `T=~/.claude/projects`
    (judge transcripts; `collect` and `check` keep only this run's).
-3. **Pilot, first session only:** one relay of 50 cells, then stop and report, so Pablo can read how much credit it
-   used. That is `$ADELE mass next <run> --max 1 --batch-size 50 --cwd $REPO`, then launch, collect, check and sync
+3. **Pilot, first session only:** one round of 50 cells, then stop and report, so Pablo can read how much credit it
+   used: `$ADELE mass next <run> --max 1 --batch-size 50 --cwd $REPO --direct`, then launch, collect, check and sync
    as below. Report the cell count and the time taken.
-4. **Rounds:**
-   - `$ADELE mass next <run> --max 4 --cwd $REPO`.
-   - Launch every printed relay in one message: one Agent call per block, `subagent_type` = the dispatcher on the
-     `agent:` line, `description` = the handle, `prompt` = the text between the `===` lines exactly,
-     `run_in_background: true`. Wait for all to finish.
-   - `$ADELE mass collect <run> --transcripts $T --relays-done --cwd $REPO`, then
-     `$ADELE mass check <run> --transcripts $T --cwd $REPO`. Stop and report if check fails.
+4. **Rounds of 100 cells** (`wave1-v1` amendment 1: in a cloud session subagents cannot start subagents, so this
+   session starts the judges itself):
+   - `$ADELE mass next <run> --max 1 --batch-size 100 --cwd $REPO --direct`. It prints `agent: adele-judge-v2-low`
+     and one `=== <cell> ===` ... `=== end ===` block per cell.
+   - Start the judges ten per message, every call `run_in_background: true`:
+     - `subagent_type` = `adele-judge-v2-low`;
+     - `model` = `opus`;
+     - `description` = the cell;
+     - `prompt` = the two lines between that cell's `===` lines, exactly.
+
+     Send the next ten when the previous ten have all finished. A call that fails with a concurrency-limit error is
+     sent again; no other cell is sent twice.
+   - When every cell of the round has finished: `$ADELE mass collect <run> --transcripts $T --relays-done --cwd $REPO`,
+     then `$ADELE mass check <run> --transcripts $T --cwd $REPO`. Stop and report if check fails.
    - `$PY scripts/cloud/hf_sync.py push <run>`. Report one line: cells labelled, rejections, classifier stops.
+5. **End the session after about 1,000 cells** (ten rounds), because each start adds to this session's context.
+   Push, then report "start a new session". The next session's bootstrap pulls the state from the dataset.
 
 ## Rules
 
 - **Never `cd`.** The judges inherit the session's working directory, and `check` verifies it.
 - **Never commit or push anything** from the cloud session. Task texts, prompts and transcripts go only to the
   private datasets (`benchmark-contamination` rule).
-- **Never launch judges directly**, never re-send a relay, and never edit prompt or response files.
-- **At most 4 relays at once.** Each is 4 subagents, and the default session cap is 20.
+- **Start only `adele-judge-v2-low`,** with exactly the printed instruction. Never send a cell twice (except after
+  a concurrency-limit error), and never edit prompt or response files.
+- **At most ten judges at once.** The default session cap is 20 subagents.
 - **Stop when Pablo says**, at the time limit he gives, on any command error, or when credit runs out. This session
   can't see the credit meter; Pablo watches it.
 

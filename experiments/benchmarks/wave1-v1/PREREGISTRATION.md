@@ -56,3 +56,22 @@ At the Batch API this would be about $170.
    in wave 1.
 6. The noise floor (3% re-judge) and the anchor set (PLAN.md §3.4) are not part of these runs. They come after.
 7. No change to label set `current` or to releases without Pablo's OK.
+
+## Amendment 1 (2026-11-01): `w1v1-other` judged from Claude Code cloud sessions, judges started directly
+
+**Why.** Pablo has Claude Code cloud credit that expires on 2026-11-05, and it pays only for cloud sessions. In a
+cloud session a subagent cannot start subagents. The 50-cell pilot's dispatcher was refused ("would be spawned with
+zero tools"), and no cell was judged.
+
+**Change.** In cloud sessions the main session starts each judge itself (`adele mass next --direct`). Each judge
+gets the instruction a dispatcher would have sent: same agent (`adele-judge-v2-low`, unchanged, sha256 as pinned),
+same model alias (`opus`), same two lines. `adele mass check` audits every judge transcript by the same rules:
+- the first message is exactly the instruction;
+- Read then Write, and nothing else;
+- the working directory;
+- no CLAUDE.md or memory attached;
+- the effort and the agent.
+
+Only the launcher changes. State moves through the private HF dataset (`mass-annotation/CLOUD.md`). Approved by
+Pablo, 2026-11-01. `w1v1-code` stays on the Mac's subagents. The API is not used for wave 1, because
+`gate-api-bridge` found that PLp labels shift across backends.

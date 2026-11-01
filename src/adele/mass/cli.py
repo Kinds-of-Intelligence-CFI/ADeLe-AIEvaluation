@@ -124,13 +124,18 @@ def status(run_ref):
               help="Relays to emit (never more than 10 run at once: 4 subagents each, 40 per session).")
 @click.option("--batch-size", type=int, default=None, help="Cells per relay (default: the spec's relay.batch_size).")
 @click.option("--cwd", default=None, help="Expected judge working directory (default: the spec's or ~/Developer/ADELE).")
-def next_cmd(run_ref, max_relays, batch_size, cwd):
+@click.option("--direct", is_flag=True,
+              help="Print each cell's judge instruction instead of the relay message, for a session that starts the "
+                   "judges itself (where subagents cannot start subagents, e.g. a cloud session).")
+def next_cmd(run_ref, max_relays, batch_size, cwd, direct):
     """Subagent runs: record and print the next relay messages for judge-dispatcher.
 
     Refuses while earlier relays are outstanding, when this process's working directory (which the judges
     inherit from the session) is not the expected one, and when the agent files changed since the pin.
+    With ``--direct``, prints one ``=== <cell> ===`` block per cell holding the exact two-line instruction a dispatcher
+    would send, for the session to pass to the judge agent itself.
     """
-    from adele.mass.backends.subagent import SubagentBackend, expected_cwd
+    from adele.mass.backends.subagent import INSTRUCTION, SubagentBackend, expected_cwd
     from adele.mass.ledger import Ledger
     from adele.mass.pin import agent_drift
     from adele.mass.runner import submit_next
@@ -154,9 +159,19 @@ def next_cmd(run_ref, max_relays, batch_size, cwd):
                 f"{len(outstanding)} cells of relays {', '.join(handles)} are still submitted. Wait until those "
                 f"relays finish, then run `adele mass collect {run_ref} --transcripts <subagents dir> "
                 f"--relays-done` (or `adele mass release` for relays that never started).")
-        click.echo(f"agent: {run.judge.relay['dispatcher']} (judge {run.judge.relay['judge_agent']})")
+        if direct:
+            click.echo(f"agent: {run.judge.relay['judge_agent']} (model {run.judge.relay['model_alias']}; direct)")
+        else:
+            click.echo(f"agent: {run.judge.relay['dispatcher']} (judge {run.judge.relay['judge_agent']})")
 
         def show(handle, items):
+            if direct:
+                click.echo(f"### {handle} ({len(items)} cells)")
+                for cell, attempt in items:
+                    click.echo(f"=== {cell} ===")
+                    click.echo(INSTRUCTION.format(prompt=run.prompt_path(cell), response=run.response_path(cell, attempt)))
+                    click.echo("=== end ===")
+                return
             click.echo(f"=== {handle} ({len(items)} cells) ===")
             click.echo((run.io_dir / "relays" / f"{handle}.txt").read_text(encoding="utf-8"))
             click.echo("=== end ===")

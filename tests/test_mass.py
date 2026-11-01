@@ -369,6 +369,11 @@ def test_subagent_next_message_format(env, monkeypatch):
     assert out.exit_code == 0 and "released 6" in out.output
     out = CliRunner().invoke(main, ["mass", "next", str(run.dir), "--max", "1"])
     assert out.exit_code == 0 and out.output.count("=== end ===") == 1 and "agent: judge-dispatcher-v2-low" in out.output
+    CliRunner().invoke(main, ["mass", "release", str(run.dir), "--all"])
+    out = CliRunner().invoke(main, ["mass", "next", str(run.dir), "--max", "1", "--direct"])
+    cell = re.search(r"=== (v\S+) ===", out.output).group(1)
+    assert out.exit_code == 0 and out.output.count("=== end ===") == 4 and "agent: adele-judge-v2-low" in out.output
+    assert f"Prompt file: {run.prompt_path(cell)}\nResponse file: {run.response_path(cell, 1)}\n=== end ===" in out.output
 
 
 def test_next_and_check_refuse_changed_agent_files(env, monkeypatch):
