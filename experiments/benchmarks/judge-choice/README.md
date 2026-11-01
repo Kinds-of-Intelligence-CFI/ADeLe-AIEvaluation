@@ -67,3 +67,51 @@ Against the production Opus labels on the same cells (label set `current` and th
 
 A formal freeze check of Jose's prompt (full PL bar, the lab with three repeats) is a follow-up, if the team adopts
 the prompt. tie-rule-freeze already shows that dropping the tie rule keeps every freeze.
+
+## Result (2026-11-02): no candidate qualifies; Opus stays the judge
+
+All four arms ran in full (`analyse.py`, `results.json`). Every label is by the requested model.
+
+**Agreement with Opus** (Jose's prompt, same cells):
+
+| arm | PL exact / shift | MS exact / shift | v1 exact / shift | memory exact / shift |
+|---|---|---|---|---|
+| sonnet-low | 0.74 / +0.10 | 0.75 / **+0.35** | 0.70 / −0.06 | 0.68 / −0.23 |
+| haiku-low | 0.64 / +0.21 | 0.76 / +0.28 | 0.60 / −0.22 | 0.51 / −0.47 |
+| haiku-medium | 0.65 / +0.15 | 0.76 / +0.21 | 0.61 / −0.23 | 0.60 / −0.34 |
+
+**Bars:** 0.85 for PL and MS, 0.80 for v1 and memory. No arm reaches any of them. Every family fails A1, and most
+fail A4 too (exact below 0.70 in at least one task group).
+
+**MSc is where the cheaper models fail most:**
+- **Refusal pairs:** both read refusals as negotiations. B ≤ 3 on 0 of 5 pairs, against Opus's 4 of 5.
+- **Set H:** Sonnet 4 of 15 on the full input and 5 of 15 on the real tau2 input; Haiku 3–6. Opus: 12 and 15.
+- **Haiku also fails most MSc and MSm lab checks:** 9 MSc checks and 5 MSm checks.
+
+**PLp solve-rate link** (pooled within benchmark, 9 sets × 12 tasks):
+
+| judge | ρ | p |
+|---|---|---|
+| production Opus, same tasks | −0.30 | |
+| Opus, Jose's prompt | −0.25 | 0.03 |
+| Sonnet | −0.12 | |
+| Haiku low | −0.19 | |
+| Haiku medium | −0.12 | |
+
+**Haiku setup artefact.** In 33% (low) and 62% (medium) of lab items, Haiku called Read again instead of answering. The
+one-turn harness gives no second Read result, so those items have no label. The main runs retried them and recovered.
+This affects coverage only: the agreement figures use cells both models labelled.
+
+**Correction (analysis, not design):** the table's C rule was written "≥ −0.10", but the links are negative, so a
+weaker link is a positive difference. `analyse.py` now tests weakening ≤ 0.10 (PLp) and ≤ 0.15 (MSc). No verdict
+changes.
+
+**Jose's prompt on Opus** (against production labels on the same cells):
+- **Labels:** exact 0.83–0.84 per family, shift +0.12 (MS), +0.13 (PL), +0.16 (v1).
+- **Your labels:** set H 12 of 15 on the full input (at the bar) and 15 of 15 on the real tau2 input; TB within one
+  6 of 6.
+- **Lab:** MSc R and M hold. MSm fails only F-on-MSm, the overlap Pablo accepted on 2026-10-02.
+- **PLp link:** −0.25 against −0.30 in production on these 107 tasks.
+
+The prompt reads about 0.13 higher, as expected without the tie rule, and keeps the human and lab checks. Its formal
+freeze check (full PL bar, the lab with three repeats) is still to do, if adopted.

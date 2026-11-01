@@ -146,9 +146,10 @@ def main() -> None:
             rules = {"A1": g["exact"] >= BAR[f], "A2": g["within_1"] >= 0.97, "A3": abs(g["shift"]) <= 0.15,
                      "A4": all(x >= 0.70 for x in g["exact_by_group"].values()), "K": out["coverage"][arm][f] >= 0.98}
             if f == "PL":
-                rules |= {"C": d_plp >= -0.10, "H": int(h["tb_plp_within1"].split()[0]) >= 5}
+                rules |= {"C": d_plp <= 0.10, "H": int(h["tb_plp_within1"].split()[0]) >= 5}  # links are negative:
+                # a weaker link is a positive difference (sign corrected after the first run; see README)
             if f == "MS":
-                rules |= {"C": d_msc >= -0.15, "H": h["setH_full_exact"] >= 12 and h["setH_real_exact"] >= 12}
+                rules |= {"C": d_msc <= 0.15, "H": h["setH_full_exact"] >= 12 and h["setH_real_exact"] >= 12}
             v[f] = {"qualifies": all(rules.values()), "rules": rules}
         v["delta_links"] = {"PLp": round(d_plp, 3), "MSc_tau2": round(d_msc, 3)}
         out["verdict"][arm] = v

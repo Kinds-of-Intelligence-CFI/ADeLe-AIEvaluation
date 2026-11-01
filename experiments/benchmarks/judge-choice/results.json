@@ -1,0 +1,548 @@
+{
+ "coverage": {
+  "opus-low": {
+   "PL": 0.99,
+   "MS": 1.0,
+   "v1": 1.0,
+   "memory": 1.0
+  },
+  "sonnet-low": {
+   "PL": 0.997,
+   "MS": 1.0,
+   "v1": 1.0,
+   "memory": 1.0
+  },
+  "haiku-low": {
+   "PL": 1.0,
+   "MS": 0.717,
+   "v1": 1.0,
+   "memory": 1.0
+  },
+  "haiku-medium": {
+   "PL": 1.0,
+   "MS": 0.474,
+   "v1": 1.0,
+   "memory": 0.992
+  }
+ },
+ "agreement": {
+  "sonnet-low": {
+   "PL": {
+    "n": 308,
+    "exact": 0.74,
+    "within_1": 0.981,
+    "shift": 0.097,
+    "exact_by_group": {
+     "coding": 0.768,
+     "social": 0.67,
+     "tau2": 0.778
+    }
+   },
+   "MS": {
+    "n": 272,
+    "exact": 0.754,
+    "within_1": 0.89,
+    "shift": 0.349,
+    "exact_by_group": {
+     "lab": 0.796,
+     "tau2": 0.524
+    }
+   },
+   "v1": {
+    "n": 480,
+    "exact": 0.696,
+    "within_1": 0.983,
+    "shift": -0.062,
+    "exact_by_group": {
+     "coding": 0.655,
+     "social": 0.62,
+     "static": 0.725,
+     "tau2": 0.833
+    }
+   },
+   "memory": {
+    "n": 120,
+    "exact": 0.675,
+    "within_1": 0.983,
+    "shift": -0.225,
+    "exact_by_group": {
+     "coding": 0.595,
+     "social": 0.667,
+     "static": 0.8,
+     "tau2": 0.667
+    }
+   }
+  },
+  "haiku-low": {
+   "PL": {
+    "n": 309,
+    "exact": 0.641,
+    "within_1": 0.968,
+    "shift": 0.21,
+    "exact_by_group": {
+     "coding": 0.711,
+     "social": 0.611,
+     "tau2": 0.542
+    }
+   },
+   "MS": {
+    "n": 195,
+    "exact": 0.759,
+    "within_1": 0.897,
+    "shift": 0.282,
+    "exact_by_group": {
+     "lab": 0.804,
+     "tau2": 0.595
+    }
+   },
+   "v1": {
+    "n": 480,
+    "exact": 0.596,
+    "within_1": 0.927,
+    "shift": -0.223,
+    "exact_by_group": {
+     "coding": 0.554,
+     "social": 0.593,
+     "static": 0.517,
+     "tau2": 0.798
+    }
+   },
+   "memory": {
+    "n": 120,
+    "exact": 0.508,
+    "within_1": 0.908,
+    "shift": -0.475,
+    "exact_by_group": {
+     "coding": 0.476,
+     "social": 0.519,
+     "static": 0.567,
+     "tau2": 0.476
+    }
+   }
+  },
+  "haiku-medium": {
+   "PL": {
+    "n": 309,
+    "exact": 0.654,
+    "within_1": 0.964,
+    "shift": 0.155,
+    "exact_by_group": {
+     "coding": 0.704,
+     "social": 0.674,
+     "tau2": 0.528
+    }
+   },
+   "MS": {
+    "n": 129,
+    "exact": 0.76,
+    "within_1": 0.876,
+    "shift": 0.209,
+    "exact_by_group": {
+     "lab": 0.83,
+     "tau2": 0.61
+    }
+   },
+   "v1": {
+    "n": 480,
+    "exact": 0.606,
+    "within_1": 0.938,
+    "shift": -0.227,
+    "exact_by_group": {
+     "coding": 0.583,
+     "social": 0.62,
+     "static": 0.517,
+     "tau2": 0.762
+    }
+   },
+   "memory": {
+    "n": 119,
+    "exact": 0.605,
+    "within_1": 0.941,
+    "shift": -0.345,
+    "exact_by_group": {
+     "coding": 0.585,
+     "social": 0.593,
+     "static": 0.633,
+     "tau2": 0.619
+    }
+   }
+  }
+ },
+ "links": {
+  "opus-low": {
+   "PLp": {
+    "domains": 9,
+    "n": 107,
+    "rho": -0.254,
+    "p_two_sided": 0.0266,
+    "ci95": [
+     -0.453,
+     -0.03
+    ],
+    "predicted": "negative",
+    "supported": true
+   },
+   "MSc_tau2": {
+    "domains": 3,
+    "n": 42,
+    "rho": -0.227,
+    "p_two_sided": 0.197,
+    "ci95": [
+     -0.523,
+     0.119
+    ],
+    "predicted": "negative",
+    "supported": false
+   }
+  },
+  "sonnet-low": {
+   "PLp": {
+    "domains": 9,
+    "n": 108,
+    "rho": -0.116,
+    "p_two_sided": 0.31,
+    "ci95": [
+     -0.329,
+     0.108
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "MSc_tau2": {
+    "domains": 3,
+    "n": 42,
+    "rho": -0.184,
+    "p_two_sided": 0.293,
+    "ci95": [
+     -0.487,
+     0.159
+    ],
+    "predicted": "negative",
+    "supported": false
+   }
+  },
+  "haiku-low": {
+   "PLp": {
+    "domains": 9,
+    "n": 108,
+    "rho": -0.185,
+    "p_two_sided": 0.102,
+    "ci95": [
+     -0.39,
+     0.037
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "MSc_tau2": {
+    "domains": 3,
+    "n": 42,
+    "rho": -0.093,
+    "p_two_sided": 0.608,
+    "ci95": [
+     -0.42,
+     0.256
+    ],
+    "predicted": "negative",
+    "supported": false
+   }
+  },
+  "haiku-medium": {
+   "PLp": {
+    "domains": 9,
+    "n": 108,
+    "rho": -0.121,
+    "p_two_sided": 0.292,
+    "ci95": [
+     -0.334,
+     0.104
+    ],
+    "predicted": "negative",
+    "supported": false
+   },
+   "MSc_tau2": {
+    "domains": 3,
+    "n": 41,
+    "rho": -0.22,
+    "p_two_sided": 0.221,
+    "ci95": [
+     -0.523,
+     0.133
+    ],
+    "predicted": "negative",
+    "supported": false
+   }
+  }
+ },
+ "human": {
+  "opus-low": {
+   "tb_plp_within1": "6 of 6",
+   "tb_plp_exact": 3,
+   "setH_full_exact": 12,
+   "setH_full_n": 15,
+   "setH_real_exact": 15,
+   "setH_real_n": 15
+  },
+  "sonnet-low": {
+   "tb_plp_within1": "6 of 6",
+   "tb_plp_exact": 2,
+   "setH_full_exact": 4,
+   "setH_full_n": 15,
+   "setH_real_exact": 5,
+   "setH_real_n": 15
+  },
+  "haiku-low": {
+   "tb_plp_within1": "6 of 6",
+   "tb_plp_exact": 2,
+   "setH_full_exact": 3,
+   "setH_full_n": 9,
+   "setH_real_exact": 5,
+   "setH_real_n": 15
+  },
+  "haiku-medium": {
+   "tb_plp_within1": "6 of 6",
+   "tb_plp_exact": 3,
+   "setH_full_exact": 2,
+   "setH_full_n": 4,
+   "setH_real_exact": 6,
+   "setH_real_n": 15
+  }
+ },
+ "lab": {
+  "opus-low": {
+   "refusal_B_le_3": 4,
+   "refusal_AB_within_1": 5,
+   "M_holds": true,
+   "R_MSc_failing": [],
+   "R_MSm_failing": [
+    "F-on-MSm no leak"
+   ]
+  },
+  "sonnet-low": {
+   "refusal_B_le_3": 0,
+   "refusal_AB_within_1": 3,
+   "M_holds": false,
+   "R_MSc_failing": [],
+   "R_MSm_failing": [
+    "F-on-MSm no leak",
+    "B MSm low",
+    "B MSm on pure MSc items"
+   ]
+  },
+  "haiku-low": {
+   "refusal_B_le_3": 0,
+   "refusal_AB_within_1": 2,
+   "M_holds": false,
+   "R_MSc_failing": [
+    "P-MSc placement",
+    "F-on-MSc no leak",
+    "L r30 MSc minimal pairs",
+    "L r36 MSc pair",
+    "L r75 MSc ladder",
+    "L r70 human labels",
+    "B MSc high",
+    "B MSc mid-band",
+    "B MSc anchors"
+   ],
+   "R_MSm_failing": [
+    "P-MSm placement",
+    "F-on-MSm no leak",
+    "L r60/r69 Level 4/5 boundary",
+    "B MSm low",
+    "B MSm on pure MSc items"
+   ]
+  },
+  "haiku-medium": {
+   "refusal_B_le_3": 0,
+   "refusal_AB_within_1": 0,
+   "M_holds": false,
+   "R_MSc_failing": [
+    "P-MSc placement",
+    "F-on-MSc no leak",
+    "L r30 MSc minimal pairs",
+    "L r36 MSc pair",
+    "L r75 MSc ladder",
+    "L r70 human labels",
+    "B MSc high",
+    "B MSc mid-band",
+    "B MSc anchors"
+   ],
+   "R_MSm_failing": [
+    "P-MSm placement",
+    "F-on-MSm no leak",
+    "L r60/r69 Level 4/5 boundary",
+    "B MSm low",
+    "B MSm on pure MSc items"
+   ]
+  }
+ },
+ "verdict": {
+  "sonnet-low": {
+   "PL": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": true,
+     "A3": true,
+     "A4": false,
+     "K": true,
+     "C": false,
+     "H": true
+    }
+   },
+   "MS": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true,
+     "C": true,
+     "H": false
+    }
+   },
+   "v1": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": true,
+     "A3": true,
+     "A4": false,
+     "K": true
+    }
+   },
+   "memory": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": true,
+     "A3": false,
+     "A4": false,
+     "K": true
+    }
+   },
+   "delta_links": {
+    "PLp": 0.138,
+    "MSc_tau2": 0.043
+   }
+  },
+  "haiku-low": {
+   "PL": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true,
+     "C": true,
+     "H": true
+    }
+   },
+   "MS": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": false,
+     "C": true,
+     "H": false
+    }
+   },
+   "v1": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true
+    }
+   },
+   "memory": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true
+    }
+   },
+   "delta_links": {
+    "PLp": 0.069,
+    "MSc_tau2": 0.134
+   }
+  },
+  "haiku-medium": {
+   "PL": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true,
+     "C": false,
+     "H": true
+    }
+   },
+   "MS": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": false,
+     "C": true,
+     "H": false
+    }
+   },
+   "v1": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true
+    }
+   },
+   "memory": {
+    "qualifies": false,
+    "rules": {
+     "A1": false,
+     "A2": false,
+     "A3": false,
+     "A4": false,
+     "K": true
+    }
+   },
+   "delta_links": {
+    "PLp": 0.133,
+    "MSc_tau2": 0.007
+   }
+  }
+ },
+ "prompt_change_opus": {
+  "MS": {
+   "n": 42,
+   "exact": 0.833,
+   "shift": 0.119
+  },
+  "PL": {
+   "n": 309,
+   "exact": 0.835,
+   "shift": 0.133
+  },
+  "v1": {
+   "n": 396,
+   "exact": 0.838,
+   "shift": 0.157
+  }
+ }
+}
