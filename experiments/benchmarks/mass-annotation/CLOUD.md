@@ -17,7 +17,8 @@ The same judges as on the Mac (`.claude/agents/`, byte-identical to the pinned f
 ## Each session
 
 1. `scripts/cloud/bootstrap.sh <run>`. It installs `adele` in `.venv`, fetches the run's instance files (hash-checked),
-   re-pins the run (it refuses unless every frozen input is identical) and writes the prompts.
+   re-pins the run (it refuses unless every frozen input is identical), writes the prompts and unpacks the answer
+   files judged elsewhere (`cloud-io/`).
 2. `ADELE=.venv/bin/adele`, `REPO=$(git rev-parse --show-toplevel)`, `T=~/.claude/projects` (judge transcripts;
    `collect` and `check` keep only this run's).
 3. **Pilot, first session only:** one relay of 50 cells, then stop and report, so Pablo can read how much credit
@@ -32,7 +33,8 @@ The same judges as on the Mac (`.claude/agents/`, byte-identical to the pinned f
      `run_in_background: true`. Wait for all to finish.
    - `$ADELE mass collect <run> --transcripts $T --relays-done --cwd $REPO`, then
      `$ADELE mass check <run> --transcripts $T --cwd $REPO`. Stop and report if check fails.
-   - Commit `runs/<run>/ledger.csv` and `labels.csv` only, and push. Report one line: cells labelled, rejections,
+   - `python3 scripts/cloud/responses.py pack <run>` (bare-digit answer files, so the Mac can verify them too).
+   - Commit `runs/<run>/ledger.csv`, `labels.csv` and `cloud-io/<run>-responses.tsv` only, and push. Report one line: cells labelled, rejections,
      classifier stops.
 
 ## Rules
@@ -45,3 +47,5 @@ The same judges as on the Mac (`.claude/agents/`, byte-identical to the pinned f
 - **Stop when Pablo says**, at the time limit he gives, on any command error, or when credit runs out. This
   session cannot see the credit meter; Pablo watches it.
 - A machine that also judges this run must not run it at the same time: one ledger, one writer.
+- Back on the Mac, after merging: `python3 scripts/cloud/responses.py unpack <run>`, then `adele mass check <run>`. The
+  protocol was checked on the VM, where the transcripts are; the ledger keeps each answer's verdict.

@@ -29,5 +29,7 @@ for b in $BENCHES; do "$ADELE" instances fetch --benchmark "$b"; done
 SPEC=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['spec_file'])" \
   "experiments/benchmarks/mass-annotation/runs/$RUN/manifest.json")
 "$ADELE" mass pin "$SPEC"
+# Answer files judged elsewhere (bare digits), so `check` can verify every recorded answer.
+python3 -I scripts/cloud/responses.py unpack "$RUN"
 "$ADELE" mass status "$RUN" | tail -3
 echo "ready: judges must run in $REPO (pass --cwd $REPO to next, collect and check)"
