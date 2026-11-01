@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Prepare a fresh machine (e.g. a Claude Code cloud VM) to judge a pinned subagent run.
 # Usage: scripts/cloud/bootstrap.sh <run>    e.g. scripts/cloud/bootstrap.sh w1v1-other
-# Needs HF_TOKEN with read access to the private instance store. See experiments/benchmarks/mass-annotation/CLOUD.md.
+# Needs HF_TOKEN: read on the private instance store, write on adele-cloud-runs. See experiments/benchmarks/mass-annotation/CLOUD.md.
 set -euo pipefail
 
 RUN="${1:?usage: bootstrap.sh <run>}"
@@ -29,7 +29,7 @@ for b in $BENCHES; do "$ADELE" instances fetch --benchmark "$b"; done
 SPEC=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['spec_file'])" \
   "experiments/benchmarks/mass-annotation/runs/$RUN/manifest.json")
 "$ADELE" mass pin "$SPEC"
-# Answer files judged elsewhere (bare digits), so `check` can verify every recorded answer.
-python3 -I scripts/cloud/responses.py unpack "$RUN"
+# State judged elsewhere (ledger, answers) from the private HF dataset, so `check` can verify every answer.
+"$REPO/.venv/bin/python" scripts/cloud/hf_sync.py pull "$RUN"
 "$ADELE" mass status "$RUN" | tail -3
 echo "ready: judges must run in $REPO (pass --cwd $REPO to next, collect and check)"
