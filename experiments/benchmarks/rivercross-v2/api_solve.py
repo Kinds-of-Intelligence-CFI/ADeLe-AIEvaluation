@@ -172,7 +172,6 @@ def main() -> None:
     (labels / "run.json").write_text(json.dumps(run, indent=2) + "\n")
 
     usage_path = labels / "usage.csv"
-    old = pd.read_csv(usage_path).to_dict("records") if usage_path.exists() else []
     todo = [(f, t) for f in prompts for t in tries if not (io / "responses" / t / f"{f}@SOLVE.txt").exists()]
     print(f"{args.run}: {len(prompts)} states x {len(tries)} tries, {len(todo)} to call")
     client = anthropic.Anthropic(max_retries=6)
@@ -181,15 +180,17 @@ def main() -> None:
         futs = {ex.submit(call, client, args, f, t, prompts[f], io): (f, t) for f, t in todo}
         for i, fut in enumerate(as_completed(futs), 1):
             try:
-                rows.append(fut.result())
-            except anthropic.APIError as e:
+                row = fut.result()
+            except Exception as e:  # API and connection errors: the cell stays unanswered, a rerun retries it
                 f, t = futs[fut]
-                print(f"  error on {f} {t}: {e}")
+                print(f"  error on {f} {t}: {type(e).__name__}: {e}")
+                continue
+            rows.append(row)
+            new = not usage_path.exists()  # one line per call as it finishes, so a crash keeps the log
+            pd.DataFrame([row]).to_csv(usage_path, mode="a", header=new, index=False)
             if i % 25 == 0:
                 print(f"  {i}/{len(todo)}")
-    allrows = old + rows
-    if allrows:
-        pd.DataFrame(allrows).to_csv(usage_path, index=False)
+    allrows = pd.read_csv(usage_path).to_dict("records") if usage_path.exists() else []
     # writers.csv in the layout writers.py writes, so score_solve.py reads it unchanged
     last = {(r["attempt"], r["file_id"]): r for r in allrows if r["answered"]}
     calls = pd.Series([(r["attempt"], r["file_id"]) for r in allrows]).value_counts() if allrows else {}
