@@ -3,7 +3,7 @@ Tests for the rubrics module.
 """
 
 import pytest
-from adele.rubrics.catalog import RubricsCatalog, Rubric, validate_rubric
+from adele.rubrics.catalog import RubricsCatalog, Rubric, validate_rubric, warn_if_mixed_versions
 
 
 class TestRubricsCatalog:
@@ -81,3 +81,35 @@ class TestValidateRubric:
         rubric = catalog.get("AS")
         valid, msg = validate_rubric(rubric.content)
         assert valid
+
+
+_VALID = (
+    "Intro paragraph long enough to pass the rubric length check comfortably here.\n"
+    "Level 0: none. Examples: x\nLevel 1: low. Examples: x\nLevel 2: mid. Examples: x\n"
+    "Level 3: hi. Examples: x\nLevel 4: vhi. Examples: x\nLevel 5: max. Examples: x\n"
+)
+
+
+class TestRubricVersions:
+    """Version flags: v1.0 vs v2-draft, parsed from an optional '#!' line."""
+
+    def test_bundled_v1_rubrics_are_version_v1(self):
+        c = RubricsCatalog()
+        assert c.versions == {"v1.0"}
+        assert c.get("QLl").full_name == "Logical Reasoning"  # from the '# Title' header
+
+    def test_meta_line_sets_version_and_is_stripped(self, tmp_path):
+        f = tmp_path / "XX.txt"
+        f.write_text("# Demo\n#! version: v2-draft\n" + _VALID)
+        r = RubricsCatalog.from_paths([f]).get("XX")
+        assert r.version == "v2-draft"
+        assert r.full_name == "Demo"
+        assert "#!" not in r.content and "# Demo" not in r.content
+
+    def test_warn_if_mixed_versions(self, tmp_path):
+        a = tmp_path / "AA.txt"; a.write_text("# A\n" + _VALID)
+        b = tmp_path / "BB.txt"; b.write_text("# B\n#! version: v2-draft\n" + _VALID)
+        mixed = RubricsCatalog.from_paths([a, b])
+        assert mixed.versions == {"v1.0", "v2-draft"}
+        assert warn_if_mixed_versions(mixed) is not None
+        assert warn_if_mixed_versions(RubricsCatalog.from_paths([a])) is None

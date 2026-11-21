@@ -1,0 +1,44 @@
+{
+  "run_id": "o-odds",
+  "created_at": "2026-10-01T09:26:44+00:00",
+  "repo_commit": "f347d3a97c88e5de89a39c52d297cd1625c662c4",
+  "repo_dirty_tracked_files": [
+    "M experiments/benchmarks/plp-candidate/lab-regression/analysis/analyse_s.py",
+    " M experiments/benchmarks/plp-candidate/lab-regression/make_prompts_s.py"
+  ],
+  "benchmark": [
+    "rivercross"
+  ],
+  "frame": {
+    "file": "experiments/benchmarks/rivercross-v2/frames/search_frame.csv",
+    "sha256": "620097a8c2d0804387a16b771a1d68731fe78f0c3b357696337803a09ce0aaf1"
+  },
+  "rubric": {
+    "current": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+    "current_sha256": "6878b02e2ed8b0e40da493127d32986a1dd1364519624d500d25667673ed9bb8",
+    "candidate": "experiments/benchmarks/plp-b2/PLp_O.txt",
+    "candidate_sha256": "30eba01175b767009394934f95aeafbbe68fb71ee8338cdd16665e590f4899a6",
+    "fourgrams_shared_with_frames": [],
+    "fourgrams_new_text_shared": {
+      "frames": [],
+      "lab_items": []
+    }
+  },
+  "design": {
+    "n_prompts": 54,
+    "judges": {
+      "opus-low": "adele-judge-v2-low, model alias 'opus'"
+    }
+  },
+  "prompt": {
+    "builder": "plp-b2/make_o.py ODDS_PROMPT (exploratory; not a production prompt)",
+    "template_sha256": "564f4d6334ae5b4b06dbe11c3e64237bbb4ab888fff203906589005737940c2f"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/o-odds",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

@@ -38,7 +38,7 @@ import openai
 from tenacity import retry, retry_if_exception_type, wait_exponential, stop_after_attempt
 from tqdm import tqdm
 
-from adele.rubrics.catalog import RubricsCatalog
+from adele.rubrics.catalog import RubricsCatalog, warn_if_mixed_versions
 from adele.annotation.prompts import (
     build_annotation_prompt,
     build_batch_request,
@@ -80,6 +80,7 @@ def annotate(
     *,
     demands: Optional[List[str]] = None,
     rubrics_folder: Optional[str] = None,
+    catalog: Optional[RubricsCatalog] = None,
     model: str = "gpt-4o",
     backend: Optional[str] = None,
     max_completion_tokens: int = 1000,
@@ -87,6 +88,7 @@ def annotate(
     output_dir: str = "./adele_annotations",
     poll_interval: int = 60,
     max_concurrent: int = 10,
+    resume: bool = True,
     batch_chunk_size: int = 50000,
     format: str = "wide",
 ) -> pd.DataFrame:
@@ -104,6 +106,9 @@ def annotate(
         demands:        List of rubric acronyms to annotate (e.g. ["AS", "MCr"]).
                         If None, annotates all available rubrics.
         rubrics_folder: Path to custom rubrics folder. None = bundled rubrics.
+        catalog:        Pre-built ``RubricsCatalog`` to use instead of loading
+                        ``rubrics_folder`` (e.g. a set composed across folders).
+                        Takes precedence over ``rubrics_folder`` when given.
         model:          Model to use for annotation. Supports any model that
                         litellm supports:
 
@@ -137,8 +142,11 @@ def annotate(
         if col not in data.columns:
             raise ValueError(f"Input data must have a '{col}' column.")
 
-    # Load rubrics
-    catalog = RubricsCatalog(rubrics_folder)
+    # Load rubrics. A pre-built catalog (e.g. a set composed across folders via
+    # RubricsCatalog.from_paths) takes precedence over a single folder path.
+    if catalog is None:
+        catalog = RubricsCatalog(rubrics_folder)
+    warn_if_mixed_versions(catalog)
     if demands is None:
         demands = catalog.acronyms
     else:
@@ -163,6 +171,22 @@ def annotate(
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
+    # Record run provenance next to the outputs. The result frame itself only
+    # carries custom_id + demand columns, so without this sidecar two runs with
+    # different judge models are indistinguishable on disk.
+    from datetime import datetime, timezone
+    run_info = {
+        "model": model,
+        "backend": backend,
+        "demands": list(demands),
+        "rubric_versions": sorted(catalog.versions),
+        "n_instances": int(len(data)),
+        "format": format,
+        "started_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    (output_path / "run_info.json").write_text(json.dumps(run_info, indent=2))
+    logger.info("Run provenance written to %s", output_path / "run_info.json")
+
     if backend == "batch":
         result_df = _annotate_batch(
             data=data,
@@ -184,6 +208,7 @@ def annotate(
             max_completion_tokens=max_completion_tokens,
             output_path=output_path,
             max_concurrent=max_concurrent,
+            resume=resume,
         )
     else:
         raise ValueError(
@@ -231,28 +256,47 @@ def _annotate_direct(
     max_completion_tokens: int,
     output_path: Path,
     max_concurrent: int = 10,
+    resume: bool = True,
 ) -> pd.DataFrame:
     """Annotate using direct API calls via litellm (parallelized).
 
     Works with any model provider (OpenAI, Google, Anthropic, etc.).
     """
+    import threading
     import litellm
     from concurrent.futures import ThreadPoolExecutor, as_completed
     from adele.annotation.parsing import extract_demand_level
+
+    # Crash-safety + resume: raw_responses.jsonl is append-only and every
+    # completed call is flushed to it immediately, so an interrupted run keeps
+    # what was paid for. On restart (resume=True), valid prior annotations by
+    # the SAME judge model are reloaded and only the missing/invalid
+    # (custom_id, demand) pairs re-run; another judge's rows are never reused.
+    raw_path = output_path / "raw_responses.jsonl"
+    prior_results, done = _load_prior_results(raw_path, model) if resume else ([], set())
+    if prior_results:
+        logger.info(
+            "resume: %d valid annotations already in %s — skipping those pairs",
+            len(prior_results), raw_path,
+        )
 
     # Flatten the workload: (row_data, demand_acronym) tuples
     work_items = []
     for acronym in demands:
         rubric = catalog[acronym]
         for _, row in data.iterrows():
+            if (str(row["custom_id"]), acronym) in done:
+                continue
             work_items.append({
                 "row": row,
                 "acronym": acronym,
                 "rubric": rubric,
             })
 
-    results = []
+    results = list(prior_results)
     total = len(work_items)
+    write_lock = threading.Lock()
+    raw_file = open(raw_path, "a")
 
     def _process_item(item):
         row = item["row"]
@@ -292,6 +336,7 @@ def _annotate_direct(
         return {
             "custom_id": row["custom_id"],
             "demand": acronym,
+            "model": model,
             "level": level,
             "valid": ok,
             "response": content,
@@ -299,21 +344,51 @@ def _annotate_direct(
 
     logger.info("Starting %d parallel requests (max_concurrent=%d)", total, max_concurrent)
 
-    with ThreadPoolExecutor(max_workers=max_concurrent) as executor:
-        futures = {executor.submit(_process_item, item): item for item in work_items}
-        
-        with tqdm(total=total, desc="Annotating", unit="req") as pbar:
-            for future in as_completed(futures):
-                results.append(future.result())
-                pbar.update(1)
+    try:
+        with ThreadPoolExecutor(max_workers=max_concurrent) as executor:
+            futures = {executor.submit(_process_item, item): item for item in work_items}
 
-    # Save raw responses
-    raw_path = output_path / "raw_responses.jsonl"
-    with open(raw_path, "w") as f:
-        for r in results:
-            f.write(json.dumps(r, default=str) + "\n")
+            with tqdm(total=total, desc="Annotating", unit="req") as pbar:
+                for future in as_completed(futures):
+                    result = future.result()
+                    results.append(result)
+                    with write_lock:
+                        raw_file.write(json.dumps(result, default=str) + "\n")
+                        raw_file.flush()
+                    pbar.update(1)
+    finally:
+        raw_file.close()
 
     return pd.DataFrame(results)
+
+
+def _load_prior_results(raw_path: Path, model: Optional[str] = None) -> tuple[list, set]:
+    """Read a (possibly partial) raw_responses.jsonl from an earlier run.
+
+    Returns the VALID annotations (latest wins per pair) and the set of
+    (custom_id, demand) pairs they cover; invalid/failed rows are not counted
+    as done, so a resumed run retries them. With ``model``, only rows written
+    by that judge count: a second judge sharing the output dir must not
+    inherit the first judge's labels (rows without a ``model`` field are
+    re-judged rather than attributed to the wrong judge).
+    """
+    if not raw_path.exists():
+        return [], set()
+    by_pair: dict = {}
+    with open(raw_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue  # torn tail line from a hard crash
+            if model is not None and r.get("model") != model:
+                continue
+            if r.get("valid") and r.get("level") is not None:
+                by_pair[(str(r.get("custom_id")), r.get("demand"))] = r
+    return list(by_pair.values()), set(by_pair.keys())
 
 
 # ============================================================================
@@ -450,11 +525,24 @@ def _wait_for_completion(
     client: openai.OpenAI,
     jobs: dict[str, str],
     poll_interval: int = 60,
+    max_wait: float = 26 * 3600,
 ):
-    """Poll batch jobs until all are completed or failed."""
+    """Poll batch jobs until all are completed or failed.
+
+    ``max_wait`` bounds the total polling time (default 26h: the OpenAI Batch
+    API's own 24h completion window plus slack), so a job stuck in a
+    non-terminal state cannot hang the caller forever.
+    """
     pending = set(jobs.keys())
+    deadline = time.monotonic() + max_wait
 
     while pending:
+        if time.monotonic() > deadline:
+            raise TimeoutError(
+                f"Batch jobs still not terminal after {max_wait/3600:.0f}h: "
+                f"{sorted(pending)} (ids: {[jobs[a] for a in sorted(pending)]}). "
+                "Check them with the OpenAI dashboard or client.batches.retrieve()."
+            )
         for acronym in list(pending):
             status = _check_status(client, jobs[acronym])
 

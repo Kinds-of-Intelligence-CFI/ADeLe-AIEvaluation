@@ -43,13 +43,23 @@ def final_segment(text: str) -> str:
 
 
 def choice_letter(text: str) -> Optional[str]:
-    """Extract the MC option letter from an answer segment."""
+    """Extract the MC option letter from an answer segment.
+
+    Accepted, in order: an anchored "B." / "(b):" at the start of the segment
+    (any case); a bare letter as the entire segment ("b"); otherwise an
+    UPPERCASE standalone letter anywhere. Restricting the loose fallback to
+    uppercase A-J means prose like "a good answer would be..." can no longer
+    be mis-read as option "A".
+    """
     segment = final_segment(text)
     m = _LETTER.match(segment)
     if m:
         return m.group(1).upper()
-    m = re.search(r"\b([A-Za-z])\b", segment)
-    return m.group(1).upper() if m else None
+    m = re.fullmatch(r"\s*\(?([A-Za-z])\)?\s*", segment)
+    if m:
+        return m.group(1).upper()
+    m = re.search(r"\b([A-J])\b", segment)
+    return m.group(1) if m else None
 
 
 @scorer(metrics=[accuracy(), stderr()])

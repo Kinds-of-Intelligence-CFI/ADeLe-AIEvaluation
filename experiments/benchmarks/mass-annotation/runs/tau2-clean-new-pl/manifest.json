@@ -1,0 +1,100 @@
+{
+  "run": "tau2-clean-new-pl",
+  "created_at": "2026-10-01T14:49:45+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/tau2-clean-new-pl.toml",
+  "git": {
+    "commit": "c2677df39bf2be6003c956291b6d96412db68c47",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "15cd9486ed7871752dd19623f933587aeee8a1ad8d26b6738489fa95b8423775",
+      "content": "# The 10 tau2 clean-set tasks without PL labels (experiments/benchmarks/tau2-clean/new_tasks.csv: banking_knowledge\n# tasks solved only after tau2 v1.0.1's grading change) on the adopted v2 planning family (PLp = text O, PLe, PLs).\n# The other 232 clean tasks are labelled already (plp-o-relabel o-tau2, pl-relabel-v2 v2-tau2).\n# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting). Not pinned or run yet.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/tau2-clean-new-pl.toml\nname = \"tau2-clean-new-pl\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-retail\", \"tau2-banking_knowledge\"]\nsubset = \"experiments/benchmarks/tau2-clean/new_tasks.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 50\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "217187f31c08f389196d73251cecf55ee8414427ac4d170422db699d69a7b0d0",
+          "frame_sha256": "5d51a59e061d005ef6c7d229052c37b9d600c349d96d088647ec1127732f7165",
+          "n_selected": 0
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "ef0dc74a178d950cbbf3abe2d71c40026ef51993699adf2e74bea6e7c523b6cd",
+          "frame_sha256": "6fecc25306f946cdc31287ffa6ce4156d9e24c24f52d86ceb5c4a2cf9bd16015",
+          "n_selected": 0
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "b9e101ef4070fb6e6f249ea4081e60fee646cb93fad7a1eea9f2ee2d879088fb",
+          "frame_sha256": "20bc6ba5dbbaf6abd30585345475da5f6be585f8dc7b3366d7c6ba3976992e00",
+          "n_selected": 10
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/tau2-clean/new_tasks.csv",
+        "sha256": "7e41b7a1bc1532350d056e14da07ab46a9a5b66e68c60aa62072a8e01383eae1",
+        "n_ids": 10
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "322674efb257df4fbb1c93415cd903d554c62b510623846148d635309ad4194f",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "bab48659ed77564ac30a6f2e5fb0f6e7793bf761001f0bbb1aeb6e3f8dfd825b",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "eeb2d01834c20f27fe0fe44cb795cd0f5825299f944dd3c6a1b889b5192cc43e",
+        "full_name": "Simulating"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 50
+      }
+    },
+    "cells": {
+      "n": 30,
+      "sha256": "93e84c72d3680692408d2257bd48aff64d2794cb4a2c2e1874b355f43e69bade"
+    }
+  }
+}

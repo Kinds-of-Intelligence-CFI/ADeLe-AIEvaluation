@@ -1,0 +1,84 @@
+{
+  "run": "ms-benchmarks-long",
+  "created_at": "2026-10-02T15:20:12+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/ms-benchmarks-long.toml",
+  "git": {
+    "commit": "bbee82cc5ea594c335832c014675fbdd6f3b93b3",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low-chunked.md",
+      "sha256": "d63ca13de36bf5099656a569d0e54a410416546adfea22ea6d401afa777bb5c3"
+    },
+    "adele-judge-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low-chunked.md",
+      "sha256": "3f99cedcf760eeeeda20dff6b4c47b83c5ce25035be3aba22e5ad7b9d436e5a7"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "653799fc30a7ae08793c30ef74c79d4109ff38013625bd85da0bd89982eae0a0",
+      "content": "# MSm and MSc (v2 drafts) on ProgramBench's 13 long tasks (experiments/benchmarks/ms-benchmarks/subset_long.csv), whose\n# prompts are too long for one Read: same judge, reading in parts of 200 lines; the protocol check requires every prompt\n# line to come back. The other sets are in ms-benchmarks.toml.\n# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/ms-benchmarks-long.toml\nname = \"ms-benchmarks-long\"\n\n[tasks]\nbenchmarks = [\"programbench\"]\nsubset = \"experiments/benchmarks/ms-benchmarks/subset_long.csv\"\n\n[rubrics]\nrefs = [\"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low-chunked\"\njudge_agent = \"adele-judge-v2-low-chunked\"\nmodel_alias = \"opus\"\nbatch_size = 50\nchunk_lines = 200\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 13
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/ms-benchmarks/subset_long.csv",
+        "sha256": "b5557a314cc56b973ac1f884682b78f44fe85eb86fc20a1970bc55fccbf2cb58",
+        "n_ids": 13
+      }
+    },
+    "rubrics": {
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "b8c3ec15643aa7e9ca114f983446abd0d27373d2b0df3b4296dad12937c2aae9",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "9c38881d4c2100ae01fad77935d17f24b75322c4d47f34af1411e7d49933f6a8",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low-chunked",
+        "judge_agent": "adele-judge-v2-low-chunked",
+        "model_alias": "opus",
+        "batch_size": 50,
+        "chunk_lines": 200
+      }
+    },
+    "cells": {
+      "n": 26,
+      "sha256": "58b4477ee8859baf637baa7e4d4ea6d470879cbd419fac5c31b73d5f7463304c"
+    }
+  }
+}

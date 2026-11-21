@@ -1,0 +1,27 @@
+# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): relabel-v2-gamearena with the v2-noreason builder.
+# relabel-v2-gamearena (relabel after the 2026-10-04 examples review; experiments/benchmarks/relabel-v2): the planning (PLp text O, PLe, PLs) and social (MSm, MSc) rubrics on the 24 Kaggle Game Arena
+# game x role instances. Prompt = the exact harness prompt of one early decision (../gamearena-data/NOTES.md).
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2-gamearena.toml
+name = "noreason-gamearena"
+
+[tasks]
+benchmarks = ["gamearena"]
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs", "v2/MSm", "v2/MSc"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 100

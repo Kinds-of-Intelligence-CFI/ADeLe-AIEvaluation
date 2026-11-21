@@ -1,0 +1,962 @@
+{
+  "n": {
+    "cooperbench/MSc": {
+      "old": 240,
+      "new": 240,
+      "both": 240
+    },
+    "cooperbench/MSm": {
+      "old": 240,
+      "new": 240,
+      "both": 240
+    },
+    "deepswe-v1.1/MSc": {
+      "old": 90,
+      "new": 90,
+      "both": 90
+    },
+    "deepswe-v1.1/MSm": {
+      "old": 90,
+      "new": 90,
+      "both": 90
+    },
+    "eqbench4/MSc": {
+      "old": 120,
+      "new": 120,
+      "both": 120
+    },
+    "eqbench4/MSm": {
+      "old": 120,
+      "new": 120,
+      "both": 120
+    },
+    "frontierswe-v2/MSc": {
+      "old": 19,
+      "new": 19,
+      "both": 19
+    },
+    "frontierswe-v2/MSm": {
+      "old": 19,
+      "new": 19,
+      "both": 19
+    },
+    "gamearena/MSc": {
+      "old": 24,
+      "new": 24,
+      "both": 24
+    },
+    "gamearena/MSm": {
+      "old": 24,
+      "new": 24,
+      "both": 24
+    },
+    "programbench/MSc": {
+      "old": 129,
+      "new": 129,
+      "both": 129
+    },
+    "programbench/MSm": {
+      "old": 129,
+      "new": 129,
+      "both": 129
+    },
+    "swe-bench-verified/MSc": {
+      "old": 443,
+      "new": 443,
+      "both": 443
+    },
+    "swe-bench-verified/MSm": {
+      "old": 443,
+      "new": 443,
+      "both": 443
+    },
+    "tau2/MSc": {
+      "old": 242,
+      "new": 242,
+      "both": 242
+    },
+    "tau2/MSm": {
+      "old": 242,
+      "new": 242,
+      "both": 242
+    },
+    "terminal-bench-4.0.0/MSc": {
+      "old": 35,
+      "new": 35,
+      "both": 35
+    },
+    "terminal-bench-4.0.0/MSm": {
+      "old": 35,
+      "new": 35,
+      "both": 35
+    },
+    "terminal-bench-science-0.1/MSc": {
+      "old": 69,
+      "new": 70,
+      "both": 69
+    },
+    "terminal-bench-science-0.1/MSm": {
+      "old": 70,
+      "new": 70,
+      "both": 70
+    }
+  },
+  "levels": {
+    "cooperbench/MSc": {
+      "old": {
+        "0": 110,
+        "1": 10,
+        "2": 120
+      },
+      "new": {
+        "0": 120,
+        "1": 7,
+        "2": 113
+      }
+    },
+    "cooperbench/MSm": {
+      "old": {
+        "0": 120,
+        "2": 9,
+        "3": 111
+      },
+      "new": {
+        "0": 120,
+        "2": 63,
+        "3": 57
+      }
+    },
+    "deepswe-v1.1/MSc": {
+      "old": {
+        "0": 90
+      },
+      "new": {
+        "0": 90
+      }
+    },
+    "deepswe-v1.1/MSm": {
+      "old": {
+        "0": 90
+      },
+      "new": {
+        "0": 90
+      }
+    },
+    "eqbench4/MSc": {
+      "old": {
+        "3": 77,
+        "4": 43
+      },
+      "new": {
+        "3": 79,
+        "4": 41
+      }
+    },
+    "eqbench4/MSm": {
+      "old": {
+        "4": 119,
+        "5": 1
+      },
+      "new": {
+        "4": 119,
+        "5": 1
+      }
+    },
+    "frontierswe-v2/MSc": {
+      "old": {
+        "0": 19
+      },
+      "new": {
+        "0": 19
+      }
+    },
+    "frontierswe-v2/MSm": {
+      "old": {
+        "0": 18,
+        "2": 1
+      },
+      "new": {
+        "0": 18,
+        "2": 1
+      }
+    },
+    "gamearena/MSc": {
+      "old": {
+        "0": 15,
+        "1": 5,
+        "4": 3,
+        "5": 1
+      },
+      "new": {
+        "0": 15,
+        "1": 5,
+        "4": 4
+      }
+    },
+    "gamearena/MSm": {
+      "old": {
+        "0": 5,
+        "1": 6,
+        "2": 5,
+        "3": 7,
+        "4": 1
+      },
+      "new": {
+        "0": 4,
+        "1": 8,
+        "2": 5,
+        "3": 6,
+        "4": 1
+      }
+    },
+    "programbench/MSc": {
+      "old": {
+        "0": 129
+      },
+      "new": {
+        "0": 129
+      }
+    },
+    "programbench/MSm": {
+      "old": {
+        "0": 129
+      },
+      "new": {
+        "0": 129
+      }
+    },
+    "swe-bench-verified/MSc": {
+      "old": {
+        "0": 443
+      },
+      "new": {
+        "0": 443
+      }
+    },
+    "swe-bench-verified/MSm": {
+      "old": {
+        "0": 443
+      },
+      "new": {
+        "0": 443
+      }
+    },
+    "tau2/MSc": {
+      "old": {
+        "1": 2,
+        "2": 203,
+        "3": 13,
+        "4": 24
+      },
+      "new": {
+        "1": 29,
+        "2": 199,
+        "3": 11,
+        "4": 3
+      }
+    },
+    "tau2/MSm": {
+      "old": {
+        "1": 24,
+        "2": 194,
+        "3": 24
+      },
+      "new": {
+        "1": 30,
+        "2": 208,
+        "3": 4
+      }
+    },
+    "terminal-bench-4.0.0/MSc": {
+      "old": {
+        "0": 35
+      },
+      "new": {
+        "0": 34,
+        "1": 1
+      }
+    },
+    "terminal-bench-4.0.0/MSm": {
+      "old": {
+        "0": 34,
+        "1": 1
+      },
+      "new": {
+        "0": 34,
+        "1": 1
+      }
+    },
+    "terminal-bench-science-0.1/MSc": {
+      "old": {
+        "0": 69
+      },
+      "new": {
+        "0": 70
+      }
+    },
+    "terminal-bench-science-0.1/MSm": {
+      "old": {
+        "0": 69,
+        "2": 1
+      },
+      "new": {
+        "0": 69,
+        "1": 1
+      }
+    }
+  },
+  "exact": {
+    "cooperbench/MSc": 0.929,
+    "cooperbench/MSm": 0.75,
+    "deepswe-v1.1/MSc": 1.0,
+    "deepswe-v1.1/MSm": 1.0,
+    "eqbench4/MSc": 0.883,
+    "eqbench4/MSm": 1.0,
+    "frontierswe-v2/MSc": 1.0,
+    "frontierswe-v2/MSm": 1.0,
+    "gamearena/MSc": 0.958,
+    "gamearena/MSm": 0.708,
+    "programbench/MSc": 1.0,
+    "programbench/MSm": 1.0,
+    "swe-bench-verified/MSc": 1.0,
+    "swe-bench-verified/MSm": 1.0,
+    "tau2/MSc": 0.818,
+    "tau2/MSm": 0.785,
+    "terminal-bench-4.0.0/MSc": 0.971,
+    "terminal-bench-4.0.0/MSm": 1.0,
+    "terminal-bench-science-0.1/MSc": 1.0,
+    "terminal-bench-science-0.1/MSm": 0.986
+  },
+  "within_one": {
+    "cooperbench/MSc": 1.0,
+    "cooperbench/MSm": 1.0,
+    "deepswe-v1.1/MSc": 1.0,
+    "deepswe-v1.1/MSm": 1.0,
+    "eqbench4/MSc": 1.0,
+    "eqbench4/MSm": 1.0,
+    "frontierswe-v2/MSc": 1.0,
+    "frontierswe-v2/MSm": 1.0,
+    "gamearena/MSc": 1.0,
+    "gamearena/MSm": 1.0,
+    "programbench/MSc": 1.0,
+    "programbench/MSm": 1.0,
+    "swe-bench-verified/MSc": 1.0,
+    "swe-bench-verified/MSm": 1.0,
+    "tau2/MSc": 0.917,
+    "tau2/MSm": 1.0,
+    "terminal-bench-4.0.0/MSc": 1.0,
+    "terminal-bench-4.0.0/MSm": 1.0,
+    "terminal-bench-science-0.1/MSc": 1.0,
+    "terminal-bench-science-0.1/MSm": 1.0
+  },
+  "mean_shift": {
+    "cooperbench/MSc": -0.071,
+    "cooperbench/MSm": -0.225,
+    "deepswe-v1.1/MSc": 0.0,
+    "deepswe-v1.1/MSm": 0.0,
+    "eqbench4/MSc": -0.017,
+    "eqbench4/MSm": 0.0,
+    "frontierswe-v2/MSc": 0.0,
+    "frontierswe-v2/MSm": 0.0,
+    "gamearena/MSc": -0.042,
+    "gamearena/MSm": -0.042,
+    "programbench/MSc": 0.0,
+    "programbench/MSm": 0.0,
+    "swe-bench-verified/MSc": 0.0,
+    "swe-bench-verified/MSm": 0.0,
+    "tau2/MSc": -0.293,
+    "tau2/MSm": -0.107,
+    "terminal-bench-4.0.0/MSc": 0.029,
+    "terminal-bench-4.0.0/MSm": 0.0,
+    "terminal-bench-science-0.1/MSc": 0.0,
+    "terminal-bench-science-0.1/MSm": -0.014
+  },
+  "spearman": {
+    "deepswe-v1.1/MSc": {
+      "old": {
+        "n": 90,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 90,
+        "note": "one level: not testable"
+      }
+    },
+    "deepswe-v1.1/MSm": {
+      "old": {
+        "n": 90,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 90,
+        "note": "one level: not testable"
+      }
+    },
+    "frontierswe-v2/MSc": {
+      "old": {
+        "n": 19,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 19,
+        "note": "one level: not testable"
+      }
+    },
+    "frontierswe-v2/MSm": {
+      "old": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": 0.022,
+        "p_two_sided": 0.929,
+        "ci95": [
+          -0.437,
+          0.471
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "new": {
+        "n": 19,
+        "n_off_mode": 1,
+        "rho": 0.022,
+        "p_two_sided": 0.929,
+        "ci95": [
+          -0.437,
+          0.471
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "programbench/MSc": {
+      "old": {
+        "n": 129,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 129,
+        "note": "one level: not testable"
+      }
+    },
+    "programbench/MSm": {
+      "old": {
+        "n": 129,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 129,
+        "note": "one level: not testable"
+      }
+    },
+    "swe-bench-verified/MSc": {
+      "old": {
+        "n": 443,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 443,
+        "note": "one level: not testable"
+      }
+    },
+    "swe-bench-verified/MSm": {
+      "old": {
+        "n": 443,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 443,
+        "note": "one level: not testable"
+      }
+    },
+    "tau2/MSc": {
+      "old": {
+        "domains": 3,
+        "n": 242,
+        "rho": 0.1,
+        "p_two_sided": 0.129,
+        "ci95": [
+          -0.029,
+          0.226
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.135,
+        "p_two_sided": 0.0395,
+        "ci95": [
+          -0.259,
+          -0.007
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    },
+    "tau2/MSm": {
+      "old": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.118,
+        "p_two_sided": 0.0731,
+        "ci95": [
+          -0.244,
+          0.011
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "new": {
+        "domains": 3,
+        "n": 242,
+        "rho": 0.106,
+        "p_two_sided": 0.105,
+        "ci95": [
+          -0.022,
+          0.231
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "terminal-bench-4.0.0/MSc": {
+      "old": {
+        "n": 35,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 35,
+        "n_off_mode": 1,
+        "rho": -0.102,
+        "p_two_sided": 0.56,
+        "ci95": [
+          -0.422,
+          0.24
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "terminal-bench-4.0.0/MSm": {
+      "old": {
+        "n": 35,
+        "n_off_mode": 1,
+        "rho": -0.144,
+        "p_two_sided": 0.408,
+        "ci95": [
+          -0.457,
+          0.2
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "new": {
+        "n": 35,
+        "n_off_mode": 1,
+        "rho": -0.144,
+        "p_two_sided": 0.408,
+        "ci95": [
+          -0.457,
+          0.2
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "terminal-bench-science-0.1/MSc": {
+      "old": {
+        "n": 69,
+        "note": "one level: not testable"
+      },
+      "new": {
+        "n": 70,
+        "note": "one level: not testable"
+      }
+    },
+    "terminal-bench-science-0.1/MSm": {
+      "old": {
+        "n": 70,
+        "n_off_mode": 1,
+        "rho": 0.015,
+        "p_two_sided": 0.902,
+        "ci95": [
+          -0.221,
+          0.249
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "new": {
+        "n": 70,
+        "n_off_mode": 1,
+        "rho": 0.015,
+        "p_two_sided": 0.902,
+        "ci95": [
+          -0.221,
+          0.249
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    }
+  },
+  "social_means": {
+    "cooperbench/MSc": {
+      "old": 1.04,
+      "new": 0.97
+    },
+    "cooperbench/MSm": {
+      "old": 1.46,
+      "new": 1.24
+    },
+    "eqbench4/MSc": {
+      "old": 3.36,
+      "new": 3.34
+    },
+    "eqbench4/MSm": {
+      "old": 4.01,
+      "new": 4.01
+    },
+    "gamearena/MSc": {
+      "old": 0.92,
+      "new": 0.88
+    },
+    "gamearena/MSm": {
+      "old": 1.71,
+      "new": 1.67
+    }
+  },
+  "tau2_by_domain": {
+    "tau2-airline/MSc": {
+      "n": 49,
+      "exact": 0.653,
+      "within_one": 0.735,
+      "levels": {
+        "old": {
+          "2": 27,
+          "3": 6,
+          "4": 16
+        },
+        "new": {
+          "1": 7,
+          "2": 36,
+          "3": 4,
+          "4": 2
+        }
+      }
+    },
+    "tau2-airline/MSm": {
+      "n": 49,
+      "exact": 0.878,
+      "within_one": 1.0,
+      "levels": {
+        "old": {
+          "1": 2,
+          "2": 44,
+          "3": 3
+        },
+        "new": {
+          "1": 1,
+          "2": 48
+        }
+      }
+    },
+    "tau2-banking_knowledge/MSc": {
+      "n": 79,
+      "exact": 0.722,
+      "within_one": 0.937,
+      "levels": {
+        "old": {
+          "1": 2,
+          "2": 65,
+          "3": 6,
+          "4": 6
+        },
+        "new": {
+          "1": 19,
+          "2": 52,
+          "3": 7,
+          "4": 1
+        }
+      }
+    },
+    "tau2-banking_knowledge/MSm": {
+      "n": 79,
+      "exact": 0.633,
+      "within_one": 1.0,
+      "levels": {
+        "old": {
+          "1": 20,
+          "2": 53,
+          "3": 6
+        },
+        "new": {
+          "1": 28,
+          "2": 48,
+          "3": 3
+        }
+      }
+    },
+    "tau2-retail/MSc": {
+      "n": 114,
+      "exact": 0.956,
+      "within_one": 0.982,
+      "levels": {
+        "old": {
+          "2": 111,
+          "3": 1,
+          "4": 2
+        },
+        "new": {
+          "1": 3,
+          "2": 111
+        }
+      }
+    },
+    "tau2-retail/MSm": {
+      "n": 114,
+      "exact": 0.851,
+      "within_one": 1.0,
+      "levels": {
+        "old": {
+          "1": 2,
+          "2": 97,
+          "3": 15
+        },
+        "new": {
+          "1": 1,
+          "2": 112,
+          "3": 1
+        }
+      }
+    }
+  },
+  "pooled": {
+    "MSc": {
+      "n": 1411,
+      "exact": 0.945,
+      "within_one": 0.986,
+      "mean_shift": -0.064,
+      "moves": {
+        "0->1": 1,
+        "1->0": 10,
+        "2->1": 22,
+        "2->3": 2,
+        "3->1": 1,
+        "3->2": 5,
+        "3->4": 6,
+        "4->1": 11,
+        "4->2": 8,
+        "4->3": 10,
+        "5->4": 1
+      }
+    },
+    "MSm": {
+      "n": 1412,
+      "exact": 0.915,
+      "within_one": 1.0,
+      "mean_shift": -0.058,
+      "moves": {
+        "0->1": 2,
+        "1->0": 1,
+        "1->2": 14,
+        "2->1": 22,
+        "2->3": 3,
+        "3->2": 78
+      }
+    }
+  },
+  "no_new_label": [],
+  "no_old_label": [
+    {
+      "benchmark": "terminal-bench-science-0.1",
+      "instance_id": "protein-active-learning",
+      "rubric": "MSc"
+    }
+  ],
+  "human_tau2_msc": {
+    "n": 15,
+    "missing": [],
+    "items": [
+      {
+        "item_id": "H-01",
+        "benchmark": "tau2-retail",
+        "instance_id": "0",
+        "role": "fresh",
+        "msc": 2,
+        "pablo": 2.0,
+        "old": 2.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-02",
+        "benchmark": "tau2-airline",
+        "instance_id": "6",
+        "role": "fresh",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 4.0,
+        "new": 1.0
+      },
+      {
+        "item_id": "H-03",
+        "benchmark": "tau2-airline",
+        "instance_id": "45",
+        "role": "fresh",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 4.0,
+        "new": 4.0
+      },
+      {
+        "item_id": "H-04",
+        "benchmark": "tau2-airline",
+        "instance_id": "38",
+        "role": "fresh",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 3.0,
+        "new": 3.0
+      },
+      {
+        "item_id": "H-05",
+        "benchmark": "tau2-retail",
+        "instance_id": "7",
+        "role": "fresh",
+        "msc": 2,
+        "pablo": 2.0,
+        "old": 2.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-06",
+        "benchmark": "tau2-airline",
+        "instance_id": "46",
+        "role": "fresh",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 4.0,
+        "new": 1.0
+      },
+      {
+        "item_id": "H-07",
+        "benchmark": "tau2-airline",
+        "instance_id": "43",
+        "role": "fresh",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 3.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-08",
+        "benchmark": "tau2-retail",
+        "instance_id": "11",
+        "role": "fresh",
+        "msc": 3,
+        "pablo": 2.0,
+        "old": 3.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-09",
+        "benchmark": "tau2-airline",
+        "instance_id": "1",
+        "role": "fresh",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 4.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-10",
+        "benchmark": "tau2-retail",
+        "instance_id": "9",
+        "role": "fresh",
+        "msc": 2,
+        "pablo": 2.0,
+        "old": 2.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-11",
+        "benchmark": "tau2-airline",
+        "instance_id": "27",
+        "role": "dev",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 3.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-12",
+        "benchmark": "tau2-banking_knowledge",
+        "instance_id": "task_006",
+        "role": "dev",
+        "msc": 2,
+        "pablo": 1.0,
+        "old": 1.0,
+        "new": 1.0
+      },
+      {
+        "item_id": "H-13",
+        "benchmark": "tau2-airline",
+        "instance_id": "0",
+        "role": "dev",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 4.0,
+        "new": 1.0
+      },
+      {
+        "item_id": "H-14",
+        "benchmark": "tau2-airline",
+        "instance_id": "22",
+        "role": "dev",
+        "msc": 2,
+        "pablo": 2.0,
+        "old": 2.0,
+        "new": 2.0
+      },
+      {
+        "item_id": "H-15",
+        "benchmark": "tau2-airline",
+        "instance_id": "4",
+        "role": "dev",
+        "msc": 1,
+        "pablo": 1.0,
+        "old": 4.0,
+        "new": 1.0
+      }
+    ],
+    "old": {
+      "pablo": {
+        "exact": 5,
+        "within_one": 6,
+        "mean_diff": 1.67,
+        "n": 15
+      },
+      "msc": {
+        "exact": 5,
+        "within_one": 6,
+        "mean_diff": 1.53,
+        "n": 15
+      }
+    },
+    "new": {
+      "pablo": {
+        "exact": 10,
+        "within_one": 13,
+        "mean_diff": 0.53,
+        "n": 15
+      },
+      "msc": {
+        "exact": 8,
+        "within_one": 13,
+        "mean_diff": 0.4,
+        "n": 15
+      }
+    }
+  }
+}

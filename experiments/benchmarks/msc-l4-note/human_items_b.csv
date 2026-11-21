@@ -1,0 +1,11 @@
+item_id,benchmark,instance_id,role
+H-16,tau2-airline,3,fresh2
+H-17,tau2-airline,36,fresh2
+H-18,tau2-airline,49,fresh2
+H-19,tau2-airline,37,fresh2
+H-20,tau2-retail,77,fresh2
+H-21,tau2-airline,26,fresh2
+H-22,tau2-retail,50,fresh2
+H-23,tau2-airline,10,fresh2
+H-24,tau2-airline,48,fresh2
+H-25,tau2-retail,44,fresh2

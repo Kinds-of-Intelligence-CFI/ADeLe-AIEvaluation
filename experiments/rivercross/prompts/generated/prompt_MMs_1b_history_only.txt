@@ -1,0 +1,224 @@
+You are an ADeLe demand-level annotator. For each of the 43 tasks below, assign a single demand level (an integer 0-5) for ONE dimension: MMs - Working and short-term memory.
+
+The level is a property of the presented task state: how much working or short-term memory is required to maintain, update, or reconstruct the relevant river-crossing state information needed to continue correctly. It is independent of how skilled any particular solver is.
+
+Score using ONLY the rubric provided below. Assign levels by elimination against the rubric's stated conditions, not by an overall impression of how hard or tricky the puzzle feels.
+
+For this pilot, focus only on memory state tracking:
+1. Score demand from information that must be maintained, updated, or reconstructed across the presented history.
+2. Do not score planning difficulty, search depth, action execution difficulty, legality checking, or overall puzzle difficulty.
+3. Do not let the number of remaining optimal steps raise the level unless it creates memory-maintenance demand under the rubric.
+4. If the current state is directly visible in the task text, treat that information as perceptually available and do not count it as memory demand.
+5. If the task gives only an initial state and move history, assume the solver must infer the present configuration from that history.
+
+=== MMs RUBRIC ===
+# Working and short-term memory
+
+This rubric assesses working memory, the capacity to hold information temporarily and use it in reasoning or action. Tasks may require maintaining details that are no longer perceptually available, manipulating them or integrating them with new inputs. Difficulty rises from tasks that need no maintenance at all, through simple short-span retention, to those that demand continuous updating and the flexible transformation of multiple interdependent representations.
+
+Level 0: None. No active maintenance of information is required. The response acts directly on what is in current perception or on highly automatised recall of learned facts, without holding information across a delay.
+Examples:
+* Reading a word that is in front of you.
+* Identifying features of an object that is currently visible.
+* Responding "dog" when shown a picture of a dog.
+
+Level 1: Very low. Tasks require briefly holding a single, simple piece of information from recent experience so it can be retrieved or acted on after a short delay. No manipulation, transformation or integration with other information is needed; the demand is limited to maintenance.
+Examples:
+* Copy the word "elephant" from one document into another after viewing it briefly.
+* Carry out a simple instruction, such as adding a full stop at the end of a sentence, after reading it once.
+* Write down a two-digit number that was shown in a chat window but has since disappeared.
+
+Level 2: Low. Tasks require holding a small set of simple items (e.g., words, numbers, locations) in memory for a short delay, typically under 30 seconds. The information must be accessible for recognition or recall, but no manipulation or transformation is required.
+Examples:
+* Repeat back two 3-digit codes 30 seconds after hearing them.
+* Hold a number from one spreadsheet in memory long enough to check it against a figure in another sheet that must be opened afterward.
+* Recall a short list of three unrelated words (e.g., "dog, chair, blue") after a 20-second delay.
+
+Level 3: Intermediate. Tasks require holding a larger amount or more detailed information in memory (e.g., several words, a sentence or a short list) beyond immediate perception. The retained material may need to be manipulated (e.g., reversed, rotated, reordered) or integrated with new input.
+Examples:
+* Repeat a 2–4 digit code in reverse order, 30 seconds after hearing it.
+* Identify which of several shapes matches a previously seen example after it has been rotated, when both cannot be viewed at the same time.
+* Compare a list of seven names from one document with a new list in another document and state which name is missing.
+
+Level 4: High. Tasks require holding a substantial amount of recently presented information that is no longer perceptually available, and manipulating it in complex ways — reordering long sequences, updating and revising earlier memories in light of new input, or integrating remembered details with current perceptions and background knowledge.
+Examples:
+* View a list of 20 names in one document, close it, then open another document and type out the names with their ages in alphabetical order.
+* Study a static image of a complex scene with moving elements, then redraw the scene from a new angle as if 30 seconds had passed and each element continued along its trajectory.
+* Listen to a 5-minute chronological description of a five-generation family tree, then answer questions about specific relationships across generations.
+
+Level 5: Very high. Tasks require holding an exceptionally large amount of recently presented information that is no longer perceptually available and applying highly sophisticated operations to it — maintaining long sequences or richly detailed structures, performing multiple layers of manipulation, and integrating remembered content with knowledge and new perceptual input in complex, interdependent ways.
+Examples:
+* After a single read of a 10-page legal document, answer detailed questions about its content without being able to reconsult the text.
+* Tour a large complex building once, then give directions between any two locations, report the placement of furniture and recall details such as the number of rooms and wall colours.
+* Skim 15 function prototypes with one-line docstrings, then with the prototypes hidden, check a 25-line integration snippet and highlight every function call whose argument order or required keyword is inconsistent with the memorised signatures.
+
+=== 43 TASKS (custom_id ||| situation) ===
+chain-3-boat-1#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 1 item per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+3. farmer with item3 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-3-boat-2#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-3-boat-3#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-3-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-4-boat-2#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-4-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-4-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-5-boat-2#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+2. farmer with item4 crossed to the left bank.
+3. farmer with item3, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-5-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item3, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-5-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item3, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-6-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. The item5 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item4, and item6 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+chain-6-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. The item5 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item4, and item6 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-3-boat-1#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 1 item per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+3. farmer with item3 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-3-boat-2#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item3 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-3-boat-3#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item3 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-3-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item3 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-4-boat-2#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item4 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-4-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item3, and item4 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-4-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item3, and item4 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-5-boat-2#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+3. farmer with item4, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-5-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item2 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+3. farmer with item3, item4, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-5-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item3, item4, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-6-boat-2#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. The item1 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+3. farmer with item5, and item6 crossed to the right bank.
+4. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-6-boat-3#s2__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. The item1 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item5, and item6 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+star-6-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. The item1 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item2 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+3. farmer with item3, item4, item5, and item6 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-3-boat-2#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-3-boat-3#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-3-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-4-boat-2#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-4-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-4-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, and item4 crossed to the right bank.
+2. farmer alone crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-5-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item3, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-5-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item3, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-6-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item6 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. The item5 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item4, and item6 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+cycle-6-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item6 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. The item5 and the item6 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, item5, and item6 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item2, item4, and item6 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+complete-3-boat-2#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 2 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+complete-3-boat-3#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+complete-3-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, and item3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, and item3 crossed to the right bank.
+2. farmer with item1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+complete-4-boat-3#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 3 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item2 and the item4 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item2, and item4 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+complete-4-boat-4#s0__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item2 and the item4 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, and item4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item2, and item4 crossed to the right bank.
+2. farmer with item1, and item2 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+complete-5-boat-4#s1__history_only ||| You are partway through a river-crossing puzzle. The boat carries the farmer and at most 4 items per crossing. The item1 and the item2 must not be left together without the farmer. The item1 and the item3 must not be left together without the farmer. The item1 and the item4 must not be left together without the farmer. The item1 and the item5 must not be left together without the farmer. The item2 and the item3 must not be left together without the farmer. The item2 and the item4 must not be left together without the farmer. The item2 and the item5 must not be left together without the farmer. The item3 and the item4 must not be left together without the farmer. The item3 and the item5 must not be left together without the farmer. The item4 and the item5 must not be left together without the farmer. Goal: get everything to the right bank. Initial state: farmer, item1, item2, item3, item4, and item5 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. farmer with item1, item2, item3, and item5 crossed to the right bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+missionaries-cannibals-3#s2__history_only ||| You are partway through a river-crossing puzzle. The boat holds at most 2 and needs at least one aboard to row. On an unattended bank, the C1/C2/C3 must never outnumber the M1/M2/M3 when any of the latter are present. Goal: get everything to the right bank. Initial state: M1, M2, M3, C1, C2, and C3 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. C1, and C2 crossed to the right bank.
+2. C1 crossed to the left bank.
+3. C1, and C3 crossed to the right bank.
+4. C3 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+missionaries-cannibals-4#s2__history_only ||| You are partway through a river-crossing puzzle. The boat holds at most 3 and needs at least one aboard to row. On an unattended bank, the C1/C2/C3/C4 must never outnumber the M1/M2/M3/M4 when any of the latter are present. Goal: get everything to the right bank. Initial state: M1, M2, M3, M4, C1, C2, C3, and C4 start on the left bank with the boat; the right bank starts empty. Move history so far:
+1. C1, and C2 crossed to the right bank.
+2. C1 crossed to the left bank.
+3. C1, M1, and M4 crossed to the right bank.
+4. C2, and M1 crossed to the left bank.
+Based only on the initial state and move history, infer the present configuration and find a sequence of crossings that gets everything to the right bank from here.
+
+=== OUTPUT ===
+Return ONLY a CSV inside a single code block. Header exactly:
+custom_id,level,reason
+then EXACTLY 43 data rows, one per task in the given order. level must be an integer 0-5. reason must be 15 words or fewer and name the memory-tracking condition that decided the level. Output nothing before or after the code block.

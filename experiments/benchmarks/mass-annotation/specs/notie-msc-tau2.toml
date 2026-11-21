@@ -1,0 +1,22 @@
+# tie-rule-freeze (experiments/benchmarks/tie-rule-freeze): MSc on the tau2-goal inputs without the tie rule,
+# regular and long inputs in one run, through the API with the subagent harness.
+name = "notie-msc-tau2"
+
+[tasks]
+benchmarks = ["tau2-airline", "tau2-retail", "tau2-banking_knowledge"]
+subset = "experiments/benchmarks/tie-rule-freeze/subset_tau2.csv"
+instances_dir = "data/instances-tau2-goal"
+
+[rubrics]
+refs = ["v2/MSc"]
+
+[prompt]
+builder = "v2-noreason-notie"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

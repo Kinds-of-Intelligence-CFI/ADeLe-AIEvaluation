@@ -1,0 +1,155 @@
+{
+  "run": "gate-v1-bridge-h",
+  "created_at": "2026-11-01T16:48:52+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/gate-v1-bridge-h.toml",
+  "git": {
+    "commit": "eb393e90fd3737b7fe5982805156170f06601482",
+    "dirty_tracked_files": [
+      "M src/adele/annotation/prompts.py",
+      " M src/adele/mass/spec.py",
+      " M tests/test_mass.py"
+    ]
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "f9ab6ea79a92a4b47875886bab1284d8a80906a8a86c2f3d1dd9bdd3341352e1",
+      "content": "# v1-prompt-bridge (experiments/benchmarks/v1-prompt-bridge), arm A: today's production judge (harness + bare-digit v2 prompt).\n# Same 60 battery items x 18 v1 rubrics as gate-v1-bridge, against the published GPT-4o levels.\nname = \"gate-v1-bridge-h\"\n\n[tasks]\nbenchmarks = [\"adele-battery-v1\"]\nsubset = \"experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv\"\n\n[rubrics]\nrefs = [\"v1/AS\", \"v1/AT\", \"v1/CEc\", \"v1/CEe\", \"v1/CL\", \"v1/KNa\", \"v1/KNc\", \"v1/KNf\", \"v1/KNn\", \"v1/KNs\", \"v1/MCr\",\n        \"v1/MCt\", \"v1/MCu\", \"v1/MSm\", \"v1/QLl\", \"v1/QLq\", \"v1/SNs\", \"v1/VO\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "adele-battery-v1": {
+          "file": "instances_adele-battery-v1.parquet",
+          "file_sha256": "0d0fcc04c4ea610ebadc186cd3b7a7bb83498e98e645a96c8ab25f046a64b1f3",
+          "frame_sha256": "3f151f763b0d26c8226d6eb66bc593712534afdb3b7179ea8092de05dd212afd",
+          "n_selected": 60
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv",
+        "sha256": "1bd5dc2ff58d016a1204dd867d9109cef28aadea3f6a379af5b0b9f289dea306",
+        "n_ids": 60
+      }
+    },
+    "rubrics": {
+      "v1/AS": {
+        "file": "src/adele/rubrics/data_v1/AS.txt",
+        "sha256": "78da6e87943618886a06ac6f69eaff625544183ba831707274b56aac93d51776",
+        "full_name": "Attention and Scan"
+      },
+      "v1/AT": {
+        "file": "src/adele/rubrics/data_v1/AT.txt",
+        "sha256": "5862dd72f661fb6ea0e08b66bc7a877de1951a9285ee6fdf3defd8dfa8602479",
+        "full_name": "Atypicality"
+      },
+      "v1/CEc": {
+        "file": "src/adele/rubrics/data_v1/CEc.txt",
+        "sha256": "79979eaf4d6bc192317247533458bcf6e2caccdd450c35a07d254a48a8bc331e",
+        "full_name": "Verbal Comprehension"
+      },
+      "v1/CEe": {
+        "file": "src/adele/rubrics/data_v1/CEe.txt",
+        "sha256": "9014ce7264f4fb04d2614822228b3e3cf8698b576bd97b34cbb1511978961798",
+        "full_name": "Verbal Expression"
+      },
+      "v1/CL": {
+        "file": "src/adele/rubrics/data_v1/CL.txt",
+        "sha256": "bc150489d16affeada2c9593682e73838b9e50545559f3c0195c10da5b224372",
+        "full_name": "Conceptualisation, Learning and Abstraction"
+      },
+      "v1/KNa": {
+        "file": "src/adele/rubrics/data_v1/KNa.txt",
+        "sha256": "de9eacb9605178dd11ce97ae1d2b03a72e1f134646bc63b941af57c319920f54",
+        "full_name": "Knowledge of Applied Sciences"
+      },
+      "v1/KNc": {
+        "file": "src/adele/rubrics/data_v1/KNc.txt",
+        "sha256": "2c729cdea7233b214ec09b9c69eefa84c0379786620b48e5ad6301dc01ba2e8d",
+        "full_name": "Customary Everyday Knowledge"
+      },
+      "v1/KNf": {
+        "file": "src/adele/rubrics/data_v1/KNf.txt",
+        "sha256": "3811485eb0e14ae8b5879d295a84c030d4fad209c5030b2d41d7bdce90449cc5",
+        "full_name": "Knowledge of Formal Sciences"
+      },
+      "v1/KNn": {
+        "file": "src/adele/rubrics/data_v1/KNn.txt",
+        "sha256": "0f8541e4d857a3db8386e4ba6ef41a516766f96b30d6867df736a1e19d14c145",
+        "full_name": "Knowledge of Natural Sciences"
+      },
+      "v1/KNs": {
+        "file": "src/adele/rubrics/data_v1/KNs.txt",
+        "sha256": "ee7169f687297b3eca44d632b3c2f5d9f3f14dbb49dbd4355e5d9e36abbd23fb",
+        "full_name": "Knowledge of Social Sciences"
+      },
+      "v1/MCr": {
+        "file": "src/adele/rubrics/data_v1/MCr.txt",
+        "sha256": "340c9f2f77b6b61290713bc0ab2c23ac42e42a3fd12293a63c3e2a204d0cf390",
+        "full_name": "Identifying Relevant Information"
+      },
+      "v1/MCt": {
+        "file": "src/adele/rubrics/data_v1/MCt.txt",
+        "sha256": "cad1febd3705c2f253737988246cb7ab9415efe9bb68b44a61e460894e0fc2e6",
+        "full_name": "Critical Thinking Processes"
+      },
+      "v1/MCu": {
+        "file": "src/adele/rubrics/data_v1/MCu.txt",
+        "sha256": "4c136dd9aef4acb6c0be7abd22a6ab7ba5e29f26dddd20e836eb9ede9c4407a9",
+        "full_name": "Calibrating Knowns and Unknowns"
+      },
+      "v1/MSm": {
+        "file": "src/adele/rubrics/data_v1/MSm.txt",
+        "sha256": "c8924937f9794949dea63cdd0278e16b0d1497d49b5e51a12b6123dba14c8f85",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v1/QLl": {
+        "file": "src/adele/rubrics/data_v1/QLl.txt",
+        "sha256": "113b0a0203409f5c83b3c3d09345c0b71252e23098ef0de280ef6ae488bc89f2",
+        "full_name": "Logical Reasoning"
+      },
+      "v1/QLq": {
+        "file": "src/adele/rubrics/data_v1/QLq.txt",
+        "sha256": "af7dd2a3794acb9de8f8d06a12f7b2ab4d372d1111fd14cef621b17bfb272244",
+        "full_name": "Quantitative Reasoning"
+      },
+      "v1/SNs": {
+        "file": "src/adele/rubrics/data_v1/SNs.txt",
+        "sha256": "e74180e3a2d77d28cfbf9e296b470df41cc763495f116b501a4bcf31b83d75d2",
+        "full_name": "Spatio-physical Reasoning"
+      },
+      "v1/VO": {
+        "file": "src/adele/rubrics/data_v1/VO.txt",
+        "sha256": "57e128551c7ef9fb8a3bbe944751ae5507d08c041a51569a93206efc1b2d4698",
+        "full_name": "Volume"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "5e64e6e24adee80077226c8c5e97650adeda47ea516ce4726a4d726c84c75344"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-opus-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 1080,
+      "sha256": "c9af3ef45bcc1d938dee665ac4c063b4f6331536a6cec1d944fbf822579e7259"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "run": "jc-pl-tau2-goal-haiku-low",
+  "created_at": "2026-11-01T19:33:57+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-pl-tau2-goal-haiku-low.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "c6e3a4599a8f33d42392faa1a797724d1ec5cf5a172de4a72d456b4e58650d72",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block pl, inputs data/instances-tau2-goal, arm haiku-low.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-pl-tau2-goal-haiku-low\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-banking_knowledge\", \"tau2-retail\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_pl_tau2-goal.csv\"\ninstances_dir = \"data/instances-tau2-goal\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-haiku-5-5\"\neffort = \"low\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "d35bad3b5e0fa686b7801f4357092440a98d23599948f2cdd0e1a56026800925",
+          "frame_sha256": "1fa01e9b322fe5e30754acf521e1f664a0a1f8f0b7424eea0a4441b38c8843ce",
+          "n_selected": 12
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "f048db72be0227a1555533acf5cc22383dd43ea00401e6a1407f45ea9bca9f29",
+          "frame_sha256": "f048db72be0227a1555533acf5cc22383dd43ea00401e6a1407f45ea9bca9f29",
+          "n_selected": 12
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "26c2a789370e4925d2619672c5b4d5e4b3c20ec3e81fa2bb1ed797a92531bbe8",
+          "frame_sha256": "186fec273d8814911b7f5213683e207872943421bb07d0c02da8f332026b8177",
+          "n_selected": 12
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_pl_tau2-goal.csv",
+        "sha256": "5d2eed4b61fe27a913e093cdb9abd58fd76c007fa9d7ac17676b9dd010b15a4e",
+        "n_ids": 36
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-haiku-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-haiku-5-5-low",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 72,
+      "sha256": "1775460914495570d730070613aa9a4f566cd7c7c1e66d55804e314f47d9013f"
+    }
+  }
+}

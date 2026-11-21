@@ -1,0 +1,56 @@
+{
+  "Opus 5.5 low": {
+    "run": "abl-s3",
+    "labelled": 480,
+    "rwg": 0.82,
+    "exact": 0.471,
+    "within_1": 0.86,
+    "shift": -0.335,
+    "rwg_per_rubric": {
+      "AS": 0.86,
+      "CEc": 0.9,
+      "CL": 0.76,
+      "KNa": 0.73,
+      "KNc": 0.68,
+      "MCt": 0.93,
+      "MCu": 0.78,
+      "QLq": 0.92
+    }
+  },
+  "Sonnet 5.5 low": {
+    "run": "rwg-sonnet-low",
+    "labelled": 480,
+    "rwg": 0.813,
+    "exact": 0.471,
+    "within_1": 0.833,
+    "shift": -0.352,
+    "rwg_per_rubric": {
+      "AS": 0.85,
+      "CEc": 0.9,
+      "CL": 0.71,
+      "KNa": 0.8,
+      "KNc": 0.74,
+      "MCt": 0.92,
+      "MCu": 0.67,
+      "QLq": 0.91
+    }
+  },
+  "Haiku 5.5 low": {
+    "run": "rwg-haiku-low",
+    "labelled": 452,
+    "rwg": 0.793,
+    "exact": 0.456,
+    "within_1": 0.765,
+    "shift": -0.5,
+    "rwg_per_rubric": {
+      "AS": 0.82,
+      "CEc": 0.9,
+      "CL": 0.61,
+      "KNa": 0.78,
+      "KNc": 0.65,
+      "MCt": 0.92,
+      "MCu": 0.74,
+      "QLq": 0.93
+    }
+  }
+}

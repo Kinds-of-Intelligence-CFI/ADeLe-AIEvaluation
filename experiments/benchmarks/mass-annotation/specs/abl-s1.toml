@@ -1,0 +1,21 @@
+# prompt-ablation (experiments/benchmarks/prompt-ablation), arm s1: builder v2-noreason-notie.
+# The 60 bridge items x 8 rubrics, through the API with the subagent harness.
+name = "abl-s1"
+
+[tasks]
+benchmarks = ["adele-battery-v1"]
+subset = "experiments/benchmarks/mass-annotation/subsets/v1_bridge.csv"
+
+[rubrics]
+refs = ["v1/AS", "v1/CEc", "v1/CL", "v1/KNa", "v1/KNc", "v1/MCt", "v1/MCu", "v1/QLq"]
+
+[prompt]
+builder = "v2-noreason-notie"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+harness = "subagent-v2-low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

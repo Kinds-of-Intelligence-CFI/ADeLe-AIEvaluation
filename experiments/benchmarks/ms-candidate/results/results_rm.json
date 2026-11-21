@@ -1,0 +1,380 @@
+{
+  "R": {
+    "MSc": {
+      "lost_pass1": [
+        "L r36 MSc pair"
+      ],
+      "fail_both": [],
+      "gained": [
+        "B MSc high"
+      ],
+      "checks": {
+        "P-MSc placement": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "F-on-MSc no leak": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "L r30 MSc minimal pairs": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "L r36 MSc pair": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": false,
+            "failing": [
+              "L-r36-D2"
+            ],
+            "unlabelled": []
+          }
+        },
+        "L r75 MSc ladder": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "L r70 human labels": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "B MSc high": {
+          "current": {
+            "holds": false,
+            "failing": [
+              "B-M01-on-MSc"
+            ],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "B MSc mid-band": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "B MSc anchors": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        }
+      },
+      "confirmed": [],
+      "verdict": "holds"
+    },
+    "MSm": {
+      "lost_pass1": [],
+      "fail_both": [
+        "F-on-MSm no leak"
+      ],
+      "gained": [],
+      "checks": {
+        "P-MSm placement": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "F-on-MSm no leak": {
+          "current": {
+            "holds": false,
+            "failing": [
+              "F-PLs-L5-2-on-MSm",
+              "F-PLs-L5-3-on-MSm"
+            ],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": false,
+            "failing": [
+              "F-PLs-L5-2-on-MSm",
+              "F-PLs-L5-3-on-MSm"
+            ],
+            "unlabelled": []
+          }
+        },
+        "L r60 stated-stance carve": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "L r60 anti-count guard": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "L r60/r69 Level 4/5 boundary": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "B MSm low": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        },
+        "B MSm on pure MSc items": {
+          "current": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          },
+          "candidate": {
+            "holds": true,
+            "failing": [],
+            "unlabelled": []
+          }
+        }
+      },
+      "confirmed": [],
+      "verdict": "holds"
+    }
+  },
+  "M": {
+    "current": {
+      "pairs": {
+        "1": {
+          "A": 1,
+          "B": 4
+        },
+        "2": {
+          "A": 3,
+          "B": 4
+        },
+        "3": {
+          "A": 1,
+          "B": 4
+        },
+        "4": {
+          "A": 2,
+          "B": 4
+        },
+        "5": {
+          "A": 3,
+          "B": 4
+        },
+        "6": {
+          "A": 2,
+          "B": 4
+        },
+        "7": {
+          "A": 1,
+          "B": 4
+        },
+        "8": {
+          "A": 1,
+          "B": 4
+        }
+      },
+      "A_B_within_1": 2,
+      "B_at_3_or_less": 0,
+      "holds": false
+    },
+    "candidate": {
+      "pairs": {
+        "1": {
+          "A": 2,
+          "B": 4
+        },
+        "2": {
+          "A": 3,
+          "B": 4
+        },
+        "3": {
+          "A": 2,
+          "B": 4
+        },
+        "4": {
+          "A": 3,
+          "B": 4
+        },
+        "5": {
+          "A": 3,
+          "B": 4
+        },
+        "6": {
+          "A": 2,
+          "B": 4
+        },
+        "7": {
+          "A": 2,
+          "B": 4
+        },
+        "8": {
+          "A": 1,
+          "B": 4
+        }
+      },
+      "A_B_within_1": 3,
+      "B_at_3_or_less": 0,
+      "holds": false
+    }
+  },
+  "pass2_medians": {
+    "L-r36-D2": {
+      "current": [
+        4,
+        5
+      ],
+      "candidate": [
+        3,
+        4
+      ]
+    }
+  },
+  "rerun_in_pass2": [
+    "L-r36-D2"
+  ],
+  "changed_between_arms": {
+    "B-M01-on-MSc": {
+      "current": 3,
+      "candidate": 4
+    },
+    "F-PLp-L5-2-on-MSm": {
+      "current": 0,
+      "candidate": 1
+    },
+    "L-r36-D2": {
+      "current": 4,
+      "candidate": 3
+    },
+    "M-1A": {
+      "current": 1,
+      "candidate": 2
+    },
+    "M-3A": {
+      "current": 1,
+      "candidate": 2
+    },
+    "M-4A": {
+      "current": 2,
+      "candidate": 3
+    },
+    "M-7A": {
+      "current": 1,
+      "candidate": 2
+    },
+    "P-MSm-L3-2": {
+      "current": 4,
+      "candidate": 3
+    },
+    "S-MSc-L4-1-on-MSm": {
+      "current": 3,
+      "candidate": 4
+    },
+    "S-MSc-L4-2-on-MSm": {
+      "current": 2,
+      "candidate": 3
+    }
+  },
+  "not_ruled": {
+    "B-X06R-on-MSc": {
+      "why": "amendment 1: the task states nothing it needs from the managers",
+      "current": 5,
+      "candidate": 5
+    }
+  },
+  "repeat_agreement_all_three_equal": 0.902,
+  "labels": {
+    "answers": 1200,
+    "counted": 1200
+  },
+  "H": "sealed: Pablo's labels are not in yet"
+}

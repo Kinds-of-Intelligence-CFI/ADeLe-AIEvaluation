@@ -1,0 +1,4 @@
+file_id,item_id,set,arm,rubric,judge,writer_model,level,valid,prompt_sha256,response_sha256
+eb4eg,L-r36-D2,R-L,candidate_v4b,MSc,opus-low-r1,claude-opus-5-5,4.0,True,4c8752f40949f5bb985a1238e1689df867aa042fc90704aefee4b67e8604fb97,f234448df32960dac955c9e184bf9d5c6f2243a5c802e055c322d9eff1d2ea1f
+eb4eg,L-r36-D2,R-L,candidate_v4b,MSc,opus-low-r2,claude-opus-5-5,4.0,True,4c8752f40949f5bb985a1238e1689df867aa042fc90704aefee4b67e8604fb97,88c121698fbaf011d9712684e37492da18267db300cd83b869f2d181dea6ebb2
+eb4eg,L-r36-D2,R-L,candidate_v4b,MSc,opus-low-r3,claude-opus-5-5,4.0,True,4c8752f40949f5bb985a1238e1689df867aa042fc90704aefee4b67e8604fb97,a6947ce97a11d905ed2f3f188bcba6333ffba59838ce4ecdf17b930077f3aae0

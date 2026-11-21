@@ -1,0 +1,4 @@
+cell_id,benchmark,instance_id,rubric_ref,generation,code,repeat,prompt_sha256
+v2PLp-6a020794325f88e6,gamearena,clobber@player,v2/PLp,v2,PLp,1,83dfa33c797c1eff90cbe84f54d5a83d170548696997035eb1851396610c7a5a
+v2PLp-7e971e03caa9371d,gamearena,four-in-a-row@player,v2/PLp,v2,PLp,1,c7e52cdc585ae56707838acc366437abc31bb5a7d908520b98eb86b43cf4b7e5
+v2PLp-01d340aca8eda94d,gamearena,lines-of-action@player,v2/PLp,v2,PLp,1,ffc891ee39f3954304bc4903e61928e32338fb085a0b90971a9ca8b66910dd78

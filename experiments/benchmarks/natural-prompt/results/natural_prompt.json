@@ -1,0 +1,71 @@
+{
+  "A": {
+    "blocked_twice_under_old_prompt": 23,
+    "blocked_answered_now": 23,
+    "control_cells": 21,
+    "control_answered_now": 21,
+    "calls": 44,
+    "calls_stopped_by_a_safeguard": 0,
+    "passes": true
+  },
+  "B": {
+    "cells": 132,
+    "counted": 132,
+    "natural_vs_old": {
+      "all": {
+        "n": 132,
+        "exact": 0.841,
+        "within1": 1.0,
+        "mean_shift": 0.159,
+        "qwk": 0.893
+      },
+      "PLp": {
+        "n": 44,
+        "exact": 0.841,
+        "within1": 1.0,
+        "mean_shift": 0.159,
+        "qwk": 0.752
+      },
+      "PLe": {
+        "n": 44,
+        "exact": 0.727,
+        "within1": 1.0,
+        "mean_shift": 0.273,
+        "qwk": 0.105
+      },
+      "PLs": {
+        "n": 44,
+        "exact": 0.955,
+        "within1": 1.0,
+        "mean_shift": 0.045,
+        "qwk": 0.482
+      }
+    },
+    "natural_vs_opus_medium": {
+      "n": 132,
+      "exact": 0.826,
+      "within1": 1.0,
+      "mean_shift": 0.159,
+      "qwk": 0.886
+    },
+    "old_vs_opus_medium": {
+      "n": 132,
+      "exact": 0.894,
+      "within1": 1.0,
+      "mean_shift": 0.0,
+      "qwk": 0.926
+    },
+    "mean_answer_chars": {
+      "natural": 870.5,
+      "old": 1064.5
+    },
+    "checks": {
+      "1_exact_ge_0.83": true,
+      "2_within1_ge_0.98": true,
+      "3_shift_within_0.10_each": false,
+      "4_counted_ge_0.95": true
+    },
+    "passes": false
+  },
+  "verdict": "fixes the flags, but changes the labels"
+}

@@ -1,0 +1,7 @@
+file_id,item_id,set,arm,repeat,dim,judge,writer_model,level,valid,prompt_sha256,response_sha256
+jc9zg,B-M03,B,old,2,PLs,opus-low,claude-opus-5-5,1.0,True,90288cdaf36bff8ef294449daac82bc1e70f9585f0e241eef682813cf87720c5,14b6edf675f39ee2239767f5eca2e007110be7a77a1ed6082d62fc3ade90fc04
+k4yzg,B-M03,B,new,3,PLs,opus-low,claude-opus-5-5,2.0,True,6752eeac327fe2f522beb995386e7b36dcc90ce7ea09730f75ecb62bc4328e64,80b40c585b0c07322446fd347c481b8f17043a5a46585773cd9cf2d4f63e2d80
+qdv2r,B-M03,B,new,2,PLs,opus-low,claude-opus-5-5,1.0,True,6752eeac327fe2f522beb995386e7b36dcc90ce7ea09730f75ecb62bc4328e64,481cc1fd78d5402b771d267a4bfff096bbc9ef540364f8300a6ec3f84c8da363
+apnhh,B-M03,B,new,1,PLs,opus-low,claude-opus-5-5,2.0,True,6752eeac327fe2f522beb995386e7b36dcc90ce7ea09730f75ecb62bc4328e64,64c4b2d82e1c44fc05b5053a0011ef00588add04cc517ab6e3dd952fdb2c9853
+krbgc,B-M03,B,old,1,PLs,opus-low,claude-opus-5-5,2.0,True,90288cdaf36bff8ef294449daac82bc1e70f9585f0e241eef682813cf87720c5,0a4f83f6d34cbaf12f20cbddb66c09ee01dc77323621d39be41ed5475ac7371e
+u56ky,B-M03,B,old,3,PLs,opus-low,claude-opus-5-5,2.0,True,90288cdaf36bff8ef294449daac82bc1e70f9585f0e241eef682813cf87720c5,b139c4c5bd22e18355b33a5d35771999d669dba97b6587dca0726436186fa900

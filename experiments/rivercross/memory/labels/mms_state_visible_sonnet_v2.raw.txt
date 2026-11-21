@@ -1,0 +1,46 @@
+```csv
+custom_id,level,reason
+chain-3-boat-1#s2,0,Current state fully visible, no hidden information to track
+chain-3-boat-2#s1,0,Current state fully visible, no hidden information to track
+chain-3-boat-3#s0,0,Current state fully visible, no hidden information to track
+chain-3-boat-4#s0,0,Current state fully visible, no hidden information to track
+chain-4-boat-2#s1,0,Current state fully visible, no hidden information to track
+chain-4-boat-3#s1,0,Current state fully visible, no hidden information to track
+chain-4-boat-4#s0,0,Current state fully visible, no hidden information to track
+chain-5-boat-2#s2,0,Current state fully visible, no hidden information to track
+chain-5-boat-3#s1,0,Current state fully visible, no hidden information to track
+chain-5-boat-4#s1,0,Current state fully visible, no hidden information to track
+chain-6-boat-3#s1,0,Current state fully visible, no hidden information to track
+chain-6-boat-4#s1,0,Current state fully visible, no hidden information to track
+star-3-boat-1#s2,0,Current state fully visible, no hidden information to track
+star-3-boat-2#s1,0,Current state fully visible, no hidden information to track
+star-3-boat-3#s0,0,Current state fully visible, no hidden information to track
+star-3-boat-4#s0,0,Current state fully visible, no hidden information to track
+star-4-boat-2#s2,0,Current state fully visible, no hidden information to track
+star-4-boat-3#s1,0,Current state fully visible, no hidden information to track
+star-4-boat-4#s0,0,Current state fully visible, no hidden information to track
+star-5-boat-2#s2,0,Current state fully visible, no hidden information to track
+star-5-boat-3#s1,0,Current state fully visible, no hidden information to track
+star-5-boat-4#s1,0,Current state fully visible, no hidden information to track
+star-6-boat-2#s2,0,Current state fully visible, no hidden information to track
+star-6-boat-3#s2,0,Current state fully visible, no hidden information to track
+star-6-boat-4#s1,0,Current state fully visible, no hidden information to track
+cycle-3-boat-2#s1,0,Current state fully visible, no hidden information to track
+cycle-3-boat-3#s0,0,Current state fully visible, no hidden information to track
+cycle-3-boat-4#s0,0,Current state fully visible, no hidden information to track
+cycle-4-boat-2#s1,0,Current state fully visible, no hidden information to track
+cycle-4-boat-3#s1,0,Current state fully visible, no hidden information to track
+cycle-4-boat-4#s0,0,Current state fully visible, no hidden information to track
+cycle-5-boat-3#s1,0,Current state fully visible, no hidden information to track
+cycle-5-boat-4#s1,0,Current state fully visible, no hidden information to track
+cycle-6-boat-3#s1,0,Current state fully visible, no hidden information to track
+cycle-6-boat-4#s1,0,Current state fully visible, no hidden information to track
+complete-3-boat-2#s1,0,Current state fully visible, no hidden information to track
+complete-3-boat-3#s0,0,Current state fully visible, no hidden information to track
+complete-3-boat-4#s0,0,Current state fully visible, no hidden information to track
+complete-4-boat-3#s1,0,Current state fully visible, no hidden information to track
+complete-4-boat-4#s0,0,Current state fully visible, no hidden information to track
+complete-5-boat-4#s1,0,Current state fully visible, no hidden information to track
+missionaries-cannibals-3#s2,0,Current state fully visible, no hidden information to track
+missionaries-cannibals-4#s2,0,Current state fully visible, no hidden information to track
+```

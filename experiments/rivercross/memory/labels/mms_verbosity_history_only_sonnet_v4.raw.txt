@@ -1,0 +1,21 @@
+```csv
+custom_id,level,reason
+memc-L3-high-01__history_only,3,Same four-item group crosses right-left-right; one reversal cycle to disentangle
+memc-L3-high-02__history_only,3,Same four-item group crosses right-left-right; one reversal cycle to disentangle
+memc-L3-medium-01__history_only,2,Two one-way updates (item1 then items2-4); no reversals to track
+memc-L3-medium-02__history_only,2,Two one-way updates (item1 then items2-4); no reversals to track
+memc-L4-high-01__history_only,4,Four-item group flips right-left-right-left; three overwritten reversal events
+memc-L4-high-02__history_only,4,Four-item group flips right-left-right-left; three overwritten reversal events
+memc-L4-medium-01__history_only,1,Only one item-group update (items2-4); remaining moves are farmer-only shuttles
+memc-L4-medium-02__history_only,1,Only one item-group update (items2-4); remaining moves are farmer-only shuttles
+memc-L5-high-01__history_only,5,Five alternating group crossings create four chained reversal/interference events
+memc-L5-high-02__history_only,5,Five alternating group crossings create four chained reversal/interference events
+memc-L5-medium-01__history_only,2,Two one-way item updates padded with farmer-only shuttles; no reversal
+memc-L5-medium-02__history_only,2,Two one-way item updates padded with farmer-only shuttles; no reversal
+memv-L3-vlow-01__history_only,1,Single item2 move to right; later moves are farmer-only, no update
+memv-L3-vlow-02__history_only,1,Single item2 move to right; later moves are farmer-only, no update
+memv-L4-vlow-01__history_only,1,Single item2 move to right; extra farmer-only shuttles add no update
+memv-L4-vlow-02__history_only,1,Single item2 move to right; extra farmer-only shuttles add no update
+memv-L5-vlow-01__history_only,1,Single item2 move to right; many farmer-only shuttles add no update
+memv-L5-vlow-02__history_only,1,Single item2 move to right; many farmer-only shuttles add no update
+```

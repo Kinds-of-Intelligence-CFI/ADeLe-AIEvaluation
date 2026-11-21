@@ -1,0 +1,14 @@
+benchmark,instance_id,keep
+programbench,anordal__shellharden.6a6ffd4,True
+programbench,bensadeh__tailspin.6278437,True
+programbench,burntsushi__ripgrep.3b7fd44,True
+programbench,direnv__direnv.02040c7,True
+programbench,filosottile__age.706dfc1,True
+programbench,hairyhenderson__gomplate.05eb3aa,True
+programbench,junegunn__fzf.b56d614,True
+programbench,lfos__calcurse.49180d5,True
+programbench,ninja-build__ninja.cc60300,True
+programbench,peco__peco.4e58dad,True
+programbench,rust-lang__mdbook.37273ba,True
+programbench,sayanarijit__xplr.1751065,True
+programbench,zevv__duc.a58fa4e,True

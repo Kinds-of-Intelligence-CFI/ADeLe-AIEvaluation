@@ -1,0 +1,282 @@
+{
+  "n": {
+    "clean": 90,
+    "clean_no_community_issue": 86,
+    "all": 113
+  },
+  "unlabelled_clean": {
+    "PLp": [],
+    "PLe": [],
+    "PLs": []
+  },
+  "levels": {
+    "clean": {
+      "PLp": {
+        "2": 24,
+        "3": 66
+      },
+      "PLe": {
+        "3": 81,
+        "4": 9
+      },
+      "PLs": {
+        "1": 31,
+        "2": 59
+      }
+    },
+    "clean_no_community_issue": {
+      "PLp": {
+        "2": 24,
+        "3": 62
+      },
+      "PLe": {
+        "3": 77,
+        "4": 9
+      },
+      "PLs": {
+        "1": 28,
+        "2": 58
+      }
+    },
+    "all": {
+      "PLp": {
+        "2": 24,
+        "3": 66
+      },
+      "PLe": {
+        "3": 81,
+        "4": 9
+      },
+      "PLs": {
+        "1": 31,
+        "2": 59
+      }
+    }
+  },
+  "human_estimate": "none: DeepSWE publishes no difficulty or time estimate",
+  "spearman": {
+    "clean": {
+      "PLp_vs_solve_rate": {
+        "n": 90,
+        "n_off_mode": 24,
+        "rho": -0.216,
+        "p_two_sided": 0.0407,
+        "ci95": [
+          -0.407,
+          -0.007
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_pre_timeout": {
+        "n": 90,
+        "n_off_mode": 24,
+        "rho": -0.235,
+        "p_two_sided": 0.0258,
+        "ci95": [
+          -0.424,
+          -0.026
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLp_vs_solve_rate_no_astra": {
+        "n": 90,
+        "n_off_mode": 24,
+        "rho": -0.232,
+        "p_two_sided": 0.028,
+        "ci95": [
+          -0.421,
+          -0.023
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLe_vs_solve_rate": {
+        "n": 90,
+        "n_off_mode": 9,
+        "rho": 0.003,
+        "p_two_sided": 0.979,
+        "ci95": [
+          -0.204,
+          0.21
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_pre_timeout": {
+        "n": 90,
+        "n_off_mode": 9,
+        "rho": -0.005,
+        "p_two_sided": 0.963,
+        "ci95": [
+          -0.212,
+          0.202
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_no_astra": {
+        "n": 90,
+        "n_off_mode": 9,
+        "rho": 0.004,
+        "p_two_sided": 0.973,
+        "ci95": [
+          -0.204,
+          0.211
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate": {
+        "n": 90,
+        "n_off_mode": 31,
+        "rho": -0.002,
+        "p_two_sided": 0.983,
+        "ci95": [
+          -0.209,
+          0.205
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_pre_timeout": {
+        "n": 90,
+        "n_off_mode": 31,
+        "rho": -0.014,
+        "p_two_sided": 0.893,
+        "ci95": [
+          -0.221,
+          0.193
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_no_astra": {
+        "n": 90,
+        "n_off_mode": 31,
+        "rho": -0.009,
+        "p_two_sided": 0.933,
+        "ci95": [
+          -0.216,
+          0.198
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "clean_no_community_issue": {
+      "PLp_vs_solve_rate": {
+        "n": 86,
+        "n_off_mode": 24,
+        "rho": -0.187,
+        "p_two_sided": 0.0839,
+        "ci95": [
+          -0.386,
+          0.027
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_solve_rate_pre_timeout": {
+        "n": 86,
+        "n_off_mode": 24,
+        "rho": -0.207,
+        "p_two_sided": 0.0561,
+        "ci95": [
+          -0.403,
+          0.008
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_solve_rate_no_astra": {
+        "n": 86,
+        "n_off_mode": 24,
+        "rho": -0.202,
+        "p_two_sided": 0.0621,
+        "ci95": [
+          -0.399,
+          0.012
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate": {
+        "n": 86,
+        "n_off_mode": 9,
+        "rho": -0.021,
+        "p_two_sided": 0.845,
+        "ci95": [
+          -0.232,
+          0.191
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_pre_timeout": {
+        "n": 86,
+        "n_off_mode": 9,
+        "rho": -0.03,
+        "p_two_sided": 0.785,
+        "ci95": [
+          -0.24,
+          0.183
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_solve_rate_no_astra": {
+        "n": 86,
+        "n_off_mode": 9,
+        "rho": -0.021,
+        "p_two_sided": 0.85,
+        "ci95": [
+          -0.232,
+          0.192
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate": {
+        "n": 86,
+        "n_off_mode": 28,
+        "rho": -0.058,
+        "p_two_sided": 0.596,
+        "ci95": [
+          -0.267,
+          0.156
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_pre_timeout": {
+        "n": 86,
+        "n_off_mode": 28,
+        "rho": -0.071,
+        "p_two_sided": 0.513,
+        "ci95": [
+          -0.279,
+          0.143
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_solve_rate_no_astra": {
+        "n": 86,
+        "n_off_mode": 28,
+        "rho": -0.067,
+        "p_two_sided": 0.537,
+        "ci95": [
+          -0.276,
+          0.147
+        ],
+        "predicted": "negative",
+        "supported": false
+      }
+    },
+    "all": {
+      "note": "skipped: the excluded tasks have no labels"
+    }
+  }
+}

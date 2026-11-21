@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main, agentic-v2, "rubrics/**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        # The 1.1 GB battery CSVs are git-lfs; tests use the committed fixture
+        # instead, so skip the LFS download entirely.
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Rubric manifest is in sync
+        run: python -c "from adele.agentic import verify_manifest; p = verify_manifest(); assert not p, p"
+      - name: Tests
+        run: pytest -q
+
+  base-install:
+    # The bare package (no extras) must import and show --help cleanly:
+    # guards the lazy-import strategy and the friendly missing-extra errors.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install (no extras)
+        run: pip install -e .
+      - name: CLI smoke test
+        run: |
+          adele --help
+          adele rubrics list
+          if adele evaluate some/model mmlu-pro 2>out.txt; then exit 1; fi
+          grep -q "pip install \"adele\[eval\]\"" out.txt
+
+  contamination:
+    # Pull requests must not add agent traces, archives or canary strings. The span corpora live in data/ and are not
+    # available here, so CI checks file types and canaries; the pre-commit hook does the full check locally.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pandas numpy pyarrow
+      - name: No traces or archives
+        run: |
+          bad=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD \
+                | grep -E '\.(jsonl|tar\.gz|tgz|tar|zip)$|(^|/)(traces?|trajector(y|ies))/' || true)
+          if [ -n "$bad" ]; then echo "trace-like files added:"; echo "$bad"; exit 1; fi
+      - name: No canaries
+        run: |
+          files=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD)
+          [ -z "$files" ] || python experiments/benchmarks/contamination_check.py $files

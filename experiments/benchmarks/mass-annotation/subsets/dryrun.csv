@@ -1,0 +1,14 @@
+benchmark,instance_id
+cooperbench,dottxt_ai_outlines_task-1371-f1-f3@coop
+deepswe-v1.1,abs-module-cache-flags
+eqbench4,033f064e-f007-4bad-9209-681699256ad2
+frontierswe-v2,astronomy-toolkit
+gamearena,bargaining@player
+programbench,abishekvashok__cmatrix.5c082c6
+rivercross-search,chain-3+free1-boat-1--R-item1.item3.item4
+swe-bench-verified,astropy__astropy-12907
+tau2-airline,0
+tau2-banking_knowledge,task_001
+tau2-retail,0
+terminal-bench-4.0.0,biped-contact-dynamics
+terminal-bench-science-0.1,3x2pt-inference

@@ -1,0 +1,298 @@
+{
+  "n": {
+    "all": 70,
+    "solved_any": 65,
+    "solved_any_no_open_issue": 33
+  },
+  "unlabelled": {
+    "PLp": [
+      "protein-active-learning"
+    ],
+    "PLe": [
+      "protein-active-learning"
+    ],
+    "PLs": [
+      "protein-active-learning"
+    ]
+  },
+  "levels": {
+    "all": {
+      "PLp": {
+        "2": 8,
+        "3": 52,
+        "4": 9
+      },
+      "PLe": {
+        "2": 1,
+        "3": 24,
+        "4": 44
+      },
+      "PLs": {
+        "0": 29,
+        "1": 10,
+        "2": 25,
+        "3": 5
+      }
+    },
+    "solved_any": {
+      "PLp": {
+        "2": 6,
+        "3": 49,
+        "4": 9
+      },
+      "PLe": {
+        "2": 1,
+        "3": 22,
+        "4": 41
+      },
+      "PLs": {
+        "0": 27,
+        "1": 9,
+        "2": 23,
+        "3": 5
+      }
+    },
+    "solved_any_no_open_issue": {
+      "PLp": {
+        "2": 1,
+        "3": 26,
+        "4": 5
+      },
+      "PLe": {
+        "2": 1,
+        "3": 9,
+        "4": 22
+      },
+      "PLs": {
+        "0": 14,
+        "1": 4,
+        "2": 12,
+        "3": 2
+      }
+    }
+  },
+  "spearman": {
+    "all": {
+      "PLp_vs_solve_rate": {
+        "n": 69,
+        "n_off_mode": 17,
+        "rho": 0.242,
+        "p_two_sided": 0.0447,
+        "ci95": [
+          0.003,
+          0.456
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_expert_hours": {
+        "n": 69,
+        "n_off_mode": 17,
+        "rho": 0.408,
+        "p_two_sided": 0.000502,
+        "ci95": [
+          0.18,
+          0.594
+        ],
+        "predicted": "positive",
+        "supported": true
+      },
+      "PLe_vs_solve_rate": {
+        "n": 69,
+        "n_off_mode": 25,
+        "rho": 0.004,
+        "p_two_sided": 0.977,
+        "ci95": [
+          -0.233,
+          0.24
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_expert_hours": {
+        "n": 69,
+        "n_off_mode": 25,
+        "rho": 0.02,
+        "p_two_sided": 0.87,
+        "ci95": [
+          -0.218,
+          0.256
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate": {
+        "n": 69,
+        "n_off_mode": 40,
+        "rho": 0.091,
+        "p_two_sided": 0.458,
+        "ci95": [
+          -0.15,
+          0.321
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_expert_hours": {
+        "n": 69,
+        "n_off_mode": 40,
+        "rho": 0.253,
+        "p_two_sided": 0.0359,
+        "ci95": [
+          0.014,
+          0.465
+        ],
+        "predicted": "positive",
+        "supported": true
+      }
+    },
+    "solved_any": {
+      "PLp_vs_solve_rate": {
+        "n": 64,
+        "n_off_mode": 15,
+        "rho": 0.163,
+        "p_two_sided": 0.198,
+        "ci95": [
+          -0.088,
+          0.394
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_expert_hours": {
+        "n": 64,
+        "n_off_mode": 15,
+        "rho": 0.41,
+        "p_two_sided": 0.000774,
+        "ci95": [
+          0.172,
+          0.602
+        ],
+        "predicted": "positive",
+        "supported": true
+      },
+      "PLe_vs_solve_rate": {
+        "n": 64,
+        "n_off_mode": 23,
+        "rho": -0.006,
+        "p_two_sided": 0.965,
+        "ci95": [
+          -0.251,
+          0.241
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_expert_hours": {
+        "n": 64,
+        "n_off_mode": 23,
+        "rho": -0.033,
+        "p_two_sided": 0.795,
+        "ci95": [
+          -0.277,
+          0.215
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate": {
+        "n": 64,
+        "n_off_mode": 37,
+        "rho": 0.095,
+        "p_two_sided": 0.458,
+        "ci95": [
+          -0.155,
+          0.333
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_expert_hours": {
+        "n": 64,
+        "n_off_mode": 37,
+        "rho": 0.235,
+        "p_two_sided": 0.0615,
+        "ci95": [
+          -0.015,
+          0.457
+        ],
+        "predicted": "positive",
+        "supported": false
+      }
+    },
+    "solved_any_no_open_issue": {
+      "PLp_vs_solve_rate": {
+        "n": 32,
+        "n_off_mode": 6,
+        "rho": 0.362,
+        "p_two_sided": 0.0416,
+        "ci95": [
+          0.004,
+          0.638
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLp_vs_expert_hours": {
+        "n": 32,
+        "n_off_mode": 6,
+        "rho": 0.477,
+        "p_two_sided": 0.00582,
+        "ci95": [
+          0.134,
+          0.718
+        ],
+        "predicted": "positive",
+        "supported": true
+      },
+      "PLe_vs_solve_rate": {
+        "n": 32,
+        "n_off_mode": 10,
+        "rho": 0.007,
+        "p_two_sided": 0.97,
+        "ci95": [
+          -0.343,
+          0.355
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLe_vs_expert_hours": {
+        "n": 32,
+        "n_off_mode": 10,
+        "rho": -0.248,
+        "p_two_sided": 0.17,
+        "ci95": [
+          -0.553,
+          0.115
+        ],
+        "predicted": "positive",
+        "supported": false
+      },
+      "PLs_vs_solve_rate": {
+        "n": 32,
+        "n_off_mode": 18,
+        "rho": 0.272,
+        "p_two_sided": 0.132,
+        "ci95": [
+          -0.092,
+          0.571
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs_vs_expert_hours": {
+        "n": 32,
+        "n_off_mode": 18,
+        "rho": 0.356,
+        "p_two_sided": 0.0454,
+        "ci95": [
+          -0.003,
+          0.634
+        ],
+        "predicted": "positive",
+        "supported": true
+      }
+    }
+  }
+}

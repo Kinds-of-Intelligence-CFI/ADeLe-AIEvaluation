@@ -1,0 +1,161 @@
+{
+  "rc-solve-sonnet": {
+    "model": "claude-sonnet-5-5",
+    "attempts": 270,
+    "attempts_by_model": 270,
+    "states": 54,
+    "failure_share": 0.085,
+    "non_optimal_share": 0.27,
+    "outcomes": {
+      "success": 247,
+      "illegal move": 17,
+      "legal, goal not reached": 6
+    },
+    "failure_model": {
+      "bits": {
+        "coef": -0.009,
+        "p": 0.665
+      },
+      "ctg": {
+        "coef": 0.057,
+        "p": 0.00756
+      },
+      "r2": 0.135,
+      "n": 54
+    },
+    "failure_by_cell": {
+      "2-3": {
+        "high": 0.03,
+        "low": 0.0,
+        "mid": 0.03
+      },
+      "4-6": {
+        "high": 0.0,
+        "low": 0.17,
+        "mid": 0.03
+      },
+      "7+": {
+        "high": 0.23,
+        "low": 0.13,
+        "mid": 0.13
+      }
+    },
+    "non_optimal_model": {
+      "bits": {
+        "coef": 0.087,
+        "p": 0.0155
+      },
+      "ctg": {
+        "coef": -0.05,
+        "p": 0.214
+      },
+      "r2": 0.106,
+      "n": 54
+    },
+    "non_optimal_by_cell": {
+      "2-3": {
+        "high": 0.47,
+        "low": 0.2,
+        "mid": 0.27
+      },
+      "4-6": {
+        "high": 0.37,
+        "low": 0.17,
+        "mid": 0.3
+      },
+      "7+": {
+        "high": 0.27,
+        "low": 0.13,
+        "mid": 0.27
+      }
+    },
+    "P1_PLp_vs_non_optimal": 0.103,
+    "PLp_vs_failure": 0.272,
+    "checks": {
+      "F1_bits": false,
+      "F2_ctg": true,
+      "O1_bits": true,
+      "O2_ctg": false,
+      "P1_ge_0.3": false
+    }
+  },
+  "rc-solve-opus": {
+    "model": "claude-opus-5-5",
+    "attempts": 270,
+    "attempts_by_model": 270,
+    "states": 54,
+    "failure_share": 0.015,
+    "non_optimal_share": 0.093,
+    "outcomes": {
+      "success": 266,
+      "illegal move": 4
+    },
+    "failure_model": {
+      "bits": {
+        "coef": 0.006,
+        "p": 0.563
+      },
+      "ctg": {
+        "coef": 0.014,
+        "p": 0.119
+      },
+      "r2": 0.098,
+      "n": 54
+    },
+    "failure_by_cell": {
+      "2-3": {
+        "high": 0.0,
+        "low": 0.0,
+        "mid": 0.0
+      },
+      "4-6": {
+        "high": 0.0,
+        "low": 0.03,
+        "mid": 0.0
+      },
+      "7+": {
+        "high": 0.03,
+        "low": 0.0,
+        "mid": 0.07
+      }
+    },
+    "non_optimal_model": {
+      "bits": {
+        "coef": 0.071,
+        "p": 0.00427
+      },
+      "ctg": {
+        "coef": -0.048,
+        "p": 0.0444
+      },
+      "r2": 0.151,
+      "n": 54
+    },
+    "non_optimal_by_cell": {
+      "2-3": {
+        "high": 0.37,
+        "low": 0.0,
+        "mid": 0.07
+      },
+      "4-6": {
+        "high": 0.17,
+        "low": 0.03,
+        "mid": 0.1
+      },
+      "7+": {
+        "high": 0.03,
+        "low": 0.0,
+        "mid": 0.07
+      }
+    },
+    "P1_PLp_vs_non_optimal": -0.017,
+    "PLp_vs_failure": -0.01,
+    "checks": {
+      "F1_bits": "uninformative (ceiling)",
+      "F2_ctg": "uninformative (ceiling)",
+      "O1_bits": true,
+      "O2_ctg": false,
+      "P1_ge_0.3": false
+    }
+  }
+}

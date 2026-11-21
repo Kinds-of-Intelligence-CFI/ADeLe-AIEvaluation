@@ -1,0 +1,1081 @@
+cell_id,benchmark,instance_id,rubric_ref,generation,code,repeat,prompt_sha256
+v1AS-3699014ed3a4e7d0,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/AS,v1,AS,1,dbd115731747b3c1df58dd9ce13f735c5cb02fb1944ea703f48fcff56748ce3c
+v1AT-43af536f8f326d91,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/AT,v1,AT,1,28ceebc227dc8ffc79e49d68d05de91001558bea90b8bfef9b8df5798b25fc92
+v1CEc-774479ae0def5a1a,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/CEc,v1,CEc,1,35ed67b6e2f26b1dd3cf94987a8d198737b3d3a875af66c6598f28ca7720fc4d
+v1CEe-1c6ad06eddbdc417,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/CEe,v1,CEe,1,f490502f5b00346ece1cc11de094902b7db3b19c3029d35f16f7a4e37b817bfa
+v1CL-4299680cfc9d369d,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/CL,v1,CL,1,5d68b238de75e2f47322f213453ddc24a755fe8890b82fbcc83b13994bb636d1
+v1KNa-9e3b55a3bc68fe5e,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/KNa,v1,KNa,1,e790101e9972586774b7cef965ad3108deb4d0318e29f56f4ce9960e60c4c550
+v1KNc-cc13ca60673af9dd,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/KNc,v1,KNc,1,7675c76f529550d167123128cb3f60864cb9e2b0d6728a98f6aff40bec2eff85
+v1KNf-8ef4df785373bb51,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/KNf,v1,KNf,1,5fd076b58c19c1a9d9537de2eb49f38d559e92ce1d68b9b39fc5867b3f720f2b
+v1KNn-959fce56edafca19,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/KNn,v1,KNn,1,a913f09d856f757c9b6710595316e56113920d0b48d30a7dd2239f5b7242da68
+v1KNs-a6a9cd95748c27b0,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/KNs,v1,KNs,1,873febed505c101c5c0c9b1c1046f2824ef1df229e25056a8d1e73f83d057298
+v1MCr-fa0d9d2d57b1dd61,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/MCr,v1,MCr,1,f62dc2ce72d0921bab76c6b422f9faf1496effe5c79eeff2fa2af58a65d9ae72
+v1MCt-0f572fbe3fa6db3e,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/MCt,v1,MCt,1,d7d9968706d90d25676f7fdd1942cbd1d84bda28920aefdbeefb52383caa07a9
+v1MCu-970944e819ba8844,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/MCu,v1,MCu,1,a29738864fbe6f01f33b2eaa7cb0357c404493994f0ddae00391c881cc602bd2
+v1MSm-230733587ce2942a,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/MSm,v1,MSm,1,b50f8acf1eb7d2f57e82e1c25c6d83c0a2776a22fb1a76dbb1be00264679b195
+v1QLl-d8c4fbffb98313d7,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/QLl,v1,QLl,1,c1c085d649837cd1ccd45b64b75864ad7eac62ae9b664243c2990541a15f1cad
+v1QLq-1c97f9bf41ecf567,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/QLq,v1,QLq,1,6f0769aabffc05b8fb0e321876d2a8ed2bb915307ee04d65941b665be48c295f
+v1SNs-faaf7c13813ef4fb,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/SNs,v1,SNs,1,2db11e762f39c2c7543ad5f682bc0b4b9b8554e49198aac9263467037269d30f
+v1VO-f9288192232bc8cf,adele-battery-v1,ChemLLMBench-name_prediction-434,v1/VO,v1,VO,1,b6d3f2c1bc183c814f500ac894aefa810c9c782b8835a5814049c38385072321
+v1AS-7476147ba5940c12,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/AS,v1,AS,1,cd5b216182f0bb21bd07e0dfddeeffda596ea140db2d3699343ffaed5e00e7bc
+v1AT-dcf246be63f0d80c,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/AT,v1,AT,1,dcefafc52231881537bc5cfe2cef75c30189fe5882ed0de3b84c4b1b42dc25b2
+v1CEc-90bd347f4beb173f,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/CEc,v1,CEc,1,b8a42058d9ed84075a56674ea0aff233009c2ea79c6e2e0a3b8cd755c8760e46
+v1CEe-aebe26d95ac6f6ec,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/CEe,v1,CEe,1,d26fbc6fb8508ac61d212b1e908a3ee4388d0258f53ecf2e3d97a73945eaf928
+v1CL-a4906e40b065c675,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/CL,v1,CL,1,815da8e03fca2465b7c45f359387849249929de282814fc97c768aaca9f20f84
+v1KNa-898cf0edc1fe3d28,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/KNa,v1,KNa,1,0343070c372c4657646c9180dec18eb86ec3e437fab63edc80a24df0195a5aa1
+v1KNc-652bfa653334a750,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/KNc,v1,KNc,1,cc36e82f7b4a2bf25f0471f819e23995062da01feb7c439bd6a0b73bc597288a
+v1KNf-1093207f32887959,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/KNf,v1,KNf,1,8a11a94cc89d21fc59af3439513c2ea9c99fcb4844df6aecf167b6d56b753b0c
+v1KNn-da6601b2a4cf4821,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/KNn,v1,KNn,1,b47fde633d405d7fb086f2a2c3168a8ce345c069be073f80a576acdd15b344c8
+v1KNs-a3a5bd0d9a341328,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/KNs,v1,KNs,1,baeab0dabc8fe6df5844dd513a8cc5e48abbbac9831ebf4f1c2ab518b05f4627
+v1MCr-4d53fc2446623f79,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/MCr,v1,MCr,1,8fe88c93cb0778e48c537246852121d5617c7836a9ff545b607188da57f829b7
+v1MCt-84452cd73ef0d2e4,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/MCt,v1,MCt,1,c3cb770c1c443a8c259c4f57a5028f108a3841bf93a53d4bf3a22a1583fec707
+v1MCu-4bd849568e24f6ae,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/MCu,v1,MCu,1,82add01246929a69d45cbb43e4b3936388a063cdab47dd502f2d10fb1d46a4db
+v1MSm-f304109435835725,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/MSm,v1,MSm,1,05f43d8b6541a035dce746e3864681aed636a9097c9b0fb71949c4685fc376b8
+v1QLl-eed778bf84634e9c,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/QLl,v1,QLl,1,410c021accc8418f3db17796af629cc2d3b948b89e1745e175dfc4cb9a9f1fcb
+v1QLq-e3c8d0cbec866b60,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/QLq,v1,QLq,1,16d45a0599b3690f61c1bb0ab65f1c66fba1f4aba4e7501ca2eacc7f4b45db45
+v1SNs-078ae12d02b118a7,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/SNs,v1,SNs,1,c1b14fed0eb059af494646c40a59b8e84697b1f189db2207c8ffcd3177bf8d3b
+v1VO-b40fa287127e590f,adele-battery-v1,ChemLLMBench-retrosynthesis-406,v1/VO,v1,VO,1,fb0a05098edca26eecb533b8a281227249d9f823a609f946f68a90a29458dd0b
+v1AS-a9e4275f99e1c9da,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/AS,v1,AS,1,4896f9aa92fb122060e90ce49fb5d880cf97c149311434310fd379c4d8c81949
+v1AT-e1be8e91dc28a836,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/AT,v1,AT,1,55f51d48e5ae963fd4e35e651b9c03dfe1bdc3986283563c369becc848427b27
+v1CEc-a0f0f246e2c2ef14,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/CEc,v1,CEc,1,5eec76ccdc274332d4d0d8d3d21ee78d774318587e742d37c1ea94099fdad41c
+v1CEe-dea264f05ecb7553,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/CEe,v1,CEe,1,280b4aba1e9c0a7a079a7f0b11b5fe62e9a61b53b0d3460569bcf4d129208db6
+v1CL-9bb3c9164b789229,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/CL,v1,CL,1,7d0b95f1c6b0f9374c0bd0bb4519162abdf02257f208fbd2c634858ef8b97e1a
+v1KNa-87b734389d82ab18,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/KNa,v1,KNa,1,4ab9e12866ec03f73215f3146c6eaf2751ba40629bd6da4156ec9f3bf62ebb54
+v1KNc-316c7be754d38151,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/KNc,v1,KNc,1,f6f78d85ff9fb191876761a98fe6327cd0e11bbc67d6ae83ea0d169d68b3da25
+v1KNf-243a13a5ca270275,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/KNf,v1,KNf,1,22c088f6dcdda5b5b7cc79b20dc84b078d4d868c9b5263655d8573c60b89710c
+v1KNn-94d99cd71c7f3351,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/KNn,v1,KNn,1,5ae85074fff692f5157acd8cda738a43c9f433d6b968f7b0e45979f91ffbe58f
+v1KNs-eda412584e1cb06a,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/KNs,v1,KNs,1,c35610220afb3488997da77ea8b430e57bff1ace904a76b828efe381ed7b931b
+v1MCr-2f377418f297f567,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/MCr,v1,MCr,1,45ea67768b23874204b094382aa87558cdd5a3a9c2a5468277d333e55dd4105d
+v1MCt-901f9489c19027b7,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/MCt,v1,MCt,1,6f641b5df2ff8cd76e3ea4a1bfc7d0ab48791c955665179c2191e25775026a22
+v1MCu-99963bdf71c73ff3,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/MCu,v1,MCu,1,cecb6deb1554aea0a01304ce0ecc74b354bcfaea60ae1181598ca5092828a22f
+v1MSm-e86adbc9cd9de06e,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/MSm,v1,MSm,1,8c65c85fdf9199e4e8f763f293f8f2b3e89f28cf20ef11e272c04b5a8dd1727a
+v1QLl-26191461caa7ef6d,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/QLl,v1,QLl,1,56b3adf1b72c33438ca8c1827f8b8d37cbe392b7c7404ce241c79698f33a5b07
+v1QLq-d208c9ac9172ad2b,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/QLq,v1,QLq,1,b2b6a48c065c6f85afa9785cc0a7c8df99bace7ff2e872ddc1636aa30da3134c
+v1SNs-66df99fe7a62b995,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/SNs,v1,SNs,1,4418db7844f651aded67e5d2cadffe1369a400fd350307171caafb3bf10b04c3
+v1VO-c305ed612d116293,adele-battery-v1,ChemLLMBench-retrosynthesis-588,v1/VO,v1,VO,1,d203bae76d49f2303106281b44ff8e0cbabdf1a2d15d02cd10120f8eb818b796
+v1AS-1afaf77cc9ac47aa,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/AS,v1,AS,1,003ec964e68f5c7c59bf6c56e306638cfd6895d48257f48c2a83e607ec0fb64b
+v1AT-e1cdd033c19d339b,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/AT,v1,AT,1,7ea32a1a4d17c043dd35e5c6a1f417d56f678ec728a33aa0f8b54c3b2568133a
+v1CEc-28404ccff60472b8,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/CEc,v1,CEc,1,d0ed88cbfa48ab7bc9333c03d083ac93aa2a6883b7ce6eed0a3f131c449a686c
+v1CEe-b546b5f7d32226b1,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/CEe,v1,CEe,1,98bb433c877729f981005f4ee6b6df249edc72031785d49966d12fa91cd3304b
+v1CL-c8c4e6637cdbbe20,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/CL,v1,CL,1,592a77f5e4fed5ef858ce3820c07249e73ddb3840981871de9825967eda230cf
+v1KNa-ebfecad166b51f81,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/KNa,v1,KNa,1,d2db23faf46c60ca67063c908800e87834cf5a3547e58da199cc6c95c2af0fab
+v1KNc-1b2dab1a9d3d8b59,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/KNc,v1,KNc,1,3a3a0c31367f55926574e80665436687e9917ea7f34046a3e33dc90af707d1bd
+v1KNf-60468c03b8ee5714,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/KNf,v1,KNf,1,30a20315ca4ecfafdc59513964551e201c3e5792c758707d01c9ffd85eec0725
+v1KNn-0fe806923a95cc8d,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/KNn,v1,KNn,1,1e5dc237b0739a69b456232946421e95ab3808309ac0aada44784bb04b9075f8
+v1KNs-6f7bc9a10903ba9e,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/KNs,v1,KNs,1,b176f8384eaa1921e26e63bcff0b2106292e95ed74accef558a78caa5f3d687b
+v1MCr-7d164c38a2fe2492,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/MCr,v1,MCr,1,b56685224a0a04a297977ed649866c2ef46004f52f83a242c4040a80a6a63a31
+v1MCt-36a3a363f51796b7,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/MCt,v1,MCt,1,8230f129df8bf4222b7bcb74349795b26a680720409f96f8642428d7b3d95ac5
+v1MCu-ddcf86a750735b19,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/MCu,v1,MCu,1,f22ee940bfbfd30e2bb7dcf34544efa601baf1df8b980a337ad8271b27f3f3a3
+v1MSm-acfeefadc13ad222,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/MSm,v1,MSm,1,7e4b349ab3654e151f82b1fcca200eee4cfa8edf30622ba2d7bb75ce4707ef96
+v1QLl-ba4b0f6c74ea5076,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/QLl,v1,QLl,1,53d897cc4c1b64e2adc63b996bdc122eaee9001a922dc10e369d0855f9fd0976
+v1QLq-0d7fc2b539b85586,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/QLq,v1,QLq,1,55758f1cdf45d9cb1e0d3eccecf8f85fd53431e5ffb0d0c593acbc834cb149bf
+v1SNs-6529f837219fdb70,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/SNs,v1,SNs,1,160cda09b00604c946ed080030f56bf1dcc9db338e4b1c89c48d5972681b448c
+v1VO-6660381a20915119,adele-battery-v1,Civil Service Examination-LogiQA-en-112,v1/VO,v1,VO,1,d74933fc41efc9e676f2005ad50c2f97fbd7884edce5bbde4bdccc4ea268bf95
+v1AS-c3d3bb13df71de0f,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/AS,v1,AS,1,d13c740bb075201707f5e9b23552fd5eb4299cec3e585d58b6c178e239676c25
+v1AT-2a783617ed3858da,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/AT,v1,AT,1,83eb73a2e88b5da5192ebd7641f59ca0629d12a2a35b9519c8ed7af4650751bc
+v1CEc-44e4e21eeb611ce5,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/CEc,v1,CEc,1,912bb7587e7469f8512aa292c6540589de5008bf1b8f4a1af6d27dc38acc2be6
+v1CEe-3a69dc62578afb9b,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/CEe,v1,CEe,1,7e485397a2b0652ab4c9caf97f78a45b6e9c8de3d23bbe89813aef2613330932
+v1CL-9cd725f898763310,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/CL,v1,CL,1,d649f9373713c65f81a14586a78b396d43e6c5fdd8154e82b5752464063ea002
+v1KNa-088c3b64633a7310,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/KNa,v1,KNa,1,8dff4d1cabaf8a495885613c102781f0e47b4a6a030213da9d29c761b181aa52
+v1KNc-d2f2dfbcd0dda117,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/KNc,v1,KNc,1,3ce011da640d962a089524d9deb68be3e6d7ca2ef2431e146049da5cbf5f3df3
+v1KNf-b4315326cd1d996d,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/KNf,v1,KNf,1,2fd065560e5cc0a49faedb18d9b84319931ffe02b905897b0a8e36b8b270ed10
+v1KNn-4b543bda87d7adb2,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/KNn,v1,KNn,1,2b22e41471e922be27d2d8a28968461ad523afa24c6b3ddac30b88e91e37a71f
+v1KNs-cb19be7ee216a8b2,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/KNs,v1,KNs,1,3f8b8066f8dd965ada669cb72eba597538affafdb9c7af33fdf56b90567c02de
+v1MCr-8376674baa08ef84,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/MCr,v1,MCr,1,cded001104096775060bcbcd2d6d77e7da270368182cc07f569eee61b941e723
+v1MCt-e834f371c37e9c1c,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/MCt,v1,MCt,1,09eaa11ced80ce1818bd03eedca8fb0647d0924927e12df58688c0ef92356672
+v1MCu-3a71db63d3f2663d,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/MCu,v1,MCu,1,1ee76f8e44a570a73330f6782b94a44e108cef4544a6cecd8a28b413ee2cb2ae
+v1MSm-2107fea22496002c,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/MSm,v1,MSm,1,7784b9f3ffee705ec918bb6a17af920165e783f8d7528ce8cdc652b42ce9241c
+v1QLl-a0e58f7b8ae9a360,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/QLl,v1,QLl,1,d8bbecf95f9ed2667cd6c9feeadee371f4c2134be0b315d336cf10c0d14cf3c5
+v1QLq-f6ff21ca3d39757c,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/QLq,v1,QLq,1,d705c272270798b124d7308bde2550d94b304f0def0094cbe016abf3b27c719d
+v1SNs-76ff94c65de9b328,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/SNs,v1,SNs,1,334d7d98631269a05e318d725815a3e0dedd2a9d0e4cb34236f6eada7db373de
+v1VO-2327f0f0614a10d3,adele-battery-v1,Civil Service Examination-LogiQA-en-625,v1/VO,v1,VO,1,a3fcc064da5af1d3e0594a26f6729b3329e753185168d9332057e6ae7ad41340
+v1AS-bddf941e5e391e25,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/AS,v1,AS,1,c434981b09bc36690a0455ada28ffc6b3763fc136898471f346ffe780e114ae5
+v1AT-7e2e05c14bcf1612,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/AT,v1,AT,1,7d6c0684516d632c4acffff52307e1b697ce398f8628b30a7dd3400505027423
+v1CEc-cfa7bf68ea00c02e,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/CEc,v1,CEc,1,73d5260b17b0f486a7b5cc6b59a84892863f87ff1a8869616d8082251d127c59
+v1CEe-fcbacd083bd2c20c,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/CEe,v1,CEe,1,647c75b22027149dd143824c660213144a14541a87867a228713b8a10ab6f3f3
+v1CL-f6a5e0bef8da2ac2,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/CL,v1,CL,1,d85684971d04004defbdadae963bc9683a86805bdb76e17322cf7bedae1adc55
+v1KNa-8569baf84a7cd348,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/KNa,v1,KNa,1,af05544c8b41f84f7908481ccb8c4c626a4c7dd2629d2e0e34fcdee3dc0342e9
+v1KNc-e92009ea17cdc0af,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/KNc,v1,KNc,1,2220e52eb8954224666b723a28f01ed9e73d72f5c4411768e0d78209029bc72c
+v1KNf-4a78f1e1ecbdaba6,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/KNf,v1,KNf,1,d7330d9aee6af3ff7fa686c58f4309d09e2adc406dd60459b075fdb6e03cccfc
+v1KNn-a79d2ece10d4e022,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/KNn,v1,KNn,1,7a4075ff6a3c9c9b872621a8a8b27f6f8c169a7709502ba5dea03355b940964b
+v1KNs-156d07db6b592e9e,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/KNs,v1,KNs,1,c77081c963e81302ed399f6bf9be8ea8bd30e714e7b184234d17965cd8bb1951
+v1MCr-a87addc2046c2e12,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/MCr,v1,MCr,1,81d4699accf0272b36841e36f0152b38de5a984a5efc418efad3d443294c3c60
+v1MCt-9a91729f8ed10b1a,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/MCt,v1,MCt,1,e65b21dbccc91ff08b35c4248f4c07a719414fecce90ff526d002430e397e3d5
+v1MCu-79faa29ae2825740,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/MCu,v1,MCu,1,b42b7cbe227eb28ea751c92c33353db40cccec514eeff94251f9e58ae6bb2b53
+v1MSm-a9ff52b50d462446,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/MSm,v1,MSm,1,a5eb2ecc06b088f2de27dcbd6c40068123306fa0e9b179c613dc0e2b1145c73f
+v1QLl-1a34f61f7f78eafb,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/QLl,v1,QLl,1,f01db9ebddf7943ac933d035f1a35f4348e913f013eed42cde4b3d9171586e03
+v1QLq-91f1618100e1193f,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/QLq,v1,QLq,1,600fb190afc3f30e1651fe5c434c8f0e6ef9abcefdd97b99f81905d806755527
+v1SNs-e11ef09af5521ece,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/SNs,v1,SNs,1,1db498f0ba16c1a3bf33acad30aba45547098285e9297389d92447188a598fbf
+v1VO-eea92b40b93d3ac3,adele-battery-v1,Civil Service Examination-LogiQA-en-627,v1/VO,v1,VO,1,a194ad57ea42e1a2d75dd3bcdd097efb683b0f2e59eebd4fbcd2d472bacb1261
+v1AS-5889cd81a997859c,adele-battery-v1,Data Analysis-cta-21,v1/AS,v1,AS,1,76e30fe8fe25b59fa993c4404d588baa9d547cc0e6563191a91d0de1bc8058f6
+v1AT-3bae9c7d12861863,adele-battery-v1,Data Analysis-cta-21,v1/AT,v1,AT,1,73644d0db02718b2f1d9f6524540c36de0b97ed3eab204b130d3f1a9bf19ad47
+v1CEc-936c70445d2ecf5d,adele-battery-v1,Data Analysis-cta-21,v1/CEc,v1,CEc,1,00be35c77affaa6f22ae53938cafdb10df07ddb926473a00b1d396fc5bbe238d
+v1CEe-755f629cf7b4adc2,adele-battery-v1,Data Analysis-cta-21,v1/CEe,v1,CEe,1,2a172579cec401516d4151c1efba034ba498a7c4966ff785f1d0e545b97569bb
+v1CL-24454d7c9e96efb8,adele-battery-v1,Data Analysis-cta-21,v1/CL,v1,CL,1,5b445f70d49d530c48aa0948d7dfc220910240825d9f7b12830adb1eaf4ee4a7
+v1KNa-85f7d8c9f2166a74,adele-battery-v1,Data Analysis-cta-21,v1/KNa,v1,KNa,1,7141d3b71716c2a3d462aaac871b9b5b8ac87f370b20f5cdd7d0788c2212f3ee
+v1KNc-8975066e60c4a1b9,adele-battery-v1,Data Analysis-cta-21,v1/KNc,v1,KNc,1,af97ef60da924a90670ad2b08f906954e911d3a078691dec1725ee2e6eba7dd2
+v1KNf-91da2236726f0cac,adele-battery-v1,Data Analysis-cta-21,v1/KNf,v1,KNf,1,e3d0700c03dcc0130e3858336c294aab6733dab1de43f748e0f756908e6e2e9e
+v1KNn-f75dfd8220da9f69,adele-battery-v1,Data Analysis-cta-21,v1/KNn,v1,KNn,1,de942d4a0c61b0d18f926e165d8eab52a1315eec50c74fb0eb4ba48e19a3f8e4
+v1KNs-f65d66d4bbdd1373,adele-battery-v1,Data Analysis-cta-21,v1/KNs,v1,KNs,1,f9b2e5886a3b0d511c0f89c871b4d78f7a2b43d9579fee563b7046ccd94377b7
+v1MCr-29aaaad725aa6974,adele-battery-v1,Data Analysis-cta-21,v1/MCr,v1,MCr,1,9653c8cb3335be4c01d64eb308b8b287ef4c44588728b321b621e00b040cac47
+v1MCt-791d59d0386870ea,adele-battery-v1,Data Analysis-cta-21,v1/MCt,v1,MCt,1,de053d48a2b519a63e765086f8b732a3ab535b9a92a6c45f74ce0d1d21a2746a
+v1MCu-27f4a84fe6f0673c,adele-battery-v1,Data Analysis-cta-21,v1/MCu,v1,MCu,1,16f58c5f7c8e525ee7dbf6005f07292891ab83800122a07a8e536bfbaa7ac36b
+v1MSm-f89fccbbeef1c698,adele-battery-v1,Data Analysis-cta-21,v1/MSm,v1,MSm,1,36af42e38daf5a15c469b0c692de897550156153c236c2675e4da17d134eb8f7
+v1QLl-5782a9483b90ab35,adele-battery-v1,Data Analysis-cta-21,v1/QLl,v1,QLl,1,ed537180a5ae38ece8d4ff4018fad5b9d739232dc05baf3a8c0239bcd1fe2271
+v1QLq-689ae6f785244a8a,adele-battery-v1,Data Analysis-cta-21,v1/QLq,v1,QLq,1,a4a2a144c8c540edc8adb14ec6109700438d8fee0be9205255f2a47e2a062758
+v1SNs-0e1a42b5c7e8d8f3,adele-battery-v1,Data Analysis-cta-21,v1/SNs,v1,SNs,1,d072baec92bd164e1193e5b7bd5fed2de04fd1f8a0560c3c8ce06c712305eec5
+v1VO-adda67bbcc5623c2,adele-battery-v1,Data Analysis-cta-21,v1/VO,v1,VO,1,d4b341b998095c029ad4ff982e0fb495cffa80e81b8d596a1c36d8bcf7411cb8
+v1AS-77c649cab5eaad34,adele-battery-v1,Data Analysis-cta-25,v1/AS,v1,AS,1,aa62c4a5ffe85b34e109e9b30882b45d28020621b689a28025b907e9a2501ad0
+v1AT-d90333fb62e0d4da,adele-battery-v1,Data Analysis-cta-25,v1/AT,v1,AT,1,2808132ca68be0ffe9263772597cad4eccbaa4dc4378375c64ba5d1e5746b9da
+v1CEc-62489d9d7b2d59a5,adele-battery-v1,Data Analysis-cta-25,v1/CEc,v1,CEc,1,384a3a330e225dcdcf3e007a975c934498ebaa31d332a5e27a16931d4a0c1ba6
+v1CEe-70f76c77b1465b94,adele-battery-v1,Data Analysis-cta-25,v1/CEe,v1,CEe,1,9e8f03dbe49ff7d431caba3814282b25723647c66885b1a6bd935e7d18e65c94
+v1CL-5bc130896edcb9f0,adele-battery-v1,Data Analysis-cta-25,v1/CL,v1,CL,1,3dd120902755b9e1382cadffd6e2e461008d4f07a752ec71c391768503528cf0
+v1KNa-14819bd8e66b5b9e,adele-battery-v1,Data Analysis-cta-25,v1/KNa,v1,KNa,1,568a501440cd3afdcac8d4119d023e6a8a30f44522ed9b9f6375c248af19460d
+v1KNc-f85547dd1bc89662,adele-battery-v1,Data Analysis-cta-25,v1/KNc,v1,KNc,1,4a12eb41dbf76fc68a038db8a9e4d4e9e65405928f4ea4635d0beeae22cf9b3e
+v1KNf-1f1c424988c10183,adele-battery-v1,Data Analysis-cta-25,v1/KNf,v1,KNf,1,abf96c38f0caf565bc32ff6720b04a586246c68db73ee5bc0114bd80f22469bd
+v1KNn-3f99bc18456097e4,adele-battery-v1,Data Analysis-cta-25,v1/KNn,v1,KNn,1,89a9e47f4a49497d0fa108ba61e69d82552d795df32cc0bf3a48096f033fad79
+v1KNs-72fb2bbd020de535,adele-battery-v1,Data Analysis-cta-25,v1/KNs,v1,KNs,1,2e18d5c258a1636f44330edb9acc84a9dc05d34b925fb75752b3577efcdcfb7c
+v1MCr-38fa63bef85a5593,adele-battery-v1,Data Analysis-cta-25,v1/MCr,v1,MCr,1,ddb18fcefdd47c8067b26d7837561733febb41b724f6f87b138b6382a0078781
+v1MCt-6d12c9967ac333da,adele-battery-v1,Data Analysis-cta-25,v1/MCt,v1,MCt,1,f59a18ba82e5932a7fe1afdbefa86cd0b6b26fdb06e21ec09124ffeade9e9be0
+v1MCu-2255e0e247296487,adele-battery-v1,Data Analysis-cta-25,v1/MCu,v1,MCu,1,0a62372481b3775067411f9c3046e742b03f9c242e325994cce223dee6731ff4
+v1MSm-e2b810060ed43d00,adele-battery-v1,Data Analysis-cta-25,v1/MSm,v1,MSm,1,74081b8e466d7d287a5b06c6bba2bbef007ea48a88e7fff10233a47a41e1db17
+v1QLl-5fd767d489528ca9,adele-battery-v1,Data Analysis-cta-25,v1/QLl,v1,QLl,1,07e1bac980455f1bb02006ad5dca612da4a9888f10044887bb6d592bdbb86e4f
+v1QLq-77eb1eca933229ec,adele-battery-v1,Data Analysis-cta-25,v1/QLq,v1,QLq,1,eaea6104d75ccc32f96a7952893b0a19a0bad38a0a5967cb6de6d19bc4d153e2
+v1SNs-a390cdc01bd11812,adele-battery-v1,Data Analysis-cta-25,v1/SNs,v1,SNs,1,282f406c2cfd4d26f1a16c7e049068870b7312ffad5b3a0246e3ed7f2fb63d0f
+v1VO-24f0db2691970f49,adele-battery-v1,Data Analysis-cta-25,v1/VO,v1,VO,1,24da22fedc933acb771c14e7addeb3841d8416b04a64963d7c8fa67c94b5c168
+v1AS-4bbb9bdbb5dec2f9,adele-battery-v1,Data Analysis-cta-3,v1/AS,v1,AS,1,25237dbea078407d97e9e4d1f61e23f47aecc5b19ec5b95cc7800a6c7f394b87
+v1AT-0dd123999850d109,adele-battery-v1,Data Analysis-cta-3,v1/AT,v1,AT,1,f50e959b2b83efe8dc515b25d18fe1db5581d8f5b6e0de7dce0b5c3a97669784
+v1CEc-d6d3b5a4b7e3adfc,adele-battery-v1,Data Analysis-cta-3,v1/CEc,v1,CEc,1,6c4177f9c839db3cf768b52a0c60b90b269ce57460f3131faffe2883822df6e5
+v1CEe-5dfa29068e959edd,adele-battery-v1,Data Analysis-cta-3,v1/CEe,v1,CEe,1,e92666bdde75293942b51fd00a5dd759955fb14741be0b83fa89ab31feae03a2
+v1CL-6103c28239b9794c,adele-battery-v1,Data Analysis-cta-3,v1/CL,v1,CL,1,c490f17765b31c9b2c9b0b313611791640465a6b751534f58b741d6279d15dc1
+v1KNa-26d19c94803d9d2b,adele-battery-v1,Data Analysis-cta-3,v1/KNa,v1,KNa,1,cc89989b285041e3906efcc8c0367255aa63eac100d39aebe589d76d81aede3a
+v1KNc-ffa5e136eea195ec,adele-battery-v1,Data Analysis-cta-3,v1/KNc,v1,KNc,1,cb68cb47fb8d72a6671f55c6de792e502702580db1fc5120a493d2b49ae85e9c
+v1KNf-cd82a7611bcaeb39,adele-battery-v1,Data Analysis-cta-3,v1/KNf,v1,KNf,1,0cfa7bb46027576d47e22e8ccfecb73559b0a93de72cac01517c1f40934dab0d
+v1KNn-be9998bd4a127f0c,adele-battery-v1,Data Analysis-cta-3,v1/KNn,v1,KNn,1,2cfc6d73223fab4b604668df2010e0fc4edad0c73ff5e035799655109250b0dd
+v1KNs-e7bf5dc8fd9c73a0,adele-battery-v1,Data Analysis-cta-3,v1/KNs,v1,KNs,1,9cad33845748aff868d46aaf2b1a1f2ea6c1cc053b5029ff510944369aace6f1
+v1MCr-920e6970c74cde23,adele-battery-v1,Data Analysis-cta-3,v1/MCr,v1,MCr,1,a4fc2a00a137fb7429ae1d2f3d03d07edf742463d71c0eaa3fbe5b340f6c0c97
+v1MCt-47f103b263fea402,adele-battery-v1,Data Analysis-cta-3,v1/MCt,v1,MCt,1,e385d5b237d5a9de8840ce35632c943b2d539b4b5ceda3f3ff391aa6cef0d248
+v1MCu-d44b64078ae6a1a3,adele-battery-v1,Data Analysis-cta-3,v1/MCu,v1,MCu,1,b1bb165e532217d7091116963a9b50a421f4a7da73f14158288b3d45968005d4
+v1MSm-2e461dc5d07467d5,adele-battery-v1,Data Analysis-cta-3,v1/MSm,v1,MSm,1,2e8d26772071e28d6dc53b0d6cac6d27c8983f3e697984dc23d703049687c8e4
+v1QLl-6849772360e533a7,adele-battery-v1,Data Analysis-cta-3,v1/QLl,v1,QLl,1,7d30ad9f6a86a0f8b207c36b333edafd65e7cf0a410f54c6e9d0d283748d74ee
+v1QLq-97785a419bdf8d9e,adele-battery-v1,Data Analysis-cta-3,v1/QLq,v1,QLq,1,c2e145ed3d866f69b4e5035a4a111ee5b03862c630096bdb820bc38b8301592f
+v1SNs-98dfe5ba3ed84714,adele-battery-v1,Data Analysis-cta-3,v1/SNs,v1,SNs,1,ddf65c0bf3e4df029d48911ddb452315ebbd2de2f8ffa5dd6e9f3ee56ee31895
+v1VO-6036c901e677d3df,adele-battery-v1,Data Analysis-cta-3,v1/VO,v1,VO,1,a217ad8cec17c87694b12e582565ab7b32290fb907fc423e1fa92f0eaef2dcfd
+v1AS-6fe4b3fb5c7195c8,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/AS,v1,AS,1,f827cd827346811d519ba2f25cc561ffd4581a757d9a83995d5225c8cb653c2d
+v1AT-66c6f3306a23864b,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/AT,v1,AT,1,e0129b223f4b2020d8063bff838fe5c5508b93556d5f838e3c5a26ab514eb029
+v1CEc-ddef1b6aa719061d,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/CEc,v1,CEc,1,59bdfdb06da54595a5c043a2d3afb61a12315aa81eb882230daef743560a988d
+v1CEe-0f1ed8e55deef948,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/CEe,v1,CEe,1,f2948939d2ca56d7dc21832b082ea58f390305a31bc5eea29dec8b2a0811cf83
+v1CL-39e5c50999237d99,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/CL,v1,CL,1,d0ada53ce9dc8a5dd21bd44588c3b53e56546f9a1d6a30a8ca71397a181f7ae3
+v1KNa-75e883d1af2ac571,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/KNa,v1,KNa,1,f673e313719a59aca68bb429f396ced9ca5f3d9082b815566da08f947379e37c
+v1KNc-ff711760734e4ea0,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/KNc,v1,KNc,1,821e8d9eb98cb47835765d605dcbc8acb528d8563c8b05e7c750b83c54971c94
+v1KNf-2706a5601afca7cf,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/KNf,v1,KNf,1,e3243fffeb92a66a18e498dd2efa39f7fbd59a7947f2590914b9139cf2c6dec3
+v1KNn-0482a66dd258cd0c,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/KNn,v1,KNn,1,339d9da3409339dc8338ffd4ba53b812975e3fba900b6263ef6108c0f5e9a042
+v1KNs-3f484459d5696ed8,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/KNs,v1,KNs,1,44c709af35ab7ec6c841f4fdb4e6866f02b910e35533c2367f1b0bbb6caad0f4
+v1MCr-a01d1b0d015478b9,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/MCr,v1,MCr,1,381f7715af9657ae9ac2bdd10e65b2a47e8187c9d3436d65be44bbe5f25bd4e0
+v1MCt-810a758f1df5d55f,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/MCt,v1,MCt,1,7ea91912d4acc46c5e88108ee6682ec0fd7644c60545dd8e0f271278db9ff143
+v1MCu-5342374cfaa7de90,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/MCu,v1,MCu,1,c4f0262872256d1473fec03bcda202971ac81c048e8e327110d91ba653d345e8
+v1MSm-85b412bde6798be4,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/MSm,v1,MSm,1,15de20573b0bd5639320c51be2a0d9c73ba2b8d9543d459ecd5e6f8932d08993
+v1QLl-6ff8906d815a3e7e,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/QLl,v1,QLl,1,6b730cfd9577d8c2dd55cdbadf93b360831a30520f9907a520858a8f66dbbdaf
+v1QLq-5943eb8ab89a037d,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/QLq,v1,QLq,1,f93b544a0c42c870b0ff131aadf618cca6cf25dc02f5a4cff0a8bf5d3b615c64
+v1SNs-637194677ce9acb0,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/SNs,v1,SNs,1,88bddecf63a3819dc7172b66929ea3ac7cec8f05570978c2e7bf6b2c8eb94fbb
+v1VO-a295567bf2d1781e,adele-battery-v1,Date Arithmetic-Date Arithmetic-169,v1/VO,v1,VO,1,c39cd2055932edcdadd1802bd7396d8de43cd8d38a5b5b9015bc4c1736a027ba
+v1AS-ab6d2f1c2c3d4ba5,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/AS,v1,AS,1,b3f37c61ca2f0d4684108083aa8e3b217bf6077d29088d3c962cc799a4fa7f4a
+v1AT-fea32191309f425f,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/AT,v1,AT,1,140a0368e8a37a72ed4fdcb35e0fdd570ad00df43964fd47eb5239ba5bc03437
+v1CEc-057a895d7735bc86,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/CEc,v1,CEc,1,1668605b10e3d3fd6a3f139955fc2fd9b4bb6c10267ce78f220863978e09b8b1
+v1CEe-ab8ff8631d4ee3c2,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/CEe,v1,CEe,1,79c035ed6618ffa094c9ea47ff35aee997d6451dffb3bbb8be184cdeed782879
+v1CL-f85058490533aca3,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/CL,v1,CL,1,93839ca8dc82ed51c8439b9e679004caf18b4107e57f2ec1148f33dad842f163
+v1KNa-897e17570b47d336,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/KNa,v1,KNa,1,d3ab9e59ca96d74332a22778bcd0fee548ebe6d89209ee409dd0b3df6fdfca63
+v1KNc-ae76862021afef75,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/KNc,v1,KNc,1,693f59e727cbc39ac860b3edb403ead24cb10063dbae9846f600794f5dff32c9
+v1KNf-73a81404a45e95e0,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/KNf,v1,KNf,1,f1bbe80813d6f372fea724b5dbbf3977ce3d5cf9cde340ba9164b9e7d563bf36
+v1KNn-f7798ee5713d1dc3,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/KNn,v1,KNn,1,256f081924367edee17304c2b82ca3fc1df3db16032f3db51121d00c37bb3871
+v1KNs-a3468aa8214aba6a,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/KNs,v1,KNs,1,837a8a1b02606d1013ab1da59d65ca94fced9f964960c94fa255d28fbd0ab97d
+v1MCr-79da6781111e7148,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/MCr,v1,MCr,1,fef081e9485101237cab376924a6c8ca9c30d11de0612d1c70b9f3c600d06f9e
+v1MCt-1fe7f8baa1f8d733,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/MCt,v1,MCt,1,39329a2bfcd0f56ee604d59a2240d566654d690919a23f3f8a096796d13b7f96
+v1MCu-59dbff32cb8b8cc7,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/MCu,v1,MCu,1,7e96d66eec3db108df943c960d22c89c4b3d191ba0af3b0ad11dc5aba4d6d18f
+v1MSm-a51f07863d64af89,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/MSm,v1,MSm,1,9c9fffb53a8dcc7e768607f785f65e92daec5fdb8fe5222bc2937f8145cee0f3
+v1QLl-061dd4be92773df6,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/QLl,v1,QLl,1,35fbc172c5d623d700b9df0fe82584747d406933f13c114a8ed5bb0764464b55
+v1QLq-657e7a3d292d26a2,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/QLq,v1,QLq,1,39239b1b4ad2c2702621c495a70bf58e07ef186377eb1928970d57bedd3f380d
+v1SNs-fdb331cb796c80d4,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/SNs,v1,SNs,1,3b42adbf31b95f650dadd69f09066daac7b988c1de40d368ddb2c06ab4d23133
+v1VO-069b202a3956f094,adele-battery-v1,Date Arithmetic-Date Arithmetic-336,v1/VO,v1,VO,1,ee7f71c91feea6b1c67faff280abfec650aebc7857c8a9ba84980cf5d2810e6c
+v1AS-86ee17df32f08f45,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/AS,v1,AS,1,d07c247950cb9a39047402d848dd3b87a2ad9a1dba614af321e528e5e2ea6926
+v1AT-f3327d419a2be338,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/AT,v1,AT,1,c5113fb6542cef6a36d1e9cf2ddb7f63871182fd4ec513a1add06033a36de948
+v1CEc-f43babf417542c1c,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/CEc,v1,CEc,1,5c36cb76effe00f2dea699aa8046504d5c010c2b1a98952e9f4fd3251e872b32
+v1CEe-3d55bcddf7927128,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/CEe,v1,CEe,1,0e00eb6ae8186471e97cb30eed61a7a176c6ac11c109e18e8769a44b6eb4eecd
+v1CL-1a68b14ef1fe468a,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/CL,v1,CL,1,cf25f07450a4f57695ffc11b7c6f7473edbf2dee555fab32062120cbcebb733c
+v1KNa-4f3a19f1d950e368,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/KNa,v1,KNa,1,c34f666e5deb8a791220cf8d00efa0ae0aa60318001ed8129b40e1ded122e209
+v1KNc-fa9e44bdf6f584c2,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/KNc,v1,KNc,1,06a960e3254401c228517c934b64871779512ca209560348209803085b729eaf
+v1KNf-823f40dec4e8dd05,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/KNf,v1,KNf,1,f95b5950243925a7ffab5cf7b1e6708224769d77c0f65a2a5ae516c54853fcce
+v1KNn-22ccacf3cb3ffb47,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/KNn,v1,KNn,1,0af8630b9f0ca5bb8735b7ef341828b3ccbaa25bddcb9955ee1fd69cea7f26bf
+v1KNs-93954812cc37d410,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/KNs,v1,KNs,1,2e01c3120325bd6250c60d2e65342f720dc773d23f670f861c515264b82f7d07
+v1MCr-afc83289f5cb9d8c,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/MCr,v1,MCr,1,5763f88038f5c71b272ac6e39bdb95c044a6c7c22ab9c2f7ec404a3cd623d08e
+v1MCt-9a94a11c411b84b7,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/MCt,v1,MCt,1,81aa03355912199d38419e85c8325021e3d7d685b6e7b62948dc62e35c913543
+v1MCu-6ac9fbda445a6b59,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/MCu,v1,MCu,1,a4327055faf88b1163fa238f0207af8b4721d637c3c6729711f24d1364c5805d
+v1MSm-336b39293dba94d5,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/MSm,v1,MSm,1,14825b9c6d39cab4d541a5082234d9cc3c0942645f29ac9166f322aa97a715c8
+v1QLl-9459eae7299d6e43,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/QLl,v1,QLl,1,a543d3a723607c2f46b82d7fb0ea575aab0c072ee9f98945a66ade39806efeed
+v1QLq-975c05f9577b1ce4,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/QLq,v1,QLq,1,c4fedbe77537760bdd906fe4b55d2da6a9122617173679b5cc1b3497c46ca725
+v1SNs-f12c624e4da58187,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/SNs,v1,SNs,1,95d8e55045d54b0c578653ac9c5d608887c36f68f90759918cdbb2b6f5c7e81b
+v1VO-32a22fa1f6b65874,adele-battery-v1,Date Arithmetic-Date Arithmetic-417,v1/VO,v1,VO,1,3678cb7b7183a9355730d5b13143cff3815c99b541e3083b525fcbf8941dd897
+v1AS-0cabcbdcad4ecb18,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/AS,v1,AS,1,97aee7ab6056c016b818b16dea821d77ef39ccd757f8edd4ac49982dadde57e1
+v1AT-31261373ff492af7,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/AT,v1,AT,1,6e9f63939cde02dbdff99eaebee7e9e3012d15068952d9d3ec596fb9175fd5e9
+v1CEc-de79a9993da6ebe1,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/CEc,v1,CEc,1,5d155d78b797007fc927e8e02a0e64fe05ca7e1df0ce914c5603e054ecbcd565
+v1CEe-de03054c367627c9,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/CEe,v1,CEe,1,9cfd4a8b51e31d6aec37a8a32160e41e96454703663c0348241e9f385be6128d
+v1CL-41de4d48a0af64a6,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/CL,v1,CL,1,bbd973e20ce13e44404e5a5a03745ab14438371b13fe1695a738dc9ba4d2bd57
+v1KNa-1f79e7b5600739d7,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/KNa,v1,KNa,1,749eb846681e8e2302a9c2f211c1e952a8abb7c0726c8a479d3c035a7847e8b1
+v1KNc-dccb2a0317196bbc,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/KNc,v1,KNc,1,1e6d18c7bd91a445c623f9653da0cd426ffb15891aa479620ba355cff5ae7ebc
+v1KNf-017304b33a04e718,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/KNf,v1,KNf,1,d30e69c73a4984b8900ffd6e43fcdfd4d139a8400d6e6303948648bc24a781b0
+v1KNn-05e560a61aa35e35,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/KNn,v1,KNn,1,245d39ad06a77070d0c4c524aa18584a6a78015593477742422d464d80e1a9a1
+v1KNs-6112c9ff09421669,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/KNs,v1,KNs,1,d3b23e5d442e98da02917e0c67cea03f33626c70b4d1a5175e0ef073124ab0f1
+v1MCr-b06d7fdd41f6e99a,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/MCr,v1,MCr,1,6a2e334c909609149c3c02715e09d5ac4cba4e993ff835c0ef481961e964239b
+v1MCt-8795488b039345bd,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/MCt,v1,MCt,1,916c0575b9f45f793da4a782350f2f34d5eecea36c255c46876def48e174748a
+v1MCu-64088dd0a640c0b4,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/MCu,v1,MCu,1,296f46f67189e6b269d8f249d9aa10381437cd7bad6beec118c07f5389d9ba2c
+v1MSm-1adb6c08cd453001,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/MSm,v1,MSm,1,b165f29f0293c3449a8ffda8be9d75c8555152112602b413a741b02382ff2b9c
+v1QLl-65bcc98a55f95af7,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/QLl,v1,QLl,1,cd64458895e137e3a5950ffe8fffac915bf891c409fbabf93da0cb40965ef402
+v1QLq-5616fdd49108f9fa,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/QLq,v1,QLq,1,684b25d7b3a27012e1e86ee6e92d2756a62820afb6bb0851b4759244592bcb00
+v1SNs-3681c995f36fbccd,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/SNs,v1,SNs,1,ca3bd06a803647a979640daa807b5a8e4026ec55bfa33530598d5a3ed6f1afa8
+v1VO-79bc620f41cec1b0,adele-battery-v1,GRE & GMAT-AQuA-RAT-116,v1/VO,v1,VO,1,3d3110952800e53520dde11d39a4af29a25e061ce6a793ee8d0a712046976cc9
+v1AS-cb636b07cb7301ef,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/AS,v1,AS,1,484dd0fa2a2663c1ceb538c1fd78a61d56f4727de4522db427faf64a024800cc
+v1AT-2a523a8642e0ecb0,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/AT,v1,AT,1,1c2f0297097e99d6194148766bf964a9c8938a8ccf71d4962ae364701dbec29e
+v1CEc-8c1a501c5ecb16b4,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/CEc,v1,CEc,1,035f65e9ef748fef555babc02e9b76014ab4d1bd26c93d7de07386ffe2a9cf6b
+v1CEe-e4e68e2b522e2ec1,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/CEe,v1,CEe,1,1cfeb062ccf44fb7d2e24025f6fae952dcaed52cacc56bf7d17c8c5bd192f1ff
+v1CL-53f117f01c72f48f,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/CL,v1,CL,1,0fd46a5c95564652b76736e484bb8c791515ebb3530fd3cdbf5757ebac930300
+v1KNa-14ccaf1c5b7738c7,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/KNa,v1,KNa,1,35c79b1aeb4aff015dd97c350ade1af0fdcb8b8ee7bbda1a0161e1a972a8dc9a
+v1KNc-2e54d4f8e701dd2d,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/KNc,v1,KNc,1,9c019e55aa26ab1023edcb7939a526cb7a3f2a1b5084b766a8df3eb6bf47d0f5
+v1KNf-8940d1a40f7cd703,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/KNf,v1,KNf,1,d9b8b00a459ae9f56d72fdd60f14119f27164ab7517f0d991308654ef2bfd560
+v1KNn-cb6ca34abc953a2e,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/KNn,v1,KNn,1,e5fd27bdced1bcb78e956fac44e259b355c81a46ce20775be4ac3ec447abf1c9
+v1KNs-be955e2d5b224705,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/KNs,v1,KNs,1,69f668c17ddf758e991b4e2212c55de2b13be947cbe9be8e9edcd2f3c05d34be
+v1MCr-a948fa3c6525f401,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/MCr,v1,MCr,1,d85618fcf363020e39e4a103f3d8926fcfddb3d45755fc1acd03308952064ae1
+v1MCt-44cd1e6768b31940,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/MCt,v1,MCt,1,1a2025b70dfcbce044ef953933ba4ff22e3ff2ab0125bd3ba73c55f735602fb1
+v1MCu-b4ac978e77a4403d,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/MCu,v1,MCu,1,1e90764ed89c6aab7b0631ed97af1cdb6e6de73513efadf0e5d7ee160379834d
+v1MSm-fe12c2f19d9e1e57,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/MSm,v1,MSm,1,24d3f5bb92e5f0f9294fbd6ad1de57f107bae157723cae079af6a531448792d6
+v1QLl-67a2ddcb0e58aca4,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/QLl,v1,QLl,1,f0053d6cdee401f44774665ded3572a480eabd9f093fabaa62f28881f596c922
+v1QLq-afe7be63bc34dae0,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/QLq,v1,QLq,1,7af78cf14b2fb8c6bdccf196e8e35ebcac4857ea308f560f7dd385730c802104
+v1SNs-9109ab3613fb4b08,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/SNs,v1,SNs,1,2494e202c4c9d98defc8ce52630518a78adf5358ec726f6eac825f27df186063
+v1VO-11b3c0b9ca52807b,adele-battery-v1,GRE & GMAT-AQuA-RAT-142,v1/VO,v1,VO,1,cb12fad237d919dbb9c6c633e4d7e6723d9a81d9c3e3d3519e9e1689b2376021
+v1AS-14c67ce3fd169a3d,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/AS,v1,AS,1,2463a9152dba308b57c2aef7280073dd980390937b346192f5eb244bc6aa869b
+v1AT-73d3013e878678ae,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/AT,v1,AT,1,81a71bd7494beaa953ceaa4a324f699cac8d2f05d90c9363958f3d8f70946b7b
+v1CEc-16c845b4301f6b25,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/CEc,v1,CEc,1,456b153b4d420200e84f042d9d944c75629f19458ebd4999a0197e50803e3926
+v1CEe-80f1d99cbce58888,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/CEe,v1,CEe,1,6a95268bbd72bd531d6c563268b857ed5fd935b45e4ed897331f8658cfd4a6c6
+v1CL-098046d76c55363b,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/CL,v1,CL,1,b95955635114eb3dd80a1c9b0bebc5185d36169418e06506b33bf14aac93a673
+v1KNa-ade6be0b0f1d4353,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/KNa,v1,KNa,1,c659ce21182b31420b3ca9a64379cc39975aa4c2ca1e3f394d7fdf02e512b86f
+v1KNc-6558dd114b02284b,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/KNc,v1,KNc,1,ab63d00dcd9dc263c323fd0ce1868009e652148e0963115b02db7299330e881b
+v1KNf-a528477dc05fcd49,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/KNf,v1,KNf,1,613cda9244548feac87aa5359e9a6301a801d872222b906a52c4d03f3668151b
+v1KNn-226215c967704664,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/KNn,v1,KNn,1,3ce4821d4cf5552444969111d50579818e2fed938dabba4b58a935c7960924ca
+v1KNs-aa48a5e39a6ae058,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/KNs,v1,KNs,1,4ab573a6f8c1f775072952d0004bf156c7014aac89a6efc9ee66d9450c0aa33d
+v1MCr-5cfb49a5de87b660,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/MCr,v1,MCr,1,d1ba17b51b3184f142ed8d80d3fee6724caadc0a17ab5a0546ed92953ee14e9e
+v1MCt-fd84452bafa0bbbd,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/MCt,v1,MCt,1,04c77aca3aab42d0d44f9e1894df0af942fce0a06f05a9a68abab1f0244f4fcf
+v1MCu-71107cd75b29f36f,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/MCu,v1,MCu,1,624689c93f2b1393ccfeee95409e0af4ebd01564fba1358f5fa384882a3ec252
+v1MSm-1afe8c53b3ee79d9,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/MSm,v1,MSm,1,31ef7f4499158ab9164c0f98faa4f6356bf44ca092921dbee53fc4336ad3d683
+v1QLl-311a7b8fa5b6f82a,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/QLl,v1,QLl,1,b7e12beffbcbf8adf09fb4d899224911ef8df32322f0d815e7ede8e6d2b289d5
+v1QLq-0a1ec060da8fe6ab,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/QLq,v1,QLq,1,71eaaf1ef45a4e3f25d0ff700af6fd305e6604125344215f5ff1dd924285d8c4
+v1SNs-baa811d0c40871c0,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/SNs,v1,SNs,1,e3300d478a2e15868545b00e5b2cb89032ea53a50aa785e6b94aa5ae9f73dc53
+v1VO-0db28c76c1135fd1,adele-battery-v1,GRE & GMAT-AQuA-RAT-162,v1/VO,v1,VO,1,5e6d65439ae58fd39d273473dde34b5faf680a495a3c89677f231e30bfd28602
+v1AS-5e0daf3df49b2371,adele-battery-v1,LSAT-LSAT-AR-16,v1/AS,v1,AS,1,671b1b831d734b8ab2b2f3305a4633a85439196109600f5514201395bc4423fc
+v1AT-2fe084cade9d2ef9,adele-battery-v1,LSAT-LSAT-AR-16,v1/AT,v1,AT,1,d9486a0dcd86be4a12053f7fc3ca8453c6464acb2cc58727bb94746ef6636c59
+v1CEc-9279a972f69cdbc5,adele-battery-v1,LSAT-LSAT-AR-16,v1/CEc,v1,CEc,1,9644a1535d4e61c7ed6d64760e791b1649d91e55ca2dd92393ff0e38bdbc80e3
+v1CEe-953d433ca8028065,adele-battery-v1,LSAT-LSAT-AR-16,v1/CEe,v1,CEe,1,0e1b2476fb95c5e5d990af162e2edf90332da25f40c9d6a86c17e10559bdeaaa
+v1CL-cffceb3ebff80119,adele-battery-v1,LSAT-LSAT-AR-16,v1/CL,v1,CL,1,d381d530bfc2b28d58137e9467c3bd1c3957f14e030bd31d8a186841394f09b3
+v1KNa-49d28e2d85df0bc5,adele-battery-v1,LSAT-LSAT-AR-16,v1/KNa,v1,KNa,1,eb512ce8e957f1640e6250d035247b54d55bb99ab78059118254126f4ba15166
+v1KNc-1990526eda1525fc,adele-battery-v1,LSAT-LSAT-AR-16,v1/KNc,v1,KNc,1,104e3f18edd31e2171cf2a639cd88cc053b71c695b87c020513d2341c2ead346
+v1KNf-1a10ef9f9c9ce4db,adele-battery-v1,LSAT-LSAT-AR-16,v1/KNf,v1,KNf,1,862badc4973cf15939620bb7c562716f14bde8abda722c08f9f487e675a8effb
+v1KNn-375ca9d8ecd65e1e,adele-battery-v1,LSAT-LSAT-AR-16,v1/KNn,v1,KNn,1,1255e7bb2c1e8169ce8e21c19175f5878266550b1dfd619cc0f7cbc0ed22b08c
+v1KNs-75a1bafa97d3369b,adele-battery-v1,LSAT-LSAT-AR-16,v1/KNs,v1,KNs,1,a2b4cba5e7ceb91b7a897df6bc87e5766d26fb60769693005941ef12e22cedb5
+v1MCr-42b0feece78a6897,adele-battery-v1,LSAT-LSAT-AR-16,v1/MCr,v1,MCr,1,e3695eb7f28954b79cacb037276c40b24bea734bc3fa08d15ff6769e7853f2d9
+v1MCt-784040393d5300ec,adele-battery-v1,LSAT-LSAT-AR-16,v1/MCt,v1,MCt,1,6ab5fb19b9201f2ab382f9367d316137dbdf570c9910488c88a4ee109875efa8
+v1MCu-15c5254ee84e964d,adele-battery-v1,LSAT-LSAT-AR-16,v1/MCu,v1,MCu,1,e87dea316f54134f2a5d14f5f19dbcb1dc97f45cd95daf0f7e96e0cb843f2955
+v1MSm-86427eb35f9a95cb,adele-battery-v1,LSAT-LSAT-AR-16,v1/MSm,v1,MSm,1,16690cb64c1b1d74b23e194270fef66b825c480a5fb3eef3394e633fa378c701
+v1QLl-2866fd1c648382dc,adele-battery-v1,LSAT-LSAT-AR-16,v1/QLl,v1,QLl,1,b310f611692a251e6baa507f9ac70f58741c70c7429b411c463948be44c1988a
+v1QLq-918e7f04ba023615,adele-battery-v1,LSAT-LSAT-AR-16,v1/QLq,v1,QLq,1,a5f7cc6cd6143e4cc94331b7924be0680ff688e1ac0e3a80511a5a322e73c694
+v1SNs-a98ad099587de145,adele-battery-v1,LSAT-LSAT-AR-16,v1/SNs,v1,SNs,1,6152ef4b4f86b4f9f1902925f4c30da78b20ca1bd405ba34433c80cc8a7fc591
+v1VO-2541a82343229ca9,adele-battery-v1,LSAT-LSAT-AR-16,v1/VO,v1,VO,1,d0242d0a1f65c13f78b629583eb4f76a1c2415c933ba6305499ec82e24fcc605
+v1AS-5eba4f07d449a10e,adele-battery-v1,LSAT-LSAT-LR-300,v1/AS,v1,AS,1,8b89423af10f2cb3f873a75c8684190732a98e667db52310e642556b96886221
+v1AT-5a0b9800ac44c94c,adele-battery-v1,LSAT-LSAT-LR-300,v1/AT,v1,AT,1,85bed7d73a10445a31c828fe6da1d3fe7dd982b6fe85868b7d0373758963cfd8
+v1CEc-12b6badfa477156f,adele-battery-v1,LSAT-LSAT-LR-300,v1/CEc,v1,CEc,1,ea7e1220cc3104c2501740a0def5f9fcfb76715802e6d3af1a60d5e1e16200c4
+v1CEe-e7e39adf07f6609f,adele-battery-v1,LSAT-LSAT-LR-300,v1/CEe,v1,CEe,1,aa83cef6538485652c8d2f506bf7ebc5df691db4a2507e725f1afe5f9def6b71
+v1CL-18ca644879d14d83,adele-battery-v1,LSAT-LSAT-LR-300,v1/CL,v1,CL,1,462a21c2c5d66278fb5f3b143d053f7cf865cd7f298758cc8c94f9294d9ca1a8
+v1KNa-794ebd704e44a2b9,adele-battery-v1,LSAT-LSAT-LR-300,v1/KNa,v1,KNa,1,59da7fb1f9b862c3d5dd4bfa2c9240c696e5befec1bc6444e7fc267d55a3a9b9
+v1KNc-0c5f9ede87f7d060,adele-battery-v1,LSAT-LSAT-LR-300,v1/KNc,v1,KNc,1,8933c768061554a5b16aa1b3e978064e402ef542f1fa54863a425d9c3e51cf19
+v1KNf-6ad990ef9b3266fa,adele-battery-v1,LSAT-LSAT-LR-300,v1/KNf,v1,KNf,1,0b3c03509aa347947867be2e174a5d87596151b5d82736d9e703b65d3216beef
+v1KNn-5d36f38c0df92943,adele-battery-v1,LSAT-LSAT-LR-300,v1/KNn,v1,KNn,1,b33f4c1f057623de5bce18d96a971eb0248a49b7d7379024cc79a185473c58ae
+v1KNs-b1526649a8a5a354,adele-battery-v1,LSAT-LSAT-LR-300,v1/KNs,v1,KNs,1,ddefbf0d5e345bf7631b0070e9a711952691e68f23708476e06eafdd5e9fc7fa
+v1MCr-ec9df284ea4af958,adele-battery-v1,LSAT-LSAT-LR-300,v1/MCr,v1,MCr,1,01c56040b12bc5df5c9d6c3fc31fb2f75162b850f754eb70db913cb31806feb5
+v1MCt-ff0f0a905ae3baf6,adele-battery-v1,LSAT-LSAT-LR-300,v1/MCt,v1,MCt,1,6eaf5595b1d0fccef9f9b00e06d1985fd4159a05795c13c9f13b84fd21420368
+v1MCu-445ff3d178bc948b,adele-battery-v1,LSAT-LSAT-LR-300,v1/MCu,v1,MCu,1,a1f959a249f298817dae80cee7ae82a85715b1fa8234b81a9b7f4a504f6ed497
+v1MSm-2952aeb569129f11,adele-battery-v1,LSAT-LSAT-LR-300,v1/MSm,v1,MSm,1,3ec6d205c1043fffed74b65513ab86d8d98221f5f45625e203784788318f077e
+v1QLl-73dba996f393f690,adele-battery-v1,LSAT-LSAT-LR-300,v1/QLl,v1,QLl,1,92ad187172e56b23572aaaa9be041f8411aab494f3eeae88ad44cc9428486116
+v1QLq-927930942a792e7a,adele-battery-v1,LSAT-LSAT-LR-300,v1/QLq,v1,QLq,1,189258b6112f0a4f1fbf6f0284e86b9955f3e4a00e63c517979eab27e047d701
+v1SNs-3c0d76679d52ae0c,adele-battery-v1,LSAT-LSAT-LR-300,v1/SNs,v1,SNs,1,d843934df3e08fcc7dfff5c37076e8344aea3e27c1597a24d22cef882b6f5907
+v1VO-8e41d1d470a48499,adele-battery-v1,LSAT-LSAT-LR-300,v1/VO,v1,VO,1,999dc2406d84c04ca7a03252ebcd59ed4f30151d63dc737089794ab397afa088
+v1AS-5f188362f7c5378c,adele-battery-v1,LSAT-LSAT-RC-163,v1/AS,v1,AS,1,b3bff7e34f2b50ba38ff1058e7266ea84057a62a398de8fbd56461a7d9c7f3a8
+v1AT-ff79e73c0f48c223,adele-battery-v1,LSAT-LSAT-RC-163,v1/AT,v1,AT,1,76e73e485cf3f70121ea4ac48bc2d75bc9a77681bc7db30495236e6c79ec15cd
+v1CEc-f16debd5784d6e6f,adele-battery-v1,LSAT-LSAT-RC-163,v1/CEc,v1,CEc,1,2e1ada18d37960ef1b95166b9388ab1d79950abccb600e93877f2aa99ff1e552
+v1CEe-0ad47302615e82b0,adele-battery-v1,LSAT-LSAT-RC-163,v1/CEe,v1,CEe,1,2c0349a92d248f2936f1d73fccc38447aa02da3c8550002264c6fa9f362cc591
+v1CL-eb52a6a7f0a9635c,adele-battery-v1,LSAT-LSAT-RC-163,v1/CL,v1,CL,1,77469c651c7a69716d65e0028fc48ffad04c78a7af4a68b8b119a17939b86784
+v1KNa-acbbacbb4a6b2c25,adele-battery-v1,LSAT-LSAT-RC-163,v1/KNa,v1,KNa,1,3b9d633a590982ed65e000b405580443bf3a745f5d9e348444963a5b9a1d1dbe
+v1KNc-63607fc0c6c3401a,adele-battery-v1,LSAT-LSAT-RC-163,v1/KNc,v1,KNc,1,a483fd7576d36d65140c25d82128f662faa3b81a99a6995b59af954c87002faa
+v1KNf-57d503702375db2e,adele-battery-v1,LSAT-LSAT-RC-163,v1/KNf,v1,KNf,1,5fb25d90038c20a3b4c329a30f176a82efa7984568301dbb1ac7e54b43e28025
+v1KNn-220fbb7eabb4de28,adele-battery-v1,LSAT-LSAT-RC-163,v1/KNn,v1,KNn,1,cdc5fe67d799293fdd75c6c1ca734e0ba6cad27ada05f28acc1867d191da169d
+v1KNs-7b7039e05ad52529,adele-battery-v1,LSAT-LSAT-RC-163,v1/KNs,v1,KNs,1,032152aaeb1b1a41a498461c5ab0b834a314f997d1cd04e527a4dc4036639624
+v1MCr-29e1e17610e043dc,adele-battery-v1,LSAT-LSAT-RC-163,v1/MCr,v1,MCr,1,5d48011fa4794b47b8df8786768e0a4be2ea4138e1eadd40a79a379e19674ee2
+v1MCt-71e61d4494758666,adele-battery-v1,LSAT-LSAT-RC-163,v1/MCt,v1,MCt,1,23437e4320ea55f503ca5cf4b02a9620f6e200d4c5a07fe21df830031f0e46fc
+v1MCu-713e53cf759d8204,adele-battery-v1,LSAT-LSAT-RC-163,v1/MCu,v1,MCu,1,f2f0ea241c264fd3508190b99c7036263f795f9f26ad0b40efa2ba9cc76653e2
+v1MSm-d3cf241fd108c4b3,adele-battery-v1,LSAT-LSAT-RC-163,v1/MSm,v1,MSm,1,50473879071b7977b189a020091d064fe8ecd49fab66450d3f1efa100ee1f1f0
+v1QLl-b5fc46385a6bf6da,adele-battery-v1,LSAT-LSAT-RC-163,v1/QLl,v1,QLl,1,4d8d523f9d549741737a5fa6cd75bfe831eb619e57ec2994861fcb2b151a4a0e
+v1QLq-4007c34dfc890bda,adele-battery-v1,LSAT-LSAT-RC-163,v1/QLq,v1,QLq,1,e570168e2c47380f6ae7fca63790e96bc137f4a6b0571d515a7b1d15ff743440
+v1SNs-83e4ea54ac2fd897,adele-battery-v1,LSAT-LSAT-RC-163,v1/SNs,v1,SNs,1,0455c1cd9bc855a6527a7d5e470e222db82e4eae951b4ecacc7e75dd3440005e
+v1VO-7575224da96d4b08,adele-battery-v1,LSAT-LSAT-RC-163,v1/VO,v1,VO,1,8bab7b8626ed510a816dee00b17d9ad321c8c9355459a7761a969304b342539e
+v1AS-be8b5a14b795bfd4,adele-battery-v1,Language-connections-7,v1/AS,v1,AS,1,8633040ec6be7e840d652b1b0222d5d32510ab87f053f40706397dbdf2b63276
+v1AT-a17c94467f8a477b,adele-battery-v1,Language-connections-7,v1/AT,v1,AT,1,40c7c8a595b31e976d162155fca18c9bfabfb97134fe21a010e8bb5499b723bf
+v1CEc-ef936025e04c4f85,adele-battery-v1,Language-connections-7,v1/CEc,v1,CEc,1,1b9d99e40e4cde14911c4b1f214b2faebe6afad6e54e4012fff2fede61b15c04
+v1CEe-f30ea7d3fd516393,adele-battery-v1,Language-connections-7,v1/CEe,v1,CEe,1,ed02f67497cc516973a6645e4f1491974d5f3a7322032ce7d51e2e3470306823
+v1CL-190113ce0c1dd580,adele-battery-v1,Language-connections-7,v1/CL,v1,CL,1,17e84837b83f7e13db6fef64ed5f3ae373f96c92ee8a96b2229f1da3b4794908
+v1KNa-3c9a64adab5d56ef,adele-battery-v1,Language-connections-7,v1/KNa,v1,KNa,1,99d9f4ea0c7be97f873e9859f7d7c66627d952d570058431e91f3f702c94a8da
+v1KNc-1b975e98d60b2d43,adele-battery-v1,Language-connections-7,v1/KNc,v1,KNc,1,75ac1e181a8a56f6c6f72d36dae0b485165c6eaa285bb9ba8b53e8cd7ab1762e
+v1KNf-ce61a187e394d5c8,adele-battery-v1,Language-connections-7,v1/KNf,v1,KNf,1,5a0f7185201ca091c728af4d60ff05eb8b5fc4458612cfc08b4369c71717c74b
+v1KNn-f85fa68f569254e1,adele-battery-v1,Language-connections-7,v1/KNn,v1,KNn,1,2cc2b35588a70d720574a120a031c474d3f527ad50917834f41922c24e583f58
+v1KNs-42cad05c7472a1b2,adele-battery-v1,Language-connections-7,v1/KNs,v1,KNs,1,edde0800890c352f9bf2edd517978b53fbe0c40f879b784550ad11f8a77cdc35
+v1MCr-5602e7a6204d2408,adele-battery-v1,Language-connections-7,v1/MCr,v1,MCr,1,e01ffbdf89379769378e4bc361c9abb2e5aa0d39b674d0941307a9c504f10849
+v1MCt-0e6e0db5eaab116f,adele-battery-v1,Language-connections-7,v1/MCt,v1,MCt,1,54158212a83dd6ac39ab4c841d40637769a753ff36d64676e7966813b4528677
+v1MCu-65b836a10719bb25,adele-battery-v1,Language-connections-7,v1/MCu,v1,MCu,1,0bb6941c0636af8f2bfc88a17d7434ba3fe83abbb52f1883bb5fda94ff5e53e1
+v1MSm-07c7129ea5b47627,adele-battery-v1,Language-connections-7,v1/MSm,v1,MSm,1,41d4adc577ac8840da87ab58f5a283daeb49420fb28f6ca697fd1cb099a20c20
+v1QLl-d6c241d1dc3e4eca,adele-battery-v1,Language-connections-7,v1/QLl,v1,QLl,1,0fca7f2d17139097b8cc6932eb6797228482cf26d1dc3b04b3704d8a598dc5d9
+v1QLq-b2dc2a2a6db7eb35,adele-battery-v1,Language-connections-7,v1/QLq,v1,QLq,1,0e14a0030147a89d0a5b2ac0eba6e447d93ebb3e625b9ec2d7b7d476dff76b91
+v1SNs-cabbb0814c405b98,adele-battery-v1,Language-connections-7,v1/SNs,v1,SNs,1,25725c1ab3585c8e7ad743381fc0a7e85eff6c545742be493a4bbc2f0d67dea1
+v1VO-28929c4ccffcce4a,adele-battery-v1,Language-connections-7,v1/VO,v1,VO,1,b381d7aa0b5dfb34f1707d0c50a4729e7b00e41ebab23e2dde9832664d3b98d8
+v1AS-c93a19d35e031750,adele-battery-v1,Language-connections-8,v1/AS,v1,AS,1,3a242bce298e0ceee6d8eb3c091581494d6c127c8a95df1c4116c130c1f5572e
+v1AT-7bfcdc1c54cb6d89,adele-battery-v1,Language-connections-8,v1/AT,v1,AT,1,27bceae8a79354ece634c4a39de98d22ddcb893c677d790222d0624ce6103426
+v1CEc-efb0be658f163a7b,adele-battery-v1,Language-connections-8,v1/CEc,v1,CEc,1,e59a57ae945ae902e9338e96ed23f59c66ec59d65475178a500f7ff0f5e9059f
+v1CEe-d10892a246b4c0f7,adele-battery-v1,Language-connections-8,v1/CEe,v1,CEe,1,6bf5a368224b3da536a62396bcadc2d0e84867856784ad78cebd787e4fe574ca
+v1CL-cba82a8776f1dec1,adele-battery-v1,Language-connections-8,v1/CL,v1,CL,1,967be5054a54eb8579dcf74e3f0a068a4936470dfd63c652a28f1069808ad22a
+v1KNa-f5aff73018e932f3,adele-battery-v1,Language-connections-8,v1/KNa,v1,KNa,1,a35705309b8fa6cb9ade16d0234323f7b7634c92e8962be26f79375c84baa50f
+v1KNc-49fa296cb8cfff7c,adele-battery-v1,Language-connections-8,v1/KNc,v1,KNc,1,f365681dec2fd74ad8907cfdbd90a86c8960f4d433a23677d1cd2557914095cc
+v1KNf-7fe334dc2c74c3ec,adele-battery-v1,Language-connections-8,v1/KNf,v1,KNf,1,6c90c09e25ee878642355deb9502f6be565c64658408b15a684028cf9725fe6a
+v1KNn-364eb7269dff0032,adele-battery-v1,Language-connections-8,v1/KNn,v1,KNn,1,1424acec7249172a8452689310dc2498fc9fca24707200d546b1538b8b81f6c3
+v1KNs-e692e32908648a08,adele-battery-v1,Language-connections-8,v1/KNs,v1,KNs,1,7d548860e73cbc0dfa45396da639db66f456c1ece69d8142d0cd90b18c237a06
+v1MCr-7e0cd4bea356dfcd,adele-battery-v1,Language-connections-8,v1/MCr,v1,MCr,1,e1133a7d6a103a249e19f6081b6f5635d9accaff09e8188422caac2d87ac954b
+v1MCt-4280f1827cc33355,adele-battery-v1,Language-connections-8,v1/MCt,v1,MCt,1,ef21ef0eab9ad2de7ff621832efe2fca81b1f0b2bed13e020f923c45305164ba
+v1MCu-d0d5ab1a9429e8bb,adele-battery-v1,Language-connections-8,v1/MCu,v1,MCu,1,8a6456943148486c8f744948af506253b846686552a1fee8f09c1f96e2f886a8
+v1MSm-8608770ba6b2657c,adele-battery-v1,Language-connections-8,v1/MSm,v1,MSm,1,e6cc26de7e2541872ee7729c96558f4911ffc0e8f7ccdf7559c6e23800eb100e
+v1QLl-fc0708af5aed63a0,adele-battery-v1,Language-connections-8,v1/QLl,v1,QLl,1,ad26bbf70b7164672f36fca31c1fdc79d7e359e8ebbbd915107c6c578a22ad20
+v1QLq-36b151dd1f48d4ab,adele-battery-v1,Language-connections-8,v1/QLq,v1,QLq,1,e8ba80389d7447a9b03c54c3421b7c626a59f7caeafcf724a337b6960211c1e8
+v1SNs-5d7ceffa5f66b56f,adele-battery-v1,Language-connections-8,v1/SNs,v1,SNs,1,0ef901e268db213423634479517065fc771d0e0917a600939184fe0ff5338cf9
+v1VO-626f0d31b700398a,adele-battery-v1,Language-connections-8,v1/VO,v1,VO,1,8f507ef8696250ffa624fc0ca97f29e874f7d7a05a91b2b56a72c5507ff77656
+v1AS-98982a4053b3007b,adele-battery-v1,Language-connections-9,v1/AS,v1,AS,1,8521b0582c0546b38d0ff5293b269dda0cac2e8aab03c65d671201979f619789
+v1AT-e26885e28041184a,adele-battery-v1,Language-connections-9,v1/AT,v1,AT,1,40fef9b8d0e587794813ed8b0709c00064f692af1156c6221af58abe8275f85e
+v1CEc-78c4d58e36fd3890,adele-battery-v1,Language-connections-9,v1/CEc,v1,CEc,1,ac598be3600f572fd11d3f43e63dd2ffa24b76791dfc287da9230be52cf8e54c
+v1CEe-e87c800bbd5d961a,adele-battery-v1,Language-connections-9,v1/CEe,v1,CEe,1,cfc5ec98acfaa95b0f4e96ebe09a33cb6ba75e2c5a986c5062329c5845022454
+v1CL-a72f7f566f1fbed3,adele-battery-v1,Language-connections-9,v1/CL,v1,CL,1,773140d36c66f046d929434dbb8305c81a35ba384b490794a1bebd510fbd194f
+v1KNa-d89c0096221d9f2b,adele-battery-v1,Language-connections-9,v1/KNa,v1,KNa,1,f3a7db8d021c3a182a60517325b0c03d6321efae0b0fa8a489ad0df5bdb27779
+v1KNc-89d2419f1bfb5dcb,adele-battery-v1,Language-connections-9,v1/KNc,v1,KNc,1,fe44263282004e856d0022b74f1a7301e2dc7b6fb37f5f087da2596f51e930ac
+v1KNf-6a4d2c76c811999c,adele-battery-v1,Language-connections-9,v1/KNf,v1,KNf,1,9b231f28b4ce1d152fdb7c312d099a9d10a45e5480bb2974b74dea821bfd7216
+v1KNn-a7811b35fb5afaf3,adele-battery-v1,Language-connections-9,v1/KNn,v1,KNn,1,857bee65d7b12ec9205eb4d0cba65c0f2f00e34630820545ce21f914c160dec3
+v1KNs-8fddda26e66a3d63,adele-battery-v1,Language-connections-9,v1/KNs,v1,KNs,1,40441f7a432dece8d50c1ccbb342e337302774f89f7f24ef6a2fc49b71a8ca9b
+v1MCr-8d74d2ca9b9c4c64,adele-battery-v1,Language-connections-9,v1/MCr,v1,MCr,1,3d96a1847663a16a220e987dcc03c97b3396f8ac408f50eec5f563935d0db5dd
+v1MCt-b55b61381657b19d,adele-battery-v1,Language-connections-9,v1/MCt,v1,MCt,1,2a212f2c3f6679ab4be1990250f396eb13efee9f236c2eebb60e3dbb6f4f473e
+v1MCu-eaa6ae9bb061cf4d,adele-battery-v1,Language-connections-9,v1/MCu,v1,MCu,1,6949311e1f21802b403390b39d9179eea359a6c3254202e21a14c280f527ab63
+v1MSm-f8bf7c58ad4dee43,adele-battery-v1,Language-connections-9,v1/MSm,v1,MSm,1,6ca82a79c9097bd9985709bbc7cdbb2cb2a33a889a1ef74dbe7565dd1b94dfc3
+v1QLl-6908d420ed850f5c,adele-battery-v1,Language-connections-9,v1/QLl,v1,QLl,1,d7950f1c7c857f6acee3d23159208c1ef8ceb51a4672763853e343d3ca8df6f7
+v1QLq-c0b17459f5c76a77,adele-battery-v1,Language-connections-9,v1/QLq,v1,QLq,1,11d40386d42fd11d4a01fbfdd133208bd75057f3aa3e28321b66f270628456b1
+v1SNs-21e291b662751a70,adele-battery-v1,Language-connections-9,v1/SNs,v1,SNs,1,b89656d040c00a978a2966becd11d0d44ec98c8283aa602dca446d9d72571716
+v1VO-b3d268d61eb2437b,adele-battery-v1,Language-connections-9,v1/VO,v1,VO,1,2441e62aa4f9a4459a9b63053c1430cb3923ea3c8be32d999878645e8be70b91
+v1AS-46c358bb428b3e88,adele-battery-v1,MCTACO-MCTACO-1,v1/AS,v1,AS,1,3e5f72ead59a130f0ed8ee5e0a676f85caff883e2a3a5a37ab7a855c90bc9385
+v1AT-9fcb5a4e2ea7b165,adele-battery-v1,MCTACO-MCTACO-1,v1/AT,v1,AT,1,8647eb05f1e4f425009533e0f5f3781d37a514b37cb24173e268b8592bdf59c2
+v1CEc-2f3d83baa82d4204,adele-battery-v1,MCTACO-MCTACO-1,v1/CEc,v1,CEc,1,5140c5b2a8db74ebc9a847364963ae4cd02e28a233a5b9a755068be20ae9c534
+v1CEe-3b41222229bfe73a,adele-battery-v1,MCTACO-MCTACO-1,v1/CEe,v1,CEe,1,518e6779c63a0daf9ff154f7ab2fa5281b94256df1dee30c4386dee487dcc0d6
+v1CL-c496ca51d884079f,adele-battery-v1,MCTACO-MCTACO-1,v1/CL,v1,CL,1,8ed7a4843f21be2ee33644ebb1946ec2c3a3aec1b75cecf88d06cdeed015de4c
+v1KNa-050189260c434d19,adele-battery-v1,MCTACO-MCTACO-1,v1/KNa,v1,KNa,1,269b0ee53d83c24ee85aaa9100723beb85527de146fca22b1ad60d3d57aa9580
+v1KNc-55fdbd1374aaa87c,adele-battery-v1,MCTACO-MCTACO-1,v1/KNc,v1,KNc,1,004350124e8e299f21869e3dd28de543666b97b09d21e2716289ef11b2e67ded
+v1KNf-5a48ad62cdd2002a,adele-battery-v1,MCTACO-MCTACO-1,v1/KNf,v1,KNf,1,0b30f7fc4349a30f4764ba35118f9823f5c5d1c50dee26e7f13e484517cb7684
+v1KNn-d08e9687ce44ccb0,adele-battery-v1,MCTACO-MCTACO-1,v1/KNn,v1,KNn,1,2b251c3f17dc4eb51884489db263231071bc31725c9d706d0d76f13d0747b4df
+v1KNs-fc189f874cdd4d10,adele-battery-v1,MCTACO-MCTACO-1,v1/KNs,v1,KNs,1,b6269c23225ef835195358982f47f0a2befe5687c797d72ef5c956e68fa47b38
+v1MCr-2f0aa436a8f17133,adele-battery-v1,MCTACO-MCTACO-1,v1/MCr,v1,MCr,1,c8737028b6eaf0703f19c870e50c9c4678013f05e9b86f9ec5c6907c4d914344
+v1MCt-2b9bd6472172b013,adele-battery-v1,MCTACO-MCTACO-1,v1/MCt,v1,MCt,1,65cd6fd8241a4abd3f748179a561a290946aa6cc8990c64430c5e93b797a952f
+v1MCu-4db7bb35d35b8720,adele-battery-v1,MCTACO-MCTACO-1,v1/MCu,v1,MCu,1,c751f39e7a3e0b766a872512a95169d2fbf08831b4b1f096298a0dd53bc45233
+v1MSm-3941a77a20b5fe96,adele-battery-v1,MCTACO-MCTACO-1,v1/MSm,v1,MSm,1,869dde0845357e07082a1041b13dcd2c4902a45d5a14cb745ace45543a130f5f
+v1QLl-af4f2cc30ac5c4e9,adele-battery-v1,MCTACO-MCTACO-1,v1/QLl,v1,QLl,1,ef20bc0cec1fc9e5ee2e9a1d3a9ce28cc227028e8b53c2318931d556e5f99048
+v1QLq-f19d4114854834e8,adele-battery-v1,MCTACO-MCTACO-1,v1/QLq,v1,QLq,1,a4d1b8939db858edc7cbcba1884e40a3bce3ebce3a20e0c73262c42c772f9539
+v1SNs-fed2967f3f167e36,adele-battery-v1,MCTACO-MCTACO-1,v1/SNs,v1,SNs,1,2de3559f9e21e62648bc8ab0e0a411102d2aa9b951744561f54184bd83e15ec8
+v1VO-31cffc0c26638b73,adele-battery-v1,MCTACO-MCTACO-1,v1/VO,v1,VO,1,89d4f27a260860a3556e40ad934e7b1517347173987b2070c19014acaf62d271
+v1AS-a35ec1320a00c136,adele-battery-v1,MCTACO-MCTACO-471,v1/AS,v1,AS,1,b72a88c5e30aceb90d275b00103bdee5a0a879fec25b6d04e4d021560fc3ac4d
+v1AT-5bc95113b869b120,adele-battery-v1,MCTACO-MCTACO-471,v1/AT,v1,AT,1,34815b0b835209dd29834dcd8ed99a8f0fcffa74327218e5541c1199f552dede
+v1CEc-661ece9125e6c2f4,adele-battery-v1,MCTACO-MCTACO-471,v1/CEc,v1,CEc,1,e2de8c75ea485b2228aa8dd587081bd8991983639ea9a0020c0157c27c0e82cf
+v1CEe-53f7835c50506b88,adele-battery-v1,MCTACO-MCTACO-471,v1/CEe,v1,CEe,1,be4bc180a902633256f81d279529357817817d50340e4894fc4153da3acdcd55
+v1CL-435e757d75500928,adele-battery-v1,MCTACO-MCTACO-471,v1/CL,v1,CL,1,a4f90f42d39b8b2c78dc49bca2a52d8c6fe93dca4bc5b5725385ca5b4ac24298
+v1KNa-b5af9ef673e1fbc0,adele-battery-v1,MCTACO-MCTACO-471,v1/KNa,v1,KNa,1,9b90be3f64cc5749b4cbc7d0d6eedad2a81d9cd1e4decb055d28a0ed914d955d
+v1KNc-bde34e9e7c6cdd4e,adele-battery-v1,MCTACO-MCTACO-471,v1/KNc,v1,KNc,1,47ccf333d70e84d179293a0daebba3d16f1c441beeed611a642f0f6e1fee4375
+v1KNf-dfb780a0749fddd2,adele-battery-v1,MCTACO-MCTACO-471,v1/KNf,v1,KNf,1,3274c48cb86ae58ef4dc8e05d1dbc5052fdf57d6c9cd9b3d863aa0cc885e890c
+v1KNn-0b2388c202e824b5,adele-battery-v1,MCTACO-MCTACO-471,v1/KNn,v1,KNn,1,6ac59947df78c814f448973ac06fe91660ffcab7335a2611df388f1f15ae32ab
+v1KNs-6df89b778f12972c,adele-battery-v1,MCTACO-MCTACO-471,v1/KNs,v1,KNs,1,7e5301be9f303907e289e6119dbfcceb73d03268556ecc29b5e7deaa40c3c65e
+v1MCr-eda56774eefe984e,adele-battery-v1,MCTACO-MCTACO-471,v1/MCr,v1,MCr,1,a5fd5f73f801c97b5ec5091723bb9dc01319f22582678c89d4cdf0f6faf403fa
+v1MCt-e59b5028ad8f4566,adele-battery-v1,MCTACO-MCTACO-471,v1/MCt,v1,MCt,1,fc9277c5e5fcf5d480439c727824fb13f86fc492d0ae5c96691c7ba77c77167f
+v1MCu-660b41636b6867f6,adele-battery-v1,MCTACO-MCTACO-471,v1/MCu,v1,MCu,1,219a93c1db4bbe50c7731a786124f5fbc40afb764436335f4c941c247ed00c15
+v1MSm-2b179e09138aa049,adele-battery-v1,MCTACO-MCTACO-471,v1/MSm,v1,MSm,1,277030469819ecff134ea4358b52437da9bbdfb132080d08703bf23ce563eb8c
+v1QLl-1cd75b3a7df4af79,adele-battery-v1,MCTACO-MCTACO-471,v1/QLl,v1,QLl,1,6ef121ae0f914d009dfa5c77b826c46c414c8084b11b97b801a64286a1cbc53c
+v1QLq-4bfc7f803d621144,adele-battery-v1,MCTACO-MCTACO-471,v1/QLq,v1,QLq,1,f54e0551b965ce98ac6f14a112f5552a58b213df9d6eb8c7eb4849835a7c3216
+v1SNs-71a7eb2faf882028,adele-battery-v1,MCTACO-MCTACO-471,v1/SNs,v1,SNs,1,6fd7c7c593c222e048491056c5d533d4a7ac014e84cb73b777f8066ac835fac3
+v1VO-fd01cd53a2981183,adele-battery-v1,MCTACO-MCTACO-471,v1/VO,v1,VO,1,37977a739c4d334771eac34b06e1de3e536260b8f4e5ac1710b8f41eb21afdfc
+v1AS-bf6746b2429e610d,adele-battery-v1,MCTACO-MCTACO-698,v1/AS,v1,AS,1,00f9b0f7019e73bea7d80fb0edc19e695f7235b9eb7c48b07e327db9866ef8c2
+v1AT-3d94dd9fc1c53982,adele-battery-v1,MCTACO-MCTACO-698,v1/AT,v1,AT,1,aa5e4ddf8e6d84094565f21e4c961976dc805279029e0b9efa4a4d8214730912
+v1CEc-80c8fbff83e103c8,adele-battery-v1,MCTACO-MCTACO-698,v1/CEc,v1,CEc,1,98a55fccf095e0053b00cf5683884d8c040d5491cb03b9e491e513dd55dea3d0
+v1CEe-9703857af9f98b07,adele-battery-v1,MCTACO-MCTACO-698,v1/CEe,v1,CEe,1,79e83272c2ab3ce221a25814dbe41cbe8f8eb8c1aa7e934a220b346af84374e0
+v1CL-485768823e70b335,adele-battery-v1,MCTACO-MCTACO-698,v1/CL,v1,CL,1,4a2f66b5fb5c53b102d29a68a3712d2949fd7f4ce18ddfc450773bbb2e952563
+v1KNa-38886f6be4cf7ebe,adele-battery-v1,MCTACO-MCTACO-698,v1/KNa,v1,KNa,1,c3a571061f97123d11662145bcd2ef264464f5bd8fc99928c87467a97dabf4fb
+v1KNc-7ef4e1b61e87d742,adele-battery-v1,MCTACO-MCTACO-698,v1/KNc,v1,KNc,1,5cd81f55b52df0fc041d3e895dde70484107d19f82797152d53af081ed3d6837
+v1KNf-9441fa5b60e68c74,adele-battery-v1,MCTACO-MCTACO-698,v1/KNf,v1,KNf,1,8e5ef0606b0256e0ea353f3374ef1040220e1b9718b1e90699975c172af647bf
+v1KNn-45025c13a0c7f977,adele-battery-v1,MCTACO-MCTACO-698,v1/KNn,v1,KNn,1,be0ef5bedee741ed9b52482e0f4370678a885bb0ecc475816449f34582c42529
+v1KNs-3c8cf777b887634c,adele-battery-v1,MCTACO-MCTACO-698,v1/KNs,v1,KNs,1,58eed250ba53d26d6ce4660d94c92a7274d6458bfe3eaefc4b3f8ccc87920a7f
+v1MCr-ae32a05b21f83497,adele-battery-v1,MCTACO-MCTACO-698,v1/MCr,v1,MCr,1,dbdbfbb9da7980953c063a95b2fcda5c1e4304e87dd515504f7ac2140bab1bd6
+v1MCt-d02fca864e09b837,adele-battery-v1,MCTACO-MCTACO-698,v1/MCt,v1,MCt,1,61b6865d105b4ad3112a691ddc025cbc6658589442c015fe42b64ec46dbd9189
+v1MCu-5ea69f11b4b8dbd6,adele-battery-v1,MCTACO-MCTACO-698,v1/MCu,v1,MCu,1,c143be4a7fd250dd342d73238079a96558e5c0b01f00baac17384aa76827e13b
+v1MSm-938125176b8f903a,adele-battery-v1,MCTACO-MCTACO-698,v1/MSm,v1,MSm,1,92c6ec04faa8eb576930672f90eef3bd574b7d947beab22b66058fa57ceecd2d
+v1QLl-63b9da978ab6c15e,adele-battery-v1,MCTACO-MCTACO-698,v1/QLl,v1,QLl,1,c86316060c846d198751fc0807ce683591d141eb9ad7044b5cdd340a20b9f47b
+v1QLq-6766237eb06a70bb,adele-battery-v1,MCTACO-MCTACO-698,v1/QLq,v1,QLq,1,c352c3f2c5570c39b046b197947d207819811533689be05fae2d6dd960ef7b41
+v1SNs-c806566b1b8f564e,adele-battery-v1,MCTACO-MCTACO-698,v1/SNs,v1,SNs,1,5dab6b2a865aa73869a3b394388e439ba6977f57b3e7aa6dc9bf75cf79e3780e
+v1VO-78ac780d3bd61a78,adele-battery-v1,MCTACO-MCTACO-698,v1/VO,v1,VO,1,55b134c4f6e685f59715cf043b94c09c6e4abc3af10028f266c4bd057efd98e2
+v1AS-ba2cf709acf97003,adele-battery-v1,MMLU-Pro-chemistry-352,v1/AS,v1,AS,1,35168ca3fbfc34c5ddc1d96b36fa3de5741f2e9eabbbfc5b2f4c96e3cef58f43
+v1AT-5de79284a7fc0bfb,adele-battery-v1,MMLU-Pro-chemistry-352,v1/AT,v1,AT,1,d0126349bacac632d7e41e2db77bb8c2323f8a36b6e0b4de1c03dba0473688be
+v1CEc-70fcac12551c01d0,adele-battery-v1,MMLU-Pro-chemistry-352,v1/CEc,v1,CEc,1,d40311755b2961b59daa280ec425b02fd03fb65de7a6ad737acdcd3df5d32934
+v1CEe-615e27a4b0c7fe9c,adele-battery-v1,MMLU-Pro-chemistry-352,v1/CEe,v1,CEe,1,2d61c9865ca6b3e6bd74bef6e032cfb629c23b01989f9128b5f7c18e374bbeb2
+v1CL-cce501dbb2ca769c,adele-battery-v1,MMLU-Pro-chemistry-352,v1/CL,v1,CL,1,66e21beee6664b494219d3d9b2d434de0290aa6cac6281c6539269b589f437f2
+v1KNa-9ebfdaf53ec20c0d,adele-battery-v1,MMLU-Pro-chemistry-352,v1/KNa,v1,KNa,1,2366354f72648cd025efce0302bae86ca0219aab315a7b4672f2481066cdd288
+v1KNc-3796a04b893e6aa9,adele-battery-v1,MMLU-Pro-chemistry-352,v1/KNc,v1,KNc,1,ca7c248e5c609a94dd0e614acf31d1f0fe02108745bcb93a5aa3c5388439e603
+v1KNf-3814b9c395a26214,adele-battery-v1,MMLU-Pro-chemistry-352,v1/KNf,v1,KNf,1,08835fb6be917456c67d3c9de6bd0f5fe3e91f3881a34053baf98b811918c884
+v1KNn-3def9f8654eb9463,adele-battery-v1,MMLU-Pro-chemistry-352,v1/KNn,v1,KNn,1,927132078188c9bd78c6fa47ab9c42e3fe26880fa38d1f760ef9939df3489d4a
+v1KNs-c2411c4320b7ce58,adele-battery-v1,MMLU-Pro-chemistry-352,v1/KNs,v1,KNs,1,083a4c829249514191ebfc3b237500a225df2c0c69432efc6ea955d174a95345
+v1MCr-84d98dd617e2da35,adele-battery-v1,MMLU-Pro-chemistry-352,v1/MCr,v1,MCr,1,9983d361a6d4850c5afcec66d1619308599408cf3a6c40fff1ed6234e569ba6b
+v1MCt-6893da5eb3f24988,adele-battery-v1,MMLU-Pro-chemistry-352,v1/MCt,v1,MCt,1,1680df5271f4aa72b77b89dc8906f03396ba1842bd110d4cfb955c6826342a1e
+v1MCu-de69b5be3b01314d,adele-battery-v1,MMLU-Pro-chemistry-352,v1/MCu,v1,MCu,1,c0760b6170cf7eae79f7611ed2e95739abf27a8deb3d51d463756ffc32471e34
+v1MSm-54157bc4f9a72ded,adele-battery-v1,MMLU-Pro-chemistry-352,v1/MSm,v1,MSm,1,c8efbd6b856c75c3c3ab075503092d0847fc8314d3ed768f2fe5714f6aff7c06
+v1QLl-44e6bc0d8e9dac44,adele-battery-v1,MMLU-Pro-chemistry-352,v1/QLl,v1,QLl,1,f0f5f25f0b9df0f2c0f3a7480511a6ccbe5154f4e2b6319cbbb8f9a587f4feb6
+v1QLq-de8e2dad2c25b8b0,adele-battery-v1,MMLU-Pro-chemistry-352,v1/QLq,v1,QLq,1,ccf4ef8d225baed846e05b594fbbad28748714b4aabed3096acc9e5614a3972c
+v1SNs-974301c43c77b3dd,adele-battery-v1,MMLU-Pro-chemistry-352,v1/SNs,v1,SNs,1,41c08b06b34b1070626e062bc2f48b6198237c07cc02fa81e330c4c18cd04472
+v1VO-ab7d080ce701cb04,adele-battery-v1,MMLU-Pro-chemistry-352,v1/VO,v1,VO,1,13a743794bc68f9e075b17881dbfc49b149f209b02b827eb179e83f061d9f9c4
+v1AS-5c953d05322a27d6,adele-battery-v1,MMLU-Pro-economics-335,v1/AS,v1,AS,1,ead62648e2c0a3d996e30cd08926cc0033cae28de93ee5453aff2a6b70a46807
+v1AT-95cdd7f410be1ea9,adele-battery-v1,MMLU-Pro-economics-335,v1/AT,v1,AT,1,a6933aa28bca2a3025e559a51a19b8c0b2e5e0bd5feb3fdb92fe3f242d21ab3a
+v1CEc-11f20b686f04c0cd,adele-battery-v1,MMLU-Pro-economics-335,v1/CEc,v1,CEc,1,551285071bbf676dd915f163274b0245cb1ef0db2778b04123ed26487e959450
+v1CEe-aca56e3da9c273c6,adele-battery-v1,MMLU-Pro-economics-335,v1/CEe,v1,CEe,1,b1c2563d401744814176d096e597d9752d67e4bef56ea824cae184f78fc1cfb2
+v1CL-e3ba7ecbc37c076b,adele-battery-v1,MMLU-Pro-economics-335,v1/CL,v1,CL,1,bb63df4fa86074a99cd8d89b5aa901069dcde6d0d077686437ae972afd08dd99
+v1KNa-d5443e54705569c3,adele-battery-v1,MMLU-Pro-economics-335,v1/KNa,v1,KNa,1,ddeb6c44fa832eeebf46084f1d50c2859b7b408c54d7c146b99cb82348c08172
+v1KNc-144e1f25d5e56103,adele-battery-v1,MMLU-Pro-economics-335,v1/KNc,v1,KNc,1,c1fa8493369283964d5f262e31952e05dd42989eff8b2a89f359d8c596d2b169
+v1KNf-2f2302b762d1b12d,adele-battery-v1,MMLU-Pro-economics-335,v1/KNf,v1,KNf,1,b0de087f18122a2796e41033102fe2131a73cbb258c95ecfd99aa72ae4fc725f
+v1KNn-3fa5cbcdd3e248f4,adele-battery-v1,MMLU-Pro-economics-335,v1/KNn,v1,KNn,1,78337d39cfd2624eee7f468c197d4081a8dce6fd25f1f3e3bd1470a5c92dfe7f
+v1KNs-fb1127c79348b922,adele-battery-v1,MMLU-Pro-economics-335,v1/KNs,v1,KNs,1,adb4ad68f1491f130088b3c5e2af1d758432f3ddaf09e46c16250e5f43372a39
+v1MCr-1f79d7dd03005fe0,adele-battery-v1,MMLU-Pro-economics-335,v1/MCr,v1,MCr,1,4043b7047651f917eff4516a29fc37bf5d1c730ee6e9c852670380218b962edc
+v1MCt-512e0381d8fef028,adele-battery-v1,MMLU-Pro-economics-335,v1/MCt,v1,MCt,1,be9dabe7d9fc566e29124914766098f4b013a87afa668326ff52d73b2f4511db
+v1MCu-bc9a588cddef3df6,adele-battery-v1,MMLU-Pro-economics-335,v1/MCu,v1,MCu,1,739d8d9d952f5af607f4220dc75b83ec429629658391c190646ed6fbfba5ad1d
+v1MSm-b76bcaeb53b65603,adele-battery-v1,MMLU-Pro-economics-335,v1/MSm,v1,MSm,1,431b6a734ab4727135471c3ed0e3a0b9f5ff38c00e61bffc1fb2a50d939dcded
+v1QLl-1b97927cf4ef7070,adele-battery-v1,MMLU-Pro-economics-335,v1/QLl,v1,QLl,1,f3f56a6b688cb4a745644f612f7a9db06fc17f679508c24f4de26e0f23273eb4
+v1QLq-ef358f57781bfd3c,adele-battery-v1,MMLU-Pro-economics-335,v1/QLq,v1,QLq,1,a95911169ba0059ac330d5cbd240fd74242dbff12a49724b64349c445839031a
+v1SNs-353e3afb13e50c63,adele-battery-v1,MMLU-Pro-economics-335,v1/SNs,v1,SNs,1,431b8c1f5c8a22241ad3a7525a22f4016de584b448c29136067a8c2de1eb9b65
+v1VO-6a37f20cd52882c9,adele-battery-v1,MMLU-Pro-economics-335,v1/VO,v1,VO,1,a65b24e0754aaabb20d1093ddba8885f1b0dccb3f2d73ce83aa3daf625822e72
+v1AS-d85ce56c9ee03ac4,adele-battery-v1,MMLU-Pro-math-833,v1/AS,v1,AS,1,c592cb5ba98de25ecf0d021ec2cfebd79d6e3c6b2726a2dfdd3be313729f58d6
+v1AT-e6e806f709e41e0b,adele-battery-v1,MMLU-Pro-math-833,v1/AT,v1,AT,1,a1b5eedb337005ffb54db70365f4d9f4e9c9053df97e481bbcebd568bc5131eb
+v1CEc-92edc04387fafff8,adele-battery-v1,MMLU-Pro-math-833,v1/CEc,v1,CEc,1,26f6cac56617d92d74ed7aade689603e7572cb4202c99b7346477e76cf23327c
+v1CEe-31bfd88339eeb9b7,adele-battery-v1,MMLU-Pro-math-833,v1/CEe,v1,CEe,1,290df51af2a6bbc766c813a3a88d72bf2a50b033371e5a35d6acfd1c04ad2332
+v1CL-8d38d77d01757d07,adele-battery-v1,MMLU-Pro-math-833,v1/CL,v1,CL,1,955ec8629b9ec1ee82516f5d923e61566d6d4784476cb796a6518f4c334dfbd9
+v1KNa-fed636351ff87cea,adele-battery-v1,MMLU-Pro-math-833,v1/KNa,v1,KNa,1,4f36ee6af1ee7c3a5e81cc2be5623b6818042090c2df43993682c543bccf52e3
+v1KNc-09dce480093cbab6,adele-battery-v1,MMLU-Pro-math-833,v1/KNc,v1,KNc,1,f9b4e8d38dc93d27377cc0ea113c8d5cca0a4f61310ea0d071cfc5ec648bf4a4
+v1KNf-737532d5c55b879e,adele-battery-v1,MMLU-Pro-math-833,v1/KNf,v1,KNf,1,362e16de5128f6b17230f0bb676f4afb26c5d47f10493af1f1743f28012b3a7c
+v1KNn-d8d909c39d09fb97,adele-battery-v1,MMLU-Pro-math-833,v1/KNn,v1,KNn,1,6214677e63c58a1709c377044e240c9cfa7472a40e9a737e17bb889a6c35d5fe
+v1KNs-055555da192c7464,adele-battery-v1,MMLU-Pro-math-833,v1/KNs,v1,KNs,1,e98e15e6862b2e0309a587887fdaf4fa4f601a30d475d670009245fc82ed143f
+v1MCr-2c432457c3951d03,adele-battery-v1,MMLU-Pro-math-833,v1/MCr,v1,MCr,1,76d7079ba649847160c4e785e7efba7ad70d0e38adef522037264a337defdb82
+v1MCt-896719733f9c0efe,adele-battery-v1,MMLU-Pro-math-833,v1/MCt,v1,MCt,1,16d2cfec039e3238683fb1c9a630dae9f2929aeaf1c2ad26a660aae2e1958f12
+v1MCu-9a426b272ccd2a70,adele-battery-v1,MMLU-Pro-math-833,v1/MCu,v1,MCu,1,880ce438f90e610f4faf828d1304c0eab3b0be203e002ff3f53fdc907a64b5cc
+v1MSm-0a862eaf3512f872,adele-battery-v1,MMLU-Pro-math-833,v1/MSm,v1,MSm,1,471d504dfe8b2c933f24b057ae20af66cab3b5806ee5cb19e2e8abf8fbadba89
+v1QLl-4c68e175e86ae442,adele-battery-v1,MMLU-Pro-math-833,v1/QLl,v1,QLl,1,5106dd8edc5544f76889aa00730c3288d167dd8eb35dbd7d79c55893e7ec199f
+v1QLq-116308d5364ed16e,adele-battery-v1,MMLU-Pro-math-833,v1/QLq,v1,QLq,1,aa6dea25225a2d3a7cf1faaf632a4d164b04d1e2391685b7a91a1101717e254e
+v1SNs-6c4ce865844c009e,adele-battery-v1,MMLU-Pro-math-833,v1/SNs,v1,SNs,1,f326096afbd4297ebea67ab07c4cc051e05d62ad75649ac234e0fcdde061cc9e
+v1VO-bd29e478ef01aca3,adele-battery-v1,MMLU-Pro-math-833,v1/VO,v1,VO,1,be17684d9d885695caf4d5c4ebb98d7b8f13c4254a5006cab566b82efab4190c
+v1AS-c2bc7511f351e6dd,adele-battery-v1,Math-math_comp-50,v1/AS,v1,AS,1,f14c4e57afd0b69a26d6d1a6ecc50fbed291a63b2444051db6b807435efb8237
+v1AT-249be8e953dc4f09,adele-battery-v1,Math-math_comp-50,v1/AT,v1,AT,1,893b60f2aa22a1838b07f83571cdc5937dd1626d941d87bf634dafdeebb0cfe3
+v1CEc-873569b6c936a736,adele-battery-v1,Math-math_comp-50,v1/CEc,v1,CEc,1,adef06ed12439907152288b3113e8586d0799ad010777111f4084a159b35b7e3
+v1CEe-3885deed492f3715,adele-battery-v1,Math-math_comp-50,v1/CEe,v1,CEe,1,0c3136aece54bf9bda6fe18681261da221a618963d54e4a35203b523cfd18c9c
+v1CL-83055c4c24ffa216,adele-battery-v1,Math-math_comp-50,v1/CL,v1,CL,1,e745c4c4444f4777303c6ac39f57dbac4584c44497109c920a8a952a76cd2d03
+v1KNa-a41513621282c2a8,adele-battery-v1,Math-math_comp-50,v1/KNa,v1,KNa,1,2751184b1feedca71fa166fd2f93f8857a726da61510e889ca1795698f568b4a
+v1KNc-85b16777c938b5f8,adele-battery-v1,Math-math_comp-50,v1/KNc,v1,KNc,1,fa1cce3b9e13ee9a18e4542210686eca30a12c85234d626fadbdf05f84c9c20e
+v1KNf-955d37807847bede,adele-battery-v1,Math-math_comp-50,v1/KNf,v1,KNf,1,ad3c96cbd09bb5ed6d6742bc8735c84d38ce95a6fe63ebfb6ea89a886763be16
+v1KNn-54177e824eed62db,adele-battery-v1,Math-math_comp-50,v1/KNn,v1,KNn,1,a29e960acb97f71bcfaa6c4d864ba923464626f0c0b18912eb592a7a5d5d33ad
+v1KNs-16864a06cd7386b1,adele-battery-v1,Math-math_comp-50,v1/KNs,v1,KNs,1,97fe71096c197065a50cb1706b7d90c83e21fd37fa0c5a150a5fd5bc21e84ce7
+v1MCr-da81e45290348e07,adele-battery-v1,Math-math_comp-50,v1/MCr,v1,MCr,1,0af52642f70f1528fd1b624de7b1d37dcebf99050a7bc23a74bab3fa3d93e303
+v1MCt-3487a2a1352374c7,adele-battery-v1,Math-math_comp-50,v1/MCt,v1,MCt,1,4d04542f100492a53b3350ce7ab0118d88312f78efee5176032947f6c8cfbae8
+v1MCu-8ffbdf5be4602343,adele-battery-v1,Math-math_comp-50,v1/MCu,v1,MCu,1,801031e9da62778a9c1c58f164b4a2848252fa06f6ef0474a06bd95a377866e4
+v1MSm-a3eb593207b0bd95,adele-battery-v1,Math-math_comp-50,v1/MSm,v1,MSm,1,3d75276b268a01e4c7ad72dacbe7aaf38650f6b63088b441e680ac95d6f89a44
+v1QLl-3086c29766d2b635,adele-battery-v1,Math-math_comp-50,v1/QLl,v1,QLl,1,b7975cac40a8f8da026a558aea4dcd2fdaf4dbc9403a3e512192bfe0725e4b5a
+v1QLq-851b8e81e4f787c1,adele-battery-v1,Math-math_comp-50,v1/QLq,v1,QLq,1,3f05651c06a952ac08c67a2a97d719e0ea71230ae8fe5d967be415f7d6a35026
+v1SNs-c1c44c1795e772b6,adele-battery-v1,Math-math_comp-50,v1/SNs,v1,SNs,1,0213367c0103aa1daa17bddc807ede3cfa56f545d45e9c1b09411777ecd60116
+v1VO-98a25b0c0e237635,adele-battery-v1,Math-math_comp-50,v1/VO,v1,VO,1,0155839546eee47bba1cd8cc6f1b4433ff9f9a198c2af03cb4b33351d3f2052b
+v1AS-5bae6b01471e8547,adele-battery-v1,Math-math_comp-81,v1/AS,v1,AS,1,dcfe3afbcb52da57336112788d1c3e91cfe9af2669413eaaf8a1f2c1b87aa204
+v1AT-09feb5c09bf4a31d,adele-battery-v1,Math-math_comp-81,v1/AT,v1,AT,1,e5245cba554610544e24118a03abc6d37ce956b6254c1a5409e846a89296b57b
+v1CEc-196dcb8a5d1d39b9,adele-battery-v1,Math-math_comp-81,v1/CEc,v1,CEc,1,7472772cd101e6fec65e7dbfafe0ccd690fcb03fbc9fded05faf1d057bdf3f6f
+v1CEe-461b9ef19b4a1d05,adele-battery-v1,Math-math_comp-81,v1/CEe,v1,CEe,1,da335937647e68eca5a4fb4ab822ad8d3697f64e74e0355ab2710ec22c45b7d3
+v1CL-960ce6e77515c5d4,adele-battery-v1,Math-math_comp-81,v1/CL,v1,CL,1,739c9032d9b8934df413aaa7b67ddc692cbfa696435fc5b3c25cee3c2e746ed4
+v1KNa-4cf1aea5efb349fd,adele-battery-v1,Math-math_comp-81,v1/KNa,v1,KNa,1,061f6491f2a8eeead226702761912a843c94864fbdc6c49a0bd57c97eb2397bf
+v1KNc-a345bd8cbcad5913,adele-battery-v1,Math-math_comp-81,v1/KNc,v1,KNc,1,656ec0eece4aa9ec5168c32158fbc505261b63064dae83a11c9b9590b89b38f1
+v1KNf-480e0412486be79b,adele-battery-v1,Math-math_comp-81,v1/KNf,v1,KNf,1,37f4f63dcd948f926bbd8aa24c4388f3ba7926f9c001503f593daf384f6531dd
+v1KNn-46aee3fad779b219,adele-battery-v1,Math-math_comp-81,v1/KNn,v1,KNn,1,31fdafb5b492243a582350eb4594d782b41d4ad7191957af0ad56743e03ba4cf
+v1KNs-3acda3fbce5871c2,adele-battery-v1,Math-math_comp-81,v1/KNs,v1,KNs,1,32c052a19de82cbd05bf68cf06daac2b2df56f3789f2d4293b1214c154bb96cb
+v1MCr-1ac0a6a25de62694,adele-battery-v1,Math-math_comp-81,v1/MCr,v1,MCr,1,54c8567332109b282ea6bb264f24c4331e102fd78dfb44e5ff936a640d426968
+v1MCt-99eb4cf3df49d03d,adele-battery-v1,Math-math_comp-81,v1/MCt,v1,MCt,1,38b9d1a47f65dfe50164e19da08a3a6c7b948b378816dd707a7f46f52480cb80
+v1MCu-e16fc08363544940,adele-battery-v1,Math-math_comp-81,v1/MCu,v1,MCu,1,6bf8a66b745c4050f9233d1f6702b26bab4b7f2d13993444826be49b8b2c5fbd
+v1MSm-eb0e393bdad3b038,adele-battery-v1,Math-math_comp-81,v1/MSm,v1,MSm,1,8ce9edf2e6472e7df02d5cb13d70d482a4e208a695f0c54f203cd6c4ea44595e
+v1QLl-56127fe07db755b3,adele-battery-v1,Math-math_comp-81,v1/QLl,v1,QLl,1,c71342b4250d90d4ccf2bb30c5055717739988e00175caa158fa0723c13feccf
+v1QLq-06652432485d3265,adele-battery-v1,Math-math_comp-81,v1/QLq,v1,QLq,1,ab30a85bf6142ef72649a3d25554c50ef22b8ef9a06d8bd43be890f886478542
+v1SNs-c98cdd25dd5b9cc5,adele-battery-v1,Math-math_comp-81,v1/SNs,v1,SNs,1,9f6377cecd7bff61dbf1d1d4c31ae65d9e9a45368f0aad8af08c2095f741743a
+v1VO-8c27ff66df27df3a,adele-battery-v1,Math-math_comp-81,v1/VO,v1,VO,1,20f710abde2861a674675213bde897c9f91ceabc1ecb62d2628caa93590b3318
+v1AS-8ebd48450db875f5,adele-battery-v1,Math-olympiad-16,v1/AS,v1,AS,1,fedb35640467b8374da9595e88cf54656325b5860d12222a0e1414c1584054ea
+v1AT-1172bfd757b62848,adele-battery-v1,Math-olympiad-16,v1/AT,v1,AT,1,8bb4799ccfcf5599d3781d18f2efe62ac99ce4e461dfb3b2f90bfe0197ef061f
+v1CEc-1c26093207b326d9,adele-battery-v1,Math-olympiad-16,v1/CEc,v1,CEc,1,04b5babe65d291f3437a6aa7192ff4970de59dc6b4485aa0d7d2c4e3fc5b6486
+v1CEe-6406e7556b518717,adele-battery-v1,Math-olympiad-16,v1/CEe,v1,CEe,1,7d69fed63e8591e35f9befc3549becb335ab402f2e74bbd40128db499454ab47
+v1CL-f8dd3537691dfbcf,adele-battery-v1,Math-olympiad-16,v1/CL,v1,CL,1,18579beb9103f63af2cce6e599252c1802d00cf4ce9de78b0271d92c3269d431
+v1KNa-2b9411f6a7cdc5e0,adele-battery-v1,Math-olympiad-16,v1/KNa,v1,KNa,1,7b8ac4dada62ffaa7738357942fa809f475e4f80dcf99a804955cbaff69b9a1a
+v1KNc-eae9439c6b74a77a,adele-battery-v1,Math-olympiad-16,v1/KNc,v1,KNc,1,e6dcf85f39099b1621393e4dff2d893c490cda7c857673c3d74d529c2feb0af9
+v1KNf-00893e1c8f6d4d53,adele-battery-v1,Math-olympiad-16,v1/KNf,v1,KNf,1,730363fd02c73cfafae3db223856606e5f63b4435713de2e614d1efbe0259483
+v1KNn-3a0a04dc721f198f,adele-battery-v1,Math-olympiad-16,v1/KNn,v1,KNn,1,b83b0302663f53fd6c61a374c61303feac761580f80da8ced6e33d2b4d14e317
+v1KNs-106f55aae05cece5,adele-battery-v1,Math-olympiad-16,v1/KNs,v1,KNs,1,3fff2c442ef88de6f7e889497d3853695cd17e1f0ef96792e0b7a2a4a35ff7e8
+v1MCr-aa6afa299cef6531,adele-battery-v1,Math-olympiad-16,v1/MCr,v1,MCr,1,dca6da1f706477a40786e879b18d8676966c0d4005b3027f816e16d539f4a2cd
+v1MCt-ae9ceeb768c3ed03,adele-battery-v1,Math-olympiad-16,v1/MCt,v1,MCt,1,aebd465c42d6d0915be42d3f881315965d0b45bc620a45e1711e669c7dfeb86c
+v1MCu-2ce1cdc95d8e8714,adele-battery-v1,Math-olympiad-16,v1/MCu,v1,MCu,1,2f985ab452a1816e5d6a8259be14221c30a392ce80d69baa53465eda40a12da8
+v1MSm-6264f85287bd1b97,adele-battery-v1,Math-olympiad-16,v1/MSm,v1,MSm,1,6e3fc1e2482601b2c8ed1f00f2f31a1afe311560e280d8ba673064f0f64a822c
+v1QLl-0cfd8f00cb83d201,adele-battery-v1,Math-olympiad-16,v1/QLl,v1,QLl,1,37ee8add4704a0ade77d5323fcbc44c4dfa3ecd2e06d3838a239999dd5869319
+v1QLq-e344f7a31a83441c,adele-battery-v1,Math-olympiad-16,v1/QLq,v1,QLq,1,5a1e0ded89234ae66c455aebe172021db1aea681946a79a16e5e50685317ce2d
+v1SNs-b77aa6813371860e,adele-battery-v1,Math-olympiad-16,v1/SNs,v1,SNs,1,642277a4080d092f0107cc08854ec221e2804b325b5611971f716d21ec1850b8
+v1VO-633853ab9887e57b,adele-battery-v1,Math-olympiad-16,v1/VO,v1,VO,1,cce7e21649087624692c1a78e57df052c8b454c0db5afc02408483e537fc9d0b
+v1AS-9602c95f17df70cf,adele-battery-v1,MedCalcBench-lab-128,v1/AS,v1,AS,1,dab63e9fc3bb970921704495b6b74074fea610b31624b1c06740413df3a0da4c
+v1AT-e0a623e68ab9abd8,adele-battery-v1,MedCalcBench-lab-128,v1/AT,v1,AT,1,c0edc0642e11ec7e3703fad0fa97945afc9d756fb26173886a633d2d726dfc9b
+v1CEc-675a2284f18a6933,adele-battery-v1,MedCalcBench-lab-128,v1/CEc,v1,CEc,1,98c7c264285d945b78de8355bb1316ebc90703d7ddd37647b707633be4022abf
+v1CEe-52adf7749e4f9037,adele-battery-v1,MedCalcBench-lab-128,v1/CEe,v1,CEe,1,5622de06a7a57f2ff41de9ca026a02f06a1fe4472b8f88b61d9ef566beb3af6a
+v1CL-b6962a3541aa96c4,adele-battery-v1,MedCalcBench-lab-128,v1/CL,v1,CL,1,230327d469f619d9b977ad12638f875ea35beae63b6254c36adddeb9ee2c228a
+v1KNa-a32e80b03a86361e,adele-battery-v1,MedCalcBench-lab-128,v1/KNa,v1,KNa,1,3964be4fc5e5a63b27358812347e01f635d6c16bb27f9b14b47fa255efcbe6b8
+v1KNc-0ada29b313c57145,adele-battery-v1,MedCalcBench-lab-128,v1/KNc,v1,KNc,1,90309d6cb3068f19300ff3ceda2eb80f2561a98cd37782754cd5a7801bca5a6b
+v1KNf-fd4551cdf3df6d0b,adele-battery-v1,MedCalcBench-lab-128,v1/KNf,v1,KNf,1,5eee13f2de3a4628724841cba9ce4f7a323ec65e64358c1cfc1c8eb2c6e664f1
+v1KNn-ae7411b8015b0292,adele-battery-v1,MedCalcBench-lab-128,v1/KNn,v1,KNn,1,a20f48fa747aaf25363cd3ec33874bbb9528c3ca41b29f341eb6f81e60cc887d
+v1KNs-b2be2f2e06d5f901,adele-battery-v1,MedCalcBench-lab-128,v1/KNs,v1,KNs,1,14e5fd1e3e1cca2def6a513f1faf5d44e04007fe8b07364e58efffccb3a58cec
+v1MCr-7bf61c2a265f9c5e,adele-battery-v1,MedCalcBench-lab-128,v1/MCr,v1,MCr,1,5b319b53ca62d19559011f463edcd1ae724989ca8150001a73c3e2d2d8681503
+v1MCt-9d00cf1f50b47343,adele-battery-v1,MedCalcBench-lab-128,v1/MCt,v1,MCt,1,7719c2e2b11f8d80543c6b5ad64a306530d437dbdf398d007f1f8f6424823c2a
+v1MCu-ba7481b541a461a6,adele-battery-v1,MedCalcBench-lab-128,v1/MCu,v1,MCu,1,38704696959b3dbe8b0ab8084b70b4bd9a2c9f8b472bb8298a9777490c33fa03
+v1MSm-c0245d3db91f47be,adele-battery-v1,MedCalcBench-lab-128,v1/MSm,v1,MSm,1,961a53b23d0d550c6161c0480fbe4ccf529faac6905752cbd95ef6b3e525c377
+v1QLl-d46012d401ed9f85,adele-battery-v1,MedCalcBench-lab-128,v1/QLl,v1,QLl,1,bf9105eae713b6ea426b1cb47fa7f963584bf84faf95f5f117b42dfd4c4d3e0f
+v1QLq-efb4e2b5421c8bab,adele-battery-v1,MedCalcBench-lab-128,v1/QLq,v1,QLq,1,f6ddf9c261c8d57374332c2e5db386b69dfb88193859d6dc4a521862c6aaaf80
+v1SNs-a791c7ba93acff4a,adele-battery-v1,MedCalcBench-lab-128,v1/SNs,v1,SNs,1,b430d24d972c92a98fa90fdf8494be92c9f306487aeef08e43f3521454fa62e9
+v1VO-fc0ba2ab62a7ab67,adele-battery-v1,MedCalcBench-lab-128,v1/VO,v1,VO,1,f3016c4cb06c4895c834ef562c12bfd98f8d4a86c7e85abd4f20dc8f53d7b58b
+v1AS-86534d32b9040a43,adele-battery-v1,MedCalcBench-physical-104,v1/AS,v1,AS,1,0a898c7a5dc3d1e41b05911628d645042198f619886934576c4c05a8364446f5
+v1AT-81adedb1fc099670,adele-battery-v1,MedCalcBench-physical-104,v1/AT,v1,AT,1,83b2532d658109da97c6bc0bc7f0d5abcc451ef398b4b5a0a3615f864cb715d5
+v1CEc-8c7424286f7ffe80,adele-battery-v1,MedCalcBench-physical-104,v1/CEc,v1,CEc,1,0f1d993df40ad401a38e33007f986f7ff5ee3e2b95fba6b47d1de1976d038bf9
+v1CEe-81f65b870da2d0b4,adele-battery-v1,MedCalcBench-physical-104,v1/CEe,v1,CEe,1,83f2bf78414dd9046a783a2740c68dba7f20bc2f603c8176b773a9be13587e4e
+v1CL-772c4ff5865b59b4,adele-battery-v1,MedCalcBench-physical-104,v1/CL,v1,CL,1,b7b53e2006944cb1322b3c9349472833eae33b648d495c023019fa518ed063f6
+v1KNa-97ec9cc47da53931,adele-battery-v1,MedCalcBench-physical-104,v1/KNa,v1,KNa,1,b09c1bf680b08042556b29e03adc26fa50b81ce53974d915310d6d3320166f8e
+v1KNc-af4636dfd521dbd3,adele-battery-v1,MedCalcBench-physical-104,v1/KNc,v1,KNc,1,6d6cdba6a997bb9f39e5d32c69b7d2842faca14dfdc82c55e6df3fbcca006be5
+v1KNf-a26ee719664e7742,adele-battery-v1,MedCalcBench-physical-104,v1/KNf,v1,KNf,1,85f9279fca99aa222af17c0c9558ab0ccefaac5b33261844087076b77dfbf6df
+v1KNn-942341f31fe890df,adele-battery-v1,MedCalcBench-physical-104,v1/KNn,v1,KNn,1,23e8349eb1141bb9ab734ec1c3817ae50b401860ff4c96ed758728687d922cfb
+v1KNs-20b7d7a95c0c8a7b,adele-battery-v1,MedCalcBench-physical-104,v1/KNs,v1,KNs,1,3c31dca0f4fcaa46ac4747a825ec5996dc08a851a92bec2bd2c92a0f3a82cc0d
+v1MCr-d91da4988dc9979e,adele-battery-v1,MedCalcBench-physical-104,v1/MCr,v1,MCr,1,870d9968313fae2ee834e249f2f56c7bb28a7be05700ce7d66f7179ecf23c89d
+v1MCt-ddc33b67c573a98d,adele-battery-v1,MedCalcBench-physical-104,v1/MCt,v1,MCt,1,2477012c6fbed5b7dccf6a6ed4fdb908bd8438940504d815d46921f84f5492bf
+v1MCu-04b73c5eedd9a927,adele-battery-v1,MedCalcBench-physical-104,v1/MCu,v1,MCu,1,ba9e4dfe0a8480ee46dcd116346a6ff62721b6aadc9c34b5e75b90736ab796f9
+v1MSm-fec5386a7c502e09,adele-battery-v1,MedCalcBench-physical-104,v1/MSm,v1,MSm,1,177587c6c412b5f9c56c37f73e5e14db1f68a716f8c973e4f45b59638ca55553
+v1QLl-de22d9e5772d8b5b,adele-battery-v1,MedCalcBench-physical-104,v1/QLl,v1,QLl,1,eb1e5c153b90d3e6fa4db6781b59fba2fe984171dd9190901fa6bd97b95ff6eb
+v1QLq-3b9dbe3e8bf6e7f4,adele-battery-v1,MedCalcBench-physical-104,v1/QLq,v1,QLq,1,5876cdf5627157daf3cde56378585774bd2cdfd4305484d0ee081ad2efc204c9
+v1SNs-2a14f02a24327662,adele-battery-v1,MedCalcBench-physical-104,v1/SNs,v1,SNs,1,31d6b8e248848dfb7cc08586352fc85a6eab82324712f4de87e1bc18f70839d3
+v1VO-08405ce13d020ba9,adele-battery-v1,MedCalcBench-physical-104,v1/VO,v1,VO,1,1a33297b821928e5816f6fc620430c09c8496204f3e1f228e2bde72e43f464f3
+v1AS-18c8973114272305,adele-battery-v1,MedCalcBench-risk-29,v1/AS,v1,AS,1,ca9d084a4ca507f3255d69614b148d51537821bc739237f0614c6967abb49613
+v1AT-56751a093d1e9375,adele-battery-v1,MedCalcBench-risk-29,v1/AT,v1,AT,1,0859001465fc4e1a8d28eee15c020f177d5b38c61f8849cabbdcff1a23d33435
+v1CEc-b7c4adb38676d6d0,adele-battery-v1,MedCalcBench-risk-29,v1/CEc,v1,CEc,1,7c2fc5469bdd7be577b6bcebafc08167a47145103e9a5ddc555f853f14a21d69
+v1CEe-be787349121d3b95,adele-battery-v1,MedCalcBench-risk-29,v1/CEe,v1,CEe,1,7f9a5efc3d878d22798050d7fdcad4ea40a427fb1153c92d89ef419a6119a38c
+v1CL-ddaddb93aba41bc3,adele-battery-v1,MedCalcBench-risk-29,v1/CL,v1,CL,1,acfdc9f1572ed56aaad18d6134a5b91eb709d7b7060e4d5eeffc1ccab25576e1
+v1KNa-a2cd7ad45faf9f7e,adele-battery-v1,MedCalcBench-risk-29,v1/KNa,v1,KNa,1,1675d12e61f963213063578d663e8dbb6aa5cc57e810fe26543799261dcb2676
+v1KNc-faaca3002030e0c0,adele-battery-v1,MedCalcBench-risk-29,v1/KNc,v1,KNc,1,696ec4af1a1137e94fc4d15503df6886f0603a62b86dafd8171371eb855315d3
+v1KNf-aba92395c6219d6c,adele-battery-v1,MedCalcBench-risk-29,v1/KNf,v1,KNf,1,b580bb1772f165f7153046e41523b6483c21e0780a229e1181fc6aacb30dd0ac
+v1KNn-87e0f41248ee04a9,adele-battery-v1,MedCalcBench-risk-29,v1/KNn,v1,KNn,1,4b8b8587aa6cd58c1414aeb494d13482cd570a6d90778f61a5909929c5fd9f14
+v1KNs-139cae8f7e71ce12,adele-battery-v1,MedCalcBench-risk-29,v1/KNs,v1,KNs,1,829eace20f0575e53d7dae7ceab015eefe9c056785930d39aa23e3e00ad83d6c
+v1MCr-46357d79f4f817e3,adele-battery-v1,MedCalcBench-risk-29,v1/MCr,v1,MCr,1,ccf8913a25bae3ac88b8aedd1810f1ef67f28b6a91feca3b98fc1250d9e5b38c
+v1MCt-2cb261bf0c378147,adele-battery-v1,MedCalcBench-risk-29,v1/MCt,v1,MCt,1,ac235424606343af218925f20fcbeb7ea7010bc2b148f0ac1a3af175124a37e7
+v1MCu-8f4346bff1e3944c,adele-battery-v1,MedCalcBench-risk-29,v1/MCu,v1,MCu,1,363814c1fd830e4d36f1dc4f8052db608b55c29b0b1321851bdd94c7b1a2c660
+v1MSm-db53a2300dfd2c5e,adele-battery-v1,MedCalcBench-risk-29,v1/MSm,v1,MSm,1,7322b47de893bd34ce36316674336ded36cc111b30c1735a59290f0a7d9b2f85
+v1QLl-66320d5442776772,adele-battery-v1,MedCalcBench-risk-29,v1/QLl,v1,QLl,1,2850342e292d4fe945f4341ba85631d611bc34ba45cec80b8d575e54ecb21263
+v1QLq-61f576d8baa85661,adele-battery-v1,MedCalcBench-risk-29,v1/QLq,v1,QLq,1,1797083335b7cf023df274310d2661a52406b63c0956cd740e858945427a8054
+v1SNs-a95dbe84523d0c56,adele-battery-v1,MedCalcBench-risk-29,v1/SNs,v1,SNs,1,d51ab26fae539eb3e4fc34fdcd9d33e1db21f524fbdc678bd9a4b25811888f6f
+v1VO-a07d611003971e34,adele-battery-v1,MedCalcBench-risk-29,v1/VO,v1,VO,1,d81fde74a3949cdcfaf99e1b18bc41b15de9ff344407d4ff0286b8d3c956cc5f
+v1AS-aa9feeca5532b830,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/AS,v1,AS,1,edd3b5afca4d4d193a2f499e5edda9989e927829ee1fc85fbbaee2e23c6490df
+v1AT-7b2d8b514c1bde96,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/AT,v1,AT,1,d0d194e209728a4718d3863b4232b855dd018c745c1b1dc524413f58b9d7628e
+v1CEc-ee3ca80f8c0d748a,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/CEc,v1,CEc,1,358e2734c13b21b47757b7b1083b9c7d1a54fa9de3c6520c67f5fc2c73ac803c
+v1CEe-96bb101d2117bb3f,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/CEe,v1,CEe,1,67cb778250e302fdc4b710bdbf655b9aa332cb776f41263662f36d4ee0457b00
+v1CL-ad14463f37b09d86,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/CL,v1,CL,1,ab7fe620511bd9913f574349f8cc26ef0afc3a37bffce550941563ffb082a260
+v1KNa-04a0e83223b1e717,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/KNa,v1,KNa,1,619c3e91ea3892b362512feef40d11ffbdc09f3b50d6af4691befb8fea857cbc
+v1KNc-65d651fd3d665e29,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/KNc,v1,KNc,1,4a366c7edff7830c820c7649b425c5c7b08fddce4d0c540cfcb371487d6a12f0
+v1KNf-22602a81beb86f43,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/KNf,v1,KNf,1,fd76c94c964055051b93078ddd1e053459d8213a3a28f086605aa834f92dee64
+v1KNn-a1d7582b9cbcb681,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/KNn,v1,KNn,1,248bb59ed43541d319de9af7666c1f0576ee72dfd2f6d6a26afe389b8803c121
+v1KNs-7f1d010c0516d7ab,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/KNs,v1,KNs,1,eb9e2af7f05b09726ae12cfcd3b245e112a612a6bda9d3d6347c5cb794d1a5d0
+v1MCr-f6ccb79cfabfdd11,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/MCr,v1,MCr,1,8dd8d27db98eccde4e0d0af1b428bd4ea76c96180ebf7350a32fc710b61bc5d6
+v1MCt-3c88b8665cc98945,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/MCt,v1,MCt,1,0a1163bb89eb302cefcad7f4e12a7c88ae251ec88215aa62bc1ca44030854bc0
+v1MCu-dc1684d555e09839,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/MCu,v1,MCu,1,8e70f041e70a680afa54fca961b62d99765a074d26072f36e6499008895264e6
+v1MSm-27da8acc3f87de64,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/MSm,v1,MSm,1,f9cc7990501db10751792988b8a32da6511b76a60223c0474b4135195930ec73
+v1QLl-69db3afb014c3904,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/QLl,v1,QLl,1,a231fbb18e3d4af85a6bf5934bb3468d3fee2a155930cd3d97556e1afb246bf1
+v1QLq-c7bcbb9fd0585c90,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/QLq,v1,QLq,1,751396d59b90aad3fd84e9c9959b9c0236badf91e65079f482929bb463a3144d
+v1SNs-889ec4b335ca2aa1,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/SNs,v1,SNs,1,14f4a4b0d9c8ce99d02d1ceb9ba6d121f21de099dc133b2f6f74f9236c38b432
+v1VO-d17245acadb90d8c,adele-battery-v1,MenatQA-MenatQA-Order-171,v1/VO,v1,VO,1,1a27220eeff173587d3da6226054841c99678e34737dcbe52d8610190f436f1e
+v1AS-d00b9e2ba5ec6ce7,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/AS,v1,AS,1,184df75d7579076afae4eaa0a2fc43cff54c8c220781474ff991a74404b8299a
+v1AT-d4bdaa097156bd3b,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/AT,v1,AT,1,f2d83a6c896b671675395c7eee4f726590543fa5ccee7934db0f002df7ea21ee
+v1CEc-a3e15304b3b24620,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/CEc,v1,CEc,1,7826c5126158dac261f16cb7b1fbfb497e911f493714824268c0b9fd800b1af5
+v1CEe-32faba2567cf3e89,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/CEe,v1,CEe,1,b30efb351ca8867bcab6a45057a4de6b65ed424e2dc4bf0bac0bb8a62122b199
+v1CL-66cecf8ed6a1afb4,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/CL,v1,CL,1,96f1f1713d0cfec34b026dca70e65b71f842eb5e12b01d68c304aed1141dd33c
+v1KNa-22c742f5faaaa6ec,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/KNa,v1,KNa,1,6eb94d573ea47ee4a52d143a8f508b8184a14a174f2fde2af80caf9319cacf75
+v1KNc-5b4fb6eb5bcf6b46,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/KNc,v1,KNc,1,c5c4bf4098d355f5e31f28e20c89634ee96cc5568064eb7c53f70bb72e72802c
+v1KNf-0f2e765ee809fb3c,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/KNf,v1,KNf,1,53506b15b42ed1d148017adb759d615e507b474634dc4be9dc1b9067398a3b85
+v1KNn-459bd8cb59637e8e,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/KNn,v1,KNn,1,d1ae55c796c7044e4e90214177b059d423587af8d2ac20136e30e88d195aa703
+v1KNs-dafdb7fd2bc7c289,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/KNs,v1,KNs,1,b2ad2c82fbda21e7b6e24f6368f4ac98f763773ca3507fa5761805f44b82b036
+v1MCr-f9ea1b65d9643ee0,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/MCr,v1,MCr,1,dfae9f1c5a7def950ca143cc987fb114c76cd70171d7fe498bcdfe2757fa745d
+v1MCt-05dd6edd59fe6ca2,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/MCt,v1,MCt,1,ec9da5f54bca269555b895505e29063d1b45a042283d360abebca70a5567ea9b
+v1MCu-8d9b9b9c4fe27ce0,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/MCu,v1,MCu,1,aff8381478ea9eb251f209bfd2e458cf595916e1bdc229190d0d061b71b768dc
+v1MSm-5c42746e62740b8a,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/MSm,v1,MSm,1,f57f69fe47422c94bca8423f5f8d21304ae445935de5de8412c042631cc375dc
+v1QLl-5417fe54f3233bfc,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/QLl,v1,QLl,1,f8fe1015c0c51b30a2cdcd571130117b20a124c6615a0ad58bd07b3595fe3fb9
+v1QLq-9a716e15e1755106,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/QLq,v1,QLq,1,f66e14d0c2a372e44976ead66dac22773ec5d6e9baf7714ce1b9d2585766fbee
+v1SNs-54e8135cf94bb131,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/SNs,v1,SNs,1,96c7f312db30f98ec602cba6a0761511038fe6c7cc417d04f233eb18610db4fe
+v1VO-9fca34977d883809,adele-battery-v1,MenatQA-MenatQA-Order-66,v1/VO,v1,VO,1,b5401e4a441eb7b2035e926d8356f015db50f74ecce62a253b00fb65f9eebe85
+v1AS-db7a897e0b30a2be,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/AS,v1,AS,1,f63dafd632950cc9a35cf6db7fa46b10375e2f8c3621b053357efa0111aaa72e
+v1AT-45cb2969891862b9,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/AT,v1,AT,1,85f50b2f187640bbed9b335eaf3cd6d91439d93d20fee6b92ed6a10145abb7ce
+v1CEc-f46f285cc23d39fb,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/CEc,v1,CEc,1,5ed04fddb35b8ace87c82a9a4ae51fee61839278a54a2a614bdbe0d47d876398
+v1CEe-7593ab273ac30274,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/CEe,v1,CEe,1,6817598c9a69db2a5f3e6e47f6094784c6ea7fed23b534ed20afb42c37453676
+v1CL-203b27cea1179662,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/CL,v1,CL,1,d5e83adbc317ca352db04f78f7b47cefcdd747ed00d875a92c8611970638605c
+v1KNa-47d1c7abc5fbedb3,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/KNa,v1,KNa,1,7eb81af5ef1dc9dee04f9cd361a4bae7bdb12152dd30f85c9562b3e2a701e86a
+v1KNc-9358bdd14a6cd1e1,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/KNc,v1,KNc,1,921ae8cf218e548202baea02fdd92a51ccce98f9b2bcf50d0f1d302a71e72b56
+v1KNf-2524738b7363f48b,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/KNf,v1,KNf,1,96ee6271fd299f22c7c12417c9b9e226f1d17a54439b6631c8f1252bd328ca1e
+v1KNn-6b8917e59a137ef1,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/KNn,v1,KNn,1,a2d5acffcb19f00c986d22fe356d6d206aeac1225c6b65f8957372bc22c99895
+v1KNs-603043f59ffeef10,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/KNs,v1,KNs,1,b1be4ecf1a3cf0e785c2cf1bacb295943caa529639360cdfa847aef10bd3f7b1
+v1MCr-2749f525b6906bb6,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/MCr,v1,MCr,1,60b22d3eccda83347082883f799cde06380005712165a2aef530d1d2825b6b3e
+v1MCt-35cb051cf6b403e2,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/MCt,v1,MCt,1,b0ba1e4ba582352ad1e2dbd77141376f9f8c42aa069cf273b489f3b01b414eae
+v1MCu-ce1129446981aa47,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/MCu,v1,MCu,1,ee339897584f76915e65c8b6698dfbaf5076343360102efbbcb9b019fb983289
+v1MSm-478ca796e0065928,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/MSm,v1,MSm,1,b4b297eb2031633c54c1348675c3d7cb51dc114fb88132fb8fbe22a88b4b0f0b
+v1QLl-298ba4e7c8c708ac,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/QLl,v1,QLl,1,fdcfe1246d93957115c5dcf3ec8195220f8b494cef03b5d643e814056cda3045
+v1QLq-ecbd24a31675e84c,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/QLq,v1,QLq,1,dcc19ae1a31153a69d33faf03bdacd79b81a8aaa015d7ad2a4b421d55b8a3707
+v1SNs-36345d74746c7c59,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/SNs,v1,SNs,1,4658b70b4dbc8de8cb7487f4334c891cc4753d0e998157de2b70bf5556cc34e4
+v1VO-d2027f6a7e6ce0b5,adele-battery-v1,MenatQA-MenatQA-Scope-344,v1/VO,v1,VO,1,048451341b43aef52190b35520218c131c34152d80025bd96bc2a09b1b6db038
+v1AS-7aaf710f7d4f6827,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/AS,v1,AS,1,37711a5ad755a25962e5898ba2a48bd5f51f5277d06675828822940c15b7d384
+v1AT-3085d092ed088806,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/AT,v1,AT,1,d398d33063504d191026594bcffbcb6b1e07bb1e6227af88b410cce8637bdcb3
+v1CEc-215085401d4e6587,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/CEc,v1,CEc,1,20894852985b03655d7c4f6036cb7e01804e679a7e4cfd3116fdc712ea14edd1
+v1CEe-7e81ad45a8b1be52,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/CEe,v1,CEe,1,89c1a0cb2b84b1d8884e0759bd7fe04a0340aa8f8b597bf24c7f52258d6459e2
+v1CL-ff1bd0b4b60e31a1,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/CL,v1,CL,1,87ceb6b9e753eaef0bc57f48db29d663880254de1e0139a16aeaa911ac1e85b9
+v1KNa-1f728f3e8bd36f41,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/KNa,v1,KNa,1,a71773fa3c9193c648da7bc61533cbbcd5f7484a2ed312c8fefb04f53f7793aa
+v1KNc-6acd87a7fa690c70,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/KNc,v1,KNc,1,ac79b45042cb62b8fd1a48cf16b324f48564ba6e1b782a831a3e136825dd78bd
+v1KNf-c9dae91a99a9c62d,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/KNf,v1,KNf,1,f89d2aab9eb7677588309467becf132355b867a3b9732372169b5b0b5353a425
+v1KNn-5c1e054d5a90598d,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/KNn,v1,KNn,1,40e58a2afe8337d35735eab3404d1e9a05e968584be567af5a6f678e3438e125
+v1KNs-edc79339c9f89929,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/KNs,v1,KNs,1,f57a13a11007ea9171f8bfafe6bd81c4ff3f97f77f8b7d8133a012cd805bafef
+v1MCr-d115f1c7c10d2c5e,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/MCr,v1,MCr,1,d503113beb8fbe6e5287d40aff69c93e23997fefadb5a1c676a1fea067cf5f88
+v1MCt-06e9045eec2ac644,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/MCt,v1,MCt,1,d2a99889d9493acd0a7aeb2685517d1f73c3342998075410c1feb95866699941
+v1MCu-9bf216168ad3abaa,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/MCu,v1,MCu,1,27eff0de98725000f9007e07f70ed2c58b785d86375a49ca38a916cef0a8aad3
+v1MSm-01dfec88681b265c,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/MSm,v1,MSm,1,8a7ccf35be9a9b72240cf5d5fc37b33691f10c031e36b2f70c5bdaa61edec75a
+v1QLl-d569ef7e0ad8aa88,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/QLl,v1,QLl,1,1a7486c7f15e6f6f72a70298fb3cc094e3cb473e4dcd055d434473b66b1f148c
+v1QLq-0d5f80a069ec5f1b,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/QLq,v1,QLq,1,d1895fc486f953e465b73c319c2b74ffeb87754c7245fb1fae5ba30d1ffba07f
+v1SNs-48a4378ab0a19a73,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/SNs,v1,SNs,1,06a9290d86e26338145ab74300c6faf01e5535e4f45e91a5ce31c4ded25c1053
+v1VO-757f19238413b9da,adele-battery-v1,OmniMath-Applied Mathematics-542,v1/VO,v1,VO,1,dc9613a4e328547cd5fa0f9c10d02cebd9841b19585d809eb5bb76e92fafebf5
+v1AS-b039b4dba36ad848,adele-battery-v1,OmniMath-Geometry-287,v1/AS,v1,AS,1,61d13f094ae217772965994d5bdcdaeeb61c4342c798b3cc5062887a92d15f6a
+v1AT-0747c4a0de900f10,adele-battery-v1,OmniMath-Geometry-287,v1/AT,v1,AT,1,7c8ccf4a5e7e405d00b4e080834aa2c9897d269437c45c400d94c9774a2b647c
+v1CEc-93e94c8c46dafee9,adele-battery-v1,OmniMath-Geometry-287,v1/CEc,v1,CEc,1,19a1354a3c046d3d5ed2aff043840593646386af36fe9fd31b37adfa49e2e6df
+v1CEe-0bee0b9e8b7bcdc0,adele-battery-v1,OmniMath-Geometry-287,v1/CEe,v1,CEe,1,4123559b87836440c23d5b09b055cbc1c3f9a355a38f7ea50a56af7ab9c69112
+v1CL-0f4abbc3f5301963,adele-battery-v1,OmniMath-Geometry-287,v1/CL,v1,CL,1,823e3152a2ea7c8bf563ea2c7ad082c353efb49fef63753a9cf93362b9c6cb7f
+v1KNa-89dce943784721cd,adele-battery-v1,OmniMath-Geometry-287,v1/KNa,v1,KNa,1,ab16fddd052418ef8bbeaa3c34920f6e386e29dea47509a52e84fe96e9be03d8
+v1KNc-689ffea7dac48279,adele-battery-v1,OmniMath-Geometry-287,v1/KNc,v1,KNc,1,9b72698967a9c088b3110b1d3221e62352d138a84dfd16734df53cf4d5bbd523
+v1KNf-6325c078ed663dc2,adele-battery-v1,OmniMath-Geometry-287,v1/KNf,v1,KNf,1,0b2c00da57c54125958f543e5e753ab19ab3fa5b55ad09de37da286c52eaf653
+v1KNn-9fffe1e87847754c,adele-battery-v1,OmniMath-Geometry-287,v1/KNn,v1,KNn,1,f72cb41d13e72486cabd32aafbb6d8072f0a0b650fdf185d2c0429de4f07729a
+v1KNs-6ea9b1819875b76d,adele-battery-v1,OmniMath-Geometry-287,v1/KNs,v1,KNs,1,3835a6dcdf815ff91b7aa80450b8e8437227d90e60d49cba8243fe435100cf6c
+v1MCr-21458e09b15a44d1,adele-battery-v1,OmniMath-Geometry-287,v1/MCr,v1,MCr,1,3e37066358021e4e2a83b150d1c219afa392078e716840ad40096cd55bd645f3
+v1MCt-4d8572fb75a266fc,adele-battery-v1,OmniMath-Geometry-287,v1/MCt,v1,MCt,1,a35079675615a3b8f56b05a28750a69fa59fec74bf1a3f9bf09f972b38285d4c
+v1MCu-b73494086f473a2f,adele-battery-v1,OmniMath-Geometry-287,v1/MCu,v1,MCu,1,48be1201902fe08a4d78ce1c80cc2a8fc999cb1fef2e6567b99d93875a24ed16
+v1MSm-570e2a4472b478d5,adele-battery-v1,OmniMath-Geometry-287,v1/MSm,v1,MSm,1,82fd41fdb7c11e8a5ed3dbb58be8ba29640f0fe7989da8af08f4cefcca813396
+v1QLl-6e3b351dbcaf910b,adele-battery-v1,OmniMath-Geometry-287,v1/QLl,v1,QLl,1,5d5fa98655269b6523fee60a31cd58073112e43da69a1fa6efabb0cb13d751ac
+v1QLq-42dc3a062ec3c299,adele-battery-v1,OmniMath-Geometry-287,v1/QLq,v1,QLq,1,7bbdbd91088859f0cb028ded02feaa731c1f1376dd68cee529bedee4eb98e6fd
+v1SNs-a2c6484e0eb294f2,adele-battery-v1,OmniMath-Geometry-287,v1/SNs,v1,SNs,1,4028902548f46d9954cc39ee5aca50d5067d2ba92a6d2890ddca6b01c297f645
+v1VO-fbb79d454c15d8fc,adele-battery-v1,OmniMath-Geometry-287,v1/VO,v1,VO,1,903aefd4d40f9623c304b4e0907760201abbc496e8538b2cfa1a3e4a8fca5a7a
+v1AS-bc39fb5595ac7cf6,adele-battery-v1,OmniMath-Number Theory-248,v1/AS,v1,AS,1,d8d68e586e97bf877362079e9658eb90d787460a8a455a7e2da612deaabea538
+v1AT-f3841aea71395e2e,adele-battery-v1,OmniMath-Number Theory-248,v1/AT,v1,AT,1,42b809aa840faf7506a75ec8afd77298069f63452ea3c2baf9f425005ee83c6d
+v1CEc-53e53bbf56fb9c00,adele-battery-v1,OmniMath-Number Theory-248,v1/CEc,v1,CEc,1,8fe14dd725e03455fe5ae60598cbb5847acd69fd834a01f76f35ace27ae24b40
+v1CEe-1b5a09fd41a4e888,adele-battery-v1,OmniMath-Number Theory-248,v1/CEe,v1,CEe,1,43d4c2bcc01e26dac5a4055731f4fa9b00aae82f175e36b3ce55825c10de7c2d
+v1CL-36b46febac5ca2d2,adele-battery-v1,OmniMath-Number Theory-248,v1/CL,v1,CL,1,7fb5e7652b7e58167280c83438da2687397a2494a24368fc7f5ec867e842ef3d
+v1KNa-b61ae61203edfa6a,adele-battery-v1,OmniMath-Number Theory-248,v1/KNa,v1,KNa,1,348db27f0437dfede74471d9a3fec09f5315c2ab787a9485431cfcae7608c174
+v1KNc-d4a613ae9732d489,adele-battery-v1,OmniMath-Number Theory-248,v1/KNc,v1,KNc,1,bb154b1530e300cb04b7b128b9224765a6abff70008f3b19b5806774c64f117d
+v1KNf-ec98952f4b438bf6,adele-battery-v1,OmniMath-Number Theory-248,v1/KNf,v1,KNf,1,8d3bd2596a1b8005b33a63eff7dd4f85798fe0e0587f93c6da1bab0e9c2680db
+v1KNn-2f12d8545deb2328,adele-battery-v1,OmniMath-Number Theory-248,v1/KNn,v1,KNn,1,2209f35c9bc696b2782c57d25e7853e3f8b6e0f7a4d403f742c841ad408800ed
+v1KNs-9e595ccb205a2731,adele-battery-v1,OmniMath-Number Theory-248,v1/KNs,v1,KNs,1,b60c1884bea0c7dfbe2a030197979a7ac7648d62660db71209decaff15decf90
+v1MCr-11ff2e257ae070d4,adele-battery-v1,OmniMath-Number Theory-248,v1/MCr,v1,MCr,1,fd38ab2a39cbbb763299bad41aa78be164ed4223579ee610fa7dac580287bb6a
+v1MCt-ca184781ca88b2c2,adele-battery-v1,OmniMath-Number Theory-248,v1/MCt,v1,MCt,1,ea30006cc18bd81c7f25fa1eefdcb6c2fdabcdc5b2c52723083374b16065fdf3
+v1MCu-f577a6c2319fddec,adele-battery-v1,OmniMath-Number Theory-248,v1/MCu,v1,MCu,1,31060307eb25a3e9a6ea49fd18d184b6a6cd2c5c222865ac8c3953c71c5c1a23
+v1MSm-9b0cbb983dfff739,adele-battery-v1,OmniMath-Number Theory-248,v1/MSm,v1,MSm,1,75acfa8f0cdfc2ff9a14dd8a998845a389e3534d14ea656654e8572fbc12f85c
+v1QLl-674d8d982d3402af,adele-battery-v1,OmniMath-Number Theory-248,v1/QLl,v1,QLl,1,027f6203dca858241e75592f5bc372362e19b9e6141c80b20c4ad173a7addbcd
+v1QLq-d4cc2de95d725040,adele-battery-v1,OmniMath-Number Theory-248,v1/QLq,v1,QLq,1,5cc04a55d8cd7ed459536ac20a68f2e1045a4d2dd15f8c2acb8285a41f2a82c5
+v1SNs-6f2029bb0bcfece1,adele-battery-v1,OmniMath-Number Theory-248,v1/SNs,v1,SNs,1,f1cb5421f481481790607038083bbf04ca4c755d859a48aae2bf812652666515
+v1VO-60fd262fed15f005,adele-battery-v1,OmniMath-Number Theory-248,v1/VO,v1,VO,1,17a0cc97d5e76d5c6a9a562b6b3d5b717cc178db689b648537a3729a383bf7ba
+v1AS-4a8d1ed59dadb573,adele-battery-v1,Reasoning-spatial-34,v1/AS,v1,AS,1,326fed5ef66cbda10370b62b0053d6d91c5e6e63cc547ce59e76307218b64646
+v1AT-d2364e563387c1a4,adele-battery-v1,Reasoning-spatial-34,v1/AT,v1,AT,1,2ec0990324123101e939157091a5c1ce67206c5abe13b32fa09b14f91fd280bc
+v1CEc-2644c5ff4c214490,adele-battery-v1,Reasoning-spatial-34,v1/CEc,v1,CEc,1,6412ea7b23787259201f025ae8475f225162c855e255ffcbcc5775e6676307e1
+v1CEe-37cd56bd1a1bac22,adele-battery-v1,Reasoning-spatial-34,v1/CEe,v1,CEe,1,ad50859fbcbeb008d0ba872d0045bbcde99087766ab0c2f952525067073eb889
+v1CL-85f907fe7b0835ce,adele-battery-v1,Reasoning-spatial-34,v1/CL,v1,CL,1,5e66e791b6017704e9a5b911323e7e3a2bf12ee4917af3752b31dc7b5f4d94b3
+v1KNa-a5655e46066893b8,adele-battery-v1,Reasoning-spatial-34,v1/KNa,v1,KNa,1,5de9404f5910aa81045b2730b91a5f5b6fb013649f3d9aa2b8f9399b71d59255
+v1KNc-85aafce14bed5e41,adele-battery-v1,Reasoning-spatial-34,v1/KNc,v1,KNc,1,7256a7d49725bf53592ba79555c608298a64d4279a26a84ea981e8a83f4c7406
+v1KNf-3614f63ff9adcd24,adele-battery-v1,Reasoning-spatial-34,v1/KNf,v1,KNf,1,bb548ef3a708f4681bfd583774d6f84aec78f0afa2da21043c1695079755f41d
+v1KNn-7f217637398cc841,adele-battery-v1,Reasoning-spatial-34,v1/KNn,v1,KNn,1,4f361f543a4a6cb2a273743b973f190fa88bd10859d1834329ed0620b09202f4
+v1KNs-69dac9e1f15ea225,adele-battery-v1,Reasoning-spatial-34,v1/KNs,v1,KNs,1,15d61108e88df0350d8938d89c4f5ea5690df34903b15a8d8a60a4b14ac0d9a8
+v1MCr-ba55e0a8ba4c1e90,adele-battery-v1,Reasoning-spatial-34,v1/MCr,v1,MCr,1,4cc50721fb1a2dc1696b72f435fee2b056705e2baa2ab0dc25a5b1fe92ff2ba7
+v1MCt-ef93747b614bcc8b,adele-battery-v1,Reasoning-spatial-34,v1/MCt,v1,MCt,1,cc62987fb55d32188a0356753a81a0a55b7e75c89f5baa62f791463b18c995e2
+v1MCu-0acccc5f970afc43,adele-battery-v1,Reasoning-spatial-34,v1/MCu,v1,MCu,1,179eb39a3641c412f1df9f4eecedc4b5f2dce53efb09510e1325cc466d2ceaca
+v1MSm-6a776df5d02a0991,adele-battery-v1,Reasoning-spatial-34,v1/MSm,v1,MSm,1,a673ab80fb05ebd11407413ffd33525606de08e37362a885b42e47056d320188
+v1QLl-3f43f7d2daadcb7e,adele-battery-v1,Reasoning-spatial-34,v1/QLl,v1,QLl,1,95c7a200a8b837a93249ce0aed79c4d9cbaa64d418aa2c2b23f45025b5789e00
+v1QLq-9d55e6c0c3763f43,adele-battery-v1,Reasoning-spatial-34,v1/QLq,v1,QLq,1,0447dc7e0a8bdd6ee2d2b57eec4e275235fdbb6e99bd2aff819d058f7d886749
+v1SNs-1abff8e00d62bcb2,adele-battery-v1,Reasoning-spatial-34,v1/SNs,v1,SNs,1,d37c82162b38abdf31ac03c7873547acdb6f16fa8d7a961786b975d94d17b31e
+v1VO-8b99965c365507a0,adele-battery-v1,Reasoning-spatial-34,v1/VO,v1,VO,1,c95127fc2a46dc434f872c29de474810c73731170b295e5e936ac074972a2a7b
+v1AS-b4633f572628f0e0,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/AS,v1,AS,1,a47aecaf8337c6c4b738d151bde1c079161c76ab4f4e2c20617568694b264099
+v1AT-19ddaaa532314537,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/AT,v1,AT,1,681517651d7fc3b1d60bba642926a6bfcdb682738a0531c9666b6081995e899d
+v1CEc-50baa16bf1cd4f00,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/CEc,v1,CEc,1,f5a767554e7ece98a671cd6083c0eb69de2c3554175d31bee99e8d88439de022
+v1CEe-b7d4cf21c21c9f9a,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/CEe,v1,CEe,1,b7edf385206dd58fb8adf9f82fb7b05144bf2106178cc7741de1e113700cb34d
+v1CL-09acf00369458f19,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/CL,v1,CL,1,dabd2733ec52a906cc800606eaa15b4b4ad1cd3bb702b4cca67e27b9aedaa53e
+v1KNa-eb2219bce911fa2a,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/KNa,v1,KNa,1,197d457fe51b6d55e67d1d274fdc4ca83306bf64bb0256606779788c8035ee9b
+v1KNc-10fc538bb301b825,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/KNc,v1,KNc,1,fe110d615a83527e0fc792d0a298d41d29c3285774ae233251d53d7df1e01793
+v1KNf-2da0f46465a4d070,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/KNf,v1,KNf,1,594b443f349d01b562ee8356e2451470b11d0398b4283472833ad61ea1419784
+v1KNn-34074fc035493051,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/KNn,v1,KNn,1,2b69823f30dd198f865e89d2a7db8e868c9792713de5adde612523585e2f1b6a
+v1KNs-69e2dcbd29f54429,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/KNs,v1,KNs,1,77b004837923ee77a8f2f373a0c487021b2925cbab8bf93826a4eb511b26e2bf
+v1MCr-6354c4de2da68029,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/MCr,v1,MCr,1,59cd7f77e684d251d453110f6b5ddf5633deb8690b6719dd73e8cfee4b6f9044
+v1MCt-1ecd15ba8fa2c573,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/MCt,v1,MCt,1,e5f128b7460f88b5d6ae70e5b5240d17a540ff4d1caf26bcc38f2556f1e018e0
+v1MCu-750125d904d9f80c,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/MCu,v1,MCu,1,862c5d56f96393f287ab2f4949fbc14e737f38300c4c5413abeb69c4adf87cde
+v1MSm-d20c346c3eb3d61d,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/MSm,v1,MSm,1,9f5a76436b8042bbcc260bbf074c1c61dca6116ea0f15fd359159508ad5d22f4
+v1QLl-5c09f4ba29018e52,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/QLl,v1,QLl,1,c7d592c5d69d2c7ca04bd56b32ad8d48ea35a5127a7f075c85cf2019560343e2
+v1QLq-6ba4fabfd5bddf97,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/QLq,v1,QLq,1,c664cd9c606a420cd5af8786a2b99a96f68ca2650945e04c12baf39340159780
+v1SNs-df7c909b54b5383f,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/SNs,v1,SNs,1,3b0b98f0cd69bcbcc38bb4d26cf277224e0e995da77940560e9cd1878655e87e
+v1VO-bc874bf9353fbc57,adele-battery-v1,Reasoning-zebra_puzzle-10,v1/VO,v1,VO,1,a446764693db61747be92edb75888a0886cacf2f7a1ad6a67fdb5577c0467838
+v1AS-79a128a45daeaf22,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/AS,v1,AS,1,c14ce6d5ae7630329381edbd22ed16b7f77878770d148f8ed11292fdef353902
+v1AT-4b2c11e4ca41561e,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/AT,v1,AT,1,1ea4da693025623e4a15195e48e4198edce2307a6f7bd6322c8610a1fe3ded9e
+v1CEc-9376b8a1d77d721d,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/CEc,v1,CEc,1,374bf1f3cbd1080011784d8138fa9895a217784d4db1c772d28d015b35d55a93
+v1CEe-271186084bb91e7c,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/CEe,v1,CEe,1,fbdbe6bc8f34109d32a316b7f8822bb2c39b401243066018553a114c7fb65046
+v1CL-45f928670bcd1349,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/CL,v1,CL,1,e16bf042823608f850c23b9f375a01c3bec3cc394141e20f458c31e81b22c1fb
+v1KNa-4e624896dd8ab9cc,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/KNa,v1,KNa,1,8182af2e854ebc883861b7e5c2b1a43adbfd650cbae287d0836885c857362f2e
+v1KNc-eadb5dd6d35b6b72,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/KNc,v1,KNc,1,9a2060684e3b58adf54c0ee97ba343512b9645bb6b59af66a3d61fed0cac8a78
+v1KNf-2664a0466393db37,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/KNf,v1,KNf,1,0354c46195ade3b3bf3519819a39441443a8e1e661f83cf621d98a3a289172f9
+v1KNn-9ac75c2397d98b16,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/KNn,v1,KNn,1,b1255e7828814d41f21bf0334469db5f3a9d25ea47315257fbf9f66b049ecc33
+v1KNs-14e1f6dba51b71cc,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/KNs,v1,KNs,1,836cd93cea88840895773f8c3629f7d81f97599257591179cfa605f305fb5c27
+v1MCr-e90b52431c659e7f,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/MCr,v1,MCr,1,636ba4ef8cb982aaa2ce1fb888756b60377e6d67643e6cf53debe07e9ccd26db
+v1MCt-2554f71e8f6f5cdb,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/MCt,v1,MCt,1,3d20d5008b8fb57d3ea49228dafa9f9ed54c25bf59097189aafdbf7f418009b3
+v1MCu-f0211c748a62907b,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/MCu,v1,MCu,1,a8d167f087f507f3d3205e5ff2e3078cec0db9528374cd1c4a0d2a141c694f41
+v1MSm-5bc2a6592c9bc6d0,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/MSm,v1,MSm,1,6f0cb703e55ee2def288412a34d09a3b93f85f62f8423644ade851433bf2503f
+v1QLl-96e046a588c424a3,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/QLl,v1,QLl,1,27225d9c178b470cb10060f8d5b1bcca7bb97ec1e18f1fdb42815dbd80cda377
+v1QLq-f4bf61b87fd0c22b,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/QLq,v1,QLq,1,2e148bbe10678351010b9ddd27b1b1a0187c004520a8906a45104d68af78c48f
+v1SNs-31e494ed380cd012,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/SNs,v1,SNs,1,4acae06e00a81b20ca7c69e4d0028632d39c036aeb93a80826fbbf41dfebb391
+v1VO-f9d13a3bb135bc11,adele-battery-v1,Reasoning-zebra_puzzle-40,v1/VO,v1,VO,1,42deac5cf3d1f2ebacfefe11574982d6a9493d39a5e898f65a54cb605905d940
+v1AS-3e33b15c77211a98,adele-battery-v1,SAT-SAT-En-155,v1/AS,v1,AS,1,2f0d5002813ccc1c9f21d6a02841bcc3e6ba3ba446a8f4d2eb4e90281135b1a1
+v1AT-4a84d4482b30bcb5,adele-battery-v1,SAT-SAT-En-155,v1/AT,v1,AT,1,8600a615e5c4c89e2ab4ec02766bca904ce98b397237cb70e231e86ed2abd9ec
+v1CEc-5c7d0294bf434dd7,adele-battery-v1,SAT-SAT-En-155,v1/CEc,v1,CEc,1,bca3f8170c0126b1fb351f8506450e514e358c52d69a81458bc1c022be223460
+v1CEe-ebe6f41a11904296,adele-battery-v1,SAT-SAT-En-155,v1/CEe,v1,CEe,1,3238eeaff3510489e9a929234ad9ff361848f9969acc40e0cf338d7b3657a9d3
+v1CL-53dfae054c5699b3,adele-battery-v1,SAT-SAT-En-155,v1/CL,v1,CL,1,f3485e4843c33e3aa41c4eaffc85f26f23794b79182b8220a3ca3a502b39db8c
+v1KNa-a7629cb0cb57e901,adele-battery-v1,SAT-SAT-En-155,v1/KNa,v1,KNa,1,1c70b261462eb56c0022450338cd3c6fd8a3bab0a81f59d61d6c077559a832dc
+v1KNc-24c36789b6bb0e2f,adele-battery-v1,SAT-SAT-En-155,v1/KNc,v1,KNc,1,8905ce6153605b3eb7fa4599613e7e230e6cf15976759cebb2543de4bf69674d
+v1KNf-28a00ca8c4c73f60,adele-battery-v1,SAT-SAT-En-155,v1/KNf,v1,KNf,1,3e0501790e0e497dbca189286496e4bafe669e3663d5a8b4901039dd4f29719e
+v1KNn-1e9fd77ec52e4de7,adele-battery-v1,SAT-SAT-En-155,v1/KNn,v1,KNn,1,bf11ff6c55861035b60648b0dd01a2bce74ba4bf75c7a1568b798b6198a02f7f
+v1KNs-d768c20423cc12e1,adele-battery-v1,SAT-SAT-En-155,v1/KNs,v1,KNs,1,38034555b3860ca206460e8818a70e4beebec5066f17f16cbcf6679414c96175
+v1MCr-d09393d82af721e4,adele-battery-v1,SAT-SAT-En-155,v1/MCr,v1,MCr,1,acee139c94ae0189679af33ed03e340f014403b9ae9ed6c8f94422df9afb3d2e
+v1MCt-fc090309f88c250b,adele-battery-v1,SAT-SAT-En-155,v1/MCt,v1,MCt,1,8266b03ff249f408c556f3b5cc53ae2b2566a06f918bd33343e5b8cf687b3fc7
+v1MCu-e138bae4da4c8fde,adele-battery-v1,SAT-SAT-En-155,v1/MCu,v1,MCu,1,0e3225670eac01f6e87a47de396d2f725cd4ebd2c07c26aa932985dc076d28f3
+v1MSm-06a3c30e14d5115a,adele-battery-v1,SAT-SAT-En-155,v1/MSm,v1,MSm,1,74de47178e5b9bc273608706bc61639c0154a27c5d2fe85670816859202b1bb2
+v1QLl-c77aebb8179a006d,adele-battery-v1,SAT-SAT-En-155,v1/QLl,v1,QLl,1,bfc8d898c56a77181cad4bebf1b650ef7a117d568d2f688721b82cbee2aa9a31
+v1QLq-701f13c51ec4f193,adele-battery-v1,SAT-SAT-En-155,v1/QLq,v1,QLq,1,b3b593f084fda4c08b7caf201cc3417a557f2e1f6ee97a9b47ea9b796e25acb5
+v1SNs-b05581806a0599dc,adele-battery-v1,SAT-SAT-En-155,v1/SNs,v1,SNs,1,3031f5a9303174564820f3e560a63293120172b349c8643c73bd1a48df936295
+v1VO-47c2773d6f355d6c,adele-battery-v1,SAT-SAT-En-155,v1/VO,v1,VO,1,70b3a38df58996f7bdb3ad518e1932dfc4472bbab074c7be319bf9f0dbbf6011
+v1AS-a0830d1f3b9c526e,adele-battery-v1,SAT-SAT-En-57,v1/AS,v1,AS,1,2494e95f7d90df1afe1e29379fbcd5eafbd061536fc83303b46dba46b9e80279
+v1AT-ac851f67c35a1fb4,adele-battery-v1,SAT-SAT-En-57,v1/AT,v1,AT,1,c6e4e0534661e3ca6d65f94627348cb066eb53e23b5bec0cfaf280de5723510a
+v1CEc-67c4cf865e95c467,adele-battery-v1,SAT-SAT-En-57,v1/CEc,v1,CEc,1,cab278828080f1d87a666b3f23887af9354316420e34a0933d2c56bb5f62d10f
+v1CEe-1e8c8e183ba65ebe,adele-battery-v1,SAT-SAT-En-57,v1/CEe,v1,CEe,1,4f41f8d59379fdaf48fb133da47fcfed20aa98c29fd955da442b2f6e533c2422
+v1CL-8b0a47344bffad5b,adele-battery-v1,SAT-SAT-En-57,v1/CL,v1,CL,1,ccd1e438cc7b246de58acf1d91895f193750b3bcf3726a6588a646659f214ded
+v1KNa-b547bff8c178a4fa,adele-battery-v1,SAT-SAT-En-57,v1/KNa,v1,KNa,1,59c71557887a9c6a41c5e1405a1d861beb6149756bc664d2e24f83230b43b4cb
+v1KNc-155faa889af2ac86,adele-battery-v1,SAT-SAT-En-57,v1/KNc,v1,KNc,1,2ac33b4c84821aadb30a530078845134a6302f13ce6c3f05bc8e34e1cbbcda30
+v1KNf-d0fc5d4b2bb42da1,adele-battery-v1,SAT-SAT-En-57,v1/KNf,v1,KNf,1,2b5fda75d447e7bfbecf2fefbe7cac08ded6f6098eadd0a493d4983ab218262d
+v1KNn-6a8de614dff7ee57,adele-battery-v1,SAT-SAT-En-57,v1/KNn,v1,KNn,1,472f6c1cce58ba99b1b0fcf30589906db74abfac1240cbe63df7a7e889971ba2
+v1KNs-20b8e6a1c8f25237,adele-battery-v1,SAT-SAT-En-57,v1/KNs,v1,KNs,1,89b64b834d6a694b906c682d40a7cabab0c13530f4dc54b4dea81330c6732f43
+v1MCr-62e0e251bf908c87,adele-battery-v1,SAT-SAT-En-57,v1/MCr,v1,MCr,1,e8e54555710168c84676965c50551b43776f5b9b078e6ebba944f9a72631557b
+v1MCt-7ca0955dc49a5efc,adele-battery-v1,SAT-SAT-En-57,v1/MCt,v1,MCt,1,1160870a81158312ab4ad29a1839a083caf6ee9e36ef837825c6e3187fa4b233
+v1MCu-828d7289fdd37488,adele-battery-v1,SAT-SAT-En-57,v1/MCu,v1,MCu,1,dc40addc57a6aa4769a467d4c6ea8a83d007d425ac94921608ece73e364088ca
+v1MSm-9fa7dc51704bf1ab,adele-battery-v1,SAT-SAT-En-57,v1/MSm,v1,MSm,1,a5e445ccfbe7485904e8a09798a7e540b7f1711d72ca01dc7c57b29c517da143
+v1QLl-a8e99d41fbe9fb29,adele-battery-v1,SAT-SAT-En-57,v1/QLl,v1,QLl,1,d79e00ba077d4bb80423e28a68163803a41bfa265b24acf312406a5e38875408
+v1QLq-8cc493deeb1ade61,adele-battery-v1,SAT-SAT-En-57,v1/QLq,v1,QLq,1,ee35f8c67803d46c3319a98293494f3ac0f11c88269ba4efdfa7d53f98fa840f
+v1SNs-259d6aabd377d3a6,adele-battery-v1,SAT-SAT-En-57,v1/SNs,v1,SNs,1,d63b631a25d924369f4947b5041fa606107144d920af6743a774441735b77585
+v1VO-3f13a5f3ddc317b4,adele-battery-v1,SAT-SAT-En-57,v1/VO,v1,VO,1,b8b3906d8c4711960cd49a9e5e6c06e4eed78ecc0603535e1ff1b728dae4315f
+v1AS-cdab655479cf3ca5,adele-battery-v1,SAT-SAT-Math-27,v1/AS,v1,AS,1,047dcd77c059bf94ea5f6c9afdff50f716b1e1f80338587eb117e4be40612617
+v1AT-8e3aeb6cedda23f1,adele-battery-v1,SAT-SAT-Math-27,v1/AT,v1,AT,1,0c549dad1e1052dc5354ad116a13e0fd2f901a9d48a91cde05013a39bf90125f
+v1CEc-bd49a1a66ebf3ade,adele-battery-v1,SAT-SAT-Math-27,v1/CEc,v1,CEc,1,1350e9a801c683c543b514475f8891fe012de405e237d754d4744ec9421afd41
+v1CEe-873e51fe02018227,adele-battery-v1,SAT-SAT-Math-27,v1/CEe,v1,CEe,1,ab85fbbdaf7e6025e4dcab480229306a1d59cf12ac5ce2e4a7a40a88b761a7c8
+v1CL-301d6b8ad70be14c,adele-battery-v1,SAT-SAT-Math-27,v1/CL,v1,CL,1,5bc1302cc016ef9ca7e47c3fc574593d13682c1e434aa814c66bd3a33d346b7b
+v1KNa-5897939099a14799,adele-battery-v1,SAT-SAT-Math-27,v1/KNa,v1,KNa,1,a7500f96fd7fdaec4e9162f35dd8738a40c4257dd33b3ea124766b7330952f09
+v1KNc-db845a55f6c3c49d,adele-battery-v1,SAT-SAT-Math-27,v1/KNc,v1,KNc,1,be97d4cbdfea135f33d1a65a6f86322f01e51c2762a4909bb436ac47027eb6cf
+v1KNf-b1714c8aecdeeae1,adele-battery-v1,SAT-SAT-Math-27,v1/KNf,v1,KNf,1,a0cabb9957ca489c551965148e737a7261993201542321857d1a8c1b0f62f652
+v1KNn-0d9b94582297b50c,adele-battery-v1,SAT-SAT-Math-27,v1/KNn,v1,KNn,1,da39891225bb330ac1e4de527c1b6dac2d8b28e534a8eddedadcb1a48b0e517b
+v1KNs-173e7747fec32f77,adele-battery-v1,SAT-SAT-Math-27,v1/KNs,v1,KNs,1,7da3abc1cf49a34b971db88ecaafce1a1d6a0f2d6d143768e5b485ab31dcb58c
+v1MCr-05264e5b06198bce,adele-battery-v1,SAT-SAT-Math-27,v1/MCr,v1,MCr,1,56435932ffdc8aac9dd0ade79c04a1dfab4d6625c7af142c28c2ba7bd390a317
+v1MCt-ecf7f880cf7cca4e,adele-battery-v1,SAT-SAT-Math-27,v1/MCt,v1,MCt,1,37985bfb654507e02161db1a86fd5fe516d1c56a7249192f2cb29c117df3bcdd
+v1MCu-05339fe4503f2957,adele-battery-v1,SAT-SAT-Math-27,v1/MCu,v1,MCu,1,3dd80d134fda5e2c527e8108b8d8e1c4661403d876a86a7f408b1c19922ead49
+v1MSm-2ce5d2ab433c9224,adele-battery-v1,SAT-SAT-Math-27,v1/MSm,v1,MSm,1,f5bc19c71b43b030865fa70d4a4c809f85986e27bcb241b77b3d29d1492b36cd
+v1QLl-1d4bc830c7cd3c88,adele-battery-v1,SAT-SAT-Math-27,v1/QLl,v1,QLl,1,aee9b98803281b34963f6c7a01d8db9cca71f140bb712c7555c6f2bbbb4ad53f
+v1QLq-2bd89da20ec54931,adele-battery-v1,SAT-SAT-Math-27,v1/QLq,v1,QLq,1,eec81c50006231de6be87f973d7fe7d91ba4883089d10a4d3f4291ee6b4490af
+v1SNs-a781812c143018bb,adele-battery-v1,SAT-SAT-Math-27,v1/SNs,v1,SNs,1,e6c9b4e55a4e287e1a39b880ab18365370ebbdd011cb26c1e95981aea242ac46
+v1VO-f4b3d75103396257,adele-battery-v1,SAT-SAT-Math-27,v1/VO,v1,VO,1,eb69c55e2f012ff1ae5060ab211314aa8d64d9a7b9868f29a1ab0784a7d3a41d
+v1AS-80f507b5f57d2372,adele-battery-v1,SciBench-Chemistry-150,v1/AS,v1,AS,1,136bd9969a36368de8906eb0b1ad42334a178ee5d7d060c4491f86ede0d9f39f
+v1AT-5f532b508a2691e0,adele-battery-v1,SciBench-Chemistry-150,v1/AT,v1,AT,1,3f7b08ae17b01e9c4fc7310007235fdfab3ca328a37da917b6a672fab0e23d40
+v1CEc-ffe2487295fc5517,adele-battery-v1,SciBench-Chemistry-150,v1/CEc,v1,CEc,1,1adc25fdb86b2007416cb28daa05caeef188b9da2bbdaba8dae99ea39b60e28f
+v1CEe-5a1a984493dc0840,adele-battery-v1,SciBench-Chemistry-150,v1/CEe,v1,CEe,1,9fd14d9db31b36b795e2782cb249626f0094cede6578a87c6af16f7214132b98
+v1CL-031d6f19ea0a4106,adele-battery-v1,SciBench-Chemistry-150,v1/CL,v1,CL,1,2ca592eb8d5bc106ac893f038820468b9584083d3c0ab0f87be38b77f0d8ca65
+v1KNa-a2e8b0eff3468641,adele-battery-v1,SciBench-Chemistry-150,v1/KNa,v1,KNa,1,a7cff55d280327485b3d19a7cee4cab3ab4a876eedf3786ac33b715b8075d613
+v1KNc-81f9cd08a533dc27,adele-battery-v1,SciBench-Chemistry-150,v1/KNc,v1,KNc,1,c48c0d9f19f46f10122c02d927bbcf8f763f834cabe0b04b857b2d7ba32a29b0
+v1KNf-ad7c62c08d6370e0,adele-battery-v1,SciBench-Chemistry-150,v1/KNf,v1,KNf,1,7ff18990547b45d5201f9e7f0457e4dfd40f98072e813a95fb245a134b163ad0
+v1KNn-e2d96a16b7e0eabd,adele-battery-v1,SciBench-Chemistry-150,v1/KNn,v1,KNn,1,9ab00b21f146f13db23fe73700b4765255342ef342dfc46ca219d35adff65af8
+v1KNs-f06deed910c6363a,adele-battery-v1,SciBench-Chemistry-150,v1/KNs,v1,KNs,1,37f16cecdf17e93532c17ae2003497c6e139d2dd057ff761b27ae91a23df4156
+v1MCr-287a51c92651802c,adele-battery-v1,SciBench-Chemistry-150,v1/MCr,v1,MCr,1,b36784177b640a1190b6d61ccb299d0032e683c58ef5d21aae3c446e352de335
+v1MCt-b0ce55afba67c46e,adele-battery-v1,SciBench-Chemistry-150,v1/MCt,v1,MCt,1,63802dbb743c79295841de6aecfa3c725d97270c9a59740092006f41c9342b49
+v1MCu-0bf91bd137b4bd6d,adele-battery-v1,SciBench-Chemistry-150,v1/MCu,v1,MCu,1,22ca91e05c36da342ce8ae98d8646ec7fadcbbd85159ef67713570a04b9baa69
+v1MSm-62742bdd034aba79,adele-battery-v1,SciBench-Chemistry-150,v1/MSm,v1,MSm,1,b3e6289ad3855fad03588bf9e26b4ffefff4a95bfd18727f1583efd2eb6bca72
+v1QLl-4b8bd3fde58eaf8c,adele-battery-v1,SciBench-Chemistry-150,v1/QLl,v1,QLl,1,ea0b62e925af062c382ccbd4391759312b06329751a0090fbb1e118727b27a67
+v1QLq-f728275c84009dfd,adele-battery-v1,SciBench-Chemistry-150,v1/QLq,v1,QLq,1,b56e7b7082f771a5fc0f24cd21741f8b5798ed16421a5bdfac8f220228ba3474
+v1SNs-5551bd6fd7a812dc,adele-battery-v1,SciBench-Chemistry-150,v1/SNs,v1,SNs,1,1eaf74fff7b3d428a0ef33228aaf79eb2b80741011af5e029bc920a41d0a6f48
+v1VO-708d48bf9f4fc380,adele-battery-v1,SciBench-Chemistry-150,v1/VO,v1,VO,1,34394c78b626249e7ef39d7f2ce4f63959e866e4a167e42fd86a75e13d535676
+v1AS-d12f4d77f195153b,adele-battery-v1,SciBench-Math-40,v1/AS,v1,AS,1,7db672a5094521058852d2f7f68196896cead95e3797f61cd21967249127d776
+v1AT-7b2105f73f1cb966,adele-battery-v1,SciBench-Math-40,v1/AT,v1,AT,1,9e6b27078ac80cc37c6977b58d1a7842f0137105fd46a68181d694fd0cc8a1b9
+v1CEc-cbd5ef387b303bda,adele-battery-v1,SciBench-Math-40,v1/CEc,v1,CEc,1,dd5badddf256c7aea7399a09f4248aad6551fc72c95ad52d1d9a94ba68b3d5c3
+v1CEe-e4f3dea8f65f0a8a,adele-battery-v1,SciBench-Math-40,v1/CEe,v1,CEe,1,f03891ffadede78e19f017bec83f4a574c8c5f4fa99007d23c5532a1cb60d680
+v1CL-fcbb5d622e977782,adele-battery-v1,SciBench-Math-40,v1/CL,v1,CL,1,81ca74556967e98c2c927a2832609b6da6b54d921e90be4d5f1e2b24314f57a0
+v1KNa-6e1673828060bdfa,adele-battery-v1,SciBench-Math-40,v1/KNa,v1,KNa,1,26ef0fd6bc4b23b0adcfae46b92c2612b5a4a4c34694773dfae8bb4b073591fd
+v1KNc-93b3292ece02febc,adele-battery-v1,SciBench-Math-40,v1/KNc,v1,KNc,1,48c2c7f4eea3597b5dd0bb27075e01eaa69a7d9ff3495b129c445292a158af00
+v1KNf-276ce0004d5d5a27,adele-battery-v1,SciBench-Math-40,v1/KNf,v1,KNf,1,705dfb6a211f7efb6c0e20a627887a8f9a875a47bf9ade56efe76c0239ca3a8c
+v1KNn-d8ee1eea3739e93a,adele-battery-v1,SciBench-Math-40,v1/KNn,v1,KNn,1,0d9c2c9a9fb8494f1326fa15b8056c08116ab64370d7fdf077b9c1fb78bc74a8
+v1KNs-e305a920493bc255,adele-battery-v1,SciBench-Math-40,v1/KNs,v1,KNs,1,7d451ee65776ed64d3f013d5edd0c0e0292c7ca1450eeefcb809b9b48bada648
+v1MCr-67a010961e1938f4,adele-battery-v1,SciBench-Math-40,v1/MCr,v1,MCr,1,de3ca532b1b163fea66daa80620a4a07a2d2df6dcc9d142a2a9843a75e792d91
+v1MCt-291e438d7bcc210a,adele-battery-v1,SciBench-Math-40,v1/MCt,v1,MCt,1,5bb53dd93d89508d4392d3ddd53f075dc518713bbe83675bd0cd4f4b828e9ed6
+v1MCu-c136d04bb2dbb7a2,adele-battery-v1,SciBench-Math-40,v1/MCu,v1,MCu,1,7a34d584ed17b697c59a77e5476360da046a8354af33b6c73d0f05da4993a950
+v1MSm-a7515e58406113af,adele-battery-v1,SciBench-Math-40,v1/MSm,v1,MSm,1,0b602b189c0737555b20266ecca6e4e05f742506623e9b67384d6577d9ed7e00
+v1QLl-a46ef777e2d5db16,adele-battery-v1,SciBench-Math-40,v1/QLl,v1,QLl,1,34d1fcea61d379062f302466dd3dc3d4fbf53658886dd4d9801f17ceea4bbaad
+v1QLq-46b6671341fff0fa,adele-battery-v1,SciBench-Math-40,v1/QLq,v1,QLq,1,ee456b48a3292bfc02a601f958dc160dbdb01c24a3c81c8404fe074c5767f989
+v1SNs-60761c05ab04077f,adele-battery-v1,SciBench-Math-40,v1/SNs,v1,SNs,1,020cdd8d46e0ad42339b7e8f388c9e1bc285793b790c4a728aa47eb74ef773c8
+v1VO-274288f3a41fda46,adele-battery-v1,SciBench-Math-40,v1/VO,v1,VO,1,133ae4b86b5593ff0b48a93200ce2a2ce0dbc6c16f75501028b9339e7016c276
+v1AS-902f25115ecf9140,adele-battery-v1,SciBench-Physics-112,v1/AS,v1,AS,1,ab1efcd55938f9050cec9ea3f0987729828458d432a12dbd7bffbd6ff6926b05
+v1AT-88d7330d0a2fa883,adele-battery-v1,SciBench-Physics-112,v1/AT,v1,AT,1,5e82160619736f3c7084061dad8cd807cf995ca61825c456c6cc179927fc1f07
+v1CEc-7b3af683372ce295,adele-battery-v1,SciBench-Physics-112,v1/CEc,v1,CEc,1,7db8541234dff281250d9c7a1aa3f081613889e3f057e6fcaac3a54cad5c5839
+v1CEe-1b70ecdb2a68d9ea,adele-battery-v1,SciBench-Physics-112,v1/CEe,v1,CEe,1,10e68aef04737f14f075e28dc220b826db0e5ac59042cfa7fd5cfc70e5f5cb68
+v1CL-b0e2740de77cc7b7,adele-battery-v1,SciBench-Physics-112,v1/CL,v1,CL,1,94bef6ec70ffb2c495327f528e48c45c69f668453c3caaa86b502edff3cd3292
+v1KNa-f1249a2d3808d369,adele-battery-v1,SciBench-Physics-112,v1/KNa,v1,KNa,1,bbe591f66f086522994e6ebe1f0660f4cfad21f53076c21e1770948af81d64ed
+v1KNc-300a1120f5ca526d,adele-battery-v1,SciBench-Physics-112,v1/KNc,v1,KNc,1,ccbd7ad6d10601df780cb26cd3d07582a644d17ea3a3085f3a7213bbecabaee2
+v1KNf-03246e26715d7539,adele-battery-v1,SciBench-Physics-112,v1/KNf,v1,KNf,1,bebaf804825203edb4e6dfa2ef6b2ee0002e7648d9e05fa779303ef827e28835
+v1KNn-0620c1500edab2e8,adele-battery-v1,SciBench-Physics-112,v1/KNn,v1,KNn,1,efb7851d19f8202c4314bc7955bf2214934bc1b74f1932033ee9fd55622aaff2
+v1KNs-f7fd3d0ecffb816f,adele-battery-v1,SciBench-Physics-112,v1/KNs,v1,KNs,1,47e06409fa55bba23414781513c30bbd450555b2d7bcdac0de18b9898984895b
+v1MCr-944bc1ec55bb90dd,adele-battery-v1,SciBench-Physics-112,v1/MCr,v1,MCr,1,68503631173a5ba373b1d738385a820bdfc7c8e88fe39fd213f0debbcabe4688
+v1MCt-cc0bc609ca1c3cab,adele-battery-v1,SciBench-Physics-112,v1/MCt,v1,MCt,1,560f7f40f560bf3b16191e2252d564d454e11fa5fc57cd2cf746cacffb23e36a
+v1MCu-d85227c8cb98d22f,adele-battery-v1,SciBench-Physics-112,v1/MCu,v1,MCu,1,bc57ef24312f9b8780f122d1196fc1a18e19989e76bf38b079230088b5c30a67
+v1MSm-e5289f9071856c1a,adele-battery-v1,SciBench-Physics-112,v1/MSm,v1,MSm,1,ab3503f55a68c2c897569d00618c799e43b8c7dfd797ae649e2fd606ee53f88b
+v1QLl-f268ce021e6ad377,adele-battery-v1,SciBench-Physics-112,v1/QLl,v1,QLl,1,48286460eb92d16623f5860ba1e7d5cabe0b53a62e77b583dbf4b13b3f847624
+v1QLq-7f34856e7c6d9cdd,adele-battery-v1,SciBench-Physics-112,v1/QLq,v1,QLq,1,1fc5b2b6aec58b3ca3160e18ff062356c884783b7be99161c7d387ca0b6a6af2
+v1SNs-ac201061f5fb75cc,adele-battery-v1,SciBench-Physics-112,v1/SNs,v1,SNs,1,0dbb08d09f24842c8e71ca279ce01f8361575104728195cc849c8c210b536727
+v1VO-55c1fadb8e3f9df9,adele-battery-v1,SciBench-Physics-112,v1/VO,v1,VO,1,e639cff0294040ab42d2236eb8cb39880bf02d8bb252272a861399eb6d87faaa
+v1AS-f07051bcb0d41fd9,adele-battery-v1,TempReason-TempReason-L2-424,v1/AS,v1,AS,1,f7b0106deadfa0c740439f75fcae90dfe8cafaab75f4670d73c0acd537e89234
+v1AT-499cc725c9f4e52f,adele-battery-v1,TempReason-TempReason-L2-424,v1/AT,v1,AT,1,7b066d67754a54e22275a539403208b59de6cfa3e7fcddf70c4f8036f7f22249
+v1CEc-a9d08b3d331052f2,adele-battery-v1,TempReason-TempReason-L2-424,v1/CEc,v1,CEc,1,766dbd4ea8e4b7e1d6298a045ab9233d243d55ff58355381a84db750cfc37ba2
+v1CEe-b0ba2de6385d7c56,adele-battery-v1,TempReason-TempReason-L2-424,v1/CEe,v1,CEe,1,ff78e6afa7573dd0fbdb21f699d50702a142a11cc9171b340b769608234b21ce
+v1CL-f27acaddf3d688da,adele-battery-v1,TempReason-TempReason-L2-424,v1/CL,v1,CL,1,c8fad85b7930f34fb24d73171b267e887a0dacf0ccf261c4c6d893533128ce5f
+v1KNa-f5740d15c0b4ac98,adele-battery-v1,TempReason-TempReason-L2-424,v1/KNa,v1,KNa,1,69e3ac571a8196e53c51f6a0112eed0e49997f7975487d73f2aff9d54487c5a3
+v1KNc-6a00d304583789b1,adele-battery-v1,TempReason-TempReason-L2-424,v1/KNc,v1,KNc,1,fc12376ccd1ff5dfe3f444020f46485982978e1e7cfb101f8cf3c916cb7c8779
+v1KNf-f1e939940a539d76,adele-battery-v1,TempReason-TempReason-L2-424,v1/KNf,v1,KNf,1,c9946713011b99375b60dc9b468bfaf02e374a3dfefb3e515c4abe1899e8ac00
+v1KNn-69c54f3e0a260261,adele-battery-v1,TempReason-TempReason-L2-424,v1/KNn,v1,KNn,1,a8862c67da2b7a59b5c5be65b8c0a8906e92aee6370040b1888882cfe056316f
+v1KNs-4ac3a05b543b3cb1,adele-battery-v1,TempReason-TempReason-L2-424,v1/KNs,v1,KNs,1,743148ced9729095257abdea11c8ec8dc1a240e076197f4c2f2e223c964bf62d
+v1MCr-6d6573a65d3f24cc,adele-battery-v1,TempReason-TempReason-L2-424,v1/MCr,v1,MCr,1,fa2db78a26343985e35e3a85fc71c22c1b7eba6cb1b990237d2edd9200a0ad48
+v1MCt-a5e688c4143e60a0,adele-battery-v1,TempReason-TempReason-L2-424,v1/MCt,v1,MCt,1,f30923337b465011d976d00112508ff3a907c0acd0884ba8e83c873175d2f3bd
+v1MCu-a90e50f8993f3323,adele-battery-v1,TempReason-TempReason-L2-424,v1/MCu,v1,MCu,1,eb5d8eba687124559059653a364f5daed02988e9f934c538faf37d1d7110efdc
+v1MSm-7338353e484656a9,adele-battery-v1,TempReason-TempReason-L2-424,v1/MSm,v1,MSm,1,37d8716f21cf0c3a6c0ec3abc808e521170cafb3685a8a03ca936cfc1aa0d2d2
+v1QLl-789383b6eff696c5,adele-battery-v1,TempReason-TempReason-L2-424,v1/QLl,v1,QLl,1,2ffe9ba608067c1da7e902bae9bb73e93e7ad152a972ac2a69ec248e580e6c34
+v1QLq-194678613c70807f,adele-battery-v1,TempReason-TempReason-L2-424,v1/QLq,v1,QLq,1,7657855c9c88dc0c9419e667aa3a61fc3d9c544440358ec9f371b039bf494878
+v1SNs-ead98be522a81ef8,adele-battery-v1,TempReason-TempReason-L2-424,v1/SNs,v1,SNs,1,12dd76edbd42254571d3005fd9ccc53d4de9ceb41f8aee4ab6eb494c804a31de
+v1VO-3840893343c3ddcc,adele-battery-v1,TempReason-TempReason-L2-424,v1/VO,v1,VO,1,f7371bbaf5e4891441ce21a4f1180e4ac6028ad4fcc6345dbb512e5679eddb7b
+v1AS-ccfd0e9b96ac03b5,adele-battery-v1,TempReason-TempReason-L3-296,v1/AS,v1,AS,1,fbd91c5db6b9f5cc21f0c6f0031cbc31c23a1c8d9e6f7fc23ab89b038e9064f7
+v1AT-c8a0567f699fa812,adele-battery-v1,TempReason-TempReason-L3-296,v1/AT,v1,AT,1,235ccc186a45eb99551bef2406de4aa2cf952ab754ed35a8364957b6f8ce8e5a
+v1CEc-56c69cf34635cb7a,adele-battery-v1,TempReason-TempReason-L3-296,v1/CEc,v1,CEc,1,4a61ef0eee720b0b4ab582aed6b7b738a0d51997743ba235d6000aecee1cefb0
+v1CEe-fd4a50cfa1bc983b,adele-battery-v1,TempReason-TempReason-L3-296,v1/CEe,v1,CEe,1,c59295dfd3717bf9a80d25afb26c883ea112b5e79f8e794a52a4c22ac8fb2908
+v1CL-5d07c1487100cefc,adele-battery-v1,TempReason-TempReason-L3-296,v1/CL,v1,CL,1,af6f9db210d0283ea18d9501adbd5cce0f13abe54aed1b4986e036919729d6d0
+v1KNa-c71c5b466a521c85,adele-battery-v1,TempReason-TempReason-L3-296,v1/KNa,v1,KNa,1,8e593b597de201ff704bc1a495d49a7f8e92427ffcbc4d7edff45e9af673af81
+v1KNc-7c86609b1d0605aa,adele-battery-v1,TempReason-TempReason-L3-296,v1/KNc,v1,KNc,1,e7bc50a471c2153845b6e2e7685eb1e96089083f9654564175076115fd272c68
+v1KNf-ed8583a169f198e3,adele-battery-v1,TempReason-TempReason-L3-296,v1/KNf,v1,KNf,1,d2c7d3112e94c831625db3b5bdc5624a02b65f40bec1508ead841a13be326d39
+v1KNn-3b5ecb3c34f45716,adele-battery-v1,TempReason-TempReason-L3-296,v1/KNn,v1,KNn,1,5583da7b27dfc97cf8cd6e86374a16f6497ddfc6ef31614cc9463957f6aebae1
+v1KNs-297e3b47c130d115,adele-battery-v1,TempReason-TempReason-L3-296,v1/KNs,v1,KNs,1,b1f09fea8a45cdd2c562b9dd9e8c76916aa2d5f3e199e01b15e7f314dea060d7
+v1MCr-e06395042bfd4435,adele-battery-v1,TempReason-TempReason-L3-296,v1/MCr,v1,MCr,1,b67fbc718ec2f36837839cc6ea38c7a345809e89a539250d992eabf761857013
+v1MCt-e478cf7609bc0b17,adele-battery-v1,TempReason-TempReason-L3-296,v1/MCt,v1,MCt,1,11742bdb1b5270d2249a2c8cfb866e2000e110cab71501a2eb711219b33adb93
+v1MCu-ef7f247d3e020a33,adele-battery-v1,TempReason-TempReason-L3-296,v1/MCu,v1,MCu,1,1fb716ead11619682acd58b20ecfbd42246e84705763ce16f90ee8f9a3458ddb
+v1MSm-d938a12dcb101f2b,adele-battery-v1,TempReason-TempReason-L3-296,v1/MSm,v1,MSm,1,aa79375e736be53b58611a52a77b85ae3c784e8e300c88ef2f18174aeb667c37
+v1QLl-24a7087e2dbaf13f,adele-battery-v1,TempReason-TempReason-L3-296,v1/QLl,v1,QLl,1,2ede476f1fda257ea39df8bca7dcf348c499198f89cc28a6eb18d0049fea7b25
+v1QLq-2d288b15ce6a192f,adele-battery-v1,TempReason-TempReason-L3-296,v1/QLq,v1,QLq,1,35079b89629890fe729b449101e049aa42ce8e334b52b997754870c03485d1ce
+v1SNs-5f9db74a355f3599,adele-battery-v1,TempReason-TempReason-L3-296,v1/SNs,v1,SNs,1,6dede85e738966e8ea25b31a3ddef9c84f12a960eb0a0d197e295c7dc33b7153
+v1VO-7779f3b38402eaf0,adele-battery-v1,TempReason-TempReason-L3-296,v1/VO,v1,VO,1,a89731d4e37649e22fb3d9968b29c53ef6201ff400957cf2bbbe6fb6821383b0
+v1AS-a7827a59389391ae,adele-battery-v1,TempReason-TempReason-L3-50,v1/AS,v1,AS,1,75960d5137c28f0560e42f8696f22e999cb6fe92226b5b56caf9c08697d83f7b
+v1AT-c56ecc64ed153ab0,adele-battery-v1,TempReason-TempReason-L3-50,v1/AT,v1,AT,1,24ee19db72d880c2c1b61a140f0301f4699d9f740b14af6428d1e5070a193248
+v1CEc-f756b46e1d78ac86,adele-battery-v1,TempReason-TempReason-L3-50,v1/CEc,v1,CEc,1,c283e009c130d5ec9ef965d509c519fe010b22a2e6c0bd3c8e2a43bf090b765f
+v1CEe-b176a7c23a591fcf,adele-battery-v1,TempReason-TempReason-L3-50,v1/CEe,v1,CEe,1,e193a02afd5253965efdd279f58d65f60e66f7213c0bd45540822c1c6f005bc1
+v1CL-c212049ec99f8d07,adele-battery-v1,TempReason-TempReason-L3-50,v1/CL,v1,CL,1,577de7d3592989e73688fba9a98cc7af01b08191b5e17f47672a653cc6318e07
+v1KNa-ab3164228f8752ed,adele-battery-v1,TempReason-TempReason-L3-50,v1/KNa,v1,KNa,1,e611d2a188abea755e439f47f087c8716778907f5780e28f7890b96fcf949d28
+v1KNc-815b2fc58cac4483,adele-battery-v1,TempReason-TempReason-L3-50,v1/KNc,v1,KNc,1,5e6cbb42bbfbc05f84806ae802d1f139539a6e248eecf6961c7c610da1d657d0
+v1KNf-a813129ea53016da,adele-battery-v1,TempReason-TempReason-L3-50,v1/KNf,v1,KNf,1,813a9d820bca4cb1ae235e8eb3b2d52a85145fbe8eaae7d486b165d073e079f6
+v1KNn-7f15d358a51a8934,adele-battery-v1,TempReason-TempReason-L3-50,v1/KNn,v1,KNn,1,6722e0ae706d3edb9a1a898a667ee145f7bafc1075ab9bf2787bfc6e88c605d0
+v1KNs-10e85f05cd270a10,adele-battery-v1,TempReason-TempReason-L3-50,v1/KNs,v1,KNs,1,a9df68728f17c2de3dd51719cbf0a7a9d01ab125cfd7d879a9ce6806102c7d10
+v1MCr-7fd0a24f7c1b41fb,adele-battery-v1,TempReason-TempReason-L3-50,v1/MCr,v1,MCr,1,278d8463d31f2402fcd3c6e708ec9a99a92549ca263c48241bec29552c0cfe70
+v1MCt-8aedde6a87011d04,adele-battery-v1,TempReason-TempReason-L3-50,v1/MCt,v1,MCt,1,6e6bc357c0ed832b77c1bc928cb285a71f7e5776dcb74c775e76e3a0db9b16a1
+v1MCu-0a49407b7ee5745a,adele-battery-v1,TempReason-TempReason-L3-50,v1/MCu,v1,MCu,1,bd9e576afac4d4104b852cbcefc0dd0a1ebd74452d8dac616cc1224792a4378c
+v1MSm-65bd59293958bed3,adele-battery-v1,TempReason-TempReason-L3-50,v1/MSm,v1,MSm,1,89f031ecb2467bacf219850e6df99965dbde0f6c4ba860be06d4787ed94e8f88
+v1QLl-02b8645c9320cb82,adele-battery-v1,TempReason-TempReason-L3-50,v1/QLl,v1,QLl,1,93e8a3344ea4890c5781963692885c58b2064c95f2f7c7f1c445c3c1db3c335c
+v1QLq-87636675cb77d25a,adele-battery-v1,TempReason-TempReason-L3-50,v1/QLq,v1,QLq,1,805700088a6748a76c7b11129abe3bd029f6eb0baa43d9dba19ed0c436d182af
+v1SNs-bb8f29868d9d58ad,adele-battery-v1,TempReason-TempReason-L3-50,v1/SNs,v1,SNs,1,4358c3f922c94cfb94887ca8e0250d2d48eff784f04800d355272eb6cf49e0e5
+v1VO-1dd44a4c08d8ab9a,adele-battery-v1,TempReason-TempReason-L3-50,v1/VO,v1,VO,1,6fa1d784be58dc33616b6984561293d01396fa6e8bedf222d8c7d57f2b32e440
+v1AS-2b9ebba783666931,adele-battery-v1,TimeDial-TimeDial-209,v1/AS,v1,AS,1,1b463e53a07c5b03327f833b49cf8294a795f93162dc01ec02971a1e32575f20
+v1AT-e75c32f19090a5dd,adele-battery-v1,TimeDial-TimeDial-209,v1/AT,v1,AT,1,68c5ee5d334b50176402c453a02d6295dc792d5d71f6054ad3d94baacdf95e38
+v1CEc-4bfaba98b6986228,adele-battery-v1,TimeDial-TimeDial-209,v1/CEc,v1,CEc,1,17488599b6def053352cdbca2e8fb2d498add83b07c3bcc9a42dfd8ccc4bfd00
+v1CEe-b48cb75fc5a49007,adele-battery-v1,TimeDial-TimeDial-209,v1/CEe,v1,CEe,1,cf96f84302b15d733bcd3e7b945ebbeccc10b22487bf3a2fbf901ee93016126c
+v1CL-69b5f5caf090044d,adele-battery-v1,TimeDial-TimeDial-209,v1/CL,v1,CL,1,d28de7dbecf27e6147372da3f19cfc2bd1c56e656ec8c5bbdbf9ede66e334dc1
+v1KNa-892e8258ad35e7c9,adele-battery-v1,TimeDial-TimeDial-209,v1/KNa,v1,KNa,1,10599247a54d201e278bbcdf6eac112662ce358ca0428b6171512b7bc14f077a
+v1KNc-f78ba10f856901bc,adele-battery-v1,TimeDial-TimeDial-209,v1/KNc,v1,KNc,1,932524276882d4ffbc0b80fc75c5addabaaeae44c55e54453ec230c1281214e5
+v1KNf-fd8187dc755b408d,adele-battery-v1,TimeDial-TimeDial-209,v1/KNf,v1,KNf,1,4c0562d1f0538db25f2ae04f40f247e24ab1b96f76b50bd8c5f9684ddc648dd2
+v1KNn-aa9b798af724874f,adele-battery-v1,TimeDial-TimeDial-209,v1/KNn,v1,KNn,1,8fffb2bb426d7a823e3b504af2f3af13b5cd5a6a6a77545d487b4e7e8b0a28b9
+v1KNs-7a4a67ffe1cd4a91,adele-battery-v1,TimeDial-TimeDial-209,v1/KNs,v1,KNs,1,5e544dc4594c6ffd1d21baaa83f1cbfd35c3cb9c2a9a266b91e382773212fb1b
+v1MCr-d3a205b559ba204e,adele-battery-v1,TimeDial-TimeDial-209,v1/MCr,v1,MCr,1,829898b1e4f5f7ac1f64e456aeb8511e543d069919fd4253b35fb421c2cf7af4
+v1MCt-ce41dff8f7418e79,adele-battery-v1,TimeDial-TimeDial-209,v1/MCt,v1,MCt,1,baddca538f8869640aeeb65997335ed2327c3e351d845f4ac892a29dc67de1fc
+v1MCu-b7faca1652b4683c,adele-battery-v1,TimeDial-TimeDial-209,v1/MCu,v1,MCu,1,a52095df2974293b3ce6715c5f239a74482aeb4d12fe02e27434d4dbb76e20cc
+v1MSm-edfaea617197edbc,adele-battery-v1,TimeDial-TimeDial-209,v1/MSm,v1,MSm,1,c9c45b70c9d1af6f6a096ecabddee86b612593c16a1142e20936518af59aef40
+v1QLl-288550a1f8760016,adele-battery-v1,TimeDial-TimeDial-209,v1/QLl,v1,QLl,1,611894f8b76b64720a3bffdedac13f261c1fc3b31b455b9e402418c7e883165c
+v1QLq-653d92b21e690607,adele-battery-v1,TimeDial-TimeDial-209,v1/QLq,v1,QLq,1,eb94208de3cd1bf8473432a72f335ade28268cd11ce7a48bbc5175d3637b424e
+v1SNs-20d16931b7a8f9c1,adele-battery-v1,TimeDial-TimeDial-209,v1/SNs,v1,SNs,1,3d5bd584a12d8b2fd9e4bb7825ce355a8804ede33f2695c6153b3e411ab9096d
+v1VO-6503bc03e80340f5,adele-battery-v1,TimeDial-TimeDial-209,v1/VO,v1,VO,1,4a0a12e74e49309322cff5df7408b3d3d6ced746a7ace74b61631ecea5e0b651
+v1AS-cafdac0cff587d08,adele-battery-v1,TimeDial-TimeDial-26,v1/AS,v1,AS,1,874307375b650623e893724024b79b2e311f3565d31bce4158bdf3570ac6a076
+v1AT-0335f0f1065876f1,adele-battery-v1,TimeDial-TimeDial-26,v1/AT,v1,AT,1,f9a54c15e83e8a830ab10e00060c8392446f9f3578f934451a8a6481ee089ba4
+v1CEc-1c4169051293fcb3,adele-battery-v1,TimeDial-TimeDial-26,v1/CEc,v1,CEc,1,395750de17414fa4569d217a9df293d3772c9c4e3bcb184716c72e3a30afb93e
+v1CEe-8b462f3561ce55c9,adele-battery-v1,TimeDial-TimeDial-26,v1/CEe,v1,CEe,1,25ccbea98f3c82fef82788b4835b960f10b6fbd7bfceeb5b4fa294e013154b8e
+v1CL-e04b46acc50ef31c,adele-battery-v1,TimeDial-TimeDial-26,v1/CL,v1,CL,1,0700a6446991ef785eaf4a9504e346017fc47b35f9bab67de16f846171f69290
+v1KNa-0d9a86f5c437c49d,adele-battery-v1,TimeDial-TimeDial-26,v1/KNa,v1,KNa,1,525ef16fd35e4d95c2cf5ef05a0200312f35f92db834d754d9df7c193e63fe76
+v1KNc-4cf5dd325d1bf301,adele-battery-v1,TimeDial-TimeDial-26,v1/KNc,v1,KNc,1,33d4f671f1b9460998ef2891f9abe7acf204786b9eb488b8e6efa87dd1ed996c
+v1KNf-a8b345bdc5eafe40,adele-battery-v1,TimeDial-TimeDial-26,v1/KNf,v1,KNf,1,ca5b89dafedee118452b795cb72c097d30b49985f0e13f5e2aa53cd8abf37012
+v1KNn-9a7eeef9e8fae69c,adele-battery-v1,TimeDial-TimeDial-26,v1/KNn,v1,KNn,1,fc095bd0386c05b199e8de9ddbb4384d3dc013471b45fa6adc7cc2a45ad9e508
+v1KNs-50eb0ea91366a365,adele-battery-v1,TimeDial-TimeDial-26,v1/KNs,v1,KNs,1,9d472c01d2e04afbbe57ae1be3eb17c92821a4e13ec273720d1899ea40f3099f
+v1MCr-02121588a23a5ab3,adele-battery-v1,TimeDial-TimeDial-26,v1/MCr,v1,MCr,1,79f8ab73b7d5dba0ac3eb50edcd3c2d0a3ad7e31f16bea88f22f452d16ea77c3
+v1MCt-93af9616cf5d8ea3,adele-battery-v1,TimeDial-TimeDial-26,v1/MCt,v1,MCt,1,8360219b82b06bc8660b2152628810aa94a894b886447cedb305cbd6f10b7cbf
+v1MCu-8f4cff34bb0fce3f,adele-battery-v1,TimeDial-TimeDial-26,v1/MCu,v1,MCu,1,d4bdb022f365379fa64b38f01a0bd7f8f0affc483ccd6f9bae479281d67b6c99
+v1MSm-4ea8023c07a1617f,adele-battery-v1,TimeDial-TimeDial-26,v1/MSm,v1,MSm,1,20e372aaeec4864efb7b8688e7be48669a53cf7226c137b781ab697addf10bbb
+v1QLl-90c205ecc5608b9b,adele-battery-v1,TimeDial-TimeDial-26,v1/QLl,v1,QLl,1,40e989e5e12436302693bf8461c802487a78ebb0b9f97a2f4a26f3630ed4ce73
+v1QLq-04fabf7739c9b876,adele-battery-v1,TimeDial-TimeDial-26,v1/QLq,v1,QLq,1,b8f0e5a575342d7bef7f00a6f4f64ee76cf286a47e85cca15b58658b38ac98ac
+v1SNs-b244595d6593c069,adele-battery-v1,TimeDial-TimeDial-26,v1/SNs,v1,SNs,1,136b4bc2f61f02dd98fd98a4baae77eac719d74ab51a735b2cdbbc3554582320
+v1VO-1ef45c2b32ec1ca3,adele-battery-v1,TimeDial-TimeDial-26,v1/VO,v1,VO,1,42cf70950406e6da4956ce974f70c50652c346bdf6de744a406f936399e4a591
+v1AS-52ad484732f9cf4a,adele-battery-v1,TimeDial-TimeDial-306,v1/AS,v1,AS,1,76a3aeca9924acc6d3ea9ef43b0c7ebdb9c7420fff1484504e3af1167e212fb8
+v1AT-747f2cfdb0787eb0,adele-battery-v1,TimeDial-TimeDial-306,v1/AT,v1,AT,1,0f560080d13c2733d383b6d5014fe0fbdcf74f2d2d171d1e6b42ecfbb3afa257
+v1CEc-6abc0aed98b194d7,adele-battery-v1,TimeDial-TimeDial-306,v1/CEc,v1,CEc,1,ea25c8946d320f09c2f2382f035189afecdb75649bc20291a2fc2b038fe1b0d0
+v1CEe-d3b424dd8b190465,adele-battery-v1,TimeDial-TimeDial-306,v1/CEe,v1,CEe,1,4df7ae25b6caeaa3fab12e248dd2f711e6d016e7ad6e7cee98844381bee70a96
+v1CL-5193ad8f5e3c7959,adele-battery-v1,TimeDial-TimeDial-306,v1/CL,v1,CL,1,9bd0666301b89a59657d0d05a0c404ee9b611494d8cdf2bdc33b732523fe57c8
+v1KNa-7b06d3edd01239c7,adele-battery-v1,TimeDial-TimeDial-306,v1/KNa,v1,KNa,1,bd5b433dcfc4916ce5995b755d32c34a9eb283d4339a81ca5850524b6239ef5b
+v1KNc-86703b73a63cc96e,adele-battery-v1,TimeDial-TimeDial-306,v1/KNc,v1,KNc,1,b08e313776ba042d0397e059234360daf18e67eba9b1bb54222749db62c45bde
+v1KNf-064f30dee6ba49cc,adele-battery-v1,TimeDial-TimeDial-306,v1/KNf,v1,KNf,1,53a56e91ea830aae093860cc42a97e9686899366f53f2e98e433720270ab4638
+v1KNn-7ec2240af59206ef,adele-battery-v1,TimeDial-TimeDial-306,v1/KNn,v1,KNn,1,9e792c6ca8604485831103d06471d8852491e7b8ec77fb5bd5b18f42b20adf64
+v1KNs-7a5b232c8cb8618c,adele-battery-v1,TimeDial-TimeDial-306,v1/KNs,v1,KNs,1,e8a3abce6c4ada0556ed177ec618c5a3904895c276f1e064ee736166a5ae9d61
+v1MCr-43ae43756ea7edfd,adele-battery-v1,TimeDial-TimeDial-306,v1/MCr,v1,MCr,1,6fc7b8c8de99a9bd1d7105ef0b41fd39a71843636f6f5c653ae241ca1f9a4835
+v1MCt-82a5eb46d9c7fb3b,adele-battery-v1,TimeDial-TimeDial-306,v1/MCt,v1,MCt,1,229602ae6558a103d1d08f9ea0d3c1a41e9fba9dadf7d218a3c5b965968a4e4e
+v1MCu-9fd0e03737d07e04,adele-battery-v1,TimeDial-TimeDial-306,v1/MCu,v1,MCu,1,68630e636096d3c11c8af8a8a5859b9c3a97916b2949bf9124d851289c99d262
+v1MSm-d639b862a70dd0cd,adele-battery-v1,TimeDial-TimeDial-306,v1/MSm,v1,MSm,1,84811accb3a960df90437d30616f768ec608f5786cb0b5469f14a9273087f01f
+v1QLl-d6570b75587402a3,adele-battery-v1,TimeDial-TimeDial-306,v1/QLl,v1,QLl,1,8c96cd3ab4c872cb4097a2b0dea45ca1fbae60ebe6298f2d9ec0b0eb452d481e
+v1QLq-6323ccdc99a2e321,adele-battery-v1,TimeDial-TimeDial-306,v1/QLq,v1,QLq,1,eaa887bfd1739f7d64ef23dc219f9892eec9a9fedfcf24f7f650d93fad908b7a
+v1SNs-8899ec4effebc1fe,adele-battery-v1,TimeDial-TimeDial-306,v1/SNs,v1,SNs,1,63d0fde2d68a9b43149128229219aab97cb0edd3c9b9753fe71f51385a93c1db
+v1VO-8123691942e99769,adele-battery-v1,TimeDial-TimeDial-306,v1/VO,v1,VO,1,5634a1e2fcb6c90a2b917e2fc9f534b3f8e2ea6f0c465ca27b86024c865a479d
+v1AS-3fb50ebd68bcf5a9,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/AS,v1,AS,1,ac00006798c6797bb44ad7e44917ecefdee7721165a5db88110b0abb09b428a9
+v1AT-a86fbc724d0088f0,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/AT,v1,AT,1,a42a2d62d6d4d4f5dff90e25bd5487449eb9059b86d87513ef015027474de645
+v1CEc-4f7e7a1e24b5c2e4,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/CEc,v1,CEc,1,4ff52bc4171a076a1907db8f14acefad3a6e0448478a422b42bf4e1102535d55
+v1CEe-d5cfa683140382a0,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/CEe,v1,CEe,1,cdcbacf4312de82ce3855157538549af862d8e79d8587594563a3af6770c5bce
+v1CL-c9551e69db24e214,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/CL,v1,CL,1,3c1ed5c50d3ceea92283d536656d9fc057887181f1691f5ac8da1213597074d5
+v1KNa-20e84f9634e6bdcc,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/KNa,v1,KNa,1,27fffb0b2274f557073f5fbb6afbacb8edb8d73bd7d8a956e876a1f526af7c92
+v1KNc-b7771cab3f6b0da1,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/KNc,v1,KNc,1,70829cd0c2cd6757d8b3bec0fabf82f468aad014a4fabe4826e915e3b3627c3d
+v1KNf-c72f5f596c40323e,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/KNf,v1,KNf,1,a9eba11c1a19c2e83e649a03fcea15c6fdc5b997461c9ada781fd01e888436d5
+v1KNn-3d7923fc4287d32b,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/KNn,v1,KNn,1,639e5f5d23cc761ac6f2a8bdca6238e4bbad9214bdd0a095af4dbbf492a6c58c
+v1KNs-75ce2af1ef475cc6,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/KNs,v1,KNs,1,7ed04732fda9b541c488fd5757e21471b3d03c6194d178914e57ed9222d0296e
+v1MCr-3ad9ecb7580d6327,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/MCr,v1,MCr,1,41cfa9585b401129175150d1014c5087ff65c2a2790a758108961c597f4cd05c
+v1MCt-7eea8545dd5da024,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/MCt,v1,MCt,1,cd3040797a9f66af978e6d3a1201e8c89c12de7f4bfb9e9ab0f6e0ac032dc667
+v1MCu-bd566a7b5b57e5f8,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/MCu,v1,MCu,1,da95e89f37915af858eae3e4345e30bcc3aa8d5f3562eabbd13dc920d74da269
+v1MSm-06be611f70eb436e,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/MSm,v1,MSm,1,056d4b471a03526755e969e9a9a69f09df94dccf7f3a7d46d170d72c0658a72a
+v1QLl-4078ebf09e0bd3ef,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/QLl,v1,QLl,1,8014ff60ba3b857312bf77befa357d4a6bbcea56e3c80b7c4e5d4bd8ad19376d
+v1QLq-595f42f2e1bc0dc5,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/QLq,v1,QLq,1,2255c331cfc71db38a526eacd831d7c188d9687da82eb4211058cbe3b235ca9d
+v1SNs-6483f0b7cd6aa2ec,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/SNs,v1,SNs,1,3fc0cc58f53bf299871d8e3fd6a9e254034e1e6af0f0c8d508098855cc73803d
+v1VO-6ce326725d8457a1,adele-battery-v1,TimeQA-TimeQA-explicit-120,v1/VO,v1,VO,1,1dd2e8d16e29c4308a12dc2a6fad58b8309d485b2bcb7c3f840be2c50342c64a
+v1AS-2cfc00e6f4ec58ec,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/AS,v1,AS,1,e81ba8c342ca1196dfbd8d523090c2d94fb32377c5d22039298db3253bb654f4
+v1AT-600acc4b520f3c52,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/AT,v1,AT,1,4a3a5431f9bfdd6d4acbc06f40f29173dc95b745283716977c6526a3a5d5d5fb
+v1CEc-90ecdc302319d6d1,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/CEc,v1,CEc,1,53973e0cc3cbb1105ca6511fb9a91491586edb478e6cee81ff0d23d923e73703
+v1CEe-e99e076cd36ee2ff,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/CEe,v1,CEe,1,0b61e0fd35eb052f439f4e67a8b78528e25d3429103142015d988842682dfe6c
+v1CL-791a26901827b201,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/CL,v1,CL,1,5df0f0780a475b06414a1d9df7e49af8a346d4583d047b99a9d1dead705616fe
+v1KNa-957b61468cbb2191,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/KNa,v1,KNa,1,23f16006eda1ed64b4b8c823d30c86849b80f2215cb27c91b479cac2cee052fa
+v1KNc-57fd993b734d092d,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/KNc,v1,KNc,1,d741467ca065fdd5d9ae5933e20fe514b4dae534eed86473cdc1fb354a373f95
+v1KNf-8f6543a1f70fc276,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/KNf,v1,KNf,1,9e3b37dbaed24edb839f1c21b3bfd93bd251629e8446b7cb700fd515b2f50d7f
+v1KNn-b0ddafc9b45998c8,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/KNn,v1,KNn,1,565450cb19ea4cd8b9383aad4558d8008fb3fc6ffad5992c7111a2d252a38e84
+v1KNs-bc1ac853edc96e1c,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/KNs,v1,KNs,1,c2d9c9c22fa208470f029245c8eee3b54a2d8eb44edc493fa4be4ed8df93087a
+v1MCr-8e835fe4066917bc,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/MCr,v1,MCr,1,fa1d80f5618f82abf37458a2192dcb029285c14a7f7ff14b87d648411c6eaa30
+v1MCt-e69a6c5b6f2f05d8,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/MCt,v1,MCt,1,10aa284c59541d0f0afe30a11fcc50b59b63c992b40b3dbe1b17af4ad00be27f
+v1MCu-575292ff915e4eb8,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/MCu,v1,MCu,1,9d0f672dd06bd75bab895f1154ce233b3a60ee631b0b296056931bc3d3be7fe3
+v1MSm-603b994d32074e46,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/MSm,v1,MSm,1,9a8704899c7e904bc53571e3bc2eb75d677f5844ffb8866b21268a61b9bfb9d7
+v1QLl-d01951df6030cb2a,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/QLl,v1,QLl,1,dd5b80d11ddc423c00a1fb41ab1c4188e3ef0beed17065165ce425b5e5f68dd6
+v1QLq-6ed6df5d5b9645c0,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/QLq,v1,QLq,1,ab5d6370c4d224403884d59bda54889a1fc415fcc3f732392f6ce044e2d4157e
+v1SNs-cd2d5ec19bd1c1d0,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/SNs,v1,SNs,1,f999e3ff4cdfef64dbcdee814d0dd7b8151b1fa967bd27ed3020e3484aa98fe7
+v1VO-607da0a7247c2f5e,adele-battery-v1,TimeQA-TimeQA-explicit-278,v1/VO,v1,VO,1,a5432712d6c9ddaec0fd5e54a852cdf95772814ce024a7d5e84f3649ea675d59
+v1AS-383055dc63b2fc12,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/AS,v1,AS,1,1ad2fe87eb501c6f6cb8d6e4c448b5a5432791b158d342e41c7aa9f77cf8647d
+v1AT-45ca88aaf94f8c28,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/AT,v1,AT,1,aa47a94ff0165fdc493ae0820488c68bbb753436d8c0cb831fb0568a138d3197
+v1CEc-dccb460a9d0cf2c6,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/CEc,v1,CEc,1,b62288e86f1e7c6f88b1e5ab8483856d1dfd6b1ab16cb1ca6ca3c96ecbf524ae
+v1CEe-44fe6ddb50e9bac5,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/CEe,v1,CEe,1,b6cae08dd6e6468ca9a8e2d99d1cf3300b79dd675c67b1d1ec7d8d4022ee8c7d
+v1CL-3edc010c70c0c13d,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/CL,v1,CL,1,53abdabaeedfe0d63d5420c24df7a133854aba98cca151fb57e1b930ff895d14
+v1KNa-823335d2736f56f2,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/KNa,v1,KNa,1,e754d46c42181b0679a44da3436dd6c4207f2ab8c8c0c0d2fd803eb8df0aad3f
+v1KNc-4acc1620e65cccdf,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/KNc,v1,KNc,1,ba83467fd5d3cc98bac638dcb242934fec4781f1b018046eacb6a701691157c0
+v1KNf-376bf9b6d83f05af,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/KNf,v1,KNf,1,842792b3c2a0b0322683791bad3272fe7498b99bbf3f16aac03af1d65057acbd
+v1KNn-01d4a58009187f93,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/KNn,v1,KNn,1,4bc797118b13b6bd85edffe4f0931cfbb616f3d3e899781083ad998efc73a3df
+v1KNs-982c68932b639dd5,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/KNs,v1,KNs,1,2a7311a05dd57792248529619da12f03b518b11ff7ce55b1c86f00f52bec5966
+v1MCr-6e8863f7ee18666a,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/MCr,v1,MCr,1,66fbe665af43220734d60fd2e2fe1b88503add50965d51aaadd367812dfbd139
+v1MCt-c7d553dc0c20995e,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/MCt,v1,MCt,1,1eb4a6869685b8f640b6dd0c3e2e552072cabf6a0a4b0ad38bce39a6ea3fa4f0
+v1MCu-f66369130135cd14,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/MCu,v1,MCu,1,0e6d21675cb9a713cb8e4661bee11aedd70dd8a83b4ef96996e8d9fe71dbea3c
+v1MSm-cc351850201a247e,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/MSm,v1,MSm,1,d46d959b605063b219a1ce56361febb0ea1e63bc386ada3abf1cb0a7cc29ebe1
+v1QLl-856cf750d78b2904,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/QLl,v1,QLl,1,3637a6cbc04b022d9ee6f788784c8cdecb43b81e8460ffdd07dee4d71003e3d9
+v1QLq-8536f128464e2562,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/QLq,v1,QLq,1,7374de290fb83e963366587ea95c4cc1b9280a7acea1e678b56f62565b6fe294
+v1SNs-eafa9afde07d9784,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/SNs,v1,SNs,1,8af1512ad29f03fc5cab6b59f747433b8965cf505f4daafa10bb3e62b45da5f1
+v1VO-0c9475a140124d1a,adele-battery-v1,TimeQA-TimeQA-implicit-92,v1/VO,v1,VO,1,3c6181ab7d156f96afc3be8566d82b201f689b4bb48a6033b244f21b539041f5
+v1AS-ef77d1bb0c9004f5,adele-battery-v1,TruthQuest-E-656,v1/AS,v1,AS,1,fe4b1942fa35653097f0ef8273175b8c20cddd3ea328ea97b157950e6724c737
+v1AT-a00861e630b4a845,adele-battery-v1,TruthQuest-E-656,v1/AT,v1,AT,1,fec7b3ceb71c67d0db60f00bcc01c4b545494ab5d2a75f84b7036038117dcf88
+v1CEc-6bcbdfb72ee8f242,adele-battery-v1,TruthQuest-E-656,v1/CEc,v1,CEc,1,010ed70e21bc0df88003711755043b8c9dcc69dfe86369e07299bd49250a6d33
+v1CEe-d5f763f1a7f57382,adele-battery-v1,TruthQuest-E-656,v1/CEe,v1,CEe,1,f4342b440a595f4cfc1affb8b6619350c3a419be570cc726f353efca27ce827e
+v1CL-b6aa1fdc217fec87,adele-battery-v1,TruthQuest-E-656,v1/CL,v1,CL,1,fab036cd7ad474f415c3e296f5e23efb7e46c96b602c49280975d60c43fcbc37
+v1KNa-2689599aa37be1d1,adele-battery-v1,TruthQuest-E-656,v1/KNa,v1,KNa,1,c1ebbaaa5084be89cc1e1190df79f57c231282748267ba123e78ba928d94cb64
+v1KNc-9dd898146cef55b6,adele-battery-v1,TruthQuest-E-656,v1/KNc,v1,KNc,1,2bcabc89979e0cf460f9a198dcaec22bd12ec4597f49b06b7f05c6dff635718f
+v1KNf-fb02cd4a681acb77,adele-battery-v1,TruthQuest-E-656,v1/KNf,v1,KNf,1,c05166202c3361efdea870aec707af815338a15ae877e77ee6bb56674f7a9deb
+v1KNn-2727785f8012f346,adele-battery-v1,TruthQuest-E-656,v1/KNn,v1,KNn,1,e7c9cec09134ddfb6ee50190850c2c6bde3864bba284c82c83e2ecbb19fce33d
+v1KNs-6850e944cc23706c,adele-battery-v1,TruthQuest-E-656,v1/KNs,v1,KNs,1,28689b5aaf7b3a48392b73109ff7160da9f0980a16875c776cb89a3b90e0aee0
+v1MCr-fdd4ba51b32aaf67,adele-battery-v1,TruthQuest-E-656,v1/MCr,v1,MCr,1,7a4064185862f60f8c9468a3c991573a032c043eaf4efb44ef33d839cb7fc59c
+v1MCt-64b73eb942a4a6e7,adele-battery-v1,TruthQuest-E-656,v1/MCt,v1,MCt,1,f5e1aed2ff75abdf0ecbe12111da2de073de0deb66ac5fd8b9e5d6435b04dffd
+v1MCu-623991b27937e035,adele-battery-v1,TruthQuest-E-656,v1/MCu,v1,MCu,1,ab8eca4b735d425b8a5bcf59e99c4f746454a9dc3b2229a2a617eb61e9b6ee64
+v1MSm-b81bbe2b87133092,adele-battery-v1,TruthQuest-E-656,v1/MSm,v1,MSm,1,33e6c2db2b7222f12850ef6863def06f39f28b40f3a034e3677a0287c39db617
+v1QLl-2d312499e9473ef5,adele-battery-v1,TruthQuest-E-656,v1/QLl,v1,QLl,1,99f2ea8f18de66529cf189dc4fb711d6e3f1e20b027b792b46ab8256db7f1c79
+v1QLq-7253c26cfc748565,adele-battery-v1,TruthQuest-E-656,v1/QLq,v1,QLq,1,3b1a60b74053451572115e97c6a33585c2843c63a629e7f489513881961c2756
+v1SNs-681066573235947f,adele-battery-v1,TruthQuest-E-656,v1/SNs,v1,SNs,1,79e87d316de78e3955737e6d3b595ae7e0981f32ecf6c33d64953518ce2af609
+v1VO-88cde4d3bf79a1cb,adele-battery-v1,TruthQuest-E-656,v1/VO,v1,VO,1,b3e9db396a30e82aa7f90a79564cd8a8c9b1d2e50da551fb50c037a998e4e72c
+v1AS-ca0f99681959f60d,adele-battery-v1,TruthQuest-E-784,v1/AS,v1,AS,1,e6b68cce58022cd994f6043cdf58e53d4058ef242bbf5dbdecef6eec8cfb92e5
+v1AT-5d08257d900fe5e3,adele-battery-v1,TruthQuest-E-784,v1/AT,v1,AT,1,22331fd7e72b0aeb81eaac6d3a2936e061af79559767b8da76e7c234901a6d1e
+v1CEc-112fae1175323a62,adele-battery-v1,TruthQuest-E-784,v1/CEc,v1,CEc,1,19f8ebdcfabb7908f4ead63c8e248c66837358c40f6efcf64148fd1ddbc971fb
+v1CEe-f57bc549598e26be,adele-battery-v1,TruthQuest-E-784,v1/CEe,v1,CEe,1,fac34d223237ad582aa27c51961b67b7e791d8d6fafff2f097674103ba2b8cd7
+v1CL-7bcc4a25677a82b8,adele-battery-v1,TruthQuest-E-784,v1/CL,v1,CL,1,dc2350619d2d45bb617ce78b33c374bf61213b8072f1a5d96f13e11d023b5730
+v1KNa-4522d092aef1cd99,adele-battery-v1,TruthQuest-E-784,v1/KNa,v1,KNa,1,ad514955c2648c9e4eb4c9eeed95d6a5190de3b27f57b60ab7845d568b25e3f6
+v1KNc-39ae523688fb6aca,adele-battery-v1,TruthQuest-E-784,v1/KNc,v1,KNc,1,113768deec5cc68752f17efa37b51621a29a5cce927cd1bad798894cae57ec3f
+v1KNf-3b5650be4dfaa238,adele-battery-v1,TruthQuest-E-784,v1/KNf,v1,KNf,1,49c266d49adc5b22a1a69ff206bd2a9e7c221f34ec43966a9d05d36650664770
+v1KNn-d74986bae122f85b,adele-battery-v1,TruthQuest-E-784,v1/KNn,v1,KNn,1,cbe0b1b256da01b4e8da6eaca64b09e2844a0db82cb4be9ba6444460a33360d1
+v1KNs-d19e89c2c760d6e2,adele-battery-v1,TruthQuest-E-784,v1/KNs,v1,KNs,1,fcf3923ef3d0c00b23764425cd937088ed9d619f206f54194fbedd8279646dfb
+v1MCr-4adde80e635d5ba0,adele-battery-v1,TruthQuest-E-784,v1/MCr,v1,MCr,1,2cc3356739ba3d25a82ffe4046461e2e67e4b47d77e06b29e404a196b6cfb0d1
+v1MCt-6674a7195a6b05f5,adele-battery-v1,TruthQuest-E-784,v1/MCt,v1,MCt,1,e5849fa9e28d1795423d0699c78a9af7a4dbd7dc6292553652409e6325485798
+v1MCu-a86047a23e424c76,adele-battery-v1,TruthQuest-E-784,v1/MCu,v1,MCu,1,9b898fb5ad94aba30d2f74dd6929f4962bc3534117651deb7561c6dbac7ad8a1
+v1MSm-86ce737ab2046a00,adele-battery-v1,TruthQuest-E-784,v1/MSm,v1,MSm,1,e05831a9afbd3375d6963cae34b39e7f924ade17cd6f16af383d82e7ccc9091d
+v1QLl-a63ee1aeaaf92d3d,adele-battery-v1,TruthQuest-E-784,v1/QLl,v1,QLl,1,653ec0a00efafb39c9700ee1b334ba5f1b19ed77d84b6807011b3517b76ddbbe
+v1QLq-0e87aa864398948f,adele-battery-v1,TruthQuest-E-784,v1/QLq,v1,QLq,1,499b80601d4a623499447f231051dbf84067c3dfbb0fe527f0e34be62fa662e9
+v1SNs-e911f71fbd340e01,adele-battery-v1,TruthQuest-E-784,v1/SNs,v1,SNs,1,f35dfda978ab732431685bd3904fc0f0ddc2f683b89bbeaeadc690c91aff3dde
+v1VO-202acdc0db92a4e2,adele-battery-v1,TruthQuest-E-784,v1/VO,v1,VO,1,88cff0cfc26cc9ab90b3a6479dbe2de2b4e5a48fa768621ef4352b688d962ba6
+v1AS-f671788dfb3ab4d8,adele-battery-v1,TruthQuest-S-540,v1/AS,v1,AS,1,e75edc82b328e3f23498b098921ad9977ba003217fd514b443b996b40d499515
+v1AT-3d3d7827555d45c1,adele-battery-v1,TruthQuest-S-540,v1/AT,v1,AT,1,c6ea8ed0452d1f668cd118cf23a91bf76c8e5399848564545e79930f5fde8358
+v1CEc-3d949b5c2a887080,adele-battery-v1,TruthQuest-S-540,v1/CEc,v1,CEc,1,d3a8303074977bfb9ab780d34ddba688c8b816d0fe8aa764182aa9be33c64e4e
+v1CEe-b4a6b1bb698d9c9b,adele-battery-v1,TruthQuest-S-540,v1/CEe,v1,CEe,1,a5fe0fb21592fdf324896d1153a39777074ccd9c5317a2023ef20bec605d182a
+v1CL-ee9f769498488cd1,adele-battery-v1,TruthQuest-S-540,v1/CL,v1,CL,1,f4d9594ae601208e7b2b3e105ef63b7254086a0231bab153a63b360912dc21ee
+v1KNa-1222baa69581f8f2,adele-battery-v1,TruthQuest-S-540,v1/KNa,v1,KNa,1,c5e06915bcc60e142ba4d2c3fcdc4daeeb607de00f29f568f93a6055623c05be
+v1KNc-2888634ccba180d8,adele-battery-v1,TruthQuest-S-540,v1/KNc,v1,KNc,1,082cc49202942c6a9863d141fd974558bd6376009b46566072220adcd4049afc
+v1KNf-e63fbc03d0e0b4d5,adele-battery-v1,TruthQuest-S-540,v1/KNf,v1,KNf,1,f1bfcd55594ce5a4f0285cf2980ecb7f8cb8aa00fd77a7e4e3403fe14cf546a2
+v1KNn-610ac23dea181ebc,adele-battery-v1,TruthQuest-S-540,v1/KNn,v1,KNn,1,0821d81e17fff46df676c2590948c393293d611d927387c73589527f5e27f24f
+v1KNs-f880e59c5d5a7e33,adele-battery-v1,TruthQuest-S-540,v1/KNs,v1,KNs,1,dd820c480e55441f79993e7c55e215fe28a998decc70aae93b51bc50ef65316a
+v1MCr-9b54be31ae8a7c94,adele-battery-v1,TruthQuest-S-540,v1/MCr,v1,MCr,1,35ad23e6f03a3db75a6eb2790d95b39304d7dd1711281ed22846d3b503cb51fb
+v1MCt-051e459d13a5fb7c,adele-battery-v1,TruthQuest-S-540,v1/MCt,v1,MCt,1,cfb008db0d4cd59464bba6da3c10e4e0cfee3e6a15bf4176f5aef28bff20db4d
+v1MCu-855de586a7d2f311,adele-battery-v1,TruthQuest-S-540,v1/MCu,v1,MCu,1,8d10775f871e1d131ae9d89fe690534c05f29fc32ed19ff35922662ba407eafb
+v1MSm-d4c3c26593822a52,adele-battery-v1,TruthQuest-S-540,v1/MSm,v1,MSm,1,160be6919e3a07922e5f2fefb9a47cebfb9ba1517bbdea3577225c6bb4c30e5d
+v1QLl-8fa746a95bfaefde,adele-battery-v1,TruthQuest-S-540,v1/QLl,v1,QLl,1,ee4f87c6c3c9b7be52335ff8d525b169d8af4047358db3015c50ede36d134fbf
+v1QLq-e61360d0b5e0f62a,adele-battery-v1,TruthQuest-S-540,v1/QLq,v1,QLq,1,c2caaa420c4a35ee575f7d57a09a8d2a24d40eafc5d30d9ff092d787cdad9298
+v1SNs-99bf92770c12bccb,adele-battery-v1,TruthQuest-S-540,v1/SNs,v1,SNs,1,d9781741c744d98d71f5edeb2126887576c471cfe8cfcb670fe785ff84f97f3d
+v1VO-3d1dc2c235caa6c7,adele-battery-v1,TruthQuest-S-540,v1/VO,v1,VO,1,538c7c76cee49436aa715e2e1232312d8e3909ec98a08528cde5556b556c0515

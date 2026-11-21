@@ -1,0 +1,78 @@
+{
+  "run": "jc-msc-tau2-goal-haiku-medium",
+  "created_at": "2026-11-01T19:33:46+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/jc-msc-tau2-goal-haiku-medium.toml",
+  "git": {
+    "commit": "51a4feac52b22f76853d33110a5ef4e4df312330",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": null,
+  "frozen": {
+    "spec": {
+      "sha256": "dcc6ab37ad12b7268c93d40ba107dc13b6eb30bab4ec5ed41036fb8b897a117d",
+      "content": "# judge-choice (experiments/benchmarks/judge-choice): block msc, inputs data/instances-tau2-goal, arm haiku-medium.\n# Jose's prompt (v1-layout-noreason) in the subagent context, through the Batch API.\nname = \"jc-msc-tau2-goal-haiku-medium\"\n\n[tasks]\nbenchmarks = [\"tau2-airline\", \"tau2-banking_knowledge\", \"tau2-retail\"]\nsubset = \"experiments/benchmarks/judge-choice/subset_msc_tau2-goal.csv\"\ninstances_dir = \"data/instances-tau2-goal\"\n\n[rubrics]\nrefs = [\"v2/MSc\"]\n\n[prompt]\nbuilder = \"v1-layout-noreason\"\n\n[judge]\nbackend = \"anthropic-batch\"\nmodel = \"claude-haiku-5-5\"\neffort = \"medium\"\nharness = \"subagent-v2-low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "d35bad3b5e0fa686b7801f4357092440a98d23599948f2cdd0e1a56026800925",
+          "frame_sha256": "1fa01e9b322fe5e30754acf521e1f664a0a1f8f0b7424eea0a4441b38c8843ce",
+          "n_selected": 10
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "f048db72be0227a1555533acf5cc22383dd43ea00401e6a1407f45ea9bca9f29",
+          "frame_sha256": "f048db72be0227a1555533acf5cc22383dd43ea00401e6a1407f45ea9bca9f29",
+          "n_selected": 14
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "26c2a789370e4925d2619672c5b4d5e4b3c20ec3e81fa2bb1ed797a92531bbe8",
+          "frame_sha256": "186fec273d8814911b7f5213683e207872943421bb07d0c02da8f332026b8177",
+          "n_selected": 18
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/judge-choice/subset_msc_tau2-goal.csv",
+        "sha256": "65d5c67302f065f1e80066fcfe44ee62eae525b222f3d9e4c55c115f181fc1f6",
+        "n_ids": 42
+      }
+    },
+    "rubrics": {
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "3410930631535d8f24f60928caf70362fecda555d96b146d97369eae76780bc0",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v1-layout-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v1_layout_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "4af95b8bf6e4078e4ce7a94f72b1d338df861a2070fbc045e3e986ab264d62b5"
+    },
+    "judge": {
+      "backend": "anthropic-batch",
+      "model": "claude-haiku-5-5",
+      "effort": "medium",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 0,
+        "error": 2,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "claude-haiku-5-5-medium",
+      "relay": {},
+      "batch": true,
+      "harness": "subagent-v2-low"
+    },
+    "cells": {
+      "n": 42,
+      "sha256": "ff3b856cfa6787de0a3ebfedcc0cca52891adb4125b2bb2066e2403419329311"
+    }
+  }
+}

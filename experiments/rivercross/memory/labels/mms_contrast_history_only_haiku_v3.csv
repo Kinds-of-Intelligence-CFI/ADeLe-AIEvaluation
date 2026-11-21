@@ -1,0 +1,19 @@
+custom_id,level,reason
+memc-L3-low-01__history_only,2,Track item2 on right bank across 3 moves; simple one-way placement.
+memc-L3-low-02__history_only,2,Track item2 on right bank across 3 moves; one-way placement with larger capacity.
+memc-L3-medium-01__history_only,3,Track item1 right then update item2/3/4 locations; one reversal of item1.
+memc-L3-medium-02__history_only,3,Track item1 right then update item2/3/4 locations; item1 reversal disentangles from others.
+memc-L3-high-01__history_only,3,All items shuttle back-forth three times; track reversals across repeated full-group moves.
+memc-L3-high-02__history_only,3,All items shuttle back-forth three times; reversals across full-group moves with chain constraints.
+memc-L4-low-01__history_only,3,Track item2 and boat position across four moves; single object one reversal.
+memc-L4-low-02__history_only,3,Track item2 and boat position across four moves; reversal with larger boat capacity.
+memc-L4-medium-01__history_only,3,Track item1 left; items2-5 right then boat returns; one item split across reversals.
+memc-L4-medium-02__history_only,3,Track item1 left; items2-4 right; boat shuttles back; one-item reversal pattern.
+memc-L4-high-01__history_only,4,All items shuttle four times; track multiple reversals and interference across moves.
+memc-L4-high-02__history_only,4,All items shuttle four times with chain constraints; multiple reversal tracking required.
+memc-L5-low-01__history_only,4,Track item2 across five boat moves; multiple reversals in boat-position pattern.
+memc-L5-low-02__history_only,4,Track item2 across five boat moves; reversals with larger capacity require updating.
+memc-L5-medium-01__history_only,4,Item1 placed early; items2-5 split; track interleaved placement and reversals.
+memc-L5-medium-02__history_only,4,Item1 placed early; items2-5 split; five-move reversal pattern complicates updates.
+memc-L5-high-01__history_only,5,All five items shuttle five times; extensive multi-layer reversal and state reconstruction.
+memc-L5-high-02__history_only,5,Five items with chain constraints shuttle five times; complex reversal interference tracking.

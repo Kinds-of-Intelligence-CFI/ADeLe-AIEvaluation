@@ -1,0 +1,27 @@
+# noreason amendment 4b: twin of noreason-s-pl.toml with the v2 prompt (written reasoning, as in the released labels); nothing else changed.
+# No-reasoning ablation (experiments/benchmarks/noreason): PL rubrics without written reasoning, on the relabel-v2 single-read clean sets.
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/noreason-pl.toml
+name = "noreason-sr-pl"
+
+[tasks]
+benchmarks = ["swe-bench-verified", "tau2-airline", "tau2-retail", "tau2-banking_knowledge", "terminal-bench-4.0.0", "terminal-bench-science-0.1", "deepswe-v1.1", "frontierswe-v2", "programbench"]
+subset = "experiments/benchmarks/pls-relabel/subset.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-sonnet-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "sonnet"
+batch_size = 100

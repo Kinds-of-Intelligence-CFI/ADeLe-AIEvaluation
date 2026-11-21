@@ -1,0 +1,30 @@
+# The clean ProgramBench tasks (experiments/benchmarks/programbench-pl, keep == True: some run reaches score 0.9) whose
+# judge prompts fit one Read call (subset_single.csv, from programbench-pl/route.py; the rest: programbench-pl-long)
+# on the adopted v2 planning family (PLp = text O, PLe, PLs). Prompt = agent instruction + workspace file listing +
+# documentation files in full, no truncation (programbench-data/NOTES.md).
+# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting).
+#   adele mass plan experiments/benchmarks/mass-annotation/specs/programbench-pl.toml
+name = "programbench-pl"
+
+[tasks]
+benchmarks = ["programbench"]
+subset = "experiments/benchmarks/programbench-pl/subset_single.csv"
+
+[rubrics]
+refs = ["v2/PLp", "v2/PLe", "v2/PLs"]
+
+[prompt]
+builder = "v2"
+
+[judge]
+backend = "subagent"
+model = "claude-opus-5-5"
+effort = "low"
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1 }
+
+[judge.relay]
+dispatcher = "judge-dispatcher-v2-low"
+judge_agent = "adele-judge-v2-low"
+model_alias = "opus"
+batch_size = 50

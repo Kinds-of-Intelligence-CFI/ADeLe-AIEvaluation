@@ -1,0 +1,7 @@
+file_id,item_id,set,arm,repeat,demand,judge,writer_model,level,valid,prompt_sha256,response_sha256
+4uhtx,B-D02,B,cand,3,PLs,opus-low,claude-opus-5-5,0.0,True,80436a6db21d96bfdb3d927b6ff957b22b5aee57f41a1e8602e5f8da3836f532,6a0c2bec0ad318abbf741d453dfd9ef2b1bcb0d562b8b753f362936895d513f2
+tzu63,B-D02,B,cand,2,PLs,opus-low,claude-opus-5-5,0.0,True,80436a6db21d96bfdb3d927b6ff957b22b5aee57f41a1e8602e5f8da3836f532,e474debe806700c3f400a491c504e3f2f9a91cd17c60edcf0164e94e0d7f669a
+3bdah,B-D02,B,cur,2,PLs,opus-low,claude-opus-5-5,0.0,True,707ae946cacb47058473ebf0c33cbdd7b4e4a9c944a0e813b0ecdc1ce890841d,d59788f03ca3ac3b67a451332c5eae68acde5c1fa164216dab17994b04e02b93
+dc2jr,B-D02,B,cur,3,PLs,opus-low,claude-opus-5-5,0.0,True,707ae946cacb47058473ebf0c33cbdd7b4e4a9c944a0e813b0ecdc1ce890841d,43d5db778cb4273a4b2170e02330039aa7c348200e1cba044bbde97376511839
+vqn7g,B-D02,B,cur,1,PLs,opus-low,claude-opus-5-5,0.0,True,707ae946cacb47058473ebf0c33cbdd7b4e4a9c944a0e813b0ecdc1ce890841d,e1d6165a1f7a99e5a10b57f80b3b2e848b4361d10fdd02cab4e6df43e86be0e8
+acfse,B-D02,B,cand,1,PLs,opus-low,claude-opus-5-5,0.0,True,80436a6db21d96bfdb3d927b6ff957b22b5aee57f41a1e8602e5f8da3836f532,0c67abb8b56dfb977ab189a4d0be8c86ff7e217a5740da8c2f4281554e3897e8

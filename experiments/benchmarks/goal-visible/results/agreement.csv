@@ -1,0 +1,71 @@
+against,benchmark,rubric,n,exact,within_1,mean_shift,levels_old,levels_new
+control,deepswe-v1.1,MSc,90,1.0,1.0,0.0,0:90,0:90
+control,deepswe-v1.1,MSm,90,1.0,1.0,0.0,0:90,0:90
+control,deepswe-v1.1,PLe,90,0.867,1.0,0.133,3:89 4:1,3:77 4:13
+control,deepswe-v1.1,PLp,90,0.833,1.0,0.167,2:41 3:49,2:27 3:62 4:1
+control,deepswe-v1.1,PLs,90,0.856,1.0,-0.033,1:75 2:15,1:78 2:12
+control,frontierswe-v2,MSc,19,1.0,1.0,0.0,0:19,0:19
+control,frontierswe-v2,MSm,19,0.947,1.0,-0.053,0:18 2:1,0:18 1:1
+control,frontierswe-v2,PLe,19,0.842,1.0,0.053,3:16 4:3,3:15 4:4
+control,frontierswe-v2,PLp,19,0.789,1.0,0.0,3:16 4:3,3:16 4:3
+control,frontierswe-v2,PLs,19,0.737,1.0,0.158,0:1 1:13 2:4 3:1,0:1 1:9 2:9
+control,programbench,MSc,129,1.0,1.0,0.0,0:129,0:129
+control,programbench,MSm,129,1.0,1.0,0.0,0:129,0:129
+control,programbench,PLe,129,0.961,1.0,-0.039,3:123 4:6,3:128 4:1
+control,programbench,PLp,129,0.86,1.0,0.031,2:30 3:99,2:27 3:101 4:1
+control,programbench,PLs,129,0.93,1.0,0.023,1:126 2:3,1:123 2:6
+control,swe-bench-verified,MSc,443,1.0,1.0,0.0,0:443,0:443
+control,swe-bench-verified,MSm,443,1.0,1.0,0.0,0:443,0:443
+control,swe-bench-verified,PLe,443,0.948,0.998,-0.032,1:1 2:12 3:430,1:2 2:24 3:417
+control,swe-bench-verified,PLp,443,0.853,1.0,-0.106,0:8 1:196 2:235 3:4,0:9 1:244 2:183 3:7
+control,swe-bench-verified,PLs,443,0.993,1.0,0.002,0:2 1:440 2:1,1:443
+control,terminal-bench-4.0.0,MSc,35,0.971,1.0,-0.029,0:34 1:1,0:35
+control,terminal-bench-4.0.0,MSm,35,1.0,1.0,0.0,0:34 1:1,0:34 1:1
+control,terminal-bench-4.0.0,PLe,35,0.771,1.0,0.171,2:1 3:22 4:12,3:18 4:17
+control,terminal-bench-4.0.0,PLp,35,0.914,1.0,0.086,2:8 3:25 4:2,2:7 3:24 4:4
+control,terminal-bench-4.0.0,PLs,35,0.771,1.0,-0.057,0:10 1:11 2:14,0:10 1:13 2:12
+control,terminal-bench-science-0.1,MSc,70,1.0,1.0,0.0,0:70,0:70
+control,terminal-bench-science-0.1,MSm,70,0.986,1.0,0.014,0:69 1:1,0:69 2:1
+control,terminal-bench-science-0.1,PLe,69,0.797,1.0,0.174,3:34 4:35,2:1 3:20 4:48
+control,terminal-bench-science-0.1,PLp,69,0.928,1.0,0.014,2:8 3:46 4:15,2:8 3:45 4:16
+control,terminal-bench-science-0.1,PLs,69,0.855,1.0,0.058,0:27 1:14 2:24 3:4,0:27 1:11 2:26 3:5
+control,all,MSc,786,0.999,1.0,-0.001,,
+control,all,MSm,786,0.997,1.0,0.0,,
+control,all,PLe,785,0.917,0.999,0.015,,
+control,all,PLp,785,0.86,1.0,-0.031,,
+control,all,PLs,785,0.939,1.0,0.008,,
+released,deepswe-v1.1,MSc,90,1.0,1.0,0.0,0:90,0:90
+released,deepswe-v1.1,MSm,90,1.0,1.0,0.0,0:90,0:90
+released,deepswe-v1.1,PLe,90,0.867,1.0,0.111,3:87 4:3,3:77 4:13
+released,deepswe-v1.1,PLp,90,0.856,1.0,0.144,2:39 3:51,2:27 3:62 4:1
+released,deepswe-v1.1,PLs,90,0.756,1.0,-0.133,1:66 2:24,1:78 2:12
+released,frontierswe-v2,MSc,19,1.0,1.0,0.0,0:19,0:19
+released,frontierswe-v2,MSm,19,0.947,1.0,-0.053,0:18 2:1,0:18 1:1
+released,frontierswe-v2,PLe,19,0.895,1.0,0.0,3:15 4:4,3:15 4:4
+released,frontierswe-v2,PLp,19,0.842,1.0,0.158,3:19,3:16 4:3
+released,frontierswe-v2,PLs,19,0.789,1.0,0.105,1:13 2:6,0:1 1:9 2:9
+released,programbench,MSc,129,1.0,1.0,0.0,0:129,0:129
+released,programbench,MSm,129,1.0,1.0,0.0,0:129,0:129
+released,programbench,PLe,129,0.969,1.0,-0.016,3:126 4:3,3:128 4:1
+released,programbench,PLp,129,0.884,1.0,0.039,2:33 3:94 4:2,2:27 3:101 4:1
+released,programbench,PLs,129,0.938,1.0,0.016,1:125 2:4,1:123 2:6
+released,swe-bench-verified,MSc,443,1.0,1.0,0.0,0:443,0:443
+released,swe-bench-verified,MSm,443,1.0,1.0,0.0,0:443,0:443
+released,swe-bench-verified,PLe,443,0.946,0.998,-0.029,1:2 2:11 3:430,1:2 2:24 3:417
+released,swe-bench-verified,PLp,443,0.734,1.0,-0.239,0:10 1:135 2:292 3:6,0:9 1:244 2:183 3:7
+released,swe-bench-verified,PLs,443,0.995,1.0,0.0,0:1 1:441 2:1,1:443
+released,terminal-bench-4.0.0,MSc,35,0.971,1.0,-0.029,0:34 1:1,0:35
+released,terminal-bench-4.0.0,MSm,35,1.0,1.0,0.0,0:34 1:1,0:34 1:1
+released,terminal-bench-4.0.0,PLe,35,0.743,1.0,0.143,2:1 3:21 4:13,3:18 4:17
+released,terminal-bench-4.0.0,PLp,35,0.829,1.0,0.114,2:9 3:24 4:2,2:7 3:24 4:4
+released,terminal-bench-4.0.0,PLs,35,0.714,1.0,0.0,0:10 1:13 2:12,0:10 1:13 2:12
+released,terminal-bench-science-0.1,MSc,70,1.0,1.0,0.0,0:70,0:70
+released,terminal-bench-science-0.1,MSm,70,0.986,1.0,0.014,0:69 1:1,0:69 2:1
+released,terminal-bench-science-0.1,PLe,69,0.899,1.0,0.072,3:27 4:42,2:1 3:20 4:48
+released,terminal-bench-science-0.1,PLp,69,0.855,1.0,0.145,2:9 3:53 4:7,2:8 3:45 4:16
+released,terminal-bench-science-0.1,PLs,69,0.855,0.986,0.101,0:30 1:10 2:26 3:3,0:27 1:11 2:26 3:5
+released,all,MSc,786,0.999,1.0,-0.001,,
+released,all,MSm,786,0.997,1.0,0.0,,
+released,all,PLe,785,0.926,0.999,0.006,,
+released,all,PLp,785,0.79,1.0,-0.09,,
+released,all,PLs,785,0.929,0.999,-0.001,,

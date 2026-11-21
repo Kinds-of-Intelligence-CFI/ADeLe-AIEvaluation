@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2,2,About four steps; modest search; sequencing moves; static single-agent environment.
+chain-3-boat-2#s1,1,Two steps; low branching; static predictable environment; clear goal.
+chain-3-boat-3#s0,1,One step possible; low branching; static environment; clear goal.
+chain-3-boat-4#s0,1,One step possible; low branching; static environment; clear goal.
+chain-4-boat-2#s1,1,Two steps; simple sequencing; static environment; clear goal.
+chain-4-boat-3#s1,1,Two steps; simple sequencing; static environment; clear goal.
+chain-4-boat-4#s0,1,Single-trip solution; low branching; static environment.
+chain-5-boat-2#s2,2,Four steps; some look-ahead; sequencing constraints; static single-agent setting.
+chain-5-boat-3#s1,1,Two steps; low branching; static predictable environment.
+chain-5-boat-4#s1,1,Two steps; low branching; static predictable environment.
+chain-6-boat-3#s1,1,Two steps; simple decomposition; static environment; clear goal.
+chain-6-boat-4#s1,1,Two steps; simple decomposition; static environment; clear goal.
+star-3-boat-1#s2,2,Multiple (≈6) steps; careful sequencing; modest search; static environment.
+star-3-boat-2#s1,1,Two steps; low branching; static environment; clear constraints.
+star-3-boat-3#s0,1,Single-trip solution; low branching; static environment.
+star-3-boat-4#s0,1,Single-trip solution; low branching; static environment.
+star-4-boat-2#s2,1,Three steps; low branching; static predictable environment; clear goal.
+star-4-boat-3#s1,1,Two steps; straightforward sequencing; static environment.
+star-4-boat-4#s0,1,Single-trip solution; minimal search; static environment.
+star-5-boat-2#s2,2,Four steps; moderate search; must maintain constraints; static environment.
+star-5-boat-3#s1,1,Two steps; low branching; static environment.
+star-5-boat-4#s1,1,Two steps; low branching; static predictable environment.
+star-6-boat-2#s2,2,About five steps; modest search; maintain constraints; static environment.
+star-6-boat-3#s2,1,Three steps; low branching; static predictable environment.
+star-6-boat-4#s1,1,Two steps; straightforward sequencing; static environment.
+cycle-3-boat-2#s1,2,Six steps; careful sequencing; modest branching; static environment.
+cycle-3-boat-3#s0,1,Single-trip solution; minimal search; static environment.
+cycle-3-boat-4#s0,1,Single-trip solution; minimal search; static environment.
+cycle-4-boat-2#s1,1,Two steps; simple decomposition; static environment; clear goal.
+cycle-4-boat-3#s1,1,Two steps; low branching; static predictable environment.
+cycle-4-boat-4#s0,1,Single-trip solution; minimal search; static environment.
+cycle-5-boat-3#s1,2,Multiple steps; modest search; interdependent constraints; static environment.
+cycle-5-boat-4#s1,1,Two steps; straightforward plan; static environment.
+cycle-6-boat-3#s1,1,Two steps; low branching; static predictable environment.
+cycle-6-boat-4#s1,1,Two steps; simple sequencing; static environment.
+complete-3-boat-2#s1,2,Six steps; careful sequencing; sparse successful paths; static environment.
+complete-3-boat-3#s0,1,Single-trip solution; minimal search; static environment.
+complete-3-boat-4#s0,1,Single-trip solution; minimal search; static environment.
+complete-4-boat-3#s1,2,Four steps; modest search; ensure unattended banks safe; static environment.
+complete-4-boat-4#s0,1,Single-trip solution; minimal search; static environment.
+complete-5-boat-4#s1,2,Four steps; moderate search; multiple constraints; static environment.
+missionaries-cannibals-3#s2,2,Several steps; modest search; multiple constraints; static predictable environment.
+missionaries-cannibals-4#s2,2,Several steps; modest search; multiple agents’ constraints; static environment.

@@ -1,0 +1,63 @@
+{
+  "parse_rate": 1.0,
+  "medium_vs_max": {
+    "n": 132,
+    "exact": 0.856,
+    "within1": 1.0,
+    "mean_shift": -0.068,
+    "qwk": 0.913
+  },
+  "medium_vs_max_by_rubric": {
+    "PLp": {
+      "n": 44,
+      "exact": 0.841,
+      "within1": 1.0,
+      "mean_shift": -0.023,
+      "qwk": 0.814
+    },
+    "PLe": {
+      "n": 44,
+      "exact": 0.75,
+      "within1": 1.0,
+      "mean_shift": -0.159,
+      "qwk": 0.376
+    },
+    "PLs": {
+      "n": 44,
+      "exact": 0.977,
+      "within1": 1.0,
+      "mean_shift": -0.023,
+      "qwk": 0.0
+    }
+  },
+  "on_sonnet_cells": {
+    "medium_vs_max": {
+      "n": 27,
+      "exact": 0.889,
+      "within1": 1.0,
+      "mean_shift": -0.037,
+      "qwk": 0.93
+    },
+    "sonnet_vs_max": {
+      "n": 27,
+      "exact": 0.741,
+      "within1": 1.0,
+      "mean_shift": 0.037,
+      "qwk": 0.837
+    },
+    "medium_vs_sonnet": {
+      "n": 27,
+      "exact": 0.852,
+      "within1": 1.0,
+      "mean_shift": -0.074,
+      "qwk": 0.9
+    }
+  },
+  "checks": {
+    "1_within1_ge_0.90": true,
+    "2_exact_medium_ge_sonnet": true,
+    "3_shift_within_0.25": true,
+    "4_parse_ge_0.98": true
+  },
+  "gate_passes": true
+}

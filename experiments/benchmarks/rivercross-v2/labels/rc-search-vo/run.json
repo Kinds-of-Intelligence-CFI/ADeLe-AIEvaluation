@@ -1,0 +1,31 @@
+{
+  "run_id": "rc-search-vo",
+  "created_at": "2026-09-30T12:51:16+00:00",
+  "repo_commit": "04c87c088b41d66ba921fa8fd20d108285a12798",
+  "repo_dirty_tracked_files": [],
+  "benchmark": [
+    "rivercross"
+  ],
+  "design": {
+    "n_prompts": 54,
+    "judges": {
+      "opus-low": "adele-judge-v2-low, model alias 'opus'"
+    }
+  },
+  "frame": {
+    "file": "experiments/benchmarks/rivercross-v2/frames/search_frame.csv",
+    "sha256": "620097a8c2d0804387a16b771a1d68731fe78f0c3b357696337803a09ce0aaf1",
+    "seed": 20260930
+  },
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+  },
+  "rubrics_sha256": {
+    "VO": "80632b61cdf385aba008182667660516ea028c680c65b1ccdc305c2567bdabdb",
+    "VO_version": "v1.0"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/rc-search-vo",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

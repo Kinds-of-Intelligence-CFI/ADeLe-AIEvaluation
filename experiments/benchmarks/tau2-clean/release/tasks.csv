@@ -1,0 +1,258 @@
+benchmark,instance_id,file_id,runs_counted,solved_trials_all,n_trials_all,solve_rate,n_configs,solve_rate_all,n_configs_all,solve_rate_mixed,n_configs_mixed,solve_rate_all_mixed,n_configs_all_mixed,excluded_by,keep
+tau2-airline,0,airline-0,all,58,61,1.0,7,0.9508,16,,,,,,True
+tau2-airline,1,airline-1,all,44,61,0.9643,7,0.7213,16,,,,,,True
+tau2-airline,10,airline-10,all,53,61,1.0,7,0.8689,16,,,,,,True
+tau2-airline,11,airline-11,all,54,61,0.9286,7,0.8852,16,,,,,,True
+tau2-airline,12,airline-12,all,25,28,0.8929,7,0.8929,7,,,,,,True
+tau2-airline,13,airline-13,all,28,28,1.0,7,1.0,7,,,,,,True
+tau2-airline,14,airline-14,all,15,28,0.5357,7,0.5357,7,,,,,,True
+tau2-airline,15,airline-15,all,25,28,0.8929,7,0.8929,7,,,,,,True
+tau2-airline,16,airline-16,all,27,28,0.9643,7,0.9643,7,,,,,,True
+tau2-airline,17,airline-17,all,48,61,0.7857,7,0.7869,16,,,,,,True
+tau2-airline,18,airline-18,all,17,28,0.6071,7,0.6071,7,,,,,,True
+tau2-airline,19,airline-19,all,26,28,0.9286,7,0.9286,7,,,,,,True
+tau2-airline,2,airline-2,all,28,28,1.0,7,1.0,7,,,,,,True
+tau2-airline,20,airline-20,all,51,61,0.8929,7,0.8361,16,,,,,,True
+tau2-airline,21,airline-21,all,21,28,0.75,7,0.75,7,,,,,,True
+tau2-airline,22,airline-22,all,47,61,0.9643,7,0.7705,16,,,,,,True
+tau2-airline,23,airline-23,all,9,28,0.3214,7,0.3214,7,,,,,,True
+tau2-airline,24,airline-24,all,38,61,0.8571,7,0.623,16,,,,,,True
+tau2-airline,25,airline-25,all,27,28,0.9643,7,0.9643,7,,,,,,True
+tau2-airline,26,airline-26,all,54,61,1.0,7,0.8852,16,,,,,,True
+tau2-airline,27,airline-27,all,28,28,1.0,7,1.0,7,,,,,,True
+tau2-airline,28,airline-28,all,58,61,0.9643,7,0.9508,16,,,,,,True
+tau2-airline,29,airline-29,all,6,28,0.2143,7,0.2143,7,,,,,,True
+tau2-airline,3,airline-3,all,58,61,0.9643,7,0.9508,16,,,,,,True
+tau2-airline,30,airline-30,all,27,28,0.9643,7,0.9643,7,,,,,,True
+tau2-airline,31,airline-31,all,46,61,0.6786,7,0.7541,16,,,,,,True
+tau2-airline,32,airline-32,all,5,28,0.1786,7,0.1786,7,,,,,,True
+tau2-airline,33,airline-33,all,22,61,0.7143,7,0.3607,16,,,,,,True
+tau2-airline,34,airline-34,all,28,28,1.0,7,1.0,7,,,,,,True
+tau2-airline,35,airline-35,all,12,61,0.4286,7,0.1967,16,,,,,,True
+tau2-airline,36,airline-36,all,55,61,1.0,7,0.9016,16,,,,,,True
+tau2-airline,37,airline-37,all,29,61,0.8929,7,0.4754,16,,,,,,True
+tau2-airline,38,airline-38,all,37,61,1.0,7,0.6066,16,,,,,,True
+tau2-airline,39,airline-39,all,16,61,0.2857,7,0.2623,16,,,,,,True
+tau2-airline,4,airline-4,all,60,61,1.0,7,0.9836,16,,,,,,True
+tau2-airline,40,airline-40,all,61,61,1.0,7,1.0,16,,,,,,True
+tau2-airline,41,airline-41,all,49,61,0.9643,7,0.8033,16,,,,,,True
+tau2-airline,42,airline-42,all,20,28,0.7143,7,0.7143,7,,,,,,True
+tau2-airline,43,airline-43,all,25,28,0.8929,7,0.8929,7,,,,,,True
+tau2-airline,44,airline-44,all,0,28,0.0,7,0.0,7,,,,,never_solved,False
+tau2-airline,45,airline-45,all,21,28,0.75,7,0.75,7,,,,,,True
+tau2-airline,46,airline-46,all,60,61,1.0,7,0.9836,16,,,,,,True
+tau2-airline,47,airline-47,all,53,61,0.9643,7,0.8689,16,,,,,,True
+tau2-airline,48,airline-48,all,50,61,1.0,7,0.8197,16,,,,,,True
+tau2-airline,49,airline-49,all,57,61,1.0,7,0.9344,16,,,,,,True
+tau2-airline,5,airline-5,all,27,28,0.9643,7,0.9643,7,,,,,,True
+tau2-airline,6,airline-6,all,51,61,0.75,7,0.8361,16,,,,,,True
+tau2-airline,7,airline-7,all,2,28,0.0714,7,0.0714,7,,,,,,True
+tau2-airline,8,airline-8,all,53,61,0.8571,7,0.8689,16,,,,,,True
+tau2-airline,9,airline-9,all,26,61,0.8214,7,0.4262,16,,,,,,True
+tau2-retail,0,retail-0,all,24,32,0.75,8,0.75,8,,,,,,True
+tau2-retail,1,retail-1,all,29,32,0.9062,8,0.9062,8,,,,,,True
+tau2-retail,10,retail-10,all,29,32,0.9062,8,0.9062,8,,,,,,True
+tau2-retail,100,retail-100,all,16,32,0.5,8,0.5,8,,,,,,True
+tau2-retail,101,retail-101,all,48,61,0.7812,8,0.7869,16,,,,,,True
+tau2-retail,102,retail-102,all,52,61,0.8125,8,0.8525,16,,,,,,True
+tau2-retail,103,retail-103,all,38,61,0.5625,8,0.623,16,,,,,,True
+tau2-retail,104,retail-104,all,42,61,0.6875,8,0.6885,16,,,,,,True
+tau2-retail,105,retail-105,all,35,61,0.5312,8,0.5738,16,,,,,,True
+tau2-retail,106,retail-106,all,52,61,0.9688,8,0.8525,16,,,,,,True
+tau2-retail,107,retail-107,all,11,32,0.3438,8,0.3438,8,,,,,,True
+tau2-retail,108,retail-108,all,55,61,0.875,8,0.9016,16,,,,,,True
+tau2-retail,109,retail-109,all,25,61,0.5312,8,0.4098,16,,,,,,True
+tau2-retail,11,retail-11,all,57,61,0.9062,8,0.9344,16,,,,,,True
+tau2-retail,110,retail-110,all,31,61,0.4688,8,0.5082,16,,,,,,True
+tau2-retail,111,retail-111,all,49,61,0.9375,8,0.8033,16,,,,,,True
+tau2-retail,112,retail-112,all,20,61,0.3438,8,0.3279,16,,,,,,True
+tau2-retail,113,retail-113,all,59,61,0.9375,8,0.9672,16,,,,,,True
+tau2-retail,12,retail-12,all,52,61,0.8438,8,0.8525,16,,,,,,True
+tau2-retail,13,retail-13,all,59,61,0.9688,8,0.9672,16,,,,,,True
+tau2-retail,14,retail-14,all,57,61,1.0,8,0.9344,16,,,,,,True
+tau2-retail,15,retail-15,all,28,32,0.875,8,0.875,8,,,,,,True
+tau2-retail,16,retail-16,all,55,61,0.9375,8,0.9016,16,,,,,,True
+tau2-retail,17,retail-17,all,61,61,1.0,8,1.0,16,,,,,,True
+tau2-retail,18,retail-18,all,14,32,0.4375,8,0.4375,8,,,,,,True
+tau2-retail,19,retail-19,all,48,61,0.7812,8,0.7869,16,,,,,,True
+tau2-retail,2,retail-2,all,25,32,0.7812,8,0.7812,8,,,,,,True
+tau2-retail,20,retail-20,all,28,32,0.875,8,0.875,8,,,,,,True
+tau2-retail,21,retail-21,all,48,61,0.6875,8,0.7869,16,,,,,,True
+tau2-retail,22,retail-22,all,28,32,0.875,8,0.875,8,,,,,,True
+tau2-retail,23,retail-23,all,56,61,0.9062,8,0.918,16,,,,,,True
+tau2-retail,24,retail-24,all,60,61,1.0,8,0.9836,16,,,,,,True
+tau2-retail,25,retail-25,all,54,61,0.9062,8,0.8852,16,,,,,,True
+tau2-retail,26,retail-26,all,58,61,0.9062,8,0.9508,16,,,,,,True
+tau2-retail,27,retail-27,all,34,61,0.5938,8,0.5574,16,,,,,,True
+tau2-retail,28,retail-28,all,28,32,0.875,8,0.875,8,,,,,,True
+tau2-retail,29,retail-29,all,23,32,0.7188,8,0.7188,8,,,,,,True
+tau2-retail,3,retail-3,all,24,32,0.75,8,0.75,8,,,,,,True
+tau2-retail,30,retail-30,all,50,61,0.6875,8,0.8197,16,,,,,,True
+tau2-retail,31,retail-31,all,39,61,0.4375,8,0.6393,16,,,,,,True
+tau2-retail,32,retail-32,all,40,61,0.5,8,0.6557,16,,,,,,True
+tau2-retail,33,retail-33,all,37,61,0.8438,8,0.6066,16,,,,,,True
+tau2-retail,34,retail-34,all,31,61,0.8438,8,0.5082,16,,,,,,True
+tau2-retail,35,retail-35,all,54,61,0.875,8,0.8852,16,,,,,,True
+tau2-retail,36,retail-36,all,37,61,0.6562,8,0.6066,16,,,,,,True
+tau2-retail,37,retail-37,all,46,61,0.7188,8,0.7541,16,,,,,,True
+tau2-retail,38,retail-38,all,17,61,0.0312,8,0.2787,16,,,,,,True
+tau2-retail,39,retail-39,all,49,61,0.8438,8,0.8033,16,,,,,,True
+tau2-retail,4,retail-4,all,21,32,0.6562,8,0.6562,8,,,,,,True
+tau2-retail,40,retail-40,all,60,61,0.9688,8,0.9836,16,,,,,,True
+tau2-retail,41,retail-41,all,19,61,0.25,8,0.3115,16,,,,,,True
+tau2-retail,42,retail-42,all,52,61,0.8125,8,0.8525,16,,,,,,True
+tau2-retail,43,retail-43,all,48,61,0.875,8,0.7869,16,,,,,,True
+tau2-retail,44,retail-44,all,60,61,1.0,8,0.9836,16,,,,,,True
+tau2-retail,45,retail-45,all,49,61,0.75,8,0.8033,16,,,,,,True
+tau2-retail,46,retail-46,all,50,61,0.75,8,0.8197,16,,,,,,True
+tau2-retail,47,retail-47,all,51,61,0.8125,8,0.8361,16,,,,,,True
+tau2-retail,48,retail-48,all,59,61,0.9375,8,0.9672,16,,,,,,True
+tau2-retail,49,retail-49,all,40,61,0.6562,8,0.6557,16,,,,,,True
+tau2-retail,5,retail-5,all,28,61,0.1562,8,0.459,16,,,,,,True
+tau2-retail,50,retail-50,all,61,61,1.0,8,1.0,16,,,,,,True
+tau2-retail,51,retail-51,all,58,61,1.0,8,0.9508,16,,,,,,True
+tau2-retail,52,retail-52,all,51,61,0.75,8,0.8361,16,,,,,,True
+tau2-retail,53,retail-53,all,58,61,0.9688,8,0.9508,16,,,,,,True
+tau2-retail,54,retail-54,all,30,32,0.9375,8,0.9375,8,,,,,,True
+tau2-retail,55,retail-55,all,32,32,1.0,8,1.0,8,,,,,,True
+tau2-retail,56,retail-56,all,46,61,0.8125,8,0.7541,16,,,,,,True
+tau2-retail,57,retail-57,all,52,61,0.9062,8,0.8525,16,,,,,,True
+tau2-retail,58,retail-58,all,58,61,0.9688,8,0.9508,16,,,,,,True
+tau2-retail,59,retail-59,all,38,61,0.8125,8,0.623,16,,,,,,True
+tau2-retail,6,retail-6,all,50,61,0.75,8,0.8197,16,,,,,,True
+tau2-retail,60,retail-60,all,42,61,0.4375,8,0.6885,16,,,,,,True
+tau2-retail,61,retail-61,all,57,61,0.9688,8,0.9344,16,,,,,,True
+tau2-retail,62,retail-62,all,30,32,0.9375,8,0.9375,8,,,,,,True
+tau2-retail,63,retail-63,all,53,61,0.9375,8,0.8689,16,,,,,,True
+tau2-retail,64,retail-64,all,35,61,0.4062,8,0.5738,16,,,,,,True
+tau2-retail,65,retail-65,all,60,61,0.9688,8,0.9836,16,,,,,,True
+tau2-retail,66,retail-66,all,27,61,0.125,8,0.4426,16,,,,,,True
+tau2-retail,67,retail-67,all,55,61,0.9062,8,0.9016,16,,,,,,True
+tau2-retail,68,retail-68,all,56,61,0.8438,8,0.918,16,,,,,,True
+tau2-retail,69,retail-69,all,48,61,0.9688,8,0.7869,16,,,,,,True
+tau2-retail,7,retail-7,all,45,61,0.5938,8,0.7377,16,,,,,,True
+tau2-retail,70,retail-70,all,57,61,0.875,8,0.9344,16,,,,,,True
+tau2-retail,71,retail-71,all,31,61,0.7188,8,0.5082,16,,,,,,True
+tau2-retail,72,retail-72,all,33,61,0.625,8,0.541,16,,,,,,True
+tau2-retail,73,retail-73,all,59,61,0.9375,8,0.9672,16,,,,,,True
+tau2-retail,74,retail-74,all,42,61,0.6875,8,0.6885,16,,,,,,True
+tau2-retail,75,retail-75,all,61,61,1.0,8,1.0,16,,,,,,True
+tau2-retail,76,retail-76,all,20,32,0.625,8,0.625,8,,,,,,True
+tau2-retail,77,retail-77,all,57,61,0.9062,8,0.9344,16,,,,,,True
+tau2-retail,78,retail-78,all,56,61,0.9375,8,0.918,16,,,,,,True
+tau2-retail,79,retail-79,all,25,61,0.4375,8,0.4098,16,,,,,,True
+tau2-retail,8,retail-8,all,44,61,0.7188,8,0.7213,16,,,,,,True
+tau2-retail,80,retail-80,all,56,61,0.9375,8,0.918,16,,,,,,True
+tau2-retail,81,retail-81,all,51,61,0.875,8,0.8361,16,,,,,,True
+tau2-retail,82,retail-82,all,25,61,0.625,8,0.4098,16,,,,,,True
+tau2-retail,83,retail-83,all,48,61,0.7812,8,0.7869,16,,,,,,True
+tau2-retail,84,retail-84,all,50,61,0.6562,8,0.8197,16,,,,,,True
+tau2-retail,85,retail-85,all,57,61,0.9375,8,0.9344,16,,,,,,True
+tau2-retail,86,retail-86,all,57,61,0.9375,8,0.9344,16,,,,,,True
+tau2-retail,87,retail-87,all,55,61,0.875,8,0.9016,16,,,,,,True
+tau2-retail,88,retail-88,all,57,61,0.875,8,0.9344,16,,,,,,True
+tau2-retail,89,retail-89,all,59,61,0.9375,8,0.9672,16,,,,,,True
+tau2-retail,9,retail-9,all,52,61,0.7188,8,0.8525,16,,,,,,True
+tau2-retail,90,retail-90,all,50,61,0.75,8,0.8197,16,,,,,,True
+tau2-retail,91,retail-91,all,19,32,0.5938,8,0.5938,8,,,,,,True
+tau2-retail,92,retail-92,all,42,61,0.7188,8,0.6885,16,,,,,,True
+tau2-retail,93,retail-93,all,40,61,0.75,8,0.6557,16,,,,,,True
+tau2-retail,94,retail-94,all,47,61,0.8125,8,0.7705,16,,,,,,True
+tau2-retail,95,retail-95,all,46,61,0.7188,8,0.7541,16,,,,,,True
+tau2-retail,96,retail-96,all,56,61,0.8438,8,0.918,16,,,,,,True
+tau2-retail,97,retail-97,all,52,61,0.8438,8,0.8525,16,,,,,,True
+tau2-retail,98,retail-98,all,12,32,0.375,8,0.375,8,,,,,,True
+tau2-retail,99,retail-99,all,20,32,0.625,8,0.625,8,,,,,,True
+tau2-banking_knowledge,task_001,banking_knowledge-task_001,date >= 2026-07 (post v1.0.1 grading),36,40,0.9,10,0.9,10,0.8148,27.0,0.819,29.0,,True
+tau2-banking_knowledge,task_002,banking_knowledge-task_002,date >= 2026-07 (post v1.0.1 grading),38,40,0.95,10,0.95,10,0.9259,27.0,0.9052,29.0,,True
+tau2-banking_knowledge,task_003,banking_knowledge-task_003,date >= 2026-07 (post v1.0.1 grading),16,40,0.4,10,0.4,10,0.4167,27.0,0.4052,29.0,,True
+tau2-banking_knowledge,task_004,banking_knowledge-task_004,date >= 2026-07 (post v1.0.1 grading),29,40,0.725,10,0.725,10,0.5463,27.0,0.5431,29.0,,True
+tau2-banking_knowledge,task_005,banking_knowledge-task_005,date >= 2026-07 (post v1.0.1 grading),15,40,0.375,10,0.375,10,0.4722,27.0,0.4655,29.0,,True
+tau2-banking_knowledge,task_006,banking_knowledge-task_006,date >= 2026-07 (post v1.0.1 grading),40,40,1.0,10,1.0,10,0.9815,27.0,0.9569,29.0,,True
+tau2-banking_knowledge,task_007,banking_knowledge-task_007,date >= 2026-07 (post v1.0.1 grading),26,40,0.65,10,0.65,10,0.6296,27.0,0.5948,29.0,,True
+tau2-banking_knowledge,task_008,banking_knowledge-task_008,date >= 2026-07 (post v1.0.1 grading),27,40,0.675,10,0.675,10,0.4815,27.0,0.4569,29.0,,True
+tau2-banking_knowledge,task_010,banking_knowledge-task_010,date >= 2026-07 (post v1.0.1 grading),9,40,0.225,10,0.225,10,0.2315,27.0,0.2586,29.0,,True
+tau2-banking_knowledge,task_012,banking_knowledge-task_012,date >= 2026-07 (post v1.0.1 grading),26,40,0.65,10,0.65,10,0.6389,27.0,0.6379,29.0,,True
+tau2-banking_knowledge,task_014,banking_knowledge-task_014,date >= 2026-07 (post v1.0.1 grading),15,40,0.375,10,0.375,10,0.3889,27.0,0.3966,29.0,,True
+tau2-banking_knowledge,task_015,banking_knowledge-task_015,date >= 2026-07 (post v1.0.1 grading),22,40,0.55,10,0.55,10,0.3426,27.0,0.319,29.0,,True
+tau2-banking_knowledge,task_016,banking_knowledge-task_016,date >= 2026-07 (post v1.0.1 grading),15,40,0.375,10,0.375,10,0.5556,27.0,0.5517,29.0,,True
+tau2-banking_knowledge,task_017,banking_knowledge-task_017,date >= 2026-07 (post v1.0.1 grading),31,40,0.775,10,0.775,10,0.5926,27.0,0.5862,29.0,,True
+tau2-banking_knowledge,task_018,banking_knowledge-task_018,date >= 2026-07 (post v1.0.1 grading),18,40,0.45,10,0.45,10,0.3148,27.0,0.2931,29.0,,True
+tau2-banking_knowledge,task_019,banking_knowledge-task_019,date >= 2026-07 (post v1.0.1 grading),30,40,0.75,10,0.75,10,0.5833,27.0,0.569,29.0,,True
+tau2-banking_knowledge,task_020,banking_knowledge-task_020,date >= 2026-07 (post v1.0.1 grading),4,40,0.1,10,0.1,10,0.0374,27.0,0.0348,29.0,,True
+tau2-banking_knowledge,task_021,banking_knowledge-task_021,date >= 2026-07 (post v1.0.1 grading),25,40,0.625,10,0.625,10,0.4673,27.0,0.4609,29.0,,True
+tau2-banking_knowledge,task_022,banking_knowledge-task_022,date >= 2026-07 (post v1.0.1 grading),18,40,0.45,10,0.45,10,0.2617,27.0,0.2435,29.0,,True
+tau2-banking_knowledge,task_023,banking_knowledge-task_023,date >= 2026-07 (post v1.0.1 grading),29,40,0.725,10,0.725,10,0.6449,27.0,0.6087,29.0,,True
+tau2-banking_knowledge,task_024,banking_knowledge-task_024,date >= 2026-07 (post v1.0.1 grading),29,40,0.725,10,0.725,10,0.6168,27.0,0.6,29.0,,True
+tau2-banking_knowledge,task_025,banking_knowledge-task_025,date >= 2026-07 (post v1.0.1 grading),37,40,0.925,10,0.925,10,0.7383,27.0,0.7043,29.0,,True
+tau2-banking_knowledge,task_026,banking_knowledge-task_026,date >= 2026-07 (post v1.0.1 grading),1,40,0.025,10,0.025,10,0.0187,27.0,0.0174,29.0,,True
+tau2-banking_knowledge,task_027,banking_knowledge-task_027,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_028,banking_knowledge-task_028,date >= 2026-07 (post v1.0.1 grading),19,40,0.475,10,0.475,10,0.3084,27.0,0.287,29.0,,True
+tau2-banking_knowledge,task_029,banking_knowledge-task_029,date >= 2026-07 (post v1.0.1 grading),1,40,0.025,10,0.025,10,0.0093,27.0,0.0087,29.0,,True
+tau2-banking_knowledge,task_031,banking_knowledge-task_031,date >= 2026-07 (post v1.0.1 grading),39,40,0.975,10,0.975,10,0.6636,27.0,0.6261,29.0,,True
+tau2-banking_knowledge,task_032,banking_knowledge-task_032,date >= 2026-07 (post v1.0.1 grading),36,40,0.9,10,0.9,10,0.6449,27.0,0.6435,29.0,,True
+tau2-banking_knowledge,task_033,banking_knowledge-task_033,date >= 2026-07 (post v1.0.1 grading),22,40,0.55,10,0.55,10,0.4393,27.0,0.4696,29.0,,True
+tau2-banking_knowledge,task_034,banking_knowledge-task_034,date >= 2026-07 (post v1.0.1 grading),23,40,0.575,10,0.575,10,0.5701,27.0,0.6,29.0,,True
+tau2-banking_knowledge,task_035,banking_knowledge-task_035,date >= 2026-07 (post v1.0.1 grading),36,40,0.9,10,0.9,10,0.8879,27.0,0.8957,29.0,,True
+tau2-banking_knowledge,task_036,banking_knowledge-task_036,date >= 2026-07 (post v1.0.1 grading),31,40,0.775,10,0.775,10,0.5981,27.0,0.6,29.0,,True
+tau2-banking_knowledge,task_037,banking_knowledge-task_037,date >= 2026-07 (post v1.0.1 grading),31,40,0.775,10,0.775,10,0.4206,27.0,0.4,29.0,,True
+tau2-banking_knowledge,task_038,banking_knowledge-task_038,date >= 2026-07 (post v1.0.1 grading),7,40,0.175,10,0.175,10,0.0935,27.0,0.087,29.0,,True
+tau2-banking_knowledge,task_039,banking_knowledge-task_039,date >= 2026-07 (post v1.0.1 grading),2,40,0.05,10,0.05,10,0.028,27.0,0.0261,29.0,,True
+tau2-banking_knowledge,task_040,banking_knowledge-task_040,date >= 2026-07 (post v1.0.1 grading),9,40,0.225,10,0.225,10,0.1215,27.0,0.113,29.0,,True
+tau2-banking_knowledge,task_041,banking_knowledge-task_041,date >= 2026-07 (post v1.0.1 grading),9,40,0.225,10,0.225,10,0.1028,27.0,0.0957,29.0,,True
+tau2-banking_knowledge,task_043,banking_knowledge-task_043,date >= 2026-07 (post v1.0.1 grading),23,40,0.575,10,0.575,10,0.3645,27.0,0.3478,29.0,,True
+tau2-banking_knowledge,task_044,banking_knowledge-task_044,date >= 2026-07 (post v1.0.1 grading),24,40,0.6,10,0.6,10,0.3178,27.0,0.2957,29.0,,True
+tau2-banking_knowledge,task_045,banking_knowledge-task_045,date >= 2026-07 (post v1.0.1 grading),16,40,0.4,10,0.4,10,0.1869,27.0,0.1826,29.0,,True
+tau2-banking_knowledge,task_046,banking_knowledge-task_046,date >= 2026-07 (post v1.0.1 grading),3,40,0.075,10,0.075,10,0.028,27.0,0.0261,29.0,,True
+tau2-banking_knowledge,task_047,banking_knowledge-task_047,date >= 2026-07 (post v1.0.1 grading),20,40,0.5,10,0.5,10,0.3178,27.0,0.2957,29.0,,True
+tau2-banking_knowledge,task_049,banking_knowledge-task_049,date >= 2026-07 (post v1.0.1 grading),19,40,0.475,10,0.475,10,0.1963,27.0,0.1826,29.0,,True
+tau2-banking_knowledge,task_050,banking_knowledge-task_050,date >= 2026-07 (post v1.0.1 grading),35,40,0.875,10,0.875,10,0.6729,27.0,0.6522,29.0,,True
+tau2-banking_knowledge,task_051,banking_knowledge-task_051,date >= 2026-07 (post v1.0.1 grading),32,40,0.8,10,0.8,10,0.5327,27.0,0.4957,29.0,,True
+tau2-banking_knowledge,task_052,banking_knowledge-task_052,date >= 2026-07 (post v1.0.1 grading),30,40,0.75,10,0.75,10,0.4579,27.0,0.4261,29.0,,True
+tau2-banking_knowledge,task_053,banking_knowledge-task_053,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_054,banking_knowledge-task_054,date >= 2026-07 (post v1.0.1 grading),8,40,0.2,10,0.2,10,0.1215,27.0,0.113,29.0,,True
+tau2-banking_knowledge,task_055,banking_knowledge-task_055,date >= 2026-07 (post v1.0.1 grading),25,40,0.625,10,0.625,10,0.3925,27.0,0.3826,29.0,,True
+tau2-banking_knowledge,task_056,banking_knowledge-task_056,date >= 2026-07 (post v1.0.1 grading),25,40,0.625,10,0.625,10,0.4019,27.0,0.3913,29.0,,True
+tau2-banking_knowledge,task_057,banking_knowledge-task_057,date >= 2026-07 (post v1.0.1 grading),30,40,0.75,10,0.75,10,0.4673,27.0,0.4435,29.0,,True
+tau2-banking_knowledge,task_058,banking_knowledge-task_058,date >= 2026-07 (post v1.0.1 grading),38,40,0.95,10,0.95,10,0.5234,27.0,0.5304,29.0,,True
+tau2-banking_knowledge,task_059,banking_knowledge-task_059,date >= 2026-07 (post v1.0.1 grading),11,40,0.275,10,0.275,10,0.2243,27.0,0.2087,29.0,,True
+tau2-banking_knowledge,task_060,banking_knowledge-task_060,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_063,banking_knowledge-task_063,date >= 2026-07 (post v1.0.1 grading),6,40,0.15,10,0.15,10,0.0748,27.0,0.0696,29.0,,True
+tau2-banking_knowledge,task_064,banking_knowledge-task_064,date >= 2026-07 (post v1.0.1 grading),36,40,0.9,10,0.9,10,0.4393,27.0,0.4261,29.0,,True
+tau2-banking_knowledge,task_065,banking_knowledge-task_065,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_066,banking_knowledge-task_066,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_067,banking_knowledge-task_067,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_068,banking_knowledge-task_068,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_069,banking_knowledge-task_069,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_070,banking_knowledge-task_070,date >= 2026-07 (post v1.0.1 grading),11,40,0.275,10,0.275,10,0.2243,27.0,0.2174,29.0,,True
+tau2-banking_knowledge,task_071,banking_knowledge-task_071,date >= 2026-07 (post v1.0.1 grading),8,40,0.2,10,0.2,10,0.1215,27.0,0.113,29.0,,True
+tau2-banking_knowledge,task_072,banking_knowledge-task_072,date >= 2026-07 (post v1.0.1 grading),26,40,0.65,10,0.65,10,0.4206,27.0,0.3913,29.0,,True
+tau2-banking_knowledge,task_073,banking_knowledge-task_073,date >= 2026-07 (post v1.0.1 grading),22,40,0.55,10,0.55,10,0.2991,27.0,0.287,29.0,,True
+tau2-banking_knowledge,task_074,banking_knowledge-task_074,date >= 2026-07 (post v1.0.1 grading),14,40,0.35,10,0.35,10,0.1402,27.0,0.1304,29.0,,True
+tau2-banking_knowledge,task_075,banking_knowledge-task_075,date >= 2026-07 (post v1.0.1 grading),15,40,0.375,10,0.375,10,0.1682,27.0,0.1652,29.0,,True
+tau2-banking_knowledge,task_076,banking_knowledge-task_076,date >= 2026-07 (post v1.0.1 grading),40,40,1.0,10,1.0,10,0.5794,27.0,0.5913,29.0,,True
+tau2-banking_knowledge,task_077,banking_knowledge-task_077,date >= 2026-07 (post v1.0.1 grading),4,40,0.1,10,0.1,10,0.0467,27.0,0.0435,29.0,,True
+tau2-banking_knowledge,task_078,banking_knowledge-task_078,date >= 2026-07 (post v1.0.1 grading),3,40,0.075,10,0.075,10,0.028,27.0,0.0261,29.0,,True
+tau2-banking_knowledge,task_079,banking_knowledge-task_079,date >= 2026-07 (post v1.0.1 grading),12,40,0.3,10,0.3,10,0.1121,27.0,0.1043,29.0,,True
+tau2-banking_knowledge,task_080,banking_knowledge-task_080,date >= 2026-07 (post v1.0.1 grading),11,40,0.275,10,0.275,10,0.1028,27.0,0.0957,29.0,,True
+tau2-banking_knowledge,task_081,banking_knowledge-task_081,date >= 2026-07 (post v1.0.1 grading),4,40,0.1,10,0.1,10,0.0374,27.0,0.0348,29.0,,True
+tau2-banking_knowledge,task_082,banking_knowledge-task_082,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_083,banking_knowledge-task_083,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_084,banking_knowledge-task_084,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_086,banking_knowledge-task_086,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_087,banking_knowledge-task_087,date >= 2026-07 (post v1.0.1 grading),5,40,0.125,10,0.125,10,0.0467,27.0,0.0435,29.0,,True
+tau2-banking_knowledge,task_088,banking_knowledge-task_088,date >= 2026-07 (post v1.0.1 grading),1,40,0.025,10,0.025,10,0.0187,27.0,0.0174,29.0,,True
+tau2-banking_knowledge,task_089,banking_knowledge-task_089,date >= 2026-07 (post v1.0.1 grading),33,40,0.825,10,0.825,10,0.6542,27.0,0.6174,29.0,,True
+tau2-banking_knowledge,task_090,banking_knowledge-task_090,date >= 2026-07 (post v1.0.1 grading),16,40,0.4,10,0.4,10,0.3084,27.0,0.313,29.0,,True
+tau2-banking_knowledge,task_091,banking_knowledge-task_091,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_092,banking_knowledge-task_092,date >= 2026-07 (post v1.0.1 grading),0,40,0.0,10,0.0,10,0.0,27.0,0.0,29.0,never_solved,False
+tau2-banking_knowledge,task_093,banking_knowledge-task_093,date >= 2026-07 (post v1.0.1 grading),30,40,0.75,10,0.75,10,0.5047,27.0,0.4696,29.0,,True
+tau2-banking_knowledge,task_094,banking_knowledge-task_094,date >= 2026-07 (post v1.0.1 grading),11,40,0.275,10,0.275,10,0.215,27.0,0.2087,29.0,,True
+tau2-banking_knowledge,task_095,banking_knowledge-task_095,date >= 2026-07 (post v1.0.1 grading),5,40,0.125,10,0.125,10,0.1028,27.0,0.1217,29.0,,True
+tau2-banking_knowledge,task_096,banking_knowledge-task_096,date >= 2026-07 (post v1.0.1 grading),32,40,0.8,10,0.8,10,0.514,27.0,0.4783,29.0,,True
+tau2-banking_knowledge,task_097,banking_knowledge-task_097,date >= 2026-07 (post v1.0.1 grading),2,40,0.05,10,0.05,10,0.0654,27.0,0.0609,29.0,,True
+tau2-banking_knowledge,task_098,banking_knowledge-task_098,date >= 2026-07 (post v1.0.1 grading),29,40,0.725,10,0.725,10,0.3925,27.0,0.3739,29.0,,True
+tau2-banking_knowledge,task_099,banking_knowledge-task_099,date >= 2026-07 (post v1.0.1 grading),23,40,0.575,10,0.575,10,0.3178,27.0,0.2957,29.0,,True
+tau2-banking_knowledge,task_100,banking_knowledge-task_100,date >= 2026-07 (post v1.0.1 grading),30,40,0.75,10,0.75,10,0.5327,27.0,0.5327,27.0,,True
+tau2-banking_knowledge,task_101,banking_knowledge-task_101,date >= 2026-07 (post v1.0.1 grading),11,40,0.275,10,0.275,10,0.1308,27.0,0.1304,29.0,,True
+tau2-banking_knowledge,task_102,banking_knowledge-task_102,date >= 2026-07 (post v1.0.1 grading),4,40,0.1,10,0.1,10,0.1121,27.0,0.113,29.0,,True

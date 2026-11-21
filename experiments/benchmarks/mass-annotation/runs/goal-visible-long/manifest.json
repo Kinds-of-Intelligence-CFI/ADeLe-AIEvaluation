@@ -1,0 +1,132 @@
+{
+  "run": "goal-visible-long",
+  "created_at": "2026-10-26T11:01:11+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/goal-visible-long.toml",
+  "git": {
+    "commit": "a6106fe5aa5635671214c5c101c2510828190629",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/tau2-full/ledger.csv"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low-chunked.md",
+      "sha256": "d63ca13de36bf5099656a569d0e54a410416546adfea22ea6d401afa777bb5c3"
+    },
+    "adele-judge-v2-low-chunked": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low-chunked.md",
+      "sha256": "3f99cedcf760eeeeda20dff6b4c47b83c5ce25035be3aba22e5ad7b9d436e5a7"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "9ad8111a91a9602a0b3bf212eb5fda323f170b1d1630dc6c6bc2d6e4d1ed9bfe",
+      "content": "# goal-visible-long: as goal-visible.toml, for the released tasks whose prompt exceeds 50,000 chars or 1,500 lines under\n# at least one rubric (the programbench-pl rule); all five rubrics of those tasks use the chunked-read judge.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/goal-visible-long.toml\nname = \"goal-visible-long\"\n\n[tasks]\nbenchmarks = [\"swe-bench-verified\", \"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\", \"terminal-bench-4.0.0\",\n              \"terminal-bench-science-0.1\"]\nsubset = \"experiments/benchmarks/goal-visible/subset_long.csv\"\ninstances_dir = \"data/instances-goal\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2-noreason\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low-chunked\"\njudge_agent = \"adele-judge-v2-low-chunked\"\nmodel_alias = \"opus\"\nbatch_size = 100\nchunk_lines = 200\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "9dd3f2770cfadb35cd11ab7915d01e546d6736b1f0ccb8049bf913269e212203",
+          "frame_sha256": "1c38f928c845bd70532c15da211ddbeef98289665d4d0f91ae60cfffde336b10",
+          "n_selected": 0
+        },
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "942dc409f08268bff83f9cf97b31cd044c38220089ad1d6041918b0916835035",
+          "frame_sha256": "273b679d008890636e07ffba86bcc43609a3ce30a23ac68a3d70f64d4fa921cc",
+          "n_selected": 0
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "2e814d80439e70818673b561d3e107dfd5c955c0b27d965331995b8f2a09a2ac",
+          "frame_sha256": "0168a7ee23b6dd8c13f06401ee7f183d09b9bce35e6ad34fa4821be8754392e2",
+          "n_selected": 0
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "961814724fd8de17c7094e073639f09315c9fe22bd28b319a5a237181b2dacae",
+          "frame_sha256": "7611ed07ea4727482b9cc497b10394b4493aff3bfce87899ffa38c496674fa67",
+          "n_selected": 13
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "9060474c7e7ee053181ab852c2c8c952ce80245df285764ba70cecadb07b3fa2",
+          "frame_sha256": "3b67f438d314f862eeb4b272854a7a0422097ef82438142d8a3bdb609f9413c8",
+          "n_selected": 0
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "6488d3c849e5bdc9577a1e5c9c4a3407a6003e396d568357ad84b4194ca47a76",
+          "frame_sha256": "d122361335c4d0a89cb59c80e36ff407d690a17b0ce6c5772ad0df872d999c18",
+          "n_selected": 0
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/goal-visible/subset_long.csv",
+        "sha256": "defc519bbbd131a2b5ef8957bf36456cb5be1a2be50dc66777844e0b2e2225e9",
+        "n_ids": 13
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "9579f3ea29debec754a55c23ae7cd1d4b4aa496ee12c4c11088a46b3074d8f81",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "3410930631535d8f24f60928caf70362fecda555d96b146d97369eae76780bc0",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2-noreason",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2_noreason",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low-chunked",
+        "judge_agent": "adele-judge-v2-low-chunked",
+        "model_alias": "opus",
+        "batch_size": 100,
+        "chunk_lines": 200
+      },
+      "batch": true
+    },
+    "cells": {
+      "n": 65,
+      "sha256": "b644c05a803ea6371d1f098a93b30d3607dcca3b3b3446ecb76ccbdafac3ae5a"
+    }
+  }
+}

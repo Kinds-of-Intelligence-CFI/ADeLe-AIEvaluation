@@ -1,0 +1,16 @@
+item_id,benchmark,instance_id,role
+H-01,tau2-retail,0,fresh
+H-02,tau2-airline,6,fresh
+H-03,tau2-airline,45,fresh
+H-04,tau2-airline,38,fresh
+H-05,tau2-retail,7,fresh
+H-06,tau2-airline,46,fresh
+H-07,tau2-airline,43,fresh
+H-08,tau2-retail,11,fresh
+H-09,tau2-airline,1,fresh
+H-10,tau2-retail,9,fresh
+H-11,tau2-airline,27,dev
+H-12,tau2-banking_knowledge,task_006,dev
+H-13,tau2-airline,0,dev
+H-14,tau2-airline,22,dev
+H-15,tau2-airline,4,dev

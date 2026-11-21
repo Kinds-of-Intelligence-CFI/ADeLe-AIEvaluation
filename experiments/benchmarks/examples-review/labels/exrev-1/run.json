@@ -1,0 +1,22 @@
+{
+  "run_id": "exrev-1",
+  "created_at": "2026-10-04T12:41:25+00:00",
+  "repo_commit": "fe42f7a963f4156ec8d304617884e9a2a5e68fd0",
+  "judge_io": "../../judge-io/exrev-1",
+  "design": {
+    "judges": {
+      "opus-low": "adele-judge-v2-low via judge-dispatcher-v2-low, model opus"
+    },
+    "n_cells": 126
+  },
+  "candidates_sha256": {
+    "PLp": "63b8272d4fb383968b7ebd0143492f2792e1b3ea8a983b6d35ea58110e200d62",
+    "PLe": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+    "PLs": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+    "MSm": "cbbdf8fbd2657ffb88e007392bf7f7c9ba5dd9cd56843d211dc2bb2cceb04a34",
+    "MSc": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+    "MMe": "c8aefa7495444fbf1da4b19f9842267aed8114f7f4a62282fdf41a0b6baea707",
+    "MMp": "3391bb1c58c77e190b9d48ed05f74c58599cca2fb2118873f01c9fbeb0de1e5c",
+    "MMs": "bcad1f06bffcbf41e07e08fd6b12ce1193e427738df230eec8235014eb0799ba"
+  }
+}

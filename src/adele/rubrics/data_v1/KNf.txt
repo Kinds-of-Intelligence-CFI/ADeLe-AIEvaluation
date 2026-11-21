@@ -1,3 +1,5 @@
+# Knowledge of Formal Sciences
+
 The following rubric is designed to annotate the conceptual sophistication level of tasks based strictly on the depth of knowledge or conceptual understanding required in the fields of formal sciences (e.g., mathematics, logic, computer science, statistics). This does not include natural sciences (e.g., physics, chemistry, biology, astronomy, earth sciences, ecology) or social sciences and humanities (e.g., history, psychology, sociology, anthropology, literature, art, philosophy, linguistics). It's crucial to understand that this rubric measures only the level of formal scientific knowledge needed, not considering other cognitive demands such as reasoning or metacognition. This indicates solely the depth of formal sciences knowledge required.
 
 Level 0. None: Tasks require no knowledge or understanding of formal sciences. Examples:

@@ -1,0 +1,21 @@
+```csv
+custom_id,level,reason
+memc-L3-low-01__history_only,1,One item moved one-way; farmer shuttles change no object locations.
+memc-L3-low-02__history_only,1,One item moved one-way; farmer-only moves add no object updates.
+memc-L3-medium-01__history_only,3,item1 moved then returned, plus three items moved; reversal to disentangle.
+memc-L3-medium-02__history_only,3,item1 crossed then returned; three more items moved one-way; reversal tracking.
+memc-L3-high-01__history_only,3,Four items moved back and forth; net position must be disentangled.
+memc-L3-high-02__history_only,3,Four items shuttled with reversals; net locations require careful tracking.
+memc-L4-low-01__history_only,1,One item moved; remaining moves are farmer-only, no object updates.
+memc-L4-low-02__history_only,1,Single item one-way; farmer-alone shuttles change no object locations.
+memc-L4-medium-01__history_only,2,Four items moved one-way together; farmer shuttles add no updates.
+memc-L4-medium-02__history_only,2,Three items moved one-way; subsequent farmer moves change nothing.
+memc-L4-high-01__history_only,3,Four items twice shuttled back and forth; reversals to disentangle.
+memc-L4-high-02__history_only,3,Four items repeatedly reversed; net position requires reversal tracking.
+memc-L5-low-01__history_only,1,One item one-way; many farmer-only moves change no object locations.
+memc-L5-low-02__history_only,1,Single item moved; farmer shuttles add no object-location updates.
+memc-L5-medium-01__history_only,3,item1 moved then returned; three items later moved; reversal disentangling.
+memc-L5-medium-02__history_only,3,item1 crossed then back; three more items moved; reversal tracking needed.
+memc-L5-high-01__history_only,3,Four items shuttled three crossings; net locations require reversal disentangling.
+memc-L5-high-02__history_only,3,Four items repeatedly reversed across five crossings; net tracking required.
+```

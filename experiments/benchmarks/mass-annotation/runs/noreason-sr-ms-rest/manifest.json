@@ -1,0 +1,122 @@
+{
+  "run": "noreason-sr-ms-rest",
+  "created_at": "2026-10-07T00:08:04+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/noreason-sr-ms-rest.toml",
+  "git": {
+    "commit": "a5d03f003d1b578d3c9faa4aeef858c33d17f75f",
+    "dirty_tracked_files": [
+      "M experiments/benchmarks/mass-annotation/runs/noreason-s-cooperbench/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-eqbench4/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-gamearena/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-long/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-ms-rest/ledger.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-pl/labels.csv",
+      " M experiments/benchmarks/mass-annotation/runs/noreason-s-pl/ledger.csv",
+      " M experiments/benchmarks/noreason/results/arms.json"
+    ]
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "68dd55ea1a1b5981664a9ba93833fc1a5d9e65e4a1dab6b71244d140753c6cb3",
+      "content": "# noreason amendment 4b: twin of noreason-s-ms-rest.toml with the v2 prompt (written reasoning, as in the released labels); nothing else changed.\n# No-reasoning ablation (experiments/benchmarks/noreason, amendment 2): MS rubrics on the six non-tau2 single-read sets.\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/noreason-ms.toml\nname = \"noreason-sr-ms-rest\"\n\n[tasks]\nbenchmarks = [\"swe-bench-verified\", \"terminal-bench-4.0.0\", \"terminal-bench-science-0.1\", \"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\"]\nsubset = \"experiments/benchmarks/noreason/nontau2_subset.csv\"\n\n[rubrics]\nrefs = [\"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-sonnet-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"sonnet\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "15aff8a5168ec20396765fb1e020da4f17bed101d7c30c849bc57aaf900991e8",
+          "frame_sha256": "f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f",
+          "n_selected": 443
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "c9fb6c2e13335c9142b4ed2c2748f2edf68de0365db00843fb20d0b8927837c8",
+          "frame_sha256": "66ccf094b35b3ce0e90115623ff4f762e0bba8ef0710711d738f4cf9419e26cd",
+          "n_selected": 35
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "cb27455bcbd81ec0dc9da76b5c0b2278f73ef0eeebaffe2e42f777dfde394d58",
+          "frame_sha256": "0a32c66768dbac26bd8b87b4180276b12906ee423894d259e8a3f54f0aa3581d",
+          "n_selected": 70
+        },
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "eb250bb822880479180ae134ee6beb6c3c70b65316777dfc22cd0aac57b5dfd8",
+          "frame_sha256": "a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac",
+          "n_selected": 90
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "d9deb21a68db8d2c125da4659759ab375465846762c59c658f61495195a99f01",
+          "frame_sha256": "af62cb1bf63e006fe9d649a9702ddfe26bf1c4fa28a5280323ff6f4ed354c325",
+          "n_selected": 19
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 117
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/noreason/nontau2_subset.csv",
+        "sha256": "46e613625e9d7df28bf3241f72042cd1e7663ce2d90a2e0b721f1934d8589ff1",
+        "n_ids": 774
+      }
+    },
+    "rubrics": {
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "dd130fcea382645ea3c1b294a2264a4aa1e8f605b197a1193ba8c156bb3c8ce2",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "sonnet-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "sonnet",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 1548,
+      "sha256": "122ec05cb3d1ca57e80bab7a6285e07173e7803a824b4972be27fa7cd23c8af5"
+    }
+  }
+}

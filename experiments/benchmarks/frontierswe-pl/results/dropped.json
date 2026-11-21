@@ -1,0 +1,63 @@
+{
+  "n": {
+    "dropped": 15,
+    "kept": 19
+  },
+  "unlabelled": [],
+  "levels": {
+    "dropped": {
+      "3": 11,
+      "4": 4
+    },
+    "kept": {
+      "3": 18,
+      "4": 1
+    }
+  },
+  "dropped_by_task": {
+    "cranelift-codegen-opt": 4,
+    "ffmpeg-libswscale-optimization": 3,
+    "fitness-recap-video-in-remotion": 3,
+    "libexpat-optimization": 4,
+    "medium-range-weather-forecast": 3,
+    "meg-speech-decoding": 3,
+    "msms-denovo-generation": 3,
+    "multi-gpu-efficient-finetuning": 3,
+    "notebook-compression": 3,
+    "optimizer-design": 3,
+    "postgresql-18-on-sqlite": 4,
+    "sglang-inference-system-optimization": 4,
+    "snooker-prediction": 3,
+    "synthetic-music-diarization": 3,
+    "vision-only-torcs-racing-bot": 3
+  },
+  "primary": {
+    "dropped_at_4_or_higher": 4,
+    "clean_set_rule": "inconclusive"
+  },
+  "fisher_dropped_vs_kept_at_4": {
+    "table": [
+      [
+        4,
+        11
+      ],
+      [
+        1,
+        18
+      ]
+    ],
+    "p_one_sided": 0.104
+  },
+  "PLp_vs_mean_reward_all": {
+    "n": 34,
+    "n_off_mode": 5,
+    "rho": -0.36,
+    "p_two_sided": 0.0366,
+    "ci95": [
+      -0.629,
+      -0.013
+    ],
+    "predicted": "negative",
+    "supported": true
+  }
+}

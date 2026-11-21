@@ -1,0 +1,635 @@
+{
+  "n_clean": {
+    "all": 242,
+    "tau2-airline": 49,
+    "tau2-banking_knowledge": 79,
+    "tau2-retail": 114
+  },
+  "unlabelled": {
+    "PLp": [],
+    "PLe": [],
+    "PLs": []
+  },
+  "levels": {
+    "tau2-airline": {
+      "PLp": {
+        "0": 0,
+        "1": 13,
+        "2": 36,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLe": {
+        "0": 0,
+        "1": 48,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLs": {
+        "0": 1,
+        "1": 4,
+        "2": 44,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      }
+    },
+    "tau2-banking_knowledge": {
+      "PLp": {
+        "0": 0,
+        "1": 4,
+        "2": 69,
+        "3": 6,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLe": {
+        "0": 0,
+        "1": 30,
+        "2": 33,
+        "3": 16,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLs": {
+        "0": 1,
+        "1": 6,
+        "2": 72,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      }
+    },
+    "tau2-retail": {
+      "PLp": {
+        "0": 0,
+        "1": 7,
+        "2": 107,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLe": {
+        "0": 0,
+        "1": 114,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLs": {
+        "0": 2,
+        "1": 4,
+        "2": 108,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      }
+    },
+    "tau2 (3 domains)": {
+      "PLp": {
+        "0": 0,
+        "1": 24,
+        "2": 212,
+        "3": 6,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLe": {
+        "0": 0,
+        "1": 192,
+        "2": 34,
+        "3": 16,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      },
+      "PLs": {
+        "0": 4,
+        "1": 14,
+        "2": 224,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "no_label": 0
+      }
+    }
+  },
+  "rubrics_with_3plus_levels": [
+    "PLp",
+    "PLe",
+    "PLs"
+  ],
+  "within_domain_vs_solve_rate": {
+    "PLp": {
+      "combined": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.3,
+        "p_two_sided": 4.15e-06,
+        "ci95": [
+          -0.414,
+          -0.176
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 13,
+          "rho": -0.538,
+          "p_two_sided": 6.58e-05,
+          "ci95": [
+            -0.722,
+            -0.285
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 10,
+          "rho": -0.173,
+          "p_two_sided": 0.127,
+          "ci95": [
+            -0.381,
+            0.051
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 7,
+          "rho": -0.285,
+          "p_two_sided": 0.00212,
+          "ci95": [
+            -0.448,
+            -0.103
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      }
+    },
+    "PLe": {
+      "combined": {
+        "domains": 2,
+        "n": 128,
+        "rho": -0.071,
+        "p_two_sided": 0.435,
+        "ci95": [
+          -0.244,
+          0.107
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 1,
+          "rho": -0.208,
+          "p_two_sided": 0.152,
+          "ci95": [
+            -0.464,
+            0.081
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 46,
+          "rho": 0.012,
+          "p_two_sided": 0.917,
+          "ci95": [
+            -0.21,
+            0.232
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "note": "one level: not included"
+        }
+      }
+    },
+    "PLs": {
+      "combined": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.194,
+        "p_two_sided": 0.00301,
+        "ci95": [
+          -0.316,
+          -0.067
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 5,
+          "rho": -0.361,
+          "p_two_sided": 0.0108,
+          "ci95": [
+            -0.589,
+            -0.08
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 7,
+          "rho": -0.03,
+          "p_two_sided": 0.795,
+          "ci95": [
+            -0.249,
+            0.193
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 6,
+          "rho": -0.237,
+          "p_two_sided": 0.011,
+          "ci95": [
+            -0.406,
+            -0.053
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      }
+    }
+  },
+  "within_domain_vs_solve_rate_all": {
+    "PLp": {
+      "combined": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.3,
+        "p_two_sided": 4.02e-06,
+        "ci95": [
+          -0.414,
+          -0.176
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 13,
+          "rho": -0.442,
+          "p_two_sided": 0.00148,
+          "ci95": [
+            -0.651,
+            -0.17
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 10,
+          "rho": -0.173,
+          "p_two_sided": 0.127,
+          "ci95": [
+            -0.381,
+            0.051
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 7,
+          "rho": -0.327,
+          "p_two_sided": 0.000389,
+          "ci95": [
+            -0.485,
+            -0.147
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      }
+    },
+    "PLe": {
+      "combined": {
+        "domains": 2,
+        "n": 128,
+        "rho": -0.066,
+        "p_two_sided": 0.469,
+        "ci95": [
+          -0.239,
+          0.112
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 1,
+          "rho": -0.194,
+          "p_two_sided": 0.181,
+          "ci95": [
+            -0.453,
+            0.095
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 46,
+          "rho": 0.012,
+          "p_two_sided": 0.917,
+          "ci95": [
+            -0.21,
+            0.232
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "note": "one level: not included"
+        }
+      }
+    },
+    "PLs": {
+      "combined": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.211,
+        "p_two_sided": 0.00131,
+        "ci95": [
+          -0.331,
+          -0.083
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 5,
+          "rho": -0.44,
+          "p_two_sided": 0.00155,
+          "ci95": [
+            -0.65,
+            -0.168
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 7,
+          "rho": -0.03,
+          "p_two_sided": 0.795,
+          "ci95": [
+            -0.249,
+            0.193
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 6,
+          "rho": -0.238,
+          "p_two_sided": 0.0107,
+          "ci95": [
+            -0.407,
+            -0.054
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      }
+    }
+  },
+  "banking_grading": {
+    "n": 79,
+    "post_vs_mixed_solve_rate": {
+      "spearman": 0.922,
+      "mean_abs_diff": 0.1491,
+      "mean_post": 0.5013,
+      "mean_mixed": 0.3608
+    },
+    "rubric_vs_rates": {
+      "PLp": {
+        "vs_solve_rate": {
+          "n": 79,
+          "n_off_mode": 10,
+          "rho": -0.173,
+          "p_two_sided": 0.127,
+          "ci95": [
+            -0.381,
+            0.051
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_mixed": {
+          "n": 79,
+          "n_off_mode": 10,
+          "rho": -0.288,
+          "p_two_sided": 0.0101,
+          "ci95": [
+            -0.482,
+            -0.067
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "vs_solve_rate_all": {
+          "n": 79,
+          "n_off_mode": 10,
+          "rho": -0.173,
+          "p_two_sided": 0.127,
+          "ci95": [
+            -0.381,
+            0.051
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_all_mixed": {
+          "n": 79,
+          "n_off_mode": 10,
+          "rho": -0.307,
+          "p_two_sided": 0.00588,
+          "ci95": [
+            -0.499,
+            -0.087
+          ],
+          "predicted": "negative",
+          "supported": true
+        }
+      },
+      "PLe": {
+        "vs_solve_rate": {
+          "n": 79,
+          "n_off_mode": 46,
+          "rho": 0.012,
+          "p_two_sided": 0.917,
+          "ci95": [
+            -0.21,
+            0.232
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_mixed": {
+          "n": 79,
+          "n_off_mode": 46,
+          "rho": 0.024,
+          "p_two_sided": 0.833,
+          "ci95": [
+            -0.198,
+            0.244
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_all": {
+          "n": 79,
+          "n_off_mode": 46,
+          "rho": 0.012,
+          "p_two_sided": 0.917,
+          "ci95": [
+            -0.21,
+            0.232
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_all_mixed": {
+          "n": 79,
+          "n_off_mode": 46,
+          "rho": 0.006,
+          "p_two_sided": 0.961,
+          "ci95": [
+            -0.216,
+            0.226
+          ],
+          "predicted": "negative",
+          "supported": false
+        }
+      },
+      "PLs": {
+        "vs_solve_rate": {
+          "n": 79,
+          "n_off_mode": 7,
+          "rho": -0.03,
+          "p_two_sided": 0.795,
+          "ci95": [
+            -0.249,
+            0.193
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_mixed": {
+          "n": 79,
+          "n_off_mode": 7,
+          "rho": -0.128,
+          "p_two_sided": 0.262,
+          "ci95": [
+            -0.34,
+            0.097
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_all": {
+          "n": 79,
+          "n_off_mode": 7,
+          "rho": -0.03,
+          "p_two_sided": 0.795,
+          "ci95": [
+            -0.249,
+            0.193
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "vs_solve_rate_all_mixed": {
+          "n": 79,
+          "n_off_mode": 7,
+          "rho": -0.132,
+          "p_two_sided": 0.245,
+          "ci95": [
+            -0.344,
+            0.093
+          ],
+          "predicted": "negative",
+          "supported": false
+        }
+      }
+    },
+    "within_domain_with_banking_mixed": {
+      "PLp": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.337,
+        "p_two_sided": 2.01e-07,
+        "ci95": [
+          -0.448,
+          -0.215
+        ],
+        "predicted": "negative",
+        "supported": true
+      },
+      "PLe": {
+        "domains": 2,
+        "n": 128,
+        "rho": -0.063,
+        "p_two_sided": 0.486,
+        "ci95": [
+          -0.237,
+          0.114
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "PLs": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.226,
+        "p_two_sided": 0.000534,
+        "ci95": [
+          -0.345,
+          -0.1
+        ],
+        "predicted": "negative",
+        "supported": true
+      }
+    }
+  }
+}

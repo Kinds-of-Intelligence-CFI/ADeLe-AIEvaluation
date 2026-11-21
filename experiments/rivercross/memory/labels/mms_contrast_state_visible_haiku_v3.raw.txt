@@ -1,0 +1,21 @@
+```csv
+custom_id,level,reason
+memc-L3-low-01__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L3-low-02__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L3-medium-01__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L3-medium-02__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L3-high-01__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L3-high-02__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L4-low-01__state_visible,1,Simple one-way object move: item2 moved right; track single update.
+memc-L4-low-02__state_visible,1,Simple one-way object move: item2 moved right; track single update.
+memc-L4-medium-01__state_visible,1,Single object (item1) on left; simple one-way move tracking required.
+memc-L4-medium-02__state_visible,1,Single object (item1) on left; simple one-way move tracking required.
+memc-L4-high-01__state_visible,2,Multiple objects on left bank must be moved; several one-way updates.
+memc-L4-high-02__state_visible,2,Multiple objects on left bank must be moved; several one-way updates.
+memc-L5-low-01__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L5-low-02__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L5-medium-01__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L5-medium-02__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L5-high-01__state_visible,0,All current state directly visible; no hidden history to track.
+memc-L5-high-02__state_visible,0,All current state directly visible; no hidden history to track.
+```

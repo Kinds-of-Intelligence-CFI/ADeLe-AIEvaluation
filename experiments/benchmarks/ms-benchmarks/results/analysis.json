@@ -1,0 +1,324 @@
+{
+  "n": {
+    "deepswe-v1.1": 90,
+    "frontierswe-v2": 19,
+    "programbench": 130,
+    "swe-bench-verified": 443,
+    "terminal-bench-4.0.0": 35,
+    "terminal-bench-science-0.1": 70,
+    "tau2": 242
+  },
+  "unlabelled": {
+    "deepswe-v1.1": {
+      "MSm": 0,
+      "MSc": 0
+    },
+    "frontierswe-v2": {
+      "MSm": 0,
+      "MSc": 0
+    },
+    "programbench": {
+      "MSm": 1,
+      "MSc": 1
+    },
+    "swe-bench-verified": {
+      "MSm": 0,
+      "MSc": 0
+    },
+    "terminal-bench-4.0.0": {
+      "MSm": 0,
+      "MSc": 0
+    },
+    "terminal-bench-science-0.1": {
+      "MSm": 1,
+      "MSc": 1
+    },
+    "tau2": {
+      "MSm": 0,
+      "MSc": 0
+    }
+  },
+  "levels": {
+    "deepswe-v1.1": {
+      "MSm": {
+        "0": 90
+      },
+      "MSc": {
+        "0": 90
+      }
+    },
+    "frontierswe-v2": {
+      "MSm": {
+        "0": 18,
+        "2": 1
+      },
+      "MSc": {
+        "0": 19
+      }
+    },
+    "programbench": {
+      "MSm": {
+        "0": 129
+      },
+      "MSc": {
+        "0": 129
+      }
+    },
+    "swe-bench-verified": {
+      "MSm": {
+        "0": 443
+      },
+      "MSc": {
+        "0": 443
+      }
+    },
+    "terminal-bench-4.0.0": {
+      "MSm": {
+        "0": 34,
+        "1": 1
+      },
+      "MSc": {
+        "0": 34,
+        "1": 1
+      }
+    },
+    "terminal-bench-science-0.1": {
+      "MSm": {
+        "0": 68,
+        "2": 1
+      },
+      "MSc": {
+        "0": 69
+      }
+    },
+    "tau2": {
+      "MSm": {
+        "1": 15,
+        "2": 201,
+        "3": 26
+      },
+      "MSc": {
+        "1": 1,
+        "2": 200,
+        "3": 16,
+        "4": 25
+      }
+    }
+  },
+  "share_0_or_1": {
+    "deepswe-v1.1": {
+      "MSm": 1.0,
+      "MSc": 1.0
+    },
+    "frontierswe-v2": {
+      "MSm": 0.947,
+      "MSc": 1.0
+    },
+    "programbench": {
+      "MSm": 1.0,
+      "MSc": 1.0
+    },
+    "swe-bench-verified": {
+      "MSm": 1.0,
+      "MSc": 1.0
+    },
+    "terminal-bench-4.0.0": {
+      "MSm": 1.0,
+      "MSc": 1.0
+    },
+    "terminal-bench-science-0.1": {
+      "MSm": 0.986,
+      "MSc": 1.0
+    },
+    "tau2": {
+      "MSm": 0.062,
+      "MSc": 0.004
+    }
+  },
+  "spearman": {
+    "deepswe-v1.1/MSm": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "deepswe-v1.1/MSc": {
+      "n": 90,
+      "note": "one level: not testable"
+    },
+    "frontierswe-v2/MSm": {
+      "n": 19,
+      "n_off_mode": 1,
+      "rho": 0.022,
+      "p_two_sided": 0.929,
+      "ci95": [
+        -0.437,
+        0.471
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "frontierswe-v2/MSc": {
+      "n": 19,
+      "note": "one level: not testable"
+    },
+    "programbench/MSm": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "programbench/MSc": {
+      "n": 129,
+      "note": "one level: not testable"
+    },
+    "swe-bench-verified/MSm": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "swe-bench-verified/MSc": {
+      "n": 443,
+      "note": "one level: not testable"
+    },
+    "terminal-bench-4.0.0/MSm": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.144,
+      "p_two_sided": 0.408,
+      "ci95": [
+        -0.457,
+        0.2
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "terminal-bench-4.0.0/MSc": {
+      "n": 35,
+      "n_off_mode": 1,
+      "rho": -0.102,
+      "p_two_sided": 0.56,
+      "ci95": [
+        -0.422,
+        0.24
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "terminal-bench-science-0.1/MSm": {
+      "n": 69,
+      "n_off_mode": 1,
+      "rho": 0.012,
+      "p_two_sided": 0.921,
+      "ci95": [
+        -0.225,
+        0.248
+      ],
+      "predicted": "negative",
+      "supported": false
+    },
+    "terminal-bench-science-0.1/MSc": {
+      "n": 69,
+      "note": "one level: not testable"
+    },
+    "tau2/MSm": {
+      "combined": {
+        "domains": 3,
+        "n": 242,
+        "rho": -0.065,
+        "p_two_sided": 0.324,
+        "ci95": [
+          -0.192,
+          0.064
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 6,
+          "rho": 0.263,
+          "p_two_sided": 0.0679,
+          "ci95": [
+            -0.025,
+            0.51
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 22,
+          "rho": -0.272,
+          "p_two_sided": 0.0152,
+          "ci95": [
+            -0.469,
+            -0.05
+          ],
+          "predicted": "negative",
+          "supported": true
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 13,
+          "rho": -0.058,
+          "p_two_sided": 0.542,
+          "ci95": [
+            -0.239,
+            0.128
+          ],
+          "predicted": "negative",
+          "supported": false
+        }
+      }
+    },
+    "tau2/MSc": {
+      "combined": {
+        "domains": 3,
+        "n": 242,
+        "rho": 0.092,
+        "p_two_sided": 0.164,
+        "ci95": [
+          -0.038,
+          0.218
+        ],
+        "predicted": "negative",
+        "supported": false
+      },
+      "per_domain": {
+        "tau2-airline": {
+          "n": 49,
+          "n_off_mode": 22,
+          "rho": 0.252,
+          "p_two_sided": 0.0801,
+          "ci95": [
+            -0.035,
+            0.502
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-banking_knowledge": {
+          "n": 79,
+          "n_off_mode": 17,
+          "rho": -0.118,
+          "p_two_sided": 0.301,
+          "ci95": [
+            -0.331,
+            0.107
+          ],
+          "predicted": "negative",
+          "supported": false
+        },
+        "tau2-retail": {
+          "n": 114,
+          "n_off_mode": 3,
+          "rho": 0.167,
+          "p_two_sided": 0.0752,
+          "ci95": [
+            -0.018,
+            0.342
+          ],
+          "predicted": "negative",
+          "supported": false
+        }
+      }
+    }
+  }
+}

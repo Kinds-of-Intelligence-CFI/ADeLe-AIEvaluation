@@ -1,0 +1,897 @@
+{
+  "verdict": "pass",
+  "outcomes": {
+    "n": 101,
+    "hold_under_current": 78,
+    "hold_under_C": 78
+  },
+  "losses_pass1": [
+    "B D B-M01 off the diagonal (2 or less)"
+  ],
+  "gains_pass1": [
+    "F F-PLs-L5-4 clean (PLp 2 or less)"
+  ],
+  "moved_items_pass1": {
+    "B-D05": -1,
+    "B-D10": -1,
+    "B-M01": 1,
+    "B-M03": -1,
+    "B-S02": -1,
+    "D-PLe3": 1,
+    "F-MSc-L3-3": 1,
+    "F-PLe-L3-1": -1,
+    "F-PLs-L3-1": 1,
+    "F-PLs-L4-1": 1,
+    "F-PLs-L4-2": 1,
+    "F-PLs-L4-4": -1,
+    "F-PLs-L5-4": -1
+  },
+  "moves_of_two_or_more_pass1": [],
+  "rerun_in_pass2": [
+    "B-M01"
+  ],
+  "confirmed_losses": [],
+  "confirmed_moves_of_two_or_more": [],
+  "per_set": {
+    "B": {
+      "items": 33,
+      "exact": 28,
+      "down": 4,
+      "up": 1,
+      "mean_shift": -0.091
+    },
+    "D": {
+      "items": 9,
+      "exact": 8,
+      "down": 0,
+      "up": 1,
+      "mean_shift": 0.111
+    },
+    "F": {
+      "items": 32,
+      "exact": 25,
+      "down": 3,
+      "up": 4,
+      "mean_shift": 0.031
+    },
+    "M": {
+      "items": 5,
+      "exact": 5,
+      "down": 0,
+      "up": 0,
+      "mean_shift": 0.0
+    },
+    "P": {
+      "items": 20,
+      "exact": 20,
+      "down": 0,
+      "up": 0,
+      "mean_shift": 0.0
+    }
+  },
+  "sign_test_single_judge_labels": {
+    "C_lower": 27,
+    "C_higher": 21,
+    "p_two_sided": 0.4709
+  },
+  "current_vs_stored_lab_medians": {
+    "items": 47,
+    "exact": 37,
+    "mean_shift": 0.085
+  },
+  "carve_quotes": {
+    "C_answers": 297,
+    "quoting_the_new_sentence": 5,
+    "by_set": {
+      "F": 4,
+      "B": 1
+    },
+    "on_moved_items": [
+      "F-PLs-L4-4"
+    ]
+  },
+  "medians_pass1": {
+    "B-D01": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-D02": {
+      "cur": 2,
+      "C": 2
+    },
+    "B-D03": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-D04": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-D05": {
+      "cur": 2,
+      "C": 1
+    },
+    "B-D06": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-D07": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-D08": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-D09": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-D10": {
+      "cur": 3,
+      "C": 2
+    },
+    "B-E01": {
+      "cur": 0,
+      "C": 0
+    },
+    "B-E02": {
+      "cur": 0,
+      "C": 0
+    },
+    "B-E04": {
+      "cur": 0,
+      "C": 0
+    },
+    "B-L01": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-L02": {
+      "cur": 0,
+      "C": 0
+    },
+    "B-L03": {
+      "cur": 0,
+      "C": 0
+    },
+    "B-L04": {
+      "cur": 0,
+      "C": 0
+    },
+    "B-M01": {
+      "cur": 2,
+      "C": 3
+    },
+    "B-M02": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-M03": {
+      "cur": 2,
+      "C": 1
+    },
+    "B-M04": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-P01": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-P02": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-P04": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-S01": {
+      "cur": 2,
+      "C": 2
+    },
+    "B-S02": {
+      "cur": 1,
+      "C": 0
+    },
+    "B-S03": {
+      "cur": 1,
+      "C": 1
+    },
+    "B-S04": {
+      "cur": 2,
+      "C": 2
+    },
+    "B-X02": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-X03": {
+      "cur": 4,
+      "C": 4
+    },
+    "B-X04": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-X05": {
+      "cur": 3,
+      "C": 3
+    },
+    "B-X06R": {
+      "cur": 3,
+      "C": 3
+    },
+    "D-PLe1": {
+      "cur": 0,
+      "C": 0
+    },
+    "D-PLe2": {
+      "cur": 0,
+      "C": 0
+    },
+    "D-PLe3": {
+      "cur": 1,
+      "C": 2
+    },
+    "D-PLp1": {
+      "cur": 3,
+      "C": 3
+    },
+    "D-PLp2": {
+      "cur": 3,
+      "C": 3
+    },
+    "D-PLp3": {
+      "cur": 3,
+      "C": 3
+    },
+    "D-PLp4": {
+      "cur": 3,
+      "C": 3
+    },
+    "D-PLs1": {
+      "cur": 1,
+      "C": 1
+    },
+    "D-PLs2": {
+      "cur": 0,
+      "C": 0
+    },
+    "F-MSc-L3-1": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-MSc-L3-2": {
+      "cur": 2,
+      "C": 2
+    },
+    "F-MSc-L3-3": {
+      "cur": 1,
+      "C": 2
+    },
+    "F-MSc-L3-4": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-MSc-L4-1": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-MSc-L4-2": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-MSc-L4-3": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-MSc-L5-1": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-MSc-L5-2": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-MSc-L5-3": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-PLe-L3-1": {
+      "cur": 2,
+      "C": 1
+    },
+    "F-PLe-L3-2": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-PLe-L3-3": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-PLe-L4-1": {
+      "cur": 0,
+      "C": 0
+    },
+    "F-PLe-L4-2": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-PLe-L4-3": {
+      "cur": 2,
+      "C": 2
+    },
+    "F-PLe-L5-1": {
+      "cur": 3,
+      "C": 3
+    },
+    "F-PLe-L5-2": {
+      "cur": 0,
+      "C": 0
+    },
+    "F-PLe-L5-3": {
+      "cur": 0,
+      "C": 0
+    },
+    "F-PLs-L3-1": {
+      "cur": 1,
+      "C": 2
+    },
+    "F-PLs-L3-2": {
+      "cur": 0,
+      "C": 0
+    },
+    "F-PLs-L3-3": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-PLs-L3-4": {
+      "cur": 0,
+      "C": 0
+    },
+    "F-PLs-L4-1": {
+      "cur": 1,
+      "C": 2
+    },
+    "F-PLs-L4-2": {
+      "cur": 0,
+      "C": 1
+    },
+    "F-PLs-L4-3": {
+      "cur": 2,
+      "C": 2
+    },
+    "F-PLs-L4-4": {
+      "cur": 2,
+      "C": 1
+    },
+    "F-PLs-L4-5": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-PLs-L5-1": {
+      "cur": 2,
+      "C": 2
+    },
+    "F-PLs-L5-2": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-PLs-L5-3": {
+      "cur": 1,
+      "C": 1
+    },
+    "F-PLs-L5-4": {
+      "cur": 3,
+      "C": 2
+    },
+    "M-A1": {
+      "cur": 1,
+      "C": 1
+    },
+    "M-A2": {
+      "cur": 3,
+      "C": 3
+    },
+    "M-A3": {
+      "cur": 1,
+      "C": 1
+    },
+    "M-D1": {
+      "cur": 1,
+      "C": 1
+    },
+    "M-D2": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L0-1": {
+      "cur": 0,
+      "C": 0
+    },
+    "P-L0-2": {
+      "cur": 1,
+      "C": 1
+    },
+    "P-L0-3": {
+      "cur": 0,
+      "C": 0
+    },
+    "P-L0-4": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L0-5": {
+      "cur": 0,
+      "C": 0
+    },
+    "P-L1-1": {
+      "cur": 1,
+      "C": 1
+    },
+    "P-L1-2": {
+      "cur": 1,
+      "C": 1
+    },
+    "P-L1-3": {
+      "cur": 2,
+      "C": 2
+    },
+    "P-L2-1": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L2-2": {
+      "cur": 2,
+      "C": 2
+    },
+    "P-L2-3": {
+      "cur": 2,
+      "C": 2
+    },
+    "P-L3-1": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L3-2": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L3-3": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L4-1": {
+      "cur": 3,
+      "C": 3
+    },
+    "P-L4-2": {
+      "cur": 4,
+      "C": 4
+    },
+    "P-L4-3": {
+      "cur": 4,
+      "C": 4
+    },
+    "P-L5-1": {
+      "cur": 4,
+      "C": 4
+    },
+    "P-L5-2": {
+      "cur": 5,
+      "C": 5
+    },
+    "P-L5-3": {
+      "cur": 4,
+      "C": 4
+    }
+  },
+  "outcomes_pass1": {
+    "P P-L0-1 placed at Level 0": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L0-2 placed at Level 0": {
+      "cur": false,
+      "C": false
+    },
+    "P P-L0-3 placed at Level 0": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L0-4 placed at Level 0": {
+      "cur": false,
+      "C": false
+    },
+    "P P-L0-5 placed at Level 0": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L1-1 placed at Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L1-2 placed at Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L1-3 placed at Level 1": {
+      "cur": false,
+      "C": false
+    },
+    "P P-L2-1 placed at Level 2": {
+      "cur": false,
+      "C": false
+    },
+    "P P-L2-2 placed at Level 2": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L2-3 placed at Level 2": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L3-1 placed at Level 3": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L3-2 placed at Level 3": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L3-3 placed at Level 3": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L4-1 placed at Level 4": {
+      "cur": false,
+      "C": false
+    },
+    "P P-L4-2 placed at Level 4": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L4-3 placed at Level 4": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L5-1 placed at Level 5": {
+      "cur": false,
+      "C": false
+    },
+    "P P-L5-2 placed at Level 5": {
+      "cur": true,
+      "C": true
+    },
+    "P P-L5-3 placed at Level 5": {
+      "cur": false,
+      "C": false
+    },
+    "F F-PLe-L3-1 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLe-L3-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLe-L3-3 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-PLe-L4-1 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLe-L4-2 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-PLe-L4-3 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLe-L5-1 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-PLe-L5-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLe-L5-3 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L3-1 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L3-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L3-3 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L3-4 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L4-1 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L4-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L4-3 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L4-4 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L4-5 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L5-1 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L5-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L5-3 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-PLs-L5-4 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": true
+    },
+    "F F-MSc-L3-1 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-MSc-L3-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-MSc-L3-3 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-MSc-L3-4 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-MSc-L4-1 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-MSc-L4-2 clean (PLp 2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "F F-MSc-L4-3 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-MSc-L5-1 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-MSc-L5-2 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "F F-MSc-L5-3 clean (PLp 2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "D D-PLp1 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLp2 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLp3 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLp4 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLe1 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLe2 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLe3 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLs1 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "D D-PLs2 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "M A1->A2 rises by 2 or more": {
+      "cur": true,
+      "C": true
+    },
+    "M A1->A3 does not rise": {
+      "cur": true,
+      "C": true
+    },
+    "M D1 stays at 1 or less": {
+      "cur": true,
+      "C": true
+    },
+    "M D2 reaches 3 or more": {
+      "cur": true,
+      "C": true
+    },
+    "B H1 PLp>>PLe (gap 3+ on all but at most one item)": {
+      "cur": true,
+      "C": true
+    },
+    "B H1 PLe>>PLp (gap 3+ on all but at most one item)": {
+      "cur": true,
+      "C": true
+    },
+    "B H1 PLp>>PLs (gap 3+ on all but at most one item)": {
+      "cur": true,
+      "C": true
+    },
+    "B H1 PLs>>PLp (gap 3+ on all but at most one item)": {
+      "cur": false,
+      "C": false
+    },
+    "B H1 PLp>>MSc (gap 3+ on all but at most one item)": {
+      "cur": true,
+      "C": true
+    },
+    "B H1 MSc>>PLp (gap 3+ on all but at most one item)": {
+      "cur": false,
+      "C": false
+    },
+    "B H4 B-D01 within 1 of Level 0": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D02 within 1 of Level 2": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D03 within 1 of Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D04 within 1 of Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D05 within 1 of Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D06 within 1 of Level 3": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D07 within 1 of Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D08 within 1 of Level 1": {
+      "cur": false,
+      "C": false
+    },
+    "B H4 B-D09 within 1 of Level 1": {
+      "cur": true,
+      "C": true
+    },
+    "B H4 B-D10 within 1 of Level 2": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-E01 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-E02 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-E04 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B H3 B-L01 PLp 1 or less": {
+      "cur": true,
+      "C": true
+    },
+    "B H3 B-L02 PLp 1 or less": {
+      "cur": true,
+      "C": true
+    },
+    "B H3 B-L03 PLp 1 or less": {
+      "cur": true,
+      "C": true
+    },
+    "B H3 B-L04 PLp 1 or less": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-M01 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": false
+    },
+    "B D B-M02 off the diagonal (2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "B D B-M03 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-M04 off the diagonal (2 or less)": {
+      "cur": false,
+      "C": false
+    },
+    "B D B-P01 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-P02 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-P04 on the diagonal (3 or more)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-S01 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-S02 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-S03 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B D B-S04 off the diagonal (2 or less)": {
+      "cur": true,
+      "C": true
+    },
+    "B H2 B-X02 PLp 4 or more": {
+      "cur": false,
+      "C": false
+    },
+    "B H2 B-X03 PLp 4 or more": {
+      "cur": true,
+      "C": true
+    }
+  }
+}

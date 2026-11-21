@@ -1,0 +1,146 @@
+{
+  "run": "relabel-v2",
+  "created_at": "2026-10-04T13:27:04+00:00",
+  "spec_file": "experiments/benchmarks/mass-annotation/specs/relabel-v2.toml",
+  "git": {
+    "commit": "01c0a9f31695066cf40ad147b809906b9943cafb",
+    "dirty_tracked_files": []
+  },
+  "judge_agents": {
+    "judge-dispatcher-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/judge-dispatcher-v2-low.md",
+      "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+    },
+    "adele-judge-v2-low": {
+      "file": "~/Developer/ADELE/.claude/agents/adele-judge-v2-low.md",
+      "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+    }
+  },
+  "frozen": {
+    "spec": {
+      "sha256": "cb8da50cddc34351f21c7681096a6bf437a188073a630818c6476bfbee8032ea",
+      "content": "# Relabel of all five v2 rubrics after the 2026-10-04 examples review (experiments/benchmarks/relabel-v2), on the clean sets of the PL studies: SWE-bench Verified,\n# tau2 (3 domains), Terminal-Bench 4.0 and Science, DeepSWE, FrontierSWE, ProgramBench (single-read tasks).\n# Same tasks as ms-benchmarks (subset copied). ProgramBench's 13 long tasks are in relabel-v2-long.toml.\n# Judge: Claude Code subagents, Opus 5.5 at effort low, v2 prompt (the PL runs' setting).\n#   adele mass plan experiments/benchmarks/mass-annotation/specs/relabel-v2.toml\nname = \"relabel-v2\"\n\n[tasks]\nbenchmarks = [\"swe-bench-verified\", \"tau2-airline\", \"tau2-retail\", \"tau2-banking_knowledge\", \"terminal-bench-4.0.0\",\n              \"terminal-bench-science-0.1\", \"deepswe-v1.1\", \"frontierswe-v2\", \"programbench\"]\nsubset = \"experiments/benchmarks/pls-relabel/subset.csv\"\n\n[rubrics]\nrefs = [\"v2/PLp\", \"v2/PLe\", \"v2/PLs\", \"v2/MSm\", \"v2/MSc\"]\n\n[prompt]\nbuilder = \"v2\"\n\n[judge]\nbackend = \"subagent\"\nmodel = \"claude-opus-5-5\"\neffort = \"low\"\nrepeats = 1\nretry = { fallback_writer = 1, unparsed = 1 }\n\n[judge.relay]\ndispatcher = \"judge-dispatcher-v2-low\"\njudge_agent = \"adele-judge-v2-low\"\nmodel_alias = \"opus\"\nbatch_size = 100\n"
+    },
+    "tasks": {
+      "benchmarks": {
+        "swe-bench-verified": {
+          "file": "instances_swe-bench-verified.parquet",
+          "file_sha256": "15aff8a5168ec20396765fb1e020da4f17bed101d7c30c849bc57aaf900991e8",
+          "frame_sha256": "f1e0b9f39ab8beab1a107472708db4692d9f132abf848d309dc40ed2bf5db02f",
+          "n_selected": 443
+        },
+        "tau2-airline": {
+          "file": "instances_tau2-airline.csv",
+          "file_sha256": "217187f31c08f389196d73251cecf55ee8414427ac4d170422db699d69a7b0d0",
+          "frame_sha256": "5d51a59e061d005ef6c7d229052c37b9d600c349d96d088647ec1127732f7165",
+          "n_selected": 49
+        },
+        "tau2-retail": {
+          "file": "instances_tau2-retail.csv",
+          "file_sha256": "ef0dc74a178d950cbbf3abe2d71c40026ef51993699adf2e74bea6e7c523b6cd",
+          "frame_sha256": "6fecc25306f946cdc31287ffa6ce4156d9e24c24f52d86ceb5c4a2cf9bd16015",
+          "n_selected": 114
+        },
+        "tau2-banking_knowledge": {
+          "file": "instances_tau2-banking_knowledge.csv",
+          "file_sha256": "b9e101ef4070fb6e6f249ea4081e60fee646cb93fad7a1eea9f2ee2d879088fb",
+          "frame_sha256": "20bc6ba5dbbaf6abd30585345475da5f6be585f8dc7b3366d7c6ba3976992e00",
+          "n_selected": 79
+        },
+        "terminal-bench-4.0.0": {
+          "file": "instances_terminal-bench-4.0.0.parquet",
+          "file_sha256": "c9fb6c2e13335c9142b4ed2c2748f2edf68de0365db00843fb20d0b8927837c8",
+          "frame_sha256": "66ccf094b35b3ce0e90115623ff4f762e0bba8ef0710711d738f4cf9419e26cd",
+          "n_selected": 35
+        },
+        "terminal-bench-science-0.1": {
+          "file": "instances_terminal-bench-science-0.1.parquet",
+          "file_sha256": "cb27455bcbd81ec0dc9da76b5c0b2278f73ef0eeebaffe2e42f777dfde394d58",
+          "frame_sha256": "0a32c66768dbac26bd8b87b4180276b12906ee423894d259e8a3f54f0aa3581d",
+          "n_selected": 70
+        },
+        "deepswe-v1.1": {
+          "file": "instances_deepswe-v1.1.parquet",
+          "file_sha256": "eb250bb822880479180ae134ee6beb6c3c70b65316777dfc22cd0aac57b5dfd8",
+          "frame_sha256": "a91e1c2f700c21940db849502433daa77948c464206966da62eaea95b267d4ac",
+          "n_selected": 90
+        },
+        "frontierswe-v2": {
+          "file": "instances_frontierswe-v2.parquet",
+          "file_sha256": "d9deb21a68db8d2c125da4659759ab375465846762c59c658f61495195a99f01",
+          "frame_sha256": "af62cb1bf63e006fe9d649a9702ddfe26bf1c4fa28a5280323ff6f4ed354c325",
+          "n_selected": 19
+        },
+        "programbench": {
+          "file": "instances_programbench.parquet",
+          "file_sha256": "98603980d644beeead23be98f30255ef1ed979460dfaa1fc4a8384552d9698a9",
+          "frame_sha256": "1a7bd09d4ae86daaf0e91dd4c0721943496cd23e303fd9269bb9dd0d509d3308",
+          "n_selected": 117
+        }
+      },
+      "subset": {
+        "file": "experiments/benchmarks/pls-relabel/subset.csv",
+        "sha256": "862300a23533b1913c0d17f6f59e440018e154a0c3e057cbefa623cacc0d3c7c",
+        "n_ids": 1016
+      }
+    },
+    "rubrics": {
+      "v2/PLp": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt",
+        "sha256": "63b8272d4fb383968b7ebd0143492f2792e1b3ea8a983b6d35ea58110e200d62",
+        "full_name": "Planning"
+      },
+      "v2/PLe": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt",
+        "sha256": "ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49",
+        "full_name": "Action control and execution"
+      },
+      "v2/PLs": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt",
+        "sha256": "26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6",
+        "full_name": "Simulating"
+      },
+      "v2/MSm": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt",
+        "sha256": "cbbdf8fbd2657ffb88e007392bf7f7c9ba5dd9cd56843d211dc2bb2cceb04a34",
+        "full_name": "Mind Modelling and Social Cognition"
+      },
+      "v2/MSc": {
+        "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+        "sha256": "14b5e83644af1786e569498586f0292c21973714d17aa2def6871cb0c4f54aac",
+        "full_name": "Communication and social interaction"
+      }
+    },
+    "prompt": {
+      "builder": "v2",
+      "function": "adele.annotation.prompts.build_annotation_prompt_v2",
+      "source_file": "src/adele/annotation/prompts.py",
+      "source_sha256": "c03959f83be91016a2dca83ff1b523cbfe2de8c8a765f73b5004e927a9d8cde9"
+    },
+    "judge": {
+      "backend": "subagent",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "repeats": 1,
+      "retry": {
+        "fallback_writer": 1,
+        "unparsed": 1,
+        "refusal": 1,
+        "error": 1,
+        "protocol": 1
+      },
+      "max_tokens": 16000,
+      "folder": "opus-low",
+      "relay": {
+        "dispatcher": "judge-dispatcher-v2-low",
+        "judge_agent": "adele-judge-v2-low",
+        "model_alias": "opus",
+        "batch_size": 100
+      }
+    },
+    "cells": {
+      "n": 5080,
+      "sha256": "9aeb4b19339c67ed0048725d0e234d4ad2f5b2dfcaf66c97c8bc20657bbd1302"
+    }
+  }
+}

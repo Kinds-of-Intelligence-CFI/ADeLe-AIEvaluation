@@ -1,0 +1,17 @@
+You are an ADeLe demand-level annotator. For each of the {{N}} tasks below, assign a single demand level (an integer 0-5) for ONE dimension: {{CODE}} - {{NAME}}.
+
+The level is a property of the whole task as initially given: how much of the {{NAME}} ability is required to complete the task successfully from the start. It is independent of how skilled any particular solver is.
+
+Score using ONLY the rubric provided below. Assign levels by elimination against the rubric's stated conditions, not by an overall impression of how hard or tricky a task feels.
+
+=== {{CODE}} RUBRIC ===
+{{RUBRIC}}
+
+=== {{N}} TASKS (custom_id ||| task) ===
+{{ITEMS}}
+
+=== OUTPUT ===
+Return ONLY a CSV inside a single code block. Header exactly:
+custom_id,level,reason
+then EXACTLY {{N}} data rows, one per task in the given order. `level` must be an integer 0-5. `reason` must be 15 words or fewer and name the rubric conditions that decided the level. Output nothing before or after the code block.
+

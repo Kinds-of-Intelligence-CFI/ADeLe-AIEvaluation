@@ -1,0 +1,6 @@
+rubric,code,generation,name,file,sha256,runs
+v2/PLp,PLp,v2,Planning,src/adele/rubrics/data_v2/Paolo_Pablo/PLp.txt,b1c3712bfe571baf1afc8c8a84e81be5dadefc3210e85d5ddaa4022f3bf59615,goal-visible
+v2/PLe,PLe,v2,Action control and execution,src/adele/rubrics/data_v2/Paolo_Pablo/PLe.txt,ab994dd7d70646f5d00e730ce3b03aa68da2d010059b999c84e0c638f5364e49,goal-visible
+v2/PLs,PLs,v2,Simulating,src/adele/rubrics/data_v2/Paolo_Pablo/PLs.txt,26e29e6458e64cc5f036ed54ea23c905074c2bded190aa785d9b6fb9ec4e5af6,goal-visible
+v2/MSm,MSm,v2,Mind Modelling and Social Cognition,src/adele/rubrics/data_v2/Paolo_Pablo/MSm.txt,9579f3ea29debec754a55c23ae7cd1d4b4aa496ee12c4c11088a46b3074d8f81,goal-visible
+v2/MSc,MSc,v2,Communication and social interaction,src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt,3410930631535d8f24f60928caf70362fecda555d96b146d97369eae76780bc0,goal-visible

@@ -1,0 +1,120 @@
+{
+  "MSc": {
+    "lost_pass1": [
+      "B MSc high"
+    ],
+    "rerun": [
+      "B-M04-on-MSc"
+    ],
+    "confirmed": [],
+    "N1": "holds",
+    "N3": {
+      "n": 112,
+      "exact": 0.982,
+      "within_1": 1.0,
+      "holds": true,
+      "differ": {
+        "B-M04-on-MSc": {
+          "reasoning": 4,
+          "bare": 3
+        },
+        "L-r36-D2": {
+          "reasoning": 5,
+          "bare": 4
+        }
+      }
+    },
+    "N2": {
+      "refusal": {
+        "1": {
+          "A": 1,
+          "B": 1
+        },
+        "2": {
+          "A": 1,
+          "B": 1
+        },
+        "3": {
+          "A": 1,
+          "B": 1
+        },
+        "4": {
+          "A": 1,
+          "B": 1
+        },
+        "8": {
+          "A": 1,
+          "B": 1
+        }
+      },
+      "needed": {
+        "5": {
+          "A": 1,
+          "B": 1
+        },
+        "6": {
+          "A": 1,
+          "B": 4
+        },
+        "7": {
+          "A": 1,
+          "B": 4
+        }
+      },
+      "B_at_3_or_less": 5,
+      "A_B_within_1": 5,
+      "holds": true,
+      "needed_B_at_4_plus": 2
+    }
+  },
+  "MSm": {
+    "lost_pass1": [],
+    "rerun": [],
+    "N1": "holds",
+    "N3": {
+      "n": 89,
+      "exact": 0.899,
+      "within_1": 1.0,
+      "holds": true,
+      "differ": {
+        "B-M01-on-MSm": {
+          "reasoning": 2,
+          "bare": 1
+        },
+        "B-M04-on-MSm": {
+          "reasoning": 2,
+          "bare": 1
+        },
+        "F-PLe-L3-1-on-MSm": {
+          "reasoning": 2,
+          "bare": 1
+        },
+        "F-PLe-L3-2-on-MSm": {
+          "reasoning": 0,
+          "bare": 1
+        },
+        "F-PLs-L3-1-on-MSm": {
+          "reasoning": 2,
+          "bare": 1
+        },
+        "F-PLs-L5-1-on-MSm": {
+          "reasoning": 0,
+          "bare": 1
+        },
+        "S-MSc-L4-1-on-MSm": {
+          "reasoning": 4,
+          "bare": 3
+        },
+        "S-MSc-L4-2-on-MSm": {
+          "reasoning": 3,
+          "bare": 2
+        },
+        "S-MSc-L4-4-on-MSm": {
+          "reasoning": 2,
+          "bare": 3
+        }
+      }
+    }
+  },
+  "H": "sealed"
+}

@@ -1,3 +1,5 @@
+# Logical Reasoning
+
 This rubric evaluates the logical reasoning demands of tasks across six levels of difficulty, focusing exclusively on deductive reasoning, which is required whenever a task involves matching and applying rules, procedures, or algorithms to solve problems, making structured decisions based on given premises, or deriving conclusions through systematic steps. This includes tasks ranging from basic arithmetic operations to sophisticated multi-step problem solving that requires careful chaining of logical relationships. Each level increases in complexity based on the intricacy of logical constructs, the depth of reasoning required, the number of premises involved, and the abstraction of concepts.
 
 Level 0: None. Tasks at this level do not require any logical reasoning. They involve simple identification or recalling memorized facts without the application of rules or relationships, as no logical constructs or premises are present.

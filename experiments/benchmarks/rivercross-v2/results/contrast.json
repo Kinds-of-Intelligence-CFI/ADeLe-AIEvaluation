@@ -1,0 +1,81 @@
+{
+  "states_labelled": 59,
+  "states": 59,
+  "repeat_agreement": 0.661,
+  "search": {
+    "pairs": 9,
+    "mean_difference": 0.222,
+    "higher": 2,
+    "lower": 0,
+    "tied": 7,
+    "p_one_sided": 0.25,
+    "differences": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ]
+  },
+  "S1_holds": false,
+  "length": {
+    "pairs": 21,
+    "mean_difference": 1.286,
+    "higher": 13,
+    "lower": 0,
+    "tied": 8,
+    "p_one_sided": 0.0001,
+    "differences": [
+      3.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      3.0,
+      3.0,
+      2.0,
+      2.0,
+      0.0,
+      3.0,
+      2.0,
+      0.0,
+      1.0,
+      2.0
+    ]
+  },
+  "L1_holds": true,
+  "exploratory": {
+    "PLp_vs_ctg": 0.809,
+    "PLp_vs_decision_points": 0.502,
+    "ctg_vs_decision_points": 0.453,
+    "mean_PLp_by_ctg": {
+      "2": 0.73,
+      "3": 3.0,
+      "4": 2.1,
+      "5": 2.8,
+      "6": 2.67,
+      "7": 3.0,
+      "8": 3.0,
+      "9": 3.0,
+      "10": 3.0,
+      "11": 3.0
+    },
+    "mean_PLp_by_decision_points": {
+      "1": 1.38,
+      "2": 1.9,
+      "3": 2.64,
+      "4": 2.5,
+      "5": 3.0
+    }
+  }
+}

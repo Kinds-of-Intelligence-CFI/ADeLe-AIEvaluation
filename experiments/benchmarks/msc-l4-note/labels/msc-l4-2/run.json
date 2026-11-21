@@ -1,0 +1,56 @@
+{
+  "run_id": "msc-l4-2",
+  "created_at": "2026-10-14T20:06:36+00:00",
+  "repo_commit": "985a7fb915da1fcb4b1be69350e4d2f732bf740f",
+  "repo_dirty_tracked_files": [
+    " M experiments/benchmarks/msc-l4-note/human_labels.csv"
+  ],
+  "design": {
+    "n_cells": 2,
+    "dims": [
+      "MSc"
+    ],
+    "arms": [
+      "current",
+      "candidate"
+    ],
+    "judges": {
+      "opus-low-r1": "adele-judge-v2-low, model alias 'opus'; repeat 1",
+      "opus-low-r2": "adele-judge-v2-low, model alias 'opus'; repeat 2",
+      "opus-low-r3": "adele-judge-v2-low, model alias 'opus'; repeat 3"
+    },
+    "n_calls": 6,
+    "relays": 3,
+    "relay_max_cells": 50
+  },
+  "rubrics": {
+    "current": {
+      "file": "src/adele/rubrics/data_v2/Paolo_Pablo/MSc.txt",
+      "sha256": "2a8dcef66c340023f0fbbea3e0107f0f6b5890aec74eb23b67ef2159272b068c"
+    },
+    "candidate": {
+      "file": "experiments/benchmarks/msc-l4-note/MSc_candidate.txt",
+      "sha256": "250b3d73332373f31b1a636a08bee35de5c7872a5d231d61fff0336dbcb07efe"
+    }
+  },
+  "set_R-P": "every Examples block stripped from the rubric shown (r25 design)",
+  "items": "msc-l4-note/items.csv",
+  "lab_record_commit": "7159671",
+  "pass": 2,
+  "replicates": "msc-l4-1",
+  "prompt": {
+    "builder": "adele.annotation.prompts.build_annotation_prompt_v2",
+    "builder_file_sha256": "d41523c0929112c903bae99e1c0972a8fe563ed560d84a9a95561c9e1dfa906f"
+  },
+  "judge_agent": {
+    "file": "experiments/benchmarks/natural-prompt/adele-judge-v2-low.md",
+    "sha256": "bfe3d53cfeb11ae8df8a66b6278aa2affda014e71eedcd75f8f7b2a855f714d8"
+  },
+  "dispatcher_agent": {
+    "file": "experiments/benchmarks/natural-prompt/judge-dispatcher-v2-low.md",
+    "sha256": "f6b61800f4aed337baa25592f611fdfaafe45bef43e2217c4a2f43df2f898d68"
+  },
+  "judge_instruction": "Prompt file: {prompt_file}\nResponse file: {response_file}",
+  "judge_io": "../../judge-io/msc-l4-2",
+  "sampling": "harness defaults; snapshot cannot be pinned for subagents; effort is set in the agent file"
+}

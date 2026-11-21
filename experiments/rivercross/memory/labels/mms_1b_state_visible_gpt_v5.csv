@@ -1,0 +1,44 @@
+custom_id,level,reason
+chain-3-boat-1#s2,0,All object locations visible; no hidden-state tracking needed.
+chain-3-boat-2#s1,0,Current banks and boat side fully shown; no memory beyond perception.
+chain-3-boat-3#s0,0,No unseen history required; all positions explicitly displayed.
+chain-3-boat-4#s0,0,Everything relevant is visible; no offscreen state to maintain.
+chain-4-boat-2#s1,0,Visible state suffices; no need to remember prior positions.
+chain-4-boat-3#s1,0,All items’ locations are shown; no hidden updates to track.
+chain-4-boat-4#s0,0,Current arrangement explicit; no memory of past moves necessary.
+chain-5-boat-2#s2,0,State fully observable; nothing to reconstruct from memory.
+chain-5-boat-3#s1,0,All constraints reference visible positions; no hidden bookkeeping.
+chain-5-boat-4#s1,0,Both banks visible; no short-term tracking of unseen objects.
+chain-6-boat-3#s1,0,No invisible object-location info; current state is adequate.
+chain-6-boat-4#s1,0,Visible configuration complete; no working-memory updates required.
+star-3-boat-1#s2,0,Directly shown positions remove any hidden-state demand.
+star-3-boat-2#s1,0,No hidden reversals to remember; current placements suffice.
+star-3-boat-3#s0,0,Entire state is present; memory load is none.
+star-3-boat-4#s0,0,No off-screen items; all needed info displayed.
+star-4-boat-2#s2,0,Nothing to maintain mentally; state completely visible.
+star-4-boat-3#s1,0,Complete visibility of object locations; no tracking burden.
+star-4-boat-4#s0,0,Immediate perception covers all needed state; memory demand zero.
+star-5-boat-2#s2,0,No unobserved updates; everything is shown.
+star-5-boat-3#s1,0,No hidden boat cargo or prior moves; state sufficient.
+star-5-boat-4#s1,0,No deferred information; both banks and items visible.
+star-6-boat-2#s2,0,Present state fully specified; no memory maintenance.
+star-6-boat-3#s2,0,All positions available externally; no internal tracking needed.
+star-6-boat-4#s1,0,All object locations visible; no hidden-state tracking needed.
+cycle-3-boat-2#s1,0,Current banks and boat side fully shown; no memory beyond perception.
+cycle-3-boat-3#s0,0,No unseen history required; all positions explicitly displayed.
+cycle-3-boat-4#s0,0,Everything relevant is visible; no offscreen state to maintain.
+cycle-4-boat-2#s1,0,Visible state suffices; no need to remember prior positions.
+cycle-4-boat-3#s1,0,All items’ locations are shown; no hidden updates to track.
+cycle-4-boat-4#s0,0,Current arrangement explicit; no memory of past moves necessary.
+cycle-5-boat-3#s1,0,State fully observable; nothing to reconstruct from memory.
+cycle-5-boat-4#s1,0,All constraints reference visible positions; no hidden bookkeeping.
+cycle-6-boat-3#s1,0,Both banks visible; no short-term tracking of unseen objects.
+cycle-6-boat-4#s1,0,No invisible object-location info; current state is adequate.
+complete-3-boat-2#s1,0,Visible configuration complete; no working-memory updates required.
+complete-3-boat-3#s0,0,Directly shown positions remove any hidden-state demand.
+complete-3-boat-4#s0,0,No hidden reversals to remember; current placements suffice.
+complete-4-boat-3#s1,0,Entire state is present; memory load is none.
+complete-4-boat-4#s0,0,No off-screen items; all needed info displayed.
+complete-5-boat-4#s1,0,Nothing to maintain mentally; state completely visible.
+missionaries-cannibals-3#s2,0,Complete visibility of object locations; no tracking burden.
+missionaries-cannibals-4#s2,0,Immediate perception covers all needed state; memory demand zero.

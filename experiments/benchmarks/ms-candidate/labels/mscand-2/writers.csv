@@ -1,0 +1,7 @@
+judge,file_id,writer_model,calls,classifier_stops
+opus-low-r1,vm929,claude-opus-5-5,1,0
+opus-low-r1,dgsuk,claude-opus-5-5,1,0
+opus-low-r2,vm929,claude-opus-5-5,1,0
+opus-low-r2,dgsuk,claude-opus-5-5,1,0
+opus-low-r3,vm929,claude-opus-5-5,1,0
+opus-low-r3,dgsuk,claude-opus-5-5,1,0

@@ -1,0 +1,42 @@
+# Action control and execution
+
+This rubric assesses the difficulty level of tasks requiring a plan to be carried out and kept on track. What sets this difficulty apart is how the agent can tell, while the work is under way, that it is going right. It ranges from tasks the environment checks at every step to those that offer no check at all. An action is the carrying-out of one plan step. It is the finest unit that could be separately instructed and done wrong, such as posting an entry, making a tool call or writing a section. Words and tokens are not actions. A check is information that establishes, without further work, whether an action or subtask has done what it was for. An observation from which success must still be worked out is not a check, and neither is an interlocutor's acknowledgement.
+
+What this dimension does not cover. This dimension concerns keeping execution on track rather than deciding what to do. Noticing that the work has gone off course is scored here, but the deliberation that finds or chooses a step does not raise this demand. Nor does the cost of failure. Whether an error could be undone, and how much damage it would cause, are matters of stakes rather than of control. Critically, a step whose correctness is easy to establish makes a low demand however consequential it is. Length, memory load, how hard the needed information is to obtain and how open-ended the goal is bear on this demand only insofar as they make progress or correctness harder to check. Note, a routine run off by rote, with no checking because none is needed, makes no demand here however long it is.
+
+Level 0: None. The task requires no execution control. It is completed by a single atomic action that succeeds or fails at once, so there is no progress to track and nothing to check along the way.
+Examples:
+* Look up a single fact with one search-engine query.
+* Select the figure that fits the pattern from A to E.
+* Find the winning move in a given chess position. All the difficulty is in finding it, and the execution is a single act.
+
+Level 1: Very low. The task requires execution to be checked by the environment at every step. Something the environment returns settles, after essentially each action, whether that action did what it was for, so nothing about being on track is left for the agent to establish.
+Examples:
+* Reset a password by following the prompts on a website.
+* Navigate to an address under turn-by-turn directions, where any wrong turn is flagged and rerouted at once.
+* Cook from a recipe in which each step's outcome is apparent before moving on to the next.
+* Change a customer's order through a tool interface, where each call reports whether it succeeded and the order state can be read back after each change.
+
+Level 2: Low. The task requires execution to be checked at checkpoints. The environment settles whether the work is right at natural junctures, such as the completion of a subtask or the end of a short task, roughly once every two to ten actions. Between checkpoints the agent must keep track of what has been done and watch its own steps. Critically, the checking is still forced by the structure of the work, since it happens whether or not the agent goes looking for it, and reaching the next juncture is all that is required to learn where things stand.
+Examples:
+* Assemble a flat-pack wardrobe: nothing shows whether a stage was done right until a sub-assembly is stood up and either fits together or does not.
+* Follow a course notebook to implement a small transformer network, where each of its five stages is marked automatically and the next stage opens only once it passes.
+* Complete a 40-field online tax return whose figures are checked against the tax office's own records each time a section is submitted.
+
+Level 3: Intermediate. The task requires execution to be self-checked. The environment settles little or nothing along the way, but adequate checks are easy for the agent to apply whenever it chooses, such as re-reading a passage, running the code or comparing against the source. Here the checking is elected rather than forced, since nothing will tell the agent where it stands unless it decides to find out. Importantly, that a check runs on the environment's machinery does not matter, and neither does the task naming one. What places a task here is that the agent must decide when to check, what the result would have to show, and when each part is done.
+Examples:
+* Write and polish the introduction of a scientific paper, judging for yourself when each paragraph is finished.
+* Summarise a 60-page report and extract its main arguments, checking passages against the source as you go.
+* Tile a bathroom wall with a spirit level and tape measure to hand, and nobody to inspect the rows until the wall is grouted.
+
+Level 4: High. The task requires execution to be checked by means the agent must construct. No ready-made check settles whether the work is right, and errors give no sign of themselves where they occur, so their symptoms surface far from their cause. Only verification the agent devises for itself, in the form of probes and intermediate tests placed where slips would matter, separates work that is on course from work that has silently gone wrong.
+Examples:
+* Keep a small business's books by hand for a year, following the given procedure. An entry posted to the wrong expense account does not upset the monthly bank reconciliation, and shows only as an odd figure in the year-end accounts.
+* Add a feature, specified in advance, to a large codebase that has no test suite. A subtle bug surfaces only much later, deep in components built on top of it.
+* Translate a long legal contract using the supplied general glossary and brief. A term the contract defines for itself, mistranslated early on, reads naturally in every later clause that uses it.
+
+Level 5: Very high. The task requires execution to be held on course with no check at all. It provides no signal of progress or correctness while it runs, and none can be constructed, so anything that would reveal a deviation arrives only once the outcome is already settled. Control runs open-loop, held to standard from the plan and the agent's own discipline alone, even though a deviation would carry through to the end. Note, a task whose checks are merely laborious to build belongs at the level below, and one that needs no checking makes no demand at all. What places a task here is that checking is needed yet impossible.
+Examples:
+* Land a robot on Mars from the control room. Light-delay means the entire descent sequence must be committed in advance: by the time the first sign of how the descent is going reaches anyone, the landing has already succeeded or failed.
+* Carry out a multi-step synthesis for which no intermediate assay exists, because testing the product at any stage would consume it. The route is given. Whether any step has worked cannot be known before the final yield.
+* Run a nine-month fermentation in a sealed vessel that cannot be opened or sampled without spoiling the batch. Each scheduled change of temperature is meant to move the culture on a stage, and whether it did is unknowable until the end.

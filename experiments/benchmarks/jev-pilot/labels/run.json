@@ -1,0 +1,11 @@
+{
+  "model": "jev-1.13.0",
+  "rubric_sha256": {
+    "PLp": "30eba01175b767009394934f95aeafbbe68fb71ee8338cdd16665e590f4899a6",
+    "PLe": "6403b373d0919df5ebd2b94f58b61a4b3d93b5e8474213e81fbd6a908eb25ed8",
+    "PLs": "a1ea828a30cffd4bcbb0b4ed8963740cfc585312c9d62a4a310bba8b387f5ab2",
+    "MSm": "4d7ac7d00176f0c051e8a3a0a5f5999796fde9f98176d96e8766bd840cc77a2f",
+    "MSc": "b45d48bbfa4a79cc86942bea75d88471d3b3a5eb57c99ba080fe0321cceeccf8"
+  },
+  "questions_sha256": "a3e4fd86221eb48efad49c25c295af4beb1c56c9f15c5b37f0088ee83030c13d"
+}

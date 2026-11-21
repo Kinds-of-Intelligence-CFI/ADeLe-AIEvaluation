@@ -1,0 +1,23 @@
+# wave1-v1 amendment 2: the rest of w1v1-code (its untouched tasks plus one partial task) through the Batch API, after
+# the harness bridges (harness-emulation). Prompts are byte-identical to w1v1-code. See experiments/benchmarks/wave1-v1/PREREGISTRATION.md.
+name = "w1v1-code-api"
+
+[tasks]
+benchmarks = ["deepswe-v1.1", "frontierswe-v2", "programbench", "terminal-bench-4.0.0", "terminal-bench-science-0.1"]
+subset = "experiments/benchmarks/mass-annotation/subsets/w1v1_code_api.csv"
+instances_dir = "data/instances-goal"
+
+[rubrics]
+refs = ["v1/AS", "v1/AT", "v1/CEc", "v1/CEe", "v1/CL", "v1/KNa", "v1/KNc", "v1/KNf", "v1/KNn", "v1/KNs", "v1/MCr", "v1/MCt",
+        "v1/MCu", "v1/QLl", "v1/QLq", "v1/SNs", "v1/VO"]
+
+[prompt]
+builder = "v2-noreason"
+
+[judge]
+backend = "anthropic-batch"
+model = "claude-opus-5-5"
+effort = "low"
+harness = "subagent-v2-low"   # pools with the subagent labels (harness-emulation, v1 bridge)
+repeats = 1
+retry = { fallback_writer = 1, unparsed = 1, refusal = 0, error = 2 }

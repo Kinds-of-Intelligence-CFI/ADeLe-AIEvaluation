@@ -1,0 +1,13 @@
+benchmark,instance_id,file_id,demand,family,prompt_sha256
+rivercross,cycle-3+free3-boat-3--R-item3,cycle-3+free3-boat-3--R-item3,SOLVE,v2,d5e1a9c432db13612225f4dfd40a9fea74dcdd2eea0300cd2b1c6d7f3a5338de
+rivercross,missionaries-cannibals-3-boat-3--L-C1.C2.M1.M2.M3,missionaries-cannibals-3-boat-3--L-C1.C2.M1.M2.M3,SOLVE,v2,bad35fa5d07366df7224232bcde5e0169378bbc1ffc7d4e45ab9e6dd4ec1a8b0
+rivercross,chain-3+free2-boat-2--L-farmer.item1.item2.item3.item5,chain-3+free2-boat-2--L-farmer.item1.item2.item3.item5,SOLVE,v2,22b30a331b1dfc8ba3de2eeb8823eaa537cb53a2ba9a144ea970ba5bbd2a9b4e
+rivercross,star-4+free1-boat-2--R-item2.item5,star-4+free1-boat-2--R-item2.item5,SOLVE,v2,57b57cdf35ebccd62f058e736c1688a864b56c41025a918c464d4737974941cb
+rivercross,chain-3+free2-boat-1--L-farmer.item1.item2.item3.item4.item5,chain-3+free2-boat-1--L-farmer.item1.item2.item3.item4.item5,SOLVE,v2,3d59d41167b8728fce29a4ea924eaa1b2c45d365e55bcf2cb13ae8e01a7fed37
+rivercross,star-6-boat-3--R-item2.item3.item4.item5,star-6-boat-3--R-item2.item3.item4.item5,SOLVE,v2,7926afdfccd4459d2d73e4795f442a54aae353b1008eaf0d4ef3eab02fafae2c
+rivercross,star-6-boat-2--L-farmer.item1.item2.item3.item4.item5,star-6-boat-2--L-farmer.item1.item2.item3.item4.item5,SOLVE,v2,598e7ee6c7b01da6af769b886326c7fa4e31a7e9277fb217919c6902946fb04d
+rivercross,star-3+free1-boat-1--R-item3,star-3+free1-boat-1--R-item3,SOLVE,v2,3592b00070028754ba720ac89ee185b82f837af8b1c59e2b02ff4a0ab4410e14
+rivercross,star-3+free3-boat-2--R-item2,star-3+free3-boat-2--R-item2,SOLVE,v2,7fa5e717dac1ed0c1ce304ea35fd133a7a69f0fb9f535c9b778ec604bbd7af6a
+rivercross,cycle-3+free1-boat-2--R-item3.item4,cycle-3+free1-boat-2--R-item3.item4,SOLVE,v2,e028d3ea9b4f58955929bd6e6a752937357edb6fb78d8a769c8095fbb41085f9
+rivercross,star-4+free3-boat-2--R-item2.item3.item4.item5.item7,star-4+free3-boat-2--R-item2.item3.item4.item5.item7,SOLVE,v2,187cbcac8b6a4690f41b4f186ddbf4ff9002ce06cfe66094da6e0cfe9e217cab
+rivercross,cycle-4+free3-boat-3--L-farmer.item2.item3.item4.item6.item7,cycle-4+free3-boat-3--L-farmer.item2.item3.item4.item6.item7,SOLVE,v2,2612185008a691dbf4e28c0894ad00f88df8f3bed3449e575b133f775d2d7298

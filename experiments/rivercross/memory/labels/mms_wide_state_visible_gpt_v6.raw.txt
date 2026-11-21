@@ -1,0 +1,25 @@
+```
+custom_id,level,reason
+memw-L7-nrev-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-nrev-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-rev-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-rev-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L3-low-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L3-low-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L3-medium-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L3-medium-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L3-high-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L3-high-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-low-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-low-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-medium-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-medium-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-high-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L7-high-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L10-low-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L10-low-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L10-medium-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L10-medium-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L10-high-01__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+memw-L10-high-02__state_visible,0,All object locations and boat side visible; no hidden history to maintain.
+```
